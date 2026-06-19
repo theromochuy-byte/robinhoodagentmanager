@@ -18,6 +18,22 @@ def bars_to_df(raw: dict, symbol: str | None = None) -> pd.DataFrame:
     Accepts either the full {"data": {"results": [...]}} envelope or a single
     result dict. Drops interpolated gap-fill bars.
     """
+    if isinstance(raw, list):
+        # plain list of bar dicts (already extracted per-symbol)
+        rows = []
+        for bar in raw:
+            if bar.get("interpolated"):
+                continue
+            rows.append({
+                "begins_at": bar["begins_at"],
+                "open": float(bar["open_price"]),
+                "high": float(bar["high_price"]),
+                "low": float(bar["low_price"]),
+                "close": float(bar["close_price"]),
+                "volume": int(bar["volume"]),
+            })
+        return pd.DataFrame(rows).reset_index(drop=True)
+
     results = raw.get("data", {}).get("results") if "data" in raw else raw.get("results")
     if results is None and "bars" in raw:
         result = raw
