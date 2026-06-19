@@ -171,6 +171,41 @@ def resolve_trade(df: pd.DataFrame, trade: dict, target_key: str = "target_prima
     return resolved
 
 
+def compound_ledger(trades: list[dict], starting_equity: float, risk_pct: float = 0.01) -> list[dict]:
+    """Recompute share sizes and dollar P&L with compounding equity.
+
+    Trades are processed in entry_time order. Equity is updated after each
+    trade's exit_time; concurrent open positions each draw 1% of the equity
+    that was available at their own entry time. R-multiples and outcomes are
+    unchanged — only shares and pnl_dollars are recomputed.
+    """
+    equity = starting_equity
+    # build a map of exit_time -> equity delta so we can apply gains/losses
+    # in chronological order across all symbols
+    sorted_trades = sorted(trades, key=lambda t: t["entry_time"])
+    exit_events: list[tuple[str, int, float]] = []  # (exit_time, idx, pnl)
+
+    result = []
+    for idx, t in enumerate(sorted_trades):
+        shares = (equity * risk_pct) / t["risk_per_share"] if t["risk_per_share"] else 0.0
+        pnl = round(t["pnl_per_share"] * shares, 2)
+        updated = dict(t)
+        updated["shares"] = round(shares, 4)
+        updated["pnl_dollars"] = pnl
+        updated["equity_at_entry"] = round(equity, 2)
+        result.append(updated)
+        if t["outcome"] != "open":
+            exit_events.append((t["exit_time"], idx, pnl))
+        # advance equity for trades that have already closed before this entry
+        # (apply all exits up to but not including this entry_time)
+        pending = [(et, i, p) for et, i, p in exit_events if et <= t["entry_time"] and i < idx]
+        for et, i, p in pending:
+            equity += p
+            exit_events = [(et2, i2, p2) for et2, i2, p2 in exit_events if i2 != i]
+
+    return result
+
+
 def summarize(trades: list[dict]) -> dict:
     """Aggregate performance stats over a list of resolved trades."""
     closed = [t for t in trades if t["outcome"] in ("win", "loss")]

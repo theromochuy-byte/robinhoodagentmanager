@@ -20,7 +20,7 @@ import pandas as pd
 from .dataio import load
 from .indicators import atr, ema
 from .patterns import detect_double_bottom, detect_inverse_hns
-from .simulator import build_retest_trade, build_trade, resolve_trade, summarize
+from .simulator import build_retest_trade, build_trade, compound_ledger, resolve_trade, summarize
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -103,6 +103,8 @@ def run(symbols: list[str], equity: float = 10_000.0, risk_pct: float = 0.01) ->
         all_trades.extend(run_symbol(sym, equity, risk_pct))
 
     all_trades.sort(key=lambda t: t["entry_time"])
+    all_trades = compound_ledger(all_trades, equity, risk_pct)
+
     ledger_path = DATA / "paper_ledger.json"
     with open(ledger_path, "w") as f:
         json.dump(all_trades, f, indent=2)
@@ -116,7 +118,15 @@ def run(symbols: list[str], equity: float = 10_000.0, risk_pct: float = 0.01) ->
     for style in ("breakout", "retest"):
         subset = [t for t in all_trades if t.get("entry_style") == style]
         by_entry[style] = summarize(subset)
-    report = {"overall": summary, "by_pattern": by_pattern, "by_entry": by_entry, "symbols": symbols}
+
+    closed = [t for t in all_trades if t["outcome"] != "open"]
+    final_equity = round(equity + sum(t["pnl_dollars"] for t in closed), 2)
+    equity_growth = {"starting_equity": equity, "final_equity": final_equity,
+                     "gain_dollars": round(final_equity - equity, 2),
+                     "gain_pct": round((final_equity - equity) / equity * 100, 2)}
+
+    report = {"overall": summary, "by_pattern": by_pattern, "by_entry": by_entry,
+              "equity_growth": equity_growth, "symbols": symbols}
     with open(REPORTS / "summary.json", "w") as f:
         json.dump(report, f, indent=2)
     return report
