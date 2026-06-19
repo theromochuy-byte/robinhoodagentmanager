@@ -10,7 +10,7 @@
     "target_primary": 38.075,
     "target_1R": 38.8092,
     "target_2R": 40.9134,
-    "shares": 2.3762,
+    "shares": 4.7524,
     "atr": 0.6092,
     "entry_style": "breakout",
     "outcome": "win",
@@ -18,10 +18,10 @@
     "exit_price": 40.9134,
     "pnl_per_share": 4.2084,
     "r_multiple": 2.0,
-    "pnl_dollars": 10.0,
+    "pnl_dollars": 20.0,
     "target_used": "target_2R",
     "symbol": "SLB",
-    "equity_at_entry": 500.0
+    "equity_at_entry": 1000.0
   },
   {
     "type": "double_bottom",
@@ -34,7 +34,7 @@
     "target_primary": 41.5284,
     "target_1R": 39.2192,
     "target_2R": 41.5284,
-    "shares": 2.1653,
+    "shares": 4.3305,
     "atr": 0.5914,
     "entry_style": "retest",
     "outcome": "win",
@@ -42,10 +42,10 @@
     "exit_price": 41.5284,
     "pnl_per_share": 4.6184,
     "r_multiple": 2.0,
-    "pnl_dollars": 10.0,
+    "pnl_dollars": 20.0,
     "target_used": "target_2R",
     "symbol": "SLB",
-    "equity_at_entry": 500.0
+    "equity_at_entry": 1000.0
   },
   {
     "type": "inverse_hns",
@@ -58,7 +58,7 @@
     "target_primary": 54.605,
     "target_1R": 55.6648,
     "target_2R": 57.2946,
-    "shares": 3.0679,
+    "shares": 6.1357,
     "atr": 0.5648,
     "entry_style": "breakout",
     "outcome": "win",
@@ -66,10 +66,10 @@
     "exit_price": 57.2946,
     "pnl_per_share": 3.2596,
     "r_multiple": 2.0,
-    "pnl_dollars": 10.0,
+    "pnl_dollars": 20.0,
     "target_used": "target_2R",
     "symbol": "BAC",
-    "equity_at_entry": 500.0
+    "equity_at_entry": 1000.0
   },
   {
     "type": "double_bottom",
@@ -82,7 +82,7 @@
     "target_primary": 88.3,
     "target_1R": 92.9532,
     "target_2R": 97.9313,
-    "shares": 1.0044,
+    "shares": 2.0088,
     "atr": 1.0432,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -90,10 +90,10 @@
     "exit_price": 82.9968,
     "pnl_per_share": -4.9782,
     "r_multiple": -1.0,
-    "pnl_dollars": -5.0,
+    "pnl_dollars": -10.0,
     "target_used": "target_2R",
     "symbol": "WFC",
-    "equity_at_entry": 500.0
+    "equity_at_entry": 1000.0
   },
   {
     "type": "inverse_hns",
@@ -106,7 +106,7 @@
     "target_primary": 88.3,
     "target_1R": 91.8282,
     "target_2R": 95.6813,
-    "shares": 1.2976,
+    "shares": 2.5952,
     "atr": 1.0432,
     "entry_style": "breakout",
     "outcome": "win",
@@ -114,10 +114,10 @@
     "exit_price": 95.6813,
     "pnl_per_share": 7.7063,
     "r_multiple": 2.0,
-    "pnl_dollars": 10.0,
+    "pnl_dollars": 20.0,
     "target_used": "target_2R",
     "symbol": "WFC",
-    "equity_at_entry": 500.0
+    "equity_at_entry": 1000.0
   },
   {
     "type": "inverse_hns",
@@ -130,7 +130,7 @@
     "target_primary": 38.075,
     "target_1R": 39.9052,
     "target_2R": 42.1898,
-    "shares": 2.1885,
+    "shares": 4.3769,
     "atr": 0.6242,
     "entry_style": "breakout",
     "outcome": "win",
@@ -138,10 +138,10 @@
     "exit_price": 42.1898,
     "pnl_per_share": 4.5693,
     "r_multiple": 2.0,
-    "pnl_dollars": 10.0,
+    "pnl_dollars": 20.0,
     "target_used": "target_2R",
     "symbol": "SLB",
-    "equity_at_entry": 500.0
+    "equity_at_entry": 1000.0
   },
   {
     "type": "inverse_hns",
@@ -154,7 +154,7 @@
     "target_primary": 57.5496,
     "target_1R": 55.8348,
     "target_2R": 57.5496,
-    "shares": 2.9158,
+    "shares": 5.8316,
     "atr": 0.5409,
     "entry_style": "retest",
     "outcome": "loss",
@@ -162,10 +162,10 @@
     "exit_price": 52.4052,
     "pnl_per_share": -1.7148,
     "r_multiple": -1.0,
-    "pnl_dollars": -5.0,
+    "pnl_dollars": -10.0,
     "target_used": "target_2R",
     "symbol": "BAC",
-    "equity_at_entry": 500.0
+    "equity_at_entry": 1000.0
   },
   {
     "type": "inverse_hns",
@@ -178,7 +178,7 @@
     "target_primary": 43.1484,
     "target_1R": 40.5442,
     "target_2R": 43.1484,
-    "shares": 1.92,
+    "shares": 3.84,
     "atr": 0.6121,
     "entry_style": "retest",
     "outcome": "win",
@@ -186,10 +186,10 @@
     "exit_price": 43.1484,
     "pnl_per_share": 5.2084,
     "r_multiple": 2.0,
-    "pnl_dollars": 10.0,
+    "pnl_dollars": 20.0,
     "target_used": "target_2R",
     "symbol": "SLB",
-    "equity_at_entry": 500.0
+    "equity_at_entry": 1000.0
   },
   {
     "type": "double_bottom",
@@ -202,7 +202,7 @@
     "target_primary": 26.2874,
     "target_1R": 27.4171,
     "target_2R": 28.7691,
-    "shares": 3.698,
+    "shares": 7.3959,
     "atr": 0.3171,
     "entry_style": "breakout",
     "outcome": "open",
@@ -210,10 +210,10 @@
     "exit_price": 25.22,
     "pnl_per_share": -0.845,
     "r_multiple": -0.625,
-    "pnl_dollars": -3.12,
+    "pnl_dollars": -6.25,
     "target_used": "target_2R",
     "symbol": "PFE",
-    "equity_at_entry": 500.0
+    "equity_at_entry": 1000.0
   },
   {
     "type": "double_bottom",
@@ -226,7 +226,7 @@
     "target_primary": 28.0942,
     "target_1R": 26.9671,
     "target_2R": 28.0942,
-    "shares": 4.4362,
+    "shares": 8.8723,
     "atr": 0.3153,
     "entry_style": "retest",
     "outcome": "win",
@@ -234,10 +234,10 @@
     "exit_price": 28.0942,
     "pnl_per_share": 2.2542,
     "r_multiple": 2.0,
-    "pnl_dollars": 10.0,
+    "pnl_dollars": 20.0,
     "target_used": "target_2R",
     "symbol": "PFE",
-    "equity_at_entry": 500.0
+    "equity_at_entry": 1000.0
   },
   {
     "type": "double_bottom",
@@ -250,7 +250,7 @@
     "target_primary": 60.4428,
     "target_1R": 57.7789,
     "target_2R": 60.4428,
-    "shares": 1.8769,
+    "shares": 3.7539,
     "atr": 0.5189,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -258,10 +258,10 @@
     "exit_price": 52.4511,
     "pnl_per_share": -2.6639,
     "r_multiple": -1.0,
-    "pnl_dollars": -5.0,
+    "pnl_dollars": -10.0,
     "target_used": "target_2R",
     "symbol": "BAC",
-    "equity_at_entry": 500.0
+    "equity_at_entry": 1000.0
   },
   {
     "type": "inverse_hns",
@@ -274,7 +274,7 @@
     "target_primary": 30.064,
     "target_1R": 28.3089,
     "target_2R": 30.064,
-    "shares": 2.8487,
+    "shares": 5.6974,
     "atr": 0.3315,
     "entry_style": "breakout",
     "outcome": "open",
@@ -282,10 +282,10 @@
     "exit_price": 25.22,
     "pnl_per_share": -1.3337,
     "r_multiple": -0.76,
-    "pnl_dollars": -3.8,
+    "pnl_dollars": -7.6,
     "target_used": "target_2R",
     "symbol": "PFE",
-    "equity_at_entry": 500.0
+    "equity_at_entry": 1000.0
   },
   {
     "type": "double_bottom",
@@ -298,7 +298,7 @@
     "target_primary": 60.6828,
     "target_1R": 57.9389,
     "target_2R": 60.6828,
-    "shares": 1.8222,
+    "shares": 3.6444,
     "atr": 0.5108,
     "entry_style": "retest",
     "outcome": "loss",
@@ -306,10 +306,10 @@
     "exit_price": 52.4511,
     "pnl_per_share": -2.7439,
     "r_multiple": -1.0,
-    "pnl_dollars": -5.0,
+    "pnl_dollars": -10.0,
     "target_used": "target_2R",
     "symbol": "BAC",
-    "equity_at_entry": 500.0
+    "equity_at_entry": 1000.0
   },
   {
     "type": "inverse_hns",
@@ -322,7 +322,7 @@
     "target_primary": 105.6587,
     "target_1R": 101.1418,
     "target_2R": 105.6587,
-    "shares": 1.107,
+    "shares": 2.214,
     "atr": 1.0068,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -330,10 +330,10 @@
     "exit_price": 92.1082,
     "pnl_per_share": -4.5168,
     "r_multiple": -1.0,
-    "pnl_dollars": -5.0,
+    "pnl_dollars": -10.0,
     "target_used": "target_2R",
     "symbol": "WFC",
-    "equity_at_entry": 500.0
+    "equity_at_entry": 1000.0
   },
   {
     "type": "inverse_hns",
@@ -346,7 +346,7 @@
     "target_primary": 106.3036,
     "target_1R": 101.5718,
     "target_2R": 106.3036,
-    "shares": 1.1835,
+    "shares": 2.367,
     "atr": 0.9835,
     "entry_style": "retest",
     "outcome": "loss",
@@ -354,10 +354,10 @@
     "exit_price": 92.1082,
     "pnl_per_share": -4.7318,
     "r_multiple": -1.0,
-    "pnl_dollars": -5.6,
+    "pnl_dollars": -11.2,
     "target_used": "target_2R",
     "symbol": "WFC",
-    "equity_at_entry": 560.0
+    "equity_at_entry": 1120.0
   },
   {
     "type": "inverse_hns",
@@ -370,7 +370,7 @@
     "target_primary": 61.2222,
     "target_1R": 59.1047,
     "target_2R": 61.2222,
-    "shares": 2.6446,
+    "shares": 5.2893,
     "atr": 0.6403,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -378,10 +378,10 @@
     "exit_price": 54.8697,
     "pnl_per_share": -2.1175,
     "r_multiple": -1.0,
-    "pnl_dollars": -5.6,
+    "pnl_dollars": -11.2,
     "target_used": "target_2R",
     "symbol": "BMY",
-    "equity_at_entry": 560.0
+    "equity_at_entry": 1120.0
   },
   {
     "type": "inverse_hns",
@@ -394,7 +394,7 @@
     "target_primary": 29.393,
     "target_1R": 27.8615,
     "target_2R": 29.393,
-    "shares": 3.4894,
+    "shares": 6.9788,
     "atr": 0.3298,
     "entry_style": "retest",
     "outcome": "open",
@@ -402,10 +402,10 @@
     "exit_price": 25.22,
     "pnl_per_share": -1.11,
     "r_multiple": -0.725,
-    "pnl_dollars": -3.87,
+    "pnl_dollars": -7.75,
     "target_used": "target_2R",
     "symbol": "PFE",
-    "equity_at_entry": 534.4
+    "equity_at_entry": 1068.8
   },
   {
     "type": "double_bottom",
@@ -418,7 +418,7 @@
     "target_primary": 56.9872,
     "target_1R": 59.1478,
     "target_2R": 62.0105,
-    "shares": 1.8471,
+    "shares": 3.6943,
     "atr": 0.6378,
     "entry_style": "breakout",
     "outcome": "win",
@@ -426,10 +426,10 @@
     "exit_price": 62.0105,
     "pnl_per_share": 5.7255,
     "r_multiple": 2.0,
-    "pnl_dollars": 10.58,
+    "pnl_dollars": 21.15,
     "target_used": "target_2R",
     "symbol": "BMY",
-    "equity_at_entry": 528.8
+    "equity_at_entry": 1057.6
   },
   {
     "type": "inverse_hns",
@@ -442,7 +442,7 @@
     "target_primary": 63.2856,
     "target_1R": 60.4803,
     "target_2R": 63.2856,
-    "shares": 1.885,
+    "shares": 3.77,
     "atr": 0.7617,
     "entry_style": "retest",
     "outcome": "loss",
@@ -450,10 +450,10 @@
     "exit_price": 54.8697,
     "pnl_per_share": -2.8053,
     "r_multiple": -1.0,
-    "pnl_dollars": -5.29,
+    "pnl_dollars": -10.58,
     "target_used": "target_2R",
     "symbol": "BMY",
-    "equity_at_entry": 528.8
+    "equity_at_entry": 1057.6
   },
   {
     "type": "double_bottom",
@@ -466,7 +466,7 @@
     "target_primary": 66.1806,
     "target_1R": 61.9278,
     "target_2R": 66.1806,
-    "shares": 1.2434,
+    "shares": 2.4868,
     "atr": 0.7617,
     "entry_style": "retest",
     "outcome": "open",
@@ -474,10 +474,10 @@
     "exit_price": 54.01,
     "pnl_per_share": -3.665,
     "r_multiple": -0.862,
-    "pnl_dollars": -4.56,
+    "pnl_dollars": -9.11,
     "target_used": "target_2R",
     "symbol": "BMY",
-    "equity_at_entry": 528.8
+    "equity_at_entry": 1057.6
   },
   {
     "type": "inverse_hns",
@@ -490,7 +490,7 @@
     "target_primary": 66.2284,
     "target_1R": 61.9517,
     "target_2R": 66.2284,
-    "shares": 1.2365,
+    "shares": 2.4729,
     "atr": 0.7617,
     "entry_style": "breakout",
     "outcome": "open",
@@ -498,10 +498,10 @@
     "exit_price": 54.01,
     "pnl_per_share": -3.665,
     "r_multiple": -0.857,
-    "pnl_dollars": -4.53,
+    "pnl_dollars": -9.06,
     "target_used": "target_2R",
     "symbol": "BMY",
-    "equity_at_entry": 528.8
+    "equity_at_entry": 1057.6
   },
   {
     "type": "inverse_hns",
@@ -514,7 +514,7 @@
     "target_primary": 74.0365,
     "target_1R": 67.1571,
     "target_2R": 74.0365,
-    "shares": 0.7687,
+    "shares": 1.5373,
     "atr": 0.8943,
     "entry_style": "retest",
     "outcome": "open",
@@ -522,10 +522,10 @@
     "exit_price": 54.01,
     "pnl_per_share": -6.2677,
     "r_multiple": -0.911,
-    "pnl_dollars": -4.82,
+    "pnl_dollars": -9.64,
     "target_used": "target_2R",
     "symbol": "BMY",
-    "equity_at_entry": 528.8
+    "equity_at_entry": 1057.6
   },
   {
     "type": "inverse_hns",
@@ -538,7 +538,7 @@
     "target_primary": 97.52,
     "target_1R": 99.2962,
     "target_2R": 104.0775,
-    "shares": 1.106,
+    "shares": 2.212,
     "atr": 1.2162,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -546,10 +546,10 @@
     "exit_price": 89.7338,
     "pnl_per_share": -4.7812,
     "r_multiple": -1.0,
-    "pnl_dollars": -5.29,
+    "pnl_dollars": -10.58,
     "target_used": "target_2R",
     "symbol": "WFC",
-    "equity_at_entry": 528.8
+    "equity_at_entry": 1057.6
   },
   {
     "type": "inverse_hns",
@@ -562,7 +562,7 @@
     "target_primary": 105.5324,
     "target_1R": 100.2662,
     "target_2R": 105.5324,
-    "shares": 1.0041,
+    "shares": 2.0083,
     "atr": 1.2514,
     "entry_style": "retest",
     "outcome": "loss",
@@ -570,10 +570,10 @@
     "exit_price": 89.7338,
     "pnl_per_share": -5.2662,
     "r_multiple": -1.0,
-    "pnl_dollars": -5.29,
+    "pnl_dollars": -10.58,
     "target_used": "target_2R",
     "symbol": "WFC",
-    "equity_at_entry": 528.8
+    "equity_at_entry": 1057.6
   },
   {
     "type": "double_bottom",
@@ -586,7 +586,7 @@
     "target_primary": 51.99,
     "target_1R": 55.2289,
     "target_2R": 58.8678,
-    "shares": 1.4823,
+    "shares": 2.9645,
     "atr": 0.8789,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -594,10 +594,10 @@
     "exit_price": 47.9511,
     "pnl_per_share": -3.6389,
     "r_multiple": -1.0,
-    "pnl_dollars": -5.39,
+    "pnl_dollars": -10.79,
     "target_used": "target_2R",
     "symbol": "SLB",
-    "equity_at_entry": 539.38
+    "equity_at_entry": 1078.75
   },
   {
     "type": "inverse_hns",
@@ -610,7 +610,7 @@
     "target_primary": 51.99,
     "target_1R": 54.0739,
     "target_2R": 56.5578,
-    "shares": 2.1289,
+    "shares": 4.2578,
     "atr": 0.8789,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -618,10 +618,10 @@
     "exit_price": 49.1061,
     "pnl_per_share": -2.4839,
     "r_multiple": -1.0,
-    "pnl_dollars": -5.29,
+    "pnl_dollars": -10.58,
     "target_used": "target_2R",
     "symbol": "SLB",
-    "equity_at_entry": 528.8
+    "equity_at_entry": 1057.59
   },
   {
     "type": "double_bottom",
@@ -634,7 +634,7 @@
     "target_primary": 58.8978,
     "target_1R": 55.2489,
     "target_2R": 58.8978,
-    "shares": 1.4492,
+    "shares": 2.8984,
     "atr": 0.8753,
     "entry_style": "retest",
     "outcome": "loss",
@@ -642,10 +642,10 @@
     "exit_price": 47.9511,
     "pnl_per_share": -3.6489,
     "r_multiple": -1.0,
-    "pnl_dollars": -5.29,
+    "pnl_dollars": -10.58,
     "target_used": "target_2R",
     "symbol": "SLB",
-    "equity_at_entry": 528.8
+    "equity_at_entry": 1057.59
   },
   {
     "type": "inverse_hns",
@@ -658,7 +658,7 @@
     "target_primary": 56.5878,
     "target_1R": 54.0939,
     "target_2R": 56.5878,
-    "shares": 2.1204,
+    "shares": 4.2407,
     "atr": 0.8753,
     "entry_style": "retest",
     "outcome": "loss",
@@ -666,10 +666,10 @@
     "exit_price": 49.1061,
     "pnl_per_share": -2.4939,
     "r_multiple": -1.0,
-    "pnl_dollars": -5.29,
+    "pnl_dollars": -10.58,
     "target_used": "target_2R",
     "symbol": "SLB",
-    "equity_at_entry": 528.8
+    "equity_at_entry": 1057.59
   },
   {
     "type": "double_bottom",
@@ -682,7 +682,7 @@
     "target_primary": 116.434,
     "target_1R": 107.3311,
     "target_2R": 120.8623,
-    "shares": 0.3908,
+    "shares": 0.7816,
     "atr": 2.3311,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -690,10 +690,10 @@
     "exit_price": 80.2689,
     "pnl_per_share": -13.5311,
     "r_multiple": -1.0,
-    "pnl_dollars": -5.29,
+    "pnl_dollars": -10.58,
     "target_used": "target_2R",
     "symbol": "NFLX",
-    "equity_at_entry": 528.8
+    "equity_at_entry": 1057.59
   },
   {
     "type": "inverse_hns",
@@ -706,7 +706,7 @@
     "target_primary": 116.434,
     "target_1R": 105.8911,
     "target_2R": 117.9823,
-    "shares": 0.4373,
+    "shares": 0.8747,
     "atr": 2.3311,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -714,10 +714,10 @@
     "exit_price": 81.7089,
     "pnl_per_share": -12.0911,
     "r_multiple": -1.0,
-    "pnl_dollars": -5.29,
+    "pnl_dollars": -10.58,
     "target_used": "target_2R",
     "symbol": "NFLX",
-    "equity_at_entry": 528.8
+    "equity_at_entry": 1057.59
   },
   {
     "type": "double_bottom",
@@ -730,7 +730,7 @@
     "target_primary": 52.325,
     "target_1R": 55.981,
     "target_2R": 59.642,
-    "shares": 1.4444,
+    "shares": 2.8888,
     "atr": 1.326,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -738,10 +738,10 @@
     "exit_price": 48.659,
     "pnl_per_share": -3.661,
     "r_multiple": -1.0,
-    "pnl_dollars": -5.29,
+    "pnl_dollars": -10.58,
     "target_used": "target_2R",
     "symbol": "SLB",
-    "equity_at_entry": 528.8
+    "equity_at_entry": 1057.59
   },
   {
     "type": "inverse_hns",
@@ -754,7 +754,7 @@
     "target_primary": 52.325,
     "target_1R": 55.156,
     "target_2R": 57.992,
-    "shares": 1.772,
+    "shares": 3.5439,
     "atr": 1.326,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -762,10 +762,10 @@
     "exit_price": 49.484,
     "pnl_per_share": -2.836,
     "r_multiple": -1.0,
-    "pnl_dollars": -5.03,
+    "pnl_dollars": -10.05,
     "target_used": "target_2R",
     "symbol": "SLB",
-    "equity_at_entry": 502.54
+    "equity_at_entry": 1005.06
   },
   {
     "type": "double_bottom",
@@ -778,7 +778,7 @@
     "target_primary": 57.4,
     "target_1R": 52.6617,
     "target_2R": 56.0584,
-    "shares": 1.4795,
+    "shares": 2.9589,
     "atr": 0.9017,
     "entry_style": "breakout",
     "outcome": "win",
@@ -786,10 +786,10 @@
     "exit_price": 56.0584,
     "pnl_per_share": 6.7934,
     "r_multiple": 2.0,
-    "pnl_dollars": 10.05,
+    "pnl_dollars": 20.1,
     "target_used": "target_2R",
     "symbol": "BAC",
-    "equity_at_entry": 502.54
+    "equity_at_entry": 1005.06
   },
   {
     "type": "inverse_hns",
@@ -802,7 +802,7 @@
     "target_primary": 57.4,
     "target_1R": 52.5917,
     "target_2R": 55.9184,
-    "shares": 1.5407,
+    "shares": 3.0813,
     "atr": 0.9017,
     "entry_style": "breakout",
     "outcome": "win",
@@ -810,10 +810,10 @@
     "exit_price": 55.9184,
     "pnl_per_share": 6.6534,
     "r_multiple": 2.0,
-    "pnl_dollars": 10.25,
+    "pnl_dollars": 20.5,
     "target_used": "target_2R",
     "symbol": "BAC",
-    "equity_at_entry": 512.54
+    "equity_at_entry": 1025.06
   },
   {
     "type": "double_bottom",
@@ -826,7 +826,7 @@
     "target_primary": 56.3734,
     "target_1R": 52.8717,
     "target_2R": 56.3734,
-    "shares": 1.4637,
+    "shares": 2.9273,
     "atr": 0.8712,
     "entry_style": "retest",
     "outcome": "win",
@@ -834,10 +834,10 @@
     "exit_price": 56.3734,
     "pnl_per_share": 7.0034,
     "r_multiple": 2.0,
-    "pnl_dollars": 10.25,
+    "pnl_dollars": 20.5,
     "target_used": "target_2R",
     "symbol": "BAC",
-    "equity_at_entry": 512.54
+    "equity_at_entry": 1025.06
   },
   {
     "type": "inverse_hns",
@@ -850,7 +850,7 @@
     "target_primary": 56.2334,
     "target_1R": 52.8017,
     "target_2R": 56.2334,
-    "shares": 1.4789,
+    "shares": 2.9577,
     "atr": 0.8712,
     "entry_style": "retest",
     "outcome": "win",
@@ -858,10 +858,10 @@
     "exit_price": 56.2334,
     "pnl_per_share": 6.8634,
     "r_multiple": 2.0,
-    "pnl_dollars": 10.15,
+    "pnl_dollars": 20.3,
     "target_used": "target_2R",
     "symbol": "BAC",
-    "equity_at_entry": 507.51
+    "equity_at_entry": 1015.01
   },
   {
     "type": "inverse_hns",
@@ -874,7 +874,7 @@
     "target_primary": 97.52,
     "target_1R": 94.5124,
     "target_2R": 104.3648,
-    "shares": 0.5151,
+    "shares": 1.0302,
     "atr": 1.6824,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -882,10 +882,10 @@
     "exit_price": 74.8076,
     "pnl_per_share": -9.8524,
     "r_multiple": -1.0,
-    "pnl_dollars": -5.08,
+    "pnl_dollars": -10.15,
     "target_used": "target_2R",
     "symbol": "WFC",
-    "equity_at_entry": 507.51
+    "equity_at_entry": 1015.01
   },
   {
     "type": "inverse_hns",
@@ -898,7 +898,7 @@
     "target_primary": 63.1846,
     "target_1R": 58.7848,
     "target_2R": 63.1846,
-    "shares": 1.1535,
+    "shares": 2.3069,
     "atr": 1.2448,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -906,9 +906,9 @@
     "exit_price": 49.9852,
     "pnl_per_share": -4.3998,
     "r_multiple": -1.0,
-    "pnl_dollars": -5.08,
+    "pnl_dollars": -10.15,
     "target_used": "target_2R",
     "symbol": "SLB",
-    "equity_at_entry": 507.51
+    "equity_at_entry": 1015.01
   }
 ]

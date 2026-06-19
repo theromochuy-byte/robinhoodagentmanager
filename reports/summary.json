@@ -7,7 +7,7 @@
     "avg_R": 0.125,
     "expectancy_R": 0.125,
     "total_R": 4.0,
-    "total_pnl_dollars": 16.89,
+    "total_pnl_dollars": 33.79,
     "open_trades": 6
   },
   "by_pattern": {
@@ -19,7 +19,7 @@
       "avg_R": 0.385,
       "expectancy_R": 0.385,
       "total_R": 5.0,
-      "total_pnl_dollars": 24.62,
+      "total_pnl_dollars": 49.22,
       "open_trades": 2
     },
     "inverse_hns": {
@@ -30,7 +30,7 @@
       "avg_R": -0.053,
       "expectancy_R": -0.053,
       "total_R": -1.0,
-      "total_pnl_dollars": -7.73,
+      "total_pnl_dollars": -15.43,
       "open_trades": 4
     }
   },
@@ -43,7 +43,7 @@
       "avg_R": 0.05,
       "expectancy_R": 0.05,
       "total_R": 1.0,
-      "total_pnl_dollars": 3.25,
+      "total_pnl_dollars": 6.51,
       "open_trades": 3
     },
     "retest": {
@@ -54,14 +54,14 @@
       "avg_R": 0.25,
       "expectancy_R": 0.25,
       "total_R": 3.0,
-      "total_pnl_dollars": 13.64,
+      "total_pnl_dollars": 27.28,
       "open_trades": 3
     }
   },
   "equity_growth": {
-    "starting_equity": 500.0,
-    "final_equity": 516.89,
-    "gain_dollars": 16.89,
+    "starting_equity": 1000.0,
+    "final_equity": 1033.79,
+    "gain_dollars": 33.79,
     "gain_pct": 3.38
   },
   "symbols": [
