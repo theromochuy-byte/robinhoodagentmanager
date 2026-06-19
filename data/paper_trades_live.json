@@ -70,5 +70,23 @@
     "entry": 58.1,
     "entry_time": "2026-06-18T16:00:00Z",
     "status": "entered"
+  },
+  {
+    "symbol": "DG",
+    "type": "double_bottom",
+    "neckline": 111.37,
+    "stop": 98.9216,
+    "target_2R": 145.1499,
+    "risk_per_share": 15.4094,
+    "shares": 1.9469,
+    "break_time": "2026-06-11T16:00:00Z",
+    "bars_since_break": 5,
+    "in_pullback": true,
+    "last_close": 113.51,
+    "last_bar_time": "2026-06-18T16:00:00Z",
+    "scanned_at": "2026-06-19T13:34:42.025672+00:00",
+    "entry": 113.51,
+    "entry_time": "2026-06-18T16:00:00Z",
+    "status": "entered"
   }
 ]

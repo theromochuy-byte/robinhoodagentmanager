@@ -2,6 +2,38 @@
   "scan_date": "2026-06-19",
   "watching": [
     {
+      "symbol": "EMR",
+      "type": "double_bottom",
+      "neckline": 149.41,
+      "stop": 131.8853,
+      "target_2R": 188.2693,
+      "risk_per_share": 18.7947,
+      "shares": 1.5962,
+      "break_time": "2026-06-18T16:00:00Z",
+      "bars_since_break": 0,
+      "in_pullback": false,
+      "last_close": 150.68,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:42.161365+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "EMR",
+      "type": "inverse_hns",
+      "neckline": 149.41,
+      "stop": 133.0753,
+      "target_2R": 185.8893,
+      "risk_per_share": 17.6047,
+      "shares": 1.7041,
+      "break_time": "2026-06-18T16:00:00Z",
+      "bars_since_break": 0,
+      "in_pullback": false,
+      "last_close": 150.68,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:42.162771+00:00",
+      "status": "watching"
+    },
+    {
       "symbol": "JPM",
       "type": "inverse_hns",
       "neckline": 331.5,
@@ -14,7 +46,7 @@
       "in_pullback": true,
       "last_close": 325.24,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:17:57.455058+00:00",
+      "scanned_at": "2026-06-19T13:34:28.510138+00:00",
       "status": "watching"
     },
     {
@@ -30,7 +62,71 @@
       "in_pullback": false,
       "last_close": 985.23,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:17:59.016359+00:00",
+      "scanned_at": "2026-06-19T13:34:30.149359+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "VRTX",
+      "type": "double_bottom",
+      "neckline": 455.32,
+      "stop": 422.6056,
+      "target_2R": 532.2387,
+      "risk_per_share": 36.5444,
+      "shares": 0.8209,
+      "break_time": "2026-06-17T16:00:00Z",
+      "bars_since_break": 1,
+      "in_pullback": true,
+      "last_close": 451.62,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:41.565740+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "VRTX",
+      "type": "inverse_hns",
+      "neckline": 455.32,
+      "stop": 425.2556,
+      "target_2R": 526.9387,
+      "risk_per_share": 33.8944,
+      "shares": 0.8851,
+      "break_time": "2026-06-17T16:00:00Z",
+      "bars_since_break": 1,
+      "in_pullback": true,
+      "last_close": 451.62,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:41.567427+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "MRNA",
+      "type": "double_bottom",
+      "neckline": 55.975,
+      "stop": 40.8252,
+      "target_2R": 103.6897,
+      "risk_per_share": 20.9548,
+      "shares": 1.4317,
+      "break_time": "2026-06-17T16:00:00Z",
+      "bars_since_break": 1,
+      "in_pullback": false,
+      "last_close": 64.13,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:41.646796+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "MRNA",
+      "type": "inverse_hns",
+      "neckline": 56.06,
+      "stop": 42.7702,
+      "target_2R": 99.7997,
+      "risk_per_share": 19.0098,
+      "shares": 1.5781,
+      "break_time": "2026-06-17T16:00:00Z",
+      "bars_since_break": 1,
+      "in_pullback": false,
+      "last_close": 64.13,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:41.648501+00:00",
       "status": "watching"
     },
     {
@@ -46,7 +142,7 @@
       "in_pullback": true,
       "last_close": 325.24,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:17:57.452209+00:00",
+      "scanned_at": "2026-06-19T13:34:28.507256+00:00",
       "status": "watching"
     },
     {
@@ -62,7 +158,7 @@
       "in_pullback": true,
       "last_close": 325.24,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:17:57.453635+00:00",
+      "scanned_at": "2026-06-19T13:34:28.508725+00:00",
       "status": "watching"
     },
     {
@@ -78,7 +174,7 @@
       "in_pullback": false,
       "last_close": 357.67,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:17:59.169199+00:00",
+      "scanned_at": "2026-06-19T13:34:30.309358+00:00",
       "status": "watching"
     },
     {
@@ -94,7 +190,7 @@
       "in_pullback": true,
       "last_close": 338.165,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:00.371096+00:00",
+      "scanned_at": "2026-06-19T13:34:31.226110+00:00",
       "status": "watching"
     },
     {
@@ -110,7 +206,55 @@
       "in_pullback": true,
       "last_close": 338.165,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:00.372741+00:00",
+      "scanned_at": "2026-06-19T13:34:31.227776+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "SPGI",
+      "type": "double_bottom",
+      "neckline": 430.91,
+      "stop": 401.2416,
+      "target_2R": 497.2369,
+      "risk_per_share": 31.9984,
+      "shares": 0.9375,
+      "break_time": "2026-06-16T16:00:00Z",
+      "bars_since_break": 2,
+      "in_pullback": true,
+      "last_close": 410.86,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:41.762483+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "SPGI",
+      "type": "inverse_hns",
+      "neckline": 431.1,
+      "stop": 403.196,
+      "target_2R": 493.3281,
+      "risk_per_share": 30.044,
+      "shares": 0.9985,
+      "break_time": "2026-06-16T16:00:00Z",
+      "bars_since_break": 2,
+      "in_pullback": true,
+      "last_close": 410.86,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:41.764168+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "MCO",
+      "type": "inverse_hns",
+      "neckline": 468.12,
+      "stop": 429.234,
+      "target_2R": 547.3171,
+      "risk_per_share": 39.361,
+      "shares": 0.7622,
+      "break_time": "2026-06-16T16:00:00Z",
+      "bars_since_break": 2,
+      "in_pullback": true,
+      "last_close": 450.87,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:41.783728+00:00",
       "status": "watching"
     },
     {
@@ -126,7 +270,7 @@
       "in_pullback": false,
       "last_close": 357.67,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:17:59.167885+00:00",
+      "scanned_at": "2026-06-19T13:34:30.307909+00:00",
       "status": "watching"
     },
     {
@@ -142,7 +286,7 @@
       "in_pullback": false,
       "last_close": 201.6,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:02.630078+00:00",
+      "scanned_at": "2026-06-19T13:34:33.200461+00:00",
       "status": "watching"
     },
     {
@@ -158,7 +302,7 @@
       "in_pullback": false,
       "last_close": 269.06,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:09.932444+00:00",
+      "scanned_at": "2026-06-19T13:34:40.454177+00:00",
       "status": "watching"
     },
     {
@@ -174,7 +318,71 @@
       "in_pullback": false,
       "last_close": 269.06,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:09.934197+00:00",
+      "scanned_at": "2026-06-19T13:34:40.455790+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "MRNA",
+      "type": "inverse_hns",
+      "neckline": 51.9,
+      "stop": 43.0937,
+      "target_2R": 70.2626,
+      "risk_per_share": 9.0563,
+      "shares": 3.3126,
+      "break_time": "2026-06-15T16:00:00Z",
+      "bars_since_break": 3,
+      "in_pullback": false,
+      "last_close": 64.13,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:41.645248+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "ITW",
+      "type": "inverse_hns",
+      "neckline": 262.1,
+      "stop": 246.4442,
+      "target_2R": 294.8216,
+      "risk_per_share": 16.1258,
+      "shares": 1.8604,
+      "break_time": "2026-06-15T16:00:00Z",
+      "bars_since_break": 3,
+      "in_pullback": true,
+      "last_close": 263.98,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:42.198403+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "PH",
+      "type": "double_bottom",
+      "neckline": 907.46,
+      "stop": 841.4377,
+      "target_2R": 1074.5296,
+      "risk_per_share": 77.6973,
+      "shares": 0.3861,
+      "break_time": "2026-06-15T16:00:00Z",
+      "bars_since_break": 3,
+      "in_pullback": false,
+      "last_close": 953.47,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:42.217499+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "PH",
+      "type": "inverse_hns",
+      "neckline": 907.46,
+      "stop": 856.6877,
+      "target_2R": 1044.0296,
+      "risk_per_share": 62.4473,
+      "shares": 0.4804,
+      "break_time": "2026-06-15T16:00:00Z",
+      "bars_since_break": 3,
+      "in_pullback": false,
+      "last_close": 953.47,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:42.219005+00:00",
       "status": "watching"
     },
     {
@@ -190,7 +398,7 @@
       "in_pullback": false,
       "last_close": 325.24,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:17:57.449630+00:00",
+      "scanned_at": "2026-06-19T13:34:28.505082+00:00",
       "status": "watching"
     },
     {
@@ -206,7 +414,7 @@
       "in_pullback": true,
       "last_close": 130.725,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:17:58.721120+00:00",
+      "scanned_at": "2026-06-19T13:34:29.832879+00:00",
       "status": "watching"
     },
     {
@@ -222,7 +430,7 @@
       "in_pullback": true,
       "last_close": 130.725,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:17:58.722420+00:00",
+      "scanned_at": "2026-06-19T13:34:29.834219+00:00",
       "status": "watching"
     },
     {
@@ -238,7 +446,7 @@
       "in_pullback": true,
       "last_close": 231.97,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:02.528903+00:00",
+      "scanned_at": "2026-06-19T13:34:33.084156+00:00",
       "status": "watching"
     },
     {
@@ -254,7 +462,7 @@
       "in_pullback": true,
       "last_close": 231.97,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:02.530226+00:00",
+      "scanned_at": "2026-06-19T13:34:33.085872+00:00",
       "status": "watching"
     },
     {
@@ -270,7 +478,7 @@
       "in_pullback": true,
       "last_close": 48.319,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:02.716300+00:00",
+      "scanned_at": "2026-06-19T13:34:33.292069+00:00",
       "status": "watching"
     },
     {
@@ -286,7 +494,7 @@
       "in_pullback": true,
       "last_close": 48.319,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:02.717809+00:00",
+      "scanned_at": "2026-06-19T13:34:33.293612+00:00",
       "status": "watching"
     },
     {
@@ -302,7 +510,7 @@
       "in_pullback": true,
       "last_close": 140.45,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:05.929504+00:00",
+      "scanned_at": "2026-06-19T13:34:36.551736+00:00",
       "status": "watching"
     },
     {
@@ -318,7 +526,7 @@
       "in_pullback": true,
       "last_close": 140.45,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:05.931095+00:00",
+      "scanned_at": "2026-06-19T13:34:36.553256+00:00",
       "status": "watching"
     },
     {
@@ -334,7 +542,7 @@
       "in_pullback": true,
       "last_close": 512.1,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:09.800100+00:00",
+      "scanned_at": "2026-06-19T13:34:40.327516+00:00",
       "status": "watching"
     },
     {
@@ -350,7 +558,7 @@
       "in_pullback": true,
       "last_close": 512.1,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:09.801545+00:00",
+      "scanned_at": "2026-06-19T13:34:40.328937+00:00",
       "status": "watching"
     },
     {
@@ -366,7 +574,7 @@
       "in_pullback": false,
       "last_close": 56.15,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:17:57.649324+00:00",
+      "scanned_at": "2026-06-19T13:34:28.709633+00:00",
       "status": "watching"
     },
     {
@@ -382,7 +590,7 @@
       "in_pullback": false,
       "last_close": 56.15,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:17:57.650934+00:00",
+      "scanned_at": "2026-06-19T13:34:28.711366+00:00",
       "status": "watching"
     },
     {
@@ -398,7 +606,7 @@
       "in_pullback": true,
       "last_close": 130.725,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:17:58.719602+00:00",
+      "scanned_at": "2026-06-19T13:34:29.831245+00:00",
       "status": "watching"
     },
     {
@@ -414,7 +622,7 @@
       "in_pullback": true,
       "last_close": 231.97,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:02.527557+00:00",
+      "scanned_at": "2026-06-19T13:34:33.082633+00:00",
       "status": "watching"
     },
     {
@@ -430,7 +638,7 @@
       "in_pullback": true,
       "last_close": 510.79,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:05.145895+00:00",
+      "scanned_at": "2026-06-19T13:34:35.707733+00:00",
       "status": "watching"
     },
     {
@@ -446,7 +654,7 @@
       "in_pullback": true,
       "last_close": 349.86,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:05.367633+00:00",
+      "scanned_at": "2026-06-19T13:34:35.943868+00:00",
       "status": "watching"
     },
     {
@@ -462,7 +670,7 @@
       "in_pullback": true,
       "last_close": 349.86,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:05.369241+00:00",
+      "scanned_at": "2026-06-19T13:34:35.945674+00:00",
       "status": "watching"
     },
     {
@@ -478,7 +686,7 @@
       "in_pullback": false,
       "last_close": 106.53,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:10.974404+00:00",
+      "scanned_at": "2026-06-19T13:34:41.419966+00:00",
       "status": "watching"
     },
     {
@@ -494,7 +702,55 @@
       "in_pullback": false,
       "last_close": 106.53,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:10.975903+00:00",
+      "scanned_at": "2026-06-19T13:34:41.421416+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "CAH",
+      "type": "inverse_hns",
+      "neckline": 217.77,
+      "stop": 190.0695,
+      "target_2R": 283.686,
+      "risk_per_share": 31.2055,
+      "shares": 0.9614,
+      "break_time": "2026-06-11T16:00:00Z",
+      "bars_since_break": 5,
+      "in_pullback": false,
+      "last_close": 221.825,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:41.741237+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "ROST",
+      "type": "double_bottom",
+      "neckline": 235.35,
+      "stop": 219.7046,
+      "target_2R": 277.6507,
+      "risk_per_share": 19.3154,
+      "shares": 1.5532,
+      "break_time": "2026-06-11T16:00:00Z",
+      "bars_since_break": 5,
+      "in_pullback": true,
+      "last_close": 232.8,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:41.939603+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "ROST",
+      "type": "inverse_hns",
+      "neckline": 235.35,
+      "stop": 221.1796,
+      "target_2R": 274.7007,
+      "risk_per_share": 17.8404,
+      "shares": 1.6816,
+      "break_time": "2026-06-11T16:00:00Z",
+      "bars_since_break": 5,
+      "in_pullback": true,
+      "last_close": 232.8,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:41.941039+00:00",
       "status": "watching"
     },
     {
@@ -510,7 +766,7 @@
       "in_pullback": true,
       "last_close": 79.37,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:09.249807+00:00",
+      "scanned_at": "2026-06-19T13:34:39.765998+00:00",
       "status": "watching"
     },
     {
@@ -526,7 +782,7 @@
       "in_pullback": true,
       "last_close": 79.37,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:09.251259+00:00",
+      "scanned_at": "2026-06-19T13:34:39.767522+00:00",
       "status": "watching"
     },
     {
@@ -542,7 +798,39 @@
       "in_pullback": false,
       "last_close": 106.53,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:10.972348+00:00",
+      "scanned_at": "2026-06-19T13:34:41.417616+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "TJX",
+      "type": "double_bottom",
+      "neckline": 165.82,
+      "stop": 151.7804,
+      "target_2R": 199.6292,
+      "risk_per_share": 15.9496,
+      "shares": 1.8809,
+      "break_time": "2026-06-10T16:00:00Z",
+      "bars_since_break": 6,
+      "in_pullback": true,
+      "last_close": 163.82,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:41.918202+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "TJX",
+      "type": "inverse_hns",
+      "neckline": 165.82,
+      "stop": 149.7504,
+      "target_2R": 203.6892,
+      "risk_per_share": 17.9796,
+      "shares": 1.6686,
+      "break_time": "2026-06-10T16:00:00Z",
+      "bars_since_break": 6,
+      "in_pullback": true,
+      "last_close": 163.82,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:41.919869+00:00",
       "status": "watching"
     },
     {
@@ -558,7 +846,7 @@
       "in_pullback": true,
       "last_close": 228.4,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:17:57.986191+00:00",
+      "scanned_at": "2026-06-19T13:34:29.079332+00:00",
       "status": "watching"
     },
     {
@@ -574,7 +862,7 @@
       "in_pullback": true,
       "last_close": 228.4,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:17:57.987999+00:00",
+      "scanned_at": "2026-06-19T13:34:29.081264+00:00",
       "status": "watching"
     },
     {
@@ -590,7 +878,7 @@
       "in_pullback": true,
       "last_close": 231.97,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:02.526048+00:00",
+      "scanned_at": "2026-06-19T13:34:33.080960+00:00",
       "status": "watching"
     },
     {
@@ -606,7 +894,7 @@
       "in_pullback": true,
       "last_close": 160.63,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:05.016517+00:00",
+      "scanned_at": "2026-06-19T13:34:35.562106+00:00",
       "status": "watching"
     },
     {
@@ -622,7 +910,71 @@
       "in_pullback": true,
       "last_close": 85.58,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:08.318692+00:00",
+      "scanned_at": "2026-06-19T13:34:38.887803+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "CAH",
+      "type": "inverse_hns",
+      "neckline": 206.445,
+      "stop": 190.3997,
+      "target_2R": 257.5696,
+      "risk_per_share": 22.39,
+      "shares": 1.3399,
+      "break_time": "2026-06-09T16:00:00Z",
+      "bars_since_break": 7,
+      "in_pullback": false,
+      "last_close": 221.825,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:41.739821+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "TJX",
+      "type": "inverse_hns",
+      "neckline": 161.4,
+      "stop": 149.7831,
+      "target_2R": 194.8638,
+      "risk_per_share": 15.0269,
+      "shares": 1.9964,
+      "break_time": "2026-06-09T16:00:00Z",
+      "bars_since_break": 7,
+      "in_pullback": false,
+      "last_close": 163.82,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:41.916674+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "PSA",
+      "type": "double_bottom",
+      "neckline": 313.12,
+      "stop": 286.2533,
+      "target_2R": 396.0434,
+      "risk_per_share": 36.5967,
+      "shares": 0.8197,
+      "break_time": "2026-06-09T16:00:00Z",
+      "bars_since_break": 7,
+      "in_pullback": true,
+      "last_close": 317.98,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:42.302786+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "PSA",
+      "type": "inverse_hns",
+      "neckline": 313.12,
+      "stop": 289.9533,
+      "target_2R": 388.6434,
+      "risk_per_share": 32.8967,
+      "shares": 0.9119,
+      "break_time": "2026-06-09T16:00:00Z",
+      "bars_since_break": 7,
+      "in_pullback": true,
+      "last_close": 317.98,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:42.304322+00:00",
       "status": "watching"
     },
     {
@@ -638,7 +990,7 @@
       "in_pullback": true,
       "last_close": 1098.13,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:00.555300+00:00",
+      "scanned_at": "2026-06-19T13:34:31.400049+00:00",
       "status": "watching"
     },
     {
@@ -654,7 +1006,7 @@
       "in_pullback": true,
       "last_close": 72.44,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:08.964610+00:00",
+      "scanned_at": "2026-06-19T13:34:39.533293+00:00",
       "status": "watching"
     },
     {
@@ -670,7 +1022,7 @@
       "in_pullback": true,
       "last_close": 317.7,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:07.867317+00:00",
+      "scanned_at": "2026-06-19T13:34:38.448562+00:00",
       "status": "watching"
     },
     {
@@ -686,7 +1038,7 @@
       "in_pullback": true,
       "last_close": 88.03,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:08.614382+00:00",
+      "scanned_at": "2026-06-19T13:34:39.192156+00:00",
       "status": "watching"
     },
     {
@@ -702,7 +1054,7 @@
       "in_pullback": true,
       "last_close": 211.341,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:10.287085+00:00",
+      "scanned_at": "2026-06-19T13:34:40.754345+00:00",
       "status": "watching"
     },
     {
@@ -718,7 +1070,7 @@
       "in_pullback": true,
       "last_close": 211.341,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:10.288658+00:00",
+      "scanned_at": "2026-06-19T13:34:40.755850+00:00",
       "status": "watching"
     },
     {
@@ -734,7 +1086,7 @@
       "in_pullback": true,
       "last_close": 106.53,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:10.970560+00:00",
+      "scanned_at": "2026-06-19T13:34:41.415800+00:00",
       "status": "watching"
     },
     {
@@ -750,7 +1102,7 @@
       "in_pullback": true,
       "last_close": 325.24,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:17:57.447944+00:00",
+      "scanned_at": "2026-06-19T13:34:28.503168+00:00",
       "status": "watching"
     },
     {
@@ -766,7 +1118,7 @@
       "in_pullback": true,
       "last_close": 56.15,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:17:57.647598+00:00",
+      "scanned_at": "2026-06-19T13:34:28.707661+00:00",
       "status": "watching"
     },
     {
@@ -782,7 +1134,7 @@
       "in_pullback": true,
       "last_close": 177.195,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:00.715220+00:00",
+      "scanned_at": "2026-06-19T13:34:31.544508+00:00",
       "status": "watching"
     },
     {
@@ -798,7 +1150,7 @@
       "in_pullback": true,
       "last_close": 177.195,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:00.716902+00:00",
+      "scanned_at": "2026-06-19T13:34:31.546006+00:00",
       "status": "watching"
     },
     {
@@ -814,7 +1166,7 @@
       "in_pullback": true,
       "last_close": 337.46,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:00.864356+00:00",
+      "scanned_at": "2026-06-19T13:34:31.698999+00:00",
       "status": "watching"
     },
     {
@@ -830,7 +1182,7 @@
       "in_pullback": false,
       "last_close": 231.97,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:02.523888+00:00",
+      "scanned_at": "2026-06-19T13:34:33.079151+00:00",
       "status": "watching"
     },
     {
@@ -846,7 +1198,7 @@
       "in_pullback": true,
       "last_close": 175.92,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:05.854232+00:00",
+      "scanned_at": "2026-06-19T13:34:36.476643+00:00",
       "status": "watching"
     },
     {
@@ -862,7 +1214,7 @@
       "in_pullback": true,
       "last_close": 175.92,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:05.855733+00:00",
+      "scanned_at": "2026-06-19T13:34:36.478030+00:00",
       "status": "watching"
     },
     {
@@ -878,7 +1230,55 @@
       "in_pullback": true,
       "last_close": 177.36,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:10.650801+00:00",
+      "scanned_at": "2026-06-19T13:34:41.095067+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "BDX",
+      "type": "double_bottom",
+      "neckline": 149.3,
+      "stop": 140.0049,
+      "target_2R": 168.6102,
+      "risk_per_share": 9.5351,
+      "shares": 3.1463,
+      "break_time": "2026-06-04T16:00:00Z",
+      "bars_since_break": 10,
+      "in_pullback": true,
+      "last_close": 143.97,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:41.703576+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "UPS",
+      "type": "double_bottom",
+      "neckline": 109.11,
+      "stop": 93.9604,
+      "target_2R": 142.7092,
+      "risk_per_share": 16.2496,
+      "shares": 1.8462,
+      "break_time": "2026-06-04T16:00:00Z",
+      "bars_since_break": 10,
+      "in_pullback": true,
+      "last_close": 104.99,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:42.109868+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "UPS",
+      "type": "inverse_hns",
+      "neckline": 109.11,
+      "stop": 95.8404,
+      "target_2R": 138.9492,
+      "risk_per_share": 14.3696,
+      "shares": 2.0877,
+      "break_time": "2026-06-04T16:00:00Z",
+      "bars_since_break": 10,
+      "in_pullback": true,
+      "last_close": 104.99,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:42.111586+00:00",
       "status": "watching"
     },
     {
@@ -894,7 +1294,7 @@
       "in_pullback": true,
       "last_close": 985.23,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:17:59.014924+00:00",
+      "scanned_at": "2026-06-19T13:34:30.147950+00:00",
       "status": "watching"
     },
     {
@@ -910,7 +1310,7 @@
       "in_pullback": true,
       "last_close": 236.255,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:04.770878+00:00",
+      "scanned_at": "2026-06-19T13:34:35.312110+00:00",
       "status": "watching"
     },
     {
@@ -926,7 +1326,23 @@
       "in_pullback": true,
       "last_close": 236.255,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:04.772519+00:00",
+      "scanned_at": "2026-06-19T13:34:35.313681+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "EQIX",
+      "type": "double_bottom",
+      "neckline": 1087.435,
+      "stop": 1028.7239,
+      "target_2R": 1226.7724,
+      "risk_per_share": 66.0162,
+      "shares": 0.4544,
+      "break_time": "2026-06-03T16:00:00Z",
+      "bars_since_break": 11,
+      "in_pullback": true,
+      "last_close": 1091.22,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:42.268819+00:00",
       "status": "watching"
     }
   ],
@@ -944,7 +1360,7 @@
       "in_pullback": true,
       "last_close": 185.68,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:17:59.240687+00:00",
+      "scanned_at": "2026-06-19T13:34:30.389154+00:00",
       "entry": 185.68,
       "entry_time": "2026-06-18T16:00:00Z",
       "status": "entered"
@@ -962,7 +1378,7 @@
       "in_pullback": true,
       "last_close": 185.68,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:17:59.242203+00:00",
+      "scanned_at": "2026-06-19T13:34:30.391008+00:00",
       "entry": 185.68,
       "entry_time": "2026-06-18T16:00:00Z",
       "status": "entered"
@@ -980,7 +1396,7 @@
       "in_pullback": true,
       "last_close": 58.1,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:02.445690+00:00",
+      "scanned_at": "2026-06-19T13:34:32.998723+00:00",
       "entry": 58.1,
       "entry_time": "2026-06-18T16:00:00Z",
       "status": "entered"
@@ -998,12 +1414,30 @@
       "in_pullback": true,
       "last_close": 58.1,
       "last_bar_time": "2026-06-18T16:00:00Z",
-      "scanned_at": "2026-06-19T13:18:02.447197+00:00",
+      "scanned_at": "2026-06-19T13:34:33.000352+00:00",
       "entry": 58.1,
+      "entry_time": "2026-06-18T16:00:00Z",
+      "status": "entered"
+    },
+    {
+      "symbol": "DG",
+      "type": "double_bottom",
+      "neckline": 111.37,
+      "stop": 98.9216,
+      "target_2R": 145.1499,
+      "risk_per_share": 15.4094,
+      "shares": 1.9469,
+      "break_time": "2026-06-11T16:00:00Z",
+      "bars_since_break": 5,
+      "in_pullback": true,
+      "last_close": 113.51,
+      "last_bar_time": "2026-06-18T16:00:00Z",
+      "scanned_at": "2026-06-19T13:34:42.025672+00:00",
+      "entry": 113.51,
       "entry_time": "2026-06-18T16:00:00Z",
       "status": "entered"
     }
   ],
-  "new_entries": 0,
-  "total_open": 4
+  "new_entries": 1,
+  "total_open": 5
 }
