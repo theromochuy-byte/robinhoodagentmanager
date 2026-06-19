@@ -7,7 +7,7 @@
     "avg_R": 0.332,
     "expectancy_R": 0.332,
     "total_R": 80.0,
-    "total_pnl_dollars": 8000.0,
+    "total_pnl_dollars": 160.01,
     "open_trades": 51
   },
   "by_pattern": {
@@ -19,7 +19,7 @@
       "avg_R": 0.407,
       "expectancy_R": 0.407,
       "total_R": 46.0,
-      "total_pnl_dollars": 4600.0,
+      "total_pnl_dollars": 92.01,
       "open_trades": 25
     },
     "inverse_hns": {
@@ -30,7 +30,7 @@
       "avg_R": 0.266,
       "expectancy_R": 0.266,
       "total_R": 34.0,
-      "total_pnl_dollars": 3400.0,
+      "total_pnl_dollars": 68.0,
       "open_trades": 26
     }
   },
@@ -43,7 +43,7 @@
       "avg_R": 0.257,
       "expectancy_R": 0.257,
       "total_R": 38.0,
-      "total_pnl_dollars": 3800.0,
+      "total_pnl_dollars": 76.0,
       "open_trades": 31
     },
     "retest": {
@@ -54,7 +54,7 @@
       "avg_R": 0.452,
       "expectancy_R": 0.452,
       "total_R": 42.0,
-      "total_pnl_dollars": 4200.0,
+      "total_pnl_dollars": 84.01,
       "open_trades": 20
     }
   },
