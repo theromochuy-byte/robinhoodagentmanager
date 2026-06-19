@@ -78,7 +78,7 @@ def build_retest_trade(df: pd.DataFrame, trade: dict, atr_series: pd.Series) -> 
     shares_equity_risk = trade["risk_per_share"] * trade["shares"]  # 1% of equity
 
     in_pullback = False
-    for i in range(start, len(df)):
+    for i in range(start, min(start + 12, len(df))):
         lo = float(df.loc[i, "low"])
         hi = float(df.loc[i, "high"])
         c = float(df.loc[i, "close"])

@@ -1,37 +1,37 @@
 {
   "overall": {
-    "trades": 77,
-    "wins": 39,
-    "losses": 38,
-    "win_rate": 0.506,
-    "avg_R": 0.519,
-    "expectancy_R": 0.519,
-    "total_R": 40.0,
-    "total_pnl_dollars": 1360.8,
-    "open_trades": 20
+    "trades": 69,
+    "wins": 36,
+    "losses": 33,
+    "win_rate": 0.522,
+    "avg_R": 0.565,
+    "expectancy_R": 0.565,
+    "total_R": 39.0,
+    "total_pnl_dollars": 1310.22,
+    "open_trades": 17
   },
   "by_pattern": {
     "double_bottom": {
-      "trades": 41,
-      "wins": 21,
-      "losses": 20,
-      "win_rate": 0.512,
-      "avg_R": 0.537,
-      "expectancy_R": 0.537,
-      "total_R": 22.0,
-      "total_pnl_dollars": 763.52,
-      "open_trades": 10
+      "trades": 35,
+      "wins": 20,
+      "losses": 15,
+      "win_rate": 0.571,
+      "avg_R": 0.714,
+      "expectancy_R": 0.714,
+      "total_R": 25.0,
+      "total_pnl_dollars": 868.74,
+      "open_trades": 9
     },
     "inverse_hns": {
-      "trades": 36,
-      "wins": 18,
+      "trades": 34,
+      "wins": 16,
       "losses": 18,
-      "win_rate": 0.5,
-      "avg_R": 0.5,
-      "expectancy_R": 0.5,
-      "total_R": 18.0,
-      "total_pnl_dollars": 597.28,
-      "open_trades": 10
+      "win_rate": 0.471,
+      "avg_R": 0.412,
+      "expectancy_R": 0.412,
+      "total_R": 14.0,
+      "total_pnl_dollars": 441.48,
+      "open_trades": 8
     }
   },
   "by_entry": {
@@ -47,22 +47,22 @@
       "open_trades": 0
     },
     "retest": {
-      "trades": 77,
-      "wins": 39,
-      "losses": 38,
-      "win_rate": 0.506,
-      "avg_R": 0.519,
-      "expectancy_R": 0.519,
-      "total_R": 40.0,
-      "total_pnl_dollars": 1360.8,
-      "open_trades": 20
+      "trades": 69,
+      "wins": 36,
+      "losses": 33,
+      "win_rate": 0.522,
+      "avg_R": 0.565,
+      "expectancy_R": 0.565,
+      "total_R": 39.0,
+      "total_pnl_dollars": 1310.22,
+      "open_trades": 17
     }
   },
   "equity_growth": {
     "starting_equity": 1500.0,
-    "final_equity": 2860.8,
-    "gain_dollars": 1360.8,
-    "gain_pct": 90.72
+    "final_equity": 2810.22,
+    "gain_dollars": 1310.22,
+    "gain_pct": 87.35
   },
   "symbols": [
     "AAPL",
