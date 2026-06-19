@@ -59,13 +59,15 @@ def run_symbol(symbol: str, equity: float, risk_pct: float = 0.01) -> list[dict]
     patterns.sort(key=lambda p: p["break_index"])
 
     trades = []
-    open_until: int | None = None  # bar index when the current open position resolves
+    # one open position per pattern type per symbol — double bottom and inverse H&S
+    # are treated as independent setups and don't block each other
+    open_until: dict[str, int] = {}
     for p in patterns:
         if not bias_asof(bias, p["break_time"]):
             continue  # higher-timeframe trend not aligned
-        # one position per symbol at a time: skip if the previous trade is still open
-        if open_until is not None and p["break_index"] <= open_until:
-            continue
+        ptype = p["type"]
+        if p["break_index"] <= open_until.get(ptype, -1):
+            continue  # already in a position of this type on this symbol
         trade = build_trade(intraday, p, atr_series, equity, risk_pct)
         if trade is None:
             continue
@@ -75,13 +77,13 @@ def run_symbol(symbol: str, equity: float, risk_pct: float = 0.01) -> list[dict]
         resolved_a = resolve_trade(intraday, entry_a, target_key="target_2R")
         resolved_a["symbol"] = symbol
         trades.append(resolved_a)
-        # track when this trade closed so we don't stack entries
+        # track when this pattern-type slot reopens
         if resolved_a["outcome"] == "open":
-            open_until = len(intraday)
+            open_until[ptype] = len(intraday)
         else:
             idx = intraday.index[intraday["begins_at"] == resolved_a["exit_time"]].tolist()
-            open_until = idx[0] if idx else len(intraday)
-        # Entry B: neckline retest (variant — tracked separately, does not block A's slot)
+            open_until[ptype] = idx[0] if idx else len(intraday)
+        # Entry B: neckline retest (variant — tracked separately, does not consume the slot)
         trade_b = build_retest_trade(intraday, trade, atr_series)
         if trade_b is not None:
             resolved_b = resolve_trade(intraday, trade_b, target_key="target_2R")
