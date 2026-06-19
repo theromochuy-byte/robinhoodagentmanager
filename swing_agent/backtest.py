@@ -59,9 +59,13 @@ def run_symbol(symbol: str, equity: float, risk_pct: float = 0.01) -> list[dict]
     patterns.sort(key=lambda p: p["break_index"])
 
     trades = []
+    open_until: int | None = None  # bar index when the current open position resolves
     for p in patterns:
         if not bias_asof(bias, p["break_time"]):
             continue  # higher-timeframe trend not aligned
+        # one position per symbol at a time: skip if the previous trade is still open
+        if open_until is not None and p["break_index"] <= open_until:
+            continue
         trade = build_trade(intraday, p, atr_series, equity, risk_pct)
         if trade is None:
             continue
@@ -71,7 +75,13 @@ def run_symbol(symbol: str, equity: float, risk_pct: float = 0.01) -> list[dict]
         resolved_a = resolve_trade(intraday, entry_a, target_key="target_2R")
         resolved_a["symbol"] = symbol
         trades.append(resolved_a)
-        # Entry B: neckline retest (variant — tracked separately, does not overwrite A)
+        # track when this trade closed so we don't stack entries
+        if resolved_a["outcome"] == "open":
+            open_until = len(intraday)
+        else:
+            idx = intraday.index[intraday["begins_at"] == resolved_a["exit_time"]].tolist()
+            open_until = idx[0] if idx else len(intraday)
+        # Entry B: neckline retest (variant — tracked separately, does not block A's slot)
         trade_b = build_retest_trade(intraday, trade, atr_series)
         if trade_b is not None:
             resolved_b = resolve_trade(intraday, trade_b, target_key="target_2R")

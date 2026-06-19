@@ -53,6 +53,9 @@ def detect_double_bottom(
                 continue
             if abs(l2["price"] - l1["price"]) / l1["price"] > tol:
                 continue
+            # 2nd bottom must be a higher or equal low (classic double-bottom structure)
+            if l2["price"] < l1["price"]:
+                continue
             # middle high between the two bottoms = neckline
             mids = [h for h in highs if l1["index"] < h["index"] < l2["index"]]
             if not mids:

@@ -1,61 +1,61 @@
 {
   "overall": {
-    "trades": 66,
-    "wins": 30,
-    "losses": 36,
-    "win_rate": 0.455,
-    "avg_R": 0.364,
-    "expectancy_R": 0.364,
-    "total_R": 24.0,
-    "total_pnl_dollars": 2400.01,
-    "open_trades": 19
+    "trades": 19,
+    "wins": 9,
+    "losses": 10,
+    "win_rate": 0.474,
+    "avg_R": 0.421,
+    "expectancy_R": 0.421,
+    "total_R": 8.0,
+    "total_pnl_dollars": 800.0,
+    "open_trades": 3
   },
   "by_pattern": {
     "double_bottom": {
-      "trades": 37,
-      "wins": 13,
-      "losses": 24,
-      "win_rate": 0.351,
-      "avg_R": 0.054,
-      "expectancy_R": 0.054,
-      "total_R": 2.0,
-      "total_pnl_dollars": 200.0,
-      "open_trades": 9
+      "trades": 18,
+      "wins": 9,
+      "losses": 9,
+      "win_rate": 0.5,
+      "avg_R": 0.5,
+      "expectancy_R": 0.5,
+      "total_R": 9.0,
+      "total_pnl_dollars": 900.0,
+      "open_trades": 3
     },
     "inverse_hns": {
-      "trades": 29,
-      "wins": 17,
-      "losses": 12,
-      "win_rate": 0.586,
-      "avg_R": 0.759,
-      "expectancy_R": 0.759,
-      "total_R": 22.0,
-      "total_pnl_dollars": 2200.01,
-      "open_trades": 10
+      "trades": 1,
+      "wins": 0,
+      "losses": 1,
+      "win_rate": 0.0,
+      "avg_R": -1.0,
+      "expectancy_R": -1.0,
+      "total_R": -1.0,
+      "total_pnl_dollars": -100.0,
+      "open_trades": 0
     }
   },
   "by_entry": {
     "breakout": {
-      "trades": 47,
-      "wins": 21,
-      "losses": 26,
-      "win_rate": 0.447,
-      "avg_R": 0.34,
-      "expectancy_R": 0.34,
-      "total_R": 16.0,
-      "total_pnl_dollars": 1600.01,
-      "open_trades": 13
+      "trades": 12,
+      "wins": 5,
+      "losses": 7,
+      "win_rate": 0.417,
+      "avg_R": 0.25,
+      "expectancy_R": 0.25,
+      "total_R": 3.0,
+      "total_pnl_dollars": 300.0,
+      "open_trades": 2
     },
     "retest": {
-      "trades": 19,
-      "wins": 9,
-      "losses": 10,
-      "win_rate": 0.474,
-      "avg_R": 0.421,
-      "expectancy_R": 0.421,
-      "total_R": 8.0,
-      "total_pnl_dollars": 800.0,
-      "open_trades": 6
+      "trades": 7,
+      "wins": 4,
+      "losses": 3,
+      "win_rate": 0.571,
+      "avg_R": 0.714,
+      "expectancy_R": 0.714,
+      "total_R": 5.0,
+      "total_pnl_dollars": 500.0,
+      "open_trades": 1
     }
   },
   "symbols": [
