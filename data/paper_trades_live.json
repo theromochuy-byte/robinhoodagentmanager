@@ -15,7 +15,10 @@
     "scanned_at": "2026-06-19T03:27:49.270223+00:00",
     "entry": 185.68,
     "entry_time": "2026-06-18T16:00:00Z",
-    "status": "entered"
+    "status": "entered",
+    "last_price": 185.68,
+    "unrealized_pnl": 0.0,
+    "checked_at": "2026-06-19T13:55:23.560729+00:00"
   },
   {
     "symbol": "RTX",
@@ -33,7 +36,10 @@
     "scanned_at": "2026-06-19T03:27:49.272008+00:00",
     "entry": 185.68,
     "entry_time": "2026-06-18T16:00:00Z",
-    "status": "entered"
+    "status": "entered",
+    "last_price": 185.68,
+    "unrealized_pnl": 0.0,
+    "checked_at": "2026-06-19T13:55:23.560729+00:00"
   },
   {
     "symbol": "USB",
@@ -51,7 +57,10 @@
     "scanned_at": "2026-06-19T03:27:51.834003+00:00",
     "entry": 58.1,
     "entry_time": "2026-06-18T16:00:00Z",
-    "status": "entered"
+    "status": "entered",
+    "last_price": 58.1,
+    "unrealized_pnl": 0.0,
+    "checked_at": "2026-06-19T13:55:23.560729+00:00"
   },
   {
     "symbol": "USB",
@@ -69,7 +78,10 @@
     "scanned_at": "2026-06-19T03:27:51.835632+00:00",
     "entry": 58.1,
     "entry_time": "2026-06-18T16:00:00Z",
-    "status": "entered"
+    "status": "entered",
+    "last_price": 58.1,
+    "unrealized_pnl": 0.0,
+    "checked_at": "2026-06-19T13:55:23.560729+00:00"
   },
   {
     "symbol": "DG",
@@ -87,6 +99,9 @@
     "scanned_at": "2026-06-19T13:34:42.025672+00:00",
     "entry": 113.51,
     "entry_time": "2026-06-18T16:00:00Z",
-    "status": "entered"
+    "status": "entered",
+    "last_price": 113.51,
+    "unrealized_pnl": 0.0,
+    "checked_at": "2026-06-19T13:55:23.560729+00:00"
   }
 ]
