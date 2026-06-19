@@ -7,7 +7,7 @@
     "avg_R": 0.332,
     "expectancy_R": 0.332,
     "total_R": 80.0,
-    "total_pnl_dollars": 850.75,
+    "total_pnl_dollars": 3065.29,
     "open_trades": 51
   },
   "by_pattern": {
@@ -19,7 +19,7 @@
       "avg_R": 0.407,
       "expectancy_R": 0.407,
       "total_R": 46.0,
-      "total_pnl_dollars": 511.79,
+      "total_pnl_dollars": 2588.88,
       "open_trades": 25
     },
     "inverse_hns": {
@@ -30,7 +30,7 @@
       "avg_R": 0.266,
       "expectancy_R": 0.266,
       "total_R": 34.0,
-      "total_pnl_dollars": 338.96,
+      "total_pnl_dollars": 476.41,
       "open_trades": 26
     }
   },
@@ -43,7 +43,7 @@
       "avg_R": 0.257,
       "expectancy_R": 0.257,
       "total_R": 38.0,
-      "total_pnl_dollars": 382.13,
+      "total_pnl_dollars": 656.63,
       "open_trades": 31
     },
     "retest": {
@@ -54,15 +54,15 @@
       "avg_R": 0.452,
       "expectancy_R": 0.452,
       "total_R": 42.0,
-      "total_pnl_dollars": 468.62,
+      "total_pnl_dollars": 2408.66,
       "open_trades": 20
     }
   },
   "equity_growth": {
     "starting_equity": 1000.0,
-    "final_equity": 1850.75,
-    "gain_dollars": 850.75,
-    "gain_pct": 85.08
+    "final_equity": 4065.29,
+    "gain_dollars": 3065.29,
+    "gain_pct": 306.53
   },
   "symbols": [
     "AAPL",

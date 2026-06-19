@@ -10,7 +10,7 @@
     "target_primary": 342.6426,
     "target_1R": 318.3263,
     "target_2R": 342.6426,
-    "shares": 0.4112,
+    "shares": 2.0562,
     "atr": 5.4963,
     "entry_style": "breakout",
     "outcome": "win",
@@ -18,7 +18,7 @@
     "exit_price": 342.6426,
     "pnl_per_share": 48.6326,
     "r_multiple": 2.0,
-    "pnl_dollars": 20.0,
+    "pnl_dollars": 100.0,
     "target_used": "target_2R",
     "symbol": "GOOGL",
     "equity_at_entry": 1000.0
@@ -34,7 +34,7 @@
     "target_primary": 341.4226,
     "target_1R": 317.7163,
     "target_2R": 341.4226,
-    "shares": 0.4218,
+    "shares": 2.1091,
     "atr": 5.4963,
     "entry_style": "breakout",
     "outcome": "win",
@@ -42,7 +42,7 @@
     "exit_price": 341.4226,
     "pnl_per_share": 47.4126,
     "r_multiple": 2.0,
-    "pnl_dollars": 20.0,
+    "pnl_dollars": 100.0,
     "target_used": "target_2R",
     "symbol": "GOOGL",
     "equity_at_entry": 1000.0
@@ -58,7 +58,7 @@
     "target_primary": 360.1032,
     "target_1R": 329.9667,
     "target_2R": 360.1032,
-    "shares": 0.3318,
+    "shares": 1.6591,
     "atr": 5.6326,
     "entry_style": "retest",
     "outcome": "win",
@@ -66,7 +66,7 @@
     "exit_price": 360.1032,
     "pnl_per_share": 60.273,
     "r_multiple": 2.0,
-    "pnl_dollars": 20.0,
+    "pnl_dollars": 100.0,
     "target_used": "target_2R",
     "symbol": "GOOGL",
     "equity_at_entry": 1000.0
@@ -82,7 +82,7 @@
     "target_primary": 358.8832,
     "target_1R": 329.3567,
     "target_2R": 358.8832,
-    "shares": 0.3387,
+    "shares": 1.6934,
     "atr": 5.6326,
     "entry_style": "retest",
     "outcome": "win",
@@ -90,7 +90,7 @@
     "exit_price": 358.8832,
     "pnl_per_share": 59.053,
     "r_multiple": 2.0,
-    "pnl_dollars": 20.0,
+    "pnl_dollars": 100.0,
     "target_used": "target_2R",
     "symbol": "GOOGL",
     "equity_at_entry": 1000.0
@@ -106,7 +106,7 @@
     "target_primary": 123.2417,
     "target_1R": 116.2559,
     "target_2R": 123.2417,
-    "shares": 1.4315,
+    "shares": 7.1573,
     "atr": 1.4859,
     "entry_style": "breakout",
     "outcome": "win",
@@ -114,7 +114,7 @@
     "exit_price": 123.2417,
     "pnl_per_share": 13.9717,
     "r_multiple": 2.0,
-    "pnl_dollars": 20.0,
+    "pnl_dollars": 100.0,
     "target_used": "target_2R",
     "symbol": "WMT",
     "equity_at_entry": 1000.0
@@ -130,7 +130,7 @@
     "target_primary": 298.9354,
     "target_1R": 290.2277,
     "target_2R": 298.9354,
-    "shares": 1.1484,
+    "shares": 5.742,
     "atr": 3.1742,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -138,7 +138,7 @@
     "exit_price": 272.8123,
     "pnl_per_share": -8.7077,
     "r_multiple": -1.0,
-    "pnl_dollars": -10.0,
+    "pnl_dollars": -50.0,
     "target_used": "target_2R",
     "symbol": "AAPL",
     "equity_at_entry": 1000.0
@@ -154,7 +154,7 @@
     "target_primary": 38.075,
     "target_1R": 38.8092,
     "target_2R": 40.9134,
-    "shares": 4.7524,
+    "shares": 23.762,
     "atr": 0.6092,
     "entry_style": "breakout",
     "outcome": "win",
@@ -162,7 +162,7 @@
     "exit_price": 40.9134,
     "pnl_per_share": 4.2084,
     "r_multiple": 2.0,
-    "pnl_dollars": 20.0,
+    "pnl_dollars": 100.0,
     "target_used": "target_2R",
     "symbol": "SLB",
     "equity_at_entry": 1000.0
@@ -178,7 +178,7 @@
     "target_primary": 41.5284,
     "target_1R": 39.2192,
     "target_2R": 41.5284,
-    "shares": 4.3305,
+    "shares": 21.6525,
     "atr": 0.5914,
     "entry_style": "retest",
     "outcome": "win",
@@ -186,7 +186,7 @@
     "exit_price": 41.5284,
     "pnl_per_share": 4.6184,
     "r_multiple": 2.0,
-    "pnl_dollars": 20.0,
+    "pnl_dollars": 100.0,
     "target_used": "target_2R",
     "symbol": "SLB",
     "equity_at_entry": 1000.0
@@ -202,7 +202,7 @@
     "target_primary": 205.66,
     "target_1R": 222.1722,
     "target_2R": 239.3745,
-    "shares": 0.5813,
+    "shares": 2.9066,
     "atr": 3.7222,
     "entry_style": "breakout",
     "outcome": "win",
@@ -210,7 +210,7 @@
     "exit_price": 239.3745,
     "pnl_per_share": 34.4045,
     "r_multiple": 2.0,
-    "pnl_dollars": 20.0,
+    "pnl_dollars": 100.0,
     "target_used": "target_2R",
     "symbol": "BA",
     "equity_at_entry": 1000.0
@@ -226,7 +226,7 @@
     "target_primary": 631.0735,
     "target_1R": 606.9917,
     "target_2R": 631.0735,
-    "shares": 0.4153,
+    "shares": 2.0763,
     "atr": 8.1717,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -234,7 +234,7 @@
     "exit_price": 558.8283,
     "pnl_per_share": -24.0817,
     "r_multiple": -1.0,
-    "pnl_dollars": -10.0,
+    "pnl_dollars": -50.0,
     "target_used": "target_2R",
     "symbol": "CAT",
     "equity_at_entry": 1000.0
@@ -250,7 +250,7 @@
     "target_primary": 471.5,
     "target_1R": 479.0423,
     "target_2R": 512.6646,
-    "shares": 0.2974,
+    "shares": 1.4871,
     "atr": 10.0823,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -258,7 +258,7 @@
     "exit_price": 411.7977,
     "pnl_per_share": -33.6223,
     "r_multiple": -1.0,
-    "pnl_dollars": -10.0,
+    "pnl_dollars": -50.0,
     "target_used": "target_2R",
     "symbol": "TSLA",
     "equity_at_entry": 1000.0
@@ -274,7 +274,7 @@
     "target_primary": 471.5,
     "target_1R": 478.8023,
     "target_2R": 512.1846,
-    "shares": 0.2996,
+    "shares": 1.4978,
     "atr": 10.0823,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -282,7 +282,7 @@
     "exit_price": 412.0377,
     "pnl_per_share": -33.3823,
     "r_multiple": -1.0,
-    "pnl_dollars": -10.0,
+    "pnl_dollars": -50.0,
     "target_used": "target_2R",
     "symbol": "TSLA",
     "equity_at_entry": 1000.0
@@ -298,7 +298,7 @@
     "target_primary": 54.605,
     "target_1R": 55.6648,
     "target_2R": 57.2946,
-    "shares": 6.1357,
+    "shares": 30.6786,
     "atr": 0.5648,
     "entry_style": "breakout",
     "outcome": "win",
@@ -306,7 +306,7 @@
     "exit_price": 57.2946,
     "pnl_per_share": 3.2596,
     "r_multiple": 2.0,
-    "pnl_dollars": 20.0,
+    "pnl_dollars": 100.0,
     "target_used": "target_2R",
     "symbol": "BAC",
     "equity_at_entry": 1000.0
@@ -322,7 +322,7 @@
     "target_primary": 841.1,
     "target_1R": 870.5513,
     "target_2R": 906.6276,
-    "shares": 0.2772,
+    "shares": 1.386,
     "atr": 11.2113,
     "entry_style": "breakout",
     "outcome": "win",
@@ -330,7 +330,7 @@
     "exit_price": 906.6276,
     "pnl_per_share": 72.1526,
     "r_multiple": 2.0,
-    "pnl_dollars": 20.0,
+    "pnl_dollars": 100.0,
     "target_used": "target_2R",
     "symbol": "GS",
     "equity_at_entry": 1000.0
@@ -346,7 +346,7 @@
     "target_primary": 207.6548,
     "target_1R": 190.4074,
     "target_2R": 207.6548,
-    "shares": 0.5798,
+    "shares": 2.899,
     "atr": 2.149,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -354,7 +354,7 @@
     "exit_price": 155.9126,
     "pnl_per_share": -17.2474,
     "r_multiple": -1.0,
-    "pnl_dollars": -10.0,
+    "pnl_dollars": -50.0,
     "target_used": "target_2R",
     "symbol": "MS",
     "equity_at_entry": 1000.0
@@ -370,7 +370,7 @@
     "target_primary": 88.3,
     "target_1R": 92.9532,
     "target_2R": 97.9313,
-    "shares": 2.0088,
+    "shares": 10.0438,
     "atr": 1.0432,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -378,7 +378,7 @@
     "exit_price": 82.9968,
     "pnl_per_share": -4.9782,
     "r_multiple": -1.0,
-    "pnl_dollars": -10.0,
+    "pnl_dollars": -50.0,
     "target_used": "target_2R",
     "symbol": "WFC",
     "equity_at_entry": 1000.0
@@ -394,7 +394,7 @@
     "target_primary": 88.3,
     "target_1R": 91.8282,
     "target_2R": 95.6813,
-    "shares": 2.5952,
+    "shares": 12.9762,
     "atr": 1.0432,
     "entry_style": "breakout",
     "outcome": "win",
@@ -402,7 +402,7 @@
     "exit_price": 95.6813,
     "pnl_per_share": 7.7063,
     "r_multiple": 2.0,
-    "pnl_dollars": 20.0,
+    "pnl_dollars": 100.0,
     "target_used": "target_2R",
     "symbol": "WFC",
     "equity_at_entry": 1000.0
@@ -418,7 +418,7 @@
     "target_primary": 38.075,
     "target_1R": 39.9052,
     "target_2R": 42.1898,
-    "shares": 4.3769,
+    "shares": 21.8847,
     "atr": 0.6242,
     "entry_style": "breakout",
     "outcome": "win",
@@ -426,7 +426,7 @@
     "exit_price": 42.1898,
     "pnl_per_share": 4.5693,
     "r_multiple": 2.0,
-    "pnl_dollars": 20.0,
+    "pnl_dollars": 100.0,
     "target_used": "target_2R",
     "symbol": "SLB",
     "equity_at_entry": 1000.0
@@ -442,7 +442,7 @@
     "target_primary": 128.3374,
     "target_1R": 119.9437,
     "target_2R": 128.3374,
-    "shares": 1.1914,
+    "shares": 5.9568,
     "atr": 1.3637,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -450,7 +450,7 @@
     "exit_price": 103.1563,
     "pnl_per_share": -8.3937,
     "r_multiple": -1.0,
-    "pnl_dollars": -10.0,
+    "pnl_dollars": -50.0,
     "target_used": "target_2R",
     "symbol": "EOG",
     "equity_at_entry": 1000.0
@@ -466,7 +466,7 @@
     "target_primary": 653.0334,
     "target_1R": 621.6317,
     "target_2R": 653.0334,
-    "shares": 0.3185,
+    "shares": 1.5923,
     "atr": 8.1821,
     "entry_style": "retest",
     "outcome": "loss",
@@ -474,7 +474,7 @@
     "exit_price": 558.8283,
     "pnl_per_share": -31.4017,
     "r_multiple": -1.0,
-    "pnl_dollars": -10.0,
+    "pnl_dollars": -50.0,
     "target_used": "target_2R",
     "symbol": "CAT",
     "equity_at_entry": 1000.0
@@ -490,7 +490,7 @@
     "target_primary": 57.5496,
     "target_1R": 55.8348,
     "target_2R": 57.5496,
-    "shares": 5.8316,
+    "shares": 29.1579,
     "atr": 0.5409,
     "entry_style": "retest",
     "outcome": "loss",
@@ -498,7 +498,7 @@
     "exit_price": 52.4052,
     "pnl_per_share": -1.7148,
     "r_multiple": -1.0,
-    "pnl_dollars": -10.0,
+    "pnl_dollars": -50.0,
     "target_used": "target_2R",
     "symbol": "BAC",
     "equity_at_entry": 1000.0
@@ -514,7 +514,7 @@
     "target_primary": 908.8089,
     "target_1R": 872.0055,
     "target_2R": 908.8089,
-    "shares": 0.2717,
+    "shares": 1.3586,
     "atr": 10.6655,
     "entry_style": "retest",
     "outcome": "win",
@@ -522,7 +522,7 @@
     "exit_price": 908.8089,
     "pnl_per_share": 73.6068,
     "r_multiple": 2.0,
-    "pnl_dollars": 20.0,
+    "pnl_dollars": 100.0,
     "target_used": "target_2R",
     "symbol": "GS",
     "equity_at_entry": 1000.0
@@ -538,7 +538,7 @@
     "target_primary": 128.7706,
     "target_1R": 120.2325,
     "target_2R": 128.7706,
-    "shares": 1.1712,
+    "shares": 5.8561,
     "atr": 1.297,
     "entry_style": "retest",
     "outcome": "loss",
@@ -546,7 +546,7 @@
     "exit_price": 103.1563,
     "pnl_per_share": -8.5381,
     "r_multiple": -1.0,
-    "pnl_dollars": -10.0,
+    "pnl_dollars": -50.0,
     "target_used": "target_2R",
     "symbol": "EOG",
     "equity_at_entry": 1000.0
@@ -562,7 +562,7 @@
     "target_primary": 730.6415,
     "target_1R": 696.479,
     "target_2R": 730.6415,
-    "shares": 0.2927,
+    "shares": 1.4636,
     "atr": 10.0462,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -570,7 +570,7 @@
     "exit_price": 628.1538,
     "pnl_per_share": -34.1626,
     "r_multiple": -1.0,
-    "pnl_dollars": -10.0,
+    "pnl_dollars": -50.0,
     "target_used": "target_2R",
     "symbol": "META",
     "equity_at_entry": 1000.0
@@ -586,7 +586,7 @@
     "target_primary": 322.14,
     "target_1R": 327.635,
     "target_2R": 339.4501,
-    "shares": 0.8464,
+    "shares": 4.2319,
     "atr": 3.3375,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -594,7 +594,7 @@
     "exit_price": 304.005,
     "pnl_per_share": -11.815,
     "r_multiple": -1.0,
-    "pnl_dollars": -10.0,
+    "pnl_dollars": -50.0,
     "target_used": "target_2R",
     "symbol": "JPM",
     "equity_at_entry": 1000.0
@@ -610,7 +610,7 @@
     "target_primary": 110.0178,
     "target_1R": 101.4589,
     "target_2R": 110.0178,
-    "shares": 1.1684,
+    "shares": 5.8419,
     "atr": 1.2289,
     "entry_style": "breakout",
     "outcome": "win",
@@ -618,7 +618,7 @@
     "exit_price": 110.0178,
     "pnl_per_share": 17.1178,
     "r_multiple": 2.0,
-    "pnl_dollars": 20.0,
+    "pnl_dollars": 100.0,
     "target_used": "target_2R",
     "symbol": "COP",
     "equity_at_entry": 1000.0
@@ -634,7 +634,7 @@
     "target_primary": 43.1484,
     "target_1R": 40.5442,
     "target_2R": 43.1484,
-    "shares": 3.84,
+    "shares": 19.1998,
     "atr": 0.6121,
     "entry_style": "retest",
     "outcome": "win",
@@ -642,7 +642,7 @@
     "exit_price": 43.1484,
     "pnl_per_share": 5.2084,
     "r_multiple": 2.0,
-    "pnl_dollars": 20.0,
+    "pnl_dollars": 100.0,
     "target_used": "target_2R",
     "symbol": "SLB",
     "equity_at_entry": 1000.0
@@ -658,7 +658,7 @@
     "target_primary": 1056.381,
     "target_1R": 955.0455,
     "target_2R": 1056.381,
-    "shares": 0.0987,
+    "shares": 0.4934,
     "atr": 10.4255,
     "entry_style": "breakout",
     "outcome": "win",
@@ -666,7 +666,7 @@
     "exit_price": 1056.381,
     "pnl_per_share": 202.671,
     "r_multiple": 2.0,
-    "pnl_dollars": 20.0,
+    "pnl_dollars": 100.0,
     "target_used": "target_2R",
     "symbol": "GS",
     "equity_at_entry": 1000.0
@@ -682,7 +682,7 @@
     "target_primary": 26.2874,
     "target_1R": 27.4171,
     "target_2R": 28.7691,
-    "shares": 7.3959,
+    "shares": 36.9795,
     "atr": 0.3171,
     "entry_style": "breakout",
     "outcome": "open",
@@ -690,7 +690,7 @@
     "exit_price": 25.22,
     "pnl_per_share": -0.845,
     "r_multiple": -0.625,
-    "pnl_dollars": -6.25,
+    "pnl_dollars": -31.25,
     "target_used": "target_2R",
     "symbol": "PFE",
     "equity_at_entry": 1000.0
@@ -706,7 +706,7 @@
     "target_primary": 410.5794,
     "target_1R": 379.1997,
     "target_2R": 410.5794,
-    "shares": 0.3187,
+    "shares": 1.5934,
     "atr": 5.0597,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -714,7 +714,7 @@
     "exit_price": 316.4403,
     "pnl_per_share": -31.3797,
     "r_multiple": -1.0,
-    "pnl_dollars": -10.0,
+    "pnl_dollars": -50.0,
     "target_used": "target_2R",
     "symbol": "ADBE",
     "equity_at_entry": 1000.0
@@ -730,7 +730,7 @@
     "target_primary": 106.0428,
     "target_1R": 99.7066,
     "target_2R": 106.0428,
-    "shares": 1.5782,
+    "shares": 7.891,
     "atr": 1.446,
     "entry_style": "breakout",
     "outcome": "win",
@@ -738,7 +738,7 @@
     "exit_price": 106.0428,
     "pnl_per_share": 12.6725,
     "r_multiple": 2.0,
-    "pnl_dollars": 20.0,
+    "pnl_dollars": 100.0,
     "target_used": "target_2R",
     "symbol": "TGT",
     "equity_at_entry": 1000.0
@@ -754,7 +754,7 @@
     "target_primary": 104.1828,
     "target_1R": 98.7766,
     "target_2R": 104.1828,
-    "shares": 1.8497,
+    "shares": 9.2485,
     "atr": 1.446,
     "entry_style": "breakout",
     "outcome": "win",
@@ -762,7 +762,7 @@
     "exit_price": 104.1828,
     "pnl_per_share": 10.8125,
     "r_multiple": 2.0,
-    "pnl_dollars": 20.0,
+    "pnl_dollars": 100.0,
     "target_used": "target_2R",
     "symbol": "TGT",
     "equity_at_entry": 1000.0
@@ -778,7 +778,7 @@
     "target_primary": 337.4472,
     "target_1R": 326.2998,
     "target_2R": 337.4472,
-    "shares": 0.8971,
+    "shares": 4.4854,
     "atr": 2.8266,
     "entry_style": "retest",
     "outcome": "loss",
@@ -786,7 +786,7 @@
     "exit_price": 304.005,
     "pnl_per_share": -11.1474,
     "r_multiple": -1.0,
-    "pnl_dollars": -10.0,
+    "pnl_dollars": -50.0,
     "target_used": "target_2R",
     "symbol": "JPM",
     "equity_at_entry": 1000.0
@@ -802,7 +802,7 @@
     "target_primary": 106.702,
     "target_1R": 100.146,
     "target_2R": 106.702,
-    "shares": 1.5253,
+    "shares": 7.6266,
     "atr": 1.3659,
     "entry_style": "retest",
     "outcome": "win",
@@ -810,7 +810,7 @@
     "exit_price": 106.702,
     "pnl_per_share": 13.112,
     "r_multiple": 2.0,
-    "pnl_dollars": 20.0,
+    "pnl_dollars": 100.0,
     "target_used": "target_2R",
     "symbol": "TGT",
     "equity_at_entry": 1000.0
@@ -826,7 +826,7 @@
     "target_primary": 104.842,
     "target_1R": 99.216,
     "target_2R": 104.842,
-    "shares": 1.7419,
+    "shares": 7.9986,
     "atr": 1.3659,
     "entry_style": "retest",
     "outcome": "win",
@@ -834,10 +834,10 @@
     "exit_price": 104.842,
     "pnl_per_share": 11.252,
     "r_multiple": 2.0,
-    "pnl_dollars": 19.6,
+    "pnl_dollars": 90.0,
     "target_used": "target_2R",
     "symbol": "TGT",
-    "equity_at_entry": 980.0
+    "equity_at_entry": 900.0
   },
   {
     "type": "double_bottom",
@@ -850,7 +850,7 @@
     "target_primary": 120.8099,
     "target_1R": 125.1576,
     "target_2R": 130.9491,
-    "shares": 1.6921,
+    "shares": 7.77,
     "atr": 1.2954,
     "entry_style": "breakout",
     "outcome": "win",
@@ -858,10 +858,10 @@
     "exit_price": 130.9491,
     "pnl_per_share": 11.583,
     "r_multiple": 2.0,
-    "pnl_dollars": 19.6,
+    "pnl_dollars": 90.0,
     "target_used": "target_2R",
     "symbol": "XOM",
-    "equity_at_entry": 980.0
+    "equity_at_entry": 900.0
   },
   {
     "type": "double_bottom",
@@ -874,7 +874,7 @@
     "target_primary": 424.5063,
     "target_1R": 401.1232,
     "target_2R": 424.5063,
-    "shares": 0.4191,
+    "shares": 1.9245,
     "atr": 4.8032,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -882,10 +882,10 @@
     "exit_price": 354.3568,
     "pnl_per_share": -23.3832,
     "r_multiple": -1.0,
-    "pnl_dollars": -9.8,
+    "pnl_dollars": -45.0,
     "target_used": "target_2R",
     "symbol": "AXP",
-    "equity_at_entry": 980.0
+    "equity_at_entry": 900.0
   },
   {
     "type": "inverse_hns",
@@ -898,7 +898,7 @@
     "target_primary": 421.4263,
     "target_1R": 399.5832,
     "target_2R": 421.4263,
-    "shares": 0.4487,
+    "shares": 2.0601,
     "atr": 4.8032,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -906,10 +906,10 @@
     "exit_price": 355.8968,
     "pnl_per_share": -21.8432,
     "r_multiple": -1.0,
-    "pnl_dollars": -9.8,
+    "pnl_dollars": -45.0,
     "target_used": "target_2R",
     "symbol": "AXP",
-    "equity_at_entry": 980.0
+    "equity_at_entry": 900.0
   },
   {
     "type": "inverse_hns",
@@ -922,7 +922,7 @@
     "target_primary": 403.7397,
     "target_1R": 374.6399,
     "target_2R": 403.7397,
-    "shares": 0.3368,
+    "shares": 1.5464,
     "atr": 4.9647,
     "entry_style": "retest",
     "outcome": "loss",
@@ -930,10 +930,10 @@
     "exit_price": 316.4403,
     "pnl_per_share": -29.0998,
     "r_multiple": -1.0,
-    "pnl_dollars": -9.8,
+    "pnl_dollars": -45.0,
     "target_used": "target_2R",
     "symbol": "ADBE",
-    "equity_at_entry": 980.0
+    "equity_at_entry": 900.0
   },
   {
     "type": "inverse_hns",
@@ -946,7 +946,7 @@
     "target_primary": 183.429,
     "target_1R": 205.2118,
     "target_2R": 227.7735,
-    "shares": 0.4344,
+    "shares": 1.9945,
     "atr": 2.4918,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -954,10 +954,10 @@
     "exit_price": 160.0882,
     "pnl_per_share": -22.5618,
     "r_multiple": -1.0,
-    "pnl_dollars": -9.8,
+    "pnl_dollars": -45.0,
     "target_used": "target_2R",
     "symbol": "QCOM",
-    "equity_at_entry": 980.0
+    "equity_at_entry": 900.0
   },
   {
     "type": "double_bottom",
@@ -970,7 +970,7 @@
     "target_primary": 132.0408,
     "target_1R": 125.8854,
     "target_2R": 132.0408,
-    "shares": 1.5921,
+    "shares": 7.3107,
     "atr": 1.25,
     "entry_style": "retest",
     "outcome": "win",
@@ -978,10 +978,10 @@
     "exit_price": 132.0408,
     "pnl_per_share": 12.3108,
     "r_multiple": 2.0,
-    "pnl_dollars": 19.6,
+    "pnl_dollars": 90.0,
     "target_used": "target_2R",
     "symbol": "XOM",
-    "equity_at_entry": 980.0
+    "equity_at_entry": 900.0
   },
   {
     "type": "inverse_hns",
@@ -994,7 +994,7 @@
     "target_primary": 120.8099,
     "target_1R": 125.245,
     "target_2R": 130.7601,
-    "shares": 1.777,
+    "shares": 8.1596,
     "atr": 1.25,
     "entry_style": "breakout",
     "outcome": "win",
@@ -1002,10 +1002,10 @@
     "exit_price": 130.7601,
     "pnl_per_share": 11.0301,
     "r_multiple": 2.0,
-    "pnl_dollars": 19.6,
+    "pnl_dollars": 90.0,
     "target_used": "target_2R",
     "symbol": "XOM",
-    "equity_at_entry": 980.0
+    "equity_at_entry": 900.0
   },
   {
     "type": "double_bottom",
@@ -1018,7 +1018,7 @@
     "target_primary": 443.4814,
     "target_1R": 413.7732,
     "target_2R": 443.4814,
-    "shares": 0.3299,
+    "shares": 1.5147,
     "atr": 4.9424,
     "entry_style": "retest",
     "outcome": "loss",
@@ -1026,10 +1026,10 @@
     "exit_price": 354.3568,
     "pnl_per_share": -29.7082,
     "r_multiple": -1.0,
-    "pnl_dollars": -9.8,
+    "pnl_dollars": -45.0,
     "target_used": "target_2R",
     "symbol": "AXP",
-    "equity_at_entry": 980.0
+    "equity_at_entry": 900.0
   },
   {
     "type": "inverse_hns",
@@ -1042,7 +1042,7 @@
     "target_primary": 440.4014,
     "target_1R": 412.2332,
     "target_2R": 440.4014,
-    "shares": 0.3621,
+    "shares": 1.9526,
     "atr": 4.9424,
     "entry_style": "retest",
     "outcome": "loss",
@@ -1050,10 +1050,10 @@
     "exit_price": 355.8968,
     "pnl_per_share": -28.1682,
     "r_multiple": -1.0,
-    "pnl_dollars": -10.2,
+    "pnl_dollars": -55.0,
     "target_used": "target_2R",
     "symbol": "AXP",
-    "equity_at_entry": 1020.0
+    "equity_at_entry": 1100.0
   },
   {
     "type": "double_bottom",
@@ -1066,7 +1066,7 @@
     "target_primary": 28.0942,
     "target_1R": 26.9671,
     "target_2R": 28.0942,
-    "shares": 9.0498,
+    "shares": 48.7978,
     "atr": 0.3153,
     "entry_style": "retest",
     "outcome": "win",
@@ -1074,10 +1074,10 @@
     "exit_price": 28.0942,
     "pnl_per_share": 2.2542,
     "r_multiple": 2.0,
-    "pnl_dollars": 20.4,
+    "pnl_dollars": 110.0,
     "target_used": "target_2R",
     "symbol": "PFE",
-    "equity_at_entry": 1020.0
+    "equity_at_entry": 1100.0
   },
   {
     "type": "inverse_hns",
@@ -1090,7 +1090,7 @@
     "target_primary": 130.91,
     "target_1R": 125.345,
     "target_2R": 130.91,
-    "shares": 1.8329,
+    "shares": 9.8832,
     "atr": 1.2049,
     "entry_style": "retest",
     "outcome": "win",
@@ -1098,10 +1098,10 @@
     "exit_price": 130.91,
     "pnl_per_share": 11.13,
     "r_multiple": 2.0,
-    "pnl_dollars": 20.4,
+    "pnl_dollars": 110.0,
     "target_used": "target_2R",
     "symbol": "XOM",
-    "equity_at_entry": 1020.0
+    "equity_at_entry": 1100.0
   },
   {
     "type": "double_bottom",
@@ -1114,7 +1114,7 @@
     "target_primary": 264.2967,
     "target_1R": 248.3333,
     "target_2R": 264.2967,
-    "shares": 0.639,
+    "shares": 3.4454,
     "atr": 2.5133,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -1122,10 +1122,10 @@
     "exit_price": 216.4067,
     "pnl_per_share": -15.9633,
     "r_multiple": -1.0,
-    "pnl_dollars": -10.2,
+    "pnl_dollars": -55.0,
     "target_used": "target_2R",
     "symbol": "DHR",
-    "equity_at_entry": 1020.0
+    "equity_at_entry": 1100.0
   },
   {
     "type": "double_bottom",
@@ -1138,7 +1138,7 @@
     "target_primary": 60.4428,
     "target_1R": 57.7789,
     "target_2R": 60.4428,
-    "shares": 3.829,
+    "shares": 20.6464,
     "atr": 0.5189,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -1146,10 +1146,10 @@
     "exit_price": 52.4511,
     "pnl_per_share": -2.6639,
     "r_multiple": -1.0,
-    "pnl_dollars": -10.2,
+    "pnl_dollars": -55.0,
     "target_used": "target_2R",
     "symbol": "BAC",
-    "equity_at_entry": 1020.0
+    "equity_at_entry": 1100.0
   },
   {
     "type": "double_bottom",
@@ -1162,7 +1162,7 @@
     "target_primary": 322.14,
     "target_1R": 347.7885,
     "target_2R": 374.7671,
-    "shares": 0.3781,
+    "shares": 2.0387,
     "atr": 3.8399,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -1170,10 +1170,10 @@
     "exit_price": 293.8315,
     "pnl_per_share": -26.9785,
     "r_multiple": -1.0,
-    "pnl_dollars": -10.2,
+    "pnl_dollars": -55.0,
     "target_used": "target_2R",
     "symbol": "JPM",
-    "equity_at_entry": 1020.0
+    "equity_at_entry": 1100.0
   },
   {
     "type": "inverse_hns",
@@ -1186,7 +1186,7 @@
     "target_primary": 322.14,
     "target_1R": 345.51,
     "target_2R": 370.2101,
-    "shares": 0.413,
+    "shares": 2.2267,
     "atr": 3.8399,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -1194,10 +1194,10 @@
     "exit_price": 296.11,
     "pnl_per_share": -24.7,
     "r_multiple": -1.0,
-    "pnl_dollars": -10.2,
+    "pnl_dollars": -55.0,
     "target_used": "target_2R",
     "symbol": "JPM",
-    "equity_at_entry": 1020.0
+    "equity_at_entry": 1100.0
   },
   {
     "type": "double_bottom",
@@ -1210,7 +1210,7 @@
     "target_primary": 343.26,
     "target_1R": 367.0276,
     "target_2R": 391.7127,
-    "shares": 0.4132,
+    "shares": 2.2281,
     "atr": 4.6926,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -1218,10 +1218,10 @@
     "exit_price": 317.6574,
     "pnl_per_share": -24.6851,
     "r_multiple": -1.0,
-    "pnl_dollars": -10.2,
+    "pnl_dollars": -55.0,
     "target_used": "target_2R",
     "symbol": "UNH",
-    "equity_at_entry": 1020.0
+    "equity_at_entry": 1100.0
   },
   {
     "type": "inverse_hns",
@@ -1234,7 +1234,7 @@
     "target_primary": 30.064,
     "target_1R": 28.3089,
     "target_2R": 30.064,
-    "shares": 5.8113,
+    "shares": 31.3355,
     "atr": 0.3315,
     "entry_style": "breakout",
     "outcome": "open",
@@ -1242,10 +1242,10 @@
     "exit_price": 25.22,
     "pnl_per_share": -1.3337,
     "r_multiple": -0.76,
-    "pnl_dollars": -7.75,
+    "pnl_dollars": -41.79,
     "target_used": "target_2R",
     "symbol": "PFE",
-    "equity_at_entry": 1020.0
+    "equity_at_entry": 1100.0
   },
   {
     "type": "inverse_hns",
@@ -1258,7 +1258,7 @@
     "target_primary": 208.48,
     "target_1R": 217.9618,
     "target_2R": 229.1336,
-    "shares": 0.913,
+    "shares": 4.9231,
     "atr": 2.7518,
     "entry_style": "breakout",
     "outcome": "win",
@@ -1266,10 +1266,10 @@
     "exit_price": 229.1336,
     "pnl_per_share": 22.3436,
     "r_multiple": 2.0,
-    "pnl_dollars": 20.4,
+    "pnl_dollars": 110.0,
     "target_used": "target_2R",
     "symbol": "BA",
-    "equity_at_entry": 1020.0
+    "equity_at_entry": 1100.0
   },
   {
     "type": "inverse_hns",
@@ -1282,7 +1282,7 @@
     "target_primary": 232.1036,
     "target_1R": 219.9418,
     "target_2R": 232.1036,
-    "shares": 0.814,
+    "shares": 3.9057,
     "atr": 2.7559,
     "entry_style": "retest",
     "outcome": "win",
@@ -1290,10 +1290,10 @@
     "exit_price": 232.1036,
     "pnl_per_share": 24.3236,
     "r_multiple": 2.0,
-    "pnl_dollars": 19.8,
+    "pnl_dollars": 95.0,
     "target_used": "target_2R",
     "symbol": "BA",
-    "equity_at_entry": 990.0
+    "equity_at_entry": 950.0
   },
   {
     "type": "double_bottom",
@@ -1306,7 +1306,7 @@
     "target_primary": 105.84,
     "target_1R": 107.3471,
     "target_2R": 113.6942,
-    "shares": 1.5283,
+    "shares": 6.696,
     "atr": 1.4021,
     "entry_style": "breakout",
     "outcome": "win",
@@ -1314,10 +1314,10 @@
     "exit_price": 113.6942,
     "pnl_per_share": 12.6942,
     "r_multiple": 2.0,
-    "pnl_dollars": 19.4,
+    "pnl_dollars": 85.0,
     "target_used": "target_2R",
     "symbol": "MRK",
-    "equity_at_entry": 970.0
+    "equity_at_entry": 850.0
   },
   {
     "type": "double_bottom",
@@ -1330,7 +1330,7 @@
     "target_primary": 60.6828,
     "target_1R": 57.9389,
     "target_2R": 60.6828,
-    "shares": 3.5351,
+    "shares": 15.4889,
     "atr": 0.5108,
     "entry_style": "retest",
     "outcome": "loss",
@@ -1338,10 +1338,10 @@
     "exit_price": 52.4511,
     "pnl_per_share": -2.7439,
     "r_multiple": -1.0,
-    "pnl_dollars": -9.7,
+    "pnl_dollars": -42.5,
     "target_used": "target_2R",
     "symbol": "BAC",
-    "equity_at_entry": 970.0
+    "equity_at_entry": 850.0
   },
   {
     "type": "double_bottom",
@@ -1354,7 +1354,7 @@
     "target_primary": 116.6792,
     "target_1R": 109.3371,
     "target_2R": 116.6792,
-    "shares": 1.3211,
+    "shares": 5.7885,
     "atr": 1.3846,
     "entry_style": "retest",
     "outcome": "win",
@@ -1362,10 +1362,10 @@
     "exit_price": 116.6792,
     "pnl_per_share": 14.6842,
     "r_multiple": 2.0,
-    "pnl_dollars": 19.4,
+    "pnl_dollars": 85.0,
     "target_used": "target_2R",
     "symbol": "MRK",
-    "equity_at_entry": 970.0
+    "equity_at_entry": 850.0
   },
   {
     "type": "double_bottom",
@@ -1378,7 +1378,7 @@
     "target_primary": 205.943,
     "target_1R": 194.474,
     "target_2R": 205.943,
-    "shares": 0.8458,
+    "shares": 3.7056,
     "atr": 2.404,
     "entry_style": "breakout",
     "outcome": "win",
@@ -1386,10 +1386,10 @@
     "exit_price": 205.943,
     "pnl_per_share": 22.938,
     "r_multiple": 2.0,
-    "pnl_dollars": 19.4,
+    "pnl_dollars": 85.0,
     "target_used": "target_2R",
     "symbol": "RTX",
-    "equity_at_entry": 970.0
+    "equity_at_entry": 850.0
   },
   {
     "type": "inverse_hns",
@@ -1402,7 +1402,7 @@
     "target_primary": 201.154,
     "target_1R": 192.0795,
     "target_2R": 201.154,
-    "shares": 1.0689,
+    "shares": 4.6835,
     "atr": 2.404,
     "entry_style": "breakout",
     "outcome": "win",
@@ -1410,10 +1410,10 @@
     "exit_price": 201.154,
     "pnl_per_share": 18.149,
     "r_multiple": 2.0,
-    "pnl_dollars": 19.4,
+    "pnl_dollars": 85.0,
     "target_used": "target_2R",
     "symbol": "RTX",
-    "equity_at_entry": 970.0
+    "equity_at_entry": 850.0
   },
   {
     "type": "double_bottom",
@@ -1426,7 +1426,7 @@
     "target_primary": 206.228,
     "target_1R": 194.664,
     "target_2R": 206.228,
-    "shares": 0.8388,
+    "shares": 3.6752,
     "atr": 2.3109,
     "entry_style": "retest",
     "outcome": "win",
@@ -1434,10 +1434,10 @@
     "exit_price": 206.228,
     "pnl_per_share": 23.128,
     "r_multiple": 2.0,
-    "pnl_dollars": 19.4,
+    "pnl_dollars": 85.0,
     "target_used": "target_2R",
     "symbol": "RTX",
-    "equity_at_entry": 970.0
+    "equity_at_entry": 850.0
   },
   {
     "type": "inverse_hns",
@@ -1450,7 +1450,7 @@
     "target_primary": 201.439,
     "target_1R": 192.2695,
     "target_2R": 201.439,
-    "shares": 1.0579,
+    "shares": 4.6349,
     "atr": 2.3109,
     "entry_style": "retest",
     "outcome": "win",
@@ -1458,10 +1458,10 @@
     "exit_price": 201.439,
     "pnl_per_share": 18.339,
     "r_multiple": 2.0,
-    "pnl_dollars": 19.4,
+    "pnl_dollars": 85.0,
     "target_used": "target_2R",
     "symbol": "RTX",
-    "equity_at_entry": 970.0
+    "equity_at_entry": 850.0
   },
   {
     "type": "inverse_hns",
@@ -1474,7 +1474,7 @@
     "target_primary": 368.6017,
     "target_1R": 359.2258,
     "target_2R": 368.6017,
-    "shares": 1.0346,
+    "shares": 4.5329,
     "atr": 3.2058,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -1482,10 +1482,10 @@
     "exit_price": 340.4742,
     "pnl_per_share": -9.3758,
     "r_multiple": -1.0,
-    "pnl_dollars": -9.7,
+    "pnl_dollars": -42.5,
     "target_used": "target_2R",
     "symbol": "V",
-    "equity_at_entry": 970.0
+    "equity_at_entry": 850.0
   },
   {
     "type": "double_bottom",
@@ -1498,7 +1498,7 @@
     "target_primary": 379.792,
     "target_1R": 351.1385,
     "target_2R": 379.792,
-    "shares": 0.3385,
+    "shares": 1.4832,
     "atr": 3.5584,
     "entry_style": "retest",
     "outcome": "loss",
@@ -1506,10 +1506,10 @@
     "exit_price": 293.8315,
     "pnl_per_share": -28.6535,
     "r_multiple": -1.0,
-    "pnl_dollars": -9.7,
+    "pnl_dollars": -42.5,
     "target_used": "target_2R",
     "symbol": "JPM",
-    "equity_at_entry": 970.0
+    "equity_at_entry": 850.0
   },
   {
     "type": "inverse_hns",
@@ -1522,7 +1522,7 @@
     "target_primary": 375.235,
     "target_1R": 348.86,
     "target_2R": 375.235,
-    "shares": 0.3678,
+    "shares": 1.6114,
     "atr": 3.5584,
     "entry_style": "retest",
     "outcome": "loss",
@@ -1530,10 +1530,10 @@
     "exit_price": 296.11,
     "pnl_per_share": -26.375,
     "r_multiple": -1.0,
-    "pnl_dollars": -9.7,
+    "pnl_dollars": -42.5,
     "target_used": "target_2R",
     "symbol": "JPM",
-    "equity_at_entry": 970.0
+    "equity_at_entry": 850.0
   },
   {
     "type": "inverse_hns",
@@ -1546,7 +1546,7 @@
     "target_primary": 105.84,
     "target_1R": 112.7802,
     "target_2R": 121.2405,
-    "shares": 1.1465,
+    "shares": 5.0235,
     "atr": 1.5802,
     "entry_style": "breakout",
     "outcome": "win",
@@ -1554,10 +1554,10 @@
     "exit_price": 121.2405,
     "pnl_per_share": 16.9205,
     "r_multiple": 2.0,
-    "pnl_dollars": 19.4,
+    "pnl_dollars": 85.0,
     "target_used": "target_2R",
     "symbol": "MRK",
-    "equity_at_entry": 970.0
+    "equity_at_entry": 850.0
   },
   {
     "type": "double_bottom",
@@ -1570,7 +1570,7 @@
     "target_primary": 358.7915,
     "target_1R": 337.3957,
     "target_2R": 358.7915,
-    "shares": 0.4534,
+    "shares": 1.9864,
     "atr": 4.6007,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -1578,10 +1578,10 @@
     "exit_price": 294.6043,
     "pnl_per_share": -21.3957,
     "r_multiple": -1.0,
-    "pnl_dollars": -9.7,
+    "pnl_dollars": -42.5,
     "target_used": "target_2R",
     "symbol": "GE",
-    "equity_at_entry": 970.0
+    "equity_at_entry": 850.0
   },
   {
     "type": "inverse_hns",
@@ -1594,7 +1594,7 @@
     "target_primary": 373.9613,
     "target_1R": 344.9806,
     "target_2R": 373.9613,
-    "shares": 0.3347,
+    "shares": 1.4665,
     "atr": 4.6007,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -1602,10 +1602,10 @@
     "exit_price": 287.0194,
     "pnl_per_share": -28.9806,
     "r_multiple": -1.0,
-    "pnl_dollars": -9.7,
+    "pnl_dollars": -42.5,
     "target_used": "target_2R",
     "symbol": "GE",
-    "equity_at_entry": 970.0
+    "equity_at_entry": 850.0
   },
   {
     "type": "inverse_hns",
@@ -1618,7 +1618,7 @@
     "target_primary": 617.2798,
     "target_1R": 597.1824,
     "target_2R": 617.2798,
-    "shares": 0.4826,
+    "shares": 2.1147,
     "atr": 5.6324,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -1626,10 +1626,10 @@
     "exit_price": 556.9876,
     "pnl_per_share": -20.0974,
     "r_multiple": -1.0,
-    "pnl_dollars": -9.7,
+    "pnl_dollars": -42.5,
     "target_used": "target_2R",
     "symbol": "MA",
-    "equity_at_entry": 970.0
+    "equity_at_entry": 850.0
   },
   {
     "type": "double_bottom",
@@ -1642,7 +1642,7 @@
     "target_primary": 239.29,
     "target_1R": 239.071,
     "target_2R": 249.407,
-    "shares": 0.9385,
+    "shares": 4.1118,
     "atr": 2.701,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -1650,10 +1650,10 @@
     "exit_price": 218.399,
     "pnl_per_share": -10.336,
     "r_multiple": -1.0,
-    "pnl_dollars": -9.7,
+    "pnl_dollars": -42.5,
     "target_used": "target_2R",
     "symbol": "ABBV",
-    "equity_at_entry": 970.0
+    "equity_at_entry": 850.0
   },
   {
     "type": "double_bottom",
@@ -1666,7 +1666,7 @@
     "target_primary": 359.5114,
     "target_1R": 337.8757,
     "target_2R": 359.5114,
-    "shares": 0.4483,
+    "shares": 1.9643,
     "atr": 4.3032,
     "entry_style": "retest",
     "outcome": "loss",
@@ -1674,10 +1674,10 @@
     "exit_price": 294.6043,
     "pnl_per_share": -21.6357,
     "r_multiple": -1.0,
-    "pnl_dollars": -9.7,
+    "pnl_dollars": -42.5,
     "target_used": "target_2R",
     "symbol": "GE",
-    "equity_at_entry": 970.0
+    "equity_at_entry": 850.0
   },
   {
     "type": "inverse_hns",
@@ -1690,7 +1690,7 @@
     "target_primary": 374.6812,
     "target_1R": 345.4606,
     "target_2R": 374.6812,
-    "shares": 0.332,
+    "shares": 1.4545,
     "atr": 4.3032,
     "entry_style": "retest",
     "outcome": "loss",
@@ -1698,10 +1698,10 @@
     "exit_price": 287.0194,
     "pnl_per_share": -29.2206,
     "r_multiple": -1.0,
-    "pnl_dollars": -9.7,
+    "pnl_dollars": -42.5,
     "target_used": "target_2R",
     "symbol": "GE",
-    "equity_at_entry": 970.0
+    "equity_at_entry": 850.0
   },
   {
     "type": "inverse_hns",
@@ -1714,7 +1714,7 @@
     "target_primary": 619.8748,
     "target_1R": 598.9124,
     "target_2R": 619.8748,
-    "shares": 0.4627,
+    "shares": 2.0274,
     "atr": 5.1961,
     "entry_style": "retest",
     "outcome": "loss",
@@ -1722,10 +1722,10 @@
     "exit_price": 556.9876,
     "pnl_per_share": -20.9624,
     "r_multiple": -1.0,
-    "pnl_dollars": -9.7,
+    "pnl_dollars": -42.5,
     "target_used": "target_2R",
     "symbol": "MA",
-    "equity_at_entry": 970.0
+    "equity_at_entry": 850.0
   },
   {
     "type": "double_bottom",
@@ -1738,7 +1738,7 @@
     "target_primary": 211.335,
     "target_1R": 215.069,
     "target_2R": 238.183,
-    "shares": 0.4197,
+    "shares": 1.8387,
     "atr": 3.109,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -1746,10 +1746,10 @@
     "exit_price": 168.841,
     "pnl_per_share": -23.114,
     "r_multiple": -1.0,
-    "pnl_dollars": -9.7,
+    "pnl_dollars": -42.5,
     "target_used": "target_2R",
     "symbol": "NVDA",
-    "equity_at_entry": 970.0
+    "equity_at_entry": 850.0
   },
   {
     "type": "double_bottom",
@@ -1762,7 +1762,7 @@
     "target_primary": 253.142,
     "target_1R": 241.561,
     "target_2R": 253.142,
-    "shares": 0.8548,
+    "shares": 4.1015,
     "atr": 2.4477,
     "entry_style": "retest",
     "outcome": "loss",
@@ -1770,10 +1770,10 @@
     "exit_price": 218.399,
     "pnl_per_share": -11.581,
     "r_multiple": -1.0,
-    "pnl_dollars": -9.9,
+    "pnl_dollars": -47.5,
     "target_used": "target_2R",
     "symbol": "ABBV",
-    "equity_at_entry": 990.0
+    "equity_at_entry": 950.0
   },
   {
     "type": "inverse_hns",
@@ -1786,7 +1786,7 @@
     "target_primary": 239.29,
     "target_1R": 241.6219,
     "target_2R": 252.3539,
-    "shares": 0.9225,
+    "shares": 4.4261,
     "atr": 2.2811,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -1794,10 +1794,10 @@
     "exit_price": 220.1581,
     "pnl_per_share": -10.7319,
     "r_multiple": -1.0,
-    "pnl_dollars": -9.9,
+    "pnl_dollars": -47.5,
     "target_used": "target_2R",
     "symbol": "ABBV",
-    "equity_at_entry": 990.0
+    "equity_at_entry": 950.0
   },
   {
     "type": "double_bottom",
@@ -1810,7 +1810,7 @@
     "target_primary": 157.95,
     "target_1R": 157.7405,
     "target_2R": 163.3561,
-    "shares": 1.763,
+    "shares": 8.4587,
     "atr": 1.1505,
     "entry_style": "breakout",
     "outcome": "win",
@@ -1818,10 +1818,10 @@
     "exit_price": 163.3561,
     "pnl_per_share": 11.2311,
     "r_multiple": 2.0,
-    "pnl_dollars": 19.8,
+    "pnl_dollars": 95.0,
     "target_used": "target_2R",
     "symbol": "CVX",
-    "equity_at_entry": 990.0
+    "equity_at_entry": 950.0
   },
   {
     "type": "inverse_hns",
@@ -1834,7 +1834,7 @@
     "target_primary": 157.95,
     "target_1R": 155.7533,
     "target_2R": 159.3817,
-    "shares": 2.7286,
+    "shares": 13.0915,
     "atr": 1.1505,
     "entry_style": "breakout",
     "outcome": "win",
@@ -1842,10 +1842,10 @@
     "exit_price": 159.3817,
     "pnl_per_share": 7.2567,
     "r_multiple": 2.0,
-    "pnl_dollars": 19.8,
+    "pnl_dollars": 95.0,
     "target_used": "target_2R",
     "symbol": "CVX",
-    "equity_at_entry": 990.0
+    "equity_at_entry": 950.0
   },
   {
     "type": "double_bottom",
@@ -1858,7 +1858,7 @@
     "target_primary": 163.3575,
     "target_1R": 157.7415,
     "target_2R": 163.3575,
-    "shares": 1.7628,
+    "shares": 8.458,
     "atr": 1.1026,
     "entry_style": "retest",
     "outcome": "win",
@@ -1866,10 +1866,10 @@
     "exit_price": 163.3575,
     "pnl_per_share": 11.232,
     "r_multiple": 2.0,
-    "pnl_dollars": 19.8,
+    "pnl_dollars": 95.0,
     "target_used": "target_2R",
     "symbol": "CVX",
-    "equity_at_entry": 990.0
+    "equity_at_entry": 950.0
   },
   {
     "type": "inverse_hns",
@@ -1882,7 +1882,7 @@
     "target_primary": 159.3831,
     "target_1R": 155.7543,
     "target_2R": 159.3831,
-    "shares": 2.7282,
+    "shares": 13.0897,
     "atr": 1.1026,
     "entry_style": "retest",
     "outcome": "win",
@@ -1890,10 +1890,10 @@
     "exit_price": 159.3831,
     "pnl_per_share": 7.2576,
     "r_multiple": 2.0,
-    "pnl_dollars": 19.8,
+    "pnl_dollars": 95.0,
     "target_used": "target_2R",
     "symbol": "CVX",
-    "equity_at_entry": 990.0
+    "equity_at_entry": 950.0
   },
   {
     "type": "inverse_hns",
@@ -1906,7 +1906,7 @@
     "target_primary": 44.01,
     "target_1R": 43.101,
     "target_2R": 46.637,
-    "shares": 2.7998,
+    "shares": 13.4333,
     "atr": 0.791,
     "entry_style": "breakout",
     "outcome": "win",
@@ -1914,10 +1914,10 @@
     "exit_price": 46.637,
     "pnl_per_share": 7.072,
     "r_multiple": 2.0,
-    "pnl_dollars": 19.8,
+    "pnl_dollars": 95.0,
     "target_used": "target_2R",
     "symbol": "INTC",
-    "equity_at_entry": 990.0
+    "equity_at_entry": 950.0
   },
   {
     "type": "inverse_hns",
@@ -1930,7 +1930,7 @@
     "target_primary": 105.6587,
     "target_1R": 101.1418,
     "target_2R": 105.6587,
-    "shares": 2.1918,
+    "shares": 10.5163,
     "atr": 1.0068,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -1938,10 +1938,10 @@
     "exit_price": 92.1082,
     "pnl_per_share": -4.5168,
     "r_multiple": -1.0,
-    "pnl_dollars": -9.9,
+    "pnl_dollars": -47.5,
     "target_used": "target_2R",
     "symbol": "WFC",
-    "equity_at_entry": 990.0
+    "equity_at_entry": 950.0
   },
   {
     "type": "double_bottom",
@@ -1954,7 +1954,7 @@
     "target_primary": 398.2452,
     "target_1R": 371.3826,
     "target_2R": 398.2452,
-    "shares": 0.4319,
+    "shares": 3.355,
     "atr": 4.4225,
     "entry_style": "retest",
     "outcome": "loss",
@@ -1962,10 +1962,10 @@
     "exit_price": 317.6574,
     "pnl_per_share": -26.8626,
     "r_multiple": -1.0,
-    "pnl_dollars": -11.6,
+    "pnl_dollars": -90.12,
     "target_used": "target_2R",
     "symbol": "UNH",
-    "equity_at_entry": 1160.1
+    "equity_at_entry": 1802.5
   },
   {
     "type": "inverse_hns",
@@ -1978,7 +1978,7 @@
     "target_primary": 383.385,
     "target_1R": 363.9525,
     "target_2R": 383.385,
-    "shares": 0.597,
+    "shares": 4.6378,
     "atr": 4.4225,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -1986,10 +1986,10 @@
     "exit_price": 325.0875,
     "pnl_per_share": -19.4325,
     "r_multiple": -1.0,
-    "pnl_dollars": -11.6,
+    "pnl_dollars": -90.12,
     "target_used": "target_2R",
     "symbol": "UNH",
-    "equity_at_entry": 1160.1
+    "equity_at_entry": 1802.5
   },
   {
     "type": "inverse_hns",
@@ -2002,7 +2002,7 @@
     "target_primary": 118.3943,
     "target_1R": 109.0134,
     "target_2R": 118.3943,
-    "shares": 1.2367,
+    "shares": 9.6073,
     "atr": 1.3534,
     "entry_style": "breakout",
     "outcome": "win",
@@ -2010,10 +2010,10 @@
     "exit_price": 118.3943,
     "pnl_per_share": 18.7618,
     "r_multiple": 2.0,
-    "pnl_dollars": 23.2,
+    "pnl_dollars": 180.25,
     "target_used": "target_2R",
     "symbol": "COP",
-    "equity_at_entry": 1160.1
+    "equity_at_entry": 1802.5
   },
   {
     "type": "inverse_hns",
@@ -2026,7 +2026,7 @@
     "target_primary": 386.1066,
     "target_1R": 370.8958,
     "target_2R": 386.1066,
-    "shares": 0.7627,
+    "shares": 5.9251,
     "atr": 2.9938,
     "entry_style": "retest",
     "outcome": "loss",
@@ -2034,10 +2034,10 @@
     "exit_price": 340.4742,
     "pnl_per_share": -15.2108,
     "r_multiple": -1.0,
-    "pnl_dollars": -11.6,
+    "pnl_dollars": -90.12,
     "target_used": "target_2R",
     "symbol": "V",
-    "equity_at_entry": 1160.1
+    "equity_at_entry": 1802.5
   },
   {
     "type": "double_bottom",
@@ -2050,7 +2050,7 @@
     "target_primary": 710.3655,
     "target_1R": 658.1652,
     "target_2R": 710.3655,
-    "shares": 0.2222,
+    "shares": 1.7265,
     "atr": 5.5802,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -2058,10 +2058,10 @@
     "exit_price": 553.7648,
     "pnl_per_share": -52.2002,
     "r_multiple": -1.0,
-    "pnl_dollars": -11.6,
+    "pnl_dollars": -90.12,
     "target_used": "target_2R",
     "symbol": "TMO",
-    "equity_at_entry": 1160.1
+    "equity_at_entry": 1802.5
   },
   {
     "type": "inverse_hns",
@@ -2074,7 +2074,7 @@
     "target_primary": 670.8555,
     "target_1R": 638.4102,
     "target_2R": 670.8555,
-    "shares": 0.3576,
+    "shares": 2.7778,
     "atr": 5.5802,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -2082,10 +2082,10 @@
     "exit_price": 573.5198,
     "pnl_per_share": -32.4452,
     "r_multiple": -1.0,
-    "pnl_dollars": -11.6,
+    "pnl_dollars": -90.12,
     "target_used": "target_2R",
     "symbol": "TMO",
-    "equity_at_entry": 1160.1
+    "equity_at_entry": 1802.5
   },
   {
     "type": "double_bottom",
@@ -2098,7 +2098,7 @@
     "target_primary": 270.7316,
     "target_1R": 252.6233,
     "target_2R": 270.7316,
-    "shares": 0.6406,
+    "shares": 4.977,
     "atr": 2.1758,
     "entry_style": "retest",
     "outcome": "loss",
@@ -2106,10 +2106,10 @@
     "exit_price": 216.4067,
     "pnl_per_share": -18.1083,
     "r_multiple": -1.0,
-    "pnl_dollars": -11.6,
+    "pnl_dollars": -90.12,
     "target_used": "target_2R",
     "symbol": "DHR",
-    "equity_at_entry": 1160.1
+    "equity_at_entry": 1802.5
   },
   {
     "type": "inverse_hns",
@@ -2122,7 +2122,7 @@
     "target_primary": 250.1565,
     "target_1R": 242.3358,
     "target_2R": 250.1565,
-    "shares": 1.4834,
+    "shares": 11.5238,
     "atr": 2.1758,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -2130,10 +2130,10 @@
     "exit_price": 226.6942,
     "pnl_per_share": -7.8208,
     "r_multiple": -1.0,
-    "pnl_dollars": -11.6,
+    "pnl_dollars": -90.12,
     "target_used": "target_2R",
     "symbol": "DHR",
-    "equity_at_entry": 1160.1
+    "equity_at_entry": 1802.5
   },
   {
     "type": "inverse_hns",
@@ -2146,7 +2146,7 @@
     "target_primary": 106.3036,
     "target_1R": 101.5718,
     "target_2R": 106.3036,
-    "shares": 2.4517,
+    "shares": 19.0467,
     "atr": 0.9835,
     "entry_style": "retest",
     "outcome": "loss",
@@ -2154,10 +2154,10 @@
     "exit_price": 92.1082,
     "pnl_per_share": -4.7318,
     "r_multiple": -1.0,
-    "pnl_dollars": -11.6,
+    "pnl_dollars": -90.12,
     "target_used": "target_2R",
     "symbol": "WFC",
-    "equity_at_entry": 1160.1
+    "equity_at_entry": 1802.5
   },
   {
     "type": "double_bottom",
@@ -2170,7 +2170,7 @@
     "target_primary": 257.17,
     "target_1R": 259.2591,
     "target_2R": 276.9232,
-    "shares": 0.6568,
+    "shares": 5.1022,
     "atr": 2.8691,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -2178,10 +2178,10 @@
     "exit_price": 223.9309,
     "pnl_per_share": -17.6641,
     "r_multiple": -1.0,
-    "pnl_dollars": -11.6,
+    "pnl_dollars": -90.12,
     "target_used": "target_2R",
     "symbol": "AMZN",
-    "equity_at_entry": 1160.1
+    "equity_at_entry": 1802.5
   },
   {
     "type": "inverse_hns",
@@ -2194,7 +2194,7 @@
     "target_primary": 257.17,
     "target_1R": 255.0191,
     "target_2R": 268.4432,
-    "shares": 0.8791,
+    "shares": 7.0861,
     "atr": 2.8691,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -2202,10 +2202,10 @@
     "exit_price": 228.1709,
     "pnl_per_share": -13.4241,
     "r_multiple": -1.0,
-    "pnl_dollars": -11.8,
+    "pnl_dollars": -95.12,
     "target_used": "target_2R",
     "symbol": "AMZN",
-    "equity_at_entry": 1180.1
+    "equity_at_entry": 1902.5
   },
   {
     "type": "inverse_hns",
@@ -2218,7 +2218,7 @@
     "target_primary": 401.49,
     "target_1R": 376.0225,
     "target_2R": 401.49,
-    "shares": 0.4634,
+    "shares": 3.7352,
     "atr": 4.7166,
     "entry_style": "retest",
     "outcome": "loss",
@@ -2226,10 +2226,10 @@
     "exit_price": 325.0875,
     "pnl_per_share": -25.4675,
     "r_multiple": -1.0,
-    "pnl_dollars": -11.8,
+    "pnl_dollars": -95.12,
     "target_used": "target_2R",
     "symbol": "UNH",
-    "equity_at_entry": 1180.1
+    "equity_at_entry": 1902.5
   },
   {
     "type": "double_bottom",
@@ -2242,7 +2242,7 @@
     "target_primary": 228.4181,
     "target_1R": 216.2365,
     "target_2R": 228.4181,
-    "shares": 0.9688,
+    "shares": 7.809,
     "atr": 1.7766,
     "entry_style": "breakout",
     "outcome": "win",
@@ -2250,10 +2250,10 @@
     "exit_price": 228.4181,
     "pnl_per_share": 24.3631,
     "r_multiple": 2.0,
-    "pnl_dollars": 23.6,
+    "pnl_dollars": 190.25,
     "target_used": "target_2R",
     "symbol": "HON",
-    "equity_at_entry": 1180.1
+    "equity_at_entry": 1902.5
   },
   {
     "type": "inverse_hns",
@@ -2266,7 +2266,7 @@
     "target_primary": 222.3983,
     "target_1R": 213.2266,
     "target_2R": 222.3983,
-    "shares": 1.2867,
+    "shares": 10.3717,
     "atr": 1.7766,
     "entry_style": "breakout",
     "outcome": "win",
@@ -2274,10 +2274,10 @@
     "exit_price": 222.3983,
     "pnl_per_share": 18.3433,
     "r_multiple": 2.0,
-    "pnl_dollars": 23.6,
+    "pnl_dollars": 190.25,
     "target_used": "target_2R",
     "symbol": "HON",
-    "equity_at_entry": 1180.1
+    "equity_at_entry": 1902.5
   },
   {
     "type": "double_bottom",
@@ -2290,7 +2290,7 @@
     "target_primary": 391.7936,
     "target_1R": 374.7268,
     "target_2R": 391.7936,
-    "shares": 0.6915,
+    "shares": 5.5737,
     "atr": 3.0868,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -2298,10 +2298,10 @@
     "exit_price": 340.5932,
     "pnl_per_share": -17.0668,
     "r_multiple": -1.0,
-    "pnl_dollars": -11.8,
+    "pnl_dollars": -95.12,
     "target_used": "target_2R",
     "symbol": "V",
-    "equity_at_entry": 1180.1
+    "equity_at_entry": 1902.5
   },
   {
     "type": "double_bottom",
@@ -2314,7 +2314,7 @@
     "target_primary": 183.44,
     "target_1R": 194.4872,
     "target_2R": 206.7695,
-    "shares": 0.9608,
+    "shares": 7.7449,
     "atr": 2.3372,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -2322,10 +2322,10 @@
     "exit_price": 169.9228,
     "pnl_per_share": -12.2822,
     "r_multiple": -1.0,
-    "pnl_dollars": -11.8,
+    "pnl_dollars": -95.12,
     "target_used": "target_2R",
     "symbol": "QCOM",
-    "equity_at_entry": 1180.1
+    "equity_at_entry": 1902.5
   },
   {
     "type": "double_bottom",
@@ -2338,7 +2338,7 @@
     "target_primary": 392.7536,
     "target_1R": 375.3668,
     "target_2R": 392.7536,
-    "shares": 0.6787,
+    "shares": 5.4711,
     "atr": 2.987,
     "entry_style": "retest",
     "outcome": "loss",
@@ -2346,10 +2346,10 @@
     "exit_price": 340.5932,
     "pnl_per_share": -17.3868,
     "r_multiple": -1.0,
-    "pnl_dollars": -11.8,
+    "pnl_dollars": -95.12,
     "target_used": "target_2R",
     "symbol": "V",
-    "equity_at_entry": 1180.1
+    "equity_at_entry": 1902.5
   },
   {
     "type": "inverse_hns",
@@ -2362,7 +2362,7 @@
     "target_primary": 267.5938,
     "target_1R": 251.7819,
     "target_2R": 267.5938,
-    "shares": 0.7587,
+    "shares": 6.3006,
     "atr": 3.2503,
     "entry_style": "retest",
     "outcome": "loss",
@@ -2370,10 +2370,10 @@
     "exit_price": 220.1581,
     "pnl_per_share": -15.8119,
     "r_multiple": -1.0,
-    "pnl_dollars": -12.0,
+    "pnl_dollars": -99.62,
     "target_used": "target_2R",
     "symbol": "ABBV",
-    "equity_at_entry": 1199.7
+    "equity_at_entry": 1992.5
   },
   {
     "type": "double_bottom",
@@ -2386,7 +2386,7 @@
     "target_primary": 252.18,
     "target_1R": 257.6005,
     "target_2R": 266.2409,
-    "shares": 1.4114,
+    "shares": 12.0797,
     "atr": 2.3105,
     "entry_style": "breakout",
     "outcome": "win",
@@ -2394,10 +2394,10 @@
     "exit_price": 266.2409,
     "pnl_per_share": 17.2809,
     "r_multiple": 2.0,
-    "pnl_dollars": 24.39,
+    "pnl_dollars": 208.75,
     "target_used": "target_2R",
     "symbol": "LOW",
-    "equity_at_entry": 1219.5
+    "equity_at_entry": 2087.5
   },
   {
     "type": "double_bottom",
@@ -2410,7 +2410,7 @@
     "target_primary": 346.38,
     "target_1R": 364.6012,
     "target_2R": 387.4124,
-    "shares": 0.5346,
+    "shares": 4.5756,
     "atr": 4.0762,
     "entry_style": "breakout",
     "outcome": "win",
@@ -2418,10 +2418,10 @@
     "exit_price": 387.4124,
     "pnl_per_share": 45.6224,
     "r_multiple": 2.0,
-    "pnl_dollars": 24.39,
+    "pnl_dollars": 208.75,
     "target_used": "target_2R",
     "symbol": "AMGN",
-    "equity_at_entry": 1219.5
+    "equity_at_entry": 2087.5
   },
   {
     "type": "inverse_hns",
@@ -2434,7 +2434,7 @@
     "target_primary": 945.28,
     "target_1R": 944.5089,
     "target_2R": 995.0178,
-    "shares": 0.2414,
+    "shares": 2.0665,
     "atr": 9.0089,
     "entry_style": "breakout",
     "outcome": "win",
@@ -2442,10 +2442,10 @@
     "exit_price": 995.0178,
     "pnl_per_share": 101.0178,
     "r_multiple": 2.0,
-    "pnl_dollars": 24.39,
+    "pnl_dollars": 208.75,
     "target_used": "target_2R",
     "symbol": "COST",
-    "equity_at_entry": 1219.5
+    "equity_at_entry": 2087.5
   },
   {
     "type": "inverse_hns",
@@ -2458,7 +2458,7 @@
     "target_primary": 253.3216,
     "target_1R": 244.4458,
     "target_2R": 253.3216,
-    "shares": 1.374,
+    "shares": 11.7595,
     "atr": 2.1599,
     "entry_style": "retest",
     "outcome": "loss",
@@ -2466,10 +2466,10 @@
     "exit_price": 226.6942,
     "pnl_per_share": -8.8758,
     "r_multiple": -1.0,
-    "pnl_dollars": -12.19,
+    "pnl_dollars": -104.38,
     "target_used": "target_2R",
     "symbol": "DHR",
-    "equity_at_entry": 1219.5
+    "equity_at_entry": 2087.5
   },
   {
     "type": "inverse_hns",
@@ -2482,7 +2482,7 @@
     "target_primary": 118.7468,
     "target_1R": 109.2484,
     "target_2R": 118.7468,
-    "shares": 1.2839,
+    "shares": 10.9887,
     "atr": 1.811,
     "entry_style": "retest",
     "outcome": "win",
@@ -2490,10 +2490,10 @@
     "exit_price": 118.7468,
     "pnl_per_share": 18.9968,
     "r_multiple": 2.0,
-    "pnl_dollars": 24.39,
+    "pnl_dollars": 208.75,
     "target_used": "target_2R",
     "symbol": "COP",
-    "equity_at_entry": 1219.5
+    "equity_at_entry": 2087.5
   },
   {
     "type": "double_bottom",
@@ -2506,7 +2506,7 @@
     "target_primary": 290.706,
     "target_1R": 273.9105,
     "target_2R": 290.706,
-    "shares": 0.7499,
+    "shares": 6.8099,
     "atr": 2.8825,
     "entry_style": "retest",
     "outcome": "win",
@@ -2514,10 +2514,10 @@
     "exit_price": 290.706,
     "pnl_per_share": 33.591,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.19,
+    "pnl_dollars": 228.75,
     "target_used": "target_2R",
     "symbol": "LOW",
-    "equity_at_entry": 1259.5
+    "equity_at_entry": 2287.5
   },
   {
     "type": "double_bottom",
@@ -2530,7 +2530,7 @@
     "target_primary": 230.248,
     "target_1R": 217.4565,
     "target_2R": 230.248,
-    "shares": 0.9846,
+    "shares": 8.9415,
     "atr": 2.3201,
     "entry_style": "retest",
     "outcome": "win",
@@ -2538,10 +2538,10 @@
     "exit_price": 230.248,
     "pnl_per_share": 25.583,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.19,
+    "pnl_dollars": 228.75,
     "target_used": "target_2R",
     "symbol": "HON",
-    "equity_at_entry": 1259.5
+    "equity_at_entry": 2287.5
   },
   {
     "type": "inverse_hns",
@@ -2554,7 +2554,7 @@
     "target_primary": 224.2282,
     "target_1R": 214.4466,
     "target_2R": 224.2282,
-    "shares": 1.2876,
+    "shares": 11.6929,
     "atr": 2.3201,
     "entry_style": "retest",
     "outcome": "win",
@@ -2562,10 +2562,10 @@
     "exit_price": 224.2282,
     "pnl_per_share": 19.5632,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.19,
+    "pnl_dollars": 228.75,
     "target_used": "target_2R",
     "symbol": "HON",
-    "equity_at_entry": 1259.5
+    "equity_at_entry": 2287.5
   },
   {
     "type": "double_bottom",
@@ -2578,7 +2578,7 @@
     "target_primary": 383.68,
     "target_1R": 398.8871,
     "target_2R": 425.0341,
-    "shares": 0.4817,
+    "shares": 4.3743,
     "atr": 4.7071,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -2586,10 +2586,10 @@
     "exit_price": 346.5929,
     "pnl_per_share": -26.1471,
     "r_multiple": -1.0,
-    "pnl_dollars": -12.59,
+    "pnl_dollars": -114.38,
     "target_used": "target_2R",
     "symbol": "HD",
-    "equity_at_entry": 1259.5
+    "equity_at_entry": 2287.5
   },
   {
     "type": "inverse_hns",
@@ -2602,7 +2602,7 @@
     "target_primary": 383.68,
     "target_1R": 398.377,
     "target_2R": 424.0139,
-    "shares": 0.4961,
+    "shares": 4.6742,
     "atr": 4.7071,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -2610,10 +2610,10 @@
     "exit_price": 347.103,
     "pnl_per_share": -25.637,
     "r_multiple": -1.0,
-    "pnl_dollars": -12.72,
+    "pnl_dollars": -119.83,
     "target_used": "target_2R",
     "symbol": "HD",
-    "equity_at_entry": 1271.89
+    "equity_at_entry": 2396.63
   },
   {
     "type": "double_bottom",
@@ -2626,7 +2626,7 @@
     "target_primary": 945.28,
     "target_1R": 980.1382,
     "target_2R": 1034.8515,
-    "shares": 0.2325,
+    "shares": 2.1902,
     "atr": 10.6082,
     "entry_style": "breakout",
     "outcome": "win",
@@ -2634,10 +2634,10 @@
     "exit_price": 1034.8515,
     "pnl_per_share": 109.4265,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.44,
+    "pnl_dollars": 239.66,
     "target_used": "target_2R",
     "symbol": "COST",
-    "equity_at_entry": 1271.89
+    "equity_at_entry": 2396.63
   },
   {
     "type": "double_bottom",
@@ -2650,7 +2650,7 @@
     "target_primary": 1089.4064,
     "target_1R": 1016.5082,
     "target_2R": 1089.4064,
-    "shares": 0.1745,
+    "shares": 1.6438,
     "atr": 10.8064,
     "entry_style": "retest",
     "outcome": "win",
@@ -2658,10 +2658,10 @@
     "exit_price": 1089.4064,
     "pnl_per_share": 145.7964,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.44,
+    "pnl_dollars": 239.66,
     "target_used": "target_2R",
     "symbol": "COST",
-    "equity_at_entry": 1271.89
+    "equity_at_entry": 2396.63
   },
   {
     "type": "double_bottom",
@@ -2674,7 +2674,7 @@
     "target_primary": 718.1232,
     "target_1R": 673.2341,
     "target_2R": 718.1232,
-    "shares": 0.2878,
+    "shares": 2.7809,
     "atr": 8.7841,
     "entry_style": "breakout",
     "outcome": "win",
@@ -2682,10 +2682,10 @@
     "exit_price": 718.1232,
     "pnl_per_share": 89.7782,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.84,
+    "pnl_dollars": 249.66,
     "target_used": "target_2R",
     "symbol": "CAT",
-    "equity_at_entry": 1291.89
+    "equity_at_entry": 2496.63
   },
   {
     "type": "inverse_hns",
@@ -2698,7 +2698,7 @@
     "target_primary": 711.0232,
     "target_1R": 669.6841,
     "target_2R": 711.0232,
-    "shares": 0.3125,
+    "shares": 3.0197,
     "atr": 8.7841,
     "entry_style": "breakout",
     "outcome": "win",
@@ -2706,10 +2706,10 @@
     "exit_price": 711.0232,
     "pnl_per_share": 82.6782,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.84,
+    "pnl_dollars": 249.66,
     "target_used": "target_2R",
     "symbol": "CAT",
-    "equity_at_entry": 1291.89
+    "equity_at_entry": 2496.63
   },
   {
     "type": "double_bottom",
@@ -2722,7 +2722,7 @@
     "target_primary": 114.245,
     "target_1R": 114.638,
     "target_2R": 121.206,
-    "shares": 1.9669,
+    "shares": 19.006,
     "atr": 1.558,
     "entry_style": "breakout",
     "outcome": "win",
@@ -2730,10 +2730,10 @@
     "exit_price": 121.206,
     "pnl_per_share": 13.136,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.84,
+    "pnl_dollars": 249.66,
     "target_used": "target_2R",
     "symbol": "EOG",
-    "equity_at_entry": 1291.89
+    "equity_at_entry": 2496.63
   },
   {
     "type": "inverse_hns",
@@ -2746,7 +2746,7 @@
     "target_primary": 114.245,
     "target_1R": 114.128,
     "target_2R": 120.186,
-    "shares": 1.9904,
+    "shares": 16.042,
     "atr": 1.558,
     "entry_style": "breakout",
     "outcome": "win",
@@ -2754,10 +2754,10 @@
     "exit_price": 120.186,
     "pnl_per_share": 12.116,
     "r_multiple": 2.0,
-    "pnl_dollars": 24.12,
+    "pnl_dollars": 194.37,
     "target_used": "target_2R",
     "symbol": "EOG",
-    "equity_at_entry": 1205.79
+    "equity_at_entry": 1943.65
   },
   {
     "type": "double_bottom",
@@ -2770,7 +2770,7 @@
     "target_primary": 253.5086,
     "target_1R": 235.9443,
     "target_2R": 253.5086,
-    "shares": 0.6865,
+    "shares": 5.533,
     "atr": 2.2843,
     "entry_style": "breakout",
     "outcome": "open",
@@ -2778,10 +2778,10 @@
     "exit_price": 228.4,
     "pnl_per_share": 10.02,
     "r_multiple": 0.57,
-    "pnl_dollars": 6.88,
+    "pnl_dollars": 55.44,
     "target_used": "target_2R",
     "symbol": "JNJ",
-    "equity_at_entry": 1205.79
+    "equity_at_entry": 1943.65
   },
   {
     "type": "inverse_hns",
@@ -2794,7 +2794,7 @@
     "target_primary": 242.0886,
     "target_1R": 230.2343,
     "target_2R": 242.0886,
-    "shares": 0.9907,
+    "shares": 7.4173,
     "atr": 2.2843,
     "entry_style": "breakout",
     "outcome": "win",
@@ -2802,10 +2802,10 @@
     "exit_price": 242.0886,
     "pnl_per_share": 23.7086,
     "r_multiple": 2.0,
-    "pnl_dollars": 23.49,
+    "pnl_dollars": 175.85,
     "target_used": "target_2R",
     "symbol": "JNJ",
-    "equity_at_entry": 1174.39
+    "equity_at_entry": 1758.53
   },
   {
     "type": "inverse_hns",
@@ -2818,7 +2818,7 @@
     "target_primary": 202.1908,
     "target_1R": 185.6754,
     "target_2R": 202.1908,
-    "shares": 0.7111,
+    "shares": 5.3239,
     "atr": 2.2554,
     "entry_style": "breakout",
     "outcome": "win",
@@ -2826,10 +2826,10 @@
     "exit_price": 202.1908,
     "pnl_per_share": 33.0308,
     "r_multiple": 2.0,
-    "pnl_dollars": 23.49,
+    "pnl_dollars": 175.85,
     "target_used": "target_2R",
     "symbol": "CVX",
-    "equity_at_entry": 1174.39
+    "equity_at_entry": 1758.53
   },
   {
     "type": "double_bottom",
@@ -2842,7 +2842,7 @@
     "target_primary": 132.246,
     "target_1R": 121.998,
     "target_2R": 132.246,
-    "shares": 1.146,
+    "shares": 8.5799,
     "atr": 1.67,
     "entry_style": "retest",
     "outcome": "win",
@@ -2850,10 +2850,10 @@
     "exit_price": 132.246,
     "pnl_per_share": 20.496,
     "r_multiple": 2.0,
-    "pnl_dollars": 23.49,
+    "pnl_dollars": 175.85,
     "target_used": "target_2R",
     "symbol": "EOG",
-    "equity_at_entry": 1174.39
+    "equity_at_entry": 1758.53
   },
   {
     "type": "inverse_hns",
@@ -2866,7 +2866,7 @@
     "target_primary": 131.226,
     "target_1R": 121.488,
     "target_2R": 131.226,
-    "shares": 1.206,
+    "shares": 9.0292,
     "atr": 1.67,
     "entry_style": "retest",
     "outcome": "win",
@@ -2874,10 +2874,10 @@
     "exit_price": 131.226,
     "pnl_per_share": 19.476,
     "r_multiple": 2.0,
-    "pnl_dollars": 23.49,
+    "pnl_dollars": 175.85,
     "target_used": "target_2R",
     "symbol": "EOG",
-    "equity_at_entry": 1174.39
+    "equity_at_entry": 1758.53
   },
   {
     "type": "double_bottom",
@@ -2890,7 +2890,7 @@
     "target_primary": 742.7982,
     "target_1R": 689.6841,
     "target_2R": 742.7982,
-    "shares": 0.2211,
+    "shares": 1.6554,
     "atr": 8.9966,
     "entry_style": "retest",
     "outcome": "win",
@@ -2898,10 +2898,10 @@
     "exit_price": 742.7982,
     "pnl_per_share": 106.2282,
     "r_multiple": 2.0,
-    "pnl_dollars": 23.49,
+    "pnl_dollars": 175.85,
     "target_used": "target_2R",
     "symbol": "CAT",
-    "equity_at_entry": 1174.39
+    "equity_at_entry": 1758.53
   },
   {
     "type": "inverse_hns",
@@ -2914,7 +2914,7 @@
     "target_primary": 735.6982,
     "target_1R": 686.1341,
     "target_2R": 735.6982,
-    "shares": 0.2369,
+    "shares": 1.774,
     "atr": 8.9966,
     "entry_style": "retest",
     "outcome": "win",
@@ -2922,10 +2922,10 @@
     "exit_price": 735.6982,
     "pnl_per_share": 99.1282,
     "r_multiple": 2.0,
-    "pnl_dollars": 23.49,
+    "pnl_dollars": 175.85,
     "target_used": "target_2R",
     "symbol": "CAT",
-    "equity_at_entry": 1174.39
+    "equity_at_entry": 1758.53
   },
   {
     "type": "inverse_hns",
@@ -2938,7 +2938,7 @@
     "target_primary": 61.2222,
     "target_1R": 59.1047,
     "target_2R": 61.2222,
-    "shares": 5.5461,
+    "shares": 41.5237,
     "atr": 0.6403,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -2946,10 +2946,10 @@
     "exit_price": 54.8697,
     "pnl_per_share": -2.1175,
     "r_multiple": -1.0,
-    "pnl_dollars": -11.74,
+    "pnl_dollars": -87.93,
     "target_used": "target_2R",
     "symbol": "BMY",
-    "equity_at_entry": 1174.39
+    "equity_at_entry": 1758.53
   },
   {
     "type": "double_bottom",
@@ -2962,7 +2962,7 @@
     "target_primary": 262.17,
     "target_1R": 274.5128,
     "target_2R": 316.5348,
-    "shares": 0.2795,
+    "shares": 2.0924,
     "atr": 5.0312,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -2970,10 +2970,10 @@
     "exit_price": 190.4688,
     "pnl_per_share": -42.022,
     "r_multiple": -1.0,
-    "pnl_dollars": -11.74,
+    "pnl_dollars": -87.93,
     "target_used": "target_2R",
     "symbol": "AMD",
-    "equity_at_entry": 1174.39
+    "equity_at_entry": 1758.53
   },
   {
     "type": "inverse_hns",
@@ -2986,7 +2986,7 @@
     "target_primary": 262.17,
     "target_1R": 256.1328,
     "target_2R": 279.7748,
-    "shares": 0.4967,
+    "shares": 3.7191,
     "atr": 5.0312,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -2994,10 +2994,10 @@
     "exit_price": 208.8488,
     "pnl_per_share": -23.642,
     "r_multiple": -1.0,
-    "pnl_dollars": -11.74,
+    "pnl_dollars": -87.93,
     "target_used": "target_2R",
     "symbol": "AMD",
-    "equity_at_entry": 1174.39
+    "equity_at_entry": 1758.53
   },
   {
     "type": "double_bottom",
@@ -3010,7 +3010,7 @@
     "target_primary": 253.0586,
     "target_1R": 235.6443,
     "target_2R": 253.0586,
-    "shares": 0.6744,
+    "shares": 5.0491,
     "atr": 2.1019,
     "entry_style": "retest",
     "outcome": "open",
@@ -3018,10 +3018,10 @@
     "exit_price": 228.4,
     "pnl_per_share": 10.17,
     "r_multiple": 0.584,
-    "pnl_dollars": 6.86,
+    "pnl_dollars": 51.35,
     "target_used": "target_2R",
     "symbol": "JNJ",
-    "equity_at_entry": 1174.39
+    "equity_at_entry": 1758.53
   },
   {
     "type": "inverse_hns",
@@ -3034,7 +3034,7 @@
     "target_primary": 241.6386,
     "target_1R": 229.9343,
     "target_2R": 241.6386,
-    "shares": 1.0181,
+    "shares": 7.6707,
     "atr": 2.1019,
     "entry_style": "retest",
     "outcome": "win",
@@ -3042,10 +3042,10 @@
     "exit_price": 241.6386,
     "pnl_per_share": 23.4086,
     "r_multiple": 2.0,
-    "pnl_dollars": 23.83,
+    "pnl_dollars": 179.56,
     "target_used": "target_2R",
     "symbol": "JNJ",
-    "equity_at_entry": 1191.65
+    "equity_at_entry": 1795.6
   },
   {
     "type": "inverse_hns",
@@ -3058,7 +3058,7 @@
     "target_primary": 196.2508,
     "target_1R": 181.7154,
     "target_2R": 196.2508,
-    "shares": 0.8198,
+    "shares": 6.1766,
     "atr": 1.7458,
     "entry_style": "retest",
     "outcome": "win",
@@ -3066,10 +3066,10 @@
     "exit_price": 196.2508,
     "pnl_per_share": 29.0708,
     "r_multiple": 2.0,
-    "pnl_dollars": 23.83,
+    "pnl_dollars": 179.56,
     "target_used": "target_2R",
     "symbol": "CVX",
-    "equity_at_entry": 1191.65
+    "equity_at_entry": 1795.6
   },
   {
     "type": "inverse_hns",
@@ -3082,7 +3082,7 @@
     "target_primary": 391.7331,
     "target_1R": 370.0216,
     "target_2R": 391.7331,
-    "shares": 0.5688,
+    "shares": 4.7805,
     "atr": 3.9816,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -3090,10 +3090,10 @@
     "exit_price": 326.5984,
     "pnl_per_share": -21.7116,
     "r_multiple": -1.0,
-    "pnl_dollars": -12.35,
+    "pnl_dollars": -103.79,
     "target_used": "target_2R",
     "symbol": "AMGN",
-    "equity_at_entry": 1234.85
+    "equity_at_entry": 2075.85
   },
   {
     "type": "double_bottom",
@@ -3106,7 +3106,7 @@
     "target_primary": 395.9324,
     "target_1R": 370.2812,
     "target_2R": 395.9324,
-    "shares": 0.4814,
+    "shares": 4.0463,
     "atr": 3.998,
     "entry_style": "retest",
     "outcome": "open",
@@ -3114,10 +3114,10 @@
     "exit_price": 337.46,
     "pnl_per_share": -7.17,
     "r_multiple": -0.28,
-    "pnl_dollars": -3.45,
+    "pnl_dollars": -29.01,
     "target_used": "target_2R",
     "symbol": "AMGN",
-    "equity_at_entry": 1234.85
+    "equity_at_entry": 2075.85
   },
   {
     "type": "double_bottom",
@@ -3130,7 +3130,7 @@
     "target_primary": 674.69,
     "target_1R": 714.403,
     "target_2R": 755.016,
-    "shares": 0.2993,
+    "shares": 2.451,
     "atr": 10.2206,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -3138,10 +3138,10 @@
     "exit_price": 633.177,
     "pnl_per_share": -40.613,
     "r_multiple": -1.0,
-    "pnl_dollars": -12.15,
+    "pnl_dollars": -99.54,
     "target_used": "target_2R",
     "symbol": "META",
-    "equity_at_entry": 1215.45
+    "equity_at_entry": 1990.85
   },
   {
     "type": "inverse_hns",
@@ -3154,7 +3154,7 @@
     "target_primary": 674.69,
     "target_1R": 701.1506,
     "target_2R": 728.5112,
-    "shares": 0.4442,
+    "shares": 3.6382,
     "atr": 10.2206,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -3162,10 +3162,10 @@
     "exit_price": 646.4294,
     "pnl_per_share": -27.3606,
     "r_multiple": -1.0,
-    "pnl_dollars": -12.15,
+    "pnl_dollars": -99.54,
     "target_used": "target_2R",
     "symbol": "META",
-    "equity_at_entry": 1215.45
+    "equity_at_entry": 1990.85
   },
   {
     "type": "inverse_hns",
@@ -3178,7 +3178,7 @@
     "target_primary": 397.5532,
     "target_1R": 373.9016,
     "target_2R": 397.5532,
-    "shares": 0.5139,
+    "shares": 4.2087,
     "atr": 3.9913,
     "entry_style": "retest",
     "outcome": "loss",
@@ -3186,10 +3186,10 @@
     "exit_price": 326.5984,
     "pnl_per_share": -23.6516,
     "r_multiple": -1.0,
-    "pnl_dollars": -12.15,
+    "pnl_dollars": -99.54,
     "target_used": "target_2R",
     "symbol": "AMGN",
-    "equity_at_entry": 1215.45
+    "equity_at_entry": 1990.85
   },
   {
     "type": "double_bottom",
@@ -3202,7 +3202,7 @@
     "target_primary": 751.176,
     "target_1R": 711.843,
     "target_2R": 751.176,
-    "shares": 0.2975,
+    "shares": 2.1108,
     "atr": 9.5523,
     "entry_style": "retest",
     "outcome": "loss",
@@ -3210,10 +3210,10 @@
     "exit_price": 633.177,
     "pnl_per_share": -39.333,
     "r_multiple": -1.0,
-    "pnl_dollars": -11.7,
+    "pnl_dollars": -83.02,
     "target_used": "target_2R",
     "symbol": "META",
-    "equity_at_entry": 1170.25
+    "equity_at_entry": 1660.49
   },
   {
     "type": "inverse_hns",
@@ -3226,7 +3226,7 @@
     "target_primary": 724.6712,
     "target_1R": 698.5906,
     "target_2R": 724.6712,
-    "shares": 0.4487,
+    "shares": 3.1834,
     "atr": 9.5523,
     "entry_style": "retest",
     "outcome": "loss",
@@ -3234,10 +3234,10 @@
     "exit_price": 646.4294,
     "pnl_per_share": -26.0806,
     "r_multiple": -1.0,
-    "pnl_dollars": -11.7,
+    "pnl_dollars": -83.02,
     "target_used": "target_2R",
     "symbol": "META",
-    "equity_at_entry": 1170.25
+    "equity_at_entry": 1660.49
   },
   {
     "type": "double_bottom",
@@ -3250,7 +3250,7 @@
     "target_primary": 237.0721,
     "target_1R": 214.3284,
     "target_2R": 237.0721,
-    "shares": 0.5145,
+    "shares": 3.6504,
     "atr": 2.5966,
     "entry_style": "retest",
     "outcome": "loss",
@@ -3258,10 +3258,10 @@
     "exit_price": 168.841,
     "pnl_per_share": -22.7437,
     "r_multiple": -1.0,
-    "pnl_dollars": -11.7,
+    "pnl_dollars": -83.02,
     "target_used": "target_2R",
     "symbol": "NVDA",
-    "equity_at_entry": 1170.25
+    "equity_at_entry": 1660.49
   },
   {
     "type": "inverse_hns",
@@ -3274,7 +3274,7 @@
     "target_primary": 742.98,
     "target_1R": 852.1849,
     "target_2R": 967.9899,
-    "shares": 0.099,
+    "shares": 0.633,
     "atr": 16.4349,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -3282,10 +3282,10 @@
     "exit_price": 620.5751,
     "pnl_per_share": -115.8049,
     "r_multiple": -1.0,
-    "pnl_dollars": -11.46,
+    "pnl_dollars": -73.3,
     "target_used": "target_2R",
     "symbol": "META",
-    "equity_at_entry": 1146.46
+    "equity_at_entry": 1465.99
   },
   {
     "type": "inverse_hns",
@@ -3298,7 +3298,7 @@
     "target_primary": 29.393,
     "target_1R": 27.8615,
     "target_2R": 29.393,
-    "shares": 7.4946,
+    "shares": 49.3692,
     "atr": 0.3298,
     "entry_style": "retest",
     "outcome": "open",
@@ -3306,10 +3306,10 @@
     "exit_price": 25.22,
     "pnl_per_share": -1.11,
     "r_multiple": -0.725,
-    "pnl_dollars": -8.32,
+    "pnl_dollars": -54.8,
     "target_used": "target_2R",
     "symbol": "PFE",
-    "equity_at_entry": 1147.8
+    "equity_at_entry": 1512.18
   },
   {
     "type": "inverse_hns",
@@ -3322,7 +3322,7 @@
     "target_primary": 227.2578,
     "target_1R": 215.1439,
     "target_2R": 227.2578,
-    "shares": 0.967,
+    "shares": 7.0268,
     "atr": 2.5839,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -3330,10 +3330,10 @@
     "exit_price": 190.9161,
     "pnl_per_share": -12.1139,
     "r_multiple": -1.0,
-    "pnl_dollars": -11.71,
+    "pnl_dollars": -85.12,
     "target_used": "target_2R",
     "symbol": "RTX",
-    "equity_at_entry": 1171.4
+    "equity_at_entry": 1702.43
   },
   {
     "type": "double_bottom",
@@ -3346,7 +3346,7 @@
     "target_primary": 56.9872,
     "target_1R": 59.1478,
     "target_2R": 62.0105,
-    "shares": 4.3405,
+    "shares": 36.3445,
     "atr": 0.6378,
     "entry_style": "breakout",
     "outcome": "win",
@@ -3354,10 +3354,10 @@
     "exit_price": 62.0105,
     "pnl_per_share": 5.7255,
     "r_multiple": 2.0,
-    "pnl_dollars": 24.85,
+    "pnl_dollars": 208.09,
     "target_used": "target_2R",
     "symbol": "BMY",
-    "equity_at_entry": 1242.59
+    "equity_at_entry": 2080.94
   },
   {
     "type": "inverse_hns",
@@ -3370,7 +3370,7 @@
     "target_primary": 232.7478,
     "target_1R": 218.8039,
     "target_2R": 232.7478,
-    "shares": 0.8911,
+    "shares": 7.4618,
     "atr": 2.5451,
     "entry_style": "retest",
     "outcome": "loss",
@@ -3378,10 +3378,10 @@
     "exit_price": 190.9161,
     "pnl_per_share": -13.9439,
     "r_multiple": -1.0,
-    "pnl_dollars": -12.43,
+    "pnl_dollars": -104.05,
     "target_used": "target_2R",
     "symbol": "RTX",
-    "equity_at_entry": 1242.59
+    "equity_at_entry": 2080.94
   },
   {
     "type": "inverse_hns",
@@ -3394,7 +3394,7 @@
     "target_primary": 144.3247,
     "target_1R": 129.2173,
     "target_2R": 144.3247,
-    "shares": 0.8354,
+    "shares": 7.1685,
     "atr": 1.8773,
     "entry_style": "breakout",
     "outcome": "open",
@@ -3402,10 +3402,10 @@
     "exit_price": 130.725,
     "pnl_per_share": 16.615,
     "r_multiple": 1.1,
-    "pnl_dollars": 13.88,
+    "pnl_dollars": 119.1,
     "target_used": "target_2R",
     "symbol": "TGT",
-    "equity_at_entry": 1261.99
+    "equity_at_entry": 2165.94
   },
   {
     "type": "inverse_hns",
@@ -3418,7 +3418,7 @@
     "target_primary": 63.2856,
     "target_1R": 60.4803,
     "target_2R": 63.2856,
-    "shares": 4.3854,
+    "shares": 35.2549,
     "atr": 0.7617,
     "entry_style": "retest",
     "outcome": "loss",
@@ -3426,10 +3426,10 @@
     "exit_price": 54.8697,
     "pnl_per_share": -2.8053,
     "r_multiple": -1.0,
-    "pnl_dollars": -12.3,
+    "pnl_dollars": -98.9,
     "target_used": "target_2R",
     "symbol": "BMY",
-    "equity_at_entry": 1230.25
+    "equity_at_entry": 1978.01
   },
   {
     "type": "double_bottom",
@@ -3442,7 +3442,7 @@
     "target_primary": 66.1806,
     "target_1R": 61.9278,
     "target_2R": 66.1806,
-    "shares": 2.8928,
+    "shares": 23.2554,
     "atr": 0.7617,
     "entry_style": "retest",
     "outcome": "open",
@@ -3450,10 +3450,10 @@
     "exit_price": 54.01,
     "pnl_per_share": -3.665,
     "r_multiple": -0.862,
-    "pnl_dollars": -10.6,
+    "pnl_dollars": -85.23,
     "target_used": "target_2R",
     "symbol": "BMY",
-    "equity_at_entry": 1230.25
+    "equity_at_entry": 1978.01
   },
   {
     "type": "inverse_hns",
@@ -3466,7 +3466,7 @@
     "target_primary": 66.2284,
     "target_1R": 61.9517,
     "target_2R": 66.2284,
-    "shares": 2.8766,
+    "shares": 23.1254,
     "atr": 0.7617,
     "entry_style": "breakout",
     "outcome": "open",
@@ -3474,10 +3474,10 @@
     "exit_price": 54.01,
     "pnl_per_share": -3.665,
     "r_multiple": -0.857,
-    "pnl_dollars": -10.54,
+    "pnl_dollars": -84.75,
     "target_used": "target_2R",
     "symbol": "BMY",
-    "equity_at_entry": 1230.25
+    "equity_at_entry": 1978.01
   },
   {
     "type": "inverse_hns",
@@ -3490,7 +3490,7 @@
     "target_primary": 287.4,
     "target_1R": 300.9667,
     "target_2R": 325.2235,
-    "shares": 0.5072,
+    "shares": 4.0772,
     "atr": 4.2567,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -3498,10 +3498,10 @@
     "exit_price": 252.4533,
     "pnl_per_share": -24.2567,
     "r_multiple": -1.0,
-    "pnl_dollars": -12.3,
+    "pnl_dollars": -98.9,
     "target_used": "target_2R",
     "symbol": "AAPL",
-    "equity_at_entry": 1230.25
+    "equity_at_entry": 1978.01
   },
   {
     "type": "inverse_hns",
@@ -3514,7 +3514,7 @@
     "target_primary": 74.0365,
     "target_1R": 67.1571,
     "target_2R": 74.0365,
-    "shares": 1.8011,
+    "shares": 14.51,
     "atr": 0.8943,
     "entry_style": "retest",
     "outcome": "open",
@@ -3522,10 +3522,10 @@
     "exit_price": 54.01,
     "pnl_per_share": -6.2677,
     "r_multiple": -0.911,
-    "pnl_dollars": -11.29,
+    "pnl_dollars": -90.94,
     "target_used": "target_2R",
     "symbol": "BMY",
-    "equity_at_entry": 1239.04
+    "equity_at_entry": 1996.4
   },
   {
     "type": "inverse_hns",
@@ -3538,7 +3538,7 @@
     "target_primary": 97.52,
     "target_1R": 99.2962,
     "target_2R": 104.0775,
-    "shares": 2.5915,
+    "shares": 20.8776,
     "atr": 1.2162,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -3546,10 +3546,10 @@
     "exit_price": 89.7338,
     "pnl_per_share": -4.7812,
     "r_multiple": -1.0,
-    "pnl_dollars": -12.39,
+    "pnl_dollars": -99.82,
     "target_used": "target_2R",
     "symbol": "WFC",
-    "equity_at_entry": 1239.04
+    "equity_at_entry": 1996.4
   },
   {
     "type": "inverse_hns",
@@ -3562,7 +3562,7 @@
     "target_primary": 148.0746,
     "target_1R": 131.7173,
     "target_2R": 148.0746,
-    "shares": 0.7819,
+    "shares": 7.36,
     "atr": 2.2617,
     "entry_style": "retest",
     "outcome": "open",
@@ -3570,10 +3570,10 @@
     "exit_price": 130.725,
     "pnl_per_share": 15.365,
     "r_multiple": 0.939,
-    "pnl_dollars": 12.01,
+    "pnl_dollars": 113.09,
     "target_used": "target_2R",
     "symbol": "TGT",
-    "equity_at_entry": 1278.98
+    "equity_at_entry": 2407.79
   },
   {
     "type": "double_bottom",
@@ -3586,7 +3586,7 @@
     "target_primary": 516.85,
     "target_1R": 529.886,
     "target_2R": 551.7721,
-    "shares": 0.5844,
+    "shares": 5.5008,
     "atr": 4.506,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -3594,10 +3594,10 @@
     "exit_price": 486.114,
     "pnl_per_share": -21.886,
     "r_multiple": -1.0,
-    "pnl_dollars": -12.79,
+    "pnl_dollars": -120.39,
     "target_used": "target_2R",
     "symbol": "BRK.B",
-    "equity_at_entry": 1278.98
+    "equity_at_entry": 2407.79
   },
   {
     "type": "inverse_hns",
@@ -3610,7 +3610,7 @@
     "target_primary": 105.5324,
     "target_1R": 100.2662,
     "target_2R": 105.5324,
-    "shares": 2.4758,
+    "shares": 24.8365,
     "atr": 1.2514,
     "entry_style": "retest",
     "outcome": "loss",
@@ -3618,10 +3618,10 @@
     "exit_price": 89.7338,
     "pnl_per_share": -5.2662,
     "r_multiple": -1.0,
-    "pnl_dollars": -13.04,
+    "pnl_dollars": -130.79,
     "target_used": "target_2R",
     "symbol": "WFC",
-    "equity_at_entry": 1303.83
+    "equity_at_entry": 2615.88
   },
   {
     "type": "double_bottom",
@@ -3634,7 +3634,7 @@
     "target_primary": 51.99,
     "target_1R": 55.2289,
     "target_2R": 58.8678,
-    "shares": 3.6476,
+    "shares": 38.3595,
     "atr": 0.8789,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -3642,10 +3642,10 @@
     "exit_price": 47.9511,
     "pnl_per_share": -3.6389,
     "r_multiple": -1.0,
-    "pnl_dollars": -13.27,
+    "pnl_dollars": -139.59,
     "target_used": "target_2R",
     "symbol": "SLB",
-    "equity_at_entry": 1327.32
+    "equity_at_entry": 2791.73
   },
   {
     "type": "inverse_hns",
@@ -3658,7 +3658,7 @@
     "target_primary": 51.99,
     "target_1R": 54.0739,
     "target_2R": 56.5578,
-    "shares": 5.4164,
+    "shares": 57.1072,
     "atr": 0.8789,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -3666,10 +3666,10 @@
     "exit_price": 49.1061,
     "pnl_per_share": -2.4839,
     "r_multiple": -1.0,
-    "pnl_dollars": -13.45,
+    "pnl_dollars": -141.85,
     "target_used": "target_2R",
     "symbol": "SLB",
-    "equity_at_entry": 1345.38
+    "equity_at_entry": 2836.97
   },
   {
     "type": "double_bottom",
@@ -3682,7 +3682,7 @@
     "target_primary": 239.29,
     "target_1R": 251.3425,
     "target_2R": 270.595,
-    "shares": 0.6988,
+    "shares": 7.3678,
     "atr": 3.8825,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -3690,10 +3690,10 @@
     "exit_price": 212.8375,
     "pnl_per_share": -19.2525,
     "r_multiple": -1.0,
-    "pnl_dollars": -13.45,
+    "pnl_dollars": -141.85,
     "target_used": "target_2R",
     "symbol": "ABBV",
-    "equity_at_entry": 1345.38
+    "equity_at_entry": 2836.97
   },
   {
     "type": "inverse_hns",
@@ -3706,7 +3706,7 @@
     "target_primary": 239.29,
     "target_1R": 248.5025,
     "target_2R": 264.915,
-    "shares": 0.8786,
+    "shares": 11.0145,
     "atr": 3.8825,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -3714,10 +3714,10 @@
     "exit_price": 215.6775,
     "pnl_per_share": -16.4125,
     "r_multiple": -1.0,
-    "pnl_dollars": -14.42,
+    "pnl_dollars": -180.78,
     "target_used": "target_2R",
     "symbol": "ABBV",
-    "equity_at_entry": 1442.01
+    "equity_at_entry": 3615.5
   },
   {
     "type": "double_bottom",
@@ -3730,7 +3730,7 @@
     "target_primary": 133.3817,
     "target_1R": 124.9158,
     "target_2R": 133.3817,
-    "shares": 1.7033,
+    "shares": 21.3533,
     "atr": 1.766,
     "entry_style": "breakout",
     "outcome": "win",
@@ -3738,10 +3738,10 @@
     "exit_price": 133.3817,
     "pnl_per_share": 16.9318,
     "r_multiple": 2.0,
-    "pnl_dollars": 28.84,
+    "pnl_dollars": 361.55,
     "target_used": "target_2R",
     "symbol": "TGT",
-    "equity_at_entry": 1442.01
+    "equity_at_entry": 3615.5
   },
   {
     "type": "double_bottom",
@@ -3754,7 +3754,7 @@
     "target_primary": 58.8978,
     "target_1R": 55.2489,
     "target_2R": 58.8978,
-    "shares": 3.8865,
+    "shares": 47.0408,
     "atr": 0.8753,
     "entry_style": "retest",
     "outcome": "loss",
@@ -3762,10 +3762,10 @@
     "exit_price": 47.9511,
     "pnl_per_share": -3.6489,
     "r_multiple": -1.0,
-    "pnl_dollars": -14.18,
+    "pnl_dollars": -171.65,
     "target_used": "target_2R",
     "symbol": "SLB",
-    "equity_at_entry": 1418.16
+    "equity_at_entry": 3432.94
   },
   {
     "type": "inverse_hns",
@@ -3778,7 +3778,7 @@
     "target_primary": 56.5878,
     "target_1R": 54.0939,
     "target_2R": 56.5878,
-    "shares": 5.7901,
+    "shares": 73.8322,
     "atr": 0.8753,
     "entry_style": "retest",
     "outcome": "loss",
@@ -3786,10 +3786,10 @@
     "exit_price": 49.1061,
     "pnl_per_share": -2.4939,
     "r_multiple": -1.0,
-    "pnl_dollars": -14.44,
+    "pnl_dollars": -184.13,
     "target_used": "target_2R",
     "symbol": "SLB",
-    "equity_at_entry": 1444.0
+    "equity_at_entry": 3682.6
   },
   {
     "type": "double_bottom",
@@ -3802,7 +3802,7 @@
     "target_primary": 330.68,
     "target_1R": 354.3852,
     "target_2R": 378.8021,
-    "shares": 0.5914,
+    "shares": 7.5411,
     "atr": 4.7228,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -3810,10 +3810,10 @@
     "exit_price": 305.5514,
     "pnl_per_share": -24.4169,
     "r_multiple": -1.0,
-    "pnl_dollars": -14.44,
+    "pnl_dollars": -184.13,
     "target_used": "target_2R",
     "symbol": "GE",
-    "equity_at_entry": 1444.0
+    "equity_at_entry": 3682.6
   },
   {
     "type": "double_bottom",
@@ -3826,7 +3826,7 @@
     "target_primary": 131.777,
     "target_1R": 123.846,
     "target_2R": 131.777,
-    "shares": 1.8207,
+    "shares": 23.2165,
     "atr": 1.5789,
     "entry_style": "retest",
     "outcome": "win",
@@ -3834,10 +3834,10 @@
     "exit_price": 131.777,
     "pnl_per_share": 15.862,
     "r_multiple": 2.0,
-    "pnl_dollars": 28.88,
+    "pnl_dollars": 368.26,
     "target_used": "target_2R",
     "symbol": "TGT",
-    "equity_at_entry": 1444.0
+    "equity_at_entry": 3682.6
   },
   {
     "type": "double_bottom",
@@ -3850,7 +3850,7 @@
     "target_primary": 261.175,
     "target_1R": 245.0625,
     "target_2R": 261.175,
-    "shares": 0.9203,
+    "shares": 11.9553,
     "atr": 3.3467,
     "entry_style": "retest",
     "outcome": "loss",
@@ -3858,10 +3858,10 @@
     "exit_price": 212.8375,
     "pnl_per_share": -16.1125,
     "r_multiple": -1.0,
-    "pnl_dollars": -14.83,
+    "pnl_dollars": -192.63,
     "target_used": "target_2R",
     "symbol": "ABBV",
-    "equity_at_entry": 1482.8
+    "equity_at_entry": 3852.6
   },
   {
     "type": "inverse_hns",
@@ -3874,7 +3874,7 @@
     "target_primary": 255.495,
     "target_1R": 242.2225,
     "target_2R": 255.495,
-    "shares": 1.1022,
+    "shares": 14.1462,
     "atr": 3.3467,
     "entry_style": "retest",
     "outcome": "loss",
@@ -3882,10 +3882,10 @@
     "exit_price": 215.6775,
     "pnl_per_share": -13.2725,
     "r_multiple": -1.0,
-    "pnl_dollars": -14.63,
+    "pnl_dollars": -187.76,
     "target_used": "target_2R",
     "symbol": "ABBV",
-    "equity_at_entry": 1462.9
+    "equity_at_entry": 3755.1
   },
   {
     "type": "inverse_hns",
@@ -3898,7 +3898,7 @@
     "target_primary": 211.335,
     "target_1R": 201.9055,
     "target_2R": 211.0911,
-    "shares": 1.5926,
+    "shares": 20.4404,
     "atr": 2.9455,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -3906,10 +3906,10 @@
     "exit_price": 183.5345,
     "pnl_per_share": -9.1855,
     "r_multiple": -1.0,
-    "pnl_dollars": -14.63,
+    "pnl_dollars": -187.76,
     "target_used": "target_2R",
     "symbol": "NVDA",
-    "equity_at_entry": 1462.9
+    "equity_at_entry": 3755.1
   },
   {
     "type": "inverse_hns",
@@ -3922,7 +3922,7 @@
     "target_primary": 211.331,
     "target_1R": 202.0655,
     "target_2R": 211.331,
-    "shares": 1.5789,
+    "shares": 20.2639,
     "atr": 2.8287,
     "entry_style": "retest",
     "outcome": "loss",
@@ -3930,10 +3930,10 @@
     "exit_price": 183.5345,
     "pnl_per_share": -9.2655,
     "r_multiple": -1.0,
-    "pnl_dollars": -14.63,
+    "pnl_dollars": -187.76,
     "target_used": "target_2R",
     "symbol": "NVDA",
-    "equity_at_entry": 1462.9
+    "equity_at_entry": 3755.1
   },
   {
     "type": "double_bottom",
@@ -3946,7 +3946,7 @@
     "target_primary": 116.434,
     "target_1R": 107.3311,
     "target_2R": 120.8623,
-    "shares": 1.0811,
+    "shares": 13.8758,
     "atr": 2.3311,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -3954,10 +3954,10 @@
     "exit_price": 80.2689,
     "pnl_per_share": -13.5311,
     "r_multiple": -1.0,
-    "pnl_dollars": -14.63,
+    "pnl_dollars": -187.76,
     "target_used": "target_2R",
     "symbol": "NFLX",
-    "equity_at_entry": 1462.9
+    "equity_at_entry": 3755.1
   },
   {
     "type": "inverse_hns",
@@ -3970,7 +3970,7 @@
     "target_primary": 116.434,
     "target_1R": 105.8911,
     "target_2R": 117.9823,
-    "shares": 1.2099,
+    "shares": 15.5284,
     "atr": 2.3311,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -3978,10 +3978,10 @@
     "exit_price": 81.7089,
     "pnl_per_share": -12.0911,
     "r_multiple": -1.0,
-    "pnl_dollars": -14.63,
+    "pnl_dollars": -187.76,
     "target_used": "target_2R",
     "symbol": "NFLX",
-    "equity_at_entry": 1462.9
+    "equity_at_entry": 3755.1
   },
   {
     "type": "inverse_hns",
@@ -3994,7 +3994,7 @@
     "target_primary": 263.978,
     "target_1R": 255.9015,
     "target_2R": 263.978,
-    "shares": 1.8113,
+    "shares": 23.2471,
     "atr": 2.2716,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -4002,10 +4002,10 @@
     "exit_price": 239.7485,
     "pnl_per_share": -8.0765,
     "r_multiple": -1.0,
-    "pnl_dollars": -14.63,
+    "pnl_dollars": -187.76,
     "target_used": "target_2R",
     "symbol": "JNJ",
-    "equity_at_entry": 1462.9
+    "equity_at_entry": 3755.1
   },
   {
     "type": "double_bottom",
@@ -4018,7 +4018,7 @@
     "target_primary": 125.0892,
     "target_1R": 118.9571,
     "target_2R": 125.0892,
-    "shares": 2.3614,
+    "shares": 28.8509,
     "atr": 1.5071,
     "entry_style": "breakout",
     "outcome": "win",
@@ -4026,10 +4026,10 @@
     "exit_price": 125.0892,
     "pnl_per_share": 12.2642,
     "r_multiple": 2.0,
-    "pnl_dollars": 28.96,
+    "pnl_dollars": 353.83,
     "target_used": "target_2R",
     "symbol": "COP",
-    "equity_at_entry": 1448.03
+    "equity_at_entry": 3538.33
   },
   {
     "type": "inverse_hns",
@@ -4042,7 +4042,7 @@
     "target_primary": 266.1128,
     "target_1R": 257.3247,
     "target_2R": 266.1128,
-    "shares": 1.6477,
+    "shares": 20.1314,
     "atr": 2.2179,
     "entry_style": "retest",
     "outcome": "loss",
@@ -4050,10 +4050,10 @@
     "exit_price": 239.7485,
     "pnl_per_share": -8.7881,
     "r_multiple": -1.0,
-    "pnl_dollars": -14.48,
+    "pnl_dollars": -176.92,
     "target_used": "target_2R",
     "symbol": "JNJ",
-    "equity_at_entry": 1448.03
+    "equity_at_entry": 3538.33
   },
   {
     "type": "double_bottom",
@@ -4066,7 +4066,7 @@
     "target_primary": 127.6542,
     "target_1R": 120.6671,
     "target_2R": 127.6542,
-    "shares": 2.0724,
+    "shares": 25.3204,
     "atr": 1.4655,
     "entry_style": "retest",
     "outcome": "win",
@@ -4074,10 +4074,10 @@
     "exit_price": 127.6542,
     "pnl_per_share": 13.9742,
     "r_multiple": 2.0,
-    "pnl_dollars": 28.96,
+    "pnl_dollars": 353.83,
     "target_used": "target_2R",
     "symbol": "COP",
-    "equity_at_entry": 1448.03
+    "equity_at_entry": 3538.33
   },
   {
     "type": "double_bottom",
@@ -4090,7 +4090,7 @@
     "target_primary": 156.93,
     "target_1R": 165.054,
     "target_2R": 176.033,
-    "shares": 1.3189,
+    "shares": 16.1141,
     "atr": 2.054,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -4098,10 +4098,10 @@
     "exit_price": 143.096,
     "pnl_per_share": -10.979,
     "r_multiple": -1.0,
-    "pnl_dollars": -14.48,
+    "pnl_dollars": -176.92,
     "target_used": "target_2R",
     "symbol": "XOM",
-    "equity_at_entry": 1448.03
+    "equity_at_entry": 3538.33
   },
   {
     "type": "double_bottom",
@@ -4114,7 +4114,7 @@
     "target_primary": 205.8407,
     "target_1R": 197.3004,
     "target_2R": 205.8407,
-    "shares": 1.6805,
+    "shares": 20.0104,
     "atr": 1.8727,
     "entry_style": "breakout",
     "outcome": "win",
@@ -4122,10 +4122,10 @@
     "exit_price": 205.8407,
     "pnl_per_share": 17.0807,
     "r_multiple": 2.0,
-    "pnl_dollars": 28.7,
+    "pnl_dollars": 341.79,
     "target_used": "target_2R",
     "symbol": "CVX",
-    "equity_at_entry": 1435.24
+    "equity_at_entry": 3417.94
   },
   {
     "type": "double_bottom",
@@ -4138,7 +4138,7 @@
     "target_primary": 268.6306,
     "target_1R": 257.9928,
     "target_2R": 268.6306,
-    "shares": 1.3492,
+    "shares": 16.0651,
     "atr": 2.3928,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -4146,10 +4146,10 @@
     "exit_price": 236.7172,
     "pnl_per_share": -10.6378,
     "r_multiple": -1.0,
-    "pnl_dollars": -14.35,
+    "pnl_dollars": -170.9,
     "target_used": "target_2R",
     "symbol": "HON",
-    "equity_at_entry": 1435.24
+    "equity_at_entry": 3417.94
   },
   {
     "type": "double_bottom",
@@ -4162,7 +4162,7 @@
     "target_primary": 254.7894,
     "target_1R": 233.5772,
     "target_2R": 254.7894,
-    "shares": 0.6766,
+    "shares": 8.0565,
     "atr": 3.1772,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -4170,10 +4170,10 @@
     "exit_price": 191.1528,
     "pnl_per_share": -21.2122,
     "r_multiple": -1.0,
-    "pnl_dollars": -14.35,
+    "pnl_dollars": -170.9,
     "target_used": "target_2R",
     "symbol": "RTX",
-    "equity_at_entry": 1435.24
+    "equity_at_entry": 3417.94
   },
   {
     "type": "double_bottom",
@@ -4186,7 +4186,7 @@
     "target_primary": 264.6706,
     "target_1R": 255.3528,
     "target_2R": 264.6706,
-    "shares": 1.5403,
+    "shares": 18.3409,
     "atr": 2.5511,
     "entry_style": "retest",
     "outcome": "loss",
@@ -4194,10 +4194,10 @@
     "exit_price": 236.7172,
     "pnl_per_share": -9.3178,
     "r_multiple": -1.0,
-    "pnl_dollars": -14.35,
+    "pnl_dollars": -170.9,
     "target_used": "target_2R",
     "symbol": "HON",
-    "equity_at_entry": 1435.24
+    "equity_at_entry": 3417.94
   },
   {
     "type": "double_bottom",
@@ -4210,7 +4210,7 @@
     "target_primary": 205.7682,
     "target_1R": 197.252,
     "target_2R": 205.7682,
-    "shares": 1.7084,
+    "shares": 20.4373,
     "atr": 1.9493,
     "entry_style": "retest",
     "outcome": "win",
@@ -4218,10 +4218,10 @@
     "exit_price": 205.7682,
     "pnl_per_share": 17.0324,
     "r_multiple": 2.0,
-    "pnl_dollars": 29.1,
+    "pnl_dollars": 348.1,
     "target_used": "target_2R",
     "symbol": "CVX",
-    "equity_at_entry": 1454.94
+    "equity_at_entry": 3480.96
   },
   {
     "type": "double_bottom",
@@ -4234,7 +4234,7 @@
     "target_primary": 742.98,
     "target_1R": 712.0334,
     "target_2R": 755.4518,
-    "shares": 0.3351,
+    "shares": 4.0086,
     "atr": 10.8034,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -4242,10 +4242,10 @@
     "exit_price": 625.1966,
     "pnl_per_share": -43.4184,
     "r_multiple": -1.0,
-    "pnl_dollars": -14.55,
+    "pnl_dollars": -174.05,
     "target_used": "target_2R",
     "symbol": "META",
-    "equity_at_entry": 1454.94
+    "equity_at_entry": 3480.96
   },
   {
     "type": "inverse_hns",
@@ -4258,7 +4258,7 @@
     "target_primary": 259.57,
     "target_1R": 183.8049,
     "target_2R": 204.4898,
-    "shares": 0.6901,
+    "shares": 7.6619,
     "atr": 5.0754,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -4266,10 +4266,10 @@
     "exit_price": 142.4351,
     "pnl_per_share": -20.6849,
     "r_multiple": -1.0,
-    "pnl_dollars": -14.27,
+    "pnl_dollars": -158.49,
     "target_used": "target_2R",
     "symbol": "ORCL",
-    "equity_at_entry": 1427.49
+    "equity_at_entry": 3169.72
   },
   {
     "type": "double_bottom",
@@ -4282,7 +4282,7 @@
     "target_primary": 54.99,
     "target_1R": 54.1029,
     "target_2R": 60.2458,
-    "shares": 2.2531,
+    "shares": 21.1432,
     "atr": 1.3629,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -4290,10 +4290,10 @@
     "exit_price": 41.8171,
     "pnl_per_share": -6.1429,
     "r_multiple": -1.0,
-    "pnl_dollars": -13.84,
+    "pnl_dollars": -129.88,
     "target_used": "target_2R",
     "symbol": "INTC",
-    "equity_at_entry": 1384.04
+    "equity_at_entry": 2597.61
   },
   {
     "type": "inverse_hns",
@@ -4306,7 +4306,7 @@
     "target_primary": 54.99,
     "target_1R": 54.0029,
     "target_2R": 60.0458,
-    "shares": 2.2904,
+    "shares": 21.4931,
     "atr": 1.3629,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -4314,10 +4314,10 @@
     "exit_price": 41.9171,
     "pnl_per_share": -6.0429,
     "r_multiple": -1.0,
-    "pnl_dollars": -13.84,
+    "pnl_dollars": -129.88,
     "target_used": "target_2R",
     "symbol": "INTC",
-    "equity_at_entry": 1384.04
+    "equity_at_entry": 2597.61
   },
   {
     "type": "double_bottom",
@@ -4330,7 +4330,7 @@
     "target_primary": 182.168,
     "target_1R": 169.144,
     "target_2R": 182.168,
-    "shares": 1.0627,
+    "shares": 9.9724,
     "atr": 2.2742,
     "entry_style": "retest",
     "outcome": "loss",
@@ -4338,10 +4338,10 @@
     "exit_price": 143.096,
     "pnl_per_share": -13.024,
     "r_multiple": -1.0,
-    "pnl_dollars": -13.84,
+    "pnl_dollars": -129.88,
     "target_used": "target_2R",
     "symbol": "XOM",
-    "equity_at_entry": 1384.04
+    "equity_at_entry": 2597.61
   },
   {
     "type": "double_bottom",
@@ -4354,7 +4354,7 @@
     "target_primary": 262.2496,
     "target_1R": 257.7693,
     "target_2R": 295.2185,
-    "shares": 0.3558,
+    "shares": 2.7803,
     "atr": 6.3093,
     "entry_style": "breakout",
     "outcome": "win",
@@ -4362,10 +4362,10 @@
     "exit_price": 295.2185,
     "pnl_per_share": 74.8985,
     "r_multiple": 2.0,
-    "pnl_dollars": 26.65,
+    "pnl_dollars": 208.24,
     "target_used": "target_2R",
     "symbol": "AMD",
-    "equity_at_entry": 1332.53
+    "equity_at_entry": 2082.41
   },
   {
     "type": "inverse_hns",
@@ -4378,7 +4378,7 @@
     "target_primary": 262.2496,
     "target_1R": 254.6793,
     "target_2R": 289.0385,
-    "shares": 0.406,
+    "shares": 4.1732,
     "atr": 6.3093,
     "entry_style": "breakout",
     "outcome": "win",
@@ -4386,10 +4386,10 @@
     "exit_price": 289.0385,
     "pnl_per_share": 68.7185,
     "r_multiple": 2.0,
-    "pnl_dollars": 27.9,
+    "pnl_dollars": 286.78,
     "target_used": "target_2R",
     "symbol": "AMD",
-    "equity_at_entry": 1395.01
+    "equity_at_entry": 2867.79
   },
   {
     "type": "double_bottom",
@@ -4402,7 +4402,7 @@
     "target_primary": 52.325,
     "target_1R": 55.981,
     "target_2R": 59.642,
-    "shares": 3.8105,
+    "shares": 39.1668,
     "atr": 1.326,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -4410,10 +4410,10 @@
     "exit_price": 48.659,
     "pnl_per_share": -3.661,
     "r_multiple": -1.0,
-    "pnl_dollars": -13.95,
+    "pnl_dollars": -143.39,
     "target_used": "target_2R",
     "symbol": "SLB",
-    "equity_at_entry": 1395.01
+    "equity_at_entry": 2867.79
   },
   {
     "type": "inverse_hns",
@@ -4426,7 +4426,7 @@
     "target_primary": 52.325,
     "target_1R": 55.156,
     "target_2R": 57.992,
-    "shares": 4.9189,
+    "shares": 50.5605,
     "atr": 1.326,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -4434,10 +4434,10 @@
     "exit_price": 49.484,
     "pnl_per_share": -2.836,
     "r_multiple": -1.0,
-    "pnl_dollars": -13.95,
+    "pnl_dollars": -143.39,
     "target_used": "target_2R",
     "symbol": "SLB",
-    "equity_at_entry": 1395.01
+    "equity_at_entry": 2867.79
   },
   {
     "type": "double_bottom",
@@ -4450,7 +4450,7 @@
     "target_primary": 57.4,
     "target_1R": 52.6617,
     "target_2R": 56.0584,
-    "shares": 4.107,
+    "shares": 42.2144,
     "atr": 0.9017,
     "entry_style": "breakout",
     "outcome": "win",
@@ -4458,10 +4458,10 @@
     "exit_price": 56.0584,
     "pnl_per_share": 6.7934,
     "r_multiple": 2.0,
-    "pnl_dollars": 27.9,
+    "pnl_dollars": 286.78,
     "target_used": "target_2R",
     "symbol": "BAC",
-    "equity_at_entry": 1395.01
+    "equity_at_entry": 2867.79
   },
   {
     "type": "inverse_hns",
@@ -4474,7 +4474,7 @@
     "target_primary": 57.4,
     "target_1R": 52.5917,
     "target_2R": 55.9184,
-    "shares": 3.9486,
+    "shares": 31.1713,
     "atr": 0.9017,
     "entry_style": "breakout",
     "outcome": "win",
@@ -4482,10 +4482,10 @@
     "exit_price": 55.9184,
     "pnl_per_share": 6.6534,
     "r_multiple": 2.0,
-    "pnl_dollars": 26.27,
+    "pnl_dollars": 207.39,
     "target_used": "target_2R",
     "symbol": "BAC",
-    "equity_at_entry": 1313.57
+    "equity_at_entry": 2073.95
   },
   {
     "type": "double_bottom",
@@ -4498,7 +4498,7 @@
     "target_primary": 286.9386,
     "target_1R": 252.2493,
     "target_2R": 286.9386,
-    "shares": 0.3787,
+    "shares": 2.9893,
     "atr": 7.3066,
     "entry_style": "retest",
     "outcome": "win",
@@ -4506,10 +4506,10 @@
     "exit_price": 286.9386,
     "pnl_per_share": 69.3786,
     "r_multiple": 2.0,
-    "pnl_dollars": 26.27,
+    "pnl_dollars": 207.39,
     "target_used": "target_2R",
     "symbol": "AMD",
-    "equity_at_entry": 1313.57
+    "equity_at_entry": 2073.95
   },
   {
     "type": "inverse_hns",
@@ -4522,7 +4522,7 @@
     "target_primary": 280.7586,
     "target_1R": 249.1593,
     "target_2R": 280.7586,
-    "shares": 0.4113,
+    "shares": 3.0548,
     "atr": 7.3066,
     "entry_style": "retest",
     "outcome": "win",
@@ -4530,10 +4530,10 @@
     "exit_price": 280.7586,
     "pnl_per_share": 63.1986,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.99,
+    "pnl_dollars": 193.06,
     "target_used": "target_2R",
     "symbol": "AMD",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "double_bottom",
@@ -4546,7 +4546,7 @@
     "target_primary": 56.3734,
     "target_1R": 52.8717,
     "target_2R": 56.3734,
-    "shares": 3.7114,
+    "shares": 27.566,
     "atr": 0.8712,
     "entry_style": "retest",
     "outcome": "win",
@@ -4554,10 +4554,10 @@
     "exit_price": 56.3734,
     "pnl_per_share": 7.0034,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.99,
+    "pnl_dollars": 193.06,
     "target_used": "target_2R",
     "symbol": "BAC",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "inverse_hns",
@@ -4570,7 +4570,7 @@
     "target_primary": 56.2334,
     "target_1R": 52.8017,
     "target_2R": 56.2334,
-    "shares": 3.7871,
+    "shares": 28.1283,
     "atr": 0.8712,
     "entry_style": "retest",
     "outcome": "win",
@@ -4578,10 +4578,10 @@
     "exit_price": 56.2334,
     "pnl_per_share": 6.8634,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.99,
+    "pnl_dollars": 193.06,
     "target_used": "target_2R",
     "symbol": "BAC",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "double_bottom",
@@ -4594,7 +4594,7 @@
     "target_primary": 67.4158,
     "target_1R": 58.8829,
     "target_2R": 67.4158,
-    "shares": 1.5231,
+    "shares": 11.3124,
     "atr": 2.096,
     "entry_style": "retest",
     "outcome": "win",
@@ -4602,10 +4602,10 @@
     "exit_price": 67.4158,
     "pnl_per_share": 17.0658,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.99,
+    "pnl_dollars": 193.06,
     "target_used": "target_2R",
     "symbol": "INTC",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "inverse_hns",
@@ -4618,7 +4618,7 @@
     "target_primary": 67.2158,
     "target_1R": 58.7829,
     "target_2R": 67.2158,
-    "shares": 1.5411,
+    "shares": 11.4466,
     "atr": 2.096,
     "entry_style": "retest",
     "outcome": "win",
@@ -4626,10 +4626,10 @@
     "exit_price": 67.2158,
     "pnl_per_share": 16.8658,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.99,
+    "pnl_dollars": 193.06,
     "target_used": "target_2R",
     "symbol": "INTC",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "double_bottom",
@@ -4642,7 +4642,7 @@
     "target_primary": 337.25,
     "target_1R": 318.6155,
     "target_2R": 339.786,
-    "shares": 0.6139,
+    "shares": 4.5596,
     "atr": 4.6305,
     "entry_style": "breakout",
     "outcome": "open",
@@ -4650,10 +4650,10 @@
     "exit_price": 325.24,
     "pnl_per_share": 27.795,
     "r_multiple": 1.313,
-    "pnl_dollars": 17.06,
+    "pnl_dollars": 126.73,
     "target_used": "target_2R",
     "symbol": "JPM",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "inverse_hns",
@@ -4666,7 +4666,7 @@
     "target_primary": 337.25,
     "target_1R": 317.7605,
     "target_2R": 338.076,
-    "shares": 0.6397,
+    "shares": 4.7514,
     "atr": 4.6305,
     "entry_style": "breakout",
     "outcome": "open",
@@ -4674,10 +4674,10 @@
     "exit_price": 325.24,
     "pnl_per_share": 27.795,
     "r_multiple": 1.368,
-    "pnl_dollars": 17.78,
+    "pnl_dollars": 132.07,
     "target_used": "target_2R",
     "symbol": "JPM",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "double_bottom",
@@ -4690,7 +4690,7 @@
     "target_primary": 357.65,
     "target_1R": 342.3849,
     "target_2R": 377.0099,
-    "shares": 0.3753,
+    "shares": 2.7878,
     "atr": 7.2649,
     "entry_style": "breakout",
     "outcome": "win",
@@ -4698,10 +4698,10 @@
     "exit_price": 377.0099,
     "pnl_per_share": 69.2499,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.99,
+    "pnl_dollars": 193.06,
     "target_used": "target_2R",
     "symbol": "UNH",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "inverse_hns",
@@ -4714,7 +4714,7 @@
     "target_primary": 357.65,
     "target_1R": 338.1649,
     "target_2R": 368.5699,
-    "shares": 0.4274,
+    "shares": 3.1748,
     "atr": 7.2649,
     "entry_style": "breakout",
     "outcome": "win",
@@ -4722,10 +4722,10 @@
     "exit_price": 368.5699,
     "pnl_per_share": 60.8099,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.99,
+    "pnl_dollars": 193.06,
     "target_used": "target_2R",
     "symbol": "UNH",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "double_bottom",
@@ -4738,7 +4738,7 @@
     "target_primary": 54.99,
     "target_1R": 65.7526,
     "target_2R": 78.5753,
-    "shares": 1.0135,
+    "shares": 7.528,
     "atr": 2.0426,
     "entry_style": "breakout",
     "outcome": "win",
@@ -4746,10 +4746,10 @@
     "exit_price": 78.5753,
     "pnl_per_share": 25.6453,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.99,
+    "pnl_dollars": 193.06,
     "target_used": "target_2R",
     "symbol": "INTC",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "inverse_hns",
@@ -4762,7 +4762,7 @@
     "target_primary": 54.99,
     "target_1R": 64.6226,
     "target_2R": 76.3153,
-    "shares": 1.1115,
+    "shares": 8.2555,
     "atr": 2.0426,
     "entry_style": "breakout",
     "outcome": "win",
@@ -4770,10 +4770,10 @@
     "exit_price": 76.3153,
     "pnl_per_share": 23.3853,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.99,
+    "pnl_dollars": 193.06,
     "target_used": "target_2R",
     "symbol": "INTC",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "double_bottom",
@@ -4786,7 +4786,7 @@
     "target_primary": 287.4,
     "target_1R": 276.2644,
     "target_2R": 293.5989,
-    "shares": 0.7497,
+    "shares": 5.5686,
     "atr": 4.4044,
     "entry_style": "breakout",
     "outcome": "win",
@@ -4794,10 +4794,10 @@
     "exit_price": 293.5989,
     "pnl_per_share": 34.6689,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.99,
+    "pnl_dollars": 193.06,
     "target_used": "target_2R",
     "symbol": "AAPL",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "double_bottom",
@@ -4810,7 +4810,7 @@
     "target_primary": 257.17,
     "target_1R": 241.8673,
     "target_2R": 262.4846,
-    "shares": 0.6304,
+    "shares": 4.6819,
     "atr": 4.7172,
     "entry_style": "breakout",
     "outcome": "win",
@@ -4818,10 +4818,10 @@
     "exit_price": 262.4846,
     "pnl_per_share": 41.2346,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.99,
+    "pnl_dollars": 193.06,
     "target_used": "target_2R",
     "symbol": "AMZN",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "inverse_hns",
@@ -4834,7 +4834,7 @@
     "target_primary": 257.17,
     "target_1R": 240.9972,
     "target_2R": 260.7444,
-    "shares": 0.6581,
+    "shares": 4.8882,
     "atr": 4.7172,
     "entry_style": "breakout",
     "outcome": "win",
@@ -4842,10 +4842,10 @@
     "exit_price": 260.7444,
     "pnl_per_share": 39.4944,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.99,
+    "pnl_dollars": 193.06,
     "target_used": "target_2R",
     "symbol": "AMZN",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "double_bottom",
@@ -4858,7 +4858,7 @@
     "target_primary": 348.88,
     "target_1R": 341.5427,
     "target_2R": 365.8353,
-    "shares": 0.535,
+    "shares": 3.9735,
     "atr": 6.6127,
     "entry_style": "breakout",
     "outcome": "win",
@@ -4866,10 +4866,10 @@
     "exit_price": 365.8353,
     "pnl_per_share": 48.5853,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.99,
+    "pnl_dollars": 193.06,
     "target_used": "target_2R",
     "symbol": "GOOGL",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "inverse_hns",
@@ -4882,7 +4882,7 @@
     "target_primary": 348.88,
     "target_1R": 340.6727,
     "target_2R": 364.0953,
-    "shares": 0.5549,
+    "shares": 4.1211,
     "atr": 6.6127,
     "entry_style": "breakout",
     "outcome": "win",
@@ -4890,10 +4890,10 @@
     "exit_price": 364.0953,
     "pnl_per_share": 46.8453,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.99,
+    "pnl_dollars": 193.06,
     "target_used": "target_2R",
     "symbol": "GOOGL",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "double_bottom",
@@ -4906,7 +4906,7 @@
     "target_primary": 423.0,
     "target_1R": 401.7002,
     "target_2R": 452.7605,
-    "shares": 0.2545,
+    "shares": 1.8905,
     "atr": 10.1602,
     "entry_style": "breakout",
     "outcome": "win",
@@ -4914,10 +4914,10 @@
     "exit_price": 452.7605,
     "pnl_per_share": 102.1205,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.99,
+    "pnl_dollars": 193.06,
     "target_used": "target_2R",
     "symbol": "AVGO",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "inverse_hns",
@@ -4930,7 +4930,7 @@
     "target_primary": 423.0,
     "target_1R": 401.5202,
     "target_2R": 452.4005,
-    "shares": 0.2554,
+    "shares": 1.8972,
     "atr": 10.1602,
     "entry_style": "breakout",
     "outcome": "win",
@@ -4938,10 +4938,10 @@
     "exit_price": 452.4005,
     "pnl_per_share": 101.7605,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.99,
+    "pnl_dollars": 193.06,
     "target_used": "target_2R",
     "symbol": "AVGO",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "inverse_hns",
@@ -4954,7 +4954,7 @@
     "target_primary": 981.2599,
     "target_1R": 1032.6966,
     "target_2R": 1159.8531,
-    "shares": 0.1022,
+    "shares": 0.7591,
     "atr": 19.3964,
     "entry_style": "breakout",
     "outcome": "open",
@@ -4962,10 +4962,10 @@
     "exit_price": 1096.71,
     "pnl_per_share": 191.1699,
     "r_multiple": 1.503,
-    "pnl_dollars": 19.54,
+    "pnl_dollars": 145.12,
     "target_used": "target_2R",
     "symbol": "GS",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "inverse_hns",
@@ -4978,7 +4978,7 @@
     "target_primary": 192.505,
     "target_1R": 198.5111,
     "target_2R": 220.9981,
-    "shares": 0.5779,
+    "shares": 4.2926,
     "atr": 3.6931,
     "entry_style": "breakout",
     "outcome": "win",
@@ -4986,10 +4986,10 @@
     "exit_price": 220.9981,
     "pnl_per_share": 44.9741,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.99,
+    "pnl_dollars": 193.06,
     "target_used": "target_2R",
     "symbol": "MS",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "inverse_hns",
@@ -5002,7 +5002,7 @@
     "target_primary": 97.52,
     "target_1R": 94.5124,
     "target_2R": 104.3648,
-    "shares": 1.3191,
+    "shares": 9.7974,
     "atr": 1.6824,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -5010,10 +5010,10 @@
     "exit_price": 74.8076,
     "pnl_per_share": -9.8524,
     "r_multiple": -1.0,
-    "pnl_dollars": -13.0,
+    "pnl_dollars": -96.53,
     "target_used": "target_2R",
     "symbol": "WFC",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "inverse_hns",
@@ -5026,7 +5026,7 @@
     "target_primary": 781.99,
     "target_1R": 874.1119,
     "target_2R": 976.6738,
-    "shares": 0.1267,
+    "shares": 0.9412,
     "atr": 20.1819,
     "entry_style": "breakout",
     "outcome": "win",
@@ -5034,10 +5034,10 @@
     "exit_price": 976.6738,
     "pnl_per_share": 205.1238,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.99,
+    "pnl_dollars": 193.06,
     "target_used": "target_2R",
     "symbol": "CAT",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "double_bottom",
@@ -5050,7 +5050,7 @@
     "target_primary": 369.4354,
     "target_1R": 343.9427,
     "target_2R": 369.4354,
-    "shares": 0.5098,
+    "shares": 3.7865,
     "atr": 6.3025,
     "entry_style": "retest",
     "outcome": "win",
@@ -5058,10 +5058,10 @@
     "exit_price": 369.4354,
     "pnl_per_share": 50.9854,
     "r_multiple": 2.0,
-    "pnl_dollars": 25.99,
+    "pnl_dollars": 193.06,
     "target_used": "target_2R",
     "symbol": "GOOGL",
-    "equity_at_entry": 1299.62
+    "equity_at_entry": 1930.56
   },
   {
     "type": "inverse_hns",
@@ -5074,7 +5074,7 @@
     "target_primary": 367.6954,
     "target_1R": 343.0727,
     "target_2R": 367.6954,
-    "shares": 0.5381,
+    "shares": 4.4069,
     "atr": 6.3025,
     "entry_style": "retest",
     "outcome": "win",
@@ -5082,10 +5082,10 @@
     "exit_price": 367.6954,
     "pnl_per_share": 49.2454,
     "r_multiple": 2.0,
-    "pnl_dollars": 26.5,
+    "pnl_dollars": 217.02,
     "target_used": "target_2R",
     "symbol": "GOOGL",
-    "equity_at_entry": 1325.06
+    "equity_at_entry": 2170.22
   },
   {
     "type": "double_bottom",
@@ -5098,7 +5098,7 @@
     "target_primary": 134.65,
     "target_1R": 139.383,
     "target_2R": 149.6259,
-    "shares": 1.2936,
+    "shares": 10.5937,
     "atr": 2.153,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -5106,10 +5106,10 @@
     "exit_price": 118.897,
     "pnl_per_share": -10.243,
     "r_multiple": -1.0,
-    "pnl_dollars": -13.25,
+    "pnl_dollars": -108.51,
     "target_used": "target_2R",
     "symbol": "WMT",
-    "equity_at_entry": 1325.06
+    "equity_at_entry": 2170.22
   },
   {
     "type": "inverse_hns",
@@ -5122,7 +5122,7 @@
     "target_primary": 134.65,
     "target_1R": 138.503,
     "target_2R": 147.8659,
-    "shares": 1.4152,
+    "shares": 11.5893,
     "atr": 2.153,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -5130,10 +5130,10 @@
     "exit_price": 119.777,
     "pnl_per_share": -9.363,
     "r_multiple": -1.0,
-    "pnl_dollars": -13.25,
+    "pnl_dollars": -108.51,
     "target_used": "target_2R",
     "symbol": "WMT",
-    "equity_at_entry": 1325.06
+    "equity_at_entry": 2170.22
   },
   {
     "type": "double_bottom",
@@ -5146,7 +5146,7 @@
     "target_primary": 1053.7049,
     "target_1R": 920.3925,
     "target_2R": 1053.7049,
-    "shares": 0.0994,
+    "shares": 0.814,
     "atr": 20.4525,
     "entry_style": "breakout",
     "outcome": "open",
@@ -5154,10 +5154,10 @@
     "exit_price": 985.23,
     "pnl_per_share": 198.15,
     "r_multiple": 1.486,
-    "pnl_dollars": 19.7,
+    "pnl_dollars": 161.29,
     "target_used": "target_2R",
     "symbol": "CAT",
-    "equity_at_entry": 1325.06
+    "equity_at_entry": 2170.22
   },
   {
     "type": "double_bottom",
@@ -5170,7 +5170,7 @@
     "target_primary": 294.4388,
     "target_1R": 276.8244,
     "target_2R": 294.4388,
-    "shares": 0.7523,
+    "shares": 6.1604,
     "atr": 4.0691,
     "entry_style": "retest",
     "outcome": "win",
@@ -5178,10 +5178,10 @@
     "exit_price": 294.4388,
     "pnl_per_share": 35.2288,
     "r_multiple": 2.0,
-    "pnl_dollars": 26.5,
+    "pnl_dollars": 217.02,
     "target_used": "target_2R",
     "symbol": "AAPL",
-    "equity_at_entry": 1325.06
+    "equity_at_entry": 2170.22
   },
   {
     "type": "double_bottom",
@@ -5194,7 +5194,7 @@
     "target_primary": 1065.615,
     "target_1R": 928.3325,
     "target_2R": 1065.615,
-    "shares": 0.0965,
+    "shares": 0.7904,
     "atr": 18.6977,
     "entry_style": "retest",
     "outcome": "open",
@@ -5202,10 +5202,10 @@
     "exit_price": 985.23,
     "pnl_per_share": 194.18,
     "r_multiple": 1.414,
-    "pnl_dollars": 18.74,
+    "pnl_dollars": 153.48,
     "target_used": "target_2R",
     "symbol": "CAT",
-    "equity_at_entry": 1325.06
+    "equity_at_entry": 2170.22
   },
   {
     "type": "inverse_hns",
@@ -5218,7 +5218,7 @@
     "target_primary": 641.74,
     "target_1R": 581.5571,
     "target_2R": 636.2742,
-    "shares": 0.2422,
+    "shares": 1.9831,
     "atr": 10.3671,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -5226,10 +5226,10 @@
     "exit_price": 472.1229,
     "pnl_per_share": -54.7171,
     "r_multiple": -1.0,
-    "pnl_dollars": -13.25,
+    "pnl_dollars": -108.51,
     "target_used": "target_2R",
     "symbol": "TMO",
-    "equity_at_entry": 1325.06
+    "equity_at_entry": 2170.22
   },
   {
     "type": "double_bottom",
@@ -5242,7 +5242,7 @@
     "target_primary": 242.36,
     "target_1R": 212.8924,
     "target_2R": 227.2347,
-    "shares": 0.9239,
+    "shares": 7.5657,
     "atr": 3.7324,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -5250,10 +5250,10 @@
     "exit_price": 184.2076,
     "pnl_per_share": -14.3424,
     "r_multiple": -1.0,
-    "pnl_dollars": -13.25,
+    "pnl_dollars": -108.51,
     "target_used": "target_2R",
     "symbol": "DHR",
-    "equity_at_entry": 1325.06
+    "equity_at_entry": 2170.22
   },
   {
     "type": "inverse_hns",
@@ -5266,7 +5266,7 @@
     "target_primary": 242.36,
     "target_1R": 211.3924,
     "target_2R": 224.2347,
-    "shares": 1.0318,
+    "shares": 8.4494,
     "atr": 3.7324,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -5274,10 +5274,10 @@
     "exit_price": 185.7076,
     "pnl_per_share": -12.8424,
     "r_multiple": -1.0,
-    "pnl_dollars": -13.25,
+    "pnl_dollars": -108.51,
     "target_used": "target_2R",
     "symbol": "DHR",
-    "equity_at_entry": 1325.06
+    "equity_at_entry": 2170.22
   },
   {
     "type": "inverse_hns",
@@ -5290,7 +5290,7 @@
     "target_primary": 204.3398,
     "target_1R": 183.7049,
     "target_2R": 204.3398,
-    "shares": 0.6421,
+    "shares": 5.2586,
     "atr": 5.5572,
     "entry_style": "retest",
     "outcome": "win",
@@ -5298,10 +5298,10 @@
     "exit_price": 204.3398,
     "pnl_per_share": 41.2698,
     "r_multiple": 2.0,
-    "pnl_dollars": 26.5,
+    "pnl_dollars": 217.02,
     "target_used": "target_2R",
     "symbol": "ORCL",
-    "equity_at_entry": 1325.06
+    "equity_at_entry": 2170.22
   },
   {
     "type": "inverse_hns",
@@ -5314,7 +5314,7 @@
     "target_primary": 287.4,
     "target_1R": 280.1797,
     "target_2R": 293.9894,
-    "shares": 0.9595,
+    "shares": 7.8576,
     "atr": 4.2297,
     "entry_style": "breakout",
     "outcome": "win",
@@ -5322,10 +5322,10 @@
     "exit_price": 293.9894,
     "pnl_per_share": 27.6194,
     "r_multiple": 2.0,
-    "pnl_dollars": 26.5,
+    "pnl_dollars": 217.02,
     "target_used": "target_2R",
     "symbol": "AAPL",
-    "equity_at_entry": 1325.06
+    "equity_at_entry": 2170.22
   },
   {
     "type": "double_bottom",
@@ -5338,7 +5338,7 @@
     "target_primary": 211.335,
     "target_1R": 217.8552,
     "target_2R": 236.8426,
-    "shares": 0.6979,
+    "shares": 5.7149,
     "atr": 3.9696,
     "entry_style": "breakout",
     "outcome": "open",
@@ -5346,10 +5346,10 @@
     "exit_price": 210.2,
     "pnl_per_share": 11.3322,
     "r_multiple": 0.597,
-    "pnl_dollars": 7.91,
+    "pnl_dollars": 64.76,
     "target_used": "target_2R",
     "symbol": "NVDA",
-    "equity_at_entry": 1325.06
+    "equity_at_entry": 2170.22
   },
   {
     "type": "inverse_hns",
@@ -5362,7 +5362,7 @@
     "target_primary": 211.335,
     "target_1R": 215.2252,
     "target_2R": 231.5826,
-    "shares": 0.8101,
+    "shares": 6.6338,
     "atr": 3.9696,
     "entry_style": "breakout",
     "outcome": "win",
@@ -5370,10 +5370,10 @@
     "exit_price": 231.5826,
     "pnl_per_share": 32.7148,
     "r_multiple": 2.0,
-    "pnl_dollars": 26.5,
+    "pnl_dollars": 217.02,
     "target_used": "target_2R",
     "symbol": "NVDA",
-    "equity_at_entry": 1325.06
+    "equity_at_entry": 2170.22
   },
   {
     "type": "double_bottom",
@@ -5386,7 +5386,7 @@
     "target_primary": 192.505,
     "target_1R": 209.1369,
     "target_2R": 226.6989,
-    "shares": 0.7545,
+    "shares": 6.1788,
     "atr": 3.9369,
     "entry_style": "breakout",
     "outcome": "win",
@@ -5394,10 +5394,10 @@
     "exit_price": 226.6989,
     "pnl_per_share": 35.1239,
     "r_multiple": 2.0,
-    "pnl_dollars": 26.5,
+    "pnl_dollars": 217.02,
     "target_used": "target_2R",
     "symbol": "MS",
-    "equity_at_entry": 1325.06
+    "equity_at_entry": 2170.22
   },
   {
     "type": "double_bottom",
@@ -5410,7 +5410,7 @@
     "target_primary": 780.0368,
     "target_1R": 728.4234,
     "target_2R": 780.0368,
-    "shares": 0.2567,
+    "shares": 2.1024,
     "atr": 17.5023,
     "entry_style": "retest",
     "outcome": "loss",
@@ -5418,10 +5418,10 @@
     "exit_price": 625.1966,
     "pnl_per_share": -51.6134,
     "r_multiple": -1.0,
-    "pnl_dollars": -13.25,
+    "pnl_dollars": -108.51,
     "target_used": "target_2R",
     "symbol": "META",
-    "equity_at_entry": 1325.06
+    "equity_at_entry": 2170.22
   },
   {
     "type": "double_bottom",
@@ -5434,7 +5434,7 @@
     "target_primary": 742.98,
     "target_1R": 739.1223,
     "target_2R": 801.4346,
-    "shares": 0.221,
+    "shares": 2.0512,
     "atr": 17.5023,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -5442,10 +5442,10 @@
     "exit_price": 614.4977,
     "pnl_per_share": -62.3123,
     "r_multiple": -1.0,
-    "pnl_dollars": -13.77,
+    "pnl_dollars": -127.82,
     "target_used": "target_2R",
     "symbol": "META",
-    "equity_at_entry": 1377.04
+    "equity_at_entry": 2556.34
   },
   {
     "type": "inverse_hns",
@@ -5458,7 +5458,7 @@
     "target_primary": 742.98,
     "target_1R": 756.6414,
     "target_2R": 824.5528,
-    "shares": 0.2028,
+    "shares": 1.8821,
     "atr": 17.3014,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -5466,10 +5466,10 @@
     "exit_price": 620.8186,
     "pnl_per_share": -67.9114,
     "r_multiple": -1.0,
-    "pnl_dollars": -13.77,
+    "pnl_dollars": -127.82,
     "target_used": "target_2R",
     "symbol": "META",
-    "equity_at_entry": 1377.04
+    "equity_at_entry": 2556.34
   },
   {
     "type": "inverse_hns",
@@ -5482,7 +5482,7 @@
     "target_primary": 292.34,
     "target_1R": 266.9016,
     "target_2R": 282.1332,
-    "shares": 0.9041,
+    "shares": 8.3916,
     "atr": 5.3216,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -5490,10 +5490,10 @@
     "exit_price": 236.4384,
     "pnl_per_share": -15.2316,
     "r_multiple": -1.0,
-    "pnl_dollars": -13.77,
+    "pnl_dollars": -127.82,
     "target_used": "target_2R",
     "symbol": "LOW",
-    "equity_at_entry": 1377.04
+    "equity_at_entry": 2556.34
   },
   {
     "type": "inverse_hns",
@@ -5506,7 +5506,7 @@
     "target_primary": 313.6694,
     "target_1R": 293.2997,
     "target_2R": 313.6694,
-    "shares": 0.676,
+    "shares": 6.2749,
     "atr": 4.3911,
     "entry_style": "retest",
     "outcome": "win",
@@ -5514,10 +5514,10 @@
     "exit_price": 313.6694,
     "pnl_per_share": 40.7394,
     "r_multiple": 2.0,
-    "pnl_dollars": 27.54,
+    "pnl_dollars": 255.63,
     "target_used": "target_2R",
     "symbol": "AAPL",
-    "equity_at_entry": 1377.04
+    "equity_at_entry": 2556.34
   },
   {
     "type": "double_bottom",
@@ -5530,7 +5530,7 @@
     "target_primary": 238.3042,
     "target_1R": 218.8296,
     "target_2R": 238.3042,
-    "shares": 0.7071,
+    "shares": 6.5633,
     "atr": 3.6252,
     "entry_style": "retest",
     "outcome": "open",
@@ -5538,10 +5538,10 @@
     "exit_price": 210.2,
     "pnl_per_share": 10.845,
     "r_multiple": 0.557,
-    "pnl_dollars": 7.67,
+    "pnl_dollars": 71.18,
     "target_used": "target_2R",
     "symbol": "NVDA",
-    "equity_at_entry": 1377.04
+    "equity_at_entry": 2556.34
   },
   {
     "type": "inverse_hns",
@@ -5554,7 +5554,7 @@
     "target_primary": 233.0442,
     "target_1R": 216.1996,
     "target_2R": 233.0442,
-    "shares": 0.8175,
+    "shares": 7.588,
     "atr": 3.6252,
     "entry_style": "retest",
     "outcome": "win",
@@ -5562,10 +5562,10 @@
     "exit_price": 233.0442,
     "pnl_per_share": 33.6892,
     "r_multiple": 2.0,
-    "pnl_dollars": 27.54,
+    "pnl_dollars": 255.63,
     "target_used": "target_2R",
     "symbol": "NVDA",
-    "equity_at_entry": 1377.04
+    "equity_at_entry": 2556.34
   },
   {
     "type": "double_bottom",
@@ -5578,7 +5578,7 @@
     "target_primary": 224.1338,
     "target_1R": 207.4269,
     "target_2R": 224.1338,
-    "shares": 0.8242,
+    "shares": 7.6506,
     "atr": 3.8801,
     "entry_style": "retest",
     "outcome": "win",
@@ -5586,10 +5586,10 @@
     "exit_price": 224.1338,
     "pnl_per_share": 33.4138,
     "r_multiple": 2.0,
-    "pnl_dollars": 27.54,
+    "pnl_dollars": 255.63,
     "target_used": "target_2R",
     "symbol": "MS",
-    "equity_at_entry": 1377.04
+    "equity_at_entry": 2556.34
   },
   {
     "type": "double_bottom",
@@ -5602,7 +5602,7 @@
     "target_primary": 147.511,
     "target_1R": 137.973,
     "target_2R": 147.511,
-    "shares": 1.4437,
+    "shares": 13.4008,
     "atr": 2.0421,
     "entry_style": "retest",
     "outcome": "loss",
@@ -5610,10 +5610,10 @@
     "exit_price": 118.897,
     "pnl_per_share": -9.538,
     "r_multiple": -1.0,
-    "pnl_dollars": -13.77,
+    "pnl_dollars": -127.82,
     "target_used": "target_2R",
     "symbol": "WMT",
-    "equity_at_entry": 1377.04
+    "equity_at_entry": 2556.34
   },
   {
     "type": "inverse_hns",
@@ -5626,7 +5626,7 @@
     "target_primary": 145.751,
     "target_1R": 137.093,
     "target_2R": 145.751,
-    "shares": 1.5905,
+    "shares": 14.7629,
     "atr": 2.0421,
     "entry_style": "retest",
     "outcome": "loss",
@@ -5634,10 +5634,10 @@
     "exit_price": 119.777,
     "pnl_per_share": -8.658,
     "r_multiple": -1.0,
-    "pnl_dollars": -13.77,
+    "pnl_dollars": -127.82,
     "target_used": "target_2R",
     "symbol": "WMT",
-    "equity_at_entry": 1377.04
+    "equity_at_entry": 2556.34
   },
   {
     "type": "double_bottom",
@@ -5650,7 +5650,7 @@
     "target_primary": 520.44,
     "target_1R": 465.6062,
     "target_2R": 506.9624,
-    "shares": 0.333,
+    "shares": 3.0906,
     "atr": 7.7062,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -5658,10 +5658,10 @@
     "exit_price": 382.8938,
     "pnl_per_share": -41.3562,
     "r_multiple": -1.0,
-    "pnl_dollars": -13.77,
+    "pnl_dollars": -127.82,
     "target_used": "target_2R",
     "symbol": "MSFT",
-    "equity_at_entry": 1377.04
+    "equity_at_entry": 2556.34
   },
   {
     "type": "inverse_hns",
@@ -5674,7 +5674,7 @@
     "target_primary": 520.44,
     "target_1R": 463.7862,
     "target_2R": 503.3224,
-    "shares": 0.3622,
+    "shares": 3.9428,
     "atr": 7.7062,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -5682,10 +5682,10 @@
     "exit_price": 384.7138,
     "pnl_per_share": -39.5362,
     "r_multiple": -1.0,
-    "pnl_dollars": -14.32,
+    "pnl_dollars": -155.88,
     "target_used": "target_2R",
     "symbol": "MSFT",
-    "equity_at_entry": 1431.91
+    "equity_at_entry": 3117.66
   },
   {
     "type": "inverse_hns",
@@ -5698,7 +5698,7 @@
     "target_primary": 63.1846,
     "target_1R": 58.7848,
     "target_2R": 63.1846,
-    "shares": 3.2545,
+    "shares": 35.4296,
     "atr": 1.2448,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -5706,10 +5706,10 @@
     "exit_price": 49.9852,
     "pnl_per_share": -4.3998,
     "r_multiple": -1.0,
-    "pnl_dollars": -14.32,
+    "pnl_dollars": -155.88,
     "target_used": "target_2R",
     "symbol": "SLB",
-    "equity_at_entry": 1431.91
+    "equity_at_entry": 3117.66
   },
   {
     "type": "inverse_hns",
@@ -5722,7 +5722,7 @@
     "target_primary": 254.3499,
     "target_1R": 257.2446,
     "target_2R": 280.3792,
-    "shares": 0.6424,
+    "shares": 7.7871,
     "atr": 5.8846,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -5730,10 +5730,10 @@
     "exit_price": 210.9754,
     "pnl_per_share": -23.1346,
     "r_multiple": -1.0,
-    "pnl_dollars": -14.86,
+    "pnl_dollars": -180.15,
     "target_used": "target_2R",
     "symbol": "BA",
-    "equity_at_entry": 1486.23
+    "equity_at_entry": 3603.05
   },
   {
     "type": "double_bottom",
@@ -5746,7 +5746,7 @@
     "target_primary": 507.9524,
     "target_1R": 466.2662,
     "target_2R": 507.9524,
-    "shares": 0.3533,
+    "shares": 4.1915,
     "atr": 8.7682,
     "entry_style": "retest",
     "outcome": "loss",
@@ -5754,10 +5754,10 @@
     "exit_price": 382.8938,
     "pnl_per_share": -41.6862,
     "r_multiple": -1.0,
-    "pnl_dollars": -14.73,
+    "pnl_dollars": -174.73,
     "target_used": "target_2R",
     "symbol": "MSFT",
-    "equity_at_entry": 1472.98
+    "equity_at_entry": 3494.54
   },
   {
     "type": "inverse_hns",
@@ -5770,7 +5770,7 @@
     "target_primary": 504.3124,
     "target_1R": 464.4462,
     "target_2R": 504.3124,
-    "shares": 0.3956,
+    "shares": 5.3514,
     "atr": 8.7682,
     "entry_style": "retest",
     "outcome": "loss",
@@ -5778,10 +5778,10 @@
     "exit_price": 384.7138,
     "pnl_per_share": -39.8662,
     "r_multiple": -1.0,
-    "pnl_dollars": -15.77,
+    "pnl_dollars": -213.34,
     "target_used": "target_2R",
     "symbol": "MSFT",
-    "equity_at_entry": 1576.94
+    "equity_at_entry": 4266.78
   },
   {
     "type": "double_bottom",
@@ -5794,7 +5794,7 @@
     "target_primary": 184.31,
     "target_1R": 164.6024,
     "target_2R": 180.2048,
-    "shares": 1.0107,
+    "shares": 13.6735,
     "atr": 3.3424,
     "entry_style": "breakout",
     "outcome": "win",
@@ -5802,10 +5802,10 @@
     "exit_price": 180.2048,
     "pnl_per_share": 31.2048,
     "r_multiple": 2.0,
-    "pnl_dollars": 31.54,
+    "pnl_dollars": 426.68,
     "target_used": "target_2R",
     "symbol": "QCOM",
-    "equity_at_entry": 1576.94
+    "equity_at_entry": 4266.78
   },
   {
     "type": "inverse_hns",
@@ -5818,7 +5818,7 @@
     "target_primary": 184.31,
     "target_1R": 169.2924,
     "target_2R": 189.5848,
-    "shares": 0.7771,
+    "shares": 10.5132,
     "atr": 3.3424,
     "entry_style": "breakout",
     "outcome": "win",
@@ -5826,10 +5826,10 @@
     "exit_price": 189.5848,
     "pnl_per_share": 40.5848,
     "r_multiple": 2.0,
-    "pnl_dollars": 31.54,
+    "pnl_dollars": 426.68,
     "target_used": "target_2R",
     "symbol": "QCOM",
-    "equity_at_entry": 1576.94
+    "equity_at_entry": 4266.78
   },
   {
     "type": "double_bottom",
@@ -5842,7 +5842,7 @@
     "target_primary": 806.3846,
     "target_1R": 742.4223,
     "target_2R": 806.3846,
-    "shares": 0.2465,
+    "shares": 3.3354,
     "atr": 15.9966,
     "entry_style": "retest",
     "outcome": "loss",
@@ -5850,10 +5850,10 @@
     "exit_price": 614.4977,
     "pnl_per_share": -63.9623,
     "r_multiple": -1.0,
-    "pnl_dollars": -15.77,
+    "pnl_dollars": -213.34,
     "target_used": "target_2R",
     "symbol": "META",
-    "equity_at_entry": 1576.94
+    "equity_at_entry": 4266.78
   },
   {
     "type": "inverse_hns",
@@ -5866,7 +5866,7 @@
     "target_primary": 272.0392,
     "target_1R": 251.6846,
     "target_2R": 272.0392,
-    "shares": 0.7747,
+    "shares": 10.4811,
     "atr": 5.4598,
     "entry_style": "retest",
     "outcome": "loss",
@@ -5874,10 +5874,10 @@
     "exit_price": 210.9754,
     "pnl_per_share": -20.3546,
     "r_multiple": -1.0,
-    "pnl_dollars": -15.77,
+    "pnl_dollars": -213.34,
     "target_used": "target_2R",
     "symbol": "BA",
-    "equity_at_entry": 1576.94
+    "equity_at_entry": 4266.78
   },
   {
     "type": "double_bottom",
@@ -5890,7 +5890,7 @@
     "target_primary": 183.2348,
     "target_1R": 166.6224,
     "target_2R": 183.2348,
-    "shares": 0.9493,
+    "shares": 12.8422,
     "atr": 3.3917,
     "entry_style": "retest",
     "outcome": "win",
@@ -5898,10 +5898,10 @@
     "exit_price": 183.2348,
     "pnl_per_share": 33.2248,
     "r_multiple": 2.0,
-    "pnl_dollars": 31.54,
+    "pnl_dollars": 426.68,
     "target_used": "target_2R",
     "symbol": "QCOM",
-    "equity_at_entry": 1576.94
+    "equity_at_entry": 4266.78
   },
   {
     "type": "inverse_hns",
@@ -5914,7 +5914,7 @@
     "target_primary": 192.6148,
     "target_1R": 171.3124,
     "target_2R": 192.6148,
-    "shares": 0.7525,
+    "shares": 10.4679,
     "atr": 3.3917,
     "entry_style": "retest",
     "outcome": "win",
@@ -5922,10 +5922,10 @@
     "exit_price": 192.6148,
     "pnl_per_share": 42.6048,
     "r_multiple": 2.0,
-    "pnl_dollars": 32.06,
+    "pnl_dollars": 445.98,
     "target_used": "target_2R",
     "symbol": "QCOM",
-    "equity_at_entry": 1602.93
+    "equity_at_entry": 4459.84
   },
   {
     "type": "double_bottom",
@@ -5938,7 +5938,7 @@
     "target_primary": 358.62,
     "target_1R": 361.2738,
     "target_2R": 387.7076,
-    "shares": 0.6064,
+    "shares": 8.4359,
     "atr": 5.748,
     "entry_style": "breakout",
     "outcome": "open",
@@ -5946,10 +5946,10 @@
     "exit_price": 327.23,
     "pnl_per_share": -7.61,
     "r_multiple": -0.288,
-    "pnl_dollars": -4.61,
+    "pnl_dollars": -64.2,
     "target_used": "target_2R",
     "symbol": "V",
-    "equity_at_entry": 1602.93
+    "equity_at_entry": 4459.84
   },
   {
     "type": "inverse_hns",
@@ -5962,7 +5962,7 @@
     "target_primary": 358.62,
     "target_1R": 359.688,
     "target_2R": 384.536,
-    "shares": 0.6396,
+    "shares": 8.717,
     "atr": 5.748,
     "entry_style": "breakout",
     "outcome": "open",
@@ -5970,10 +5970,10 @@
     "exit_price": 327.23,
     "pnl_per_share": -7.61,
     "r_multiple": -0.306,
-    "pnl_dollars": -4.87,
+    "pnl_dollars": -66.34,
     "target_used": "target_2R",
     "symbol": "V",
-    "equity_at_entry": 1589.16
+    "equity_at_entry": 4332.02
   },
   {
     "type": "inverse_hns",
@@ -5986,7 +5986,7 @@
     "target_primary": 325.6134,
     "target_1R": 301.2267,
     "target_2R": 325.6134,
-    "shares": 0.6517,
+    "shares": 8.8819,
     "atr": 5.1251,
     "entry_style": "retest",
     "outcome": "open",
@@ -5994,10 +5994,10 @@
     "exit_price": 297.89,
     "pnl_per_share": 21.05,
     "r_multiple": 0.863,
-    "pnl_dollars": 13.72,
+    "pnl_dollars": 186.96,
     "target_used": "target_2R",
     "symbol": "AAPL",
-    "equity_at_entry": 1589.16
+    "equity_at_entry": 4332.02
   },
   {
     "type": "double_bottom",
@@ -6010,7 +6010,7 @@
     "target_primary": 1114.195,
     "target_1R": 1124.9163,
     "target_2R": 1261.3726,
-    "shares": 0.1234,
+    "shares": 1.8226,
     "atr": 25.1063,
     "entry_style": "breakout",
     "outcome": "open",
@@ -6018,10 +6018,10 @@
     "exit_price": 1098.13,
     "pnl_per_share": 109.67,
     "r_multiple": 0.804,
-    "pnl_dollars": 13.54,
+    "pnl_dollars": 199.88,
     "target_used": "target_2R",
     "symbol": "LLY",
-    "equity_at_entry": 1684.11
+    "equity_at_entry": 4974.08
   },
   {
     "type": "inverse_hns",
@@ -6034,7 +6034,7 @@
     "target_primary": 259.57,
     "target_1R": 234.1167,
     "target_2R": 274.2333,
-    "shares": 0.4277,
+    "shares": 6.7313,
     "atr": 6.9267,
     "entry_style": "breakout",
     "outcome": "open",
@@ -6042,10 +6042,10 @@
     "exit_price": 184.31,
     "pnl_per_share": -9.69,
     "r_multiple": -0.242,
-    "pnl_dollars": -4.14,
+    "pnl_dollars": -65.23,
     "target_used": "target_2R",
     "symbol": "ORCL",
-    "equity_at_entry": 1715.65
+    "equity_at_entry": 5400.76
   },
   {
     "type": "double_bottom",
@@ -6058,7 +6058,7 @@
     "target_primary": 496.41,
     "target_1R": 447.1236,
     "target_2R": 482.4222,
-    "shares": 0.5041,
+    "shares": 8.8862,
     "atr": 10.7136,
     "entry_style": "breakout",
     "outcome": "open",
@@ -6066,10 +6066,10 @@
     "exit_price": 400.5,
     "pnl_per_share": -11.325,
     "r_multiple": -0.321,
-    "pnl_dollars": -5.71,
+    "pnl_dollars": -100.64,
     "target_used": "target_2R",
     "symbol": "TSLA",
-    "equity_at_entry": 1779.25
+    "equity_at_entry": 6273.42
   },
   {
     "type": "inverse_hns",
@@ -6082,7 +6082,7 @@
     "target_primary": 496.41,
     "target_1R": 444.4136,
     "target_2R": 477.0022,
-    "shares": 0.546,
+    "shares": 9.6252,
     "atr": 10.7136,
     "entry_style": "breakout",
     "outcome": "open",
@@ -6090,10 +6090,10 @@
     "exit_price": 400.5,
     "pnl_per_share": -11.325,
     "r_multiple": -0.348,
-    "pnl_dollars": -6.18,
+    "pnl_dollars": -109.01,
     "target_used": "target_2R",
     "symbol": "TSLA",
-    "equity_at_entry": 1779.25
+    "equity_at_entry": 6273.42
   },
   {
     "type": "double_bottom",
@@ -6106,7 +6106,7 @@
     "target_primary": 254.3499,
     "target_1R": 261.6244,
     "target_2R": 286.1387,
-    "shares": 0.7258,
+    "shares": 12.7954,
     "atr": 5.5344,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -6114,10 +6114,10 @@
     "exit_price": 212.5956,
     "pnl_per_share": -24.5144,
     "r_multiple": -1.0,
-    "pnl_dollars": -17.79,
+    "pnl_dollars": -313.67,
     "target_used": "target_2R",
     "symbol": "BA",
-    "equity_at_entry": 1779.25
+    "equity_at_entry": 6273.42
   },
   {
     "type": "double_bottom",
@@ -6130,7 +6130,7 @@
     "target_primary": 285.4188,
     "target_1R": 261.1444,
     "target_2R": 285.4188,
-    "shares": 0.7653,
+    "shares": 14.1642,
     "atr": 5.465,
     "entry_style": "retest",
     "outcome": "loss",
@@ -6138,10 +6138,10 @@
     "exit_price": 212.5956,
     "pnl_per_share": -24.2744,
     "r_multiple": -1.0,
-    "pnl_dollars": -18.58,
+    "pnl_dollars": -343.83,
     "target_used": "target_2R",
     "symbol": "BA",
-    "equity_at_entry": 1857.73
+    "equity_at_entry": 6876.56
   },
   {
     "type": "double_bottom",
@@ -6154,7 +6154,7 @@
     "target_primary": 1343.7826,
     "target_1R": 1179.8563,
     "target_2R": 1343.7826,
-    "shares": 0.1142,
+    "shares": 2.1342,
     "atr": 25.2825,
     "entry_style": "retest",
     "outcome": "open",
@@ -6162,10 +6162,10 @@
     "exit_price": 1098.13,
     "pnl_per_share": 82.2,
     "r_multiple": 0.501,
-    "pnl_dollars": 9.38,
+    "pnl_dollars": 175.43,
     "target_used": "target_2R",
     "symbol": "LLY",
-    "equity_at_entry": 1871.23
+    "equity_at_entry": 6997.05
   },
   {
     "type": "inverse_hns",
@@ -6178,7 +6178,7 @@
     "target_primary": 1114.195,
     "target_1R": 1109.6125,
     "target_2R": 1203.295,
-    "shares": 0.1997,
+    "shares": 3.7344,
     "atr": 25.2825,
     "entry_style": "breakout",
     "outcome": "open",
@@ -6186,10 +6186,10 @@
     "exit_price": 1098.13,
     "pnl_per_share": 82.2,
     "r_multiple": 0.877,
-    "pnl_dollars": 16.42,
+    "pnl_dollars": 306.97,
     "target_used": "target_2R",
     "symbol": "LLY",
-    "equity_at_entry": 1871.23
+    "equity_at_entry": 6997.05
   },
   {
     "type": "double_bottom",
@@ -6202,7 +6202,7 @@
     "target_primary": 1172.1232,
     "target_1R": 1106.7116,
     "target_2R": 1172.1232,
-    "shares": 0.2861,
+    "shares": 5.3485,
     "atr": 13.4766,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -6210,10 +6210,10 @@
     "exit_price": 975.8884,
     "pnl_per_share": -65.4116,
     "r_multiple": -1.0,
-    "pnl_dollars": -18.71,
+    "pnl_dollars": -349.85,
     "target_used": "target_2R",
     "symbol": "COST",
-    "equity_at_entry": 1871.23
+    "equity_at_entry": 6997.05
   },
   {
     "type": "inverse_hns",
@@ -6226,7 +6226,7 @@
     "target_primary": 1171.5932,
     "target_1R": 1106.4466,
     "target_2R": 1171.5932,
-    "shares": 0.2955,
+    "shares": 5.733,
     "atr": 13.4766,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -6234,10 +6234,10 @@
     "exit_price": 976.1534,
     "pnl_per_share": -65.1466,
     "r_multiple": -1.0,
-    "pnl_dollars": -19.25,
+    "pnl_dollars": -373.49,
     "target_used": "target_2R",
     "symbol": "COST",
-    "equity_at_entry": 1925.27
+    "equity_at_entry": 7469.7
   },
   {
     "type": "double_bottom",
@@ -6250,7 +6250,7 @@
     "target_primary": 1196.2132,
     "target_1R": 1122.7716,
     "target_2R": 1196.2132,
-    "shares": 0.2621,
+    "shares": 5.0855,
     "atr": 13.2369,
     "entry_style": "retest",
     "outcome": "loss",
@@ -6258,10 +6258,10 @@
     "exit_price": 975.8884,
     "pnl_per_share": -73.4416,
     "r_multiple": -1.0,
-    "pnl_dollars": -19.25,
+    "pnl_dollars": -373.49,
     "target_used": "target_2R",
     "symbol": "COST",
-    "equity_at_entry": 1925.27
+    "equity_at_entry": 7469.7
   },
   {
     "type": "inverse_hns",
@@ -6274,7 +6274,7 @@
     "target_primary": 1195.6832,
     "target_1R": 1122.5066,
     "target_2R": 1195.6832,
-    "shares": 0.2631,
+    "shares": 5.1039,
     "atr": 13.2369,
     "entry_style": "retest",
     "outcome": "loss",
@@ -6282,10 +6282,10 @@
     "exit_price": 976.1534,
     "pnl_per_share": -73.1766,
     "r_multiple": -1.0,
-    "pnl_dollars": -19.25,
+    "pnl_dollars": -373.49,
     "target_used": "target_2R",
     "symbol": "COST",
-    "equity_at_entry": 1925.27
+    "equity_at_entry": 7469.7
   },
   {
     "type": "double_bottom",
@@ -6298,7 +6298,7 @@
     "target_primary": 213.74,
     "target_1R": 215.6562,
     "target_2R": 235.1524,
-    "shares": 0.9875,
+    "shares": 19.1568,
     "atr": 3.5462,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -6306,10 +6306,10 @@
     "exit_price": 176.6638,
     "pnl_per_share": -19.4962,
     "r_multiple": -1.0,
-    "pnl_dollars": -19.25,
+    "pnl_dollars": -373.49,
     "target_used": "target_2R",
     "symbol": "CVX",
-    "equity_at_entry": 1925.27
+    "equity_at_entry": 7469.7
   },
   {
     "type": "double_bottom",
@@ -6322,7 +6322,7 @@
     "target_primary": 239.29,
     "target_1R": 235.2142,
     "target_2R": 256.5384,
-    "shares": 0.9029,
+    "shares": 17.5146,
     "atr": 3.8742,
     "entry_style": "breakout",
     "outcome": "open",
@@ -6330,10 +6330,10 @@
     "exit_price": 216.58,
     "pnl_per_share": 2.69,
     "r_multiple": 0.126,
-    "pnl_dollars": 2.43,
+    "pnl_dollars": 47.11,
     "target_used": "target_2R",
     "symbol": "ABBV",
-    "equity_at_entry": 1925.27
+    "equity_at_entry": 7469.7
   },
   {
     "type": "inverse_hns",
@@ -6346,7 +6346,7 @@
     "target_primary": 239.29,
     "target_1R": 231.4342,
     "target_2R": 248.9784,
-    "shares": 1.1119,
+    "shares": 21.9712,
     "atr": 3.8742,
     "entry_style": "breakout",
     "outcome": "open",
@@ -6354,10 +6354,10 @@
     "exit_price": 216.58,
     "pnl_per_share": 2.69,
     "r_multiple": 0.153,
-    "pnl_dollars": 2.99,
+    "pnl_dollars": 59.1,
     "target_used": "target_2R",
     "symbol": "ABBV",
-    "equity_at_entry": 1950.71
+    "equity_at_entry": 7709.36
   },
   {
     "type": "inverse_hns",
@@ -6370,7 +6370,7 @@
     "target_primary": 1219.165,
     "target_1R": 1120.1925,
     "target_2R": 1219.165,
-    "shares": 0.1971,
+    "shares": 3.8947,
     "atr": 24.1307,
     "entry_style": "retest",
     "outcome": "open",
@@ -6378,10 +6378,10 @@
     "exit_price": 1098.13,
     "pnl_per_share": 76.91,
     "r_multiple": 0.777,
-    "pnl_dollars": 15.16,
+    "pnl_dollars": 299.54,
     "target_used": "target_2R",
     "symbol": "LLY",
-    "equity_at_entry": 1950.71
+    "equity_at_entry": 7709.36
   },
   {
     "type": "double_bottom",
@@ -6394,7 +6394,7 @@
     "target_primary": 258.5784,
     "target_1R": 236.5742,
     "target_2R": 258.5784,
-    "shares": 0.8865,
+    "shares": 17.5179,
     "atr": 3.7312,
     "entry_style": "retest",
     "outcome": "open",
@@ -6402,10 +6402,10 @@
     "exit_price": 216.58,
     "pnl_per_share": 2.01,
     "r_multiple": 0.091,
-    "pnl_dollars": 1.78,
+    "pnl_dollars": 35.21,
     "target_used": "target_2R",
     "symbol": "ABBV",
-    "equity_at_entry": 1950.71
+    "equity_at_entry": 7709.36
   },
   {
     "type": "inverse_hns",
@@ -6418,7 +6418,7 @@
     "target_primary": 251.0184,
     "target_1R": 232.7942,
     "target_2R": 251.0184,
-    "shares": 1.0704,
+    "shares": 21.1514,
     "atr": 3.7312,
     "entry_style": "retest",
     "outcome": "open",
@@ -6426,10 +6426,10 @@
     "exit_price": 216.58,
     "pnl_per_share": 2.01,
     "r_multiple": 0.11,
-    "pnl_dollars": 2.15,
+    "pnl_dollars": 42.51,
     "target_used": "target_2R",
     "symbol": "ABBV",
-    "equity_at_entry": 1950.71
+    "equity_at_entry": 7709.36
   },
   {
     "type": "double_bottom",
@@ -6442,7 +6442,7 @@
     "target_primary": 390.1,
     "target_1R": 362.847,
     "target_2R": 386.4539,
-    "shares": 0.8263,
+    "shares": 16.3285,
     "atr": 5.882,
     "entry_style": "breakout",
     "outcome": "open",
@@ -6450,10 +6450,10 @@
     "exit_price": 337.46,
     "pnl_per_share": -1.78,
     "r_multiple": -0.075,
-    "pnl_dollars": -1.47,
+    "pnl_dollars": -29.06,
     "target_used": "target_2R",
     "symbol": "AMGN",
-    "equity_at_entry": 1950.71
+    "equity_at_entry": 7709.36
   },
   {
     "type": "double_bottom",
@@ -6466,7 +6466,7 @@
     "target_primary": 347.4292,
     "target_1R": 357.5795,
     "target_2R": 400.699,
-    "shares": 0.4461,
+    "shares": 8.6655,
     "atr": 8.1295,
     "entry_style": "breakout",
     "outcome": "open",
@@ -6474,10 +6474,10 @@
     "exit_price": 357.67,
     "pnl_per_share": 43.21,
     "r_multiple": 1.002,
-    "pnl_dollars": 19.28,
+    "pnl_dollars": 374.44,
     "target_used": "target_2R",
     "symbol": "GE",
-    "equity_at_entry": 1923.69
+    "equity_at_entry": 7473.03
   },
   {
     "type": "inverse_hns",
@@ -6490,7 +6490,7 @@
     "target_primary": 347.4292,
     "target_1R": 367.9462,
     "target_2R": 415.1224,
-    "shares": 0.402,
+    "shares": 7.6699,
     "atr": 7.7362,
     "entry_style": "breakout",
     "outcome": "open",
@@ -6498,10 +6498,10 @@
     "exit_price": 357.67,
     "pnl_per_share": 36.9,
     "r_multiple": 0.782,
-    "pnl_dollars": 14.84,
+    "pnl_dollars": 283.02,
     "target_used": "target_2R",
     "symbol": "GE",
-    "equity_at_entry": 1896.67
+    "equity_at_entry": 7236.7
   },
   {
     "type": "inverse_hns",
@@ -6514,7 +6514,7 @@
     "target_primary": 248.5,
     "target_1R": 268.4028,
     "target_2R": 298.8656,
-    "shares": 0.6313,
+    "shares": 12.2341,
     "atr": 4.0228,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -6522,10 +6522,10 @@
     "exit_price": 207.4772,
     "pnl_per_share": -30.4628,
     "r_multiple": -1.0,
-    "pnl_dollars": -19.23,
+    "pnl_dollars": -372.69,
     "target_used": "target_2R",
     "symbol": "HON",
-    "equity_at_entry": 1923.17
+    "equity_at_entry": 7453.72
   },
   {
     "type": "double_bottom",
@@ -6538,7 +6538,7 @@
     "target_primary": 267.825,
     "target_1R": 213.8089,
     "target_2R": 236.5378,
-    "shares": 0.8125,
+    "shares": 13.1625,
     "atr": 5.959,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -6546,10 +6546,10 @@
     "exit_price": 168.3511,
     "pnl_per_share": -22.7289,
     "r_multiple": -1.0,
-    "pnl_dollars": -18.47,
+    "pnl_dollars": -299.17,
     "target_used": "target_2R",
     "symbol": "CRM",
-    "equity_at_entry": 1846.71
+    "equity_at_entry": 5983.4
   },
   {
     "type": "inverse_hns",
@@ -6562,7 +6562,7 @@
     "target_primary": 267.825,
     "target_1R": 212.814,
     "target_2R": 234.548,
-    "shares": 0.8497,
+    "shares": 13.7651,
     "atr": 5.959,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -6570,10 +6570,10 @@
     "exit_price": 169.346,
     "pnl_per_share": -21.734,
     "r_multiple": -1.0,
-    "pnl_dollars": -18.47,
+    "pnl_dollars": -299.17,
     "target_used": "target_2R",
     "symbol": "CRM",
-    "equity_at_entry": 1846.71
+    "equity_at_entry": 5983.4
   },
   {
     "type": "inverse_hns",
@@ -6586,7 +6586,7 @@
     "target_primary": 294.6356,
     "target_1R": 265.5828,
     "target_2R": 294.6356,
-    "shares": 0.6356,
+    "shares": 10.2975,
     "atr": 4.0808,
     "entry_style": "retest",
     "outcome": "loss",
@@ -6594,10 +6594,10 @@
     "exit_price": 207.4772,
     "pnl_per_share": -29.0528,
     "r_multiple": -1.0,
-    "pnl_dollars": -18.47,
+    "pnl_dollars": -299.17,
     "target_used": "target_2R",
     "symbol": "HON",
-    "equity_at_entry": 1846.71
+    "equity_at_entry": 5983.4
   },
   {
     "type": "inverse_hns",
@@ -6610,7 +6610,7 @@
     "target_primary": 426.8374,
     "target_1R": 375.7562,
     "target_2R": 426.8374,
-    "shares": 0.3693,
+    "shares": 6.1379,
     "atr": 7.5007,
     "entry_style": "retest",
     "outcome": "open",
@@ -6618,10 +6618,10 @@
     "exit_price": 357.67,
     "pnl_per_share": 32.995,
     "r_multiple": 0.646,
-    "pnl_dollars": 12.18,
+    "pnl_dollars": 202.52,
     "target_used": "target_2R",
     "symbol": "GE",
-    "equity_at_entry": 1886.39
+    "equity_at_entry": 6270.62
   },
   {
     "type": "double_bottom",
@@ -6634,7 +6634,7 @@
     "target_primary": 259.57,
     "target_1R": 311.6255,
     "target_2R": 375.141,
-    "shares": 0.297,
+    "shares": 4.9363,
     "atr": 8.9555,
     "entry_style": "breakout",
     "outcome": "loss",
@@ -6642,10 +6642,10 @@
     "exit_price": 184.5945,
     "pnl_per_share": -63.5155,
     "r_multiple": -1.0,
-    "pnl_dollars": -18.86,
+    "pnl_dollars": -313.53,
     "target_used": "target_2R",
     "symbol": "ORCL",
-    "equity_at_entry": 1886.39
+    "equity_at_entry": 6270.62
   },
   {
     "type": "double_bottom",
@@ -6658,7 +6658,7 @@
     "target_primary": 242.36,
     "target_1R": 204.5034,
     "target_2R": 222.4569,
-    "shares": 1.0507,
+    "shares": 17.4636,
     "atr": 3.7934,
     "entry_style": "breakout",
     "outcome": "open",
@@ -6666,10 +6666,10 @@
     "exit_price": 177.195,
     "pnl_per_share": -9.355,
     "r_multiple": -0.521,
-    "pnl_dollars": -9.83,
+    "pnl_dollars": -163.37,
     "target_used": "target_2R",
     "symbol": "DHR",
-    "equity_at_entry": 1886.39
+    "equity_at_entry": 6270.62
   },
   {
     "type": "inverse_hns",
@@ -6682,7 +6682,7 @@
     "target_primary": 242.36,
     "target_1R": 201.3934,
     "target_2R": 216.2369,
-    "shares": 1.293,
+    "shares": 21.6881,
     "atr": 3.7934,
     "entry_style": "breakout",
     "outcome": "open",
@@ -6690,10 +6690,10 @@
     "exit_price": 177.195,
     "pnl_per_share": -9.355,
     "r_multiple": -0.63,
-    "pnl_dollars": -12.1,
+    "pnl_dollars": -202.89,
     "target_used": "target_2R",
     "symbol": "DHR",
-    "equity_at_entry": 1919.3
+    "equity_at_entry": 6438.49
   },
   {
     "type": "double_bottom",
@@ -6706,7 +6706,7 @@
     "target_primary": 405.594,
     "target_1R": 375.607,
     "target_2R": 405.594,
-    "shares": 0.64,
+    "shares": 10.7355,
     "atr": 6.0848,
     "entry_style": "retest",
     "outcome": "open",
@@ -6714,10 +6714,10 @@
     "exit_price": 337.46,
     "pnl_per_share": -8.16,
     "r_multiple": -0.272,
-    "pnl_dollars": -5.22,
+    "pnl_dollars": -87.6,
     "target_used": "target_2R",
     "symbol": "AMGN",
-    "equity_at_entry": 1919.3
+    "equity_at_entry": 6438.49
   },
   {
     "type": "double_bottom",
@@ -6730,7 +6730,7 @@
     "target_primary": 213.49,
     "target_1R": 195.2703,
     "target_2R": 208.4706,
-    "shares": 1.454,
+    "shares": 24.3877,
     "atr": 3.0503,
     "entry_style": "breakout",
     "outcome": "open",
@@ -6738,10 +6738,10 @@
     "exit_price": 185.68,
     "pnl_per_share": 3.61,
     "r_multiple": 0.273,
-    "pnl_dollars": 5.25,
+    "pnl_dollars": 88.04,
     "target_used": "target_2R",
     "symbol": "RTX",
-    "equity_at_entry": 1919.3
+    "equity_at_entry": 6438.49
   },
   {
     "type": "inverse_hns",
@@ -6754,7 +6754,7 @@
     "target_primary": 213.49,
     "target_1R": 194.1703,
     "target_2R": 206.2706,
-    "shares": 1.5862,
+    "shares": 26.6047,
     "atr": 3.0503,
     "entry_style": "breakout",
     "outcome": "open",
@@ -6762,10 +6762,10 @@
     "exit_price": 185.68,
     "pnl_per_share": 3.61,
     "r_multiple": 0.298,
-    "pnl_dollars": 5.73,
+    "pnl_dollars": 96.04,
     "target_used": "target_2R",
     "symbol": "RTX",
-    "equity_at_entry": 1919.3
+    "equity_at_entry": 6438.49
   },
   {
     "type": "inverse_hns",
@@ -6778,7 +6778,7 @@
     "target_primary": 249.2464,
     "target_1R": 255.5077,
     "target_2R": 274.0004,
-    "shares": 1.0379,
+    "shares": 17.4082,
     "atr": 3.4777,
     "entry_style": "breakout",
     "outcome": "open",
@@ -6786,10 +6786,10 @@
     "exit_price": 228.4,
     "pnl_per_share": -8.615,
     "r_multiple": -0.466,
-    "pnl_dollars": -8.94,
+    "pnl_dollars": -149.97,
     "target_used": "target_2R",
     "symbol": "JNJ",
-    "equity_at_entry": 1919.3
+    "equity_at_entry": 6438.49
   },
   {
     "type": "double_bottom",
@@ -6802,7 +6802,7 @@
     "target_primary": 206.9706,
     "target_1R": 194.2703,
     "target_2R": 206.9706,
-    "shares": 1.4826,
+    "shares": 22.7593,
     "atr": 3.2038,
     "entry_style": "retest",
     "outcome": "open",
@@ -6810,10 +6810,10 @@
     "exit_price": 185.68,
     "pnl_per_share": 4.11,
     "r_multiple": 0.324,
-    "pnl_dollars": 6.09,
+    "pnl_dollars": 93.54,
     "target_used": "target_2R",
     "symbol": "RTX",
-    "equity_at_entry": 1882.93
+    "equity_at_entry": 5780.99
   },
   {
     "type": "inverse_hns",
@@ -6826,7 +6826,7 @@
     "target_primary": 204.7706,
     "target_1R": 193.1703,
     "target_2R": 204.7706,
-    "shares": 1.6232,
+    "shares": 24.9174,
     "atr": 3.2038,
     "entry_style": "retest",
     "outcome": "open",
@@ -6834,10 +6834,10 @@
     "exit_price": 185.68,
     "pnl_per_share": 4.11,
     "r_multiple": 0.354,
-    "pnl_dollars": 6.67,
+    "pnl_dollars": 102.41,
     "target_used": "target_2R",
     "symbol": "RTX",
-    "equity_at_entry": 1882.93
+    "equity_at_entry": 5780.99
   },
   {
     "type": "double_bottom",
@@ -6850,7 +6850,7 @@
     "target_primary": 228.3068,
     "target_1R": 208.4034,
     "target_2R": 228.3068,
-    "shares": 0.946,
+    "shares": 14.5226,
     "atr": 3.7497,
     "entry_style": "retest",
     "outcome": "open",
@@ -6858,10 +6858,10 @@
     "exit_price": 177.195,
     "pnl_per_share": -11.305,
     "r_multiple": -0.568,
-    "pnl_dollars": -10.69,
+    "pnl_dollars": -164.18,
     "target_used": "target_2R",
     "symbol": "DHR",
-    "equity_at_entry": 1882.93
+    "equity_at_entry": 5780.99
   },
   {
     "type": "inverse_hns",
@@ -6874,7 +6874,7 @@
     "target_primary": 222.0868,
     "target_1R": 205.2934,
     "target_2R": 222.0868,
-    "shares": 1.1212,
+    "shares": 17.2121,
     "atr": 3.7497,
     "entry_style": "retest",
     "outcome": "open",
@@ -6882,10 +6882,10 @@
     "exit_price": 177.195,
     "pnl_per_share": -11.305,
     "r_multiple": -0.673,
-    "pnl_dollars": -12.68,
+    "pnl_dollars": -194.58,
     "target_used": "target_2R",
     "symbol": "DHR",
-    "equity_at_entry": 1882.93
+    "equity_at_entry": 5780.99
   },
   {
     "type": "double_bottom",
@@ -6898,7 +6898,7 @@
     "target_primary": 516.85,
     "target_1R": 518.4392,
     "target_2R": 541.3784,
-    "shares": 0.8208,
+    "shares": 12.6007,
     "atr": 5.2892,
     "entry_style": "breakout",
     "outcome": "open",
@@ -6906,10 +6906,10 @@
     "exit_price": 489.31,
     "pnl_per_share": -6.19,
     "r_multiple": -0.27,
-    "pnl_dollars": -5.08,
+    "pnl_dollars": -78.0,
     "target_used": "target_2R",
     "symbol": "BRK.B",
-    "equity_at_entry": 1882.93
+    "equity_at_entry": 5780.99
   },
   {
     "type": "inverse_hns",
@@ -6922,7 +6922,7 @@
     "target_primary": 516.85,
     "target_1R": 514.5192,
     "target_2R": 533.5384,
-    "shares": 0.9573,
+    "shares": 10.9937,
     "atr": 5.2892,
     "entry_style": "breakout",
     "outcome": "open",
@@ -6930,10 +6930,10 @@
     "exit_price": 489.31,
     "pnl_per_share": -6.19,
     "r_multiple": -0.325,
-    "pnl_dollars": -5.93,
+    "pnl_dollars": -68.05,
     "target_used": "target_2R",
     "symbol": "BRK.B",
-    "equity_at_entry": 1820.75
+    "equity_at_entry": 4181.83
   },
   {
     "type": "inverse_hns",
@@ -6946,7 +6946,7 @@
     "target_primary": 268.6454,
     "target_1R": 251.9377,
     "target_2R": 268.6454,
-    "shares": 1.0898,
+    "shares": 12.5147,
     "atr": 3.3867,
     "entry_style": "retest",
     "outcome": "open",
@@ -6954,10 +6954,10 @@
     "exit_price": 228.4,
     "pnl_per_share": -6.83,
     "r_multiple": -0.409,
-    "pnl_dollars": -7.44,
+    "pnl_dollars": -85.48,
     "target_used": "target_2R",
     "symbol": "JNJ",
-    "equity_at_entry": 1820.75
+    "equity_at_entry": 4181.83
   },
   {
     "type": "double_bottom",
@@ -6970,7 +6970,7 @@
     "target_primary": 386.26,
     "target_1R": 390.5852,
     "target_2R": 440.2703,
-    "shares": 0.3717,
+    "shares": 4.4026,
     "atr": 5.7952,
     "entry_style": "breakout",
     "outcome": "open",
@@ -6978,10 +6978,10 @@
     "exit_price": 338.165,
     "pnl_per_share": -2.735,
     "r_multiple": -0.055,
-    "pnl_dollars": -1.02,
+    "pnl_dollars": -12.04,
     "target_used": "target_2R",
     "symbol": "AXP",
-    "equity_at_entry": 1846.74
+    "equity_at_entry": 4374.89
   },
   {
     "type": "inverse_hns",
@@ -6994,7 +6994,7 @@
     "target_primary": 386.26,
     "target_1R": 374.3052,
     "target_2R": 407.7103,
-    "shares": 0.5528,
+    "shares": 6.5482,
     "atr": 5.7952,
     "entry_style": "breakout",
     "outcome": "open",
@@ -7002,9 +7002,9 @@
     "exit_price": 338.165,
     "pnl_per_share": -2.735,
     "r_multiple": -0.082,
-    "pnl_dollars": -1.51,
+    "pnl_dollars": -17.91,
     "target_used": "target_2R",
     "symbol": "AXP",
-    "equity_at_entry": 1846.74
+    "equity_at_entry": 4374.89
   }
 ]
