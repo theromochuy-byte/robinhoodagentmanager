@@ -1,37 +1,37 @@
 {
   "overall": {
-    "trades": 192,
+    "trades": 175,
     "wins": 84,
-    "losses": 108,
-    "win_rate": 0.438,
-    "avg_R": 0.312,
-    "expectancy_R": 0.312,
-    "total_R": 60.0,
-    "total_pnl_dollars": 1833.12,
-    "open_trades": 66
+    "losses": 91,
+    "win_rate": 0.48,
+    "avg_R": 0.44,
+    "expectancy_R": 0.44,
+    "total_R": 77.0,
+    "total_pnl_dollars": 2689.18,
+    "open_trades": 63
   },
   "by_pattern": {
     "double_bottom": {
-      "trades": 101,
+      "trades": 92,
       "wins": 42,
-      "losses": 59,
-      "win_rate": 0.416,
-      "avg_R": 0.248,
-      "expectancy_R": 0.248,
-      "total_R": 25.0,
-      "total_pnl_dollars": 731.91,
-      "open_trades": 32
+      "losses": 50,
+      "win_rate": 0.457,
+      "avg_R": 0.37,
+      "expectancy_R": 0.37,
+      "total_R": 34.0,
+      "total_pnl_dollars": 1160.62,
+      "open_trades": 31
     },
     "inverse_hns": {
-      "trades": 91,
+      "trades": 83,
       "wins": 42,
-      "losses": 49,
-      "win_rate": 0.462,
-      "avg_R": 0.385,
-      "expectancy_R": 0.385,
-      "total_R": 35.0,
-      "total_pnl_dollars": 1101.21,
-      "open_trades": 34
+      "losses": 41,
+      "win_rate": 0.506,
+      "avg_R": 0.518,
+      "expectancy_R": 0.518,
+      "total_R": 43.0,
+      "total_pnl_dollars": 1528.56,
+      "open_trades": 32
     }
   },
   "by_entry": {
@@ -47,28 +47,28 @@
       "open_trades": 0
     },
     "retest": {
-      "trades": 192,
+      "trades": 175,
       "wins": 84,
-      "losses": 108,
-      "win_rate": 0.438,
-      "avg_R": 0.312,
-      "expectancy_R": 0.312,
-      "total_R": 60.0,
-      "total_pnl_dollars": 1833.12,
-      "open_trades": 66
+      "losses": 91,
+      "win_rate": 0.48,
+      "avg_R": 0.44,
+      "expectancy_R": 0.44,
+      "total_R": 77.0,
+      "total_pnl_dollars": 2689.18,
+      "open_trades": 63
     }
   },
   "by_timeframe": {
     "4h": {
-      "trades": 192,
+      "trades": 175,
       "wins": 84,
-      "losses": 108,
-      "win_rate": 0.438,
-      "avg_R": 0.312,
-      "expectancy_R": 0.312,
-      "total_R": 60.0,
-      "total_pnl_dollars": 1833.12,
-      "open_trades": 66
+      "losses": 91,
+      "win_rate": 0.48,
+      "avg_R": 0.44,
+      "expectancy_R": 0.44,
+      "total_R": 77.0,
+      "total_pnl_dollars": 2689.18,
+      "open_trades": 63
     },
     "1h": {
       "trades": 0,
@@ -84,9 +84,9 @@
   },
   "equity_growth": {
     "starting_equity": 1500.0,
-    "final_equity": 3333.12,
-    "gain_dollars": 1833.12,
-    "gain_pct": 122.21
+    "final_equity": 4189.18,
+    "gain_dollars": 2689.18,
+    "gain_pct": 179.28
   },
   "symbols": [
     "AAPL",
@@ -107,7 +107,6 @@
     "JNJ",
     "UNH",
     "PFE",
-    "ABBV",
     "MRK",
     "XOM",
     "CVX",
@@ -167,7 +166,6 @@
     "NKE",
     "DIS",
     "CMCSA",
-    "F",
     "GM",
     "MPC",
     "VLO",
@@ -194,7 +192,6 @@
     "FTNT",
     "CDNS",
     "BLK",
-    "SCHW",
     "ICE",
     "CME",
     "CB",
@@ -210,8 +207,6 @@
     "HCA",
     "PM",
     "KO",
-    "PEP",
-    "PG",
     "CL",
     "YUM",
     "CMG",
