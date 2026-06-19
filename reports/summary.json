@@ -1,37 +1,37 @@
 {
   "overall": {
-    "trades": 69,
-    "wins": 36,
-    "losses": 33,
-    "win_rate": 0.522,
-    "avg_R": 0.565,
-    "expectancy_R": 0.565,
-    "total_R": 39.0,
-    "total_pnl_dollars": 1310.22,
-    "open_trades": 17
+    "trades": 121,
+    "wins": 57,
+    "losses": 64,
+    "win_rate": 0.471,
+    "avg_R": 0.413,
+    "expectancy_R": 0.413,
+    "total_R": 50.0,
+    "total_pnl_dollars": 1682.17,
+    "open_trades": 36
   },
   "by_pattern": {
     "double_bottom": {
-      "trades": 35,
-      "wins": 20,
-      "losses": 15,
-      "win_rate": 0.571,
-      "avg_R": 0.714,
-      "expectancy_R": 0.714,
-      "total_R": 25.0,
-      "total_pnl_dollars": 868.74,
-      "open_trades": 9
+      "trades": 61,
+      "wins": 30,
+      "losses": 31,
+      "win_rate": 0.492,
+      "avg_R": 0.475,
+      "expectancy_R": 0.475,
+      "total_R": 29.0,
+      "total_pnl_dollars": 1027.62,
+      "open_trades": 17
     },
     "inverse_hns": {
-      "trades": 34,
-      "wins": 16,
-      "losses": 18,
-      "win_rate": 0.471,
-      "avg_R": 0.412,
-      "expectancy_R": 0.412,
-      "total_R": 14.0,
-      "total_pnl_dollars": 441.48,
-      "open_trades": 8
+      "trades": 60,
+      "wins": 27,
+      "losses": 33,
+      "win_rate": 0.45,
+      "avg_R": 0.35,
+      "expectancy_R": 0.35,
+      "total_R": 21.0,
+      "total_pnl_dollars": 654.55,
+      "open_trades": 19
     }
   },
   "by_entry": {
@@ -47,28 +47,28 @@
       "open_trades": 0
     },
     "retest": {
-      "trades": 69,
-      "wins": 36,
-      "losses": 33,
-      "win_rate": 0.522,
-      "avg_R": 0.565,
-      "expectancy_R": 0.565,
-      "total_R": 39.0,
-      "total_pnl_dollars": 1310.22,
-      "open_trades": 17
+      "trades": 121,
+      "wins": 57,
+      "losses": 64,
+      "win_rate": 0.471,
+      "avg_R": 0.413,
+      "expectancy_R": 0.413,
+      "total_R": 50.0,
+      "total_pnl_dollars": 1682.17,
+      "open_trades": 36
     }
   },
   "by_timeframe": {
     "4h": {
-      "trades": 69,
-      "wins": 36,
-      "losses": 33,
-      "win_rate": 0.522,
-      "avg_R": 0.565,
-      "expectancy_R": 0.565,
-      "total_R": 39.0,
-      "total_pnl_dollars": 1310.22,
-      "open_trades": 17
+      "trades": 121,
+      "wins": 57,
+      "losses": 64,
+      "win_rate": 0.471,
+      "avg_R": 0.413,
+      "expectancy_R": 0.413,
+      "total_R": 50.0,
+      "total_pnl_dollars": 1682.17,
+      "open_trades": 36
     },
     "1h": {
       "trades": 0,
@@ -84,9 +84,9 @@
   },
   "equity_growth": {
     "starting_equity": 1500.0,
-    "final_equity": 2810.22,
-    "gain_dollars": 1310.22,
-    "gain_pct": 87.35
+    "final_equity": 3182.17,
+    "gain_dollars": 1682.17,
+    "gain_pct": 112.14
   },
   "symbols": [
     "AAPL",
@@ -138,6 +138,50 @@
     "CRM",
     "ADBE",
     "QCOM",
-    "INTC"
+    "INTC",
+    "CSCO",
+    "AMAT",
+    "MU",
+    "PANW",
+    "NOW",
+    "SNOW",
+    "NET",
+    "DDOG",
+    "ZS",
+    "UBER",
+    "C",
+    "USB",
+    "PNC",
+    "COF",
+    "TFC",
+    "CVS",
+    "CI",
+    "HUM",
+    "MDT",
+    "SYK",
+    "BSX",
+    "ISRG",
+    "EW",
+    "SBUX",
+    "MCD",
+    "NKE",
+    "DIS",
+    "CMCSA",
+    "F",
+    "GM",
+    "MPC",
+    "VLO",
+    "PSX",
+    "OXY",
+    "MMM",
+    "DE",
+    "LMT",
+    "NOC",
+    "GD",
+    "NEE",
+    "DUK",
+    "SO",
+    "AMT",
+    "PLD"
   ]
 }
