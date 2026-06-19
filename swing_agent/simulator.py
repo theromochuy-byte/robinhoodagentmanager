@@ -1,0 +1,136 @@
+"""Paper-trading simulator.
+
+Takes confirmed patterns plus the entry-timeframe bars and produces resolved
+paper trades. NO live orders are ever placed; this is pure simulation over
+historical bars so we can collect P/L on proposed entries and exits.
+"""
+from __future__ import annotations
+
+import pandas as pd
+
+from .indicators import atr
+
+
+def _prior_structure_high(df: pd.DataFrame, before_index: int, neckline: float) -> float | None:
+    """Highest high to the left of the breakout that sits above the neckline,
+    used as the primary (structure) target.
+    """
+    window = df.loc[: before_index - 1]
+    above = window[window["high"] > neckline]
+    if len(above) == 0:
+        return None
+    return float(above["high"].max())
+
+
+def build_trade(
+    df: pd.DataFrame,
+    pattern: dict,
+    atr_series: pd.Series,
+    equity: float,
+    risk_pct: float = 0.01,
+    atr_mult: float = 1.0,
+) -> dict | None:
+    """Construct a proposed long trade from a confirmed pattern.
+
+    Entry = close of the breakout bar (Entry A / breakout style).
+    Stop  = stop_basis low minus atr_mult * ATR at the breakout bar.
+    Targets: primary = prior structure high; plus 1R and 2R reference levels.
+    """
+    bi = pattern["break_index"]
+    entry = float(df.loc[bi, "close"])
+    a = float(atr_series.iloc[bi])
+    stop = pattern["stop_basis"] - atr_mult * a
+    risk_per_share = entry - stop
+    if risk_per_share <= 0:
+        return None
+
+    r1 = entry + risk_per_share
+    r2 = entry + 2 * risk_per_share
+    struct = _prior_structure_high(df, bi, pattern["neckline"])
+    primary_target = struct if (struct and struct > entry) else r2
+
+    shares = (equity * risk_pct) / risk_per_share
+
+    return {
+        "type": pattern["type"],
+        "entry_time": str(df.loc[bi, "begins_at"]),
+        "entry_index": bi,
+        "entry": round(entry, 4),
+        "stop": round(stop, 4),
+        "neckline": round(pattern["neckline"], 4),
+        "risk_per_share": round(risk_per_share, 4),
+        "target_primary": round(primary_target, 4),
+        "target_1R": round(r1, 4),
+        "target_2R": round(r2, 4),
+        "shares": round(shares, 4),
+        "atr": round(a, 4),
+    }
+
+
+def resolve_trade(df: pd.DataFrame, trade: dict, target_key: str = "target_primary") -> dict:
+    """Walk bars forward from entry and resolve to the chosen target or the stop.
+
+    Conservative rule: if a single bar touches both stop and target, the stop
+    is assumed hit first. Returns the trade enriched with outcome fields.
+    """
+    entry = trade["entry"]
+    stop = trade["stop"]
+    target = trade[target_key]
+    start = trade["entry_index"] + 1
+
+    outcome = "open"
+    exit_price = None
+    exit_time = None
+    for i in range(start, len(df)):
+        lo = float(df.loc[i, "low"])
+        hi = float(df.loc[i, "high"])
+        if lo <= stop:
+            outcome, exit_price, exit_time = "loss", stop, str(df.loc[i, "begins_at"])
+            break
+        if hi >= target:
+            outcome, exit_price, exit_time = "win", target, str(df.loc[i, "begins_at"])
+            break
+
+    if outcome == "open":
+        # mark to last close, unrealized
+        exit_price = float(df.loc[len(df) - 1, "close"])
+        exit_time = str(df.loc[len(df) - 1, "begins_at"])
+
+    pnl_per_share = exit_price - entry
+    r_multiple = pnl_per_share / trade["risk_per_share"] if trade["risk_per_share"] else 0.0
+    pnl_dollars = pnl_per_share * trade["shares"]
+
+    resolved = dict(trade)
+    resolved.update(
+        {
+            "outcome": outcome,
+            "exit_time": exit_time,
+            "exit_price": round(exit_price, 4),
+            "pnl_per_share": round(pnl_per_share, 4),
+            "r_multiple": round(r_multiple, 3),
+            "pnl_dollars": round(pnl_dollars, 2),
+            "target_used": target_key,
+        }
+    )
+    return resolved
+
+
+def summarize(trades: list[dict]) -> dict:
+    """Aggregate performance stats over a list of resolved trades."""
+    closed = [t for t in trades if t["outcome"] in ("win", "loss")]
+    wins = [t for t in closed if t["outcome"] == "win"]
+    losses = [t for t in closed if t["outcome"] == "loss"]
+    total_r = sum(t["r_multiple"] for t in closed)
+    total_pnl = sum(t["pnl_dollars"] for t in closed)
+    n = len(closed)
+    return {
+        "trades": n,
+        "wins": len(wins),
+        "losses": len(losses),
+        "win_rate": round(len(wins) / n, 3) if n else 0.0,
+        "avg_R": round(total_r / n, 3) if n else 0.0,
+        "expectancy_R": round(total_r / n, 3) if n else 0.0,
+        "total_R": round(total_r, 2),
+        "total_pnl_dollars": round(total_pnl, 2),
+        "open_trades": len([t for t in trades if t["outcome"] == "open"]),
+    }
