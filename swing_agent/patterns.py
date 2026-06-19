@@ -31,8 +31,8 @@ def detect_double_bottom(
     df: pd.DataFrame,
     left: int = 3,
     right: int = 3,
-    tol: float = 0.03,
-    min_sep: int = 5,
+    tol: float = 0.02,
+    min_sep: int = 8,
     max_sep: int = 60,
 ) -> list[dict]:
     """Two comparable lows separated by a middle high (the neckline).

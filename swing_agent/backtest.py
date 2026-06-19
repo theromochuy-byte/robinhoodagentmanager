@@ -20,7 +20,7 @@ import pandas as pd
 from .dataio import load
 from .indicators import atr, ema
 from .patterns import detect_double_bottom, detect_inverse_hns
-from .simulator import build_trade, resolve_trade, summarize
+from .simulator import build_retest_trade, build_trade, resolve_trade, summarize
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -65,11 +65,22 @@ def run_symbol(symbol: str, equity: float, risk_pct: float = 0.01) -> list[dict]
         trade = build_trade(intraday, p, atr_series, equity, risk_pct)
         if trade is None:
             continue
-        resolved = resolve_trade(intraday, trade, target_key="target_primary")
-        resolved["symbol"] = symbol
-        trades.append(resolved)
+        # Entry A: breakout close, target = 2R
+        entry_a = dict(trade)
+        entry_a["entry_style"] = "breakout"
+        resolved_a = resolve_trade(intraday, entry_a, target_key="target_2R")
+        resolved_a["symbol"] = symbol
+        trades.append(resolved_a)
+        # Entry B: neckline retest (variant — tracked separately, does not overwrite A)
+        trade_b = build_retest_trade(intraday, trade, atr_series)
+        if trade_b is not None:
+            resolved_b = resolve_trade(intraday, trade_b, target_key="target_2R")
+            resolved_b["symbol"] = symbol
+            trades.append(resolved_b)
 
-    print(f"  {symbol}: {len(patterns)} raw patterns, {len(trades)} bias-aligned trades")
+    n_a = sum(1 for t in trades if t.get("entry_style") == "breakout")
+    n_b = sum(1 for t in trades if t.get("entry_style") == "retest")
+    print(f"  {symbol}: {len(patterns)} raw patterns, {n_a} breakout trades, {n_b} retest trades")
     return trades
 
 
@@ -89,7 +100,11 @@ def run(symbols: list[str], equity: float = 10_000.0, risk_pct: float = 0.01) ->
     for ptype in ("double_bottom", "inverse_hns"):
         subset = [t for t in all_trades if t["type"] == ptype]
         by_pattern[ptype] = summarize(subset)
-    report = {"overall": summary, "by_pattern": by_pattern, "symbols": symbols}
+    by_entry = {}
+    for style in ("breakout", "retest"):
+        subset = [t for t in all_trades if t.get("entry_style") == style]
+        by_entry[style] = summarize(subset)
+    report = {"overall": summary, "by_pattern": by_pattern, "by_entry": by_entry, "symbols": symbols}
     with open(REPORTS / "summary.json", "w") as f:
         json.dump(report, f, indent=2)
     return report

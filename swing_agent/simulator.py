@@ -67,6 +67,62 @@ def build_trade(
     }
 
 
+def build_retest_trade(df: pd.DataFrame, trade: dict, atr_series: pd.Series) -> dict | None:
+    """Entry B: wait for a pullback to the neckline after the breakout, then enter
+    on the first bullish close at or above the neckline (close > open and close >= neckline).
+    Stop and targets are recalculated from the new entry price; risk-per-share stays
+    the same R-distance, so share size is recalculated too.
+    """
+    neckline = trade["neckline"]
+    start = trade["entry_index"] + 1
+    shares_equity_risk = trade["risk_per_share"] * trade["shares"]  # 1% of equity
+
+    in_pullback = False
+    for i in range(start, len(df)):
+        lo = float(df.loc[i, "low"])
+        hi = float(df.loc[i, "high"])
+        c = float(df.loc[i, "close"])
+        o = float(df.loc[i, "open"])
+
+        # pulled back to neckline zone
+        if lo <= neckline * 1.005:
+            in_pullback = True
+
+        if in_pullback and c >= neckline and c > o:
+            # bullish reaction bar at the neckline — entry
+            entry_b = c
+            a = float(atr_series.iloc[i])
+            stop_b = trade["stop"]  # same structural stop
+            risk_b = entry_b - stop_b
+            if risk_b <= 0:
+                return None
+            shares_b = shares_equity_risk / risk_b
+            r1_b = entry_b + risk_b
+            r2_b = entry_b + 2 * risk_b
+            t = dict(trade)
+            t.update(
+                {
+                    "entry_style": "retest",
+                    "entry_time": str(df.loc[i, "begins_at"]),
+                    "entry_index": i,
+                    "entry": round(entry_b, 4),
+                    "risk_per_share": round(risk_b, 4),
+                    "target_primary": round(r2_b, 4),  # use 2R for retest entry too
+                    "target_1R": round(r1_b, 4),
+                    "target_2R": round(r2_b, 4),
+                    "shares": round(shares_b, 4),
+                    "atr": round(a, 4),
+                }
+            )
+            return t
+
+        # price ran away without retesting — no Entry B
+        if hi > neckline * 1.03 and not in_pullback:
+            return None
+
+    return None
+
+
 def resolve_trade(df: pd.DataFrame, trade: dict, target_key: str = "target_primary") -> dict:
     """Walk bars forward from entry and resolve to the chosen target or the stop.
 
