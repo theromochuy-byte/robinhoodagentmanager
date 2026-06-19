@@ -65,34 +65,30 @@ def run_symbol(symbol: str, equity: float, risk_pct: float = 0.01) -> list[dict]
     for p in patterns:
         if not bias_asof(bias, p["break_time"]):
             continue  # higher-timeframe trend not aligned
+        # F4: require pattern depth >= 3% of neckline (filters shallow/noisy patterns)
+        if (p["neckline"] - p["stop_basis"]) / p["neckline"] < 0.03:
+            continue
         ptype = p["type"]
         if p["break_index"] <= open_until.get(ptype, -1):
             continue  # already in a position of this type on this symbol
         trade = build_trade(intraday, p, atr_series, equity, risk_pct)
         if trade is None:
             continue
-        # Entry A: breakout close, target = 2R
-        entry_a = dict(trade)
-        entry_a["entry_style"] = "breakout"
-        resolved_a = resolve_trade(intraday, entry_a, target_key="target_2R")
-        resolved_a["symbol"] = symbol
-        trades.append(resolved_a)
-        # track when this pattern-type slot reopens
+        # F1: retest-only — use Entry A only for slot tracking, not for live trades
+        resolved_a = resolve_trade(intraday, dict(trade) | {"entry_style": "breakout"}, target_key="target_2R")
         if resolved_a["outcome"] == "open":
             open_until[ptype] = len(intraday)
         else:
             idx = intraday.index[intraday["begins_at"] == resolved_a["exit_time"]].tolist()
             open_until[ptype] = idx[0] if idx else len(intraday)
-        # Entry B: neckline retest (variant — tracked separately, does not consume the slot)
+        # Entry B: neckline retest — the only entry style recorded
         trade_b = build_retest_trade(intraday, trade, atr_series)
         if trade_b is not None:
             resolved_b = resolve_trade(intraday, trade_b, target_key="target_2R")
             resolved_b["symbol"] = symbol
             trades.append(resolved_b)
 
-    n_a = sum(1 for t in trades if t.get("entry_style") == "breakout")
-    n_b = sum(1 for t in trades if t.get("entry_style") == "retest")
-    print(f"  {symbol}: {len(patterns)} raw patterns, {n_a} breakout trades, {n_b} retest trades")
+    print(f"  {symbol}: {len(patterns)} raw patterns, {len(trades)} retest trades")
     return trades
 
 

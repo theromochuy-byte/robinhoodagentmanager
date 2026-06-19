@@ -1,68 +1,68 @@
 {
   "overall": {
-    "trades": 241,
-    "wins": 107,
-    "losses": 134,
-    "win_rate": 0.444,
-    "avg_R": 0.332,
-    "expectancy_R": 0.332,
-    "total_R": 80.0,
-    "total_pnl_dollars": 2565.1,
-    "open_trades": 51
+    "trades": 77,
+    "wins": 39,
+    "losses": 38,
+    "win_rate": 0.506,
+    "avg_R": 0.519,
+    "expectancy_R": 0.519,
+    "total_R": 40.0,
+    "total_pnl_dollars": 1360.8,
+    "open_trades": 20
   },
   "by_pattern": {
     "double_bottom": {
-      "trades": 113,
-      "wins": 53,
-      "losses": 60,
-      "win_rate": 0.469,
-      "avg_R": 0.407,
-      "expectancy_R": 0.407,
-      "total_R": 46.0,
-      "total_pnl_dollars": 1625.63,
-      "open_trades": 25
+      "trades": 41,
+      "wins": 21,
+      "losses": 20,
+      "win_rate": 0.512,
+      "avg_R": 0.537,
+      "expectancy_R": 0.537,
+      "total_R": 22.0,
+      "total_pnl_dollars": 763.52,
+      "open_trades": 10
     },
     "inverse_hns": {
-      "trades": 128,
-      "wins": 54,
-      "losses": 74,
-      "win_rate": 0.422,
-      "avg_R": 0.266,
-      "expectancy_R": 0.266,
-      "total_R": 34.0,
-      "total_pnl_dollars": 939.47,
-      "open_trades": 26
+      "trades": 36,
+      "wins": 18,
+      "losses": 18,
+      "win_rate": 0.5,
+      "avg_R": 0.5,
+      "expectancy_R": 0.5,
+      "total_R": 18.0,
+      "total_pnl_dollars": 597.28,
+      "open_trades": 10
     }
   },
   "by_entry": {
     "breakout": {
-      "trades": 148,
-      "wins": 62,
-      "losses": 86,
-      "win_rate": 0.419,
-      "avg_R": 0.257,
-      "expectancy_R": 0.257,
-      "total_R": 38.0,
-      "total_pnl_dollars": 1067.88,
-      "open_trades": 31
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": 0.0,
+      "avg_R": 0.0,
+      "expectancy_R": 0.0,
+      "total_R": 0,
+      "total_pnl_dollars": 0,
+      "open_trades": 0
     },
     "retest": {
-      "trades": 93,
-      "wins": 45,
-      "losses": 48,
-      "win_rate": 0.484,
-      "avg_R": 0.452,
-      "expectancy_R": 0.452,
-      "total_R": 42.0,
-      "total_pnl_dollars": 1497.22,
+      "trades": 77,
+      "wins": 39,
+      "losses": 38,
+      "win_rate": 0.506,
+      "avg_R": 0.519,
+      "expectancy_R": 0.519,
+      "total_R": 40.0,
+      "total_pnl_dollars": 1360.8,
       "open_trades": 20
     }
   },
   "equity_growth": {
     "starting_equity": 1500.0,
-    "final_equity": 4065.1,
-    "gain_dollars": 2565.1,
-    "gain_pct": 171.01
+    "final_equity": 2860.8,
+    "gain_dollars": 1360.8,
+    "gain_pct": 90.72
   },
   "symbols": [
     "AAPL",
