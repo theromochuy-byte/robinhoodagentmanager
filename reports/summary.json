@@ -1,0 +1,40 @@
+{
+  "overall": {
+    "trades": 3,
+    "wins": 3,
+    "losses": 0,
+    "win_rate": 1.0,
+    "avg_R": 0.292,
+    "expectancy_R": 0.292,
+    "total_R": 0.88,
+    "total_pnl_dollars": 87.67,
+    "open_trades": 2
+  },
+  "by_pattern": {
+    "double_bottom": {
+      "trades": 2,
+      "wins": 2,
+      "losses": 0,
+      "win_rate": 1.0,
+      "avg_R": 0.263,
+      "expectancy_R": 0.263,
+      "total_R": 0.53,
+      "total_pnl_dollars": 52.53,
+      "open_trades": 1
+    },
+    "inverse_hns": {
+      "trades": 1,
+      "wins": 1,
+      "losses": 0,
+      "win_rate": 1.0,
+      "avg_R": 0.351,
+      "expectancy_R": 0.351,
+      "total_R": 0.35,
+      "total_pnl_dollars": 35.14,
+      "open_trades": 1
+    }
+  },
+  "symbols": [
+    "TEST"
+  ]
+}
