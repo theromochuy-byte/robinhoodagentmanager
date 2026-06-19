@@ -58,6 +58,30 @@
       "open_trades": 17
     }
   },
+  "by_timeframe": {
+    "4h": {
+      "trades": 69,
+      "wins": 36,
+      "losses": 33,
+      "win_rate": 0.522,
+      "avg_R": 0.565,
+      "expectancy_R": 0.565,
+      "total_R": 39.0,
+      "total_pnl_dollars": 1310.22,
+      "open_trades": 17
+    },
+    "1h": {
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": 0.0,
+      "avg_R": 0.0,
+      "expectancy_R": 0.0,
+      "total_R": 0,
+      "total_pnl_dollars": 0,
+      "open_trades": 0
+    }
+  },
   "equity_growth": {
     "starting_equity": 1500.0,
     "final_equity": 2810.22,

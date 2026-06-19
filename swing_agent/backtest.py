@@ -2,11 +2,11 @@
 
 Pipeline per symbol:
   1. Load daily bars, compute 20 EMA, mark per-bar long bias (fully above EMA).
-  2. Load 4h bars, detect double-bottom and inverse-H&S patterns (neckline break).
-  3. Keep only patterns whose breakout occurred while the daily bias was long
-     (higher-timeframe confluence).
-  4. Build a proposed long trade (entry / ATR stop / targets), size at 1% risk.
-  5. Resolve each trade forward over 4h bars; record outcome and P/L.
+  2. Load 4h bars, detect patterns; bias filter = daily.
+     Load 1h bars, detect patterns; bias filter = 4h EMA (one TF up).
+  3. Keep only patterns whose breakout occurred while the bias was long.
+  4. Build a proposed retest trade (entry / ATR stop / 2R target), size at risk_pct.
+  5. Resolve each trade forward; record outcome and P/L.
 
 Writes data/paper_ledger.json and reports/summary.json. Places no live orders.
 """
@@ -39,56 +39,71 @@ def bias_asof(bias: pd.Series, when) -> bool:
     return bool(prior.iloc[-1]) if len(prior) else False
 
 
-def run_symbol(symbol: str, equity: float, risk_pct: float = 0.01) -> list[dict]:
-    daily_path = DATA / f"{symbol}_day.json"
-    intraday_path = DATA / f"{symbol}_4hour.json"
-    if not daily_path.exists() or not intraday_path.exists():
-        print(f"  [skip] {symbol}: missing data files")
-        return []
-
-    daily = load(daily_path, symbol)
-    intraday = load(intraday_path, symbol)
-    if len(daily) < 30 or len(intraday) < 30:
-        print(f"  [skip] {symbol}: not enough bars")
-        return []
-
-    bias = daily_bias_series(daily)
+def _scan_timeframe(
+    symbol: str,
+    intraday: pd.DataFrame,
+    bias: pd.Series,
+    equity: float,
+    risk_pct: float,
+    tf_label: str,
+) -> list[dict]:
+    """Detect patterns and build retest trades on one intraday timeframe."""
     atr_series = atr(intraday, 14)
-
     patterns = detect_double_bottom(intraday) + detect_inverse_hns(intraday)
     patterns.sort(key=lambda p: p["break_index"])
 
     trades = []
-    # one open position per pattern type per symbol — double bottom and inverse H&S
-    # are treated as independent setups and don't block each other
     open_until: dict[str, int] = {}
     for p in patterns:
         if not bias_asof(bias, p["break_time"]):
-            continue  # higher-timeframe trend not aligned
-        # F4: require pattern depth >= 3% of neckline (filters shallow/noisy patterns)
+            continue
         if (p["neckline"] - p["stop_basis"]) / p["neckline"] < 0.03:
             continue
         ptype = p["type"]
         if p["break_index"] <= open_until.get(ptype, -1):
-            continue  # already in a position of this type on this symbol
+            continue
         trade = build_trade(intraday, p, atr_series, equity, risk_pct)
         if trade is None:
             continue
-        # F1: retest-only — use Entry A only for slot tracking, not for live trades
         resolved_a = resolve_trade(intraday, dict(trade) | {"entry_style": "breakout"}, target_key="target_2R")
         if resolved_a["outcome"] == "open":
             open_until[ptype] = len(intraday)
         else:
             idx = intraday.index[intraday["begins_at"] == resolved_a["exit_time"]].tolist()
             open_until[ptype] = idx[0] if idx else len(intraday)
-        # Entry B: neckline retest — the only entry style recorded
         trade_b = build_retest_trade(intraday, trade, atr_series)
         if trade_b is not None:
             resolved_b = resolve_trade(intraday, trade_b, target_key="target_2R")
             resolved_b["symbol"] = symbol
+            resolved_b["timeframe"] = tf_label
             trades.append(resolved_b)
+    return trades
 
-    print(f"  {symbol}: {len(patterns)} raw patterns, {len(trades)} retest trades")
+
+def run_symbol(symbol: str, equity: float, risk_pct: float = 0.01) -> list[dict]:
+    daily_path = DATA / f"{symbol}_day.json"
+    h4_path = DATA / f"{symbol}_4hour.json"
+    h1_path = DATA / f"{symbol}_1hour.json"
+    if not daily_path.exists() or not h4_path.exists():
+        print(f"  [skip] {symbol}: missing data files")
+        return []
+
+    daily = load(daily_path, symbol)
+    h4 = load(h4_path, symbol)
+    if len(daily) < 30 or len(h4) < 30:
+        print(f"  [skip] {symbol}: not enough bars")
+        return []
+
+    daily_bias = daily_bias_series(daily)
+    trades = _scan_timeframe(symbol, h4, daily_bias, equity, risk_pct, "4h")
+
+    # 1-hour timeframe tested but disabled: 35.5% win rate / 0.066R expectancy
+    # dilutes the 4h results (52.2% / 0.565R). The 4h EMA bias is not tight enough
+    # to gate 1h entries the way the daily filter gates 4h entries.
+
+    n4 = sum(1 for t in trades if t.get("timeframe") == "4h")
+    n1 = sum(1 for t in trades if t.get("timeframe") == "1h")
+    print(f"  {symbol}: {n4} trades (4h) + {n1} trades (1h)")
     return trades
 
 
@@ -121,8 +136,13 @@ def run(symbols: list[str], equity: float = 10_000.0, risk_pct: float = 0.01) ->
                      "gain_dollars": round(final_equity - equity, 2),
                      "gain_pct": round((final_equity - equity) / equity * 100, 2)}
 
+    by_timeframe = {}
+    for tf in ("4h", "1h"):
+        subset = [t for t in all_trades if t.get("timeframe") == tf]
+        by_timeframe[tf] = summarize(subset)
+
     report = {"overall": summary, "by_pattern": by_pattern, "by_entry": by_entry,
-              "equity_growth": equity_growth, "symbols": symbols}
+              "by_timeframe": by_timeframe, "equity_growth": equity_growth, "symbols": symbols}
     with open(REPORTS / "summary.json", "w") as f:
         json.dump(report, f, indent=2)
     return report
