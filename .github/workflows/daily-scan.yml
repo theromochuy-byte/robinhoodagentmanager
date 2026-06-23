@@ -1,0 +1,67 @@
+name: Daily Market Scan
+
+on:
+  schedule:
+    # All times UTC. Market is UTC-4 (EDT) in summer, UTC-5 (EST) in winter.
+    # Adjust the hour offsets if the clocks change.
+    - cron: '35 13 * * 1-5'   # 9:35 AM ET  — morning open + full refresh
+    - cron: '0 18 * * 1-5'    # 1:00 PM ET  — midday monitor check
+    - cron: '30 20 * * 1-5'   # 4:30 PM ET  — post-close scan + full refresh
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Run mode'
+        required: true
+        default: 'morning'
+        type: choice
+        options: [morning, midday, evening]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to push updated data files
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          ref: claude/wonderful-cerf-sa7c0d
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install robin-stocks pyotp pandas numpy
+
+      - name: Determine run mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "mode=${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
+          else
+            HOUR=$(date -u +%H)
+            MINUTE=$(date -u +%M)
+            HHMM="${HOUR}${MINUTE}"
+            if   [ "$HHMM" -lt "1500" ]; then echo "mode=morning" >> $GITHUB_OUTPUT
+            elif [ "$HHMM" -lt "1900" ]; then echo "mode=midday"  >> $GITHUB_OUTPUT
+            else                               echo "mode=evening" >> $GITHUB_OUTPUT
+            fi
+          fi
+
+      - name: Configure git identity
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Run pipeline
+        env:
+          ROBINHOOD_USERNAME: ${{ secrets.ROBINHOOD_USERNAME }}
+          ROBINHOOD_PASSWORD: ${{ secrets.ROBINHOOD_PASSWORD }}
+          ROBINHOOD_TOTP_KEY: ${{ secrets.ROBINHOOD_TOTP_KEY }}
+        run: |
+          python3 -m swing_agent.run_daily --mode ${{ steps.mode.outputs.mode }}
