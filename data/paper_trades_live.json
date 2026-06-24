@@ -16,9 +16,9 @@
     "entry": 185.68,
     "entry_time": "2026-06-18T16:00:00Z",
     "status": "entered",
-    "last_price": 182.18,
-    "unrealized_pnl": -7.95,
-    "checked_at": "2026-06-22T16:41:36.597122+00:00"
+    "last_price": 185.83,
+    "unrealized_pnl": 0.34,
+    "checked_at": "2026-06-24T17:15:58.072189+00:00"
   },
   {
     "symbol": "RTX",
@@ -37,9 +37,9 @@
     "entry": 185.68,
     "entry_time": "2026-06-18T16:00:00Z",
     "status": "entered",
-    "last_price": 182.18,
-    "unrealized_pnl": -8.68,
-    "checked_at": "2026-06-22T16:41:36.597122+00:00"
+    "last_price": 185.83,
+    "unrealized_pnl": 0.37,
+    "checked_at": "2026-06-24T17:15:58.072189+00:00"
   },
   {
     "symbol": "USB",
@@ -58,9 +58,9 @@
     "entry": 58.1,
     "entry_time": "2026-06-18T16:00:00Z",
     "status": "entered",
-    "last_price": 58.945,
-    "unrealized_pnl": 6.99,
-    "checked_at": "2026-06-22T16:41:36.597122+00:00"
+    "last_price": 60.035,
+    "unrealized_pnl": 16.01,
+    "checked_at": "2026-06-24T17:15:58.072189+00:00"
   },
   {
     "symbol": "USB",
@@ -79,9 +79,9 @@
     "entry": 58.1,
     "entry_time": "2026-06-18T16:00:00Z",
     "status": "entered",
-    "last_price": 58.945,
-    "unrealized_pnl": 7.94,
-    "checked_at": "2026-06-22T16:41:36.597122+00:00"
+    "last_price": 60.035,
+    "unrealized_pnl": 18.19,
+    "checked_at": "2026-06-24T17:15:58.072189+00:00"
   },
   {
     "symbol": "DG",
@@ -100,9 +100,9 @@
     "entry": 113.51,
     "entry_time": "2026-06-18T16:00:00Z",
     "status": "entered",
-    "last_price": 114.88,
-    "unrealized_pnl": 2.67,
-    "checked_at": "2026-06-22T16:41:36.597122+00:00"
+    "last_price": 118.615,
+    "unrealized_pnl": 9.94,
+    "checked_at": "2026-06-24T17:15:58.072189+00:00"
   },
   {
     "symbol": "JPM",
@@ -120,7 +120,10 @@
     "scanned_at": "2026-06-23T15:48:59.990887+00:00",
     "entry": 331.76,
     "entry_time": "2026-06-22T16:00:00Z",
-    "status": "entered"
+    "status": "entered",
+    "last_price": 332.85,
+    "unrealized_pnl": 1.59,
+    "checked_at": "2026-06-24T17:15:58.072189+00:00"
   },
   {
     "symbol": "AMGN",
@@ -138,7 +141,10 @@
     "scanned_at": "2026-06-23T15:49:00.380874+00:00",
     "entry": 344.7,
     "entry_time": "2026-06-22T16:00:00Z",
-    "status": "entered"
+    "status": "entered",
+    "last_price": 352.01,
+    "unrealized_pnl": 7.37,
+    "checked_at": "2026-06-24T17:15:58.072189+00:00"
   },
   {
     "symbol": "SPG",
@@ -156,7 +162,10 @@
     "scanned_at": "2026-06-23T15:49:01.384027+00:00",
     "entry": 214.55,
     "entry_time": "2026-06-22T16:00:00Z",
-    "status": "entered"
+    "status": "entered",
+    "last_price": 219.64,
+    "unrealized_pnl": 11.71,
+    "checked_at": "2026-06-24T17:15:58.072189+00:00"
   },
   {
     "symbol": "SPG",
@@ -174,7 +183,10 @@
     "scanned_at": "2026-06-23T15:49:01.384993+00:00",
     "entry": 214.55,
     "entry_time": "2026-06-22T16:00:00Z",
-    "status": "entered"
+    "status": "entered",
+    "last_price": 219.64,
+    "unrealized_pnl": 14.25,
+    "checked_at": "2026-06-24T17:15:58.072189+00:00"
   },
   {
     "symbol": "VRTX",
@@ -192,7 +204,10 @@
     "scanned_at": "2026-06-23T15:49:01.470864+00:00",
     "entry": 466.79,
     "entry_time": "2026-06-22T16:00:00Z",
-    "status": "entered"
+    "status": "entered",
+    "last_price": 479.57,
+    "unrealized_pnl": 10.51,
+    "checked_at": "2026-06-24T17:15:58.072189+00:00"
   },
   {
     "symbol": "VRTX",
@@ -210,6 +225,207 @@
     "scanned_at": "2026-06-23T15:49:01.471908+00:00",
     "entry": 466.79,
     "entry_time": "2026-06-22T16:00:00Z",
+    "status": "entered",
+    "last_price": 479.57,
+    "unrealized_pnl": 11.33,
+    "checked_at": "2026-06-24T17:15:58.072189+00:00"
+  },
+  {
+    "symbol": "JNJ",
+    "type": "double_bottom",
+    "neckline": 235.11,
+    "stop": 216.9405,
+    "target_2R": 277.1639,
+    "risk_per_share": 20.0745,
+    "shares": 1.4944,
+    "break_time": "2026-06-09T16:00:00Z",
+    "bars_since_break": 9,
+    "in_pullback": true,
+    "last_close": 239.065,
+    "last_bar_time": "2026-06-23T16:00:00Z",
+    "scanned_at": "2026-06-24T17:16:06.331984+00:00",
+    "entry": 239.065,
+    "entry_time": "2026-06-23T16:00:00Z",
+    "status": "entered"
+  },
+  {
+    "symbol": "JNJ",
+    "type": "inverse_hns",
+    "neckline": 235.11,
+    "stop": 218.5704,
+    "target_2R": 273.9041,
+    "risk_per_share": 18.4446,
+    "shares": 1.6265,
+    "break_time": "2026-06-09T16:00:00Z",
+    "bars_since_break": 9,
+    "in_pullback": true,
+    "last_close": 239.065,
+    "last_bar_time": "2026-06-23T16:00:00Z",
+    "scanned_at": "2026-06-24T17:16:06.333540+00:00",
+    "entry": 239.065,
+    "entry_time": "2026-06-23T16:00:00Z",
+    "status": "entered"
+  },
+  {
+    "symbol": "RTX",
+    "type": "double_bottom",
+    "neckline": 180.7179,
+    "stop": 168.8626,
+    "target_2R": 208.4848,
+    "risk_per_share": 13.2074,
+    "shares": 2.2715,
+    "break_time": "2026-06-05T16:00:00Z",
+    "bars_since_break": 11,
+    "in_pullback": true,
+    "last_close": 186.535,
+    "last_bar_time": "2026-06-23T16:00:00Z",
+    "scanned_at": "2026-06-24T17:16:06.622177+00:00",
+    "entry": 186.535,
+    "entry_time": "2026-06-23T16:00:00Z",
+    "status": "entered"
+  },
+  {
+    "symbol": "RTX",
+    "type": "inverse_hns",
+    "neckline": 180.7179,
+    "stop": 169.9626,
+    "target_2R": 206.2848,
+    "risk_per_share": 12.1074,
+    "shares": 2.4778,
+    "break_time": "2026-06-05T16:00:00Z",
+    "bars_since_break": 11,
+    "in_pullback": true,
+    "last_close": 186.535,
+    "last_bar_time": "2026-06-23T16:00:00Z",
+    "scanned_at": "2026-06-24T17:16:06.623702+00:00",
+    "entry": 186.535,
+    "entry_time": "2026-06-23T16:00:00Z",
+    "status": "entered"
+  },
+  {
+    "symbol": "USB",
+    "type": "inverse_hns",
+    "neckline": 57.38,
+    "stop": 52.2386,
+    "target_2R": 68.3829,
+    "risk_per_share": 5.3814,
+    "shares": 5.5747,
+    "break_time": "2026-06-11T16:00:00Z",
+    "bars_since_break": 7,
+    "in_pullback": true,
+    "last_close": 59.995,
+    "last_bar_time": "2026-06-23T16:00:00Z",
+    "scanned_at": "2026-06-24T17:16:07.046000+00:00",
+    "entry": 59.995,
+    "entry_time": "2026-06-23T16:00:00Z",
+    "status": "entered"
+  },
+  {
+    "symbol": "SPG",
+    "type": "double_bottom",
+    "neckline": 208.69,
+    "stop": 197.2903,
+    "target_2R": 236.4093,
+    "risk_per_share": 13.0397,
+    "shares": 2.3007,
+    "break_time": "2026-06-05T16:00:00Z",
+    "bars_since_break": 11,
+    "in_pullback": true,
+    "last_close": 216.76,
+    "last_bar_time": "2026-06-23T16:00:00Z",
+    "scanned_at": "2026-06-24T17:16:08.190188+00:00",
+    "entry": 216.76,
+    "entry_time": "2026-06-23T16:00:00Z",
+    "status": "entered"
+  },
+  {
+    "symbol": "SPG",
+    "type": "inverse_hns",
+    "neckline": 208.69,
+    "stop": 199.6153,
+    "target_2R": 231.7593,
+    "risk_per_share": 10.7147,
+    "shares": 2.7999,
+    "break_time": "2026-06-05T16:00:00Z",
+    "bars_since_break": 11,
+    "in_pullback": true,
+    "last_close": 216.76,
+    "last_bar_time": "2026-06-23T16:00:00Z",
+    "scanned_at": "2026-06-24T17:16:08.191537+00:00",
+    "entry": 216.76,
+    "entry_time": "2026-06-23T16:00:00Z",
+    "status": "entered"
+  },
+  {
+    "symbol": "PRU",
+    "type": "inverse_hns",
+    "neckline": 104.5699,
+    "stop": 98.6435,
+    "target_2R": 116.648,
+    "risk_per_share": 6.0015,
+    "shares": 4.9987,
+    "break_time": "2026-06-05T16:00:00Z",
+    "bars_since_break": 11,
+    "in_pullback": true,
+    "last_close": 108.48,
+    "last_bar_time": "2026-06-23T16:00:00Z",
+    "scanned_at": "2026-06-24T17:16:08.253526+00:00",
+    "entry": 108.48,
+    "entry_time": "2026-06-23T16:00:00Z",
+    "status": "entered"
+  },
+  {
+    "symbol": "VRTX",
+    "type": "double_bottom",
+    "neckline": 455.32,
+    "stop": 422.655,
+    "target_2R": 532.1401,
+    "risk_per_share": 36.495,
+    "shares": 0.822,
+    "break_time": "2026-06-17T16:00:00Z",
+    "bars_since_break": 3,
+    "in_pullback": true,
+    "last_close": 468.42,
+    "last_bar_time": "2026-06-23T16:00:00Z",
+    "scanned_at": "2026-06-24T17:16:08.309028+00:00",
+    "entry": 468.42,
+    "entry_time": "2026-06-23T16:00:00Z",
+    "status": "entered"
+  },
+  {
+    "symbol": "VRTX",
+    "type": "inverse_hns",
+    "neckline": 455.32,
+    "stop": 425.305,
+    "target_2R": 526.8401,
+    "risk_per_share": 33.845,
+    "shares": 0.8864,
+    "break_time": "2026-06-17T16:00:00Z",
+    "bars_since_break": 3,
+    "in_pullback": true,
+    "last_close": 468.42,
+    "last_bar_time": "2026-06-23T16:00:00Z",
+    "scanned_at": "2026-06-24T17:16:08.310500+00:00",
+    "entry": 468.42,
+    "entry_time": "2026-06-23T16:00:00Z",
+    "status": "entered"
+  },
+  {
+    "symbol": "DG",
+    "type": "double_bottom",
+    "neckline": 111.37,
+    "stop": 98.9118,
+    "target_2R": 145.1695,
+    "risk_per_share": 15.4192,
+    "shares": 1.9456,
+    "break_time": "2026-06-11T16:00:00Z",
+    "bars_since_break": 7,
+    "in_pullback": true,
+    "last_close": 114.59,
+    "last_bar_time": "2026-06-23T16:00:00Z",
+    "scanned_at": "2026-06-24T17:16:08.705143+00:00",
+    "entry": 114.59,
+    "entry_time": "2026-06-23T16:00:00Z",
     "status": "entered"
   }
 ]
