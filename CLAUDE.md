@@ -51,8 +51,8 @@ Log all three so we can learn which exit rule performs best:
 - Variant to track separately (do not overwrite the base case): once price reaches 1R, move the stop to breakeven.
 
 ### Step 6: Position sizing (paper)
-- Paper account starting equity: $10,000 (set in `config`).
-- Risk per trade: 1% of current paper equity.
+- Paper account starting equity: $1,500 (set in `config`).
+- Risk per trade: 2% of current paper equity.
 - Share size = (1% of equity) / (entry price minus stop price).
 
 ## Universe and screening (Robinhood-only, no third-party screener)
