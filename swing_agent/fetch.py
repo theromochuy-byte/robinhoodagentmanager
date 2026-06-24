@@ -28,28 +28,53 @@ RATE_DELAY  = 0.5            # seconds between batches
 
 
 def _login():
-    """Authenticate with Robinhood. Reads credentials from env vars."""
+    """Authenticate with Robinhood.
+
+    Auth priority:
+      1. ROBINHOOD_TOKEN (base64-encoded pickle) — no 2FA needed, preferred for CI
+      2. ROBINHOOD_TOTP_KEY (base32 secret)      — auto-generates TOTP code
+      3. ROBINHOOD_MFA_CODE                       — pre-supplied one-time code
+      4. Username + password only (will fail if 2FA is enabled)
+    """
     try:
         import robin_stocks.robinhood as rh
     except ImportError:
         print("robin_stocks not installed. Run: pip install robin-stocks", file=sys.stderr)
         sys.exit(1)
 
+    token_b64 = os.environ.get("ROBINHOOD_TOKEN")
+    if token_b64:
+        # Restore the session pickle so robin_stocks skips the login flow entirely
+        import base64
+        import pickle
+
+        token_dir = Path.home() / ".tokens"
+        token_dir.mkdir(exist_ok=True)
+        pickle_path = token_dir / "robinhood.pickle"
+        pickle_path.write_bytes(base64.b64decode(token_b64))
+
+        # robin_stocks reads the pickle on login when store_session=True and
+        # the file already exists — supply dummy creds so it doesn't error
+        username = os.environ.get("ROBINHOOD_USERNAME", "placeholder@example.com")
+        password = os.environ.get("ROBINHOOD_PASSWORD", "placeholder")
+        rh.login(username=username, password=password, store_session=True)
+        return rh
+
     username = os.environ.get("ROBINHOOD_USERNAME")
     password = os.environ.get("ROBINHOOD_PASSWORD")
-    mfa_code = os.environ.get("ROBINHOOD_MFA_CODE")   # optional: TOTP code
-    totp_key = os.environ.get("ROBINHOOD_TOTP_KEY")   # optional: base32 TOTP secret
+    mfa_code = os.environ.get("ROBINHOOD_MFA_CODE")
+    totp_key = os.environ.get("ROBINHOOD_TOTP_KEY")
 
     if not username or not password:
-        print("Set ROBINHOOD_USERNAME and ROBINHOOD_PASSWORD env vars.", file=sys.stderr)
+        print("Set ROBINHOOD_USERNAME and ROBINHOOD_PASSWORD (or ROBINHOOD_TOKEN) env vars.",
+              file=sys.stderr)
         sys.exit(1)
 
-    # If a TOTP key is provided, generate a fresh code automatically
     if totp_key and not mfa_code:
         import pyotp
         mfa_code = pyotp.TOTP(totp_key).now()
 
-    kwargs = dict(username=username, password=password, store_session=False)
+    kwargs = dict(username=username, password=password, store_session=True)
     if mfa_code:
         kwargs["mfa_code"] = mfa_code
 

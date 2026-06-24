@@ -36,7 +36,7 @@ jobs:
           cache: pip
 
       - name: Install dependencies
-        run: pip install robin-stocks pyotp pandas numpy
+        run: pip install robin-stocks pandas numpy
 
       - name: Determine run mode
         id: mode
@@ -60,8 +60,8 @@ jobs:
 
       - name: Run pipeline
         env:
+          ROBINHOOD_TOKEN:    ${{ secrets.ROBINHOOD_TOKEN }}
           ROBINHOOD_USERNAME: ${{ secrets.ROBINHOOD_USERNAME }}
           ROBINHOOD_PASSWORD: ${{ secrets.ROBINHOOD_PASSWORD }}
-          ROBINHOOD_TOTP_KEY: ${{ secrets.ROBINHOOD_TOTP_KEY }}
         run: |
           python3 -m swing_agent.run_daily --mode ${{ steps.mode.outputs.mode }}
