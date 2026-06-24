@@ -1,0 +1,46 @@
+{
+  "date": "2026-05-19",
+  "new_entries": 2,
+  "closed_today": 0,
+  "open_count": 11,
+  "entries": [
+    {
+      "symbol": "LLY",
+      "type": "double_bottom",
+      "neckline": 976.6799,
+      "stop": 852.5482,
+      "target_2R": 1260.2837,
+      "risk_per_share": 135.9118,
+      "shares": 0.2207,
+      "break_time": "2026-05-05T16:00:00Z",
+      "bars_since_break": 10,
+      "in_pullback": true,
+      "last_close": 1021.22,
+      "last_bar_time": "2026-05-19T16:00:00Z",
+      "scan_date": "2026-05-19",
+      "entry": 1021.22,
+      "entry_time": "2026-05-19T16:00:00Z",
+      "status": "open"
+    },
+    {
+      "symbol": "PM",
+      "type": "inverse_hns",
+      "neckline": 170.88,
+      "stop": 157.2936,
+      "target_2R": 198.7278,
+      "risk_per_share": 13.8114,
+      "shares": 2.1721,
+      "break_time": "2026-05-07T16:00:00Z",
+      "bars_since_break": 8,
+      "in_pullback": true,
+      "last_close": 191.58,
+      "last_bar_time": "2026-05-19T16:00:00Z",
+      "scan_date": "2026-05-19",
+      "entry": 191.58,
+      "entry_time": "2026-05-19T16:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 19
+}

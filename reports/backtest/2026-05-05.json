@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-05",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 1,
+  "entries": [
+    {
+      "symbol": "APD",
+      "type": "double_bottom",
+      "neckline": 299.86,
+      "stop": 281.8447,
+      "target_2R": 347.1256,
+      "risk_per_share": 21.7603,
+      "shares": 1.3787,
+      "break_time": "2026-04-23T16:00:00Z",
+      "bars_since_break": 8,
+      "in_pullback": true,
+      "last_close": 303.94,
+      "last_bar_time": "2026-05-05T16:00:00Z",
+      "scan_date": "2026-05-05",
+      "entry": 303.94,
+      "entry_time": "2026-05-05T16:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 7
+}

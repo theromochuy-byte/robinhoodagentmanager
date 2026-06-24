@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-22",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 21,
+  "entries": [
+    {
+      "symbol": "LIN",
+      "type": "double_bottom",
+      "neckline": 514.31,
+      "stop": 483.5527,
+      "target_2R": 576.6646,
+      "risk_per_share": 31.0373,
+      "shares": 0.9666,
+      "break_time": "2026-05-21T16:00:00Z",
+      "bars_since_break": 1,
+      "in_pullback": true,
+      "last_close": 517.59,
+      "last_bar_time": "2026-05-22T16:00:00Z",
+      "scan_date": "2026-05-22",
+      "entry": 517.59,
+      "entry_time": "2026-05-22T16:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 27
+}

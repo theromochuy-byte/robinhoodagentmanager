@@ -1,0 +1,46 @@
+{
+  "date": "2026-05-27",
+  "new_entries": 2,
+  "closed_today": 0,
+  "open_count": 27,
+  "entries": [
+    {
+      "symbol": "GS",
+      "type": "double_bottom",
+      "neckline": 975.66,
+      "stop": 901.1038,
+      "target_2R": 1144.0925,
+      "risk_per_share": 80.9962,
+      "shares": 0.3704,
+      "break_time": "2026-05-20T16:00:00Z",
+      "bars_since_break": 4,
+      "in_pullback": true,
+      "last_close": 996.4125,
+      "last_bar_time": "2026-05-27T16:00:00Z",
+      "scan_date": "2026-05-27",
+      "entry": 996.4125,
+      "entry_time": "2026-05-27T16:00:00Z",
+      "status": "open"
+    },
+    {
+      "symbol": "MS",
+      "type": "double_bottom",
+      "neckline": 193.88,
+      "stop": 183.7145,
+      "target_2R": 216.1611,
+      "risk_per_share": 10.8155,
+      "shares": 2.7738,
+      "break_time": "2026-05-14T16:00:00Z",
+      "bars_since_break": 8,
+      "in_pullback": true,
+      "last_close": 201.64,
+      "last_bar_time": "2026-05-27T16:00:00Z",
+      "scan_date": "2026-05-27",
+      "entry": 201.64,
+      "entry_time": "2026-05-27T16:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 28
+}

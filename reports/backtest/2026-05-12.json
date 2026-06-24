@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-12",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 3,
+  "entries": [
+    {
+      "symbol": "BA",
+      "type": "double_bottom",
+      "neckline": 235.82,
+      "stop": 211.594,
+      "target_2R": 288.142,
+      "risk_per_share": 25.516,
+      "shares": 1.1757,
+      "break_time": "2026-05-08T16:00:00Z",
+      "bars_since_break": 2,
+      "in_pullback": true,
+      "last_close": 236.87,
+      "last_bar_time": "2026-05-12T16:00:00Z",
+      "scan_date": "2026-05-12",
+      "entry": 236.87,
+      "entry_time": "2026-05-12T16:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 7
+}
