@@ -16,9 +16,9 @@
     "entry": 239.065,
     "entry_time": "2026-06-23T16:00:00Z",
     "status": "entered",
-    "last_price": 262.385,
-    "unrealized_pnl": 34.85,
-    "checked_at": "2026-07-02T19:27:53.639027+00:00"
+    "last_price": 261.9,
+    "unrealized_pnl": 34.12,
+    "checked_at": "2026-07-02T21:47:54.243444+00:00"
   },
   {
     "symbol": "JNJ",
@@ -37,9 +37,9 @@
     "entry": 239.065,
     "entry_time": "2026-06-23T16:00:00Z",
     "status": "entered",
-    "last_price": 262.385,
-    "unrealized_pnl": 37.93,
-    "checked_at": "2026-07-02T19:27:53.639027+00:00"
+    "last_price": 261.9,
+    "unrealized_pnl": 37.14,
+    "checked_at": "2026-07-02T21:47:54.243444+00:00"
   },
   {
     "symbol": "RTX",
@@ -58,9 +58,9 @@
     "entry": 186.535,
     "entry_time": "2026-06-23T16:00:00Z",
     "status": "entered",
-    "last_price": 198.745,
-    "unrealized_pnl": 27.74,
-    "checked_at": "2026-07-02T19:27:53.639027+00:00"
+    "last_price": 196.5754,
+    "unrealized_pnl": 22.81,
+    "checked_at": "2026-07-02T21:47:54.243444+00:00"
   },
   {
     "symbol": "RTX",
@@ -79,9 +79,9 @@
     "entry": 186.535,
     "entry_time": "2026-06-23T16:00:00Z",
     "status": "entered",
-    "last_price": 198.745,
-    "unrealized_pnl": 30.25,
-    "checked_at": "2026-07-02T19:27:53.639027+00:00"
+    "last_price": 196.5754,
+    "unrealized_pnl": 24.88,
+    "checked_at": "2026-07-02T21:47:54.243444+00:00"
   },
   {
     "symbol": "USB",
@@ -100,9 +100,9 @@
     "entry": 59.995,
     "entry_time": "2026-06-23T16:00:00Z",
     "status": "entered",
-    "last_price": 61.5,
-    "unrealized_pnl": 8.39,
-    "checked_at": "2026-07-02T19:27:53.639027+00:00"
+    "last_price": 61.73,
+    "unrealized_pnl": 9.67,
+    "checked_at": "2026-07-02T21:47:54.243444+00:00"
   },
   {
     "symbol": "SPG",
@@ -121,9 +121,9 @@
     "entry": 216.76,
     "entry_time": "2026-06-23T16:00:00Z",
     "status": "entered",
-    "last_price": 225.38,
-    "unrealized_pnl": 19.83,
-    "checked_at": "2026-07-02T19:27:53.639027+00:00"
+    "last_price": 226.362,
+    "unrealized_pnl": 22.09,
+    "checked_at": "2026-07-02T21:47:54.243444+00:00"
   },
   {
     "symbol": "SPG",
@@ -142,9 +142,9 @@
     "entry": 216.76,
     "entry_time": "2026-06-23T16:00:00Z",
     "status": "entered",
-    "last_price": 225.38,
-    "unrealized_pnl": 24.14,
-    "checked_at": "2026-07-02T19:27:53.639027+00:00"
+    "last_price": 226.362,
+    "unrealized_pnl": 26.88,
+    "checked_at": "2026-07-02T21:47:54.243444+00:00"
   },
   {
     "symbol": "PRU",
@@ -163,9 +163,9 @@
     "entry": 108.48,
     "entry_time": "2026-06-23T16:00:00Z",
     "status": "entered",
-    "last_price": 112.485,
-    "unrealized_pnl": 20.02,
-    "checked_at": "2026-07-02T19:27:53.639027+00:00"
+    "last_price": 112.95,
+    "unrealized_pnl": 22.34,
+    "checked_at": "2026-07-02T21:47:54.243444+00:00"
   },
   {
     "symbol": "VRTX",
@@ -184,9 +184,9 @@
     "entry": 468.42,
     "entry_time": "2026-06-23T16:00:00Z",
     "status": "entered",
-    "last_price": 525.2775,
-    "unrealized_pnl": 46.74,
-    "checked_at": "2026-07-02T19:27:53.639027+00:00"
+    "last_price": 528.04,
+    "unrealized_pnl": 49.01,
+    "checked_at": "2026-07-02T21:47:54.243444+00:00"
   },
   {
     "symbol": "VRTX",
@@ -204,10 +204,14 @@
     "scanned_at": "2026-06-24T19:11:33.897515+00:00",
     "entry": 468.42,
     "entry_time": "2026-06-23T16:00:00Z",
-    "status": "entered",
+    "status": "target_hit",
     "last_price": 525.2775,
     "unrealized_pnl": 50.4,
-    "checked_at": "2026-07-02T19:27:53.639027+00:00"
+    "checked_at": "2026-07-02T19:27:53.639027+00:00",
+    "exit_price": 526.8401,
+    "exit_time": "2026-07-02T21:47:54.243444+00:00",
+    "outcome": "win",
+    "pnl_dollars": 51.78
   },
   {
     "symbol": "DG",
@@ -226,9 +230,9 @@
     "entry": 114.59,
     "entry_time": "2026-06-23T16:00:00Z",
     "status": "entered",
-    "last_price": 117.05,
-    "unrealized_pnl": 4.79,
-    "checked_at": "2026-07-02T19:27:53.639027+00:00"
+    "last_price": 118.17,
+    "unrealized_pnl": 6.97,
+    "checked_at": "2026-07-02T21:47:54.243444+00:00"
   },
   {
     "symbol": "AMGN",
@@ -247,9 +251,9 @@
     "entry": 361.27,
     "entry_time": "2026-07-01T16:00:00Z",
     "status": "entered",
-    "last_price": 371.97,
-    "unrealized_pnl": 11.84,
-    "checked_at": "2026-07-02T19:27:53.639027+00:00"
+    "last_price": 374.15,
+    "unrealized_pnl": 14.25,
+    "checked_at": "2026-07-02T21:47:54.243444+00:00"
   },
   {
     "symbol": "AMGN",
@@ -268,9 +272,9 @@
     "entry": 361.27,
     "entry_time": "2026-07-01T16:00:00Z",
     "status": "entered",
-    "last_price": 371.97,
-    "unrealized_pnl": 10.74,
-    "checked_at": "2026-07-02T19:27:53.639027+00:00"
+    "last_price": 374.15,
+    "unrealized_pnl": 12.93,
+    "checked_at": "2026-07-02T21:47:54.243444+00:00"
   },
   {
     "symbol": "AMGN",
@@ -289,9 +293,9 @@
     "entry": 361.27,
     "entry_time": "2026-07-01T16:00:00Z",
     "status": "entered",
-    "last_price": 371.97,
-    "unrealized_pnl": 14.05,
-    "checked_at": "2026-07-02T19:27:53.639027+00:00"
+    "last_price": 374.15,
+    "unrealized_pnl": 16.91,
+    "checked_at": "2026-07-02T21:47:54.243444+00:00"
   },
   {
     "symbol": "EW",
@@ -310,9 +314,9 @@
     "entry": 92.005,
     "entry_time": "2026-07-01T16:00:00Z",
     "status": "entered",
-    "last_price": 94.4,
-    "unrealized_pnl": 11.74,
-    "checked_at": "2026-07-02T19:27:53.639027+00:00"
+    "last_price": 94.37,
+    "unrealized_pnl": 11.6,
+    "checked_at": "2026-07-02T21:47:54.243444+00:00"
   },
   {
     "symbol": "VLO",
@@ -331,9 +335,9 @@
     "entry": 269.38,
     "entry_time": "2026-07-01T16:00:00Z",
     "status": "entered",
-    "last_price": 268.37,
-    "unrealized_pnl": -0.75,
-    "checked_at": "2026-07-02T19:27:53.639027+00:00"
+    "last_price": 267.76,
+    "unrealized_pnl": -1.2,
+    "checked_at": "2026-07-02T21:47:54.243444+00:00"
   },
   {
     "symbol": "VLO",
@@ -352,9 +356,9 @@
     "entry": 269.38,
     "entry_time": "2026-07-01T16:00:00Z",
     "status": "entered",
-    "last_price": 268.37,
-    "unrealized_pnl": -1.11,
-    "checked_at": "2026-07-02T19:27:53.639027+00:00"
+    "last_price": 267.76,
+    "unrealized_pnl": -1.78,
+    "checked_at": "2026-07-02T21:47:54.243444+00:00"
   },
   {
     "symbol": "CL",
@@ -373,9 +377,9 @@
     "entry": 92.76,
     "entry_time": "2026-07-01T16:00:00Z",
     "status": "entered",
-    "last_price": 95.27,
-    "unrealized_pnl": 7.2,
-    "checked_at": "2026-07-02T19:27:53.639027+00:00"
+    "last_price": 95.13,
+    "unrealized_pnl": 6.8,
+    "checked_at": "2026-07-02T21:47:54.243444+00:00"
   },
   {
     "symbol": "CL",
@@ -394,9 +398,9 @@
     "entry": 92.76,
     "entry_time": "2026-07-01T16:00:00Z",
     "status": "entered",
-    "last_price": 95.27,
-    "unrealized_pnl": 7.83,
-    "checked_at": "2026-07-02T19:27:53.639027+00:00"
+    "last_price": 95.13,
+    "unrealized_pnl": 7.39,
+    "checked_at": "2026-07-02T21:47:54.243444+00:00"
   },
   {
     "symbol": "SPG",
@@ -415,8 +419,8 @@
     "entry": 223.09,
     "entry_time": "2026-07-01T16:00:00Z",
     "status": "entered",
-    "last_price": 225.38,
-    "unrealized_pnl": 4.09,
-    "checked_at": "2026-07-02T19:27:53.639027+00:00"
+    "last_price": 226.362,
+    "unrealized_pnl": 5.84,
+    "checked_at": "2026-07-02T21:47:54.243444+00:00"
   }
 ]
