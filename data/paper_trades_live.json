@@ -18,7 +18,8 @@
     "status": "entered",
     "last_price": 261.9,
     "unrealized_pnl": 34.12,
-    "checked_at": "2026-07-02T21:47:54.243444+00:00"
+    "checked_at": "2026-07-02T21:47:54.243444+00:00",
+    "stop_variant": "original"
   },
   {
     "symbol": "JNJ",
@@ -39,7 +40,8 @@
     "status": "entered",
     "last_price": 261.9,
     "unrealized_pnl": 37.14,
-    "checked_at": "2026-07-02T21:47:54.243444+00:00"
+    "checked_at": "2026-07-02T21:47:54.243444+00:00",
+    "stop_variant": "original"
   },
   {
     "symbol": "RTX",
@@ -186,7 +188,8 @@
     "status": "entered",
     "last_price": 528.04,
     "unrealized_pnl": 49.01,
-    "checked_at": "2026-07-02T21:47:54.243444+00:00"
+    "checked_at": "2026-07-02T21:47:54.243444+00:00",
+    "stop_variant": "original"
   },
   {
     "symbol": "VRTX",
@@ -422,5 +425,77 @@
     "last_price": 226.362,
     "unrealized_pnl": 5.84,
     "checked_at": "2026-07-02T21:47:54.243444+00:00"
+  },
+  {
+    "symbol": "JNJ",
+    "type": "double_bottom",
+    "neckline": 235.11,
+    "stop": 239.065,
+    "target_2R": 277.1639,
+    "risk_per_share": 20.0745,
+    "shares": 1.4944,
+    "break_time": "2026-06-09T16:00:00Z",
+    "bars_since_break": 9,
+    "in_pullback": true,
+    "last_close": 239.065,
+    "last_bar_time": "2026-06-23T16:00:00Z",
+    "scanned_at": "2026-06-24T19:11:32.030781+00:00",
+    "entry": 239.065,
+    "entry_time": "2026-06-23T16:00:00Z",
+    "status": "entered",
+    "last_price": 261.9,
+    "unrealized_pnl": 34.12,
+    "checked_at": "2026-07-02T21:47:54.243444+00:00",
+    "stop_variant": "breakeven",
+    "variant_activated_at": "2026-07-03T03:44:58.168868+00:00",
+    "variant_note": "Stop moved to entry after price crossed 1R"
+  },
+  {
+    "symbol": "JNJ",
+    "type": "inverse_hns",
+    "neckline": 235.11,
+    "stop": 239.065,
+    "target_2R": 273.9041,
+    "risk_per_share": 18.4446,
+    "shares": 1.6265,
+    "break_time": "2026-06-09T16:00:00Z",
+    "bars_since_break": 9,
+    "in_pullback": true,
+    "last_close": 239.065,
+    "last_bar_time": "2026-06-23T16:00:00Z",
+    "scanned_at": "2026-06-24T19:11:32.031993+00:00",
+    "entry": 239.065,
+    "entry_time": "2026-06-23T16:00:00Z",
+    "status": "entered",
+    "last_price": 261.9,
+    "unrealized_pnl": 37.14,
+    "checked_at": "2026-07-02T21:47:54.243444+00:00",
+    "stop_variant": "breakeven",
+    "variant_activated_at": "2026-07-03T03:44:58.168868+00:00",
+    "variant_note": "Stop moved to entry after price crossed 1R"
+  },
+  {
+    "symbol": "VRTX",
+    "type": "double_bottom",
+    "neckline": 455.32,
+    "stop": 468.42,
+    "target_2R": 532.1401,
+    "risk_per_share": 36.495,
+    "shares": 0.822,
+    "break_time": "2026-06-17T16:00:00Z",
+    "bars_since_break": 3,
+    "in_pullback": true,
+    "last_close": 468.42,
+    "last_bar_time": "2026-06-23T16:00:00Z",
+    "scanned_at": "2026-06-24T19:11:33.896432+00:00",
+    "entry": 468.42,
+    "entry_time": "2026-06-23T16:00:00Z",
+    "status": "entered",
+    "last_price": 528.04,
+    "unrealized_pnl": 49.01,
+    "checked_at": "2026-07-02T21:47:54.243444+00:00",
+    "stop_variant": "breakeven",
+    "variant_activated_at": "2026-07-03T03:44:58.168868+00:00",
+    "variant_note": "Stop moved to entry after price crossed 1R"
   }
 ]
