@@ -36,7 +36,7 @@ jobs:
           cache: pip
 
       - name: Install dependencies
-        run: pip install robin-stocks pandas numpy
+        run: pip install -r requirements.txt
 
       - name: Determine run mode
         id: mode
@@ -44,9 +44,7 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "mode=${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
           else
-            HOUR=$(date -u +%H)
-            MINUTE=$(date -u +%M)
-            HHMM="${HOUR}${MINUTE}"
+            HHMM=$(date -u +%H%M)
             if   [ "$HHMM" -lt "1500" ]; then echo "mode=morning" >> $GITHUB_OUTPUT
             elif [ "$HHMM" -lt "1900" ]; then echo "mode=midday"  >> $GITHUB_OUTPUT
             else                               echo "mode=evening" >> $GITHUB_OUTPUT
@@ -60,8 +58,8 @@ jobs:
 
       - name: Run pipeline
         env:
-          ROBINHOOD_TOKEN:    ${{ secrets.ROBINHOOD_TOKEN }}
-          ROBINHOOD_USERNAME: ${{ secrets.ROBINHOOD_USERNAME }}
-          ROBINHOOD_PASSWORD: ${{ secrets.ROBINHOOD_PASSWORD }}
+          NOTIFY_EMAIL_FROM:     ${{ secrets.NOTIFY_EMAIL_FROM }}
+          NOTIFY_EMAIL_PASSWORD: ${{ secrets.NOTIFY_EMAIL_PASSWORD }}
+          NOTIFY_EMAIL_TO:       ${{ secrets.NOTIFY_EMAIL_TO }}
         run: |
           python3 -m swing_agent.run_daily --mode ${{ steps.mode.outputs.mode }}
