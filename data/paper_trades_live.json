@@ -1,1 +1,56 @@
-[]
+[
+  {
+    "symbol": "HD",
+    "type": "double_bottom",
+    "neckline": 350.96,
+    "stop": 314.5826,
+    "target_2R": 427.9599,
+    "risk_per_share": 37.7924,
+    "shares": 0.7938,
+    "break_time": "2026-06-30T16:00:00Z",
+    "bars_since_break": 2,
+    "in_pullback": true,
+    "last_close": 357.76,
+    "last_bar_time": "2026-07-02T16:00:00Z",
+    "scanned_at": "2026-07-08T21:56:18.309270+00:00",
+    "entry": 357.76,
+    "entry_time": "2026-07-02T16:00:00Z",
+    "status": "entered"
+  },
+  {
+    "symbol": "HD",
+    "type": "inverse_hns",
+    "neckline": 350.96,
+    "stop": 318.1876,
+    "target_2R": 420.7499,
+    "risk_per_share": 34.1874,
+    "shares": 0.8775,
+    "break_time": "2026-06-30T16:00:00Z",
+    "bars_since_break": 2,
+    "in_pullback": true,
+    "last_close": 357.76,
+    "last_bar_time": "2026-07-02T16:00:00Z",
+    "scanned_at": "2026-07-08T21:56:18.310627+00:00",
+    "entry": 357.76,
+    "entry_time": "2026-07-02T16:00:00Z",
+    "status": "entered"
+  },
+  {
+    "symbol": "BRK.B",
+    "type": "double_bottom",
+    "neckline": 498.9075,
+    "stop": 476.3883,
+    "target_2R": 547.7634,
+    "risk_per_share": 23.7917,
+    "shares": 1.2609,
+    "break_time": "2026-06-30T16:00:00Z",
+    "bars_since_break": 2,
+    "in_pullback": true,
+    "last_close": 507.33,
+    "last_bar_time": "2026-07-02T16:00:00Z",
+    "scanned_at": "2026-07-08T21:56:18.729636+00:00",
+    "entry": 507.33,
+    "entry_time": "2026-07-02T16:00:00Z",
+    "status": "entered"
+  }
+]
