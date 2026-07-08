@@ -67,7 +67,9 @@ def _df_to_bars(df) -> list[dict]:
 def _resample_1h_to_4h(bars: list[dict]) -> list[dict]:
     """Aggregate 1-hour bars into 4-hour buckets aligned to RTH (9:30 ET)."""
     from collections import defaultdict
+    from zoneinfo import ZoneInfo
 
+    ET = ZoneInfo("America/New_York")
     buckets: dict[tuple, list[dict]] = defaultdict(list)
     for bar in bars:
         ts_str = bar.get("begins_at", "")
@@ -75,9 +77,10 @@ def _resample_1h_to_4h(bars: list[dict]) -> list[dict]:
             ts = datetime.fromisoformat(ts_str.replace("Z", "+00:00"))
         except ValueError:
             continue
-        # Approximate ET as UTC-4 (summer); acceptable for bucketing purposes
-        et_hour   = (ts.hour - 4) % 24
-        et_minute = ts.minute
+        # Convert UTC to US/Eastern accounting for EST (UTC-5) vs EDT (UTC-4)
+        et = ts.astimezone(ET)
+        et_hour   = et.hour
+        et_minute = et.minute
         mins_since_open = (et_hour - 9) * 60 + (et_minute - 30)
         if mins_since_open < 0 or mins_since_open >= 390:
             continue  # outside RTH

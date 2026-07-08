@@ -24,8 +24,9 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
-DATA = ROOT / "data"
+ROOT        = Path(__file__).resolve().parent.parent
+DATA        = ROOT / "data"
+EQUITY_FILE = DATA / "equity.json"
 
 NEAR_PCT = 0.05   # alert when price is within 5% of stop or 2R
 
@@ -51,14 +52,16 @@ def build_digest(
         scan_date: YYYY-MM-DD string.
 
     Returns dict with keys: new_entries, closes, near_stop, near_2r,
-    realized_pnl, unrealized_pnl.
+    realized_pnl, unrealized_pnl, equity, open_count.
     """
     # Load full ledger to compute proximity alerts and P&L
     ledger_path = DATA / "paper_trades_live.json"
     if not ledger_path.exists():
         return {"new_entries": new_entries, "closes": closes,
                 "near_stop": [], "near_2r": [], "realized_pnl": 0.0,
-                "unrealized_pnl": 0.0}
+                "unrealized_pnl": 0.0,
+                "equity": {"starting_equity": 1500.0, "capital_in_use": 0.0, "available_equity": 1500.0},
+                "open_count": 0}
 
     trades = json.loads(ledger_path.read_text())
     open_trades = [t for t in trades if t.get("status") == "entered"]
@@ -100,13 +103,30 @@ def build_digest(
         if t.get("status") in ("stopped", "target_hit")
     )
 
+    # Load equity state
+    equity = {"starting_equity": 1500.0, "capital_in_use": 0.0, "available_equity": 1500.0}
+    if EQUITY_FILE.exists():
+        equity = json.loads(EQUITY_FILE.read_text())
+
+    # Attach time-to-2R estimates from the ledger to near_2r items
+    near_2r_with_eta = []
+    for item in near_2r:
+        sym = item["symbol"]
+        trade = next((t for t in open_trades if t["symbol"] == sym
+                      and t.get("target_2R") == item["target_2R"]), {})
+        item["est_days_to_2r"] = trade.get("est_days_to_2r")
+        item["progress_pct"]   = trade.get("progress_pct")
+        near_2r_with_eta.append(item)
+
     return {
         "new_entries":    new_entries,
         "closes":         closes,
-        "near_stop":      sorted(near_stop,  key=lambda x: x["gap_pct"]),
-        "near_2r":        sorted(near_2r,    key=lambda x: x["gap_pct"]),
+        "near_stop":      sorted(near_stop,         key=lambda x: x["gap_pct"]),
+        "near_2r":        sorted(near_2r_with_eta,  key=lambda x: x["gap_pct"]),
         "realized_pnl":   round(realized,    2),
         "unrealized_pnl": round(unrealized,  2),
+        "equity":         equity,
+        "open_count":     len(open_trades),
     }
 
 
@@ -125,9 +145,29 @@ def _html_table(rows: list[list], headers: list[str]) -> str:
 
 
 def render_html(digest: dict, scan_date: str) -> str:
+    eq = digest.get("equity", {})
+    starting   = eq.get("starting_equity", 1500.0)
+    in_use     = eq.get("capital_in_use", 0.0)
+    available  = eq.get("available_equity", starting)
+    open_count = digest.get("open_count", 0)
+
     parts = [f"""
 <h2 style='font-family:sans-serif'>📈 Swing Agent Daily Digest — {scan_date}</h2>
 <p style='font-family:sans-serif;color:#555'>Paper trading summary. No real orders placed.</p>
+<table style='font-family:sans-serif;font-size:13px;border-collapse:collapse;margin-bottom:12px'>
+  <tr>
+    <td style='padding:4px 16px 4px 0'><strong>Starting equity</strong></td>
+    <td style='padding:4px 16px 4px 0'>${starting:,.2f}</td>
+    <td style='padding:4px 16px 4px 0'><strong>Open positions</strong></td>
+    <td style='padding:4px 0'>{open_count}</td>
+  </tr>
+  <tr>
+    <td style='padding:4px 16px 4px 0'><strong>Capital in use</strong></td>
+    <td style='padding:4px 16px 4px 0;color:{"#c00" if in_use > starting else "#333"}'>${in_use:,.2f}</td>
+    <td style='padding:4px 16px 4px 0'><strong>Available</strong></td>
+    <td style='padding:4px 0;color:{"#080" if available > 0 else "#c00"}'>${available:,.2f}</td>
+  </tr>
+</table>
 """]
 
     # Closes
@@ -154,10 +194,16 @@ def render_html(digest: dict, scan_date: str) -> str:
     # Near 2R
     near_2r = digest["near_2r"]
     if near_2r:
-        rows = [[_fmt_trade(t), f"${t['price']:.2f}", f"${t['target_2R']:.2f}",
-                 f"{t['gap_pct']}%"] for t in near_2r]
+        rows = []
+        for t in near_2r:
+            eta  = t.get("est_days_to_2r")
+            prog = t.get("progress_pct")
+            eta_str  = f"{eta:.1f}d" if eta is not None else "—"
+            prog_str = f"{prog:.0f}%" if prog is not None else "—"
+            rows.append([_fmt_trade(t), f"${t['price']:.2f}", f"${t['target_2R']:.2f}",
+                         f"{t['gap_pct']}%", prog_str, eta_str])
         parts.append("<h3 style='font-family:sans-serif;color:#e80'>🎯 Near 2R target (within 5%)</h3>")
-        parts.append(_html_table(rows, ["Position", "Price", "2R Target", "Gap"]))
+        parts.append(_html_table(rows, ["Position", "Price", "2R Target", "Gap", "Progress", "Est. Days"]))
 
     # Near stop
     near_stop = digest["near_stop"]
@@ -184,8 +230,8 @@ def render_html(digest: dict, scan_date: str) -> str:
 
 def send_email(subject: str, html_body: str) -> bool:
     """Send email via SMTP. Returns True on success."""
-    sender   = os.environ.get("NOTIFY_EMAIL_FROM")
-    password = os.environ.get("NOTIFY_EMAIL_PASSWORD")
+    sender    = os.environ.get("NOTIFY_EMAIL_FROM")
+    password  = os.environ.get("NOTIFY_EMAIL_PASSWORD")
     recipient = os.environ.get("NOTIFY_EMAIL_TO")
     smtp_host = os.environ.get("NOTIFY_SMTP_HOST", "smtp.gmail.com")
     smtp_port = int(os.environ.get("NOTIFY_SMTP_PORT", "587"))
@@ -226,11 +272,11 @@ def send_digest(
     digest = build_digest(new_entries, closes, quotes, scan_date)
     html   = render_html(digest, scan_date)
 
-    n_close   = len(digest["closes"])
-    n_new     = len(digest["new_entries"])
-    n_2r      = len(digest["near_2r"])
-    n_stop    = len(digest["near_stop"])
-    subject   = (
+    n_close = len(digest["closes"])
+    n_new   = len(digest["new_entries"])
+    n_2r    = len(digest["near_2r"])
+    n_stop  = len(digest["near_stop"])
+    subject = (
         f"[Swing Agent {scan_date}] "
         f"{n_close} closed · {n_new} new entries · "
         f"{n_2r} near 2R · {n_stop} near stop"

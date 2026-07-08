@@ -4,9 +4,9 @@ Designed to be called by GitHub Actions on a schedule. Uses yfinance for
 data (no Robinhood auth required). Sends an email digest via notify.py.
 
 Modes:
-  morning   9:35 AM ET  full refresh + exit check + scan + notify
-  midday    1:00 PM ET  quotes-only exit check + notify (proximity alerts)
-  evening   4:30 PM ET  full refresh + exit check + scan + notify + commit
+  morning   8:15 AM CT  full refresh + exit check + scan + notify
+  midday   12:00 PM CT  quotes-only exit check + notify (proximity alerts)
+  evening   3:15 PM CT  full refresh + exit check + scan + notify + commit
 
 Usage:
   python3 -m swing_agent.run_daily --mode morning
@@ -103,9 +103,30 @@ def check_exits(quotes: dict[str, float]) -> tuple[list[dict], list[dict]]:
             t["realized_pnl"] = round((price - t["entry"]) * t.get("shares", 0), 2)
             closes.append(t)
         else:
-            t["last_price"]    = price
+            t["last_price"]     = price
             t["unrealized_pnl"] = round((price - t["entry"]) * t.get("shares", 0), 2)
-            t["checked_at"]    = now
+            t["checked_at"]     = now
+
+            # Estimate trading days to 2R based on current pace
+            entry  = t["entry"]
+            target = t["target_2R"]
+            risk   = t.get("risk_per_share", 0)
+            if risk and price > entry and target > entry:
+                progress_pct = (price - entry) / (target - entry)
+                entry_time   = t.get("entry_time", "")
+                if progress_pct > 0.01 and entry_time:
+                    try:
+                        entry_dt  = datetime.fromisoformat(entry_time.replace("Z", "+00:00"))
+                        now_dt    = datetime.now(timezone.utc)
+                        days_held = (now_dt - entry_dt).total_seconds() / 86400
+                        trading_days_held = days_held * (5 / 7)
+                        est_total = trading_days_held / progress_pct
+                        est_remaining = max(0.0, est_total - trading_days_held)
+                        t["progress_pct"]   = round(progress_pct * 100, 1)
+                        t["est_days_to_2r"] = round(est_remaining, 1)
+                    except Exception:
+                        pass
+
             updated.append(t)
 
     # Persist closes + open remainder

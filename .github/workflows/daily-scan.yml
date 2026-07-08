@@ -2,11 +2,11 @@ name: Daily Market Scan
 
 on:
   schedule:
-    # All times UTC. Market is UTC-4 (EDT) in summer, UTC-5 (EST) in winter.
-    # Adjust the hour offsets if the clocks change.
-    - cron: '35 13 * * 1-5'   # 9:35 AM ET  — morning open + full refresh
-    - cron: '0 18 * * 1-5'    # 1:00 PM ET  — midday monitor check
-    - cron: '30 20 * * 1-5'   # 4:30 PM ET  — post-close scan + full refresh
+    # All times UTC. ET = UTC-5 (EST Nov-Mar) / UTC-4 (EDT Mar-Nov).
+    # Houston is CT = UTC-6 (CST) / UTC-5 (CDT). Market 8:30-3:00 PM CT.
+    - cron: '15 13 * * 1-5'   # 8:15 AM CT (EDT)  — pre-open refresh + scan
+    - cron: '0 18 * * 1-5'    # 12:00 PM CT (EDT) — midday exit check
+    - cron: '15 20 * * 1-5'   # 3:15 PM CT (EDT)  — post-close scan + commit
   workflow_dispatch:
     inputs:
       mode:
