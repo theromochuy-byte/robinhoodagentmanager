@@ -27,10 +27,39 @@ from .indicators import atr
 from .patterns import detect_double_bottom, detect_inverse_hns
 from .simulator import build_trade
 
-ROOT   = Path(__file__).resolve().parent.parent
-DATA   = ROOT / "data"
-REPORTS = ROOT / "reports"
+ROOT        = Path(__file__).resolve().parent.parent
+DATA        = ROOT / "data"
+REPORTS     = ROOT / "reports"
 LIVE_LEDGER = DATA / "paper_trades_live.json"
+EQUITY_FILE = DATA / "equity.json"
+
+STARTING_EQUITY = 1500.0
+
+
+def _load_equity() -> dict:
+    """Load equity state, creating it from scratch if missing."""
+    if EQUITY_FILE.exists():
+        return json.loads(EQUITY_FILE.read_text())
+    return {"starting_equity": STARTING_EQUITY, "capital_in_use": 0.0}
+
+
+def _save_equity(state: dict) -> None:
+    EQUITY_FILE.write_text(json.dumps(state, indent=2))
+
+
+def _recompute_equity() -> dict:
+    """Recompute capital_in_use from the live ledger and save."""
+    ledger = _load_live_ledger()
+    in_use = sum(
+        t["entry"] * t.get("shares", 0)
+        for t in ledger
+        if t.get("status") == "entered"
+    )
+    state = _load_equity()
+    state["capital_in_use"] = round(in_use, 2)
+    state["available_equity"] = round(state["starting_equity"] - in_use, 2)
+    _save_equity(state)
+    return state
 
 
 def _load_live_ledger() -> list[dict]:
@@ -126,34 +155,63 @@ def scan_symbol(symbol: str, equity: float, risk_pct: float = 0.02) -> dict:
     return {"watching": watching, "triggered": triggered}
 
 
-def run_scan(symbols: list[str], equity: float = 1500.0, risk_pct: float = 0.02) -> dict:
+def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
     REPORTS.mkdir(exist_ok=True)
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    # Recompute equity state from ledger before scanning
+    equity_state = _recompute_equity()
+    available    = equity_state["available_equity"]
+    starting     = equity_state["starting_equity"]
+    print(f"  Equity: ${starting:.2f} starting  |  "
+          f"${equity_state['capital_in_use']:.2f} in use  |  "
+          f"${available:.2f} available")
 
     all_watching  = []
     all_triggered = []
 
     for sym in symbols:
-        result = scan_symbol(sym, equity, risk_pct)
+        # Use full starting equity for position sizing (risk % of starting capital)
+        # but gate entry on available equity
+        result = scan_symbol(sym, starting, risk_pct)
         all_watching.extend(result["watching"])
         all_triggered.extend(result["triggered"])
 
-    # Merge triggered entries into the live ledger
+    # Merge triggered entries — only add if we have enough capital
     ledger = _load_live_ledger()
     existing_keys = {(t["symbol"], t.get("entry_time")) for t in ledger}
-    new_entries = [
-        t for t in all_triggered
-        if (t["symbol"], t.get("entry_time")) not in existing_keys
-    ]
+    new_entries   = []
+    skipped       = []
+
+    for t in all_triggered:
+        if (t["symbol"], t.get("entry_time")) in existing_keys:
+            continue
+        cost = round(t["entry"] * t.get("shares", 0), 2)
+        if cost > available:
+            skipped.append({"symbol": t["symbol"], "type": t["type"],
+                            "cost": cost, "available": round(available, 2)})
+            continue
+        new_entries.append(t)
+        available = round(available - cost, 2)  # reserve capital as we add
+
     ledger.extend(new_entries)
     _save_live_ledger(ledger)
 
+    # Recompute and save final equity state
+    final_state = _recompute_equity()
+
     report = {
         "scan_date":       today,
-        "watching":        sorted(all_watching,  key=lambda x: x["bars_since_break"]),
+        "watching":        sorted(all_watching, key=lambda x: x["bars_since_break"]),
         "triggered_today": all_triggered,
         "new_entries":     len(new_entries),
-        "total_open":      len(ledger),
+        "skipped_no_capital": skipped,
+        "total_open":      len([t for t in ledger if t.get("status") == "entered"]),
+        "equity": {
+            "starting":   final_state["starting_equity"],
+            "in_use":     final_state["capital_in_use"],
+            "available":  final_state["available_equity"],
+        },
     }
     report_path = REPORTS / f"scan_{today}.json"
     report_path.write_text(json.dumps(report, indent=2))
@@ -161,7 +219,16 @@ def run_scan(symbols: list[str], equity: float = 1500.0, risk_pct: float = 0.02)
 
 
 if __name__ == "__main__":
-    syms   = Path(ROOT / "data" / "universe.txt").read_text().split()
+    from swing_agent.fetch_yf import _load_universe, fetch_daily, fetch_4hour, save as yf_save
+
+    syms = _load_universe()
+    print("=== DATA REFRESH ===")
+    daily_data = fetch_daily(syms)
+    yf_save(daily_data, "_day")
+    h4_data = fetch_4hour(syms)
+    yf_save(h4_data, "_4hour")
+    print(f"  Refreshed {len(syms)} symbols\n")
+
     result = run_scan(syms)
 
     print(f"\n{'='*60}")
