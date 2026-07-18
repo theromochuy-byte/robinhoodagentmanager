@@ -3,7 +3,7 @@
 Scans all universe symbols for active retest setups and logs proposed
 paper trades to data/paper_trades_live.json. Run once per day after close.
 
-A setup is "live" when:
+A setup is \"live\" when:
   1. A qualifying pattern broke its neckline within the last 12 4h bars.
   2. Daily bias is long at the time of the break.
   3. Pattern depth >= 3%.
@@ -16,6 +16,7 @@ Outputs:
 from __future__ import annotations
 
 import json
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -32,6 +33,33 @@ DATA        = ROOT / "data"
 REPORTS     = ROOT / "reports"
 LIVE_LEDGER = DATA / "paper_trades_live.json"
 EQUITY_FILE = DATA / "equity.json"
+
+SESSION_UNIVERSE = DATA / "session_universe.txt"
+INDICATOR_CACHE  = DATA / "indicator_cache.json"
+CACHE_MAX_AGE    = 8 * 3600  # 8 hours
+
+
+def _load_session_cache() -> dict[str, dict]:
+    """Load live indicator cache written by Robinhood MCP session fetch.
+    Returns {symbol: {ema20_daily, atr14_4hour}} or {} if missing/stale.
+    """
+    if not INDICATOR_CACHE.exists():
+        return {}
+    age = time.time() - INDICATOR_CACHE.stat().st_mtime
+    if age > CACHE_MAX_AGE:
+        return {}
+    data = json.loads(INDICATOR_CACHE.read_text())
+    return data.get("symbols", {})
+
+
+def _load_session_universe() -> list[str] | None:
+    """Load options-filtered symbol list from session. Returns None if missing/stale."""
+    if not SESSION_UNIVERSE.exists():
+        return None
+    age = time.time() - SESSION_UNIVERSE.stat().st_mtime
+    if age > CACHE_MAX_AGE:
+        return None
+    return SESSION_UNIVERSE.read_text().split()
 
 STARTING_EQUITY = 1500.0
 
@@ -72,8 +100,17 @@ def _save_live_ledger(trades: list[dict]) -> None:
     LIVE_LEDGER.write_text(json.dumps(trades, indent=2))
 
 
-def scan_symbol(symbol: str, equity: float, risk_pct: float = 0.02) -> dict:
-    """Scan one symbol. Returns dict with 'watching' and 'triggered' lists."""
+def scan_symbol(
+    symbol: str,
+    equity: float,
+    risk_pct: float = 0.02,
+    indicator_cache: dict | None = None,
+) -> dict:
+    """Scan one symbol. Returns dict with 'watching' and 'triggered' lists.
+
+    indicator_cache: optional {ema20_daily, atr14_4hour} for this symbol,
+    fetched live from Robinhood API. When provided, replaces bar-computed values.
+    """
     daily_path = DATA / f"{symbol}_day.json"
     h4_path    = DATA / f"{symbol}_4hour.json"
     if not daily_path.exists() or not h4_path.exists():
@@ -84,7 +121,18 @@ def scan_symbol(symbol: str, equity: float, risk_pct: float = 0.02) -> dict:
     if len(daily) < 30 or len(h4) < 30:
         return {"watching": [], "triggered": []}
 
-    bias       = daily_bias_series(daily)
+    live_ema = indicator_cache.get("ema20_daily") if indicator_cache else None
+    live_atr = indicator_cache.get("atr14_4hour") if indicator_cache else None
+
+    # Bias: prefer live EMA from Robinhood; fall back to bar-computed series
+    if live_ema is not None:
+        last_close_daily = float(daily.iloc[-1]["close"])
+        last_low_daily   = float(daily.iloc[-1]["low"])
+        current_bias     = (last_close_daily > live_ema) and (last_low_daily > live_ema)
+        bias = None  # will use current_bias for asof check
+    else:
+        bias = daily_bias_series(daily)
+
     atr_series = atr(h4, 14)
     patterns   = detect_double_bottom(h4) + detect_inverse_hns(h4)
     patterns.sort(key=lambda p: p["break_index"])
@@ -99,12 +147,18 @@ def scan_symbol(symbol: str, equity: float, risk_pct: float = 0.02) -> dict:
         # only patterns whose break is within the last 12 bars
         if bi < last_bar - 11:
             continue
-        if not bias_asof(bias, p["break_time"]):
+        # Bias check: live EMA uses current daily bias; fallback uses series
+        if bias is None:
+            if not current_bias:
+                continue
+        elif not bias_asof(bias, p["break_time"]):
             continue
+
         if (p["neckline"] - p["stop_basis"]) / p["neckline"] < 0.03:
             continue
 
-        trade = build_trade(h4, p, atr_series, equity, risk_pct)
+        trade = build_trade(h4, p, atr_series, equity, risk_pct,
+                            atr_override=live_atr)
         if trade is None:
             continue
 
@@ -159,6 +213,17 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
     REPORTS.mkdir(exist_ok=True)
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
+    # Session overrides: options-filtered universe and live indicator cache
+    session_syms = _load_session_universe()
+    if session_syms is not None:
+        original_count = len(symbols)
+        symbols = [s for s in session_syms if s in set(symbols)]
+        print(f"  [Session] Options pre-filter: {original_count} → {len(symbols)} symbols")
+
+    indicator_cache = _load_session_cache()
+    if indicator_cache:
+        print(f"  [Session] Live indicator cache loaded for {len(indicator_cache)} symbols")
+
     # Recompute equity state from ledger before scanning
     equity_state = _recompute_equity()
     available    = equity_state["available_equity"]
@@ -173,7 +238,8 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
     for sym in symbols:
         # Use full starting equity for position sizing (risk % of starting capital)
         # but gate entry on available equity
-        result = scan_symbol(sym, starting, risk_pct)
+        result = scan_symbol(sym, starting, risk_pct,
+                             indicator_cache=indicator_cache.get(sym))
         all_watching.extend(result["watching"])
         all_triggered.extend(result["triggered"])
 
