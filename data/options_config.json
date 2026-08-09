@@ -1,0 +1,15 @@
+{
+  "starting_equity": 10000,
+  "max_collateral_pct_of_equity": 0.60,
+  "max_single_name_pct_of_equity": 0.25,
+  "max_concurrent_positions": 6,
+  "dte_range": [21, 45],
+  "delta_range": [0.15, 0.30],
+  "min_open_interest": 100,
+  "max_spread_pct": 0.15,
+  "min_bid": 0.05,
+  "profit_take_pct": 0.50,
+  "roll_dte_trigger": 21,
+  "iv_richness_min_ratio": 1.2,
+  "note": "First-draft numbers from CLAUDE_OPTIONS.md Step 6 -- review before running unattended."
+}

@@ -79,3 +79,26 @@ data.
 
 No live orders. No options, crypto, or futures. No external data feed. Robinhood
 is read-only here, used for price history and account context only.
+
+## Options premium-collection agent
+
+A second, independent strategy lives in `premium_agent/`: the wheel (cash-secured
+puts, plus covered calls on any resulting assignment). Same safety posture —
+PAPER mode only, read-only option tools, every decision logged before anything
+else happens with it.
+
+- `CLAUDE_OPTIONS.md` ......... strategy and safety rules (first draft, needs review)
+- `premium_agent/dataio.py` ... parse Robinhood option contract+quote JSON
+- `premium_agent/screener.py` . CSP / covered-call candidate screening (delta, DTE, liquidity)
+- `premium_agent/realized_vol.py` . IV-richness proxy from the swing agent's daily bars
+- `premium_agent/ledger.py` ... write PROPOSED trades to `data/paper_options_ledger.json`
+- `data/options_config.json` .. paper equity, sizing caps, delta/DTE targets
+
+To run it: resolve a chain with `get_option_chains`, list strikes in the DTE
+window with `get_option_instruments`, batch `get_option_quotes` for those
+instrument ids, merge each instrument with its quote, and save the list to
+`data/options/<SYMBOL>_<EXPIRY>.json` — then `premium_agent.dataio.load()` and
+`premium_agent.screener.screen_csp()` / `screen_covered_call()` take it from
+there, entirely offline. `CLAUDE_OPTIONS.md` has the full rules and flags the
+open data gap (no historical IV series from this MCP) plus the numbers that
+still need sign-off before running unattended.
