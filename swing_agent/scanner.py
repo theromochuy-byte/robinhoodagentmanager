@@ -3,7 +3,7 @@
 Scans all universe symbols for active retest setups and logs proposed
 paper trades to data/paper_trades_live.json. Run once per day after close.
 
-A setup is \"live\" when:
+A setup is "live" when:
   1. A qualifying pattern broke its neckline within the last 12 4h bars.
   2. Daily bias is long at the time of the break.
   3. Pattern depth >= 3%.
@@ -27,6 +27,9 @@ from .dataio import load
 from .indicators import atr
 from .patterns import detect_double_bottom, detect_inverse_hns
 from .simulator import build_trade
+from .watchlist import (
+    upsert_watching, mark_triggered, mark_missed, expire_stale, watchlist_summary,
+)
 
 ROOT        = Path(__file__).resolve().parent.parent
 DATA        = ROOT / "data"
@@ -186,6 +189,7 @@ def scan_symbol(
             "type":          p["type"],
             "neckline":      round(neckline, 4),
             "stop":          round(trade["stop"], 4),
+            "target_1R":     round(trade["target_1R"], 4),
             "target_2R":     round(trade["target_2R"], 4),
             "risk_per_share": round(trade["risk_per_share"], 4),
             "shares":        round(trade["shares"], 4),
@@ -243,7 +247,18 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         all_watching.extend(result["watching"])
         all_triggered.extend(result["triggered"])
 
-    # Merge triggered entries — only add if we have enough capital
+    # ── Watchlist ledger: upsert every watching setup ───────────────────────────
+    for s in all_watching:
+        upsert_watching(s)
+
+    # Expire setups that aged out of the 12-bar window this scan
+    watching_ids  = {(s["symbol"], s["type"], s["break_time"]) for s in all_watching}
+    triggered_ids = {(s["symbol"], s["type"], s["break_time"]) for s in all_triggered}
+    expired = expire_stale(watching_ids, triggered_ids)
+    if expired:
+        print(f"  [Watchlist] Expired {len(expired)} stale setup(s): {', '.join(expired)}")
+
+    # ── Merge triggered entries — only add if we have enough capital ────────
     ledger = _load_live_ledger()
     existing_keys = {(t["symbol"], t.get("entry_time")) for t in ledger}
     new_entries   = []
@@ -251,14 +266,20 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
 
     for t in all_triggered:
         if (t["symbol"], t.get("entry_time")) in existing_keys:
+            # already in ledger — still update watchlist state if not yet done
+            mark_triggered(t["symbol"], t["type"], t["break_time"],
+                           t["entry"], t["entry_time"])
             continue
         cost = round(t["entry"] * t.get("shares", 0), 2)
         if cost > available:
             skipped.append({"symbol": t["symbol"], "type": t["type"],
                             "cost": cost, "available": round(available, 2)})
+            mark_missed(t["symbol"], t["type"], t["break_time"], reason="no_capital")
             continue
         new_entries.append(t)
-        available = round(available - cost, 2)  # reserve capital as we add
+        available = round(available - cost, 2)
+        mark_triggered(t["symbol"], t["type"], t["break_time"],
+                       t["entry"], t["entry_time"])
 
     ledger.extend(new_entries)
     _save_live_ledger(ledger)
@@ -266,6 +287,7 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
     # Recompute and save final equity state
     final_state = _recompute_equity()
 
+    wl_summary = watchlist_summary()
     report = {
         "scan_date":       today,
         "watching":        sorted(all_watching, key=lambda x: x["bars_since_break"]),
@@ -278,6 +300,7 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
             "in_use":     final_state["capital_in_use"],
             "available":  final_state["available_equity"],
         },
+        "watchlist": wl_summary,
     }
     report_path = REPORTS / f"scan_{today}.json"
     report_path.write_text(json.dumps(report, indent=2))
