@@ -28,8 +28,126 @@ def _sid(symbol: str, pattern_type: str, break_time: str) -> str:
 
 def load_watchlist() -> list[dict]:
     if WATCHLIST_FILE.exists():
-        return json.loads(WATCHLIST_FILE.read_text())
-    return []
+        raw = WATCHLIST_FILE.read_text().strip()
+        if raw and raw != "PLACEHOLDER":
+            try:
+                data = json.loads(raw)
+                if isinstance(data, list):
+                    return data
+            except json.JSONDecodeError:
+                pass
+        # File missing, corrupt, or placeholder — rebuild from scan history
+        print("  [Watchlist] Ledger missing or invalid — rebuilding from scan reports...")
+        return _rebuild_from_scans()
+    return _rebuild_from_scans()
+
+
+def _rebuild_from_scans() -> list[dict]:
+    """Bootstrap the ledger by replaying all scan reports in chronological order."""
+    REPORTS = ROOT / "reports"
+    reports = sorted(REPORTS.glob("scan_*.json"))
+    if not reports:
+        save_watchlist([])
+        return []
+
+    entries: list[dict] = []
+    WATCHLIST_FILE.write_text("[]")  # prevent recursion in sub-calls
+
+    for rpt_path in reports:
+        try:
+            data = json.loads(rpt_path.read_text())
+        except (json.JSONDecodeError, OSError):
+            continue
+        date = data.get("scan_date", "")
+        watching = data.get("watching", [])
+        triggered = data.get("triggered_today", [])
+        if not isinstance(watching, list) or not isinstance(triggered, list):
+            continue
+
+        for s in watching:
+            if not isinstance(s, dict) or "break_time" not in s or "last_close" not in s:
+                continue
+            s2 = dict(s)
+            if "target_1R" not in s2:
+                s2["target_1R"] = round(s2["neckline"] + s2["risk_per_share"], 4)
+            _upsert_into(entries, s2)
+
+        for t in triggered:
+            if not isinstance(t, dict) or "break_time" not in t:
+                continue
+            stub = dict(t)
+            stub["last_close"] = stub.get("entry", stub.get("last_close", 0))
+            stub["status"] = "watching"
+            if "target_1R" not in stub:
+                stub["target_1R"] = round(stub.get("entry", 0) + stub.get("risk_per_share", 0), 4)
+            _upsert_into(entries, stub)
+            _mark_triggered_in(entries, t["symbol"], t["type"], t["break_time"],
+                               t.get("entry", 0),
+                               t.get("entry_time", date + "T00:00:00+00:00"))
+
+    # Compress: keep first_seen + one snapshot per calendar day
+    for e in entries:
+        ph = e.get("price_history", [])
+        keepers = []
+        seen_days: dict[str, dict] = {}
+        for snap in ph:
+            note = snap.get("note", "")
+            if note in ("first_seen", "triggered", "closed_win", "closed_loss",
+                        "expired", "missed_no_capital"):
+                keepers.append(snap)
+            else:
+                seen_days[snap["time"][:10]] = snap
+        keepers += list(seen_days.values())
+        keepers.sort(key=lambda x: x["time"])
+        e["price_history"] = keepers
+
+    save_watchlist(entries)
+    print(f"  [Watchlist] Rebuilt {len(entries)} entries from {len(reports)} scan reports.")
+    return entries
+
+
+def _upsert_into(entries: list[dict], setup: dict) -> None:
+    sid = _sid(setup["symbol"], setup["type"], setup["break_time"])
+    existing = next((e for e in entries if e["id"] == sid), None)
+    now = setup.get("scanned_at", setup.get("last_bar_time", "2026-01-01T00:00:00+00:00"))
+    price = setup["last_close"]
+    if existing is None:
+        nl = setup["neckline"]
+        entries.append({
+            "id":           sid,
+            "symbol":       setup["symbol"],
+            "type":         setup["type"],
+            "neckline":     setup["neckline"],
+            "break_time":   setup["break_time"],
+            "first_seen":   now,
+            "status":       "watching",
+            "suggested_entry":      setup["neckline"],
+            "suggested_entry_zone": [round(nl * 0.995, 4), round(nl * 1.005, 4)],
+            "stop":         setup["stop"],
+            "target_1R":    setup.get("target_1R"),
+            "target_2R":    setup["target_2R"],
+            "risk_per_share": setup["risk_per_share"],
+            "price_history": [{"time": now, "price": price, "note": "first_seen"}],
+            "trigger_time":  None, "trigger_price": None,
+            "close_time":    None, "close_price":   None,
+            "outcome": None, "elapsed_watching_hours": None, "elapsed_total_hours": None,
+        })
+    elif existing["status"] == "watching":
+        existing["price_history"].append({"time": now, "price": price, "note": "update"})
+
+
+def _mark_triggered_in(entries: list[dict], symbol: str, pattern_type: str,
+                        break_time: str, entry_price: float, entry_time: str) -> None:
+    sid = _sid(symbol, pattern_type, break_time)
+    for e in entries:
+        if e["id"] == sid and e["status"] == "watching":
+            e["status"]        = "triggered"
+            e["trigger_time"]  = entry_time
+            e["trigger_price"] = entry_price
+            e["elapsed_watching_hours"] = _hours_between(e["first_seen"], entry_time)
+            e["price_history"].append({"time": entry_time, "price": entry_price,
+                                       "note": "triggered"})
+            break
 
 
 def save_watchlist(entries: list[dict]) -> None:
@@ -54,7 +172,6 @@ def upsert_watching(setup: dict) -> None:
     price = setup["last_close"]
 
     if existing is None:
-        # Suggested entry: neckline retest ± 0.5% tolerance band
         nl = setup["neckline"]
         entry_zone = [round(nl * 0.995, 4), round(nl * 1.005, 4)]
         entries.append({
@@ -65,23 +182,18 @@ def upsert_watching(setup: dict) -> None:
             "break_time":   setup["break_time"],
             "first_seen":   now,
             "status":       "watching",
-            # Entry guidance
             "suggested_entry":      setup["neckline"],
             "suggested_entry_zone": entry_zone,
-            # Exit guidance
             "stop":        setup["stop"],
             "target_1R":   setup.get("target_1R"),
             "target_2R":   setup["target_2R"],
             "risk_per_share": setup["risk_per_share"],
-            # Price history
             "price_history": [{"time": now, "price": price, "note": "first_seen"}],
-            # Lifecycle timestamps (filled in as events occur)
             "trigger_time":  None,
             "trigger_price": None,
             "close_time":    None,
             "close_price":   None,
             "outcome":       None,
-            # Elapsed-time metrics (hours)
             "elapsed_watching_hours": None,
             "elapsed_total_hours":    None,
         })
