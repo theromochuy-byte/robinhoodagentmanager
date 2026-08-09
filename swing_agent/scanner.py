@@ -103,6 +103,21 @@ def _save_live_ledger(trades: list[dict]) -> None:
     LIVE_LEDGER.write_text(json.dumps(trades, indent=2))
 
 
+def _quality_score(setup: dict) -> float:
+    """Score a triggered setup for capital-allocation priority (higher = better).
+
+    Two equally-weighted components, each normalised to [0, 1]:
+      pattern_depth  — (neckline - stop) / neckline; already >= 0.03 by scanner filter.
+                       Deeper pattern = more room to run before the stop is threatened.
+      freshness      — (12 - bars_since_break) / 12; peaks at 1 when the break just
+                       happened, decays to ~0 at bar 11. Newer breaks retest sooner
+                       and have less time to fail before the 12-bar window closes.
+    """
+    depth     = (setup["neckline"] - setup["stop"]) / setup["neckline"]
+    freshness = (12 - setup.get("bars_since_break", 0)) / 12
+    return round(depth * 0.5 + freshness * 0.5, 4)
+
+
 def scan_symbol(
     symbol: str,
     equity: float,
@@ -205,6 +220,7 @@ def scan_symbol(
             setup["entry"]       = round(last_close, 4)
             setup["entry_time"]  = str(h4.loc[last_bar, "begins_at"])
             setup["status"]      = "entered"
+            setup["quality_score"] = _quality_score(setup)
             triggered.append(setup)
         else:
             setup["status"] = "watching"
@@ -259,12 +275,26 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         print(f"  [Watchlist] Expired {len(expired)} stale setup(s): {', '.join(expired)}")
 
     # ── Merge triggered entries — only add if we have enough capital ────────
+    # Sort by quality score descending so the best setups get capital first.
+    # Existing ledger entries (already opened) are processed first to avoid
+    # double-counting them against available equity.
     ledger = _load_live_ledger()
     existing_keys = {(t["symbol"], t.get("entry_time")) for t in ledger}
     new_entries   = []
     skipped       = []
 
-    for t in all_triggered:
+    already_open  = [t for t in all_triggered if (t["symbol"], t.get("entry_time")) in existing_keys]
+    new_candidates = sorted(
+        [t for t in all_triggered if (t["symbol"], t.get("entry_time")) not in existing_keys],
+        key=lambda t: t.get("quality_score", 0),
+        reverse=True,
+    )
+    if new_candidates:
+        top = new_candidates[0]
+        print(f"  [Rank] {len(new_candidates)} new trigger(s) ranked by quality score — "
+              f"top: {top['symbol']} {top['type']} score={top.get('quality_score', 0):.4f}")
+
+    for t in already_open + new_candidates:
         if (t["symbol"], t.get("entry_time")) in existing_keys:
             # already in ledger — still update watchlist state if not yet done
             mark_triggered(t["symbol"], t["type"], t["break_time"],
@@ -273,7 +303,8 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         cost = round(t["entry"] * t.get("shares", 0), 2)
         if cost > available:
             skipped.append({"symbol": t["symbol"], "type": t["type"],
-                            "cost": cost, "available": round(available, 2)})
+                            "cost": cost, "available": round(available, 2),
+                            "quality_score": t.get("quality_score", 0)})
             mark_missed(t["symbol"], t["type"], t["break_time"], reason="no_capital")
             continue
         new_entries.append(t)
@@ -291,7 +322,8 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
     report = {
         "scan_date":       today,
         "watching":        sorted(all_watching, key=lambda x: x["bars_since_break"]),
-        "triggered_today": all_triggered,
+        "triggered_today": sorted(all_triggered,
+                                   key=lambda x: x.get("quality_score", 0), reverse=True),
         "new_entries":     len(new_entries),
         "skipped_no_capital": skipped,
         "total_open":      len([t for t in ledger if t.get("status") == "entered"]),
@@ -340,6 +372,6 @@ if __name__ == "__main__":
         for s in result["triggered_today"]:
             print(f"  {s['symbol']:<6} {s['type']:<14} "
                   f"entry={s['entry']} stop={s['stop']} 2R={s['target_2R']} "
-                  f"shares={s['shares']}")
+                  f"shares={s['shares']} score={s.get('quality_score', 0):.4f}")
     else:
         print(f"\n  No entries triggered today.")
