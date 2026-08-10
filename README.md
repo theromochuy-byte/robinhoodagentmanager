@@ -89,7 +89,8 @@ else happens with it.
 
 - `CLAUDE_OPTIONS.md` ......... strategy and safety rules (first draft, needs review)
 - `premium_agent/dataio.py` ... parse Robinhood option contract+quote JSON
-- `premium_agent/quality_screen.py` . Step 1 fundamental/liquidity gate (volume, P/E, 52wk range) + dividend lookup
+- `premium_agent/quality_screen.py` . Step 1 fundamental/liquidity gate (volume, P/E, 52wk range, trailing growth) + dividend lookup
+- `premium_agent/trend.py` .... Step 1 technical gate: price above 20/50-day SMA, from local daily bars
 - `premium_agent/screener.py` . CSP / covered-call candidate screening (delta, DTE, liquidity, min yield)
 - `premium_agent/realized_vol.py` . IV-richness proxy from the swing agent's daily bars
 - `premium_agent/ledger.py` ... write PROPOSED trades to `data/paper_options_ledger.json`

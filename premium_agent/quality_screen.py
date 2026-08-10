@@ -60,6 +60,30 @@ def screen_quality(
     }
 
 
+def trailing_eps_growth_pct(annual_financials: list[dict]) -> float | None:
+    """YoY growth of the two most recent annual periods from get_financials.
+
+    A second wheel-strategy source (same supplier) screens on *forward*
+    EPS growth estimates (next year, next 5 years) alongside a trailing
+    growth number. Robinhood's get_financials has no forward estimates and
+    no per-share EPS at all -- only revenue/gross_profit/net_income/net_margin
+    by period. This computes trailing net-income growth as the closest
+    available proxy for the source's "recent EPS growth" check; it is NOT a
+    stand-in for the forward-looking numbers, which this MCP cannot supply
+    (see CLAUDE_OPTIONS.md Known gaps).
+
+    annual_financials: the `financials` list for one symbol from
+    get_financials(period="annual"), most-recent-first.
+    """
+    if len(annual_financials) < 2:
+        return None
+    latest = _float_or_none(annual_financials[0].get("net_income"))
+    prior = _float_or_none(annual_financials[1].get("net_income"))
+    if latest is None or not prior:
+        return None
+    return round((latest - prior) / abs(prior) * 100, 2)
+
+
 def dividend_info(fundamentals: dict) -> dict:
     """Pulled in for full-cycle P&L: put credit + call credit + dividends + share gain/loss."""
     return {
