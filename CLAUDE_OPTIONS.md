@@ -63,8 +63,13 @@ below for why.
     spreads).
   - Price >= $50 (keeps collateral sizing sane; see Step 6's tension between
     price and position caps).
-  - P/E ratio <= 30 when available (skip the check for names with no P/E,
-    e.g. unprofitable or non-equity names, rather than rejecting them).
+  - P/E ratio <= 30 when *applicable*: skipped (not evaluated) when
+    `pe_ratio` is null, zero, or negative, since a negative P/E means the
+    company is losing money, not that it's "cheap" — that's a materially
+    different situation from "no data," and evaluating `-8.4 <= 30` as a
+    pass would be misleading rather than merely permissive. A third source
+    trades unprofitable names (negative EPS) on liquidity/premium grounds
+    alone; see "Open question" below for whether that should be in scope.
   - Price <= 90% of the 52-week high ("on sale", not chasing strength). This
     stands in for a PEG-ratio filter the source used — Robinhood's
     `get_equity_fundamentals` doesn't expose PEG or forward earnings growth,
@@ -95,6 +100,42 @@ below for why.
   the contract's expiration, unless explicitly logged as a separate
   "earnings play" experiment (out of scope for v1's base case).
 
+### Open question: quality-first vs. small-account income-first
+
+A third wheel-strategy source the user supplied is explicitly framed around
+small accounts and picks five names against the grain of everything above:
+RIOT ($18), OPEN ($6), SNAP ($7), SOFI ($25), LYFT (~$18) — three with
+negative earnings, and the top pick (LYFT) recommended *despite* being in a
+broken downtrend below its moving averages. The pitch: liquidity and premium
+justify the trade even when the fundamentals/trend gates above would reject
+it, because a cash-secured put profits from being assigned at a discount, not
+from the stock already being in an uptrend the way a long-stock or
+covered-call entry would need.
+
+This is a real, unresolved conflict with Step 1 as currently drafted, not a
+detail to quietly average out:
+
+- The $50 price floor doesn't fit this account's own collateral math. Step 6
+  caps single-name collateral at ~$2,500 (25% of $10,000), which for a
+  cash-secured put (strike x 100) caps the strike at ~$25 for one contract.
+  A $50+ floor and that cap can't both hold — right now they quietly
+  contradict each other.
+- The uptrend requirement (Step 1's 20/50-day SMA check) is defensible for
+  buying a stock outright, but arguably wrong for selling a put on it —
+  the whole point of a CSP is getting paid to buy a dip, and a stock that's
+  already fallen through support is, definitionally, a dip.
+- The P/E/growth checks assume a profitable business; this source's
+  candidates mostly aren't one.
+
+Options, not a default I'm picking: (a) keep the quality-first gate as the
+only mode and accept it excludes small-price, high-volatility names
+entirely; (b) lower the price floor and relax/soften the trend and P/E
+checks specifically for the CSP leg (not the covered-call leg, where owning
+into a confirmed downtrend is a different risk) to fit small-account
+mechanics; (c) run both as separate, explicitly labeled tracks in the
+ledger so performance can be compared instead of guessed at. Needs your
+call before Step 1's numbers get treated as settled.
+
 ### Step 2: Premium-richness gate (IV proxy)
 
 True IV Rank (current IV vs. its own 52-week range) needs a historical IV
@@ -123,6 +164,13 @@ historical IV — see "Known gaps." Until that's solved, gate on a proxy:
   A contract can sit inside the delta/DTE band and still not pay enough to
   justify tying up the collateral — this is a separate check, not a
   substitute for the delta band.
+- Log two ROI figures per contract, not one: `return_on_collateral_pct`
+  (credit ÷ full strike x 100, gross) and `return_on_net_capital_pct`
+  (credit ÷ (collateral − credit), a third source's convention — the credit
+  received is yours to keep regardless of outcome, so it argues the cash
+  actually "at risk" is collateral net of that credit). Both are logged so
+  we can see how much the framing alone moves the headline number, rather
+  than picking one as the only truth.
 - Collateral is modeled as the full cash-secured amount (strike x 100), not a
   reduced margin buying-power figure. Real margin accounts can require as
   little as 50% of that — if we want the paper account to model margin

@@ -71,6 +71,17 @@ def screen_csp(
     puts["return_on_collateral_pct"] = (puts["credit"] * 100 / puts["collateral"] * 100).round(3)
     puts = puts[puts["return_on_collateral_pct"] >= min_yield_pct]
     puts["annualized_roc_pct"] = (puts["return_on_collateral_pct"] / puts["dte"].clip(lower=1) * 365).round(1)
+
+    # Net-capital view (a third source's convention): cash actually tied up
+    # is collateral minus the credit received, since that credit is yours to
+    # keep regardless of outcome. Logged alongside return_on_collateral_pct
+    # (gross) rather than replacing it -- both are legitimate, and comparing
+    # them is more useful than picking one.
+    puts["net_cash_required"] = puts["collateral"] - puts["credit"] * 100
+    puts["return_on_net_capital_pct"] = (
+        puts["credit"] * 100 / puts["net_cash_required"].clip(lower=0.01) * 100
+    ).round(3)
+
     return puts.sort_values("annualized_roc_pct", ascending=False).reset_index(drop=True)
 
 

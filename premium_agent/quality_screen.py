@@ -39,8 +39,16 @@ def screen_quality(
     if current_price < min_price:
         reasons.append(f"price {current_price:.2f} < {min_price:.2f}")
 
+    # A negative/zero P/E means negative earnings (the company is losing
+    # money) -- not "cheap." Treat it as not-applicable rather than letting
+    # it silently pass the "<= max_pe_ratio" comparison, which would credit
+    # an unprofitable name with a valuation check it never actually cleared.
+    # A third wheel-strategy source explicitly trades unprofitable, negative-
+    # EPS names (RIOT, OPEN, SNAP) on liquidity/premium grounds alone -- this
+    # just makes sure that's a visible, deliberate choice, not a false pass.
     pe = _float_or_none(fundamentals.get("pe_ratio"))
-    if pe is not None and pe > max_pe_ratio:
+    pe_applicable = pe is not None and pe > 0
+    if pe_applicable and pe > max_pe_ratio:
         reasons.append(f"pe_ratio {pe:.1f} > {max_pe_ratio}")
 
     high_52 = _float_or_none(fundamentals.get("high_52_weeks"))
@@ -55,6 +63,7 @@ def screen_quality(
         "pass": len(reasons) == 0,
         "reasons": reasons,
         "pe_ratio": pe,
+        "pe_applicable": pe_applicable,
         "avg_volume_30d": avg_vol,
         "high_52_weeks": high_52,
     }
