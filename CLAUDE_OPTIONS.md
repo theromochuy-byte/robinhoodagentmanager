@@ -61,25 +61,28 @@ below for why.
   `get_equity_fundamentals` + `get_equity_quotes`:
   - 30-day average volume >= 2,000,000 shares (liquid enough for tight option
     spreads).
-  - Price >= $50 (keeps collateral sizing sane; see Step 6's tension between
-    price and position caps).
+  - Price >= $8 (see "Step 1 decisions" below — lowered from an initial $50
+    draft to match this account's own collateral math and three converging
+    sources; still excludes true penny stocks, which won't have listed
+    options anyway).
   - P/E ratio <= 30 when *applicable*: skipped (not evaluated) when
     `pe_ratio` is null, zero, or negative, since a negative P/E means the
     company is losing money, not that it's "cheap" — that's a materially
     different situation from "no data," and evaluating `-8.4 <= 30` as a
-    pass would be misleading rather than merely permissive. A third source
-    trades unprofitable names (negative EPS) on liquidity/premium grounds
-    alone; see "Open question" below for whether that should be in scope.
+    pass would be misleading rather than merely permissive.
   - Price <= 90% of the 52-week high ("on sale", not chasing strength). This
     stands in for a PEG-ratio filter the source used — Robinhood's
     `get_equity_fundamentals` doesn't expose PEG or forward earnings growth,
     so there's no way to compute it from this MCP today.
 - Technical trend confirmation (`premium_agent.trend.above_moving_averages`):
   price above both the 20-day and 50-day SMA, computed locally from
-  `data/<SYM>_day.json`. Combined with the "on sale vs. 52-week high" check
-  above, this reproduces a second wheel-strategy source's actual intent: an
-  established uptrend that has pulled back, not a stock in a downtrend or one
-  still making fresh highs.
+  `data/<SYM>_day.json`. **Scope differs by leg** (see "Step 1 decisions"):
+  hard gate for covered-call entries (Step 5) — owning into a confirmed
+  downtrend post-assignment is pure downside with no offsetting "getting
+  paid for it." Advisory only for CSP entries (Step 3): compute it and log
+  the result on the proposed trade, but don't block the trade on it — a
+  CSP's edge is getting paid to buy a dip, so hard-requiring an uptrend
+  first would exclude the setup the strategy is built to profit from.
 - Trailing growth check (`premium_agent.quality_screen.trailing_eps_growth_pct`):
   YoY net-income growth (from `get_financials`, annual) >= 10%. The second
   source screens on *forward* EPS growth (next year, next 5 years) as well as
@@ -100,12 +103,13 @@ below for why.
   the contract's expiration, unless explicitly logged as a separate
   "earnings play" experiment (out of scope for v1's base case).
 
-### Open question: quality-first vs. small-account income-first
+### Step 1 decisions: quality-first vs. small-account income-first (resolved)
 
-Two more wheel-strategy sources the user supplied bear directly on this.
+Two more wheel-strategy sources the user supplied bore directly on this, and
+both points below were reviewed and signed off on:
 
-**Price floor — resolved in favor of lowering it.** A third source picks
-five small-account names against the grain of Step 1 as first drafted: RIOT
+**Price floor: lowered from $50 to $8.** A third source picks five
+small-account names against the grain of Step 1 as first drafted: RIOT
 ($18), OPEN ($6), SNAP ($7), SOFI ($25), LYFT (~$18) — three with negative
 earnings, top pick in a broken downtrend, justified on liquidity/premium
 alone. A fourth source, from the same channel, gives a more disciplined
@@ -118,25 +122,25 @@ caps single-name collateral at 25% of $10,000 = $2,500, which for one
 cash-secured-put contract (strike x 100) caps the strike at ~$25 — almost
 exactly the fourth source's own account-size example. Three sources
 converging on sub-$25 pricing, one of them keeping every other quality
-check intact, and this account's own sizing math all pointing the same
-way is enough to act on: **recommend lowering `min_price` from $50 to $8**
-(the fourth source's own floor against penny-stock/no-options risk),
-leaving P/E, the 52-week "on sale" check, and the trend/growth gates as-is.
+check intact, and this account's own sizing math all pointing the same way
+made this an easy call: `min_price` is now $8 (the fourth source's own
+floor against penny-stock/no-options risk) in `data/options_config.json`.
+P/E, the 52-week "on sale" check, and the growth gate are unchanged.
 
-**Trend gate for CSP entries specifically — still open.** No source has
-addressed this directly enough to resolve it. The third source's top pick
-(LYFT) was in a confirmed downtrend below both moving averages, and the
-argument for allowing that is real: a CSP profits from being assigned at a
-discount, so requiring an uptrend before selling the put is arguably
-backwards. But that source didn't apply growth/quality screens at all — the
-fourth source, which does keep quality screens, doesn't say anything either
-way about trend. Given real, unresolved: (a) keep the 20/50-day SMA gate as
-a hard requirement for both CSP and covered-call entries (current
-behavior); (b) make it a hard gate for covered calls only (owning into a
-confirmed downtrend after assignment is a different risk than selling a put
-into one) and advisory-only for CSP entries; (c) drop it for CSPs
-entirely and rely on the fundamental/liquidity gates plus delta/DTE/yield to
-do the filtering. Still needs your call.
+**Trend gate: hard for covered calls, advisory for CSPs.** No source
+addressed this directly enough to resolve it outright, so this was a
+judgment call, made explicitly rather than defaulted into. The third
+source's top pick (LYFT) was in a confirmed downtrend below both moving
+averages — the case for allowing that on a CSP is real: the strategy's edge
+*is* getting paid to buy a dip, so hard-requiring an uptrend first would
+exclude the setup it's built to profit from. But that source dropped every
+quality screen entirely to make that trade, which this account isn't doing.
+The resolution: for CSP entries (Step 3), `above_moving_averages` is
+computed and logged on the proposed trade but doesn't block it — visible on
+review, not enforced. For covered-call entries (Step 5), it's a hard gate,
+since owning into a confirmed downtrend post-assignment is pure downside
+with no "getting paid for it" offset the way a put sale has. Recorded in
+`data/options_config.json` as `quality_screen.trend_gate_hard_for`.
 
 ### Step 2: Premium-richness gate (IV proxy)
 
