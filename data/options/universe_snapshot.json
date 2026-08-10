@@ -1,0 +1,62 @@
+{
+  "F": {
+    "fundamentals": {
+      "average_volume_30_days": "53750562.490900",
+      "pe_ratio": "-8.080000",
+      "high_52_weeks": "17.780000",
+      "low_52_weeks": "11.060000",
+      "dividend_yield": "4.158004",
+      "dividend_per_share": "0.150000",
+      "distribution_frequency": "Quarterly",
+      "ex_dividend_date": "2026-08-11",
+      "payable_date": "2026-09-01"
+    },
+    "price": 13.98,
+    "financials_annual": [
+      {"fiscal_year": 2025, "net_income": "-8162000000.000000"},
+      {"fiscal_year": 2024, "net_income": "5879000000.000000"}
+    ],
+    "next_earnings_date": null,
+    "fetched_at": "2026-08-10T00:54:00Z"
+  },
+  "T": {
+    "fundamentals": {
+      "average_volume_30_days": "73835643.048300",
+      "pe_ratio": "7.801184",
+      "high_52_weeks": "29.790000",
+      "low_52_weeks": "19.890000",
+      "dividend_yield": "4.705384",
+      "dividend_per_share": "0.277500",
+      "distribution_frequency": "Quarterly",
+      "ex_dividend_date": "2026-07-10",
+      "payable_date": "2026-08-03"
+    },
+    "price": 23.79,
+    "financials_annual": [
+      {"fiscal_year": 2025, "net_income": "21953000000.000000"},
+      {"fiscal_year": 2024, "net_income": "10948000000.000000"}
+    ],
+    "next_earnings_date": null,
+    "fetched_at": "2026-08-10T00:54:00Z"
+  },
+  "SOFI": {
+    "fundamentals": {
+      "average_volume_30_days": "81760246.598100",
+      "pe_ratio": "38.021932",
+      "high_52_weeks": "32.730000",
+      "low_52_weeks": "14.880000",
+      "dividend_yield": null,
+      "dividend_per_share": null,
+      "distribution_frequency": null,
+      "ex_dividend_date": null,
+      "payable_date": null
+    },
+    "price": 18.38,
+    "financials_annual": [
+      {"fiscal_year": 2025, "net_income": "481320000.000000"},
+      {"fiscal_year": 2024, "net_income": "498665000.000000"}
+    ],
+    "next_earnings_date": null,
+    "fetched_at": "2026-08-10T00:54:00Z"
+  }
+}

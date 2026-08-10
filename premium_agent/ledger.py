@@ -10,6 +10,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 DEFAULT_LEDGER = Path("data/paper_options_ledger.json")
+CLOSED_STATUSES = {"closed", "assigned", "called_away", "rolled"}
 
 
 def _load(path: Path) -> list[dict]:
@@ -40,9 +41,7 @@ def update_trade(instrument_id: str, updates: dict, path: str | Path = DEFAULT_L
     trades = _load(path)
     match = None
     for t in reversed(trades):
-        if t.get("instrument_id") == instrument_id and t.get("status") not in (
-            "closed", "assigned", "called_away", "rolled",
-        ):
+        if t.get("instrument_id") == instrument_id and t.get("status") not in CLOSED_STATUSES:
             match = t
             break
     if match is None:
@@ -101,3 +100,19 @@ def breakeven_progress_pct(instrument_id: str, strike: float, path: str | Path =
     if strike <= 0:
         return 0.0
     return round(cumulative_credit(instrument_id, path=path) * 100 / (strike * 100) * 100, 2)
+
+
+def open_trades(path: str | Path = DEFAULT_LEDGER) -> list[dict]:
+    return [t for t in _load(Path(path)) if t.get("status") not in CLOSED_STATUSES]
+
+
+def deployed_collateral(path: str | Path = DEFAULT_LEDGER, symbol: str | None = None) -> float:
+    """Collateral currently tied up by open CSP legs, for the Step 6 sizing caps
+    (max_collateral_pct_of_equity, max_single_name_pct_of_equity). Only CSP
+    legs carry a "collateral" field -- covered calls are written against
+    shares already owned, not new cash, so they don't add to this.
+    """
+    trades = open_trades(path)
+    if symbol:
+        trades = [t for t in trades if t.get("symbol") == symbol]
+    return round(sum(t.get("collateral", 0.0) for t in trades), 2)

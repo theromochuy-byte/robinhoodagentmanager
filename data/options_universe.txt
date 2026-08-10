@@ -1,0 +1,9 @@
+# Options premium-agent universe. Unlike data/universe.txt (the swing agent's
+# static S&P 500 list, mostly $100+ names that don't fit this account's own
+# collateral math -- see CLAUDE_OPTIONS.md Step 6), this is a live snapshot
+# from Robinhood's native scanner (get_scanner_filter_specs/create_scan),
+# not a hand-curated list: price $8-$60, 30d avg volume > 2,000,000, 30d avg
+# options volume > 500. Top 40 by avg options volume, captured 2026-08-10.
+# Refresh periodically by re-running the scan (scan_id: ee5cf59c-db50-41fb-bc76-4218d49df32c)
+# rather than editing this file by hand.
+WBD SOFI NOK PCG IREN SMCI ET PFE BMNR RIVN CMG NKE QXO PYPL AAL T IONQ NU RKT F VZ AGNC CMCSA NVO FHN PBR VALE U OWL BSX HPE CCL RBLX HPQ B JD MRNA DKNG STM FIG
