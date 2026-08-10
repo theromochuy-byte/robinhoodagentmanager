@@ -1,0 +1,133 @@
+{
+  "scan_date": "2026-08-10",
+  "proposed": [],
+  "skipped": {
+    "WBD": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "SOFI": [
+      "pe_ratio 38.0 > 30",
+      "trailing_eps_growth_pct -3.48 < 10.0"
+    ],
+    "NOK": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "PCG": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "IREN": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "SMCI": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "ET": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "PFE": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "BMNR": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "RIVN": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "CMG": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "NKE": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "QXO": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "PYPL": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "AAL": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "T": [
+      "no CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "IONQ": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "NU": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "RKT": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "F": [
+      "trailing_eps_growth_pct -238.83 < 10.0"
+    ],
+    "VZ": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "AGNC": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "CMCSA": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "NVO": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "FHN": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "PBR": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "VALE": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "U": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "OWL": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "BSX": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "HPE": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "CCL": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "RBLX": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "HPQ": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "B": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "JD": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "MRNA": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "DKNG": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "STM": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ],
+    "FIG": [
+      "no snapshot data (fundamentals/price/financials/earnings)"
+    ]
+  },
+  "open_positions": 0,
+  "equity": {
+    "starting_equity": 10000,
+    "deployed_collateral": 0,
+    "available_collateral": 6000.0
+  }
+}

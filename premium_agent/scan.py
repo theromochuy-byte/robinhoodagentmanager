@@ -255,8 +255,39 @@ def propose_candidates(
     return {"proposed": proposed, "skipped": skipped}
 
 
+def write_report(result: dict, config: dict, ledger_path: str | Path = ledger.DEFAULT_LEDGER, as_of: date | None = None) -> Path:
+    """Save today's scan result to reports/options/scan_<date>.json, mirroring
+    swing_agent.scanner's reports/scan_<date>.json convention -- this is what
+    premium_agent.notify reads to build the email digest, decoupled from the
+    ledger so the email doesn't need to re-derive "what happened today."
+    """
+    today = str(as_of or date.today())
+    reports_dir = Path("reports") / "options"
+    reports_dir.mkdir(parents=True, exist_ok=True)
+
+    equity = config["starting_equity"]
+    deployed_total = ledger.deployed_collateral(path=ledger_path)
+    report = {
+        "scan_date": today,
+        "proposed": result["proposed"],
+        "skipped": result["skipped"],
+        "open_positions": len(ledger.open_trades(ledger_path)),
+        "equity": {
+            "starting_equity": equity,
+            "deployed_collateral": deployed_total,
+            "available_collateral": round(
+                equity * config["max_collateral_pct_of_equity"] - deployed_total, 2
+            ),
+        },
+    }
+    out = reports_dir / f"scan_{today}.json"
+    out.write_text(json.dumps(report, indent=2, default=str))
+    return out
+
+
 if __name__ == "__main__":
-    result = propose_candidates()
+    cfg = load_config()
+    result = propose_candidates(config=cfg)
     print(f"Proposed {len(result['proposed'])} trade(s):")
     for t in result["proposed"]:
         print(f"  {t['symbol']:6s} {t['type']:12s} strike={t['strike']:<8.2f} "
@@ -264,3 +295,5 @@ if __name__ == "__main__":
     print(f"Skipped {len(result['skipped'])} symbol(s):")
     for sym, reasons in result["skipped"].items():
         print(f"  {sym}: {'; '.join(reasons)}")
+    out = write_report(result, cfg)
+    print(f"Report written to {out}")
