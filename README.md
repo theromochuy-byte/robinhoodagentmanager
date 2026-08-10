@@ -89,10 +89,11 @@ else happens with it.
 
 - `CLAUDE_OPTIONS.md` ......... strategy and safety rules (first draft, needs review)
 - `premium_agent/dataio.py` ... parse Robinhood option contract+quote JSON
-- `premium_agent/screener.py` . CSP / covered-call candidate screening (delta, DTE, liquidity)
+- `premium_agent/quality_screen.py` . Step 1 fundamental/liquidity gate (volume, P/E, 52wk range) + dividend lookup
+- `premium_agent/screener.py` . CSP / covered-call candidate screening (delta, DTE, liquidity, min yield)
 - `premium_agent/realized_vol.py` . IV-richness proxy from the swing agent's daily bars
 - `premium_agent/ledger.py` ... write PROPOSED trades to `data/paper_options_ledger.json`
-- `data/options_config.json` .. paper equity, sizing caps, delta/DTE targets
+- `data/options_config.json` .. paper equity, sizing caps, delta/DTE targets, quality-screen thresholds
 
 To run it: resolve a chain with `get_option_chains`, list strikes in the DTE
 window with `get_option_instruments`, batch `get_option_quotes` for those
