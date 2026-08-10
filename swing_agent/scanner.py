@@ -25,7 +25,7 @@ import pandas as pd
 from .backtest import daily_bias_series, bias_asof
 from .dataio import load
 from .indicators import atr
-from .patterns import detect_double_bottom, detect_inverse_hns
+from .patterns import detect_double_bottom, detect_inverse_hns, detect_ma_crossover_pullback
 from .simulator import build_trade
 from .watchlist import (
     upsert_watching, mark_triggered, mark_missed, expire_stale, watchlist_summary,
@@ -152,7 +152,7 @@ def scan_symbol(
         bias = daily_bias_series(daily)
 
     atr_series = atr(h4, 14)
-    patterns   = detect_double_bottom(h4) + detect_inverse_hns(h4)
+    patterns   = detect_double_bottom(h4) + detect_inverse_hns(h4) + detect_ma_crossover_pullback(daily, h4)
     patterns.sort(key=lambda p: p["break_index"])
 
     last_bar   = len(h4) - 1
@@ -165,12 +165,17 @@ def scan_symbol(
         # only patterns whose break is within the last 12 bars
         if bi < last_bar - 11:
             continue
-        # Bias check: live EMA uses current daily bias; fallback uses series
-        if bias is None:
-            if not current_bias:
+        # Bias check: live EMA uses current daily bias; fallback uses series.
+        # ma_crossover_pullback carries its own daily-crossover bias check
+        # inside the detector (PROPOSAL_SWING_MA_CROSSOVER.md) -- it's a
+        # separate trend-confirmation mechanism from the 20-EMA-no-touch
+        # rule, so it's exempt from this check rather than double-gated.
+        if p["type"] != "ma_crossover_pullback":
+            if bias is None:
+                if not current_bias:
+                    continue
+            elif not bias_asof(bias, p["break_time"]):
                 continue
-        elif not bias_asof(bias, p["break_time"]):
-            continue
 
         if (p["neckline"] - p["stop_basis"]) / p["neckline"] < 0.03:
             continue

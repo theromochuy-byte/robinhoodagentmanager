@@ -19,7 +19,7 @@ import pandas as pd
 
 from .dataio import load
 from .indicators import atr, ema
-from .patterns import detect_double_bottom, detect_inverse_hns
+from .patterns import detect_double_bottom, detect_inverse_hns, detect_ma_crossover_pullback
 from .simulator import build_retest_trade, build_trade, compound_ledger, resolve_trade, summarize
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -80,6 +80,30 @@ def _scan_timeframe(
     return trades
 
 
+def _scan_ma_crossover(
+    symbol: str, daily: pd.DataFrame, h4: pd.DataFrame, equity: float, risk_pct: float
+) -> list[dict]:
+    """PROPOSAL_SWING_MA_CROSSOVER.md's trigger, backtested alongside the
+    pattern-based ones. No bias_asof gate here -- the daily crossover bias is
+    already checked inside detect_ma_crossover_pullback, a separate
+    mechanism from the 20-EMA-no-touch bias _scan_timeframe uses.
+    """
+    atr_series = atr(h4, 14)
+    patterns = detect_ma_crossover_pullback(daily, h4)
+    trades = []
+    for p in patterns:
+        if (p["neckline"] - p["stop_basis"]) / p["neckline"] < 0.03:
+            continue
+        trade = build_trade(h4, p, atr_series, equity, risk_pct)
+        if trade is None:
+            continue
+        resolved = resolve_trade(h4, dict(trade) | {"entry_style": "breakout"}, target_key="target_2R")
+        resolved["symbol"] = symbol
+        resolved["timeframe"] = "4h"
+        trades.append(resolved)
+    return trades
+
+
 def run_symbol(symbol: str, equity: float, risk_pct: float = 0.01) -> list[dict]:
     daily_path = DATA / f"{symbol}_day.json"
     h4_path = DATA / f"{symbol}_4hour.json"
@@ -96,6 +120,7 @@ def run_symbol(symbol: str, equity: float, risk_pct: float = 0.01) -> list[dict]
 
     daily_bias = daily_bias_series(daily)
     trades = _scan_timeframe(symbol, h4, daily_bias, equity, risk_pct, "4h")
+    trades += _scan_ma_crossover(symbol, daily, h4, equity, risk_pct)
 
     # 1-hour timeframe tested but disabled: 35.5% win rate / 0.066R expectancy
     # dilutes the 4h results (52.2% / 0.565R). The 4h EMA bias is not tight enough
@@ -103,7 +128,8 @@ def run_symbol(symbol: str, equity: float, risk_pct: float = 0.01) -> list[dict]
 
     n4 = sum(1 for t in trades if t.get("timeframe") == "4h")
     n1 = sum(1 for t in trades if t.get("timeframe") == "1h")
-    print(f"  {symbol}: {n4} trades (4h) + {n1} trades (1h)")
+    nc = sum(1 for t in trades if t.get("type") == "ma_crossover_pullback")
+    print(f"  {symbol}: {n4} trades (4h) + {n1} trades (1h), {nc} ma_crossover_pullback")
     return trades
 
 
@@ -122,7 +148,7 @@ def run(symbols: list[str], equity: float = 10_000.0, risk_pct: float = 0.01) ->
 
     summary = summarize(all_trades)
     by_pattern = {}
-    for ptype in ("double_bottom", "inverse_hns"):
+    for ptype in ("double_bottom", "inverse_hns", "ma_crossover_pullback"):
         subset = [t for t in all_trades if t["type"] == ptype]
         by_pattern[ptype] = summarize(subset)
     by_entry = {}
