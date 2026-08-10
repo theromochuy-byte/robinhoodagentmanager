@@ -102,39 +102,41 @@ below for why.
 
 ### Open question: quality-first vs. small-account income-first
 
-A third wheel-strategy source the user supplied is explicitly framed around
-small accounts and picks five names against the grain of everything above:
-RIOT ($18), OPEN ($6), SNAP ($7), SOFI ($25), LYFT (~$18) — three with
-negative earnings, and the top pick (LYFT) recommended *despite* being in a
-broken downtrend below its moving averages. The pitch: liquidity and premium
-justify the trade even when the fundamentals/trend gates above would reject
-it, because a cash-secured put profits from being assigned at a discount, not
-from the stock already being in an uptrend the way a long-stock or
-covered-call entry would need.
+Two more wheel-strategy sources the user supplied bear directly on this.
 
-This is a real, unresolved conflict with Step 1 as currently drafted, not a
-detail to quietly average out:
+**Price floor — resolved in favor of lowering it.** A third source picks
+five small-account names against the grain of Step 1 as first drafted: RIOT
+($18), OPEN ($6), SNAP ($7), SOFI ($25), LYFT (~$18) — three with negative
+earnings, top pick in a broken downtrend, justified on liquidity/premium
+alone. A fourth source, from the same channel, gives a more disciplined
+version of the same idea: an explicit "$2,500 account" walkthrough
+screening for $8–$20 stocks, still requiring forward EPS growth and an
+earnings/revenue surprise >5% — i.e. the quality gates aren't dropped, the
+price band is just recalibrated for what a small account can actually hold.
+That $8–$20 band isn't arbitrary against this repo either: Step 6 already
+caps single-name collateral at 25% of $10,000 = $2,500, which for one
+cash-secured-put contract (strike x 100) caps the strike at ~$25 — almost
+exactly the fourth source's own account-size example. Three sources
+converging on sub-$25 pricing, one of them keeping every other quality
+check intact, and this account's own sizing math all pointing the same
+way is enough to act on: **recommend lowering `min_price` from $50 to $8**
+(the fourth source's own floor against penny-stock/no-options risk),
+leaving P/E, the 52-week "on sale" check, and the trend/growth gates as-is.
 
-- The $50 price floor doesn't fit this account's own collateral math. Step 6
-  caps single-name collateral at ~$2,500 (25% of $10,000), which for a
-  cash-secured put (strike x 100) caps the strike at ~$25 for one contract.
-  A $50+ floor and that cap can't both hold — right now they quietly
-  contradict each other.
-- The uptrend requirement (Step 1's 20/50-day SMA check) is defensible for
-  buying a stock outright, but arguably wrong for selling a put on it —
-  the whole point of a CSP is getting paid to buy a dip, and a stock that's
-  already fallen through support is, definitionally, a dip.
-- The P/E/growth checks assume a profitable business; this source's
-  candidates mostly aren't one.
-
-Options, not a default I'm picking: (a) keep the quality-first gate as the
-only mode and accept it excludes small-price, high-volatility names
-entirely; (b) lower the price floor and relax/soften the trend and P/E
-checks specifically for the CSP leg (not the covered-call leg, where owning
-into a confirmed downtrend is a different risk) to fit small-account
-mechanics; (c) run both as separate, explicitly labeled tracks in the
-ledger so performance can be compared instead of guessed at. Needs your
-call before Step 1's numbers get treated as settled.
+**Trend gate for CSP entries specifically — still open.** No source has
+addressed this directly enough to resolve it. The third source's top pick
+(LYFT) was in a confirmed downtrend below both moving averages, and the
+argument for allowing that is real: a CSP profits from being assigned at a
+discount, so requiring an uptrend before selling the put is arguably
+backwards. But that source didn't apply growth/quality screens at all — the
+fourth source, which does keep quality screens, doesn't say anything either
+way about trend. Given real, unresolved: (a) keep the 20/50-day SMA gate as
+a hard requirement for both CSP and covered-call entries (current
+behavior); (b) make it a hard gate for covered calls only (owning into a
+confirmed downtrend after assignment is a different risk than selling a put
+into one) and advisory-only for CSP entries; (c) drop it for CSPs
+entirely and rely on the fundamental/liquidity gates plus delta/DTE/yield to
+do the filtering. Still needs your call.
 
 ### Step 2: Premium-richness gate (IV proxy)
 
@@ -182,12 +184,32 @@ historical IV — see "Known gaps." Until that's solved, gate on a proxy:
 - Profit-take: close (log as closed) once the contract's value has decayed to
   50% of the credit received.
 - Roll: if the underlying trades through the strike (put goes ITM) and DTE is
-  21 or fewer, log it as a roll candidate — roll out to the next monthly
-  expiration at a similar delta for an additional credit — instead of
+  21 or fewer, log it as a roll candidate — buy back the current contract and
+  sell a later expiration (`premium_agent.ledger.roll_trade`), optionally at
+  the same or a lower strike ("rolling down and out") — instead of
   auto-assuming assignment.
+  - **Only roll for a net credit**: the new leg's credit must exceed the
+    debit paid to close the old one. `roll_trade` still records a net-debit
+    roll if one is proposed (it logs, it doesn't gatekeep), but flags it via
+    `rolled_for_debit` — a debit roll is a red flag to catch on review, not
+    something to do routinely just to defer assignment.
+  - Rolling isn't unlimited. A source that walks through this exact scenario
+    stops rolling and accepts assignment once there's enough conviction in
+    the name — a judgment call, not a fixed rule, and the source doesn't
+    give a specific cutoff. `max_rolls_before_assignment` in
+    `data/options_config.json` is a placeholder needing a real number from
+    you rather than one invented here.
 - Assignment: if not rolled and expiration passes ITM, log the trade as
-  assigned and open a new "shares owned" position at the strike price
-  (cost basis = strike − credit received), moving into Step 5.
+  assigned and open a new "shares owned" position at the strike price. Cost
+  basis is strike minus **cumulative** credit across the whole roll chain —
+  original sale plus every roll's net credit/debit
+  (`premium_agent.ledger.cumulative_credit`), not just the credit from the
+  final leg — before moving into Step 5.
+  - Track `breakeven_progress_pct` (`ledger.breakeven_progress_pct`) per
+    position: cumulative credit as a % of the strike. At 100%, enough
+    premium has been collected across the chain that the position has a
+    zero cost basis — worth surfacing in `reports/options/`, since it's the
+    wheel's own "how close to risk-free" milestone.
 
 ### Step 4a: Protective collar (optional defensive overlay, not automatic)
 
