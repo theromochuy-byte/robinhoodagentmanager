@@ -123,13 +123,23 @@ def screen_step1(
     }
 
 
-def _remaining_budget(config: dict, symbol: str, ledger_path: str | Path) -> tuple[float, float]:
+def _remaining_budget(
+    config: dict, symbol: str, ledger_path: str | Path, positions_path: str | Path
+) -> tuple[float, float]:
+    """Remaining room under the total and per-symbol caps. "Capital in use"
+    is CSP collateral plus the capital tied up in any assigned shares
+    (positions.capital_in_use) -- an assignment ties up real money even
+    though the resulting covered call needs no fresh collateral, and that
+    was previously invisible here.
+    """
     equity = config["starting_equity"]
     total_cap = equity * config["max_collateral_pct_of_equity"]
     symbol_cap = equity * config["max_single_name_pct_of_equity"]
-    deployed_total = ledger.deployed_collateral(path=ledger_path)
-    deployed_symbol = ledger.deployed_collateral(path=ledger_path, symbol=symbol)
-    return max(0.0, total_cap - deployed_total), max(0.0, symbol_cap - deployed_symbol)
+    used_total = ledger.deployed_collateral(path=ledger_path) + positions.capital_in_use(positions_path)
+    used_symbol = ledger.deployed_collateral(path=ledger_path, symbol=symbol) + positions.capital_in_use(
+        positions_path, symbol=symbol
+    )
+    return max(0.0, total_cap - used_total), max(0.0, symbol_cap - used_symbol)
 
 
 def propose_candidates(
@@ -216,7 +226,7 @@ def propose_candidates(
             continue
 
         # CSP leg: respect Step 6 collateral caps before proposing.
-        remaining_total, remaining_symbol = _remaining_budget(config, symbol, ledger_path)
+        remaining_total, remaining_symbol = _remaining_budget(config, symbol, ledger_path, positions_path)
         candidates = screener.screen_csp(
             contracts,
             entry["price"],
@@ -255,7 +265,13 @@ def propose_candidates(
     return {"proposed": proposed, "skipped": skipped}
 
 
-def write_report(result: dict, config: dict, ledger_path: str | Path = ledger.DEFAULT_LEDGER, as_of: date | None = None) -> Path:
+def write_report(
+    result: dict,
+    config: dict,
+    ledger_path: str | Path = ledger.DEFAULT_LEDGER,
+    positions_path: str | Path = positions.DEFAULT_POSITIONS,
+    as_of: date | None = None,
+) -> Path:
     """Save today's scan result to reports/options/scan_<date>.json, mirroring
     swing_agent.scanner's reports/scan_<date>.json convention -- this is what
     premium_agent.notify reads to build the email digest, decoupled from the
@@ -266,7 +282,9 @@ def write_report(result: dict, config: dict, ledger_path: str | Path = ledger.DE
     reports_dir.mkdir(parents=True, exist_ok=True)
 
     equity = config["starting_equity"]
-    deployed_total = ledger.deployed_collateral(path=ledger_path)
+    collateral = ledger.deployed_collateral(path=ledger_path)
+    shares_capital = positions.capital_in_use(positions_path)
+    capital_used = collateral + shares_capital
     report = {
         "scan_date": today,
         "proposed": result["proposed"],
@@ -274,9 +292,11 @@ def write_report(result: dict, config: dict, ledger_path: str | Path = ledger.DE
         "open_positions": len(ledger.open_trades(ledger_path)),
         "equity": {
             "starting_equity": equity,
-            "deployed_collateral": deployed_total,
-            "available_collateral": round(
-                equity * config["max_collateral_pct_of_equity"] - deployed_total, 2
+            "csp_collateral": collateral,
+            "assigned_shares_capital": shares_capital,
+            "capital_in_use": round(capital_used, 2),
+            "available_capital": round(
+                equity * config["max_collateral_pct_of_equity"] - capital_used, 2
             ),
         },
     }

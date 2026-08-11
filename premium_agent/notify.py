@@ -46,9 +46,11 @@ def _html_table(rows: list[list], headers: list[str]) -> str:
 def render_html(report: dict) -> str:
     scan_date = report.get("scan_date", str(date.today()))
     eq = report.get("equity", {})
-    starting = eq.get("starting_equity", 10000.0)
-    deployed = eq.get("deployed_collateral", 0.0)
-    available = eq.get("available_collateral", starting)
+    starting = eq.get("starting_equity", 5000.0)
+    csp_collateral = eq.get("csp_collateral", 0.0)
+    shares_capital = eq.get("assigned_shares_capital", 0.0)
+    capital_used = eq.get("capital_in_use", csp_collateral + shares_capital)
+    available = eq.get("available_capital", starting)
     open_positions = report.get("open_positions", 0)
 
     parts = [f"""
@@ -62,8 +64,8 @@ def render_html(report: dict) -> str:
     <td style='padding:4px 0'>{open_positions}</td>
   </tr>
   <tr>
-    <td style='padding:4px 16px 4px 0'><strong>Collateral deployed</strong></td>
-    <td style='padding:4px 16px 4px 0'>${deployed:,.2f}</td>
+    <td style='padding:4px 16px 4px 0'><strong>Capital in use</strong></td>
+    <td style='padding:4px 16px 4px 0'>${capital_used:,.2f} <span style='color:#999'>(${csp_collateral:,.2f} CSP + ${shares_capital:,.2f} shares)</span></td>
     <td style='padding:4px 16px 4px 0'><strong>Available (cap)</strong></td>
     <td style='padding:4px 0;color:{"#080" if available > 0 else "#c00"}'>${available:,.2f}</td>
   </tr>

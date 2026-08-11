@@ -1,8 +1,8 @@
 {
-  "starting_equity": 10000,
-  "max_collateral_pct_of_equity": 0.60,
-  "max_single_name_pct_of_equity": 0.25,
-  "max_concurrent_positions": 6,
+  "starting_equity": 5000,
+  "max_collateral_pct_of_equity": 0.50,
+  "max_single_name_pct_of_equity": 0.50,
+  "max_concurrent_positions": 2,
   "dte_range": [21, 45],
   "delta_range": [0.15, 0.30],
   "min_open_interest": 100,
@@ -22,5 +22,5 @@
     "trend_gate_hard_for": ["covered_call"],
     "min_trailing_eps_growth_pct": 10.0
   },
-  "note": "First-draft numbers from CLAUDE_OPTIONS.md Step 6 -- review before running unattended. quality_screen and min_yield_pct adapted from wheel-strategy sources the user supplied; see CLAUDE_OPTIONS.md Step 1/3 for rationale. min_trailing_eps_growth_pct is a trailing net-income-growth proxy, not the forward EPS growth the source actually screens on -- see Known gaps. max_rolls_before_assignment is deliberately null: sources describe rolling a losing CSP until there's enough conviction to accept assignment but give no numeric cap -- pick one before this runs unattended, don't roll indefinitely by default. min_price lowered 50 -> 8 and trend_gate_hard_for set per sign-off in CLAUDE_OPTIONS.md's (now resolved) Open question section."
+  "note": "starting_equity 10000->5000, max_collateral_pct_of_equity 0.60->0.50 (=$2,500 hard cap on total deployed capital, per sign-off), max_single_name_pct_of_equity 0.25->0.50 (matches the total cap rather than sub-capping at $1,250/name -- a single name isn't restricted below what the total cap already allows; with max_concurrent_positions=2 and the $8-$60 universe, actual diversification depends on how large the screener's proposed trades are, not a hard per-name ceiling below the total). max_concurrent_positions 6->2. quality_screen and min_yield_pct adapted from wheel-strategy sources the user supplied; see CLAUDE_OPTIONS.md Step 1/3 for rationale. min_trailing_eps_growth_pct is a trailing net-income-growth proxy, not the forward EPS growth the source actually screens on -- see Known gaps. max_rolls_before_assignment is deliberately null: sources describe rolling a losing CSP until there's enough conviction to accept assignment but give no numeric cap -- pick one before this runs unattended, don't roll indefinitely by default. This is separate from the zero-cost-basis priority (that's post-assignment covered-call rolling, tracked via ledger.cumulative_credit/breakeven_progress_pct, not this cap)."
 }

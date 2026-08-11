@@ -263,24 +263,58 @@ is **opt-in**, not a rule the agent applies on its own:
 
 ### Step 6: Position sizing (paper)
 
-- Paper account starting equity: **$10,000** (`data/options_config.json`,
-  separate from the swing agent's $1,500 — CSP collateral requirements make a
-  $1,500 account impractical for anything but very low-priced names).
-- Max collateral deployed at once: 60% of current paper equity.
-- Max single-underlying allocation: 25% of current paper equity.
-- Max concurrent positions: 6.
-- Because collateral = strike x 100, this account can only run naked CSPs on
-  names priced under roughly $25 per max-allocation ($2,500 / 100) without
-  reducing the position-count cap. Higher-priced, higher-IV names (the ones
-  that often carry the richest premium) don't fit this shape well — that's the
-  argument for adding defined-risk credit spreads as the next extension, since
-  a spread's collateral is capped at the strike width rather than the full
-  strike. Flagging this now rather than quietly skipping the best candidates.
+- Paper account starting equity: **$5,000** (`data/options_config.json`,
+  separate from the swing agent's own account).
+- **Hard cap on total deployed capital: $2,500** (`max_collateral_pct_of_equity`
+  = 0.50 of $5,000), set explicitly, not derived — the highest-priority
+  constraint per sign-off, ahead of yield or candidate quality.
+- Max single-underlying allocation: also 50% of equity ($2,500) — i.e. no
+  sub-cap below the total. A single name isn't artificially restricted below
+  what the account could deploy anyway; with `max_concurrent_positions=2`,
+  real diversification depends on how large the screener's proposed trades
+  are, not a hard per-name ceiling under the total.
+- Max concurrent positions: 2 ("1-2 max", per sign-off) — the priority is
+  fewer, fully-worked positions over many small ones.
+- Because collateral = strike x 100, one $2,500 position caps a single CSP
+  contract at roughly a $25 strike. Two smaller positions fit more names.
+- **Capital-in-use accounting covers assigned shares, not just open CSP
+  collateral** (`premium_agent.positions.capital_in_use`, fixed 2026-08-11).
+  This was a real gap: `ledger.deployed_collateral` only ever summed open CSP
+  `collateral` fields, so once a CSP was assigned, the capital sitting in the
+  resulting shares was invisible to the sizing check — the system could have
+  proposed a second CSP that blew past the $2,500 cap even though real money
+  was already tied up. `scan._remaining_budget` now sums CSP collateral +
+  `positions.capital_in_use` (shares x cost basis) against both the total and
+  per-symbol caps before proposing anything new. A covered call against
+  already-owned shares still needs zero *new* collateral — this fix is about
+  correctly accounting for capital already committed, not adding a
+  restriction on covered calls.
 - These caps are enforced automatically, not just documented:
-  `premium_agent.scan.propose_candidates` reads deployed collateral via
-  `ledger.deployed_collateral` (total and per-symbol) before ranking CSP
-  candidates, and drops any whose collateral would breach either cap or
-  whose proposal would exceed `max_concurrent_positions`.
+  `premium_agent.scan.propose_candidates` calls `_remaining_budget` before
+  ranking CSP candidates, and drops any whose collateral would breach either
+  cap or whose proposal would exceed `max_concurrent_positions`.
+
+### Priority: reaching zero cost basis, not avoiding assignment
+
+Per sign-off, the highest-priority goal is **stacking contracts that reach
+zero cost basis** (Step 4's `cumulative_credit` / `breakeven_progress_pct`)
+for long-term, consistent income — not minimizing assignment probability.
+Being assigned is an accepted, unremarkable outcome, not a failure to screen
+against. This reframes Step 3's delta/yield ranking: optimizing for lower
+assignment probability (lower delta, `chance_of_profit_short`-weighted
+ranking) would work *against* this priority by leaving less premium on the
+table per cycle. Step 3's current ranking (highest `annualized_roc_pct`
+within the 0.15-0.30 delta band) stays as-is; it was not changed for this
+sign-off.
+
+**Not yet built, worth flagging given this priority**: `data/options_positions.json`
+records `symbol`/`shares`/`cost_basis`/`since` but no link back to the
+option chain that produced the assignment, so there's no way yet to compute
+`breakeven_progress_pct` automatically for a held position from
+`premium_agent.notify`'s digest — it has to be looked up manually against
+the ledger's roll chain. Surfacing "how close is each held position to
+zero cost basis" in the daily email would directly serve the stated
+priority and is a reasonable next step.
 
 ## Data requirements (confirmed against the live Robinhood MCP)
 

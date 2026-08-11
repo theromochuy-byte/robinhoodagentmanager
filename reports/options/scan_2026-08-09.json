@@ -1,0 +1,17 @@
+{
+  "scan_date": "2026-08-09",
+  "proposed": [],
+  "skipped": {
+    "ABC": [
+      "no CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ]
+  },
+  "open_positions": 0,
+  "equity": {
+    "starting_equity": 5000,
+    "csp_collateral": 0,
+    "assigned_shares_capital": 800.0,
+    "capital_in_use": 800.0,
+    "available_capital": 1700.0
+  }
+}

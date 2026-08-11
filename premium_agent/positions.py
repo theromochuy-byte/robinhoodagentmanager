@@ -33,6 +33,20 @@ def held_symbols(path: str | Path = DEFAULT_POSITIONS) -> set[str]:
     return {p["symbol"] for p in open_positions(path)}
 
 
+def capital_in_use(path: str | Path = DEFAULT_POSITIONS, symbol: str | None = None) -> float:
+    """Capital tied up in assigned shares (shares x cost_basis, not live market
+    price -- same convention swing_agent uses for its own capital_in_use:
+    original capital committed, not mark-to-market). A covered call against
+    these shares needs no separate collateral, but the shares themselves are
+    real capital competing for the same cap -- this was previously invisible
+    to ledger.deployed_collateral(), which only sums open CSP collateral.
+    """
+    pos = open_positions(path)
+    if symbol:
+        pos = [p for p in pos if p["symbol"] == symbol]
+    return round(sum(p["shares"] * p["cost_basis"] for p in pos), 2)
+
+
 def add_position(symbol: str, shares: int, cost_basis: float, path: str | Path = DEFAULT_POSITIONS) -> dict:
     """Record shares acquired via CSP assignment (CLAUDE_OPTIONS.md Step 4 -> 5)."""
     path = Path(path)
