@@ -77,10 +77,11 @@ def render_html(report: dict) -> str:
         rows = []
         for t in proposed:
             yield_pct = t.get("return_on_collateral_pct", t.get("static_return_pct", 0))
-            rows.append([_fmt_trade(t), f"${t['credit']:.2f}", f"{t['delta']:.2f}",
+            role = "supplemental" if t.get("supplemental") else ("covered call" if t["type"] == "covered_call" else "primary")
+            rows.append([_fmt_trade(t), role, f"${t['credit']:.2f}", f"{t['delta']:.2f}",
                          f"{t['dte']}d", f"{yield_pct:.2f}%"])
         parts.append("<h3 style='font-family:sans-serif;color:#080'>\U0001F7E2 Proposed today</h3>")
-        parts.append(_html_table(rows, ["Contract", "Credit", "Delta", "DTE", "Yield"]))
+        parts.append(_html_table(rows, ["Contract", "Role", "Credit", "Delta", "DTE", "Yield"]))
     else:
         parts.append("<p style='font-family:sans-serif'>\U0001F7E2 <strong>Proposed today:</strong> none</p>")
 

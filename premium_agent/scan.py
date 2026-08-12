@@ -226,12 +226,22 @@ def propose_candidates(
             continue
 
         # CSP leg: respect Step 6 collateral caps before proposing.
+        # Delta band depends on whether a position is already being worked
+        # toward zero cost basis. First CSP (nothing held yet): moderate
+        # band, assignment is an accepted entry point. Supplemental CSP
+        # (something is already held): low-probability-of-assignment band --
+        # this is opportunistic extra income on leftover equity, not meant
+        # to compete for attention with the position already being worked.
+        is_supplemental = len(positions.open_positions(positions_path)) > 0
+        csp_delta_range = tuple(
+            config["secondary_csp_delta_range"] if is_supplemental else config["delta_range"]
+        )
         remaining_total, remaining_symbol = _remaining_budget(config, symbol, ledger_path, positions_path)
         candidates = screener.screen_csp(
             contracts,
             entry["price"],
             dte_range=tuple(config["dte_range"]),
-            delta_range=tuple(config["delta_range"]),
+            delta_range=csp_delta_range,
             min_open_interest=config["min_open_interest"],
             max_spread_pct=config["max_spread_pct"],
             min_bid=config["min_bid"],
@@ -243,7 +253,8 @@ def propose_candidates(
             (candidates["collateral"] <= remaining_total) & (candidates["collateral"] <= remaining_symbol)
         ]
         if candidates.empty:
-            skipped[symbol] = ["no CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"]
+            reason = "supplemental" if is_supplemental else "primary"
+            skipped[symbol] = [f"no {reason} CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"]
             continue
         top = candidates.iloc[0]
         trade = {
@@ -251,6 +262,7 @@ def propose_candidates(
             "strike": float(top["strike"]), "expiration_date": top["expiration_date"],
             "dte": int(top["dte"]), "delta": float(top["abs_delta"]), "credit": float(top["credit"]),
             "collateral": float(top["collateral"]),
+            "supplemental": is_supplemental,
             "return_on_collateral_pct": float(top["return_on_collateral_pct"]),
             "return_on_net_capital_pct": float(top["return_on_net_capital_pct"]),
             "annualized_roc_pct": float(top["annualized_roc_pct"]),

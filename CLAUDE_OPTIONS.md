@@ -170,7 +170,17 @@ historical IV — see "Known gaps." Until that's solved, gate on a proxy:
 ### Step 3: Cash-secured put entry
 
 - Strike selection: target `abs(delta)` between 0.15 and 0.30 (from
-  `get_option_quotes`), OTM (`strike < underlying price`).
+  `get_option_quotes`), OTM (`strike < underlying price`) — **when no
+  position is currently held.** If at least one symbol is already held
+  (`positions.open_positions`), any *new* CSP uses
+  `secondary_csp_delta_range` (0.10-0.20) instead: per sign-off, once one
+  position is being worked toward zero cost basis, additional CSPs opened
+  on leftover equity are opportunistic supplemental income, not meant to
+  compete for attention with the position already in progress, so they
+  should carry a low probability of assignment. `scan.py` tags each
+  proposed CSP `supplemental: true/false` accordingly. This is separate
+  from `covered_call_delta_range` (Step 5) — same conservative philosophy,
+  same default numbers today, but a different rule that could diverge.
 - Expiration: 21–45 days to expiration (DTE).
 - Liquidity filter: `open_interest >= 100`, bid >= $0.05, and
   `(ask - bid) <= 15%` of the mid price.
@@ -303,24 +313,35 @@ is **opt-in**, not a rule the agent applies on its own:
 
 Per sign-off, the highest-priority goal is **stacking contracts that reach
 zero cost basis** (Step 4's `cumulative_credit` / `breakeven_progress_pct`)
-for long-term, consistent income. This splits into two different postures
-depending on which leg is open, refined in a follow-up sign-off:
+for long-term, consistent income, while maximizing income potential for the
+available equity rather than leaving leftover capital idle. This splits into
+three different postures depending on state, refined across two follow-up
+sign-offs:
 
-- **Before assignment (Step 3, CSP)**: assignment is an accepted, unremarkable
-  outcome, not a failure to screen against — it's the entry point into a
-  zero-cost-basis cycle, not something to avoid. Optimizing for lower
-  assignment probability here (lower delta, `chance_of_profit_short`-weighted
-  ranking) would work *against* the priority by leaving less premium on the
-  table per cycle. Step 3's ranking (highest `annualized_roc_pct` within the
-  moderate 0.15-0.30 delta band) stays as-is.
-- **After assignment (Step 5, covered call)**: the posture flips. Now the
-  goal is to *minimize further assignment* (being called away), since losing
-  the shares ends the position before it may have reached zero cost basis.
-  `covered_call_delta_range` (0.10-0.20) is deliberately lower-ceiling than
-  the CSP band for exactly this reason — see Step 5.
+- **First CSP, nothing held yet (Step 3, primary)**: assignment is an
+  accepted, unremarkable outcome, not a failure to screen against — it's the
+  entry point into a zero-cost-basis cycle, not something to avoid.
+  Optimizing for lower assignment probability here (lower delta,
+  `chance_of_profit_short`-weighted ranking) would work *against* the
+  priority by leaving less premium on the table per cycle. Ranking (highest
+  `annualized_roc_pct` within the moderate 0.15-0.30 `delta_range`) stays
+  as-is.
+- **Supplemental CSP, something already held (Step 3, secondary)**: once one
+  position is being worked toward zero cost basis, leftover equity under the
+  $2,500 cap shouldn't just sit idle — but a *new* assignment while the first
+  is still in progress would compete for attention with it, so supplemental
+  CSPs use the low-probability `secondary_csp_delta_range` (0.10-0.20)
+  instead of the moderate primary band. Tagged `supplemental: true` in the
+  ledger and surfaced as a "Role" column in the email digest so primary vs.
+  supplemental trades aren't conflated when reviewing performance.
+- **After assignment (Step 5, covered call)**: the posture flips again. Now
+  the goal is to *minimize further assignment* (being called away), since
+  losing the shares ends the position before it may have reached zero cost
+  basis. `covered_call_delta_range` (0.10-0.20) is deliberately lower-ceiling
+  than the primary CSP band for exactly this reason.
 
-Not a contradiction: both rules serve the same top priority, just applied to
-opposite sides of the same trade.
+Not a contradiction: all three rules serve the same top priority, just
+applied to different states of the same account.
 
 **Not yet built, worth flagging given this priority**: `data/options_positions.json`
 records `symbol`/`shares`/`cost_basis`/`since` but no link back to the
