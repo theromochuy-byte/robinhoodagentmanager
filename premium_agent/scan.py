@@ -199,7 +199,7 @@ def propose_candidates(
                 contracts,
                 position["cost_basis"],
                 dte_range=tuple(config["dte_range"]),
-                delta_range=tuple(config["delta_range"]),
+                delta_range=tuple(config.get("covered_call_delta_range", screener.DEFAULT_COVERED_CALL_DELTA_RANGE)),
                 min_open_interest=config["min_open_interest"],
                 max_spread_pct=config["max_spread_pct"],
                 min_bid=config["min_bid"],

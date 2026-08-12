@@ -247,9 +247,14 @@ is **opt-in**, not a rule the agent applies on its own:
 
 ### Step 5: Covered call entry (post-assignment)
 
-- Strike selection: target delta between 0.15 and 0.30, and never below cost
-  basis (don't lock in a realized loss by selling calls under the assigned
-  price without an explicit sign-off to do so).
+- Strike selection: target delta between **0.10 and 0.20**
+  (`covered_call_delta_range`) — a lower, more conservative ceiling than the
+  CSP leg's 0.15-0.30, per sign-off. Once assigned, the priority shifts from
+  "assignment is fine" to **minimizing further assignment (being called
+  away)**, so the position survives longer and keeps collecting premium
+  toward zero cost basis instead of being closed out early. Never sell below
+  cost basis either way (don't lock in a realized loss by selling calls
+  under the assigned price without an explicit sign-off to do so).
 - Same DTE window, liquidity filter, minimum-yield floor, and profit-take/roll
   rules as the CSP leg (Step 3–4), applied to the call instead.
 - While shares are held, log any dividend due before the next expiration —
@@ -298,14 +303,24 @@ is **opt-in**, not a rule the agent applies on its own:
 
 Per sign-off, the highest-priority goal is **stacking contracts that reach
 zero cost basis** (Step 4's `cumulative_credit` / `breakeven_progress_pct`)
-for long-term, consistent income — not minimizing assignment probability.
-Being assigned is an accepted, unremarkable outcome, not a failure to screen
-against. This reframes Step 3's delta/yield ranking: optimizing for lower
-assignment probability (lower delta, `chance_of_profit_short`-weighted
-ranking) would work *against* this priority by leaving less premium on the
-table per cycle. Step 3's current ranking (highest `annualized_roc_pct`
-within the 0.15-0.30 delta band) stays as-is; it was not changed for this
-sign-off.
+for long-term, consistent income. This splits into two different postures
+depending on which leg is open, refined in a follow-up sign-off:
+
+- **Before assignment (Step 3, CSP)**: assignment is an accepted, unremarkable
+  outcome, not a failure to screen against — it's the entry point into a
+  zero-cost-basis cycle, not something to avoid. Optimizing for lower
+  assignment probability here (lower delta, `chance_of_profit_short`-weighted
+  ranking) would work *against* the priority by leaving less premium on the
+  table per cycle. Step 3's ranking (highest `annualized_roc_pct` within the
+  moderate 0.15-0.30 delta band) stays as-is.
+- **After assignment (Step 5, covered call)**: the posture flips. Now the
+  goal is to *minimize further assignment* (being called away), since losing
+  the shares ends the position before it may have reached zero cost basis.
+  `covered_call_delta_range` (0.10-0.20) is deliberately lower-ceiling than
+  the CSP band for exactly this reason — see Step 5.
+
+Not a contradiction: both rules serve the same top priority, just applied to
+opposite sides of the same trade.
 
 **Not yet built, worth flagging given this priority**: `data/options_positions.json`
 records `symbol`/`shares`/`cost_basis`/`since` but no link back to the

@@ -13,7 +13,8 @@ from datetime import date
 import pandas as pd
 
 DEFAULT_DTE_RANGE = (21, 45)
-DEFAULT_DELTA_RANGE = (0.15, 0.30)
+DEFAULT_DELTA_RANGE = (0.15, 0.30)  # CSP entry: moderate ceiling, assignment is an accepted outcome
+DEFAULT_COVERED_CALL_DELTA_RANGE = (0.10, 0.20)  # post-assignment: lower ceiling, minimize being called away
 DEFAULT_MIN_OPEN_INTEREST = 100
 DEFAULT_MAX_SPREAD_PCT = 0.15
 DEFAULT_MIN_BID = 0.05
@@ -90,7 +91,7 @@ def screen_covered_call(
     cost_basis: float,
     *,
     dte_range: tuple[int, int] = DEFAULT_DTE_RANGE,
-    delta_range: tuple[float, float] = DEFAULT_DELTA_RANGE,
+    delta_range: tuple[float, float] = DEFAULT_COVERED_CALL_DELTA_RANGE,
     min_open_interest: int = DEFAULT_MIN_OPEN_INTEREST,
     max_spread_pct: float = DEFAULT_MAX_SPREAD_PCT,
     min_bid: float = DEFAULT_MIN_BID,
@@ -99,6 +100,13 @@ def screen_covered_call(
     as_of: date | None = None,
 ) -> pd.DataFrame:
     """Rank covered call candidates against assigned shares.
+
+    delta_range defaults lower than the CSP entry band (0.10-0.20 vs.
+    0.15-0.30) -- per sign-off, once assigned the priority shifts to
+    minimizing further assignment (being called away), so the position
+    stays alive longer to keep collecting premium toward zero cost basis.
+    The CSP leg keeps its moderate ceiling since assignment there is an
+    accepted, unremarkable outcome, not something to screen against.
 
     Never sells a strike below cost_basis, per CLAUDE_OPTIONS.md Step 5.
     min_yield_pct: minimum credit as a percentage of cost basis, same floor as
