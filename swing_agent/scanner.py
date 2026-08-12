@@ -26,7 +26,7 @@ import pandas as pd
 from .backtest import daily_bias_series, bias_asof
 from .dataio import load
 from .indicators import atr, ema
-from .patterns import detect_double_bottom, detect_inverse_hns
+from .patterns import detect_double_bottom, detect_inverse_hns, detect_cup_and_handle
 from .simulator import build_trade
 from .watchlist import (
     upsert_watching, mark_triggered, mark_missed, expire_stale, watchlist_summary,
@@ -281,7 +281,7 @@ def scan_symbol(
 
     atr_series = atr(h4, 14)
     ema9_series = ema(h4["close"], 9)
-    patterns   = detect_double_bottom(h4) + detect_inverse_hns(h4)
+    patterns   = detect_double_bottom(h4) + detect_inverse_hns(h4) + detect_cup_and_handle(h4)
     patterns.sort(key=lambda p: p["break_index"])
 
     last_bar   = len(h4) - 1
@@ -421,7 +421,8 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         all_watching.extend(result["watching"])
         all_triggered.extend(result["triggered"])
 
-    # ── Watchlist ledger: upsert every watching setup ───────────────────────────────────────────────────────────────────────────────────────\n    for s in all_watching:
+    # ── Watchlist ledger: upsert every watching setup ──────────────────────────
+    for s in all_watching:
         upsert_watching(s)
 
     # Expire setups that aged out of the 12-bar window this scan
