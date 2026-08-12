@@ -1,0 +1,36 @@
+[
+  {
+    "id": "449b5f8d-0bed-46e8-b7df-aa773cf8f178",
+    "chain_symbol": "T",
+    "expiration_date": "2026-09-11",
+    "strike_price": "21.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.00",
+      "ask_price": "0.51",
+      "mark_price": "0.255",
+      "delta": "-0.016111",
+      "implied_volatility": "0.243559",
+      "open_interest": 39,
+      "volume": 0,
+      "chance_of_profit_short": "0.981176"
+    }
+  },
+  {
+    "id": "4451fdfc-3d71-40b6-8565-d944e25f7f49",
+    "chain_symbol": "T",
+    "expiration_date": "2026-09-11",
+    "strike_price": "20.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.00",
+      "ask_price": "1.20",
+      "mark_price": "0.600",
+      "delta": "-0.012821",
+      "implied_volatility": "0.312403",
+      "open_interest": 49,
+      "volume": 0,
+      "chance_of_profit_short": "0.984127"
+    }
+  }
+]

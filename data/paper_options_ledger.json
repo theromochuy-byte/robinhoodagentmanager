@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "symbol": "BMNR",
+    "type": "csp",
+    "instrument_id": "c123efbd-cd14-4532-b804-15d68bdc80d4",
+    "strike": 16.0,
+    "expiration_date": "2026-09-18",
+    "dte": 37,
+    "delta": 0.241427,
+    "credit": 0.645,
+    "collateral": 1600.0,
+    "supplemental": false,
+    "return_on_collateral_pct": 4.031,
+    "return_on_net_capital_pct": 4.201,
+    "annualized_roc_pct": 39.8,
+    "chance_of_profit_short": 0.746825,
+    "step1_gate": {
+      "symbol": "BMNR",
+      "pass": true,
+      "reasons": [],
+      "quality": {
+        "pass": true,
+        "reasons": [],
+        "pe_ratio": -2.12,
+        "pe_applicable": false,
+        "avg_volume_30d": 33871796.6669,
+        "high_52_weeks": 71.74
+      },
+      "trend": {
+        "pass": false,
+        "reasons": [
+          "no daily bar file for BMNR"
+        ]
+      },
+      "trend_advisory_only": true,
+      "trailing_eps_growth_pct": 10685.39,
+      "price": 18.22
+    },
+    "status": "PROPOSED",
+    "proposed_at": "2026-08-12T18:51:17.573054+00:00"
+  }
+]
