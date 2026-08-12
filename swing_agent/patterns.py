@@ -27,6 +27,54 @@ def _confirm_break(df: pd.DataFrame, neckline: float, after_index: int) -> dict 
     return None
 
 
+def _vol_avg(df: pd.DataFrame, window: int = 20) -> pd.Series | None:
+    """Rolling average volume series. Returns None if volume column missing or all-zero."""
+    if "volume" not in df.columns:
+        return None
+    vol = df["volume"].astype(float)
+    if vol.sum() == 0:
+        return None
+    return vol.rolling(window, min_periods=5).mean()
+
+
+def _vol_around(df: pd.DataFrame, idx: int, half: int = 2) -> float:
+    """Mean volume in a small window centred on idx."""
+    lo = max(0, idx - half)
+    hi = min(len(df) - 1, idx + half)
+    return float(df["volume"].iloc[lo : hi + 1].mean())
+
+
+def _volume_confirms_double_bottom(
+    df: pd.DataFrame,
+    l1_idx: int,
+    l2_idx: int,
+    break_idx: int,
+    vol_avg: pd.Series,
+) -> bool:
+    """Check confirm→contract→confirm volume pattern.
+
+    Passes when:
+      - Volume around the 1st bottom is above the rolling average (accumulation).
+      - Volume around the 2nd bottom is below that of the 1st (contraction).
+      - Volume at the breakout bar is above the rolling average (confirmation).
+    Any condition skipped when the average is unavailable at that index.
+    """
+    avg1 = vol_avg.iloc[l1_idx] if l1_idx < len(vol_avg) else None
+    avg2 = vol_avg.iloc[break_idx] if break_idx < len(vol_avg) else None
+
+    v1 = _vol_around(df, l1_idx)
+    v2 = _vol_around(df, l2_idx)
+    vb = float(df["volume"].iloc[break_idx])
+
+    if avg1 and v1 < avg1:
+        return False
+    if v2 >= v1:
+        return False
+    if avg2 and vb < avg2:
+        return False
+    return True
+
+
 def detect_double_bottom(
     df: pd.DataFrame,
     left: int = 3,
@@ -39,10 +87,12 @@ def detect_double_bottom(
 
     tol: max relative difference between the two bottoms.
     min_sep / max_sep: allowed bar distance between the two bottoms.
+    Volume confirm→contract→confirm pattern is required when volume data is present.
     """
     marked = swing_points(df, left, right)
     lows = pivots(marked, "low")
     highs = pivots(marked, "high")
+    vol_avg = _vol_avg(df)
     patterns = []
 
     for a in range(len(lows)):
@@ -61,10 +111,15 @@ def detect_double_bottom(
             if not mids:
                 continue
             neckline = max(m["price"] for m in mids)
-            # second bottom should hold above the first by structure (higher or equal low)
             brk = _confirm_break(df, neckline, l2["index"])
             if not brk:
                 continue
+            # Volume confirm→contract→confirm (skip if volume unavailable)
+            if vol_avg is not None:
+                if not _volume_confirms_double_bottom(
+                    df, l1["index"], l2["index"], brk["break_index"], vol_avg
+                ):
+                    continue
             patterns.append(
                 {
                     "type": "double_bottom",

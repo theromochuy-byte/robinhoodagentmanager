@@ -25,7 +25,7 @@ import pandas as pd
 
 from .backtest import daily_bias_series, bias_asof
 from .dataio import load
-from .indicators import atr
+from .indicators import atr, ema
 from .patterns import detect_double_bottom, detect_inverse_hns
 from .simulator import build_trade
 from .watchlist import (
@@ -44,6 +44,100 @@ CACHE_MAX_AGE    = 8 * 3600  # 8 hours
 
 VIX_HIGH_THRESHOLD = 25.0  # skip new entries when VIX is elevated
 VIX_CACHE_FILE     = DATA / "vix_cache.json"
+
+# Sector ETF map: symbol prefix/membership → SPDR sector ETF
+# Covers the 11 GICS sectors; unmapped symbols are allowed through (no false blocks)
+SECTOR_ETF_MAP: dict[str, str] = {
+    # Technology
+    "AAPL": "XLK", "MSFT": "XLK", "NVDA": "XLK", "AVGO": "XLK", "ORCL": "XLK",
+    "CRM": "XLK", "ACN": "XLK", "AMD": "XLK", "TXN": "XLK", "QCOM": "XLK",
+    "INTC": "XLK", "IBM": "XLK", "NOW": "XLK", "INTU": "XLK", "AMAT": "XLK",
+    "MU": "XLK", "LRCX": "XLK", "KLAC": "XLK", "SNPS": "XLK", "CDNS": "XLK",
+    # Health Care
+    "UNH": "XLV", "LLY": "XLV", "JNJ": "XLV", "ABBV": "XLV", "MRK": "XLV",
+    "TMO": "XLV", "ABT": "XLV", "DHR": "XLV", "ISRG": "XLV", "SYK": "XLV",
+    "AMGN": "XLV", "GILD": "XLV", "VRTX": "XLV", "REGN": "XLV", "BSX": "XLV",
+    "MDT": "XLV", "ELV": "XLV", "CI": "XLV", "HCA": "XLV", "ZTS": "XLV",
+    # Financials
+    "BRK.B": "XLF", "JPM": "XLF", "V": "XLF", "MA": "XLF", "BAC": "XLF",
+    "WFC": "XLF", "GS": "XLF", "MS": "XLF", "AXP": "XLF", "BLK": "XLF",
+    "SCHW": "XLF", "CB": "XLF", "SPGI": "XLF", "MCO": "XLF", "USB": "XLF",
+    "PNC": "XLF", "TFC": "XLF", "PRU": "XLF", "MET": "XLF", "AON": "XLF",
+    # Industrials
+    "GE": "XLI", "RTX": "XLI", "CAT": "XLI", "HON": "XLI", "UPS": "XLI",
+    "BA": "XLI", "DE": "XLI", "MMM": "XLI", "LMT": "XLI", "NOC": "XLI",
+    "GD": "XLI", "EMR": "XLI", "ETN": "XLI", "PH": "XLI", "ROK": "XLI",
+    "ITW": "XLI", "CMI": "XLI", "FDX": "XLI", "UNP": "XLI", "CSX": "XLI",
+    # Consumer Discretionary
+    "AMZN": "XLY", "TSLA": "XLY", "HD": "XLY", "MCD": "XLY", "NKE": "XLY",
+    "SBUX": "XLY", "TJX": "XLY", "LOW": "XLY", "BKNG": "XLY", "CMG": "XLY",
+    "ABNB": "XLY", "GM": "XLY", "F": "XLY", "DHI": "XLY", "PHM": "XLY",
+    # Consumer Staples
+    "PG": "XLP", "KO": "XLP", "PEP": "XLP", "COST": "XLP", "WMT": "XLP",
+    "PM": "XLP", "MO": "XLP", "CL": "XLP", "MDLZ": "XLP", "KHC": "XLP",
+    # Energy
+    "XOM": "XLE", "CVX": "XLE", "COP": "XLE", "SLB": "XLE", "EOG": "XLE",
+    "MPC": "XLE", "PSX": "XLE", "VLO": "XLE", "OXY": "XLE", "HAL": "XLE",
+    # Utilities
+    "NEE": "XLU", "DUK": "XLU", "SO": "XLU", "D": "XLU", "AEP": "XLU",
+    "EXC": "XLU", "SRE": "XLU", "XEL": "XLU", "ED": "XLU", "PCG": "XLU",
+    # Real Estate
+    "PLD": "XLRE", "AMT": "XLRE", "EQIX": "XLRE", "CCI": "XLRE", "PSA": "XLRE",
+    # Communication Services
+    "META": "XLC", "GOOGL": "XLC", "GOOG": "XLC", "NFLX": "XLC", "DIS": "XLC",
+    "CMCSA": "XLC", "T": "XLC", "VZ": "XLC", "TMUS": "XLC", "ATVI": "XLC",
+    # Materials
+    "LIN": "XLB", "APD": "XLB", "SHW": "XLB", "FCX": "XLB", "NEM": "XLB",
+}
+
+SECTOR_ETF_CACHE_FILE = DATA / "sector_etf_cache.json"
+SECTOR_ETF_CACHE_AGE  = 8 * 3600  # 8 hours
+
+
+def _fetch_etf_price(ticker: str) -> float | None:
+    """Fetch latest close for a sector ETF via Yahoo Finance."""
+    try:
+        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}?interval=1d&range=5d"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            data = json.loads(resp.read())
+        meta = data["chart"]["result"][0]["meta"]
+        return float(meta["regularMarketPrice"])
+    except Exception:
+        return None
+
+
+def _load_sector_etf_bias() -> dict[str, bool]:
+    """Return {etf: is_bullish} for all sector ETFs, using cache when fresh.
+
+    Bullish = ETF price > its 20-bar SMA (approximated via Yahoo Finance 60-day daily bars).
+    Falls back to allowing all sectors when the fetch fails.
+    """
+    if SECTOR_ETF_CACHE_FILE.exists():
+        age = time.time() - SECTOR_ETF_CACHE_FILE.stat().st_mtime
+        if age < SECTOR_ETF_CACHE_AGE:
+            return json.loads(SECTOR_ETF_CACHE_FILE.read_text())
+
+    etfs = set(SECTOR_ETF_MAP.values())
+    result: dict[str, bool] = {}
+    for etf in sorted(etfs):
+        try:
+            url = f"https://query1.finance.yahoo.com/v8/finance/chart/{etf}?interval=1d&range=60d"
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=5) as resp:
+                data = json.loads(resp.read())
+            closes = data["chart"]["result"][0]["indicators"]["quote"][0]["close"]
+            closes = [c for c in closes if c is not None]
+            if len(closes) < 20:
+                result[etf] = True  # not enough data — allow through
+                continue
+            price = closes[-1]
+            sma20 = sum(closes[-20:]) / 20
+            result[etf] = price > sma20
+        except Exception:
+            result[etf] = True  # fetch failed — allow through
+    SECTOR_ETF_CACHE_FILE.write_text(json.dumps(result))
+    return result
 
 
 def _fetch_vix() -> float | None:
@@ -186,6 +280,7 @@ def scan_symbol(
         bias = daily_bias_series(daily)
 
     atr_series = atr(h4, 14)
+    ema9_series = ema(h4["close"], 9)
     patterns   = detect_double_bottom(h4) + detect_inverse_hns(h4)
     patterns.sort(key=lambda p: p["break_index"])
 
@@ -226,11 +321,15 @@ def scan_symbol(
             for i in range(bi + 1, last_bar + 1)
         )
 
+        # 9 EMA on 4h: price should be in the "bull area" (above the 9 EMA) at trigger
+        ema9_now = float(ema9_series.iloc[last_bar])
+
         # check if today's bar IS the retest trigger
         triggered_today = (
             in_pullback
             and last_close >= neckline
             and last_close > last_open
+            and last_close >= ema9_now  # short-term momentum intact (Noah's bull area)
         )
 
         setup = {
@@ -278,6 +377,21 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
     if indicator_cache:
         print(f"  [Session] Live indicator cache loaded for {len(indicator_cache)} symbols")
 
+    # Sector ETF pre-filter — only scan symbols in bullish sectors
+    sector_bias = _load_sector_etf_bias()
+    bearish_etfs = [e for e, bull in sector_bias.items() if not bull]
+    if bearish_etfs:
+        print(f"  [Sector] Bearish ETFs: {', '.join(sorted(bearish_etfs))}")
+    original_count = len(symbols)
+    symbols = [
+        s for s in symbols
+        if sector_bias.get(SECTOR_ETF_MAP.get(s, ""), True)  # unmapped symbols pass through
+    ]
+    filtered_out = original_count - len(symbols)
+    if filtered_out:
+        print(f"  [Sector] Filtered {filtered_out} symbol(s) in bearish sectors "
+              f"({original_count} → {len(symbols)})")
+
     # VIX market context gate — skip new entries when volatility is elevated
     vix = _load_vix()
     high_vix = vix is not None and vix >= VIX_HIGH_THRESHOLD
@@ -307,8 +421,7 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         all_watching.extend(result["watching"])
         all_triggered.extend(result["triggered"])
 
-    # ── Watchlist ledger: upsert every watching setup ───────────────────────────────────────────
-    for s in all_watching:
+    # ── Watchlist ledger: upsert every watching setup ───────────────────────────────────────────────────────────────────────────────────────\n    for s in all_watching:
         upsert_watching(s)
 
     # Expire setups that aged out of the 12-bar window this scan
@@ -318,7 +431,7 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
     if expired:
         print(f"  [Watchlist] Expired {len(expired)} stale setup(s): {', '.join(expired)}")
 
-    # ── Merge triggered entries — only add if we have enough capital ────────
+    # ── Merge triggered entries — only add if we have enough capital ────────────────────────
     # Sort by quality score descending so the best setups get capital first.
     # Existing ledger entries (already opened) are processed first to avoid
     # double-counting them against available equity.
@@ -376,6 +489,7 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         "scan_date":       today,
         "vix":             vix,
         "high_vix":        high_vix,
+        "sector_bias":     sector_bias,
         "watching":        sorted(all_watching, key=lambda x: x["bars_since_break"]),
         "triggered_today": sorted(all_triggered,
                                    key=lambda x: x.get("quality_score", 0), reverse=True),
