@@ -28,7 +28,7 @@ def build_trade(
     atr_series: pd.Series,
     equity: float,
     risk_pct: float = 0.01,
-    atr_mult: float = 1.0,
+    atr_mult: float = 1.5,
     atr_override: float | None = None,
 ) -> dict | None:
     """Construct a proposed long trade from a confirmed pattern.

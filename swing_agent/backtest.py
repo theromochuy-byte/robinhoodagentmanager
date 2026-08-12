@@ -28,8 +28,10 @@ REPORTS = ROOT / "reports"
 
 
 def daily_bias_series(daily: pd.DataFrame, ema_period: int = 20) -> pd.Series:
-    e = ema(daily["close"], ema_period)
-    bias = (daily["close"] > e) & (daily["low"] > e)
+    e20 = ema(daily["close"], ema_period)
+    # 50 SMA as the intermediate-trend anchor; price fully above 20 EMA AND 20 EMA above 50 SMA
+    sma50 = daily["close"].rolling(50).mean()
+    bias = (daily["close"] > e20) & (daily["low"] > e20) & (e20 > sma50)
     return pd.Series(bias.values, index=pd.to_datetime(daily["begins_at"]))
 
 

@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import json
 import time
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -40,6 +41,33 @@ EQUITY_FILE = DATA / "equity.json"
 SESSION_UNIVERSE = DATA / "session_universe.txt"
 INDICATOR_CACHE  = DATA / "indicator_cache.json"
 CACHE_MAX_AGE    = 8 * 3600  # 8 hours
+
+VIX_HIGH_THRESHOLD = 25.0  # skip new entries when VIX is elevated
+VIX_CACHE_FILE     = DATA / "vix_cache.json"
+
+
+def _fetch_vix() -> float | None:
+    """Fetch current VIX from Yahoo Finance JSON endpoint. Returns None on failure."""
+    try:
+        url = "https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?interval=1d&range=1d"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            data = json.loads(resp.read())
+        price = data["chart"]["result"][0]["meta"]["regularMarketPrice"]
+        result = {"vix": float(price), "fetched_at": time.time()}
+        VIX_CACHE_FILE.write_text(json.dumps(result))
+        return float(price)
+    except Exception:
+        return None
+
+
+def _load_vix() -> float | None:
+    """Return cached VIX if fresh (< 4 hours), else fetch live."""
+    if VIX_CACHE_FILE.exists():
+        age = time.time() - VIX_CACHE_FILE.stat().st_mtime
+        if age < 4 * 3600:
+            return json.loads(VIX_CACHE_FILE.read_text()).get("vix")
+    return _fetch_vix()
 
 
 def _load_session_cache() -> dict[str, dict]:
@@ -143,10 +171,16 @@ def scan_symbol(
     live_atr = indicator_cache.get("atr14_4hour") if indicator_cache else None
 
     # Bias: prefer live EMA from Robinhood; fall back to bar-computed series
+    # Both paths enforce: close > 20 EMA AND 20 EMA > 50 SMA (confirmed uptrend)
     if live_ema is not None:
         last_close_daily = float(daily.iloc[-1]["close"])
         last_low_daily   = float(daily.iloc[-1]["low"])
-        current_bias     = (last_close_daily > live_ema) and (last_low_daily > live_ema)
+        sma50_daily      = float(daily["close"].rolling(50).mean().iloc[-1])
+        current_bias     = (
+            (last_close_daily > live_ema)
+            and (last_low_daily > live_ema)
+            and (live_ema > sma50_daily)
+        )
         bias = None  # will use current_bias for asof check
     else:
         bias = daily_bias_series(daily)
@@ -244,6 +278,16 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
     if indicator_cache:
         print(f"  [Session] Live indicator cache loaded for {len(indicator_cache)} symbols")
 
+    # VIX market context gate — skip new entries when volatility is elevated
+    vix = _load_vix()
+    high_vix = vix is not None and vix >= VIX_HIGH_THRESHOLD
+    if vix is not None:
+        flag = " ⚠ HIGH VIX — new entries blocked" if high_vix else ""
+        print(f"  [VIX] {vix:.1f}{flag}")
+    else:
+        print("  [VIX] unavailable — proceeding without gate")
+        high_vix = False
+
     # Recompute equity state from ledger before scanning
     equity_state = _recompute_equity()
     available    = equity_state["available_equity"]
@@ -263,7 +307,7 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         all_watching.extend(result["watching"])
         all_triggered.extend(result["triggered"])
 
-    # ── Watchlist ledger: upsert every watching setup ───────────────────────────
+    # ── Watchlist ledger: upsert every watching setup ───────────────────────────────────────────
     for s in all_watching:
         upsert_watching(s)
 
@@ -300,11 +344,20 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
             mark_triggered(t["symbol"], t["type"], t["break_time"],
                            t["entry"], t["entry_time"])
             continue
+        if high_vix:
+            skipped.append({"symbol": t["symbol"], "type": t["type"],
+                            "cost": round(t["entry"] * t.get("shares", 0), 2),
+                            "available": round(available, 2),
+                            "quality_score": t.get("quality_score", 0),
+                            "skip_reason": "high_vix"})
+            mark_missed(t["symbol"], t["type"], t["break_time"], reason="high_vix")
+            continue
         cost = round(t["entry"] * t.get("shares", 0), 2)
         if cost > available:
             skipped.append({"symbol": t["symbol"], "type": t["type"],
                             "cost": cost, "available": round(available, 2),
-                            "quality_score": t.get("quality_score", 0)})
+                            "quality_score": t.get("quality_score", 0),
+                            "skip_reason": "no_capital"})
             mark_missed(t["symbol"], t["type"], t["break_time"], reason="no_capital")
             continue
         new_entries.append(t)
@@ -321,11 +374,13 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
     wl_summary = watchlist_summary()
     report = {
         "scan_date":       today,
+        "vix":             vix,
+        "high_vix":        high_vix,
         "watching":        sorted(all_watching, key=lambda x: x["bars_since_break"]),
         "triggered_today": sorted(all_triggered,
                                    key=lambda x: x.get("quality_score", 0), reverse=True),
         "new_entries":     len(new_entries),
-        "skipped_no_capital": skipped,
+        "skipped":         skipped,
         "total_open":      len([t for t in ledger if t.get("status") == "entered"]),
         "equity": {
             "starting":   final_state["starting_equity"],
