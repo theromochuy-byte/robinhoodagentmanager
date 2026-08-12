@@ -19,7 +19,7 @@ import pandas as pd
 
 from .dataio import load
 from .indicators import atr, ema
-from .patterns import detect_double_bottom, detect_inverse_hns
+from .patterns import detect_double_bottom, detect_inverse_hns, detect_cup_and_handle
 from .simulator import build_retest_trade, build_trade, compound_ledger, resolve_trade, summarize
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -51,7 +51,7 @@ def _scan_timeframe(
 ) -> list[dict]:
     """Detect patterns and build retest trades on one intraday timeframe."""
     atr_series = atr(intraday, 14)
-    patterns = detect_double_bottom(intraday) + detect_inverse_hns(intraday)
+    patterns = detect_double_bottom(intraday) + detect_inverse_hns(intraday) + detect_cup_and_handle(intraday)
     patterns.sort(key=lambda p: p["break_index"])
 
     trades = []
@@ -124,7 +124,7 @@ def run(symbols: list[str], equity: float = 10_000.0, risk_pct: float = 0.01) ->
 
     summary = summarize(all_trades)
     by_pattern = {}
-    for ptype in ("double_bottom", "inverse_hns"):
+    for ptype in ("double_bottom", "inverse_hns", "cup_and_handle"):
         subset = [t for t in all_trades if t["type"] == ptype]
         by_pattern[ptype] = summarize(subset)
     by_entry = {}

@@ -53,7 +53,7 @@ def build_trade(
 
     shares = (equity * risk_pct) / risk_per_share
 
-    return {
+    trade = {
         "type": pattern["type"],
         "entry_time": str(df.loc[bi, "begins_at"]),
         "entry_index": bi,
@@ -67,6 +67,9 @@ def build_trade(
         "shares": round(shares, 4),
         "atr": round(a, 4),
     }
+    if "target_measured" in pattern:
+        trade["target_measured"] = round(pattern["target_measured"], 4)
+    return trade
 
 
 def build_retest_trade(df: pd.DataFrame, trade: dict, atr_series: pd.Series) -> dict | None:
