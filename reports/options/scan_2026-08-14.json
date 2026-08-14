@@ -1,0 +1,145 @@
+{
+  "scan_date": "2026-08-14",
+  "proposed": [],
+  "skipped": {
+    "WBD": [
+      "price 27.73 > 90% of 52wk high 30.00 (not 'on sale')"
+    ],
+    "SOFI": [
+      "pe_ratio 37.8 > 30",
+      "trailing_eps_growth_pct -3.48 < 10.0"
+    ],
+    "NOK": [
+      "pe_ratio 69.8 > 30"
+    ],
+    "PCG": [
+      "price 17.46 > 90% of 52wk high 19.16 (not 'on sale')",
+      "trailing_eps_growth_pct 7.6 < 10.0"
+    ],
+    "IREN": [
+      "pe_ratio 86.3 > 30"
+    ],
+    "SMCI": [
+      "trailing_eps_growth_pct -9.01 < 10.0"
+    ],
+    "ET": [
+      "price 20.76 > 90% of 52wk high 21.11 (not 'on sale')"
+    ],
+    "PFE": [
+      "pe_ratio 34.8 > 30",
+      "price 26.80 > 90% of 52wk high 28.75 (not 'on sale')",
+      "trailing_eps_growth_pct -3.24 < 10.0"
+    ],
+    "BMNR": [
+      "no option contract data in data/options"
+    ],
+    "RIVN": [
+      "no option contract data in data/options"
+    ],
+    "CMG": [
+      "pe_ratio 30.1 > 30",
+      "trailing_eps_growth_pct 0.11 < 10.0"
+    ],
+    "NKE": [
+      "trailing_eps_growth_pct -3.45 < 10.0"
+    ],
+    "QXO": [
+      "trailing_eps_growth_pct -1098.96 < 10.0"
+    ],
+    "PYPL": [
+      "no option contract data in data/options"
+    ],
+    "AAL": [
+      "trailing_eps_growth_pct -86.88 < 10.0"
+    ],
+    "T": [
+      "no option contract data in data/options"
+    ],
+    "IONQ": [
+      "trailing_eps_growth_pct -53.89 < 10.0"
+    ],
+    "NU": [
+      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "RKT": [
+      "pe_ratio 93.5 > 30",
+      "trailing_eps_growth_pct -331.53 < 10.0"
+    ],
+    "F": [
+      "trailing_eps_growth_pct -238.83 < 10.0"
+    ],
+    "VZ": [
+      "price 48.22 > 90% of 52wk high 51.68 (not 'on sale')",
+      "trailing_eps_growth_pct -1.9 < 10.0"
+    ],
+    "AGNC": [
+      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "CMCSA": [
+      "no option contract data in data/options"
+    ],
+    "NVO": [
+      "no option contract data in data/options"
+    ],
+    "FHN": [
+      "price 26.02 > 90% of 52wk high 26.56 (not 'on sale')"
+    ],
+    "PBR": [
+      "no option contract data in data/options"
+    ],
+    "VALE": [
+      "pe_ratio 30.3 > 30"
+    ],
+    "U": [
+      "no option contract data in data/options"
+    ],
+    "OWL": [
+      "pe_ratio 154.5 > 30",
+      "trailing_eps_growth_pct -28.06 < 10.0"
+    ],
+    "BSX": [
+      "no option contract data in data/options"
+    ],
+    "HPE": [
+      "pe_ratio 55.3 > 30",
+      "price 59.81 > 90% of 52wk high 64.25 (not 'on sale')",
+      "trailing_eps_growth_pct -97.79 < 10.0"
+    ],
+    "CCL": [
+      "no option contract data in data/options"
+    ],
+    "RBLX": [
+      "trailing_eps_growth_pct -13.86 < 10.0"
+    ],
+    "HPQ": [
+      "price 31.32 > 90% of 52wk high 32.19 (not 'on sale')",
+      "trailing_eps_growth_pct -8.86 < 10.0"
+    ],
+    "B": [
+      "no option contract data in data/options"
+    ],
+    "JD": [
+      "no option contract data in data/options"
+    ],
+    "MRNA": [
+      "no option contract data in data/options"
+    ],
+    "DKNG": [
+      "no option contract data in data/options"
+    ],
+    "STM": [
+      "pe_ratio 105.6 > 30"
+    ],
+    "FIG": [
+      "no option contract data in data/options"
+    ]
+  },
+  "open_positions": 1,
+  "equity": {
+    "starting_equity": 5000,
+    "csp_collateral": 1600.0,
+    "assigned_shares_capital": 0,
+    "capital_in_use": 1600.0,
+    "available_capital": 900.0
+  }
+}

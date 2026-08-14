@@ -1,36 +1,36 @@
 [
   {
-    "id": "9989af8a-2c11-443b-83bd-2c1a93ab082d",
-    "chain_symbol": "NU",
-    "expiration_date": "2026-09-18",
-    "strike_price": "9.0000",
-    "type": "put",
-    "quote": {
-      "bid_price": "0.01",
-      "ask_price": "0.03",
-      "mark_price": "0.020",
-      "delta": "-0.017690",
-      "implied_volatility": "0.673160",
-      "open_interest": 1578,
-      "volume": 2,
-      "chance_of_profit_short": "0.971437"
-    }
-  },
-  {
     "id": "bc44ccc1-6a6c-428c-9694-9a1852170c82",
     "chain_symbol": "NU",
     "expiration_date": "2026-09-18",
     "strike_price": "8.0000",
     "type": "put",
     "quote": {
-      "bid_price": "0.01",
-      "ask_price": "0.02",
-      "mark_price": "0.015",
-      "delta": "-0.014370",
-      "implied_volatility": "0.836179",
-      "open_interest": 1253,
+      "bid_price": "0.00",
+      "ask_price": "0.23",
+      "mark_price": "0.115",
+      "delta": "-0.006552",
+      "implied_volatility": "0.903383",
+      "open_interest": 1258,
       "volume": 0,
-      "chance_of_profit_short": "0.973383"
+      "chance_of_profit_short": "0.986274"
+    }
+  },
+  {
+    "id": "9989af8a-2c11-443b-83bd-2c1a93ab082d",
+    "chain_symbol": "NU",
+    "expiration_date": "2026-09-18",
+    "strike_price": "9.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.00",
+      "ask_price": "0.03",
+      "mark_price": "0.015",
+      "delta": "-0.007822",
+      "implied_volatility": "0.754371",
+      "open_interest": 1576,
+      "volume": 0,
+      "chance_of_profit_short": "0.985656"
     }
   }
 ]
