@@ -1,10 +1,11 @@
-"""End-to-end runner: quality-screen the universe, screen option chains for
-CSP / covered-call candidates, and propose sizing-respecting trades to the
-paper ledger. Mirrors swing_agent.backtest's role as "the end-to-end
-runner" -- pure Python, no network I/O, operating on data the agent has
-already fetched and saved to disk. See README's "Options premium-collection
-agent" section for the exact fetch procedure (get_option_chains ->
-get_option_instruments -> get_option_quotes -> merge -> save).
+"""End-to-end runner: manage already-open legs, quality-screen the universe,
+screen option chains for CSP / covered-call candidates, and propose
+sizing-respecting trades to the paper ledger. Mirrors swing_agent.backtest's
+role as "the end-to-end runner" -- pure Python, no network I/O, operating on
+data the agent has already fetched and saved to disk. See README's "Options
+premium-collection agent" section for the exact fetch procedure
+(get_option_chains -> get_option_instruments -> get_option_quotes -> merge ->
+save).
 
 Expected on-disk inputs:
   data/options_config.json          -- sizing caps, delta/DTE targets, quality_screen
@@ -15,24 +16,28 @@ Expected on-disk inputs:
                                           get_financials / get_earnings_calendar)
   data/<SYMBOL>_day.json            -- daily bars (swing agent's existing fetch), for trend
   data/options/<SYMBOL>_<EXPIRY>.json -- merged option contract+quote records (dataio.py)
-  data/options_positions.json       -- current "shares owned" state (positions.py)
+  data/options/open_trade_quotes.json -- current quotes for every instrument_id
+                                          already open in the ledger (manage.py's input)
+  data/options_positions.json       -- current "shares owned" lots (positions.py)
   data/paper_options_ledger.json    -- trade history / current open trades (ledger.py)
 """
 from __future__ import annotations
 
 import json
+import sys
 from datetime import date
 from pathlib import Path
 
 import pandas as pd
 
-from premium_agent import dataio, ledger, positions, quality_screen, screener, trend
+from premium_agent import dataio, ledger, manage, positions, quality_screen, screener, trend
 
 DATA = Path("data")
 CONFIG_PATH = DATA / "options_config.json"
 UNIVERSE_PATH = DATA / "options_universe.txt"
 SNAPSHOT_PATH = DATA / "options" / "universe_snapshot.json"
 OPTIONS_DIR = DATA / "options"
+OPEN_TRADE_QUOTES_PATH = DATA / "options" / "open_trade_quotes.json"
 
 
 def load_config(path: str | Path = CONFIG_PATH) -> dict:
@@ -55,17 +60,14 @@ def load_snapshot(path: str | Path = SNAPSHOT_PATH) -> dict:
     return json.loads(Path(path).read_text())
 
 
+def load_open_trade_quotes(path: str | Path = OPEN_TRADE_QUOTES_PATH) -> dict:
+    if not Path(path).exists():
+        return {}
+    return json.loads(Path(path).read_text())
+
+
 def load_symbol_contracts(symbol: str, options_dir: str | Path = OPTIONS_DIR) -> pd.DataFrame:
-    """Concatenate every data/options/<SYMBOL>_<EXPIRY>.json file for this symbol
-    (one file per expiration, per dataio.py's documented convention)."""
-    frames = [dataio.load(p) for p in sorted(Path(options_dir).glob(f"{symbol}_*.json"))]
-    if not frames:
-        return pd.DataFrame(
-            columns=["instrument_id", "symbol", "expiration_date", "strike", "type",
-                     "bid", "ask", "mid", "delta", "iv", "open_interest", "volume",
-                     "chance_of_profit_short"]
-        )
-    return pd.concat(frames, ignore_index=True)
+    return dataio.load_symbol_contracts(symbol, options_dir)
 
 
 def screen_step1(
@@ -123,6 +125,18 @@ def screen_step1(
     }
 
 
+def _account_state(ledger_path: str | Path, positions_path: str | Path) -> tuple[bool, bool]:
+    """(has_assignment, has_open_csp) -- the two independent triggers the rest
+    of this module keys off of. has_assignment (any shares held at all, in
+    any lot) switches on the post-assignment budget/concurrency expansion and
+    the supplemental-CSP posture. has_open_csp (any CSP leg still open,
+    un-assigned) blocks opening a fresh barbell pair until the current one has
+    fully resolved -- profit-take, expiry, or assignment on both legs."""
+    has_assignment = len(positions.open_positions(positions_path)) > 0
+    has_open_csp = any(t.get("type") == "csp" for t in ledger.open_trades(ledger_path))
+    return has_assignment, has_open_csp
+
+
 def _remaining_budget(
     config: dict, symbol: str, ledger_path: str | Path, positions_path: str | Path
 ) -> tuple[float, float]:
@@ -131,15 +145,141 @@ def _remaining_budget(
     (positions.capital_in_use) -- an assignment ties up real money even
     though the resulting covered call needs no fresh collateral, and that
     was previously invisible here.
+
+    Post-assignment budget expansion (2026-08-19 sign-off): once any lot is
+    held, the total cap widens from max_collateral_pct_of_equity (50%) to
+    post_assignment_max_collateral_pct_of_equity (100% -- i.e. total_equity
+    minus capital already in use) and the per-name sub-cap tightens from 50%
+    to post_assignment_max_single_name_pct_of_equity (45%). Before any
+    assignment, the original caps apply unchanged.
     """
     equity = config["starting_equity"]
-    total_cap = equity * config["max_collateral_pct_of_equity"]
-    symbol_cap = equity * config["max_single_name_pct_of_equity"]
+    has_assignment = len(positions.open_positions(positions_path)) > 0
+    if has_assignment:
+        total_pct = config.get("post_assignment_max_collateral_pct_of_equity", config["max_collateral_pct_of_equity"])
+        symbol_pct = config.get("post_assignment_max_single_name_pct_of_equity", config["max_single_name_pct_of_equity"])
+    else:
+        total_pct = config["max_collateral_pct_of_equity"]
+        symbol_pct = config["max_single_name_pct_of_equity"]
+    total_cap = equity * total_pct
+    symbol_cap = equity * symbol_pct
     used_total = ledger.deployed_collateral(path=ledger_path) + positions.capital_in_use(positions_path)
     used_symbol = ledger.deployed_collateral(path=ledger_path, symbol=symbol) + positions.capital_in_use(
         positions_path, symbol=symbol
     )
     return max(0.0, total_cap - used_total), max(0.0, symbol_cap - used_symbol)
+
+
+def _effective_max_concurrent(config: dict, has_assignment: bool) -> int:
+    if has_assignment:
+        return config.get("post_assignment_max_concurrent_positions", config["max_concurrent_positions"])
+    return config["max_concurrent_positions"]
+
+
+def _open_barbell(
+    config: dict,
+    universe: list[str],
+    snapshot: dict,
+    options_dir: str | Path,
+    ledger_path: str | Path,
+    positions_path: str | Path,
+    as_of: date | None,
+    dry_run: bool,
+) -> tuple[list[dict], dict[str, list[str]]]:
+    """Open the account's two initial CSP legs together, splitting the
+    remaining total collateral budget 50/50 (2026-08-19 barbell sign-off):
+    - "threshold_of_risk" leg: config["delta_range"] (0.15-0.30), the
+      existing primary CSP band -- assignment here is an accepted entry
+      point into a payback cycle, not something to screen against.
+    - "low_prob" leg: config["secondary_csp_delta_range"] (0.10-0.20).
+
+    Whichever leg assigns first (either one -- order doesn't matter) starts
+    its own independent payback counter on the resulting lot; the other leg
+    keeps running its own CSP lifecycle (profit-take/roll/assign/expire)
+    untouched by the first leg's fate. A fresh barbell only opens again once
+    both legs of the current one have left the "open CSP" state (closed,
+    expired, or assigned) -- see _account_state's has_open_csp.
+
+    Universe order (not cross-universe ranking) decides which symbol fills
+    each leg, same "first candidate that clears everything" convention the
+    rest of this module uses -- see propose_candidates.
+    """
+    remaining_total, _ = _remaining_budget(config, "", ledger_path, positions_path)
+    if remaining_total <= 0:
+        return [], {"barbell": ["no collateral budget remaining to open a barbell"]}
+
+    leg_budget = remaining_total / 2
+    proposed: list[dict] = []
+    skipped: dict[str, list[str]] = {}
+    committed_by_symbol: dict[str, float] = {}
+    used_instrument_ids: set[str] = set()
+    held = positions.held_symbols(positions_path)
+
+    legs = [
+        ("threshold_of_risk", tuple(config["delta_range"])),
+        ("low_prob", tuple(config["secondary_csp_delta_range"])),
+    ]
+    for leg_name, delta_range in legs:
+        picked = None
+        for symbol in universe:
+            if symbol in held:
+                continue
+            entry = snapshot.get(symbol)
+            if entry is None:
+                continue
+            gate = screen_step1(symbol, entry, config, for_covered_call=False)
+            if not gate["pass"]:
+                continue
+            contracts = load_symbol_contracts(symbol, options_dir)
+            if contracts.empty:
+                continue
+            _, remaining_symbol = _remaining_budget(config, symbol, ledger_path, positions_path)
+            remaining_symbol -= committed_by_symbol.get(symbol, 0.0)
+            if remaining_symbol <= 0:
+                continue
+            budget_here = min(leg_budget, remaining_symbol)
+
+            candidates = screener.screen_csp(
+                contracts, entry["price"],
+                dte_range=tuple(config["dte_range"]), delta_range=delta_range,
+                min_open_interest=config["min_open_interest"], max_spread_pct=config["max_spread_pct"],
+                min_bid=config["min_bid"], min_yield_pct=config["min_yield_pct"],
+                earnings_before=entry.get("next_earnings_date"), as_of=as_of,
+            )
+            candidates = candidates[~candidates["instrument_id"].isin(used_instrument_ids)]
+            candidates = candidates[candidates["collateral"] <= budget_here]
+            if candidates.empty:
+                continue
+            picked = (symbol, candidates.iloc[0], gate)
+            break
+
+        if picked is None:
+            skipped[f"barbell:{leg_name}"] = [
+                "no candidate cleared delta/DTE/liquidity/yield/collateral-budget for this leg"
+            ]
+            continue
+
+        symbol, top, gate = picked
+        trade = {
+            "symbol": symbol, "type": "csp", "instrument_id": top["instrument_id"],
+            "strike": float(top["strike"]), "expiration_date": top["expiration_date"],
+            "dte": int(top["dte"]), "delta": float(top["abs_delta"]), "credit": float(top["credit"]),
+            "collateral": float(top["collateral"]),
+            "supplemental": False,
+            "barbell_leg": leg_name,
+            "return_on_collateral_pct": float(top["return_on_collateral_pct"]),
+            "return_on_net_capital_pct": float(top["return_on_net_capital_pct"]),
+            "annualized_roc_pct": float(top["annualized_roc_pct"]),
+            "chance_of_profit_short": top.get("chance_of_profit_short"),
+            "step1_gate": gate,
+        }
+        if not dry_run:
+            ledger.propose_trade(trade, path=ledger_path)
+        proposed.append(trade)
+        committed_by_symbol[symbol] = committed_by_symbol.get(symbol, 0.0) + trade["collateral"]
+        used_instrument_ids.add(trade["instrument_id"])
+
+    return proposed, skipped
 
 
 def propose_candidates(
@@ -155,10 +295,16 @@ def propose_candidates(
 ) -> dict:
     """Screen the universe end to end and propose sizing-respecting trades.
 
-    Held symbols (positions.py) are screened for covered calls (Step 5);
-    everything else is screened for cash-secured puts (Step 1-3). Candidates
-    are proposed in ranked order until Step 6's collateral/position caps are
-    exhausted. dry_run=True screens and ranks without writing to the ledger.
+    Held symbols (positions.py) are screened for covered calls (Step 5) --
+    one proposal per open lot, since a symbol can hold more than one lot at
+    once. Everything else is screened for cash-secured puts: if no CSP leg
+    is currently open anywhere (_account_state's has_open_csp), a fresh
+    barbell pair opens first (_open_barbell); afterwards, or once a barbell
+    is already running, unheld symbols are screened one at a time for
+    supplemental low-probability CSPs -- but only once at least one
+    assignment exists (has_assignment), same "opportunistic income on
+    leftover equity" posture as before the barbell change. dry_run=True
+    screens and ranks without writing to the ledger.
     """
     config = config or load_config()
     universe = universe if universe is not None else load_universe()
@@ -168,74 +314,107 @@ def propose_candidates(
     proposed: list[dict] = []
     skipped: dict[str, list[str]] = {}
     open_count = len(ledger.open_trades(ledger_path))
-    max_positions = config["max_concurrent_positions"]
+    has_assignment, has_open_csp = _account_state(ledger_path, positions_path)
+    max_positions = _effective_max_concurrent(config, has_assignment)
+
+    barbell_symbols: set[str] = set()
+    if not has_open_csp and open_count < max_positions:
+        barbell_trades, barbell_skipped = _open_barbell(
+            config, universe, snapshot, options_dir, ledger_path, positions_path, as_of, dry_run
+        )
+        proposed.extend(barbell_trades)
+        skipped.update(barbell_skipped)
+        barbell_symbols = {t["symbol"] for t in barbell_trades}
+        open_count += len(barbell_trades)
+        has_assignment, has_open_csp = _account_state(ledger_path, positions_path)
+        max_positions = _effective_max_concurrent(config, has_assignment)
 
     for symbol in universe:
+        if symbol in barbell_symbols:
+            # Already proposed above as one of the two barbell legs.
+            continue
         if open_count >= max_positions:
             skipped[symbol] = [f"max_concurrent_positions ({max_positions}) reached"]
             continue
 
-        is_held = symbol in held
         entry = snapshot.get(symbol)
         if entry is None:
             skipped[symbol] = ["no snapshot data (fundamentals/price/financials/earnings)"]
             continue
 
-        gate = screen_step1(symbol, entry, config, for_covered_call=is_held)
-        if not gate["pass"]:
-            skipped[symbol] = gate["reasons"]
+        lots = positions.lots_for_symbol(symbol, positions_path)
+        if lots:
+            gate = screen_step1(symbol, entry, config, for_covered_call=True)
+            if not gate["pass"]:
+                skipped[symbol] = gate["reasons"]
+                continue
+            contracts = load_symbol_contracts(symbol, options_dir)
+            if contracts.empty:
+                skipped[symbol] = [f"no option contract data in {options_dir}"]
+                continue
+            earnings_before = entry.get("next_earnings_date")
+            reasons = []
+            for lot in lots:
+                if open_count >= max_positions:
+                    reasons.append(f"lot {lot['source_instrument_id']}: max_concurrent_positions ({max_positions}) reached")
+                    break
+                candidates = screener.screen_covered_call(
+                    contracts, lot["cost_basis"],
+                    dte_range=tuple(config["dte_range"]),
+                    delta_range=tuple(config.get("covered_call_delta_range", screener.DEFAULT_COVERED_CALL_DELTA_RANGE)),
+                    min_open_interest=config["min_open_interest"],
+                    max_spread_pct=config["max_spread_pct"],
+                    min_bid=config["min_bid"],
+                    min_yield_pct=config["min_yield_pct"],
+                    earnings_before=earnings_before,
+                    as_of=as_of,
+                )
+                if candidates.empty:
+                    reasons.append(f"lot {lot['source_instrument_id']}: no covered-call candidate cleared delta/DTE/liquidity/yield")
+                    continue
+                top = candidates.iloc[0]
+                trade = {
+                    "symbol": symbol, "type": "covered_call", "instrument_id": top["instrument_id"],
+                    "strike": float(top["strike"]), "expiration_date": top["expiration_date"],
+                    "dte": int(top["dte"]), "delta": float(top["delta"]), "credit": float(top["credit"]),
+                    "static_return_pct": float(top["static_return_pct"]),
+                    "chance_of_profit_short": top.get("chance_of_profit_short"),
+                    "source_instrument_id": lot["source_instrument_id"],
+                    "paid_off": positions.is_paid_off(lot["source_instrument_id"], ledger_path, positions_path),
+                    "step1_gate": gate,
+                }
+                if not dry_run:
+                    ledger.propose_trade(trade, path=ledger_path)
+                proposed.append(trade)
+                open_count += 1
+            if reasons:
+                skipped[symbol] = reasons
             continue
 
+        if not has_assignment:
+            # Barbell already handled the no-assignment opening move above;
+            # no supplemental CSPs without an assignment. Still run Step 1
+            # so the skip report shows the real reason for every symbol,
+            # same visibility the pre-barbell report always had.
+            gate = screen_step1(symbol, entry, config, for_covered_call=False)
+            skipped[symbol] = gate["reasons"] if not gate["pass"] else [
+                "no assignment yet -- supplemental CSPs only open once a lot is held"
+            ]
+            continue
+
+        # Supplemental CSP: something is already held somewhere, so leftover
+        # equity under the (expanded, post-assignment) cap gets put to work,
+        # low-probability-of-assignment band, opportunistic income only.
         contracts = load_symbol_contracts(symbol, options_dir)
         if contracts.empty:
             skipped[symbol] = [f"no option contract data in {options_dir}"]
             continue
-
-        earnings_before = entry.get("next_earnings_date")
-
-        if is_held:
-            position = next(p for p in positions.open_positions(positions_path) if p["symbol"] == symbol)
-            candidates = screener.screen_covered_call(
-                contracts,
-                position["cost_basis"],
-                dte_range=tuple(config["dte_range"]),
-                delta_range=tuple(config.get("covered_call_delta_range", screener.DEFAULT_COVERED_CALL_DELTA_RANGE)),
-                min_open_interest=config["min_open_interest"],
-                max_spread_pct=config["max_spread_pct"],
-                min_bid=config["min_bid"],
-                min_yield_pct=config["min_yield_pct"],
-                earnings_before=earnings_before,
-                as_of=as_of,
-            )
-            if candidates.empty:
-                skipped[symbol] = ["no covered-call candidate cleared delta/DTE/liquidity/yield"]
-                continue
-            top = candidates.iloc[0]
-            trade = {
-                "symbol": symbol, "type": "covered_call", "instrument_id": top["instrument_id"],
-                "strike": float(top["strike"]), "expiration_date": top["expiration_date"],
-                "dte": int(top["dte"]), "delta": float(top["delta"]), "credit": float(top["credit"]),
-                "static_return_pct": float(top["static_return_pct"]),
-                "chance_of_profit_short": top.get("chance_of_profit_short"),
-                "step1_gate": gate,
-            }
-            if not dry_run:
-                ledger.propose_trade(trade, path=ledger_path)
-            proposed.append(trade)
-            open_count += 1
+        gate = screen_step1(symbol, entry, config, for_covered_call=False)
+        if not gate["pass"]:
+            skipped[symbol] = gate["reasons"]
             continue
-
-        # CSP leg: respect Step 6 collateral caps before proposing.
-        # Delta band depends on whether a position is already being worked
-        # toward zero cost basis. First CSP (nothing held yet): moderate
-        # band, assignment is an accepted entry point. Supplemental CSP
-        # (something is already held): low-probability-of-assignment band --
-        # this is opportunistic extra income on leftover equity, not meant
-        # to compete for attention with the position already being worked.
-        is_supplemental = len(positions.open_positions(positions_path)) > 0
-        csp_delta_range = tuple(
-            config["secondary_csp_delta_range"] if is_supplemental else config["delta_range"]
-        )
+        earnings_before = entry.get("next_earnings_date")
+        csp_delta_range = tuple(config["secondary_csp_delta_range"])
         remaining_total, remaining_symbol = _remaining_budget(config, symbol, ledger_path, positions_path)
         candidates = screener.screen_csp(
             contracts,
@@ -253,8 +432,7 @@ def propose_candidates(
             (candidates["collateral"] <= remaining_total) & (candidates["collateral"] <= remaining_symbol)
         ]
         if candidates.empty:
-            reason = "supplemental" if is_supplemental else "primary"
-            skipped[symbol] = [f"no {reason} CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"]
+            skipped[symbol] = ["no supplemental CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"]
             continue
         top = candidates.iloc[0]
         trade = {
@@ -262,7 +440,7 @@ def propose_candidates(
             "strike": float(top["strike"]), "expiration_date": top["expiration_date"],
             "dte": int(top["dte"]), "delta": float(top["abs_delta"]), "credit": float(top["credit"]),
             "collateral": float(top["collateral"]),
-            "supplemental": is_supplemental,
+            "supplemental": True,
             "return_on_collateral_pct": float(top["return_on_collateral_pct"]),
             "return_on_net_capital_pct": float(top["return_on_net_capital_pct"]),
             "annualized_roc_pct": float(top["annualized_roc_pct"]),
@@ -283,6 +461,7 @@ def write_report(
     ledger_path: str | Path = ledger.DEFAULT_LEDGER,
     positions_path: str | Path = positions.DEFAULT_POSITIONS,
     as_of: date | None = None,
+    management_actions: list[dict] | None = None,
 ) -> Path:
     """Save today's scan result to reports/options/scan_<date>.json, mirroring
     swing_agent.scanner's reports/scan_<date>.json convention -- this is what
@@ -297,19 +476,34 @@ def write_report(
     collateral = ledger.deployed_collateral(path=ledger_path)
     shares_capital = positions.capital_in_use(positions_path)
     capital_used = collateral + shares_capital
+    has_assignment = len(positions.open_positions(positions_path)) > 0
+    total_pct = config.get("post_assignment_max_collateral_pct_of_equity", config["max_collateral_pct_of_equity"]) \
+        if has_assignment else config["max_collateral_pct_of_equity"]
+    lots = positions.open_positions(positions_path)
     report = {
         "scan_date": today,
+        "management_actions": management_actions or [],
         "proposed": result["proposed"],
         "skipped": result["skipped"],
         "open_positions": len(ledger.open_trades(ledger_path)),
+        "lots": [
+            {
+                "symbol": lot["symbol"],
+                "source_instrument_id": lot["source_instrument_id"],
+                "cost_basis": lot["cost_basis"],
+                "breakeven_progress_pct": positions.breakeven_progress_pct(
+                    lot["source_instrument_id"], ledger_path, positions_path
+                ),
+                "paid_off": positions.is_paid_off(lot["source_instrument_id"], ledger_path, positions_path),
+            }
+            for lot in lots
+        ],
         "equity": {
             "starting_equity": equity,
             "csp_collateral": collateral,
             "assigned_shares_capital": shares_capital,
             "capital_in_use": round(capital_used, 2),
-            "available_capital": round(
-                equity * config["max_collateral_pct_of_equity"] - capital_used, 2
-            ),
+            "available_capital": round(equity * total_pct - capital_used, 2),
         },
     }
     out = reports_dir / f"scan_{today}.json"
@@ -317,15 +511,47 @@ def write_report(
     return out
 
 
+def run_daily_cycle(config: dict | None = None, *, as_of: date | None = None, dry_run: bool = False) -> dict:
+    """Manage every already-open leg (manage.simulate_management), then
+    propose new candidates (propose_candidates), then write the report --
+    the full daily sequence, in the order CLAUDE_OPTIONS.md Step 4 (manage
+    what's open) has to happen before Step 1-3/5 (screen for what's new),
+    since assignment/expiry during management changes which symbols are held.
+    """
+    config = config or load_config()
+    snapshot = load_snapshot()
+    quotes = load_open_trade_quotes()
+
+    mgmt_actions: list[dict] = []
+    open_trades_today = ledger.open_trades()
+    if open_trades_today and not quotes:
+        print(
+            f"Warning: {len(open_trades_today)} open trade(s) exist but "
+            f"{OPEN_TRADE_QUOTES_PATH} is missing -- skipping management "
+            f"simulation (profit-take/roll/assignment) this cycle.",
+            file=sys.stderr,
+        )
+    elif open_trades_today:
+        mgmt_result = manage.simulate_management(config, snapshot, quotes, OPTIONS_DIR, as_of=as_of, dry_run=dry_run)
+        mgmt_actions = mgmt_result["actions"]
+
+    result = propose_candidates(config=config, snapshot=snapshot, as_of=as_of, dry_run=dry_run)
+    out = write_report(result, config, as_of=as_of, management_actions=mgmt_actions)
+    return {"management_actions": mgmt_actions, **result, "report_path": out}
+
+
 if __name__ == "__main__":
-    cfg = load_config()
-    result = propose_candidates(config=cfg)
-    print(f"Proposed {len(result['proposed'])} trade(s):")
-    for t in result["proposed"]:
+    cycle = run_daily_cycle()
+    if cycle["management_actions"]:
+        print(f"Management actions ({len(cycle['management_actions'])}):")
+        for a in cycle["management_actions"]:
+            extra = {k: v for k, v in a.items() if k not in ("symbol", "instrument_id", "action")}
+            print(f"  {a['symbol']:6s} {a['action']:20s} {extra}")
+    print(f"Proposed {len(cycle['proposed'])} trade(s):")
+    for t in cycle["proposed"]:
         print(f"  {t['symbol']:6s} {t['type']:12s} strike={t['strike']:<8.2f} "
               f"exp={t['expiration_date']} credit={t['credit']:.2f}")
-    print(f"Skipped {len(result['skipped'])} symbol(s):")
-    for sym, reasons in result["skipped"].items():
+    print(f"Skipped {len(cycle['skipped'])} symbol(s):")
+    for sym, reasons in cycle["skipped"].items():
         print(f"  {sym}: {'; '.join(reasons)}")
-    out = write_report(result, cfg)
-    print(f"Report written to {out}")
+    print(f"Report written to {cycle['report_path']}")

@@ -46,6 +46,7 @@ def screen_csp(
     min_yield_pct: float = DEFAULT_MIN_YIELD_PCT,
     earnings_before: str | None = None,
     as_of: date | None = None,
+    require_otm: bool = True,
 ) -> pd.DataFrame:
     """Rank cash-secured put candidates by annualized return on collateral.
 
@@ -56,9 +57,15 @@ def screen_csp(
     the credit must be at least 1% of the cash-secured collateral) -- the floor
     CLAUDE_OPTIONS.md Step 3 sets so a technically-in-band contract still has
     to pay enough to be worth tying up the collateral.
+    require_otm: True (default) for a fresh entry -- a new CSP is always sold
+    OTM. False for premium_agent.manage's roll-candidate search: a roll on an
+    already-ITM put is explicitly allowed to land at the same or a lower
+    ("rolling down and out") strike per CLAUDE_OPTIONS.md Step 4, which can
+    still be ITM at the current underlying price.
     """
     puts = contracts[contracts["type"] == "put"].copy()
-    puts = puts[puts["strike"] < underlying_price]
+    if require_otm:
+        puts = puts[puts["strike"] < underlying_price]
     puts["dte"] = puts["expiration_date"].apply(lambda d: days_to_expiration(d, as_of))
     puts = puts[(puts["dte"] >= dte_range[0]) & (puts["dte"] <= dte_range[1])]
     puts["abs_delta"] = puts["delta"].abs()

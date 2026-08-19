@@ -181,6 +181,33 @@ historical IV — see "Known gaps." Until that's solved, gate on a proxy:
   proposed CSP `supplemental: true/false` accordingly. This is separate
   from `covered_call_delta_range` (Step 5) — same conservative philosophy,
   same default numbers today, but a different rule that could diverge.
+
+#### Barbell entry (opening move, sign-off 2026-08-19)
+
+When the account has **no open CSP at all** (a fresh start, or every prior
+lot has cycled through to call-away and back to zero), the opening move is
+two simultaneous CSP legs instead of one, splitting the remaining collateral
+budget 50/50 (`premium_agent.scan._open_barbell`):
+
+- **`threshold_of_risk`** leg: the existing primary `delta_range`
+  (0.15-0.30) — moderate assignment probability, the "workhorse" leg.
+- **`low_prob`** leg: `secondary_csp_delta_range` (0.10-0.20) — the same
+  low-probability band Step 3 already uses for supplemental CSPs, but here
+  it's a first-class opening leg, not something gated behind an existing
+  position.
+
+Both legs are proposed together, each independently screened and ranked
+through the universe, and each tagged `barbell_leg: "threshold_of_risk"` or
+`barbell_leg: "low_prob"` in the ledger so performance can be compared
+leg-by-leg on review. **Either leg assigning counts as "executed"** and ends
+the barbell-opening state — whichever leg goes ITM first (not necessarily
+the higher-probability one) is the one that becomes a held position and
+kicks off Step 4/5's post-assignment posture; the other leg keeps running
+independently under its own management rules (profit-take, roll, expire)
+until it resolves on its own. A fresh barbell only opens again once the
+account has zero open CSPs and zero held lots — it is strictly the
+opening-from-flat move, not something that reopens alongside an existing
+position.
 - Expiration: 21–45 days to expiration (DTE).
 - Liquidity filter: `open_interest >= 100`, bid >= $0.05, and
   `(ask - bid) <= 15%` of the mid price.
@@ -220,23 +247,45 @@ historical IV — see "Known gaps." Until that's solved, gate on a proxy:
     roll if one is proposed (it logs, it doesn't gatekeep), but flags it via
     `rolled_for_debit` — a debit roll is a red flag to catch on review, not
     something to do routinely just to defer assignment.
-  - Rolling isn't unlimited. A source that walks through this exact scenario
-    stops rolling and accepts assignment once there's enough conviction in
-    the name — a judgment call, not a fixed rule, and the source doesn't
-    give a specific cutoff. `max_rolls_before_assignment` in
-    `data/options_config.json` is a placeholder needing a real number from
-    you rather than one invented here.
+  - Rolling isn't unlimited: **`max_rolls_before_assignment` = 2**
+    (`data/options_config.json`, set 2026-08-19). After 2 rolls on the same
+    lot, accept assignment on the next ITM/DTE≤21 trigger even if a further
+    net-credit roll candidate exists — `premium_agent.ledger.roll_count`
+    walks the `rolled_from` chain to enforce this. **Exception: once a lot
+    has reached zero cost basis (`positions.is_paid_off`), its covered-call
+    leg rolls uncapped** — the cap no longer applies. This is deliberate,
+    not an oversight: per sign-off, a paid-off lot's shares are held
+    indefinitely (see "Priority" below), so there is no assignment left to
+    "accept" by letting the cap force a call-away — a paid-off lot getting
+    called away only happens if no net-credit roll exists at all, which
+    realizes the full gain rather than avoiding an outcome the strategy is
+    trying to avoid. The cap still applies normally to CSP legs and to any
+    covered call against a lot that hasn't yet reached zero cost basis.
 - Assignment: if not rolled and expiration passes ITM, log the trade as
-  assigned and open a new "shares owned" position at the strike price. Cost
-  basis is strike minus **cumulative** credit across the whole roll chain —
-  original sale plus every roll's net credit/debit
+  assigned and open a new "shares owned" position (a **lot**, keyed by the
+  CSP's `instrument_id` as `source_instrument_id` — see below) at the
+  strike price. Cost basis is strike minus **cumulative** credit across the
+  whole roll chain — original sale plus every roll's net credit/debit
   (`premium_agent.ledger.cumulative_credit`), not just the credit from the
   final leg — before moving into Step 5.
-  - Track `breakeven_progress_pct` (`ledger.breakeven_progress_pct`) per
-    position: cumulative credit as a % of the strike. At 100%, enough
-    premium has been collected across the chain that the position has a
-    zero cost basis — worth surfacing in `reports/options/`, since it's the
-    wheel's own "how close to risk-free" milestone.
+  - **Multi-lot tracking, one payback counter per lot (sign-off
+    2026-08-19).** A symbol can now hold more than one open lot at once —
+    the barbell's two legs can both assign (on the same or different
+    symbols), or a fresh barbell can open on a symbol that already has a
+    paid-off lot held indefinitely. `data/options_positions.json` entries
+    are keyed by `source_instrument_id`, not symbol, and each lot tracks
+    its own independent `breakeven_progress_pct`
+    (`positions.breakeven_progress_pct`): the CSP premium collected before
+    that lot's assignment, plus every covered-call premium collected
+    against *that specific lot* since
+    (`ledger.covered_call_premium_for_lot`), as a % of that lot's own
+    assignment strike. Two lots of the same symbol never share or combine
+    progress — per sign-off, "there must be a payback counter for every
+    assignment." At 100%, that lot has reached zero cost basis
+    (`positions.is_paid_off`) — worth surfacing per-lot in
+    `reports/options/`, since it's the wheel's own "how close to
+    risk-free" milestone, now tracked per assignment rather than per
+    symbol.
 
 ### Step 4a: Protective collar (optional defensive overlay, not automatic)
 
@@ -271,10 +320,20 @@ is **opt-in**, not a rule the agent applies on its own:
   `get_equity_fundamentals` returns `dividend_per_share`, `ex_dividend_date`,
   `payable_date`, and `distribution_frequency` per symbol, so this doesn't
   need a separate data source.
-- If called away, close the "shares owned" position, log the realized P/L for
-  the full cycle (put credit + call credit + dividends received while
-  holding + capital gain/loss on shares), and return to Step 1 with that name
-  back in the CSP pool.
+- If called away, close the "shares owned" position (lot), log the realized
+  P/L for the full cycle (put credit + call credit + dividends received
+  while holding + capital gain/loss on shares), and return to Step 1 with
+  that name back in the CSP pool.
+- **Paid-off lots are held indefinitely, not sold or actively called away
+  (sign-off 2026-08-19).** Once a lot reaches zero cost basis
+  (`positions.is_paid_off`, see Step 4), it is never sold to free up
+  capital — per sign-off, "these continue to earn both dividends and
+  premiums as income." Its covered-call leg keeps rolling uncapped (Step
+  4's roll-cap exception) specifically so it isn't forced into a call-away
+  by hitting the ordinary 2-roll cap; a paid-off lot only exits via
+  call-away if no net-credit roll exists at all for it in a given cycle,
+  which is an accepted, realized-gain outcome, not something the agent
+  tries to engineer.
 
 ### Step 6: Position sizing (paper)
 
@@ -282,14 +341,38 @@ is **opt-in**, not a rule the agent applies on its own:
   separate from the swing agent's own account).
 - **Hard cap on total deployed capital: $2,500** (`max_collateral_pct_of_equity`
   = 0.50 of $5,000), set explicitly, not derived — the highest-priority
-  constraint per sign-off, ahead of yield or candidate quality.
+  constraint per sign-off, ahead of yield or candidate quality. **This cap
+  only applies while the account holds zero assignments.**
 - Max single-underlying allocation: also 50% of equity ($2,500) — i.e. no
   sub-cap below the total. A single name isn't artificially restricted below
   what the account could deploy anyway; with `max_concurrent_positions=2`,
   real diversification depends on how large the screener's proposed trades
-  are, not a hard per-name ceiling under the total.
+  are, not a hard per-name ceiling under the total. **Also pre-assignment
+  only** — see below.
 - Max concurrent positions: 2 ("1-2 max", per sign-off) — the priority is
-  fewer, fully-worked positions over many small ones.
+  fewer, fully-worked positions over many small ones. **Also
+  pre-assignment only** — see below.
+
+- **Post-assignment budget and concurrency expansion (sign-off
+  2026-08-19).** Once the account holds at least one assignment (any lot),
+  further low-probability CSPs (Step 3's supplemental band) size against a
+  wider budget instead of the standard pre-assignment caps above:
+  - Total cap becomes **100% of equity minus capital already in use**
+    (`post_assignment_max_collateral_pct_of_equity` = 1.0) rather than 50%
+    — once a position has proven the process by assigning, leftover equity
+    shouldn't sit half-idle behind a cap sized for the "nothing committed
+    yet" state.
+  - Per-name sub-cap becomes **45% of equity, $2,250**
+    (`post_assignment_max_single_name_pct_of_equity` = 0.45) — unlike the
+    pre-assignment state, this is now a real sub-cap below the (now much
+    larger) total, so one name can't absorb the whole expanded budget.
+  - Max concurrent positions becomes **3**
+    (`post_assignment_max_concurrent_positions`), up from 2.
+  - `premium_agent.scan._remaining_budget` and `_effective_max_concurrent`
+    switch to these figures automatically based on whether any assignment
+    is held (`scan._account_state`) — no manual toggle needed. The
+    pre-assignment caps above still govern the barbell-opening move itself,
+    since by definition nothing is assigned yet at that point.
 - Because collateral = strike x 100, one $2,500 position caps a single CSP
   contract at roughly a $25 strike. Two smaller positions fit more names.
 - **Capital-in-use accounting covers assigned shares, not just open CSP
@@ -318,29 +401,39 @@ available equity rather than leaving leftover capital idle. This splits into
 three different postures depending on state, refined across two follow-up
 sign-offs:
 
-- **First CSP, nothing held yet (Step 3, primary)**: assignment is an
+- **Opening move, nothing held yet (Step 3, barbell)**: assignment is an
   accepted, unremarkable outcome, not a failure to screen against — it's the
   entry point into a zero-cost-basis cycle, not something to avoid.
   Optimizing for lower assignment probability here (lower delta,
   `chance_of_profit_short`-weighted ranking) would work *against* the
-  priority by leaving less premium on the table per cycle. Ranking (highest
-  `annualized_roc_pct` within the moderate 0.15-0.30 `delta_range`) stays
-  as-is.
+  priority by leaving less premium on the table per cycle. As of the
+  2026-08-19 sign-off this is no longer a single CSP: the opening move is
+  two simultaneous legs (the barbell — see Step 3), splitting budget 50/50
+  between the moderate `threshold_of_risk` band (0.15-0.30, ranked by
+  highest `annualized_roc_pct` as before) and the low-probability
+  `low_prob` band, so the account is working toward zero cost basis on two
+  fronts from the start rather than waiting for a single CSP to resolve
+  before deploying the rest of the budget.
 - **Supplemental CSP, something already held (Step 3, secondary)**: once one
-  position is being worked toward zero cost basis, leftover equity under the
-  $2,500 cap shouldn't just sit idle — but a *new* assignment while the first
-  is still in progress would compete for attention with it, so supplemental
-  CSPs use the low-probability `secondary_csp_delta_range` (0.10-0.20)
-  instead of the moderate primary band. Tagged `supplemental: true` in the
-  ledger and surfaced as a "Role" column in the email digest so primary vs.
-  supplemental trades aren't conflated when reviewing performance.
+  position is being worked toward zero cost basis, leftover equity shouldn't
+  just sit idle — but a *new* assignment while an existing one is still in
+  progress would compete for attention with it, so supplemental CSPs use the
+  low-probability `secondary_csp_delta_range` (0.10-0.20) instead of the
+  moderate primary band. Tagged `supplemental: true` in the ledger and
+  surfaced as a "Role" column in the email digest so primary vs.
+  supplemental trades aren't conflated when reviewing performance. Once at
+  least one assignment is held, this leftover equity is sized against the
+  wider post-assignment budget (Step 6), not the pre-assignment $2,500 cap.
 - **After assignment (Step 5, covered call)**: the posture flips again. Now
   the goal is to *minimize further assignment* (being called away), since
   losing the shares ends the position before it may have reached zero cost
   basis. `covered_call_delta_range` (0.10-0.20) is deliberately lower-ceiling
-  than the primary CSP band for exactly this reason.
+  than the primary CSP band for exactly this reason. **Once a lot reaches
+  zero cost basis, it's held indefinitely** (Step 5) rather than ever being
+  sold to free up capital — its covered-call leg keeps rolling past the
+  ordinary 2-roll cap specifically so it isn't forced into a call-away.
 
-Not a contradiction: all three rules serve the same top priority, just
+Not a contradiction: all four rules serve the same top priority, just
 applied to different states of the same account.
 
 **Not yet built, worth flagging given this priority**: `data/options_positions.json`

@@ -64,3 +64,18 @@ def load(path: str | Path) -> pd.DataFrame:
     with open(path) as f:
         raw = json.load(f)
     return contracts_to_df(raw)
+
+
+def load_symbol_contracts(symbol: str, options_dir: str | Path) -> pd.DataFrame:
+    """Concatenate every data/options/<SYMBOL>_<EXPIRY>.json file for this symbol
+    (one file per expiration, per this module's documented convention). Shared
+    by scan.py (new-candidate screening) and manage.py (roll-candidate lookup
+    for already-open legs) so both read the same on-disk data the same way."""
+    frames = [load(p) for p in sorted(Path(options_dir).glob(f"{symbol}_*.json"))]
+    if not frames:
+        return pd.DataFrame(
+            columns=["instrument_id", "symbol", "expiration_date", "strike", "type",
+                     "bid", "ask", "mid", "delta", "iv", "open_interest", "volume",
+                     "chance_of_profit_short"]
+        )
+    return pd.concat(frames, ignore_index=True)

@@ -1,5 +1,6 @@
 {
   "scan_date": "2026-08-19",
+  "management_actions": [],
   "proposed": [],
   "skipped": {
     "WBD": [
@@ -31,10 +32,10 @@
       "trailing_eps_growth_pct -3.24 < 10.0"
     ],
     "BMNR": [
-      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
     ],
     "RIVN": [
-      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
     ],
     "CMG": [
       "pe_ratio 30.9 > 30",
@@ -47,19 +48,19 @@
       "trailing_eps_growth_pct -1098.96 < 10.0"
     ],
     "PYPL": [
-      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
     ],
     "AAL": [
       "trailing_eps_growth_pct -86.88 < 10.0"
     ],
     "T": [
-      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
     ],
     "IONQ": [
       "trailing_eps_growth_pct -53.89 < 10.0"
     ],
     "NU": [
-      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
     ],
     "RKT": [
       "pe_ratio 98.2 > 30",
@@ -73,32 +74,32 @@
       "trailing_eps_growth_pct -1.9 < 10.0"
     ],
     "AGNC": [
-      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
     ],
     "CMCSA": [
-      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
     ],
     "NVO": [
-      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
     ],
     "FHN": [
       "price 26.22 > 90% of 52wk high 26.56 (not 'on sale')"
     ],
     "PBR": [
-      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
     ],
     "VALE": [
-      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
     ],
     "U": [
-      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
     ],
     "OWL": [
       "pe_ratio 154.5 > 30",
       "trailing_eps_growth_pct -28.06 < 10.0"
     ],
     "BSX": [
-      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
     ],
     "HPE": [
       "pe_ratio 55.2 > 30",
@@ -106,7 +107,7 @@
       "trailing_eps_growth_pct -97.79 < 10.0"
     ],
     "CCL": [
-      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
     ],
     "RBLX": [
       "trailing_eps_growth_pct -13.86 < 10.0"
@@ -116,25 +117,26 @@
       "trailing_eps_growth_pct -8.86 < 10.0"
     ],
     "B": [
-      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
     ],
     "JD": [
-      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
     ],
     "MRNA": [
-      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
     ],
     "DKNG": [
-      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
     ],
     "STM": [
       "pe_ratio 105.8 > 30"
     ],
     "FIG": [
-      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
     ]
   },
   "open_positions": 1,
+  "lots": [],
   "equity": {
     "starting_equity": 5000,
     "csp_collateral": 1600.0,

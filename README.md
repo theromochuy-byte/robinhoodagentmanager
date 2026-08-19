@@ -93,9 +93,10 @@ else happens with it.
 - `premium_agent/trend.py` .... Step 1 technical gate: price above 20/50-day SMA, from local daily bars
 - `premium_agent/screener.py` . CSP / covered-call candidate screening (delta, DTE, liquidity, min yield)
 - `premium_agent/realized_vol.py` . IV-richness proxy from the swing agent's daily bars
-- `premium_agent/positions.py` . current "shares owned" state from CSP assignment (routes Step 5 vs. Step 1-3)
+- `premium_agent/positions.py` . current "shares owned" state, per-lot (`source_instrument_id`) -- multiple lots per symbol, each with its own breakeven-progress counter
 - `premium_agent/ledger.py` ... write PROPOSED trades, roll chains, deployed-collateral accounting
-- `premium_agent/scan.py` ..... **the end-to-end runner** -- screens the universe, proposes sizing-capped trades
+- `premium_agent/manage.py` ... simulates daily management of already-open legs: profit-take, net-credit rolls (capped, uncapped once a lot is paid off), worthless expiration, assignment/call-away
+- `premium_agent/scan.py` ..... **the end-to-end runner** -- runs `manage.py` against open legs, opens the barbell (or supplemental CSPs / covered calls), proposes sizing-capped trades
 - `data/options_config.json` .. paper equity, sizing caps, delta/DTE targets, quality-screen thresholds
 - `data/options_universe.txt` . candidate symbols -- a live Robinhood-scanner snapshot, not a hand-curated list (see below)
 
@@ -117,19 +118,34 @@ Each cycle, the agent:
    one combined record per symbol to `data/options/universe_snapshot.json`:
    `{"SYMBOL": {"fundamentals": {...}, "price": ..., "financials_annual": [...],
    "next_earnings_date": "YYYY-MM-DD" or null}}`.
-2. For each symbol still worth pricing options on: resolves the chain with
+2. Fetches `get_option_quotes` for every `instrument_id` currently open in
+   `data/paper_options_ledger.json` (`premium_agent.ledger.open_trades`) and
+   saves `{instrument_id: {"mark_price": ..., "delta": ..., ...}}` to
+   `data/options/open_trade_quotes.json` -- this is what `manage.py` uses to
+   simulate profit-take/roll/expire/assign for legs already open, before
+   anything new gets screened. If this step is skipped, open legs still get
+   evaluated for expiration and assignment on their own expiration date, but
+   profit-take and rolls won't fire that cycle -- `scan.py` warns on stderr
+   when open trades exist with no matching quote.
+3. For each symbol still worth pricing options on -- including symbols with
+   an open leg (needed for the roll-candidate search in step 4, which looks
+   at later expirations of the *same* symbol) -- resolves the chain with
    `get_option_chains`, lists strikes in the DTE window with
    `get_option_instruments`, batches `get_option_quotes` for those instrument
    ids, merges each instrument with its quote, and saves the list to
    `data/options/<SYMBOL>_<EXPIRATION>.json` (`premium_agent/dataio.py`'s
    documented record shape).
-3. Runs `python3 -m premium_agent.scan`, which is pure Python from here --
-   Step 1 quality/trend/growth gates, CSP/covered-call screening, Step 6
-   sizing caps, and proposing the winners to
-   `data/paper_options_ledger.json` all happen offline, reading only what
-   was fetched and saved in steps 1-2. Held positions
-   (`data/options_positions.json`) get screened for covered calls; everything
-   else gets screened for cash-secured puts.
+4. Runs `python3 -m premium_agent.scan`, which is pure Python from here --
+   `manage.py` first simulates management of every open leg using steps 2-3's
+   data (profit-take, net-credit rolls, worthless expiration, assignment /
+   call-away), then Step 1 quality/trend/growth gates, CSP/covered-call
+   screening, and Step 6 sizing caps propose new trades to
+   `data/paper_options_ledger.json`, all reading only what was fetched and
+   saved above. With no open CSP and no held lot, the opening move is the
+   barbell (two simultaneous legs -- see `CLAUDE_OPTIONS.md` Step 3); each
+   held lot gets one covered call proposed against it; once at least one
+   lot is held, leftover budget also gets supplemental low-probability CSPs
+   under the wider post-assignment cap.
 
 Screening the whole universe every cycle is real work, not a formality: a
 first live run against F, T, and SOFI rejected F (a real 2025 earnings
@@ -138,6 +154,8 @@ T's only in-delta-band strike paid 0.93% over 39 days -- just under the 1%
 yield floor. Zero trades proposed. That's the gate working, not a bug; the
 strategy doesn't force a trade to have something to show for a cycle.
 
-`CLAUDE_OPTIONS.md` has the full rules and flags the open data gap (no
-historical IV series from this MCP) plus `max_rolls_before_assignment`,
-which still needs a real number before this runs unattended.
+`CLAUDE_OPTIONS.md` has the full rules -- including the barbell opening
+move, per-lot payback counters, the 2-roll cap (uncapped once a lot reaches
+zero cost basis), and the post-assignment budget/concurrency expansion, all
+signed off 2026-08-19 -- and flags the one still-open data gap: no
+historical IV series from this MCP.

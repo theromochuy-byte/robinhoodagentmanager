@@ -102,6 +102,34 @@ def breakeven_progress_pct(instrument_id: str, strike: float, path: str | Path =
     return round(cumulative_credit(instrument_id, path=path) * 100 / (strike * 100) * 100, 2)
 
 
+def roll_count(instrument_id: str, path: str | Path = DEFAULT_LEDGER) -> int:
+    """How many times the chain ending at instrument_id has already been
+    rolled, for CLAUDE_OPTIONS.md Step 4's max_rolls_before_assignment cap."""
+    by_id = {t["instrument_id"]: t for t in _load(Path(path)) if "instrument_id" in t}
+    count = 0
+    node = by_id.get(instrument_id)
+    while node is not None and node.get("rolled_from"):
+        count += 1
+        node = by_id.get(node.get("rolled_from"))
+    return count
+
+
+def covered_call_premium_for_lot(source_instrument_id: str, path: str | Path = DEFAULT_LEDGER) -> float:
+    """Sum of credit - close_debit across every covered-call trade ever
+    written against one assignment lot (tagged trade["source_instrument_id"]
+    == the CSP instrument_id whose assignment created the lot), regardless of
+    each trade's current status. Unlike cumulative_credit (which walks a
+    single rolled_from chain), this sums every covered-call chain the lot has
+    ever run -- profit-take closes one chain and a fresh one starts next
+    cycle, and all of them count toward the lot's own payback counter
+    (premium_agent.positions.breakeven_progress_pct)."""
+    total = 0.0
+    for t in _load(Path(path)):
+        if t.get("type") == "covered_call" and t.get("source_instrument_id") == source_instrument_id:
+            total += t.get("credit", 0.0) - (t.get("close_debit") or 0.0)
+    return round(total, 4)
+
+
 def open_trades(path: str | Path = DEFAULT_LEDGER) -> list[dict]:
     return [t for t in _load(Path(path)) if t.get("status") not in CLOSED_STATUSES]
 
