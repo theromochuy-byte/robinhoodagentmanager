@@ -1,0 +1,38 @@
+[
+  {
+    "id": "9cc172fa-c50d-4058-bcbc-f9ef44853988",
+    "chain_symbol": "DKNG",
+    "expiration_date": "2026-09-18",
+    "strike_price": "25.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": "1.120000",
+      "ask_price": "1.290000",
+      "mark_price": "1.205000",
+      "delta": "-0.429571",
+      "implied_volatility": "0.486150",
+      "open_interest": 7999,
+      "volume": 181,
+      "chance_of_profit_short": "0.654590",
+      "chance_of_profit_long": "0.345410"
+    }
+  },
+  {
+    "id": "c02d3128-cba8-42a9-8664-a5d5ebd86484",
+    "chain_symbol": "DKNG",
+    "expiration_date": "2026-09-18",
+    "strike_price": "22.5000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.200000",
+      "ask_price": "0.380000",
+      "mark_price": "0.290000",
+      "delta": "-0.159030",
+      "implied_volatility": "0.451580",
+      "open_interest": 4018,
+      "volume": 129,
+      "chance_of_profit_short": "0.833991",
+      "chance_of_profit_long": "0.166009"
+    }
+  }
+]

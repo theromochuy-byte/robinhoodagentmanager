@@ -1,0 +1,38 @@
+[
+  {
+    "id": "44fe4798-4bee-4fec-a1fb-fa0cb5abde95",
+    "chain_symbol": "MRNA",
+    "expiration_date": "2026-09-25",
+    "strike_price": "65.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.380000",
+      "ask_price": "1.320000",
+      "mark_price": "0.850000",
+      "delta": "-0.019491",
+      "implied_volatility": "1.749769",
+      "open_interest": 20,
+      "volume": 13,
+      "chance_of_profit_short": "0.937195",
+      "chance_of_profit_long": "0.062805"
+    }
+  },
+  {
+    "id": "c779a238-c435-4afe-bc8f-892aa9ed6649",
+    "chain_symbol": "MRNA",
+    "expiration_date": "2026-09-25",
+    "strike_price": "64.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.000000",
+      "ask_price": "2.630000",
+      "mark_price": "1.315000",
+      "delta": "-0.000599",
+      "implied_volatility": "1.032129",
+      "open_interest": 95,
+      "volume": 2,
+      "chance_of_profit_short": "0.998203",
+      "chance_of_profit_long": "0.001797"
+    }
+  }
+]

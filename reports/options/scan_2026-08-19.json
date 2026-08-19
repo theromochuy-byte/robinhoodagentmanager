@@ -1,0 +1,145 @@
+{
+  "scan_date": "2026-08-19",
+  "proposed": [],
+  "skipped": {
+    "WBD": [
+      "price 27.91 > 90% of 52wk high 30.00 (not 'on sale')"
+    ],
+    "SOFI": [
+      "pe_ratio 38.6 > 30",
+      "trailing_eps_growth_pct -3.48 < 10.0"
+    ],
+    "NOK": [
+      "pe_ratio 72.8 > 30"
+    ],
+    "PCG": [
+      "price 17.78 > 90% of 52wk high 19.16 (not 'on sale')",
+      "trailing_eps_growth_pct 7.6 < 10.0"
+    ],
+    "IREN": [
+      "pe_ratio 87.0 > 30"
+    ],
+    "SMCI": [
+      "trailing_eps_growth_pct -9.01 < 10.0"
+    ],
+    "ET": [
+      "price 21.01 > 90% of 52wk high 21.11 (not 'on sale')"
+    ],
+    "PFE": [
+      "pe_ratio 35.5 > 30",
+      "price 26.78 > 90% of 52wk high 28.75 (not 'on sale')",
+      "trailing_eps_growth_pct -3.24 < 10.0"
+    ],
+    "BMNR": [
+      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "RIVN": [
+      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "CMG": [
+      "pe_ratio 30.9 > 30",
+      "trailing_eps_growth_pct 0.11 < 10.0"
+    ],
+    "NKE": [
+      "trailing_eps_growth_pct -3.45 < 10.0"
+    ],
+    "QXO": [
+      "trailing_eps_growth_pct -1098.96 < 10.0"
+    ],
+    "PYPL": [
+      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "AAL": [
+      "trailing_eps_growth_pct -86.88 < 10.0"
+    ],
+    "T": [
+      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "IONQ": [
+      "trailing_eps_growth_pct -53.89 < 10.0"
+    ],
+    "NU": [
+      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "RKT": [
+      "pe_ratio 98.2 > 30",
+      "trailing_eps_growth_pct -331.53 < 10.0"
+    ],
+    "F": [
+      "trailing_eps_growth_pct -238.83 < 10.0"
+    ],
+    "VZ": [
+      "price 48.35 > 90% of 52wk high 51.68 (not 'on sale')",
+      "trailing_eps_growth_pct -1.9 < 10.0"
+    ],
+    "AGNC": [
+      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "CMCSA": [
+      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "NVO": [
+      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "FHN": [
+      "price 26.22 > 90% of 52wk high 26.56 (not 'on sale')"
+    ],
+    "PBR": [
+      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "VALE": [
+      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "U": [
+      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "OWL": [
+      "pe_ratio 154.5 > 30",
+      "trailing_eps_growth_pct -28.06 < 10.0"
+    ],
+    "BSX": [
+      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "HPE": [
+      "pe_ratio 55.2 > 30",
+      "price 58.59 > 90% of 52wk high 64.25 (not 'on sale')",
+      "trailing_eps_growth_pct -97.79 < 10.0"
+    ],
+    "CCL": [
+      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "RBLX": [
+      "trailing_eps_growth_pct -13.86 < 10.0"
+    ],
+    "HPQ": [
+      "price 29.89 > 90% of 52wk high 32.19 (not 'on sale')",
+      "trailing_eps_growth_pct -8.86 < 10.0"
+    ],
+    "B": [
+      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "JD": [
+      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "MRNA": [
+      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "DKNG": [
+      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "STM": [
+      "pe_ratio 105.8 > 30"
+    ],
+    "FIG": [
+      "no primary CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ]
+  },
+  "open_positions": 1,
+  "equity": {
+    "starting_equity": 5000,
+    "csp_collateral": 1600.0,
+    "assigned_shares_capital": 0,
+    "capital_in_use": 1600.0,
+    "available_capital": 900.0
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "c927d0ed-31a7-4c50-9def-3d48fb25bad8",
+    "chain_symbol": "PYPL",
+    "expiration_date": "2026-09-18",
+    "strike_price": "60.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": "1.200000",
+      "ask_price": "1.570000",
+      "mark_price": "1.385000",
+      "delta": "-0.372866",
+      "implied_volatility": "0.294223",
+      "open_interest": 4200,
+      "volume": 41,
+      "chance_of_profit_short": "0.699064",
+      "chance_of_profit_long": "0.300936"
+    }
+  },
+  {
+    "id": "814f1f3d-62ae-404a-b47d-04ab7e95617d",
+    "chain_symbol": "PYPL",
+    "expiration_date": "2026-09-18",
+    "strike_price": "57.5000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.590000",
+      "ask_price": "0.960000",
+      "mark_price": "0.775000",
+      "delta": "-0.224740",
+      "implied_volatility": "0.327453",
+      "open_interest": 3476,
+      "volume": 83,
+      "chance_of_profit_short": "0.790857",
+      "chance_of_profit_long": "0.209143"
+    }
+  }
+]

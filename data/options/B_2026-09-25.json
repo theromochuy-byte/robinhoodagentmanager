@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ed3d1b29-292e-4105-9457-3506a2448486",
+    "chain_symbol": "B",
+    "expiration_date": "2026-09-25",
+    "strike_price": "41.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.600000",
+      "ask_price": "1.020000",
+      "mark_price": "0.810000",
+      "delta": "-0.214049",
+      "implied_volatility": "0.433102",
+      "open_interest": 21,
+      "volume": 2,
+      "chance_of_profit_short": "0.788334",
+      "chance_of_profit_long": "0.211666"
+    }
+  },
+  {
+    "id": "4899c9df-aff8-4612-ad3d-5928db55f3b1",
+    "chain_symbol": "B",
+    "expiration_date": "2026-09-25",
+    "strike_price": "40.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.540000",
+      "ask_price": "0.760000",
+      "mark_price": "0.650000",
+      "delta": "-0.174260",
+      "implied_volatility": "0.451878",
+      "open_interest": 2068,
+      "volume": 19,
+      "chance_of_profit_short": "0.818200",
+      "chance_of_profit_long": "0.181800"
+    }
+  }
+]

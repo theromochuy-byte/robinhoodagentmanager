@@ -1,53 +1,38 @@
 [
   {
-    "id": "fa9707ea-c02d-46a2-835b-1274c46910fa",
+    "id": "5f3d01b3-0138-4453-aede-b8ca021a9bb1",
     "chain_symbol": "AGNC",
     "expiration_date": "2026-09-11",
-    "strike_price": "8.0000",
+    "strike_price": "10.5000",
     "type": "put",
     "quote": {
-      "bid_price": "0.00",
-      "ask_price": "0.19",
-      "mark_price": "0.095",
-      "delta": "-0.015799",
-      "implied_volatility": "0.553504",
-      "open_interest": 0,
-      "volume": 0,
-      "chance_of_profit_short": "0.977458"
+      "bid_price": "0.040000",
+      "ask_price": "0.100000",
+      "mark_price": "0.070000",
+      "delta": "-0.178429",
+      "implied_volatility": "0.253692",
+      "open_interest": 9402,
+      "volume": 47,
+      "chance_of_profit_short": "0.832438",
+      "chance_of_profit_long": "0.167562"
     }
   },
   {
-    "id": "45d982c0-b8d5-4b2c-8a5c-25f40a8feccd",
+    "id": "79674783-ce76-4a64-99e4-031fc8de4c55",
     "chain_symbol": "AGNC",
     "expiration_date": "2026-09-11",
-    "strike_price": "8.5000",
+    "strike_price": "10.0000",
     "type": "put",
     "quote": {
-      "bid_price": "0.00",
-      "ask_price": "0.19",
-      "mark_price": "0.095",
-      "delta": "-0.018743",
-      "implied_volatility": "0.460669",
-      "open_interest": 0,
-      "volume": 0,
-      "chance_of_profit_short": "0.975103"
-    }
-  },
-  {
-    "id": "9e098c18-8767-42ca-ae3c-991d930adfdd",
-    "chain_symbol": "AGNC",
-    "expiration_date": "2026-09-11",
-    "strike_price": "9.0000",
-    "type": "put",
-    "quote": {
-      "bid_price": "0.00",
-      "ask_price": "0.09",
-      "mark_price": "0.045",
-      "delta": "-0.022826",
-      "implied_volatility": "0.371411",
-      "open_interest": 16,
-      "volume": 0,
-      "chance_of_profit_short": "0.971692"
+      "bid_price": "0.010000",
+      "ask_price": "0.050000",
+      "mark_price": "0.030000",
+      "delta": "-0.076861",
+      "implied_volatility": "0.302866",
+      "open_interest": 108,
+      "volume": 2,
+      "chance_of_profit_short": "0.917801",
+      "chance_of_profit_long": "0.082199"
     }
   }
 ]
