@@ -1,0 +1,43 @@
+name: Options Daily Email
+
+# Sends the options-agent digest email only -- headless, no Robinhood auth.
+# The fetch+scan step needs live Robinhood MCP access and runs separately,
+# in a scheduled Claude Code Routine that commits its results to this
+# branch before this workflow's scheduled time. This job just reads
+# whatever reports/options/scan_<date>.json is already there and emails it,
+# reusing the same NOTIFY_EMAIL_* secrets as the swing agent's workflow --
+# no new credentials anywhere.
+
+on:
+  schedule:
+    # 8:20 AM CT (CDT) -- 5 min after the options Routine's scheduled fetch,
+    # same target time window as the swing scan's 8:15 AM morning run.
+    - cron: '20 13 * * 1-5'
+  workflow_dispatch: {}
+
+jobs:
+  email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          ref: claude/options-premium-agent-ne3ye8
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Send options digest
+        env:
+          NOTIFY_EMAIL_FROM:     ${{ secrets.NOTIFY_EMAIL_FROM }}
+          NOTIFY_EMAIL_PASSWORD: ${{ secrets.NOTIFY_EMAIL_PASSWORD }}
+          NOTIFY_EMAIL_TO:       ${{ secrets.NOTIFY_EMAIL_TO }}
+        run: python3 -m premium_agent.notify
