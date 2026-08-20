@@ -1,0 +1,160 @@
+{
+  "scan_date": "2026-08-20",
+  "management_actions": [
+    {
+      "symbol": "BMNR",
+      "instrument_id": "c123efbd-cd14-4532-b804-15d68bdc80d4",
+      "action": "closed_profit_take",
+      "mark_price": 0.195,
+      "credit": 0.645
+    }
+  ],
+  "proposed": [],
+  "skipped": {
+    "barbell:threshold_of_risk": [
+      "no candidate cleared delta/DTE/liquidity/yield/collateral-budget for this leg"
+    ],
+    "barbell:low_prob": [
+      "no candidate cleared delta/DTE/liquidity/yield/collateral-budget for this leg"
+    ],
+    "WBD": [
+      "price 28.24 > 90% of 52wk high 30.00 (not 'on sale')"
+    ],
+    "SOFI": [
+      "pe_ratio 37.2 > 30",
+      "trailing_eps_growth_pct -3.48 < 10.0"
+    ],
+    "NOK": [
+      "pe_ratio 70.3 > 30"
+    ],
+    "PCG": [
+      "price 18.32 > 90% of 52wk high 19.16 (not 'on sale')",
+      "trailing_eps_growth_pct 7.6 < 10.0"
+    ],
+    "IREN": [
+      "pe_ratio 83.0 > 30"
+    ],
+    "SMCI": [
+      "trailing_eps_growth_pct -9.01 < 10.0"
+    ],
+    "ET": [
+      "price 21.20 > 90% of 52wk high 21.64 (not 'on sale')"
+    ],
+    "PFE": [
+      "pe_ratio 36.1 > 30",
+      "price 28.11 > 90% of 52wk high 28.75 (not 'on sale')",
+      "trailing_eps_growth_pct -3.24 < 10.0"
+    ],
+    "BMNR": [
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
+    ],
+    "RIVN": [
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
+    ],
+    "CMG": [
+      "pe_ratio 30.8 > 30",
+      "trailing_eps_growth_pct 0.11 < 10.0"
+    ],
+    "NKE": [
+      "trailing_eps_growth_pct -3.45 < 10.0"
+    ],
+    "QXO": [
+      "trailing_eps_growth_pct -1098.96 < 10.0"
+    ],
+    "PYPL": [
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
+    ],
+    "AAL": [
+      "trailing_eps_growth_pct -86.88 < 10.0"
+    ],
+    "T": [
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
+    ],
+    "IONQ": [
+      "trailing_eps_growth_pct -53.89 < 10.0"
+    ],
+    "NU": [
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
+    ],
+    "RKT": [
+      "pe_ratio 93.1 > 30",
+      "trailing_eps_growth_pct -331.53 < 10.0"
+    ],
+    "F": [
+      "trailing_eps_growth_pct -238.83 < 10.0"
+    ],
+    "VZ": [
+      "price 49.36 > 90% of 52wk high 51.68 (not 'on sale')",
+      "trailing_eps_growth_pct -1.9 < 10.0"
+    ],
+    "AGNC": [
+      "price 11.09 > 90% of 52wk high 12.19 (not 'on sale')"
+    ],
+    "CMCSA": [
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
+    ],
+    "NVO": [
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
+    ],
+    "FHN": [
+      "price 24.88 > 90% of 52wk high 26.56 (not 'on sale')"
+    ],
+    "PBR": [
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
+    ],
+    "VALE": [
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
+    ],
+    "U": [
+      "price 47.10 > 90% of 52wk high 52.15 (not 'on sale')"
+    ],
+    "OWL": [
+      "pe_ratio 148.8 > 30",
+      "trailing_eps_growth_pct -28.06 < 10.0"
+    ],
+    "BSX": [
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
+    ],
+    "HPE": [
+      "pe_ratio 52.4 > 30",
+      "trailing_eps_growth_pct -97.79 < 10.0"
+    ],
+    "CCL": [
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
+    ],
+    "RBLX": [
+      "trailing_eps_growth_pct -13.86 < 10.0"
+    ],
+    "HPQ": [
+      "price 29.95 > 90% of 52wk high 32.19 (not 'on sale')",
+      "trailing_eps_growth_pct -8.86 < 10.0"
+    ],
+    "B": [
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
+    ],
+    "JD": [
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
+    ],
+    "MRNA": [
+      "price 174.95 > 90% of 52wk high 176.66 (not 'on sale')"
+    ],
+    "DKNG": [
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
+    ],
+    "STM": [
+      "pe_ratio 101.9 > 30"
+    ],
+    "FIG": [
+      "no assignment yet -- supplemental CSPs only open once a lot is held"
+    ]
+  },
+  "open_positions": 0,
+  "lots": [],
+  "equity": {
+    "starting_equity": 5000,
+    "csp_collateral": 0,
+    "assigned_shares_capital": 0,
+    "capital_in_use": 0,
+    "available_capital": 2500.0
+  }
+}

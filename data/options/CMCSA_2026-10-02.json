@@ -1,0 +1,20 @@
+[
+  {
+    "id": "5c441698-3fbc-4ce4-a08f-905ab25a745a",
+    "chain_symbol": "CMCSA",
+    "expiration_date": "2026-10-02",
+    "strike_price": "24.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.160000",
+      "ask_price": "0.340000",
+      "mark_price": "0.250000",
+      "delta": "-0.163946",
+      "implied_volatility": "0.303462",
+      "open_interest": 8,
+      "volume": 0,
+      "chance_of_profit_short": "0.835341",
+      "chance_of_profit_long": "0.164659"
+    }
+  }
+]

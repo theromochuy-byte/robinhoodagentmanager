@@ -1,38 +1,20 @@
 [
   {
-    "id": "0c399b77-9c1d-4ee9-bf36-d52beb2465c3",
+    "id": "c5c5f61a-8d11-4d59-a247-7767b12285cc",
     "chain_symbol": "NVO",
     "expiration_date": "2026-09-25",
-    "strike_price": "45.0000",
+    "strike_price": "42.0000",
     "type": "put",
     "quote": {
-      "bid_price": "1.170000",
-      "ask_price": "1.330000",
-      "mark_price": "1.250000",
-      "delta": "-0.350245",
-      "implied_volatility": "0.338778",
-      "open_interest": 171,
-      "volume": 14,
-      "chance_of_profit_short": "0.705935",
-      "chance_of_profit_long": "0.294065"
-    }
-  },
-  {
-    "id": "b240b8e5-fe29-4889-86fd-d68c75632620",
-    "chain_symbol": "NVO",
-    "expiration_date": "2026-09-25",
-    "strike_price": "44.0000",
-    "type": "put",
-    "quote": {
-      "bid_price": "0.680000",
-      "ask_price": "1.000000",
-      "mark_price": "0.840000",
-      "delta": "-0.270009",
-      "implied_volatility": "0.326559",
-      "open_interest": 89,
-      "volume": 11,
-      "chance_of_profit_short": "0.756946",
-      "chance_of_profit_long": "0.243054"
+      "bid_price": "0.300000",
+      "ask_price": "0.500000",
+      "mark_price": "0.400000",
+      "delta": "-0.151794",
+      "implied_volatility": "0.331923",
+      "open_interest": 131,
+      "volume": 0,
+      "chance_of_profit_short": "0.845346",
+      "chance_of_profit_long": "0.154654"
     }
   }
 ]

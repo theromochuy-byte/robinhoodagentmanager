@@ -36,7 +36,10 @@
       "trailing_eps_growth_pct": 10685.39,
       "price": 18.22
     },
-    "status": "PROPOSED",
-    "proposed_at": "2026-08-12T18:51:17.573054+00:00"
+    "status": "closed",
+    "proposed_at": "2026-08-12T18:51:17.573054+00:00",
+    "close_debit": 0.195,
+    "closed_at": "2026-08-20T16:25:20.942982+00:00",
+    "close_reason": "profit_take"
   }
 ]

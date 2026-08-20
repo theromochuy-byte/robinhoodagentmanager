@@ -1,38 +1,20 @@
 [
   {
-    "id": "5a69f105-61cc-4877-8fd4-a46dd4fd20be",
+    "id": "ee31304d-1022-46d4-9bec-aa302b87c9b6",
     "chain_symbol": "BMNR",
     "expiration_date": "2026-09-11",
-    "strike_price": "17.5000",
+    "strike_price": "20.0000",
     "type": "put",
     "quote": {
-      "bid_price": "0.400000",
-      "ask_price": "0.510000",
-      "mark_price": "0.455000",
-      "delta": "-0.194775",
-      "implied_volatility": "0.766292",
-      "open_interest": 94,
-      "volume": 6,
-      "chance_of_profit_short": "0.790337",
-      "chance_of_profit_long": "0.209663"
-    }
-  },
-  {
-    "id": "c5b5ef7a-77b2-4e55-89f4-9cf2af710a56",
-    "chain_symbol": "BMNR",
-    "expiration_date": "2026-09-11",
-    "strike_price": "17.0000",
-    "type": "put",
-    "quote": {
-      "bid_price": "0.290000",
-      "ask_price": "0.370000",
-      "mark_price": "0.330000",
-      "delta": "-0.152447",
-      "implied_volatility": "0.753030",
-      "open_interest": 648,
-      "volume": 182,
-      "chance_of_profit_short": "0.826780",
-      "chance_of_profit_long": "0.173220"
+      "bid_price": "0.900000",
+      "ask_price": "0.950000",
+      "mark_price": "0.925000",
+      "delta": "-0.312942",
+      "implied_volatility": "0.782385",
+      "open_interest": 25,
+      "volume": 39,
+      "chance_of_profit_short": "0.706313",
+      "chance_of_profit_long": "0.293687"
     }
   }
 ]

@@ -1,38 +1,20 @@
 [
   {
-    "id": "e05509a5-9cc0-4656-ad04-030a9d81d9f5",
+    "id": "bd121668-ef83-4b4f-b367-e3bb60310102",
     "chain_symbol": "DKNG",
     "expiration_date": "2026-09-25",
-    "strike_price": "26.0000",
+    "strike_price": "22.0000",
     "type": "put",
     "quote": {
-      "bid_price": "1.770000",
-      "ask_price": "2.020000",
-      "mark_price": "1.895000",
-      "delta": "-0.530763",
-      "implied_volatility": "0.487790",
-      "open_interest": 22,
+      "bid_price": "0.390000",
+      "ask_price": "0.520000",
+      "mark_price": "0.455000",
+      "delta": "-0.200417",
+      "implied_volatility": "0.491366",
+      "open_interest": 28,
       "volume": 0,
-      "chance_of_profit_short": "0.603703",
-      "chance_of_profit_long": "0.396297"
-    }
-  },
-  {
-    "id": "a91017c5-f8eb-4909-bd2b-7132979006d1",
-    "chain_symbol": "DKNG",
-    "expiration_date": "2026-09-25",
-    "strike_price": "25.0000",
-    "type": "put",
-    "quote": {
-      "bid_price": "1.140000",
-      "ask_price": "1.520000",
-      "mark_price": "1.330000",
-      "delta": "-0.429123",
-      "implied_volatility": "0.478253",
-      "open_interest": 29,
-      "volume": 0,
-      "chance_of_profit_short": "0.651592",
-      "chance_of_profit_long": "0.348408"
+      "chance_of_profit_short": "0.794748",
+      "chance_of_profit_long": "0.205252"
     }
   }
 ]

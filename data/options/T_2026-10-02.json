@@ -1,0 +1,20 @@
+[
+  {
+    "id": "fad47f81-5062-469e-83f3-7f6bfda16be8",
+    "chain_symbol": "T",
+    "expiration_date": "2026-10-02",
+    "strike_price": "22.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.050000",
+      "ask_price": "0.530000",
+      "mark_price": "0.290000",
+      "delta": "-0.148546",
+      "implied_volatility": "0.410452",
+      "open_interest": 75,
+      "volume": 0,
+      "chance_of_profit_short": "0.840457",
+      "chance_of_profit_long": "0.159543"
+    }
+  }
+]

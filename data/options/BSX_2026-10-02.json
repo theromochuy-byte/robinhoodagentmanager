@@ -1,0 +1,20 @@
+[
+  {
+    "id": "07823b4c-3da6-4e9e-ad21-ebc84f5bd6f1",
+    "chain_symbol": "BSX",
+    "expiration_date": "2026-10-02",
+    "strike_price": "45.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.500000",
+      "ask_price": "0.750000",
+      "mark_price": "0.625000",
+      "delta": "-0.167751",
+      "implied_volatility": "0.382736",
+      "open_interest": 2,
+      "volume": 3,
+      "chance_of_profit_short": "0.826281",
+      "chance_of_profit_long": "0.173719"
+    }
+  }
+]

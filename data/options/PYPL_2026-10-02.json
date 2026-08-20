@@ -1,0 +1,20 @@
+[
+  {
+    "id": "3bce2af6-9965-41d5-98db-5d4e01fa7599",
+    "chain_symbol": "PYPL",
+    "expiration_date": "2026-10-02",
+    "strike_price": "55.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.200000",
+      "ask_price": "0.840000",
+      "mark_price": "0.520000",
+      "delta": "-0.135691",
+      "implied_volatility": "0.338629",
+      "open_interest": 74,
+      "volume": 6,
+      "chance_of_profit_short": "0.856745",
+      "chance_of_profit_long": "0.143255"
+    }
+  }
+]

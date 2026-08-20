@@ -1,0 +1,20 @@
+[
+  {
+    "id": "b9214b70-7762-43a6-b8e0-9debacf6ad0c",
+    "chain_symbol": "B",
+    "expiration_date": "2026-10-02",
+    "strike_price": "40.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.350000",
+      "ask_price": "0.880000",
+      "mark_price": "0.615000",
+      "delta": "-0.153472",
+      "implied_volatility": "0.455007",
+      "open_interest": 14,
+      "volume": 0,
+      "chance_of_profit_short": "0.832928",
+      "chance_of_profit_long": "0.167072"
+    }
+  }
+]

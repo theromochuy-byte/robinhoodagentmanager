@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ab5d6bec-70af-4e03-adda-54d845303d12",
+    "chain_symbol": "JD",
+    "expiration_date": "2026-10-02",
+    "strike_price": "26.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.200000",
+      "ask_price": "0.340000",
+      "mark_price": "0.270000",
+      "delta": "-0.140418",
+      "implied_volatility": "0.354573",
+      "open_interest": 10,
+      "volume": 0,
+      "chance_of_profit_short": "0.851510",
+      "chance_of_profit_long": "0.148490"
+    }
+  }
+]

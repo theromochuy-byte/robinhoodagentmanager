@@ -1,0 +1,20 @@
+[
+  {
+    "id": "03665059-683b-4242-bb2a-e05c14c71738",
+    "chain_symbol": "CCL",
+    "expiration_date": "2026-10-02",
+    "strike_price": "24.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.680000",
+      "ask_price": "0.850000",
+      "mark_price": "0.765000",
+      "delta": "-0.291498",
+      "implied_volatility": "0.440106",
+      "open_interest": 1,
+      "volume": 29,
+      "chance_of_profit_short": "0.730809",
+      "chance_of_profit_long": "0.269191"
+    }
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "0315fa63-47a0-483c-9c3c-6ed6b40e5e6d",
+    "chain_symbol": "BMNR",
+    "expiration_date": "2026-10-02",
+    "strike_price": "20.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": "1.340000",
+      "ask_price": "1.660000",
+      "mark_price": "1.500000",
+      "delta": "-0.336492",
+      "implied_volatility": "0.780597",
+      "open_interest": 23,
+      "volume": 4,
+      "chance_of_profit_short": "0.672158",
+      "chance_of_profit_long": "0.327842"
+    }
+  }
+]

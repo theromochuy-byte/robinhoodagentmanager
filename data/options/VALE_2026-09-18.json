@@ -6,15 +6,15 @@
     "strike_price": "13.0000",
     "type": "put",
     "quote": {
-      "bid_price": "0.130000",
-      "ask_price": "0.150000",
-      "mark_price": "0.140000",
-      "delta": "-0.197282",
-      "implied_volatility": "0.307336",
-      "open_interest": 29062,
-      "volume": 8458,
-      "chance_of_profit_short": "0.812581",
-      "chance_of_profit_long": "0.187419"
+      "bid_price": "0.100000",
+      "ask_price": "0.120000",
+      "mark_price": "0.110000",
+      "delta": "-0.152529",
+      "implied_volatility": "0.331178",
+      "open_interest": 23477,
+      "volume": 59,
+      "chance_of_profit_short": "0.846955",
+      "chance_of_profit_long": "0.153045"
     }
   },
   {
@@ -27,12 +27,12 @@
       "bid_price": "0.030000",
       "ask_price": "0.040000",
       "mark_price": "0.035000",
-      "delta": "-0.062544",
-      "implied_volatility": "0.356063",
+      "delta": "-0.056602",
+      "implied_volatility": "0.395998",
       "open_interest": 4449,
-      "volume": 4,
-      "chance_of_profit_short": "0.928510",
-      "chance_of_profit_long": "0.071490"
+      "volume": 8,
+      "chance_of_profit_short": "0.933457",
+      "chance_of_profit_long": "0.066543"
     }
   }
 ]

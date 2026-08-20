@@ -1,38 +1,38 @@
 [
   {
-    "id": "6bfbbaa5-a614-4e62-8d23-37e1208e2586",
+    "id": "31360ee5-5711-4dfc-adbc-83dd1c373942",
     "chain_symbol": "NU",
     "expiration_date": "2026-09-25",
-    "strike_price": "15.0000",
+    "strike_price": "13.0000",
     "type": "put",
     "quote": {
-      "bid_price": "0.790000",
-      "ask_price": "1.090000",
-      "mark_price": "0.940000",
-      "delta": "-0.555784",
-      "implied_volatility": "0.396445",
-      "open_interest": 307,
-      "volume": 20,
-      "chance_of_profit_short": "0.600800",
-      "chance_of_profit_long": "0.399200"
+      "bid_price": "0.170000",
+      "ask_price": "0.200000",
+      "mark_price": "0.185000",
+      "delta": "-0.192681",
+      "implied_volatility": "0.376329",
+      "open_interest": 135,
+      "volume": 0,
+      "chance_of_profit_short": "0.809189",
+      "chance_of_profit_long": "0.190811"
     }
   },
   {
-    "id": "ecf3f9a3-71a5-441a-a704-911661347ed0",
+    "id": "cd348986-b842-4b9a-92cb-03851787ac44",
     "chain_symbol": "NU",
     "expiration_date": "2026-09-25",
-    "strike_price": "14.5000",
+    "strike_price": "12.0000",
     "type": "put",
     "quote": {
-      "bid_price": "0.510000",
-      "ask_price": "0.820000",
-      "mark_price": "0.665000",
-      "delta": "-0.447377",
-      "implied_volatility": "0.399128",
-      "open_interest": 57,
-      "volume": 12,
-      "chance_of_profit_short": "0.649065",
-      "chance_of_profit_long": "0.350935"
+      "bid_price": "0.040000",
+      "ask_price": "0.220000",
+      "mark_price": "0.130000",
+      "delta": "-0.114552",
+      "implied_volatility": "0.487491",
+      "open_interest": 48,
+      "volume": 0,
+      "chance_of_profit_short": "0.868784",
+      "chance_of_profit_long": "0.131216"
     }
   }
 ]

@@ -1,38 +1,20 @@
 [
   {
-    "id": "fb6e5d86-09d2-4366-96a5-f991e6a9d273",
+    "id": "d40b8697-e547-43ec-8196-0936c35dbf40",
     "chain_symbol": "T",
     "expiration_date": "2026-09-25",
-    "strike_price": "24.5000",
+    "strike_price": "22.0000",
     "type": "put",
     "quote": {
-      "bid_price": "0.380000",
-      "ask_price": "0.550000",
-      "mark_price": "0.465000",
-      "delta": "-0.342228",
-      "implied_volatility": "0.247583",
-      "open_interest": 83,
-      "volume": 29,
-      "chance_of_profit_short": "0.718298",
-      "chance_of_profit_long": "0.281702"
-    }
-  },
-  {
-    "id": "9f9ea086-3281-4ea8-8d0d-7b9b2b76356d",
-    "chain_symbol": "T",
-    "expiration_date": "2026-09-25",
-    "strike_price": "24.0000",
-    "type": "put",
-    "quote": {
-      "bid_price": "0.250000",
-      "ask_price": "0.400000",
-      "mark_price": "0.325000",
-      "delta": "-0.257597",
-      "implied_volatility": "0.255927",
-      "open_interest": 310,
-      "volume": 8,
-      "chance_of_profit_short": "0.770898",
-      "chance_of_profit_long": "0.229102"
+      "bid_price": "0.040000",
+      "ask_price": "0.740000",
+      "mark_price": "0.390000",
+      "delta": "-0.171558",
+      "implied_volatility": "0.498667",
+      "open_interest": 45,
+      "volume": 0,
+      "chance_of_profit_short": "0.817464",
+      "chance_of_profit_long": "0.182536"
     }
   }
 ]
