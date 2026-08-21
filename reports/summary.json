@@ -1,37 +1,37 @@
 {
   "overall": {
-    "trades": 59,
-    "wins": 26,
-    "losses": 33,
-    "win_rate": 0.441,
-    "avg_R": 0.322,
-    "expectancy_R": 0.322,
-    "total_R": 19.0,
-    "total_pnl_dollars": 1674.3,
-    "open_trades": 27
+    "trades": 57,
+    "wins": 27,
+    "losses": 30,
+    "win_rate": 0.474,
+    "avg_R": 0.421,
+    "expectancy_R": 0.421,
+    "total_R": 24.0,
+    "total_pnl_dollars": 2295.69,
+    "open_trades": 53
   },
   "by_pattern": {
     "double_bottom": {
-      "trades": 22,
+      "trades": 20,
       "wins": 10,
-      "losses": 12,
-      "win_rate": 0.455,
-      "avg_R": 0.364,
-      "expectancy_R": 0.364,
-      "total_R": 8.0,
-      "total_pnl_dollars": 696.84,
-      "open_trades": 7
+      "losses": 10,
+      "win_rate": 0.5,
+      "avg_R": 0.5,
+      "expectancy_R": 0.5,
+      "total_R": 10.0,
+      "total_pnl_dollars": 923.39,
+      "open_trades": 14
     },
     "inverse_hns": {
       "trades": 32,
-      "wins": 13,
-      "losses": 19,
-      "win_rate": 0.406,
-      "avg_R": 0.219,
-      "expectancy_R": 0.219,
-      "total_R": 7.0,
-      "total_pnl_dollars": 609.13,
-      "open_trades": 19
+      "wins": 14,
+      "losses": 18,
+      "win_rate": 0.438,
+      "avg_R": 0.312,
+      "expectancy_R": 0.312,
+      "total_R": 10.0,
+      "total_pnl_dollars": 983.73,
+      "open_trades": 36
     },
     "cup_and_handle": {
       "trades": 5,
@@ -41,8 +41,8 @@
       "avg_R": 0.8,
       "expectancy_R": 0.8,
       "total_R": 4.0,
-      "total_pnl_dollars": 368.33,
-      "open_trades": 1
+      "total_pnl_dollars": 388.57,
+      "open_trades": 3
     }
   },
   "by_entry": {
@@ -58,53 +58,71 @@
       "open_trades": 0
     },
     "retest": {
-      "trades": 59,
-      "wins": 26,
-      "losses": 33,
-      "win_rate": 0.441,
-      "avg_R": 0.322,
-      "expectancy_R": 0.322,
-      "total_R": 19.0,
-      "total_pnl_dollars": 1674.3,
-      "open_trades": 27
+      "trades": 57,
+      "wins": 27,
+      "losses": 30,
+      "win_rate": 0.474,
+      "avg_R": 0.421,
+      "expectancy_R": 0.421,
+      "total_R": 24.0,
+      "total_pnl_dollars": 2295.69,
+      "open_trades": 53
     }
   },
   "by_timeframe": {
     "4h": {
       "trades": 4,
-      "wins": 0,
-      "losses": 4,
-      "win_rate": 0.0,
-      "avg_R": -1.0,
-      "expectancy_R": -1.0,
-      "total_R": -4.0,
-      "total_pnl_dollars": -415.35,
-      "open_trades": 3
+      "wins": 1,
+      "losses": 3,
+      "win_rate": 0.25,
+      "avg_R": -0.25,
+      "expectancy_R": -0.25,
+      "total_R": -1.0,
+      "total_pnl_dollars": -118.5,
+      "open_trades": 28
     },
     "1h": {
-      "trades": 55,
+      "trades": 53,
       "wins": 26,
-      "losses": 29,
-      "win_rate": 0.473,
-      "avg_R": 0.418,
-      "expectancy_R": 0.418,
-      "total_R": 23.0,
-      "total_pnl_dollars": 2089.65,
-      "open_trades": 24
+      "losses": 27,
+      "win_rate": 0.491,
+      "avg_R": 0.472,
+      "expectancy_R": 0.472,
+      "total_R": 25.0,
+      "total_pnl_dollars": 2414.19,
+      "open_trades": 25
     }
   },
   "equity_growth": {
     "starting_equity": 10000.0,
-    "final_equity": 11674.3,
-    "gain_dollars": 1674.3,
-    "gain_pct": 16.74
+    "final_equity": 12295.69,
+    "gain_dollars": 2295.69,
+    "gain_pct": 22.96
   },
   "symbols": [
-    "AAPL", "ABBV", "ADBE", "AMD", "AMGN", "AMZN", "AVGO", "AXP",
-    "BAC", "BA", "BMY", "CAT", "COP", "COST", "CRM", "CVX",
-    "DHR", "EOG", "GE", "GOOGL", "GS", "HD", "HON", "INTC",
-    "JNJ", "JPM", "LLY", "LOW", "MA", "META", "MRK", "MSFT",
-    "MS", "NFLX", "NVDA", "ORCL", "PFE", "PYPL", "QCOM", "RTX",
-    "SLB", "TGT", "TMO", "TSLA", "UNH", "V", "WFC", "WMT", "XOM"
+    "AAPL", "MSFT", "NVDA", "AMD", "AMZN", "GOOGL", "META", "TSLA",
+    "AVGO", "NFLX", "JPM", "BAC", "GS", "MS", "WFC", "JNJ",
+    "UNH", "PFE", "MRK", "XOM", "CVX", "COP", "SLB", "EOG",
+    "HD", "LOW", "TGT", "COST", "WMT", "BA", "CAT", "HON",
+    "GE", "RTX", "BRK.B", "V", "MA", "PYPL", "AXP", "LLY",
+    "TMO", "DHR", "BMY", "AMGN", "ORCL", "CRM", "ADBE", "QCOM",
+    "INTC", "CSCO", "AMAT", "MU", "PANW", "NOW", "SNOW", "NET",
+    "DDOG", "ZS", "UBER", "C", "USB", "PNC", "COF", "TFC",
+    "CVS", "CI", "HUM", "MDT", "SYK", "BSX", "ISRG", "EW",
+    "SBUX", "MCD", "NKE", "DIS", "CMCSA", "GM", "MPC", "VLO",
+    "PSX", "OXY", "MMM", "DE", "LMT", "NOC", "GD", "NEE",
+    "DUK", "SO", "AMT", "PLD", "INTU", "ACN", "TXN", "ANET",
+    "MRVL", "KLAC", "LRCX", "ADI", "FTNT", "CDNS", "BLK", "ICE",
+    "CME", "CB", "AON", "TRV", "AFL", "MET", "ABT", "ZBH",
+    "IQV", "RMD", "DXCM", "HCA", "PM", "KO", "CL", "YUM",
+    "CMG", "HAL", "DVN", "FANG", "BKR", "LIN", "APD", "ECL",
+    "NEM", "FCX", "O", "WELL", "SPG", "AVB", "IBM", "ON",
+    "PRU", "MO", "CLX", "VRTX", "REGN", "GILD", "BIIB", "MRNA",
+    "ILMN", "A", "BDX", "MCK", "CAH", "SPGI", "MCO", "MSCI",
+    "FIS", "FISV", "AIG", "ALL", "HIG", "TJX", "ROST", "LULU",
+    "ULTA", "EBAY", "BBY", "DG", "DLTR", "VZ", "T", "CHTR",
+    "UPS", "FDX", "DAL", "EMR", "ETN", "ITW", "PH", "ROK",
+    "APA", "EQIX", "DLR", "PSA", "EQR", "IRM", "PLTR", "COIN",
+    "ARM", "DELL", "TTD", "APP"
   ]
 }
