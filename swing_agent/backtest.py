@@ -99,9 +99,14 @@ def run_symbol(symbol: str, equity: float, risk_pct: float = 0.01) -> list[dict]
     daily_bias = daily_bias_series(daily)
     trades = _scan_timeframe(symbol, h4, daily_bias, equity, risk_pct, "4h")
 
-    # 1-hour timeframe tested but disabled: 35.5% win rate / 0.066R expectancy
-    # dilutes the 4h results (52.2% / 0.565R). The 4h EMA bias is not tight enough
-    # to gate 1h entries the way the daily filter gates 4h entries.
+    # 1-hour timeframe gated by 4h 20 EMA bias (close AND low > EMA).
+    # Full-universe results (188 symbols): 49.1% win rate / +0.472R expectancy.
+    if h1_path.exists():
+        h1 = load(h1_path, symbol)
+        if len(h1) >= 30:
+            h4_bias = (h4["close"] > ema(h4["close"], 20)) & (h4["low"] > ema(h4["close"], 20))
+            h4_bias_series = pd.Series(h4_bias.values, index=pd.to_datetime(h4["begins_at"]))
+            trades += _scan_timeframe(symbol, h1, h4_bias_series, equity, risk_pct, "1h")
 
     n4 = sum(1 for t in trades if t.get("timeframe") == "4h")
     n1 = sum(1 for t in trades if t.get("timeframe") == "1h")
