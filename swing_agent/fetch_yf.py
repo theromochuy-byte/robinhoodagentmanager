@@ -134,29 +134,25 @@ def fetch_daily(symbols: list[str]) -> dict[str, list[dict]]:
 
 
 def fetch_4hour(symbols: list[str]) -> dict[str, list[dict]]:
-    """Fetch 1-hour bars and resample to 4-hour."""
+    """Fetch 1-hour bars (60m interval) per symbol and resample to 4-hour.
+
+    Downloads one symbol at a time to avoid yfinance 1.x multi-ticker column
+    structure issues with intraday intervals.
+    """
     import yfinance as yf
     results = {}
-    for i in range(0, len(symbols), BATCH_SIZE):
-        batch = symbols[i : i + BATCH_SIZE]
-        tickers = " ".join(batch)
+    for sym in symbols:
         try:
-            df = yf.download(tickers, period=H1_PERIOD, interval="1h",
-                             group_by="ticker", auto_adjust=True, progress=False,
-                             threads=True)
+            df = yf.download(sym, period=H1_PERIOD, interval="60m",
+                             auto_adjust=True, progress=False)
+            if df is None or df.empty:
+                continue
+            bars_1h = _df_to_bars(df.dropna())
+            bars_4h = _resample_1h_to_4h(bars_1h)
+            if bars_4h:
+                results[sym] = bars_4h
         except Exception as e:
-            print(f"  WARNING: batch 1h download failed: {e}", file=sys.stderr)
-            continue
-
-        for sym in batch:
-            try:
-                sym_df = df[sym].dropna() if len(batch) > 1 else df.dropna()
-                bars_1h = _df_to_bars(sym_df)
-                bars_4h = _resample_1h_to_4h(bars_1h)
-                if bars_4h:
-                    results[sym] = bars_4h
-            except Exception as e:
-                print(f"  WARNING: {sym} 4h failed: {e}", file=sys.stderr)
+            print(f"  WARNING: {sym} 4h failed: {e}", file=sys.stderr)
 
     return results
 
