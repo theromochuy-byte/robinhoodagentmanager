@@ -1,48 +1,48 @@
 {
   "overall": {
-    "trades": 3,
-    "wins": 0,
-    "losses": 3,
-    "win_rate": 0.0,
-    "avg_R": -1.0,
-    "expectancy_R": -1.0,
-    "total_R": -3.0,
-    "total_pnl_dollars": -60.0,
-    "open_trades": 1
+    "trades": 59,
+    "wins": 26,
+    "losses": 33,
+    "win_rate": 0.441,
+    "avg_R": 0.322,
+    "expectancy_R": 0.322,
+    "total_R": 19.0,
+    "total_pnl_dollars": 1674.3,
+    "open_trades": 27
   },
   "by_pattern": {
     "double_bottom": {
-      "trades": 1,
-      "wins": 0,
-      "losses": 1,
-      "win_rate": 0.0,
-      "avg_R": -1.0,
-      "expectancy_R": -1.0,
-      "total_R": -1.0,
-      "total_pnl_dollars": -20.0,
-      "open_trades": 0
+      "trades": 22,
+      "wins": 10,
+      "losses": 12,
+      "win_rate": 0.455,
+      "avg_R": 0.364,
+      "expectancy_R": 0.364,
+      "total_R": 8.0,
+      "total_pnl_dollars": 696.84,
+      "open_trades": 7
     },
     "inverse_hns": {
-      "trades": 2,
-      "wins": 0,
-      "losses": 2,
-      "win_rate": 0.0,
-      "avg_R": -1.0,
-      "expectancy_R": -1.0,
-      "total_R": -2.0,
-      "total_pnl_dollars": -40.0,
-      "open_trades": 1
+      "trades": 32,
+      "wins": 13,
+      "losses": 19,
+      "win_rate": 0.406,
+      "avg_R": 0.219,
+      "expectancy_R": 0.219,
+      "total_R": 7.0,
+      "total_pnl_dollars": 609.13,
+      "open_trades": 19
     },
     "cup_and_handle": {
-      "trades": 0,
-      "wins": 0,
-      "losses": 0,
-      "win_rate": 0.0,
-      "avg_R": 0.0,
-      "expectancy_R": 0.0,
-      "total_R": 0,
-      "total_pnl_dollars": 0,
-      "open_trades": 0
+      "trades": 5,
+      "wins": 3,
+      "losses": 2,
+      "win_rate": 0.6,
+      "avg_R": 0.8,
+      "expectancy_R": 0.8,
+      "total_R": 4.0,
+      "total_pnl_dollars": 368.33,
+      "open_trades": 1
     }
   },
   "by_entry": {
@@ -58,46 +58,53 @@
       "open_trades": 0
     },
     "retest": {
-      "trades": 3,
-      "wins": 0,
-      "losses": 3,
-      "win_rate": 0.0,
-      "avg_R": -1.0,
-      "expectancy_R": -1.0,
-      "total_R": -3.0,
-      "total_pnl_dollars": -60.0,
-      "open_trades": 1
+      "trades": 59,
+      "wins": 26,
+      "losses": 33,
+      "win_rate": 0.441,
+      "avg_R": 0.322,
+      "expectancy_R": 0.322,
+      "total_R": 19.0,
+      "total_pnl_dollars": 1674.3,
+      "open_trades": 27
     }
   },
   "by_timeframe": {
     "4h": {
-      "trades": 3,
+      "trades": 4,
       "wins": 0,
-      "losses": 3,
+      "losses": 4,
       "win_rate": 0.0,
       "avg_R": -1.0,
       "expectancy_R": -1.0,
-      "total_R": -3.0,
-      "total_pnl_dollars": -60.0,
-      "open_trades": 1
+      "total_R": -4.0,
+      "total_pnl_dollars": -415.35,
+      "open_trades": 3
     },
     "1h": {
-      "trades": 0,
-      "wins": 0,
-      "losses": 0,
-      "win_rate": 0.0,
-      "avg_R": 0.0,
-      "expectancy_R": 0.0,
-      "total_R": 0,
-      "total_pnl_dollars": 0,
-      "open_trades": 0
+      "trades": 55,
+      "wins": 26,
+      "losses": 29,
+      "win_rate": 0.473,
+      "avg_R": 0.418,
+      "expectancy_R": 0.418,
+      "total_R": 23.0,
+      "total_pnl_dollars": 2089.65,
+      "open_trades": 24
     }
   },
   "equity_growth": {
     "starting_equity": 10000.0,
-    "final_equity": 9940.0,
-    "gain_dollars": -60.0,
-    "gain_pct": -0.6
+    "final_equity": 11674.3,
+    "gain_dollars": 1674.3,
+    "gain_pct": 16.74
   },
-  "symbols": ["AAPL", "MSFT", "NVDA", "ABBV", "ADBE"]
+  "symbols": [
+    "AAPL", "ABBV", "ADBE", "AMD", "AMGN", "AMZN", "AVGO", "AXP",
+    "BAC", "BA", "BMY", "CAT", "COP", "COST", "CRM", "CVX",
+    "DHR", "EOG", "GE", "GOOGL", "GS", "HD", "HON", "INTC",
+    "JNJ", "JPM", "LLY", "LOW", "MA", "META", "MRK", "MSFT",
+    "MS", "NFLX", "NVDA", "ORCL", "PFE", "PYPL", "QCOM", "RTX",
+    "SLB", "TGT", "TMO", "TSLA", "UNH", "V", "WFC", "WMT", "XOM"
+  ]
 }
