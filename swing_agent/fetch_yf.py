@@ -42,13 +42,15 @@ def _df_to_bars(df) -> list[dict]:
     """Convert a yfinance DataFrame to the bar dict list format."""
     bars = []
     for ts, row in df.iterrows():
-        # ts is a pandas Timestamp; convert to ISO string
+        # ts is a pandas Timestamp; normalize to UTC ISO string
         if hasattr(ts, "isoformat"):
-            begins_at = ts.isoformat()
-            if begins_at.endswith("+00:00"):
-                begins_at = begins_at[:-6] + "Z"
-            elif "+" not in begins_at and begins_at[-1] != "Z":
-                begins_at += "Z"
+            if hasattr(ts, "tzinfo") and ts.tzinfo is not None:
+                # Timezone-aware: convert to UTC then format
+                begins_at = ts.tz_convert("UTC").strftime("%Y-%m-%dT%H:%M:%SZ")
+            else:
+                begins_at = ts.isoformat()
+                if not begins_at.endswith("Z"):
+                    begins_at += "Z"
         else:
             begins_at = str(ts) + "Z"
 
