@@ -10,9 +10,11 @@ name: Options Daily Email
 
 on:
   schedule:
-    # 8:20 AM CT (CDT) -- 5 min after the options Routine's scheduled fetch,
-    # same target time window as the swing scan's 8:15 AM morning run.
-    - cron: '20 13 * * 1-5'
+    # 10:00 AM CT (CDT) -- the options Routine's fetch+scan starts at 8:00 AM
+    # CT but the full cycle (many Robinhood MCP calls) routinely runs well
+    # past the old 8:20 AM slot, so this workflow kept finding no report yet
+    # and failing (see 2026-08-21 run). Two hours of headroom instead.
+    - cron: '0 15 * * 1-5'
   workflow_dispatch: {}
 
 jobs:
