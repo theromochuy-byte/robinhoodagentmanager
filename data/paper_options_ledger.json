@@ -41,5 +41,46 @@
     "close_debit": 0.195,
     "closed_at": "2026-08-20T16:25:20.942982+00:00",
     "close_reason": "profit_take"
+  },
+  {
+    "symbol": "AGNC",
+    "type": "csp",
+    "instrument_id": "c396830e-baf1-4feb-a315-6fc37ee99aa0",
+    "strike": 10.5,
+    "expiration_date": "2026-09-25",
+    "dte": 35,
+    "delta": 0.268682,
+    "credit": 0.14,
+    "collateral": 1050.0,
+    "supplemental": false,
+    "barbell_leg": "threshold_of_risk",
+    "return_on_collateral_pct": 1.333,
+    "return_on_net_capital_pct": 1.351,
+    "annualized_roc_pct": 13.9,
+    "chance_of_profit_short": 0.764966,
+    "step1_gate": {
+      "symbol": "AGNC",
+      "pass": true,
+      "reasons": [],
+      "quality": {
+        "pass": true,
+        "reasons": [],
+        "pe_ratio": 5.811697,
+        "pe_applicable": true,
+        "avg_volume_30d": 19045360.0989,
+        "high_52_weeks": 12.19
+      },
+      "trend": {
+        "pass": false,
+        "reasons": [
+          "no daily bar file for AGNC"
+        ]
+      },
+      "trend_advisory_only": true,
+      "trailing_eps_growth_pct": 93.51,
+      "price": 10.925
+    },
+    "status": "PROPOSED",
+    "proposed_at": "2026-08-21T16:05:47.729105+00:00"
   }
 ]

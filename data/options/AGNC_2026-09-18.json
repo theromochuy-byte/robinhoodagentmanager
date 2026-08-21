@@ -1,23 +1,5 @@
 [
   {
-    "id": "1ee1f31f-01ea-48c8-a706-bdac5b686243",
-    "chain_symbol": "AGNC",
-    "expiration_date": "2026-09-18",
-    "strike_price": "10.0000",
-    "type": "put",
-    "quote": {
-      "bid_price": "0.020000",
-      "ask_price": "0.060000",
-      "mark_price": "0.040000",
-      "delta": "-0.091336",
-      "implied_volatility": "0.286922",
-      "open_interest": 74018,
-      "volume": 20,
-      "chance_of_profit_short": "0.903130",
-      "chance_of_profit_long": "0.096870"
-    }
-  },
-  {
     "id": "3b3af908-228c-465f-b4c4-f0b97f377b4c",
     "chain_symbol": "AGNC",
     "expiration_date": "2026-09-18",
@@ -27,12 +9,45 @@
       "bid_price": "0.000000",
       "ask_price": "0.030000",
       "mark_price": "0.015000",
-      "delta": "-0.021784",
-      "implied_volatility": "0.376031",
-      "open_interest": 17994,
+      "delta": "-0.023241",
+      "implied_volatility": "0.365898",
+      "open_interest": 17992,
       "volume": 0,
-      "chance_of_profit_short": "0.972632",
-      "chance_of_profit_long": "0.027368"
+      "chance_of_profit_short": "0.971306"
+    }
+  },
+  {
+    "id": "1ee1f31f-01ea-48c8-a706-bdac5b686243",
+    "chain_symbol": "AGNC",
+    "expiration_date": "2026-09-18",
+    "strike_price": "10.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.030000",
+      "ask_price": "0.050000",
+      "mark_price": "0.040000",
+      "delta": "-0.100993",
+      "implied_volatility": "0.266805",
+      "open_interest": 74068,
+      "volume": 28,
+      "chance_of_profit_short": "0.895496"
+    }
+  },
+  {
+    "id": "71436742-63a4-41de-88ae-960c1ebbc882",
+    "chain_symbol": "AGNC",
+    "expiration_date": "2026-09-18",
+    "strike_price": "11.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.310000",
+      "ask_price": "0.340000",
+      "mark_price": "0.325000",
+      "delta": "-0.508553",
+      "implied_volatility": "0.255331",
+      "open_interest": 9343,
+      "volume": 38,
+      "chance_of_profit_short": "0.635027"
     }
   }
 ]

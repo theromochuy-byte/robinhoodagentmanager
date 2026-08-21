@@ -1,20 +1,36 @@
 [
   {
-    "id": "c396830e-baf1-4feb-a315-6fc37ee99aa0",
+    "id": "a06509ff-6b6e-42c6-8053-a85cef0b503c",
     "chain_symbol": "AGNC",
     "expiration_date": "2026-09-25",
-    "strike_price": "10.5000",
+    "strike_price": "9.0000",
     "type": "put",
     "quote": {
-      "bid_price": "0.080000",
-      "ask_price": "0.140000",
-      "mark_price": "0.110000",
-      "delta": "-0.216203",
-      "implied_volatility": "0.244007",
-      "open_interest": 3753,
-      "volume": 18,
-      "chance_of_profit_short": "0.800948",
-      "chance_of_profit_long": "0.199052"
+      "bid_price": "0.000000",
+      "ask_price": "0.100000",
+      "mark_price": "0.050000",
+      "delta": "-0.023178",
+      "implied_volatility": "0.328496",
+      "open_interest": 1783,
+      "volume": 0,
+      "chance_of_profit_short": "0.971360"
+    }
+  },
+  {
+    "id": "a05c268e-5ff3-421a-8afe-1f09c9ed641c",
+    "chain_symbol": "AGNC",
+    "expiration_date": "2026-09-25",
+    "strike_price": "9.5000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.000000",
+      "ask_price": "0.110000",
+      "mark_price": "0.055000",
+      "delta": "-0.029618",
+      "implied_volatility": "0.250861",
+      "open_interest": 51,
+      "volume": 0,
+      "chance_of_profit_short": "0.965792"
     }
   },
   {
@@ -24,15 +40,48 @@
     "strike_price": "10.0000",
     "type": "put",
     "quote": {
-      "bid_price": "0.020000",
+      "bid_price": "0.040000",
       "ask_price": "0.080000",
-      "mark_price": "0.050000",
-      "delta": "-0.103764",
-      "implied_volatility": "0.276044",
-      "open_interest": 1030,
-      "volume": 0,
-      "chance_of_profit_short": "0.890700",
-      "chance_of_profit_long": "0.109300"
+      "mark_price": "0.060000",
+      "delta": "-0.126601",
+      "implied_volatility": "0.270829",
+      "open_interest": 1031,
+      "volume": 26,
+      "chance_of_profit_short": "0.870936"
+    }
+  },
+  {
+    "id": "c396830e-baf1-4feb-a315-6fc37ee99aa0",
+    "chain_symbol": "AGNC",
+    "expiration_date": "2026-09-25",
+    "strike_price": "10.5000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.130000",
+      "ask_price": "0.150000",
+      "mark_price": "0.140000",
+      "delta": "-0.268682",
+      "implied_volatility": "0.242516",
+      "open_interest": 3828,
+      "volume": 43,
+      "chance_of_profit_short": "0.764966"
+    }
+  },
+  {
+    "id": "e2ea9388-1f59-4fdc-8b66-543e524028b5",
+    "chain_symbol": "AGNC",
+    "expiration_date": "2026-09-25",
+    "strike_price": "11.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.330000",
+      "ask_price": "0.350000",
+      "mark_price": "0.340000",
+      "delta": "-0.504057",
+      "implied_volatility": "0.238791",
+      "open_interest": 5129,
+      "volume": 41,
+      "chance_of_profit_short": "0.636707"
     }
   }
 ]

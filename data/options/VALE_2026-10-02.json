@@ -1,20 +1,70 @@
 [
   {
-    "id": "d2b0f76d-425a-41b9-883e-f74dc05717d8",
+    "id": "3508d354-85da-40fc-9353-d2a698d91d57",
     "chain_symbol": "VALE",
     "expiration_date": "2026-10-02",
-    "strike_price": "13.0000",
+    "strike_price": "10.0000",
     "type": "put",
     "quote": {
-      "bid_price": "0.010000",
-      "ask_price": "0.760000",
-      "mark_price": "0.385000",
-      "delta": "-0.257406",
-      "implied_volatility": "0.473931",
-      "open_interest": 20,
+      "bid_price": "0.000000",
+      "ask_price": "0.950000",
+      "mark_price": "0.475000",
+      "delta": "-0.010794",
+      "implied_volatility": "0.514612",
+      "open_interest": 0,
       "volume": 0,
-      "chance_of_profit_short": "0.750772",
-      "chance_of_profit_long": "0.249228"
+      "chance_of_profit_short": "0.983348"
+    }
+  },
+  {
+    "id": "e29a6cd5-0721-41a1-9bb4-c148ccb009ac",
+    "chain_symbol": "VALE",
+    "expiration_date": "2026-10-02",
+    "strike_price": "10.5000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.000000",
+      "ask_price": "0.750000",
+      "mark_price": "0.375000",
+      "delta": "-0.012080",
+      "implied_volatility": "0.456497",
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": "0.982381"
+    }
+  },
+  {
+    "id": "fb284711-1398-45b1-ad60-2ad4941cc577",
+    "chain_symbol": "VALE",
+    "expiration_date": "2026-10-02",
+    "strike_price": "11.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.000000",
+      "ask_price": "0.750000",
+      "mark_price": "0.375000",
+      "delta": "-0.013654",
+      "implied_volatility": "0.400618",
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": "0.981129"
+    }
+  },
+  {
+    "id": "cdf6b713-a7d8-4651-9784-bc00db17b529",
+    "chain_symbol": "VALE",
+    "expiration_date": "2026-10-02",
+    "strike_price": "11.5000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.000000",
+      "ask_price": "0.750000",
+      "mark_price": "0.375000",
+      "delta": "-0.015641",
+      "implied_volatility": "0.346676",
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": "0.979479"
     }
   },
   {
@@ -25,14 +75,30 @@
     "type": "put",
     "quote": {
       "bid_price": "0.000000",
-      "ask_price": "2.140000",
-      "mark_price": "1.070000",
-      "delta": "-0.021246",
-      "implied_volatility": "0.252649",
+      "ask_price": "0.750000",
+      "mark_price": "0.375000",
+      "delta": "-0.018203",
+      "implied_volatility": "0.294223",
       "open_interest": 0,
       "volume": 0,
-      "chance_of_profit_short": "0.974504",
-      "chance_of_profit_long": "0.025496"
+      "chance_of_profit_short": "0.977294"
+    }
+  },
+  {
+    "id": "937ec20d-9fd0-419f-b2de-4bf3a516162a",
+    "chain_symbol": "VALE",
+    "expiration_date": "2026-10-02",
+    "strike_price": "12.5000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.000000",
+      "ask_price": "0.580000",
+      "mark_price": "0.290000",
+      "delta": "-0.021681",
+      "implied_volatility": "0.242963",
+      "open_interest": 4,
+      "volume": 0,
+      "chance_of_profit_short": "0.974260"
     }
   }
 ]

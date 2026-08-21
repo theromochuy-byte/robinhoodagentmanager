@@ -1,20 +1,70 @@
 [
   {
-    "id": "70b1e7a8-37c5-42f1-b800-91644de44f0c",
+    "id": "317d5014-f6a9-4a46-a517-93a24a740f72",
     "chain_symbol": "RIVN",
     "expiration_date": "2026-09-25",
-    "strike_price": "14.0000",
+    "strike_price": "10.0000",
     "type": "put",
     "quote": {
-      "bid_price": "0.300000",
-      "ask_price": "0.360000",
-      "mark_price": "0.330000",
-      "delta": "-0.196172",
-      "implied_volatility": "0.554696",
-      "open_interest": 630,
-      "volume": 26,
-      "chance_of_profit_short": "0.793388",
-      "chance_of_profit_long": "0.206612"
+      "bid_price": "0.000000",
+      "ask_price": "0.750000",
+      "mark_price": "0.375000",
+      "delta": "-0.007306",
+      "implied_volatility": "0.737533",
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": "0.986699"
+    }
+  },
+  {
+    "id": "9958722d-35e4-40c5-b5e1-55afe98241f8",
+    "chain_symbol": "RIVN",
+    "expiration_date": "2026-09-25",
+    "strike_price": "10.5000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.000000",
+      "ask_price": "0.750000",
+      "mark_price": "0.375000",
+      "delta": "-0.007940",
+      "implied_volatility": "0.675991",
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": "0.986322"
+    }
+  },
+  {
+    "id": "c3657df9-ebbd-4a39-9f81-283d67960a44",
+    "chain_symbol": "RIVN",
+    "expiration_date": "2026-09-25",
+    "strike_price": "11.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.000000",
+      "ask_price": "0.950000",
+      "mark_price": "0.475000",
+      "delta": "-0.008677",
+      "implied_volatility": "0.617281",
+      "open_interest": 76,
+      "volume": 0,
+      "chance_of_profit_short": "0.985822"
+    }
+  },
+  {
+    "id": "a45b1630-7568-40cc-a2ac-73072d0b1c17",
+    "chain_symbol": "RIVN",
+    "expiration_date": "2026-09-25",
+    "strike_price": "11.5000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.000000",
+      "ask_price": "0.590000",
+      "mark_price": "0.295000",
+      "delta": "-0.009500",
+      "implied_volatility": "0.560656",
+      "open_interest": 182,
+      "volume": 0,
+      "chance_of_profit_short": "0.985242"
     }
   },
   {
@@ -24,15 +74,31 @@
     "strike_price": "12.0000",
     "type": "put",
     "quote": {
-      "bid_price": "0.020000",
-      "ask_price": "0.100000",
-      "mark_price": "0.060000",
-      "delta": "-0.046305",
-      "implied_volatility": "0.581667",
-      "open_interest": 196,
-      "volume": 2,
-      "chance_of_profit_short": "0.936527",
-      "chance_of_profit_long": "0.063473"
+      "bid_price": "0.000000",
+      "ask_price": "0.080000",
+      "mark_price": "0.040000",
+      "delta": "-0.010475",
+      "implied_volatility": "0.506267",
+      "open_interest": 195,
+      "volume": 0,
+      "chance_of_profit_short": "0.984501"
+    }
+  },
+  {
+    "id": "4eda953b-8725-4ed2-97d4-b6dd422e66fc",
+    "chain_symbol": "RIVN",
+    "expiration_date": "2026-09-25",
+    "strike_price": "12.5000",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.000000",
+      "ask_price": "0.160000",
+      "mark_price": "0.080000",
+      "delta": "-0.011600",
+      "implied_volatility": "0.453517",
+      "open_interest": 86,
+      "volume": 0,
+      "chance_of_profit_short": "0.983623"
     }
   }
 ]
