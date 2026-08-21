@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 
 DAY_PERIOD  = "2y"    # ~2 years of daily bars
-H1_PERIOD   = "3mo"   # 3 months of 1-hour bars (resampled to 4-hour)
+H1_PERIOD   = "60d"   # 60 days of 1-hour bars (resampled to 4-hour); yfinance 1.x limit
 BATCH_SIZE  = 20      # yfinance handles multi-symbol downloads well
 
 
