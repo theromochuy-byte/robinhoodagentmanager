@@ -140,19 +140,39 @@ def fetch_4hour(symbols: list[str]) -> dict[str, list[dict]]:
     structure issues with intraday intervals.
     """
     import yfinance as yf
+    import pandas as pd
     results = {}
+    # Debug: report yfinance version and test one symbol verbosely
+    print(f"  yfinance version: {yf.__version__}", flush=True)
+    test_sym = symbols[0] if symbols else None
+    if test_sym:
+        try:
+            df_test = yf.download(test_sym, period=H1_PERIOD, interval="60m",
+                                  auto_adjust=True, progress=False)
+            print(f"  DEBUG {test_sym}: shape={df_test.shape} "
+                  f"columns={list(df_test.columns)[:6]} "
+                  f"empty={df_test.empty} "
+                  f"index_tz={getattr(df_test.index, 'tz', 'none')}", flush=True)
+            if not df_test.empty:
+                print(f"  DEBUG {test_sym} first row: {df_test.iloc[0].to_dict()}", flush=True)
+        except Exception as e:
+            print(f"  DEBUG {test_sym} download error: {e}", flush=True)
+
     for sym in symbols:
         try:
             df = yf.download(sym, period=H1_PERIOD, interval="60m",
                              auto_adjust=True, progress=False)
             if df is None or df.empty:
                 continue
+            # Flatten MultiIndex columns if present (yfinance 1.x single-ticker)
+            if isinstance(df.columns, pd.MultiIndex):
+                df.columns = df.columns.get_level_values(0)
             bars_1h = _df_to_bars(df.dropna())
             bars_4h = _resample_1h_to_4h(bars_1h)
             if bars_4h:
                 results[sym] = bars_4h
         except Exception as e:
-            print(f"  WARNING: {sym} 4h failed: {e}", file=sys.stderr)
+            print(f"  WARNING: {sym} 4h failed: {e}", flush=True)
 
     return results
 
