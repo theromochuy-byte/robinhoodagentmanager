@@ -230,4 +230,16 @@ if __name__ == "__main__":
     send_digest(new_entries, closes, quotes)
 
     if mode == "evening":
+        print("=== BACKTEST ===")
+        try:
+            result = subprocess.run(
+                [sys.executable, "-m", "swing_agent.backtest_daily"],
+                cwd=ROOT, capture_output=True, text=True, timeout=300
+            )
+            if result.stdout:
+                print(result.stdout.rstrip())
+            if result.returncode != 0 and result.stderr:
+                print(f"  WARNING: backtest stderr: {result.stderr[:500]}", file=sys.stderr)
+        except Exception as e:
+            print(f"  WARNING: backtest failed: {e}", file=sys.stderr)
         git_commit_push(mode)
