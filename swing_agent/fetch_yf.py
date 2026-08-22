@@ -144,22 +144,6 @@ def fetch_4hour(symbols: list[str]) -> dict[str, list[dict]]:
     import yfinance as yf
     import pandas as pd
     results = {}
-    # Debug: report yfinance version and test one symbol verbosely
-    print(f"  yfinance version: {yf.__version__}", flush=True)
-    test_sym = symbols[0] if symbols else None
-    if test_sym:
-        try:
-            df_test = yf.download(test_sym, period=H1_PERIOD, interval="60m",
-                                  auto_adjust=True, progress=False)
-            print(f"  DEBUG {test_sym}: shape={df_test.shape} "
-                  f"columns={list(df_test.columns)[:6]} "
-                  f"empty={df_test.empty} "
-                  f"index_tz={getattr(df_test.index, 'tz', 'none')}", flush=True)
-            if not df_test.empty:
-                print(f"  DEBUG {test_sym} first row: {df_test.iloc[0].to_dict()}", flush=True)
-        except Exception as e:
-            print(f"  DEBUG {test_sym} download error: {e}", flush=True)
-
     for sym in symbols:
         try:
             df = yf.download(sym, period=H1_PERIOD, interval="60m",
