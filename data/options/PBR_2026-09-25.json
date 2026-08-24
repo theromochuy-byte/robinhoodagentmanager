@@ -6,14 +6,14 @@
     "strike_price": "11.0000",
     "type": "put",
     "quote": {
-      "bid_price": "0.000000",
-      "ask_price": "0.750000",
-      "mark_price": "0.375000",
-      "delta": "-0.006378",
-      "implied_volatility": "0.757501",
+      "bid_price": 0.0,
+      "ask_price": 0.1,
+      "mark_price": 0.05,
+      "delta": -0.006854,
+      "implied_volatility": 0.759885,
       "open_interest": 0,
       "volume": 0,
-      "chance_of_profit_short": "0.988066"
+      "chance_of_profit_short": 0.987599
     }
   },
   {
@@ -23,14 +23,99 @@
     "strike_price": "12.0000",
     "type": "put",
     "quote": {
-      "bid_price": "0.000000",
-      "ask_price": "0.750000",
-      "mark_price": "0.375000",
-      "delta": "-0.007409",
-      "implied_volatility": "0.649467",
+      "bid_price": 0.0,
+      "ask_price": 0.1,
+      "mark_price": 0.05,
+      "delta": -0.008028,
+      "implied_volatility": 0.645742,
       "open_interest": 0,
       "volume": 0,
-      "chance_of_profit_short": "0.987435"
+      "chance_of_profit_short": 0.986835
+    }
+  },
+  {
+    "id": "0c09c75e-ee74-482f-b9c8-01e6c31d7ec7",
+    "chain_symbol": "PBR",
+    "expiration_date": "2026-09-25",
+    "strike_price": "13.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.0,
+      "ask_price": 0.75,
+      "mark_price": 0.375,
+      "delta": -0.009513,
+      "implied_volatility": 0.539497,
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": 0.985757
+    }
+  },
+  {
+    "id": "b62715e5-8f33-4583-afbb-1a9495bb2e32",
+    "chain_symbol": "PBR",
+    "expiration_date": "2026-09-25",
+    "strike_price": "13.5000",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.0,
+      "ask_price": 0.75,
+      "mark_price": 0.375,
+      "delta": -0.010436,
+      "implied_volatility": 0.488982,
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": 0.985035
+    }
+  },
+  {
+    "id": "7f5d0a77-199a-4622-bcf0-4bda3a7688a2",
+    "chain_symbol": "PBR",
+    "expiration_date": "2026-09-25",
+    "strike_price": "14.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.0,
+      "ask_price": 0.11,
+      "mark_price": 0.055,
+      "delta": -0.011526,
+      "implied_volatility": 0.439957,
+      "open_interest": 0,
+      "volume": 1,
+      "chance_of_profit_short": 0.984149
+    }
+  },
+  {
+    "id": "e994f190-b80e-48e4-9bd2-9b26a96cde15",
+    "chain_symbol": "PBR",
+    "expiration_date": "2026-09-25",
+    "strike_price": "14.5000",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.0,
+      "ask_price": 0.75,
+      "mark_price": 0.375,
+      "delta": -0.01284,
+      "implied_volatility": 0.392273,
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": 0.983045
+    }
+  },
+  {
+    "id": "f40da418-332d-4f51-ab73-04ad343fd0e4",
+    "chain_symbol": "PBR",
+    "expiration_date": "2026-09-25",
+    "strike_price": "15.0000",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.0,
+      "ask_price": 0.5,
+      "mark_price": 0.25,
+      "delta": -0.014434,
+      "implied_volatility": 0.345632,
+      "open_interest": 40,
+      "volume": 0,
+      "chance_of_profit_short": 0.981681
     }
   }
 ]

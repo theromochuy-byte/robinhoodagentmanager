@@ -5,151 +5,179 @@
       "symbol": "AGNC",
       "instrument_id": "c396830e-baf1-4feb-a315-6fc37ee99aa0",
       "action": "no_action",
-      "mark_price": 0.13,
+      "mark_price": 0.105,
       "dte": 32,
       "itm": false
     }
   ],
-  "proposed": [],
+  "proposed": [
+    {
+      "symbol": "RIVN",
+      "type": "csp",
+      "instrument_id": "15fc4be0-c978-4596-8d35-5a87a2874f2d",
+      "strike": 14.0,
+      "expiration_date": "2026-09-18",
+      "dte": 25,
+      "delta": 0.109596,
+      "credit": 0.135,
+      "collateral": 1400.0,
+      "supplemental": false,
+      "barbell_leg": "low_prob",
+      "barbell_episode_id": "2026-08-21T16:05:47.729105+00:00",
+      "return_on_collateral_pct": 0.964,
+      "return_on_net_capital_pct": 0.974,
+      "annualized_roc_pct": 14.1,
+      "chance_of_profit_short": 0.874213,
+      "step1_gate": {
+        "symbol": "RIVN",
+        "pass": true,
+        "reasons": [],
+        "quality": {
+          "pass": true,
+          "reasons": [],
+          "pe_ratio": -6.57,
+          "pe_applicable": false,
+          "avg_volume_30d": 23726698.469,
+          "high_52_weeks": 22.69
+        },
+        "trend": {
+          "pass": false,
+          "reasons": [
+            "no daily bar file for RIVN"
+          ]
+        },
+        "trend_advisory_only": true,
+        "trailing_eps_growth_pct": 23.19,
+        "price": 16.96
+      }
+    }
+  ],
   "skipped": {
     "WBD": [
-      "price 28.56 > 90% of 52wk high 30.00 (not 'on sale')"
+      "max_concurrent_positions (2) reached"
     ],
     "SOFI": [
-      "pe_ratio 39.9 > 30",
-      "trailing_eps_growth_pct -3.48 < 10.0"
+      "max_concurrent_positions (2) reached"
     ],
     "NOK": [
-      "pe_ratio 69.1 > 30"
+      "max_concurrent_positions (2) reached"
     ],
     "PCG": [
-      "price 17.61 > 90% of 52wk high 19.16 (not 'on sale')",
-      "trailing_eps_growth_pct 7.6 < 10.0"
+      "max_concurrent_positions (2) reached"
     ],
     "IREN": [
-      "pe_ratio 82.7 > 30"
+      "max_concurrent_positions (2) reached"
     ],
     "SMCI": [
-      "trailing_eps_growth_pct -9.01 < 10.0"
+      "max_concurrent_positions (2) reached"
     ],
     "ET": [
-      "price 21.20 > 90% of 52wk high 21.64 (not 'on sale')"
+      "max_concurrent_positions (2) reached"
     ],
     "PFE": [
-      "pe_ratio 37.2 > 30",
-      "price 28.07 > 90% of 52wk high 28.75 (not 'on sale')",
-      "trailing_eps_growth_pct -3.24 < 10.0"
+      "max_concurrent_positions (2) reached"
     ],
     "BMNR": [
-      "no assignment yet -- supplemental CSPs only open once a lot is held"
-    ],
-    "RIVN": [
-      "no assignment yet -- supplemental CSPs only open once a lot is held"
+      "max_concurrent_positions (2) reached"
     ],
     "CMG": [
-      "pe_ratio 34.0 > 30",
-      "trailing_eps_growth_pct 0.11 < 10.0"
+      "max_concurrent_positions (2) reached"
     ],
     "NKE": [
-      "trailing_eps_growth_pct -3.45 < 10.0"
+      "max_concurrent_positions (2) reached"
     ],
     "QXO": [
-      "trailing_eps_growth_pct -1098.96 < 10.0"
+      "max_concurrent_positions (2) reached"
     ],
     "PYPL": [
-      "no assignment yet -- supplemental CSPs only open once a lot is held"
+      "max_concurrent_positions (2) reached"
     ],
     "AAL": [
-      "trailing_eps_growth_pct -86.88 < 10.0"
+      "max_concurrent_positions (2) reached"
     ],
     "T": [
-      "no assignment yet -- supplemental CSPs only open once a lot is held"
+      "max_concurrent_positions (2) reached"
     ],
     "IONQ": [
-      "trailing_eps_growth_pct -53.89 < 10.0"
+      "max_concurrent_positions (2) reached"
     ],
     "NU": [
-      "no assignment yet -- supplemental CSPs only open once a lot is held"
+      "max_concurrent_positions (2) reached"
     ],
     "RKT": [
-      "pe_ratio 92.7 > 30",
-      "trailing_eps_growth_pct -331.53 < 10.0"
+      "max_concurrent_positions (2) reached"
     ],
     "F": [
-      "trailing_eps_growth_pct -238.83 < 10.0"
+      "max_concurrent_positions (2) reached"
     ],
     "VZ": [
-      "price 49.45 > 90% of 52wk high 51.68 (not 'on sale')",
-      "trailing_eps_growth_pct -1.9 < 10.0"
+      "max_concurrent_positions (2) reached"
     ],
     "AGNC": [
-      "no assignment yet -- supplemental CSPs only open once a lot is held"
+      "max_concurrent_positions (2) reached"
     ],
     "CMCSA": [
-      "no assignment yet -- supplemental CSPs only open once a lot is held"
+      "max_concurrent_positions (2) reached"
     ],
     "NVO": [
-      "no assignment yet -- supplemental CSPs only open once a lot is held"
+      "max_concurrent_positions (2) reached"
     ],
     "FHN": [
-      "price 24.63 > 90% of 52wk high 26.56 (not 'on sale')"
+      "max_concurrent_positions (2) reached"
     ],
     "PBR": [
-      "no assignment yet -- supplemental CSPs only open once a lot is held"
+      "max_concurrent_positions (2) reached"
     ],
     "VALE": [
-      "pe_ratio 30.6 > 30"
+      "max_concurrent_positions (2) reached"
     ],
     "U": [
-      "no assignment yet -- supplemental CSPs only open once a lot is held"
+      "max_concurrent_positions (2) reached"
     ],
     "OWL": [
-      "pe_ratio 147.5 > 30",
-      "trailing_eps_growth_pct -28.06 < 10.0"
+      "max_concurrent_positions (2) reached"
     ],
     "BSX": [
-      "no assignment yet -- supplemental CSPs only open once a lot is held"
+      "max_concurrent_positions (2) reached"
     ],
     "HPE": [
-      "pe_ratio 50.3 > 30",
-      "trailing_eps_growth_pct -97.79 < 10.0"
+      "max_concurrent_positions (2) reached"
     ],
     "CCL": [
-      "no assignment yet -- supplemental CSPs only open once a lot is held"
+      "max_concurrent_positions (2) reached"
     ],
     "RBLX": [
-      "trailing_eps_growth_pct -13.86 < 10.0"
+      "max_concurrent_positions (2) reached"
     ],
     "HPQ": [
-      "price 29.70 > 90% of 52wk high 32.19 (not 'on sale')",
-      "trailing_eps_growth_pct -8.86 < 10.0"
+      "max_concurrent_positions (2) reached"
     ],
     "B": [
-      "no assignment yet -- supplemental CSPs only open once a lot is held"
+      "max_concurrent_positions (2) reached"
     ],
     "JD": [
-      "no assignment yet -- supplemental CSPs only open once a lot is held"
+      "max_concurrent_positions (2) reached"
     ],
     "MRNA": [
-      "no assignment yet -- supplemental CSPs only open once a lot is held"
+      "max_concurrent_positions (2) reached"
     ],
     "DKNG": [
-      "no assignment yet -- supplemental CSPs only open once a lot is held"
+      "max_concurrent_positions (2) reached"
     ],
     "STM": [
-      "pe_ratio 98.5 > 30"
+      "max_concurrent_positions (2) reached"
     ],
     "FIG": [
-      "no assignment yet -- supplemental CSPs only open once a lot is held"
+      "max_concurrent_positions (2) reached"
     ]
   },
-  "open_positions": 1,
+  "open_positions": 2,
   "lots": [],
   "equity": {
     "starting_equity": 5000,
-    "csp_collateral": 1050.0,
+    "csp_collateral": 2450.0,
     "assigned_shares_capital": 0,
-    "capital_in_use": 1050.0,
-    "available_capital": 1450.0
+    "capital_in_use": 2450.0,
+    "available_capital": 50.0
   }
 }

@@ -83,5 +83,47 @@
     },
     "status": "PROPOSED",
     "proposed_at": "2026-08-21T16:05:47.729105+00:00"
+  },
+  {
+    "symbol": "RIVN",
+    "type": "csp",
+    "instrument_id": "15fc4be0-c978-4596-8d35-5a87a2874f2d",
+    "strike": 14.0,
+    "expiration_date": "2026-09-18",
+    "dte": 25,
+    "delta": 0.109596,
+    "credit": 0.135,
+    "collateral": 1400.0,
+    "supplemental": false,
+    "barbell_leg": "low_prob",
+    "barbell_episode_id": "2026-08-21T16:05:47.729105+00:00",
+    "return_on_collateral_pct": 0.964,
+    "return_on_net_capital_pct": 0.974,
+    "annualized_roc_pct": 14.1,
+    "chance_of_profit_short": 0.874213,
+    "step1_gate": {
+      "symbol": "RIVN",
+      "pass": true,
+      "reasons": [],
+      "quality": {
+        "pass": true,
+        "reasons": [],
+        "pe_ratio": -6.57,
+        "pe_applicable": false,
+        "avg_volume_30d": 23726698.469,
+        "high_52_weeks": 22.69
+      },
+      "trend": {
+        "pass": false,
+        "reasons": [
+          "no daily bar file for RIVN"
+        ]
+      },
+      "trend_advisory_only": true,
+      "trailing_eps_growth_pct": 23.19,
+      "price": 16.96
+    },
+    "status": "PROPOSED",
+    "proposed_at": "2026-08-24T23:46:26.787986+00:00"
   }
 ]
