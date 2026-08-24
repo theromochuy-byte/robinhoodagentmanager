@@ -16,9 +16,10 @@
     "entry": 357.76,
     "entry_time": "2026-07-02T16:00:00Z",
     "status": "entered",
-    "last_price": 335.87,
-    "unrealized_pnl": -17.38,
-    "checked_at": "2026-08-24T16:49:17.801180+00:00"
+    "last_price": 337.43,
+    "unrealized_pnl": -16.14,
+    "checked_at": "2026-08-24T20:46:57.799026+00:00",
+    "touched_1r": false
   },
   {
     "symbol": "HD",
@@ -37,9 +38,10 @@
     "entry": 357.76,
     "entry_time": "2026-07-02T16:00:00Z",
     "status": "entered",
-    "last_price": 335.87,
-    "unrealized_pnl": -19.21,
-    "checked_at": "2026-08-24T16:49:17.801180+00:00"
+    "last_price": 337.43,
+    "unrealized_pnl": -17.84,
+    "checked_at": "2026-08-24T20:46:57.799026+00:00",
+    "touched_1r": false
   },
   {
     "symbol": "BRK.B",
@@ -78,9 +80,10 @@
     "entry_time": "2026-07-02T16:00:00Z",
     "status": "entered",
     "quality_score": 0.4312,
-    "last_price": 91.66,
-    "unrealized_pnl": -16.41,
-    "checked_at": "2026-08-24T16:49:17.801180+00:00"
+    "last_price": 92.55,
+    "unrealized_pnl": -12.15,
+    "checked_at": "2026-08-24T20:46:57.799026+00:00",
+    "touched_1r": false
   },
   {
     "symbol": "CL",
@@ -101,8 +104,9 @@
     "entry_time": "2026-07-02T16:00:00Z",
     "status": "entered",
     "quality_score": 0.4267,
-    "last_price": 91.66,
-    "unrealized_pnl": -17.83,
-    "checked_at": "2026-08-24T16:49:17.801180+00:00"
+    "last_price": 92.55,
+    "unrealized_pnl": -13.2,
+    "checked_at": "2026-08-24T20:46:57.799026+00:00",
+    "touched_1r": false
   }
 ]
