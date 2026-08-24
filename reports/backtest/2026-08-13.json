@@ -1,8 +1,8 @@
 {
   "date": "2026-08-13",
   "new_entries": 6,
-  "closed_today": 0,
-  "open_count": 228,
+  "closed_today": 2,
+  "open_count": 227,
   "entries": [
     {
       "symbol": "ADBE",
@@ -113,6 +113,65 @@
       "status": "open"
     }
   ],
-  "closed": [],
+  "closed": [
+    {
+      "symbol": "NET",
+      "type": "inverse_hns",
+      "neckline": 239.0,
+      "stop": 202.7625,
+      "target_2R": 335.895,
+      "risk_per_share": 44.3775,
+      "shares": 0.676,
+      "break_time": "2026-06-29T13:30:00Z",
+      "bars_since_break": 7,
+      "in_pullback": true,
+      "last_close": 242.18,
+      "last_bar_time": "2026-07-02T17:30:00Z",
+      "scan_date": "2026-07-02",
+      "entry": 242.18,
+      "entry_time": "2026-07-02T17:30:00Z",
+      "status": "closed",
+      "max_price": 332.22,
+      "touched_1r": true,
+      "touched_2r": true,
+      "outcome": "win_2r",
+      "exit_price": 330.935,
+      "exit_time": "2026-08-13T17:30:00Z",
+      "pnl_per_share": 88.755,
+      "pnl_dollars": 60.0,
+      "r_multiple": 2.0,
+      "exit_reason": "2R_stop",
+      "days_held": 42.0
+    },
+    {
+      "symbol": "VLO",
+      "type": "inverse_hns",
+      "neckline": 274.9199,
+      "stop": 250.6031,
+      "target_2R": 330.0488,
+      "risk_per_share": 26.4819,
+      "shares": 1.1328,
+      "break_time": "2026-07-08T13:30:00Z",
+      "bars_since_break": 5,
+      "in_pullback": true,
+      "last_close": 280.65,
+      "last_bar_time": "2026-07-10T17:30:00Z",
+      "scan_date": "2026-07-10",
+      "entry": 280.65,
+      "entry_time": "2026-07-10T17:30:00Z",
+      "status": "closed",
+      "max_price": 337.84,
+      "touched_1r": true,
+      "touched_2r": true,
+      "outcome": "win_2r",
+      "exit_price": 333.6138,
+      "exit_time": "2026-08-13T13:30:00Z",
+      "pnl_per_share": 52.9638,
+      "pnl_dollars": 60.0,
+      "r_multiple": 2.0,
+      "exit_reason": "2R_stop",
+      "days_held": 33.83
+    }
+  ],
   "watching_count": 35
 }

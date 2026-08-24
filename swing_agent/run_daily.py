@@ -92,33 +92,54 @@ def check_exits(quotes: dict[str, float]) -> tuple[list[dict], list[dict]]:
         entry     = t["entry"]
         risk      = t.get("risk_per_share", 0)
         stop      = t["stop"]
-        target    = t["target_2R"]
         target_1r = entry + risk
+        target_2r = entry + 2 * risk
+        target_3r = t.get("target_3R", entry + 3 * risk)
 
-        # Carry forward or detect 1R touch
+        # Carry forward or advance milestone flags
         touched_1r = t.get("touched_1r", False)
+        touched_2r = t.get("touched_2r", False)
         if not touched_1r and price >= target_1r:
             touched_1r = True
             t["touched_1r"] = True
+        if not touched_2r and price >= target_2r:
+            touched_2r = True
+            t["touched_2r"] = True
 
-        effective_stop = entry if touched_1r else stop
+        # Stop ladder: original → breakeven at 1R → 2R floor at 2R
+        if touched_2r:
+            effective_stop = target_2r
+        elif touched_1r:
+            effective_stop = entry
+        else:
+            effective_stop = stop
 
         if price <= effective_stop:
-            outcome = "breakeven" if touched_1r else "stopped"
+            if touched_2r:
+                outcome    = "win_2r"
+                exit_reason = "2R_stop"
+            elif touched_1r:
+                outcome    = "breakeven"
+                exit_reason = "breakeven_stop"
+            else:
+                outcome    = "stopped"
+                exit_reason = "stop"
             t["status"]       = outcome
             t["exit_price"]   = price
-            t["exit_reason"]  = "breakeven_stop" if touched_1r else "stop"
+            t["exit_reason"]  = exit_reason
             t["exit_time"]    = now
             t["realized_pnl"] = round((price - entry) * t.get("shares", 0), 2)
             t["touched_1r"]   = touched_1r
+            t["touched_2r"]   = touched_2r
             closes.append(t)
-        elif price >= target:
+        elif price >= target_3r:
             t["status"]       = "target_hit"
             t["exit_price"]   = price
-            t["exit_reason"]  = "2R"
+            t["exit_reason"]  = "3R"
             t["exit_time"]    = now
             t["realized_pnl"] = round((price - entry) * t.get("shares", 0), 2)
             t["touched_1r"]   = True
+            t["touched_2r"]   = True
             closes.append(t)
         else:
             t["last_price"]     = price

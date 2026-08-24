@@ -143,10 +143,13 @@ def _days_between(start_ts: str, end_ts: str) -> float | None:
 def _check_exits(open_positions: list[dict], h4_bars_today: pd.DataFrame) -> tuple[list[dict], list[dict]]:
     """Check open positions against today's 4-hour bars.
     Returns (still_open, closed_today).
-    Conservative: stop takes priority if same bar touches both.
+    Conservative: stop takes priority if same bar touches both targets.
 
-    Tracks max_price and touched_1r per position for exit-signal analysis.
-    Implements breakeven stop: once price touches 1R gain, stop moves to entry.
+    Trailing stop ladder:
+      - Default stop: original hard stop below pattern low
+      - Touch 1R → stop moves to entry (breakeven)
+      - Touch 2R → stop moves to 1R (lock in 1R), target becomes 3R (full win)
+      - Touch 3R → full win
     """
     still_open   = []
     closed_today = []
@@ -156,12 +159,14 @@ def _check_exits(open_positions: list[dict], h4_bars_today: pd.DataFrame) -> tup
         entry  = pos["entry"]
         risk   = pos.get("risk_per_share", 0)
         stop   = pos["stop"]
-        target = pos["target_2R"]
-        target_1r = entry + risk  # 1R checkpoint
+        target_1r = entry + risk
+        target_2r = entry + 2 * risk
+        target_3r = pos.get("target_3R", entry + 3 * risk)
 
-        # Carry forward max_price and touched_1r across days
+        # Carry forward milestone flags across days
         max_price  = pos.get("max_price", entry)
         touched_1r = pos.get("touched_1r", False)
+        touched_2r = pos.get("touched_2r", False)
         closed = False
 
         for _, row in h4_bars_today.iterrows():
@@ -169,21 +174,35 @@ def _check_exits(open_positions: list[dict], h4_bars_today: pd.DataFrame) -> tup
             hi = float(row["high"])
             ts = str(row["begins_at"])
 
-            # Update max price seen
             if hi > max_price:
                 max_price = hi
 
-            # Check if 1R has been touched (for breakeven stop tracking)
+            # Advance milestone flags in order
             if not touched_1r and hi >= target_1r:
                 touched_1r = True
+            if not touched_2r and hi >= target_2r:
+                touched_2r = True
 
-            # Effective stop: if 1R touched, move stop to breakeven (entry)
-            effective_stop = entry if touched_1r else stop
+            # Effective stop rises with each milestone
+            if touched_2r:
+                effective_stop = target_2r   # stop at 2R, running to 3R
+            elif touched_1r:
+                effective_stop = entry        # stop at breakeven, running to 2R→3R
+            else:
+                effective_stop = stop         # original hard stop
 
             if lo <= effective_stop:
-                outcome = "loss" if effective_stop < entry else "breakeven"
-                exit_p  = round(effective_stop, 4)
-                r_mult  = round((exit_p - entry) / risk, 3) if risk else 0.0
+                exit_p = round(effective_stop, 4)
+                r_mult = round((exit_p - entry) / risk, 3) if risk else 0.0
+                if touched_2r:
+                    outcome    = "win_2r"       # locked in 2R, didn't reach 3R
+                    exit_reason = "2R_stop"
+                elif touched_1r:
+                    outcome    = "breakeven"
+                    exit_reason = "breakeven_stop"
+                else:
+                    outcome    = "loss"
+                    exit_reason = "stop"
                 days_held = _days_between(pos.get("entry_time", ""), ts)
                 pos.update(
                     outcome=outcome,
@@ -194,26 +213,28 @@ def _check_exits(open_positions: list[dict], h4_bars_today: pd.DataFrame) -> tup
                     r_multiple=r_mult,
                     max_price=round(max_price, 4),
                     touched_1r=touched_1r,
+                    touched_2r=touched_2r,
                     status="closed",
-                    exit_reason="stop" if effective_stop == stop else "breakeven_stop",
+                    exit_reason=exit_reason,
                     days_held=days_held,
                 )
                 closed_today.append(pos)
                 closed = True
                 break
-            if hi >= target:
+            if hi >= target_3r:
                 days_held = _days_between(pos.get("entry_time", ""), ts)
                 pos.update(
                     outcome="win",
-                    exit_price=round(target, 4),
+                    exit_price=round(target_3r, 4),
                     exit_time=ts,
-                    pnl_per_share=round(target - entry, 4),
-                    pnl_dollars=round((target - entry) * pos["shares"], 2),
-                    r_multiple=2.0,
+                    pnl_per_share=round(target_3r - entry, 4),
+                    pnl_dollars=round((target_3r - entry) * pos["shares"], 2),
+                    r_multiple=3.0,
                     max_price=round(max_price, 4),
                     touched_1r=True,
+                    touched_2r=True,
                     status="closed",
-                    exit_reason="2R_target",
+                    exit_reason="3R_target",
                     days_held=days_held,
                 )
                 closed_today.append(pos)
@@ -223,6 +244,7 @@ def _check_exits(open_positions: list[dict], h4_bars_today: pd.DataFrame) -> tup
         if not closed:
             pos["max_price"]  = round(max_price, 4)
             pos["touched_1r"] = touched_1r
+            pos["touched_2r"] = touched_2r
             still_open.append(pos)
 
     return still_open, closed_today
@@ -345,9 +367,11 @@ def run_backtest(
             )
         all_closed.append(pos)
 
-    # Summary stats — include breakeven as a distinct outcome
-    closed_only = [t for t in all_closed if t.get("outcome") in ("win", "loss", "breakeven")]
+    # Summary stats — outcomes: win (3R), win_1r (stopped at 1R floor), breakeven (0R), loss (-1R)
+    # outcomes: win (3R), win_2r (stopped at 2R floor), breakeven (0R), loss (-1R)
+    closed_only = [t for t in all_closed if t.get("outcome") in ("win", "win_2r", "loss", "breakeven")]
     wins       = [t for t in closed_only if t["outcome"] == "win"]
+    wins_2r    = [t for t in closed_only if t["outcome"] == "win_2r"]
     losses     = [t for t in closed_only if t["outcome"] == "loss"]
     breakevens = [t for t in closed_only if t["outcome"] == "breakeven"]
     n = len(closed_only)
@@ -361,10 +385,12 @@ def run_backtest(
         "symbols_scanned":  len(symbols),
         "total_entries":    len(all_closed),
         "closed_trades":    n,
-        "wins":             len(wins),
+        "wins_3r":          len(wins),
+        "wins_2r":          len(wins_2r),
         "losses":           len(losses),
         "breakevens":       len(breakevens),
-        "win_rate":         round(len(wins) / n, 3) if n else 0.0,
+        "win_rate":         round((len(wins) + len(wins_2r)) / n, 3) if n else 0.0,
+        "full_win_rate":    round(len(wins) / n, 3) if n else 0.0,
         "avg_R":            round(sum(t["r_multiple"] for t in closed_only) / n, 3) if n else 0.0,
         "total_R":          round(sum(t["r_multiple"] for t in closed_only), 2),
         "closed_pnl":       round(closed_pnl, 2),
@@ -376,7 +402,8 @@ def run_backtest(
         # By pattern
         "by_pattern": {
             ptype: {
-                "wins":      sum(1 for t in wins if t.get("type") == ptype),
+                "wins_3r":   sum(1 for t in wins if t.get("type") == ptype),
+                "wins_2r":   sum(1 for t in wins_2r if t.get("type") == ptype),
                 "losses":    sum(1 for t in losses if t.get("type") == ptype),
                 "breakevens":sum(1 for t in breakevens if t.get("type") == ptype),
                 "avg_R":     round(
@@ -391,8 +418,10 @@ def run_backtest(
             for ptype in ["inverse_hns", "double_bottom"]
         },
         "avg_days_held": {
-            "wins":      round(sum(t["days_held"] for t in wins if t.get("days_held") is not None) /
+            "wins_3r":   round(sum(t["days_held"] for t in wins if t.get("days_held") is not None) /
                                max(1, sum(1 for t in wins if t.get("days_held") is not None)), 1),
+            "wins_2r":   round(sum(t["days_held"] for t in wins_2r if t.get("days_held") is not None) /
+                               max(1, sum(1 for t in wins_2r if t.get("days_held") is not None)), 1),
             "losses":    round(sum(t["days_held"] for t in losses if t.get("days_held") is not None) /
                                max(1, sum(1 for t in losses if t.get("days_held") is not None)), 1),
             "breakevens":round(sum(t["days_held"] for t in breakevens if t.get("days_held") is not None) /
@@ -420,16 +449,17 @@ if __name__ == "__main__":
     print(f"{'='*60}")
     print(f"Symbols scanned:   {summary['symbols_scanned']}")
     print(f"Total entries:     {summary['total_entries']}")
-    print(f"Closed trades:     {summary['closed_trades']}  ({summary['wins']}W / {summary['losses']}L / {summary['breakevens']}BE)")
-    print(f"Win rate:          {summary['win_rate']:.1%}")
+    print(f"Closed trades:     {summary['closed_trades']}  "
+          f"({summary['wins_3r']}W3R / {summary['wins_2r']}W2R / {summary['losses']}L / {summary['breakevens']}BE)")
+    print(f"Win rate (any):    {summary['win_rate']:.1%}   Full 3R rate: {summary['full_win_rate']:.1%}")
     for ptype, stats in summary.get("by_pattern", {}).items():
-        tot = stats["wins"] + stats["losses"] + stats["breakevens"]
-        wr = stats["wins"] / tot if tot else 0
-        print(f"  {ptype:<18} {stats['wins']}W/{stats['losses']}L/{stats['breakevens']}BE  "
+        tot = stats["wins_3r"] + stats["wins_2r"] + stats["losses"] + stats["breakevens"]
+        wr = (stats["wins_3r"] + stats["wins_2r"]) / tot if tot else 0
+        print(f"  {ptype:<18} {stats['wins_3r']}W3R/{stats['wins_2r']}W2R/{stats['losses']}L/{stats['breakevens']}BE  "
               f"wr={wr:.1%}  avgR={stats['avg_R']:+.3f}  avg_days={stats['avg_days_held']:.1f}")
     adh = summary.get("avg_days_held", {})
-    print(f"Avg days held:     wins={adh.get('wins','?')}d  losses={adh.get('losses','?')}d  "
-          f"breakevens={adh.get('breakevens','?')}d")
+    print(f"Avg days held:     W3R={adh.get('wins_3r','?')}d  W2R={adh.get('wins_2r','?')}d  "
+          f"L={adh.get('losses','?')}d  BE={adh.get('breakevens','?')}d")
     print(f"Avg R:             {summary['avg_R']:.2f}R")
     print(f"Total R:           {summary['total_R']:.2f}R")
     print(f"Closed P&L:        ${summary['closed_pnl']:+.2f}")
