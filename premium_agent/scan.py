@@ -25,7 +25,7 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 import pandas as pd
@@ -176,6 +176,80 @@ def _effective_max_concurrent(config: dict, has_assignment: bool) -> int:
     return config["max_concurrent_positions"]
 
 
+def _screen_barbell_leg(
+    leg_name: str,
+    delta_range: tuple[float, float],
+    leg_budget: float,
+    config: dict,
+    universe: list[str],
+    snapshot: dict,
+    options_dir: str | Path,
+    ledger_path: str | Path,
+    positions_path: str | Path,
+    as_of: date | None,
+    held: set[str],
+    used_instrument_ids: set[str],
+    committed_by_symbol: dict[str, float],
+) -> tuple[tuple[str, "pd.Series", dict] | None, str | None]:
+    """Screen the universe for one barbell leg -- first candidate that clears
+    delta/DTE/liquidity/yield/collateral-budget, universe order, same
+    convention the rest of this module uses. Shared by _open_barbell (both
+    legs together, budget split 50/50) and _retry_barbell_leg (the one leg
+    that never filled, screened again on a later cycle against whatever
+    budget remains then). Returns (picked, None) or (None, skip_reason).
+    """
+    for symbol in universe:
+        if symbol in held:
+            continue
+        entry = snapshot.get(symbol)
+        if entry is None:
+            continue
+        gate = screen_step1(symbol, entry, config, for_covered_call=False)
+        if not gate["pass"]:
+            continue
+        contracts = load_symbol_contracts(symbol, options_dir)
+        if contracts.empty:
+            continue
+        _, remaining_symbol = _remaining_budget(config, symbol, ledger_path, positions_path)
+        remaining_symbol -= committed_by_symbol.get(symbol, 0.0)
+        if remaining_symbol <= 0:
+            continue
+        budget_here = min(leg_budget, remaining_symbol)
+
+        candidates = screener.screen_csp(
+            contracts, entry["price"],
+            dte_range=tuple(config["dte_range"]), delta_range=delta_range,
+            min_open_interest=config["min_open_interest"], max_spread_pct=config["max_spread_pct"],
+            min_bid=config["min_bid"], min_yield_pct=config["min_yield_pct"],
+            earnings_before=entry.get("next_earnings_date"), as_of=as_of,
+        )
+        candidates = candidates[~candidates["instrument_id"].isin(used_instrument_ids)]
+        candidates = candidates[candidates["collateral"] <= budget_here]
+        if candidates.empty:
+            continue
+        return (symbol, candidates.iloc[0], gate), None
+
+    return None, "no candidate cleared delta/DTE/liquidity/yield/collateral-budget for this leg"
+
+
+def _barbell_trade(leg_name: str, episode_id: str, picked: tuple) -> dict:
+    symbol, top, gate = picked
+    return {
+        "symbol": symbol, "type": "csp", "instrument_id": top["instrument_id"],
+        "strike": float(top["strike"]), "expiration_date": top["expiration_date"],
+        "dte": int(top["dte"]), "delta": float(top["abs_delta"]), "credit": float(top["credit"]),
+        "collateral": float(top["collateral"]),
+        "supplemental": False,
+        "barbell_leg": leg_name,
+        "barbell_episode_id": episode_id,
+        "return_on_collateral_pct": float(top["return_on_collateral_pct"]),
+        "return_on_net_capital_pct": float(top["return_on_net_capital_pct"]),
+        "annualized_roc_pct": float(top["annualized_roc_pct"]),
+        "chance_of_profit_short": top.get("chance_of_profit_short"),
+        "step1_gate": gate,
+    }
+
+
 def _open_barbell(
     config: dict,
     universe: list[str],
@@ -200,6 +274,15 @@ def _open_barbell(
     both legs of the current one have left the "open CSP" state (closed,
     expired, or assigned) -- see _account_state's has_open_csp.
 
+    Both legs share one barbell_episode_id (a fresh UTC timestamp, generated
+    once per call), written onto whichever leg(s) actually fill. If one leg
+    fills and the other doesn't, _active_barbell_episode/_retry_barbell_leg
+    (2026-08-24 sign-off) use that shared id to keep retrying just the
+    missing leg on later cycles, instead of leaving its share of the budget
+    idle until the filled leg eventually resolves -- see those functions'
+    docstrings and CLAUDE_OPTIONS.md's barbell section for the full
+    reasoning.
+
     Universe order (not cross-universe ranking) decides which symbol fills
     each leg, same "first candidate that clears everything" convention the
     rest of this module uses -- see propose_candidates.
@@ -214,72 +297,112 @@ def _open_barbell(
     committed_by_symbol: dict[str, float] = {}
     used_instrument_ids: set[str] = set()
     held = positions.held_symbols(positions_path)
+    episode_id = datetime.now(timezone.utc).isoformat()
 
     legs = [
         ("threshold_of_risk", tuple(config["delta_range"])),
         ("low_prob", tuple(config["secondary_csp_delta_range"])),
     ]
     for leg_name, delta_range in legs:
-        picked = None
-        for symbol in universe:
-            if symbol in held:
-                continue
-            entry = snapshot.get(symbol)
-            if entry is None:
-                continue
-            gate = screen_step1(symbol, entry, config, for_covered_call=False)
-            if not gate["pass"]:
-                continue
-            contracts = load_symbol_contracts(symbol, options_dir)
-            if contracts.empty:
-                continue
-            _, remaining_symbol = _remaining_budget(config, symbol, ledger_path, positions_path)
-            remaining_symbol -= committed_by_symbol.get(symbol, 0.0)
-            if remaining_symbol <= 0:
-                continue
-            budget_here = min(leg_budget, remaining_symbol)
-
-            candidates = screener.screen_csp(
-                contracts, entry["price"],
-                dte_range=tuple(config["dte_range"]), delta_range=delta_range,
-                min_open_interest=config["min_open_interest"], max_spread_pct=config["max_spread_pct"],
-                min_bid=config["min_bid"], min_yield_pct=config["min_yield_pct"],
-                earnings_before=entry.get("next_earnings_date"), as_of=as_of,
-            )
-            candidates = candidates[~candidates["instrument_id"].isin(used_instrument_ids)]
-            candidates = candidates[candidates["collateral"] <= budget_here]
-            if candidates.empty:
-                continue
-            picked = (symbol, candidates.iloc[0], gate)
-            break
-
+        picked, skip_reason = _screen_barbell_leg(
+            leg_name, delta_range, leg_budget, config, universe, snapshot,
+            options_dir, ledger_path, positions_path, as_of,
+            held, used_instrument_ids, committed_by_symbol,
+        )
         if picked is None:
-            skipped[f"barbell:{leg_name}"] = [
-                "no candidate cleared delta/DTE/liquidity/yield/collateral-budget for this leg"
-            ]
+            skipped[f"barbell:{leg_name}"] = [skip_reason]
             continue
 
-        symbol, top, gate = picked
-        trade = {
-            "symbol": symbol, "type": "csp", "instrument_id": top["instrument_id"],
-            "strike": float(top["strike"]), "expiration_date": top["expiration_date"],
-            "dte": int(top["dte"]), "delta": float(top["abs_delta"]), "credit": float(top["credit"]),
-            "collateral": float(top["collateral"]),
-            "supplemental": False,
-            "barbell_leg": leg_name,
-            "return_on_collateral_pct": float(top["return_on_collateral_pct"]),
-            "return_on_net_capital_pct": float(top["return_on_net_capital_pct"]),
-            "annualized_roc_pct": float(top["annualized_roc_pct"]),
-            "chance_of_profit_short": top.get("chance_of_profit_short"),
-            "step1_gate": gate,
-        }
+        trade = _barbell_trade(leg_name, episode_id, picked)
         if not dry_run:
             ledger.propose_trade(trade, path=ledger_path)
         proposed.append(trade)
-        committed_by_symbol[symbol] = committed_by_symbol.get(symbol, 0.0) + trade["collateral"]
+        committed_by_symbol[trade["symbol"]] = committed_by_symbol.get(trade["symbol"], 0.0) + trade["collateral"]
         used_instrument_ids.add(trade["instrument_id"])
 
     return proposed, skipped
+
+
+def _active_barbell_episode(ledger_path: str | Path) -> tuple[str | None, str | None]:
+    """Find a barbell episode with exactly one leg filled and that leg still
+    open -- the retry-eligible window (2026-08-24 sign-off, see
+    CLAUDE_OPTIONS.md's barbell section). Once the filled leg itself resolves
+    (closes, assigns, or expires), the episode is done and this stops
+    returning it -- not because the missing leg's budget no longer matters,
+    but because whatever happens next already re-attempts a low_prob-shaped
+    CSP through an existing path: a resolved-clean sibling flips
+    has_open_csp back to False, which lets a fresh _open_barbell run (a new
+    low_prob attempt is part of that); an assigned sibling flips
+    has_assignment True, which unlocks propose_candidates' supplemental-CSP
+    screening (same secondary_csp_delta_range band). Retrying here as well
+    would just duplicate one of those two paths.
+
+    Returns (episode_id, missing_leg_name), or (None, None) if no episode is
+    currently retry-eligible.
+    """
+    episodes: dict[str, dict[str, dict]] = {}
+    for t in ledger.all_trades(ledger_path):
+        eid = t.get("barbell_episode_id")
+        leg = t.get("barbell_leg")
+        if eid is None or leg is None:
+            continue
+        episodes.setdefault(eid, {})[leg] = t
+
+    leg_names = {"threshold_of_risk", "low_prob"}
+    for episode_id, legs in episodes.items():
+        missing = leg_names - set(legs.keys())
+        if len(missing) != 1:
+            continue  # both legs filled, or (shouldn't happen) neither
+        (filled_leg_name, filled_trade), = legs.items()
+        if filled_trade.get("status") in ledger.CLOSED_STATUSES:
+            continue  # sibling already resolved -- episode is done, see docstring
+        return episode_id, next(iter(missing))
+
+    return None, None
+
+
+def _retry_barbell_leg(
+    episode_id: str,
+    leg_name: str,
+    config: dict,
+    universe: list[str],
+    snapshot: dict,
+    options_dir: str | Path,
+    ledger_path: str | Path,
+    positions_path: str | Path,
+    as_of: date | None,
+    dry_run: bool,
+) -> tuple[list[dict], dict[str, list[str]]]:
+    """Retry screening for the one barbell leg that never filled (see
+    _active_barbell_episode), tagged with the episode's original id so it's
+    still attributable to the same barbell for performance review. Sized
+    against the full current _remaining_budget, not split in half again --
+    nothing else is competing for it in this call, since the sibling leg's
+    collateral is already deployed and counted against that budget -- and
+    recomputed fresh each cycle rather than reusing the leg_budget from
+    whenever the barbell first opened, consistent with how every other
+    sizing check in this module re-derives state each cycle rather than
+    caching it (2026-08-24 sign-off).
+    """
+    delta_range = tuple(
+        config["delta_range"] if leg_name == "threshold_of_risk" else config["secondary_csp_delta_range"]
+    )
+    remaining_total, _ = _remaining_budget(config, "", ledger_path, positions_path)
+    if remaining_total <= 0:
+        return [], {f"barbell_retry:{leg_name}": ["no collateral budget remaining to retry this leg"]}
+
+    held = positions.held_symbols(positions_path)
+    picked, skip_reason = _screen_barbell_leg(
+        leg_name, delta_range, remaining_total, config, universe, snapshot,
+        options_dir, ledger_path, positions_path, as_of, held, set(), {},
+    )
+    if picked is None:
+        return [], {f"barbell_retry:{leg_name}": [skip_reason]}
+
+    trade = _barbell_trade(leg_name, episode_id, picked)
+    if not dry_run:
+        ledger.propose_trade(trade, path=ledger_path)
+    return [trade], {}
 
 
 def propose_candidates(
@@ -299,8 +422,12 @@ def propose_candidates(
     one proposal per open lot, since a symbol can hold more than one lot at
     once. Everything else is screened for cash-secured puts: if no CSP leg
     is currently open anywhere (_account_state's has_open_csp), a fresh
-    barbell pair opens first (_open_barbell); afterwards, or once a barbell
-    is already running, unheld symbols are screened one at a time for
+    barbell pair opens first (_open_barbell); if a barbell is already
+    running but one of its two legs never filled, this retries just that
+    missing leg (_active_barbell_episode / _retry_barbell_leg, 2026-08-24
+    sign-off) instead of leaving its budget idle until the filled leg
+    resolves. Otherwise, once a barbell is fully running (or has no
+    retry-eligible leg left), unheld symbols are screened one at a time for
     supplemental low-probability CSPs -- but only once at least one
     assignment exists (has_assignment), same "opportunistic income on
     leftover equity" posture as before the barbell change. dry_run=True
@@ -328,6 +455,19 @@ def propose_candidates(
         open_count += len(barbell_trades)
         has_assignment, has_open_csp = _account_state(ledger_path, positions_path)
         max_positions = _effective_max_concurrent(config, has_assignment)
+    else:
+        episode_id, missing_leg = _active_barbell_episode(ledger_path)
+        if missing_leg is not None and open_count < max_positions:
+            retry_trades, retry_skipped = _retry_barbell_leg(
+                episode_id, missing_leg, config, universe, snapshot,
+                options_dir, ledger_path, positions_path, as_of, dry_run,
+            )
+            proposed.extend(retry_trades)
+            skipped.update(retry_skipped)
+            barbell_symbols = {t["symbol"] for t in retry_trades}
+            open_count += len(retry_trades)
+            has_assignment, has_open_csp = _account_state(ledger_path, positions_path)
+            max_positions = _effective_max_concurrent(config, has_assignment)
 
     for symbol in universe:
         if symbol in barbell_symbols:

@@ -134,6 +134,13 @@ def open_trades(path: str | Path = DEFAULT_LEDGER) -> list[dict]:
     return [t for t in _load(Path(path)) if t.get("status") not in CLOSED_STATUSES]
 
 
+def all_trades(path: str | Path = DEFAULT_LEDGER) -> list[dict]:
+    """Every trade ever written, regardless of status -- for queries that need
+    historical as well as open trades (e.g. barbell episode tracking, which
+    has to see a leg that already closed to know its episode is resolved)."""
+    return _load(Path(path))
+
+
 def deployed_collateral(path: str | Path = DEFAULT_LEDGER, symbol: str | None = None) -> float:
     """Collateral currently tied up by open CSP legs, for the Step 6 sizing caps
     (max_collateral_pct_of_equity, max_single_name_pct_of_equity). Only CSP

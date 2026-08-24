@@ -208,6 +208,40 @@ until it resolves on its own. A fresh barbell only opens again once the
 account has zero open CSPs and zero held lots — it is strictly the
 opening-from-flat move, not something that reopens alongside an existing
 position.
+
+**Missing-leg retry (sign-off 2026-08-24).** If one leg fills and the other
+doesn't clear delta/DTE/liquidity/yield/collateral-budget that cycle, the
+unfilled leg is not gone for good — but it also isn't retried forever
+unconditionally. Both legs share one `barbell_episode_id` (a timestamp
+generated once when the barbell opens, written onto whichever leg(s) fill).
+Each subsequent cycle, `premium_agent.scan._active_barbell_episode` looks
+for an episode with exactly one leg filled *and that leg still open*; if one
+exists, `_retry_barbell_leg` screens the universe again for just the missing
+leg, same delta band and liquidity/yield gates as the original attempt,
+sized against whatever collateral budget remains *that day* (not a stale
+half-of-original-total figure — recomputed fresh each cycle, consistent with
+how every other sizing check in `scan.py` works) — this was the actual
+finding that motivated the whole feature: on 2026-08-21 the barbell's
+`threshold_of_risk` leg filled (AGNC) while `low_prob` found nothing, and
+under the old code that budget simply sat idle with no mechanism to ever
+retry it, since `_open_barbell` only runs `if not has_open_csp` and the
+filled sibling kept that flag true.
+
+The retry stops — not because the missing leg's budget stops mattering, but
+because something else already takes over — once the filled sibling leg
+itself resolves, however it resolves:
+- **Closes clean** (profit-take or expiry, no assignment): `has_open_csp`
+  flips back to false, which is exactly the condition that lets a *fresh*
+  `_open_barbell` run next cycle — a new `low_prob` attempt is built into
+  that from scratch.
+- **Assigns**: `has_assignment` flips true, unlocking the supplemental-CSP
+  path in `propose_candidates`, which screens every unheld symbol against
+  `secondary_csp_delta_range` — the same band `low_prob` uses. Retrying the
+  old episode's leg on top of that would just duplicate it.
+
+So a missing leg's retry window is bounded by its sibling's own open
+lifetime, not by any separate cap or timeout — no extra "give up after N
+days" logic was needed once this was traced through.
 - Expiration: 21–45 days to expiration (DTE).
 - Liquidity filter: `open_interest >= 100`, bid >= $0.05, and
   `(ask - bid) <= 15%` of the mid price.
