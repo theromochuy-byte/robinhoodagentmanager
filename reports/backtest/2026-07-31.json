@@ -2,7 +2,7 @@
   "date": "2026-07-31",
   "new_entries": 11,
   "closed_today": 2,
-  "open_count": 151,
+  "open_count": 146,
   "entries": [
     {
       "symbol": "TGT",
@@ -221,12 +221,15 @@
       "entry": 59.365,
       "entry_time": "2026-07-13T17:30:00Z",
       "status": "closed",
+      "max_price": 65.658,
+      "touched_1r": true,
       "outcome": "win",
       "exit_price": 65.6289,
       "exit_time": "2026-07-31T13:30:00Z",
       "pnl_per_share": 6.2639,
       "pnl_dollars": 55.98,
-      "r_multiple": 2.0
+      "r_multiple": 2.0,
+      "exit_reason": "2R_target"
     },
     {
       "symbol": "BMY",
@@ -245,12 +248,15 @@
       "entry": 60.51,
       "entry_time": "2026-07-16T17:30:00Z",
       "status": "closed",
+      "max_price": 65.658,
+      "touched_1r": true,
       "outcome": "win",
       "exit_price": 65.6289,
       "exit_time": "2026-07-31T13:30:00Z",
       "pnl_per_share": 5.1189,
       "pnl_dollars": 45.75,
-      "r_multiple": 2.0
+      "r_multiple": 2.0,
+      "exit_reason": "2R_target"
     }
   ],
   "watching_count": 38

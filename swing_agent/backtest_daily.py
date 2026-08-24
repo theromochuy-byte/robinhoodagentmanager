@@ -130,13 +130,24 @@ def _check_exits(open_positions: list[dict], h4_bars_today: pd.DataFrame) -> tup
     """Check open positions against today's 4-hour bars.
     Returns (still_open, closed_today).
     Conservative: stop takes priority if same bar touches both.
+
+    Tracks max_price and touched_1r per position for exit-signal analysis.
+    Implements breakeven stop: once price touches 1R gain, stop moves to entry.
     """
     still_open   = []
     closed_today = []
 
     for pos in open_positions:
+        pos    = dict(pos)
+        entry  = pos["entry"]
+        risk   = pos.get("risk_per_share", 0)
         stop   = pos["stop"]
         target = pos["target_2R"]
+        target_1r = entry + risk  # 1R checkpoint
+
+        # Carry forward max_price and touched_1r across days
+        max_price  = pos.get("max_price", entry)
+        touched_1r = pos.get("touched_1r", False)
         closed = False
 
         for _, row in h4_bars_today.iterrows():
@@ -144,26 +155,56 @@ def _check_exits(open_positions: list[dict], h4_bars_today: pd.DataFrame) -> tup
             hi = float(row["high"])
             ts = str(row["begins_at"])
 
-            if lo <= stop:
-                pos = dict(pos)
-                pos.update(outcome="loss", exit_price=round(stop, 4), exit_time=ts,
-                           pnl_per_share=round(stop - pos["entry"], 4),
-                           pnl_dollars=round((stop - pos["entry"]) * pos["shares"], 2),
-                           r_multiple=-1.0, status="closed")
+            # Update max price seen
+            if hi > max_price:
+                max_price = hi
+
+            # Check if 1R has been touched (for breakeven stop tracking)
+            if not touched_1r and hi >= target_1r:
+                touched_1r = True
+
+            # Effective stop: if 1R touched, move stop to breakeven (entry)
+            effective_stop = entry if touched_1r else stop
+
+            if lo <= effective_stop:
+                outcome = "loss" if effective_stop < entry else "breakeven"
+                exit_p  = round(effective_stop, 4)
+                r_mult  = round((exit_p - entry) / risk, 3) if risk else 0.0
+                pos.update(
+                    outcome=outcome,
+                    exit_price=exit_p,
+                    exit_time=ts,
+                    pnl_per_share=round(exit_p - entry, 4),
+                    pnl_dollars=round((exit_p - entry) * pos["shares"], 2),
+                    r_multiple=r_mult,
+                    max_price=round(max_price, 4),
+                    touched_1r=touched_1r,
+                    status="closed",
+                    exit_reason="stop" if effective_stop == stop else "breakeven_stop",
+                )
                 closed_today.append(pos)
                 closed = True
                 break
             if hi >= target:
-                pos = dict(pos)
-                pos.update(outcome="win", exit_price=round(target, 4), exit_time=ts,
-                           pnl_per_share=round(target - pos["entry"], 4),
-                           pnl_dollars=round((target - pos["entry"]) * pos["shares"], 2),
-                           r_multiple=2.0, status="closed")
+                pos.update(
+                    outcome="win",
+                    exit_price=round(target, 4),
+                    exit_time=ts,
+                    pnl_per_share=round(target - entry, 4),
+                    pnl_dollars=round((target - entry) * pos["shares"], 2),
+                    r_multiple=2.0,
+                    max_price=round(max_price, 4),
+                    touched_1r=True,
+                    status="closed",
+                    exit_reason="2R_target",
+                )
                 closed_today.append(pos)
                 closed = True
                 break
 
         if not closed:
+            pos["max_price"]  = round(max_price, 4)
+            pos["touched_1r"] = touched_1r
             still_open.append(pos)
 
     return still_open, closed_today
@@ -282,10 +323,11 @@ def run_backtest(
             )
         all_closed.append(pos)
 
-    # Summary stats
-    closed_only = [t for t in all_closed if t.get("outcome") in ("win", "loss")]
-    wins   = [t for t in closed_only if t["outcome"] == "win"]
-    losses = [t for t in closed_only if t["outcome"] == "loss"]
+    # Summary stats — include breakeven as a distinct outcome
+    closed_only = [t for t in all_closed if t.get("outcome") in ("win", "loss", "breakeven")]
+    wins       = [t for t in closed_only if t["outcome"] == "win"]
+    losses     = [t for t in closed_only if t["outcome"] == "loss"]
+    breakevens = [t for t in closed_only if t["outcome"] == "breakeven"]
     n = len(closed_only)
     total_pnl    = sum(t["pnl_dollars"] for t in all_closed)
     closed_pnl   = sum(t["pnl_dollars"] for t in closed_only)
@@ -299,6 +341,7 @@ def run_backtest(
         "closed_trades":    n,
         "wins":             len(wins),
         "losses":           len(losses),
+        "breakevens":       len(breakevens),
         "win_rate":         round(len(wins) / n, 3) if n else 0.0,
         "avg_R":            round(sum(t["r_multiple"] for t in closed_only) / n, 3) if n else 0.0,
         "total_R":          round(sum(t["r_multiple"] for t in closed_only), 2),
@@ -308,6 +351,18 @@ def run_backtest(
         "open_positions":   len([t for t in all_closed if t.get("outcome") == "open"]),
         "equity_start":     equity,
         "equity_end":       round(equity + closed_pnl, 2),
+        # By pattern
+        "by_pattern": {
+            ptype: {
+                "wins":      sum(1 for t in wins if t.get("type") == ptype),
+                "losses":    sum(1 for t in losses if t.get("type") == ptype),
+                "breakevens":sum(1 for t in breakevens if t.get("type") == ptype),
+                "avg_R":     round(
+                    sum(t["r_multiple"] for t in closed_only if t.get("type") == ptype) /
+                    max(1, sum(1 for t in closed_only if t.get("type") == ptype)), 3),
+            }
+            for ptype in ["inverse_hns", "double_bottom"]
+        },
     }
 
     BACKTEST_LEDGER.write_text(json.dumps(all_closed, indent=2))
@@ -330,8 +385,12 @@ if __name__ == "__main__":
     print(f"{'='*60}")
     print(f"Symbols scanned:   {summary['symbols_scanned']}")
     print(f"Total entries:     {summary['total_entries']}")
-    print(f"Closed trades:     {summary['closed_trades']}  ({summary['wins']}W / {summary['losses']}L)")
+    print(f"Closed trades:     {summary['closed_trades']}  ({summary['wins']}W / {summary['losses']}L / {summary['breakevens']}BE)")
     print(f"Win rate:          {summary['win_rate']:.1%}")
+    for ptype, stats in summary.get("by_pattern", {}).items():
+        tot = stats["wins"] + stats["losses"] + stats["breakevens"]
+        wr = stats["wins"] / tot if tot else 0
+        print(f"  {ptype:<18} {stats['wins']}W/{stats['losses']}L/{stats['breakevens']}BE  wr={wr:.1%}  avgR={stats['avg_R']:+.3f}")
     print(f"Avg R:             {summary['avg_R']:.2f}R")
     print(f"Total R:           {summary['total_R']:.2f}R")
     print(f"Closed P&L:        ${summary['closed_pnl']:+.2f}")

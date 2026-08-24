@@ -2,7 +2,7 @@
   "date": "2026-08-20",
   "new_entries": 5,
   "closed_today": 3,
-  "open_count": 260,
+  "open_count": 248,
   "entries": [
     {
       "symbol": "EOG",
@@ -113,12 +113,15 @@
       "entry": 82.625,
       "entry_time": "2026-06-29T17:30:00Z",
       "status": "closed",
+      "max_price": 91.865,
+      "touched_1r": true,
       "outcome": "win",
       "exit_price": 91.1394,
       "exit_time": "2026-08-20T13:30:00Z",
       "pnl_per_share": 8.5144,
       "pnl_dollars": 54.76,
-      "r_multiple": 2.0
+      "r_multiple": 2.0,
+      "exit_reason": "2R_target"
     },
     {
       "symbol": "KO",
@@ -137,12 +140,15 @@
       "entry": 83.97,
       "entry_time": "2026-07-02T17:30:00Z",
       "status": "closed",
+      "max_price": 91.865,
+      "touched_1r": true,
       "outcome": "win",
       "exit_price": 91.1394,
       "exit_time": "2026-08-20T13:30:00Z",
       "pnl_per_share": 7.1694,
       "pnl_dollars": 46.11,
-      "r_multiple": 2.0
+      "r_multiple": 2.0,
+      "exit_reason": "2R_target"
     },
     {
       "symbol": "COF",
@@ -161,12 +167,15 @@
       "entry": 227.34,
       "entry_time": "2026-08-14T17:30:00Z",
       "status": "closed",
+      "max_price": 227.34,
+      "touched_1r": false,
       "outcome": "loss",
       "exit_price": 211.9783,
       "exit_time": "2026-08-20T13:30:00Z",
       "pnl_per_share": -15.3617,
       "pnl_dollars": -38.85,
-      "r_multiple": -1.0
+      "r_multiple": -1.295,
+      "exit_reason": "stop"
     }
   ],
   "watching_count": 36

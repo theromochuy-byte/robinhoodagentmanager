@@ -2,7 +2,7 @@
   "date": "2026-07-24",
   "new_entries": 6,
   "closed_today": 2,
-  "open_count": 94,
+  "open_count": 90,
   "entries": [
     {
       "symbol": "JPM",
@@ -131,12 +131,15 @@
       "entry": 90.45,
       "entry_time": "2026-06-30T17:30:00Z",
       "status": "closed",
+      "max_price": 96.29,
+      "touched_1r": false,
       "outcome": "loss",
       "exit_price": 82.8007,
       "exit_time": "2026-07-24T17:30:00Z",
       "pnl_per_share": -7.6493,
       "pnl_dollars": -33.5,
-      "r_multiple": -1.0
+      "r_multiple": -1.117,
+      "exit_reason": "stop"
     },
     {
       "symbol": "EW",
@@ -155,12 +158,15 @@
       "entry": 91.99,
       "entry_time": "2026-07-01T17:30:00Z",
       "status": "closed",
+      "max_price": 96.29,
+      "touched_1r": false,
       "outcome": "loss",
       "exit_price": 82.8007,
       "exit_time": "2026-07-24T17:30:00Z",
       "pnl_per_share": -9.1893,
       "pnl_dollars": -40.25,
-      "r_multiple": -1.0
+      "r_multiple": -1.342,
+      "exit_reason": "stop"
     }
   ],
   "watching_count": 13

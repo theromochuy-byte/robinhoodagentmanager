@@ -2,7 +2,7 @@
   "date": "2026-07-22",
   "new_entries": 4,
   "closed_today": 3,
-  "open_count": 85,
+  "open_count": 81,
   "entries": [
     {
       "symbol": "JPM",
@@ -95,12 +95,15 @@
       "entry": 107.77,
       "entry_time": "2026-07-08T17:30:00Z",
       "status": "closed",
+      "max_price": 113.03,
+      "touched_1r": false,
       "outcome": "loss",
       "exit_price": 97.7058,
       "exit_time": "2026-07-22T13:30:00Z",
       "pnl_per_share": -10.0642,
       "pnl_dollars": -29.57,
-      "r_multiple": -1.0
+      "r_multiple": -0.986,
+      "exit_reason": "stop"
     },
     {
       "symbol": "NOW",
@@ -119,12 +122,15 @@
       "entry": 108.83,
       "entry_time": "2026-07-09T17:30:00Z",
       "status": "closed",
+      "max_price": 113.03,
+      "touched_1r": false,
       "outcome": "loss",
       "exit_price": 97.7058,
       "exit_time": "2026-07-22T13:30:00Z",
       "pnl_per_share": -11.1242,
       "pnl_dollars": -32.69,
-      "r_multiple": -1.0
+      "r_multiple": -1.09,
+      "exit_reason": "stop"
     },
     {
       "symbol": "NOW",
@@ -143,12 +149,15 @@
       "entry": 107.7,
       "entry_time": "2026-07-10T17:30:00Z",
       "status": "closed",
+      "max_price": 113.03,
+      "touched_1r": false,
       "outcome": "loss",
       "exit_price": 97.7058,
       "exit_time": "2026-07-22T13:30:00Z",
       "pnl_per_share": -9.9942,
       "pnl_dollars": -29.37,
-      "r_multiple": -1.0
+      "r_multiple": -0.979,
+      "exit_reason": "stop"
     }
   ],
   "watching_count": 15

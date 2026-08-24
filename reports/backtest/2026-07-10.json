@@ -1,8 +1,8 @@
 {
   "date": "2026-07-10",
   "new_entries": 9,
-  "closed_today": 0,
-  "open_count": 59,
+  "closed_today": 1,
+  "open_count": 58,
   "entries": [
     {
       "symbol": "RTX",
@@ -167,6 +167,34 @@
       "status": "open"
     }
   ],
-  "closed": [],
+  "closed": [
+    {
+      "symbol": "CB",
+      "type": "inverse_hns",
+      "neckline": 333.55,
+      "stop": 315.4211,
+      "target_2R": 374.2179,
+      "risk_per_share": 19.5989,
+      "shares": 1.5307,
+      "break_time": "2026-06-24T13:30:00Z",
+      "bars_since_break": 7,
+      "in_pullback": true,
+      "last_close": 343.28,
+      "last_bar_time": "2026-06-29T17:30:00Z",
+      "scan_date": "2026-06-29",
+      "entry": 343.28,
+      "entry_time": "2026-06-29T17:30:00Z",
+      "status": "closed",
+      "max_price": 365.29,
+      "touched_1r": true,
+      "outcome": "breakeven",
+      "exit_price": 343.28,
+      "exit_time": "2026-07-10T13:30:00Z",
+      "pnl_per_share": 0.0,
+      "pnl_dollars": 0.0,
+      "r_multiple": 0.0,
+      "exit_reason": "breakeven_stop"
+    }
+  ],
   "watching_count": 12
 }

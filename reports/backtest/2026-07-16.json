@@ -1,8 +1,8 @@
 {
   "date": "2026-07-16",
   "new_entries": 4,
-  "closed_today": 0,
-  "open_count": 77,
+  "closed_today": 1,
+  "open_count": 73,
   "entries": [
     {
       "symbol": "DHR",
@@ -77,6 +77,34 @@
       "status": "open"
     }
   ],
-  "closed": [],
+  "closed": [
+    {
+      "symbol": "UNH",
+      "type": "inverse_hns",
+      "neckline": 427.92,
+      "stop": 402.9473,
+      "target_2R": 478.3363,
+      "risk_per_share": 25.1297,
+      "shares": 1.1938,
+      "break_time": "2026-07-07T17:30:00Z",
+      "bars_since_break": 4,
+      "in_pullback": true,
+      "last_close": 431.6,
+      "last_bar_time": "2026-07-09T17:30:00Z",
+      "scan_date": "2026-07-09",
+      "entry": 431.6,
+      "entry_time": "2026-07-09T17:30:00Z",
+      "status": "closed",
+      "max_price": 461.62,
+      "touched_1r": true,
+      "outcome": "breakeven",
+      "exit_price": 431.6,
+      "exit_time": "2026-07-16T13:30:00Z",
+      "pnl_per_share": 0.0,
+      "pnl_dollars": 0.0,
+      "r_multiple": 0.0,
+      "exit_reason": "breakeven_stop"
+    }
+  ],
   "watching_count": 17
 }
