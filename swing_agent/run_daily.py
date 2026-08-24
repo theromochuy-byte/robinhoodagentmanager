@@ -65,9 +65,13 @@ def full_refresh() -> None:
 def check_exits(quotes: dict[str, float]) -> tuple[list[dict], list[dict]]:
     """Check open positions against quotes. Returns (closes, still_open).
 
-    A position closes when:
-      - quote <= stop  → stopped out (stop takes priority on same bar)
-      - quote >= 2R    → target hit
+    Exit rules (stop takes priority if both triggered on same check):
+      - quote <= effective_stop  → stopped out
+      - quote >= 2R              → target hit
+
+    Breakeven stop: once price has ever touched 1R gain (tracked via
+    'touched_1r' on the ledger record), effective_stop moves to entry.
+    This lets the trade run to 2R with no downside risk after 1R is achieved.
     """
     trades  = _load_ledger()
     closes  = []
@@ -85,32 +89,44 @@ def check_exits(quotes: dict[str, float]) -> tuple[list[dict], list[dict]]:
             updated.append(t)
             continue
 
-        stop   = t["stop"]
-        target = t["target_2R"]
+        entry     = t["entry"]
+        risk      = t.get("risk_per_share", 0)
+        stop      = t["stop"]
+        target    = t["target_2R"]
+        target_1r = entry + risk
 
-        if price <= stop:
-            t["status"]       = "stopped"
+        # Carry forward or detect 1R touch
+        touched_1r = t.get("touched_1r", False)
+        if not touched_1r and price >= target_1r:
+            touched_1r = True
+            t["touched_1r"] = True
+
+        effective_stop = entry if touched_1r else stop
+
+        if price <= effective_stop:
+            outcome = "breakeven" if touched_1r else "stopped"
+            t["status"]       = outcome
             t["exit_price"]   = price
-            t["exit_reason"]  = "stop"
+            t["exit_reason"]  = "breakeven_stop" if touched_1r else "stop"
             t["exit_time"]    = now
-            t["realized_pnl"] = round((price - t["entry"]) * t.get("shares", 0), 2)
+            t["realized_pnl"] = round((price - entry) * t.get("shares", 0), 2)
+            t["touched_1r"]   = touched_1r
             closes.append(t)
         elif price >= target:
             t["status"]       = "target_hit"
             t["exit_price"]   = price
             t["exit_reason"]  = "2R"
             t["exit_time"]    = now
-            t["realized_pnl"] = round((price - t["entry"]) * t.get("shares", 0), 2)
+            t["realized_pnl"] = round((price - entry) * t.get("shares", 0), 2)
+            t["touched_1r"]   = True
             closes.append(t)
         else:
             t["last_price"]     = price
-            t["unrealized_pnl"] = round((price - t["entry"]) * t.get("shares", 0), 2)
+            t["unrealized_pnl"] = round((price - entry) * t.get("shares", 0), 2)
+            t["touched_1r"]     = touched_1r
             t["checked_at"]     = now
 
-            # Estimate trading days to 2R based on current pace
-            entry  = t["entry"]
-            target = t["target_2R"]
-            risk   = t.get("risk_per_share", 0)
+            # Progress tracking toward 2R
             if risk and price > entry and target > entry:
                 progress_pct = (price - entry) / (target - entry)
                 entry_time   = t.get("entry_time", "")
@@ -124,6 +140,7 @@ def check_exits(quotes: dict[str, float]) -> tuple[list[dict], list[dict]]:
                         est_remaining = max(0.0, est_total - trading_days_held)
                         t["progress_pct"]   = round(progress_pct * 100, 1)
                         t["est_days_to_2r"] = round(est_remaining, 1)
+                        t["days_held"]      = round(days_held, 1)
                     except Exception:
                         pass
 
