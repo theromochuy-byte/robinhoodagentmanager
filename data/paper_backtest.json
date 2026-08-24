@@ -24,7 +24,8 @@
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
     "r_multiple": 0.0,
-    "exit_reason": "breakeven_stop"
+    "exit_reason": "breakeven_stop",
+    "days_held": 10.83
   },
   {
     "symbol": "IBM",
@@ -51,7 +52,8 @@
     "pnl_per_share": -37.5823,
     "pnl_dollars": -32.91,
     "r_multiple": -1.097,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 13.83
   },
   {
     "symbol": "IBM",
@@ -78,7 +80,8 @@
     "pnl_per_share": -45.5423,
     "pnl_dollars": -39.88,
     "r_multiple": -1.329,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 11.83
   },
   {
     "symbol": "CB",
@@ -105,7 +108,8 @@
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
     "r_multiple": 0.0,
-    "exit_reason": "breakeven_stop"
+    "exit_reason": "breakeven_stop",
+    "days_held": 20.83
   },
   {
     "symbol": "CB",
@@ -132,7 +136,8 @@
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
     "r_multiple": 0.0,
-    "exit_reason": "breakeven_stop"
+    "exit_reason": "breakeven_stop",
+    "days_held": 18.83
   },
   {
     "symbol": "EW",
@@ -159,7 +164,8 @@
     "pnl_per_share": -7.6459,
     "pnl_dollars": -32.37,
     "r_multiple": -1.079,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 7.83
   },
   {
     "symbol": "UNH",
@@ -186,7 +192,8 @@
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
     "r_multiple": 0.0,
-    "exit_reason": "breakeven_stop"
+    "exit_reason": "breakeven_stop",
+    "days_held": 6.83
   },
   {
     "symbol": "DHR",
@@ -213,7 +220,8 @@
     "pnl_per_share": -26.1101,
     "pnl_dollars": -29.26,
     "r_multiple": -0.975,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 19.83
   },
   {
     "symbol": "DHR",
@@ -240,7 +248,8 @@
     "pnl_per_share": -30.1101,
     "pnl_dollars": -33.74,
     "r_multiple": -1.125,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 18.83
   },
   {
     "symbol": "DHR",
@@ -267,7 +276,8 @@
     "pnl_per_share": -15.7641,
     "pnl_dollars": -32.47,
     "r_multiple": -1.082,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 7.83
   },
   {
     "symbol": "DHR",
@@ -294,7 +304,8 @@
     "pnl_per_share": -14.6191,
     "pnl_dollars": -30.11,
     "r_multiple": -1.004,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 6.83
   },
   {
     "symbol": "DHR",
@@ -321,7 +332,8 @@
     "pnl_per_share": -20.5541,
     "pnl_dollars": -42.34,
     "r_multiple": -1.411,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 4.83
   },
   {
     "symbol": "DHR",
@@ -348,7 +360,8 @@
     "pnl_per_share": -19.3191,
     "pnl_dollars": -39.8,
     "r_multiple": -1.326,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 3.83
   },
   {
     "symbol": "MSCI",
@@ -375,7 +388,8 @@
     "pnl_per_share": -60.8124,
     "pnl_dollars": -41.65,
     "r_multiple": -1.388,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 4.83
   },
   {
     "symbol": "MSCI",
@@ -402,7 +416,8 @@
     "pnl_per_share": -52.5324,
     "pnl_dollars": -35.98,
     "r_multiple": -1.199,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 3.83
   },
   {
     "symbol": "NOW",
@@ -429,7 +444,8 @@
     "pnl_per_share": -10.0642,
     "pnl_dollars": -29.57,
     "r_multiple": -0.986,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 13.83
   },
   {
     "symbol": "NOW",
@@ -456,7 +472,8 @@
     "pnl_per_share": -11.1242,
     "pnl_dollars": -32.69,
     "r_multiple": -1.09,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 12.83
   },
   {
     "symbol": "NOW",
@@ -483,7 +500,8 @@
     "pnl_per_share": -9.9942,
     "pnl_dollars": -29.37,
     "r_multiple": -0.979,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 11.83
   },
   {
     "symbol": "DG",
@@ -510,7 +528,8 @@
     "pnl_per_share": -11.1176,
     "pnl_dollars": -26.21,
     "r_multiple": -0.874,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 5.83
   },
   {
     "symbol": "EW",
@@ -537,7 +556,8 @@
     "pnl_per_share": -7.6493,
     "pnl_dollars": -33.5,
     "r_multiple": -1.117,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 24.0
   },
   {
     "symbol": "EW",
@@ -564,7 +584,8 @@
     "pnl_per_share": -9.1893,
     "pnl_dollars": -40.25,
     "r_multiple": -1.342,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 23.0
   },
   {
     "symbol": "UPS",
@@ -591,7 +612,8 @@
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
     "r_multiple": 0.0,
-    "exit_reason": "breakeven_stop"
+    "exit_reason": "breakeven_stop",
+    "days_held": 25.83
   },
   {
     "symbol": "UPS",
@@ -618,7 +640,8 @@
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
     "r_multiple": 0.0,
-    "exit_reason": "breakeven_stop"
+    "exit_reason": "breakeven_stop",
+    "days_held": 21.83
   },
   {
     "symbol": "UPS",
@@ -645,7 +668,8 @@
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
     "r_multiple": 0.0,
-    "exit_reason": "breakeven_stop"
+    "exit_reason": "breakeven_stop",
+    "days_held": 21.83
   },
   {
     "symbol": "GS",
@@ -672,7 +696,8 @@
     "pnl_per_share": -145.7808,
     "pnl_dollars": -33.35,
     "r_multiple": -1.112,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 14.83
   },
   {
     "symbol": "GS",
@@ -699,7 +724,8 @@
     "pnl_per_share": -139.9508,
     "pnl_dollars": -33.5,
     "r_multiple": -1.117,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 14.83
   },
   {
     "symbol": "GS",
@@ -726,7 +752,8 @@
     "pnl_per_share": -156.3708,
     "pnl_dollars": -35.78,
     "r_multiple": -1.192,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 13.83
   },
   {
     "symbol": "GS",
@@ -753,7 +780,8 @@
     "pnl_per_share": -150.5408,
     "pnl_dollars": -36.04,
     "r_multiple": -1.201,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 13.83
   },
   {
     "symbol": "MO",
@@ -780,7 +808,8 @@
     "pnl_per_share": -5.3984,
     "pnl_dollars": -32.79,
     "r_multiple": -1.093,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 9.83
   },
   {
     "symbol": "BMY",
@@ -807,7 +836,8 @@
     "pnl_per_share": 6.2639,
     "pnl_dollars": 55.98,
     "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "2R_target",
+    "days_held": 17.83
   },
   {
     "symbol": "BMY",
@@ -834,7 +864,8 @@
     "pnl_per_share": 5.1189,
     "pnl_dollars": 45.75,
     "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "2R_target",
+    "days_held": 14.83
   },
   {
     "symbol": "MCK",
@@ -861,7 +892,8 @@
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
     "r_multiple": 0.0,
-    "exit_reason": "breakeven_stop"
+    "exit_reason": "breakeven_stop",
+    "days_held": 13.0
   },
   {
     "symbol": "MCK",
@@ -888,7 +920,8 @@
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
     "r_multiple": 0.0,
-    "exit_reason": "breakeven_stop"
+    "exit_reason": "breakeven_stop",
+    "days_held": 11.0
   },
   {
     "symbol": "ALL",
@@ -915,7 +948,8 @@
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
     "r_multiple": 0.0,
-    "exit_reason": "breakeven_stop"
+    "exit_reason": "breakeven_stop",
+    "days_held": 6.83
   },
   {
     "symbol": "ROK",
@@ -942,7 +976,8 @@
     "pnl_per_share": -32.5545,
     "pnl_dollars": -27.54,
     "r_multiple": -0.918,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 38.83
   },
   {
     "symbol": "ROK",
@@ -969,7 +1004,8 @@
     "pnl_per_share": -53.8989,
     "pnl_dollars": -41.9,
     "r_multiple": -1.397,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 34.83
   },
   {
     "symbol": "ROK",
@@ -996,7 +1032,8 @@
     "r_multiple": -1.011,
     "max_price": 480.95,
     "touched_1r": false,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 0.83
   },
   {
     "symbol": "MCK",
@@ -1023,7 +1060,8 @@
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
     "r_multiple": 0.0,
-    "exit_reason": "breakeven_stop"
+    "exit_reason": "breakeven_stop",
+    "days_held": 26.83
   },
   {
     "symbol": "MCK",
@@ -1050,7 +1088,8 @@
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
     "r_multiple": 0.0,
-    "exit_reason": "breakeven_stop"
+    "exit_reason": "breakeven_stop",
+    "days_held": 21.83
   },
   {
     "symbol": "DUK",
@@ -1077,7 +1116,8 @@
     "pnl_per_share": -8.094,
     "pnl_dollars": -33.2,
     "r_multiple": -1.107,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 10.83
   },
   {
     "symbol": "ALL",
@@ -1104,7 +1144,8 @@
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
     "r_multiple": 0.0,
-    "exit_reason": "breakeven_stop"
+    "exit_reason": "breakeven_stop",
+    "days_held": 10.83
   },
   {
     "symbol": "BMY",
@@ -1131,34 +1172,8 @@
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
     "r_multiple": 0.0,
-    "exit_reason": "breakeven_stop"
-  },
-  {
-    "symbol": "RTX",
-    "type": "inverse_hns",
-    "neckline": 194.17,
-    "stop": 182.1543,
-    "target_2R": 225.4463,
-    "risk_per_share": 14.4307,
-    "shares": 2.0789,
-    "break_time": "2026-07-02T13:30:00Z",
-    "bars_since_break": 9,
-    "in_pullback": true,
-    "last_close": 195.19,
-    "last_bar_time": "2026-07-09T17:30:00Z",
-    "scan_date": "2026-07-09",
-    "entry": 195.19,
-    "entry_time": "2026-07-09T17:30:00Z",
-    "status": "closed",
-    "max_price": 225.65,
-    "touched_1r": true,
-    "outcome": "win",
-    "exit_price": 225.4463,
-    "exit_time": "2026-08-06T13:30:00Z",
-    "pnl_per_share": 30.2563,
-    "pnl_dollars": 62.9,
-    "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "breakeven_stop",
+    "days_held": 7.83
   },
   {
     "symbol": "RTX",
@@ -1185,7 +1200,8 @@
     "pnl_per_share": 29.5063,
     "pnl_dollars": 61.34,
     "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "2R_target",
+    "days_held": 26.83
   },
   {
     "symbol": "DDOG",
@@ -1212,7 +1228,8 @@
     "pnl_per_share": -52.8301,
     "pnl_dollars": -43.28,
     "r_multiple": -1.443,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 1.83
   },
   {
     "symbol": "VLO",
@@ -1239,7 +1256,8 @@
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
     "r_multiple": 0.0,
-    "exit_reason": "breakeven_stop"
+    "exit_reason": "breakeven_stop",
+    "days_held": 22.83
   },
   {
     "symbol": "CAH",
@@ -1266,7 +1284,8 @@
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
     "r_multiple": 0.0,
-    "exit_reason": "breakeven_stop"
+    "exit_reason": "breakeven_stop",
+    "days_held": 5.83
   },
   {
     "symbol": "CAH",
@@ -1293,7 +1312,8 @@
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
     "r_multiple": 0.0,
-    "exit_reason": "breakeven_stop"
+    "exit_reason": "breakeven_stop",
+    "days_held": 4.83
   },
   {
     "symbol": "EBAY",
@@ -1320,7 +1340,8 @@
     "pnl_per_share": -11.3752,
     "pnl_dollars": -32.96,
     "r_multiple": -1.099,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 34.83
   },
   {
     "symbol": "EBAY",
@@ -1347,7 +1368,8 @@
     "pnl_per_share": -13.2902,
     "pnl_dollars": -38.5,
     "r_multiple": -1.283,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 32.83
   },
   {
     "symbol": "VLO",
@@ -1374,7 +1396,8 @@
     "pnl_per_share": 49.3988,
     "pnl_dollars": 55.96,
     "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "2R_target",
+    "days_held": 33.0
   },
   {
     "symbol": "VLO",
@@ -1401,7 +1424,8 @@
     "pnl_per_share": 34.2588,
     "pnl_dollars": 38.81,
     "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "2R_target",
+    "days_held": 30.0
   },
   {
     "symbol": "VLO",
@@ -1428,7 +1452,8 @@
     "pnl_per_share": 29.0588,
     "pnl_dollars": 32.92,
     "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "2R_target",
+    "days_held": 29.0
   },
   {
     "symbol": "PSX",
@@ -1455,7 +1480,8 @@
     "pnl_per_share": 45.1746,
     "pnl_dollars": 58.09,
     "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "2R_target",
+    "days_held": 36.83
   },
   {
     "symbol": "PSX",
@@ -1482,7 +1508,8 @@
     "pnl_per_share": 44.6146,
     "pnl_dollars": 57.37,
     "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "2R_target",
+    "days_held": 34.83
   },
   {
     "symbol": "PSX",
@@ -1509,7 +1536,8 @@
     "pnl_per_share": 34.6746,
     "pnl_dollars": 44.59,
     "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "2R_target",
+    "days_held": 31.83
   },
   {
     "symbol": "PSX",
@@ -1536,7 +1564,8 @@
     "pnl_per_share": 31.5146,
     "pnl_dollars": 40.52,
     "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "2R_target",
+    "days_held": 30.83
   },
   {
     "symbol": "PSX",
@@ -1563,7 +1592,8 @@
     "pnl_per_share": 36.8046,
     "pnl_dollars": 47.33,
     "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "2R_target",
+    "days_held": 29.83
   },
   {
     "symbol": "UPS",
@@ -1590,7 +1620,8 @@
     "pnl_per_share": -8.5795,
     "pnl_dollars": -30.9,
     "r_multiple": -1.03,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 45.83
   },
   {
     "symbol": "TMO",
@@ -1617,7 +1648,8 @@
     "pnl_per_share": 89.6501,
     "pnl_dollars": 62.69,
     "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "2R_target",
+    "days_held": 43.83
   },
   {
     "symbol": "TMO",
@@ -1644,7 +1676,8 @@
     "pnl_per_share": 90.9801,
     "pnl_dollars": 63.62,
     "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "2R_target",
+    "days_held": 42.83
   },
   {
     "symbol": "TMO",
@@ -1671,7 +1704,8 @@
     "pnl_per_share": 82.8751,
     "pnl_dollars": 57.95,
     "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "2R_target",
+    "days_held": 40.83
   },
   {
     "symbol": "TMO",
@@ -1698,7 +1732,8 @@
     "pnl_per_share": 80.3351,
     "pnl_dollars": 56.18,
     "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "2R_target",
+    "days_held": 39.83
   },
   {
     "symbol": "MDT",
@@ -1725,7 +1760,8 @@
     "pnl_per_share": 10.5383,
     "pnl_dollars": 56.44,
     "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "2R_target",
+    "days_held": 39.83
   },
   {
     "symbol": "AMGN",
@@ -1752,7 +1788,8 @@
     "pnl_per_share": 64.2699,
     "pnl_dollars": 60.79,
     "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "2R_target",
+    "days_held": 22.83
   },
   {
     "symbol": "AMGN",
@@ -1779,7 +1816,8 @@
     "pnl_per_share": 47.4699,
     "pnl_dollars": 44.9,
     "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "2R_target",
+    "days_held": 21.83
   },
   {
     "symbol": "AMGN",
@@ -1806,7 +1844,8 @@
     "pnl_per_share": 52.6199,
     "pnl_dollars": 49.77,
     "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "2R_target",
+    "days_held": 19.83
   },
   {
     "symbol": "AMGN",
@@ -1833,7 +1872,8 @@
     "pnl_per_share": 55.1999,
     "pnl_dollars": 52.21,
     "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "2R_target",
+    "days_held": 18.83
   },
   {
     "symbol": "AON",
@@ -1860,7 +1900,8 @@
     "pnl_per_share": -35.3128,
     "pnl_dollars": -28.24,
     "r_multiple": -0.941,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 20.83
   },
   {
     "symbol": "KO",
@@ -1887,7 +1928,8 @@
     "pnl_per_share": 8.5144,
     "pnl_dollars": 54.76,
     "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "2R_target",
+    "days_held": 51.83
   },
   {
     "symbol": "KO",
@@ -1914,7 +1956,8 @@
     "pnl_per_share": 7.1694,
     "pnl_dollars": 46.11,
     "r_multiple": 2.0,
-    "exit_reason": "2R_target"
+    "exit_reason": "2R_target",
+    "days_held": 48.83
   },
   {
     "symbol": "COF",
@@ -1941,7 +1984,8 @@
     "pnl_per_share": -15.3617,
     "pnl_dollars": -38.85,
     "r_multiple": -1.295,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 5.83
   },
   {
     "symbol": "DLR",
@@ -1968,7 +2012,8 @@
     "pnl_per_share": -15.3105,
     "pnl_dollars": -37.48,
     "r_multiple": -1.249,
-    "exit_reason": "stop"
+    "exit_reason": "stop",
+    "days_held": 9.83
   },
   {
     "symbol": "CB",
@@ -1993,7 +2038,8 @@
     "exit_price": 345.4137,
     "pnl_per_share": -6.3063,
     "pnl_dollars": -9.65,
-    "r_multiple": -0.322
+    "r_multiple": -0.322,
+    "days_open": 53.83
   },
   {
     "symbol": "CB",
@@ -2018,7 +2064,8 @@
     "exit_price": 345.4137,
     "pnl_per_share": -14.3163,
     "pnl_dollars": -15.25,
-    "r_multiple": -0.508
+    "r_multiple": -0.508,
+    "days_open": 30.83
   },
   {
     "symbol": "CB",
@@ -2043,7 +2090,8 @@
     "exit_price": 345.4137,
     "pnl_per_share": -13.5163,
     "pnl_dollars": -14.4,
-    "r_multiple": -0.48
+    "r_multiple": -0.48,
+    "days_open": 27.83
   },
   {
     "symbol": "CB",
@@ -2068,7 +2116,8 @@
     "exit_price": 345.4137,
     "pnl_per_share": -18.1363,
     "pnl_dollars": -19.32,
-    "r_multiple": -0.644
+    "r_multiple": -0.644,
+    "days_open": 26.83
   },
   {
     "symbol": "HD",
@@ -2093,7 +2142,8 @@
     "exit_price": 335.93,
     "pnl_per_share": -8.88,
     "pnl_dollars": -8.79,
-    "r_multiple": -0.293
+    "r_multiple": -0.293,
+    "days_open": 59.83
   },
   {
     "symbol": "HD",
@@ -2118,7 +2168,8 @@
     "exit_price": 335.93,
     "pnl_per_share": -14.72,
     "pnl_dollars": -14.57,
-    "r_multiple": -0.486
+    "r_multiple": -0.486,
+    "days_open": 55.83
   },
   {
     "symbol": "HD",
@@ -2143,7 +2194,8 @@
     "exit_price": 335.93,
     "pnl_per_share": -16.445,
     "pnl_dollars": -16.28,
-    "r_multiple": -0.543
+    "r_multiple": -0.543,
+    "days_open": 54.83
   },
   {
     "symbol": "HD",
@@ -2168,7 +2220,8 @@
     "exit_price": 335.93,
     "pnl_per_share": -17.23,
     "pnl_dollars": -16.87,
-    "r_multiple": -0.562
+    "r_multiple": -0.562,
+    "days_open": 18.83
   },
   {
     "symbol": "HD",
@@ -2193,7 +2246,8 @@
     "exit_price": 335.93,
     "pnl_per_share": -13.64,
     "pnl_dollars": -13.35,
-    "r_multiple": -0.445
+    "r_multiple": -0.445,
+    "days_open": 17.83
   },
   {
     "symbol": "HD",
@@ -2218,7 +2272,8 @@
     "exit_price": 335.93,
     "pnl_per_share": -19.66,
     "pnl_dollars": -19.25,
-    "r_multiple": -0.642
+    "r_multiple": -0.642,
+    "days_open": 16.83
   },
   {
     "symbol": "HD",
@@ -2243,82 +2298,8 @@
     "exit_price": 335.93,
     "pnl_per_share": -14.86,
     "pnl_dollars": -14.55,
-    "r_multiple": -0.485
-  },
-  {
-    "symbol": "KO",
-    "type": "double_bottom",
-    "neckline": 85.68,
-    "stop": 78.8505,
-    "target_2R": 106.029,
-    "risk_per_share": 9.0595,
-    "shares": 3.3114,
-    "break_time": "2026-07-28T13:30:00Z",
-    "bars_since_break": 11,
-    "in_pullback": true,
-    "last_close": 86.56,
-    "last_bar_time": "2026-08-04T17:30:00Z",
-    "scan_date": "2026-08-04",
-    "entry": 86.56,
-    "entry_time": "2026-08-04T17:30:00Z",
-    "status": "open",
-    "max_price": 92.49,
-    "touched_1r": false,
-    "outcome": "open",
-    "exit_price": 91.6325,
-    "pnl_per_share": 5.0725,
-    "pnl_dollars": 16.8,
-    "r_multiple": 0.56
-  },
-  {
-    "symbol": "KO",
-    "type": "inverse_hns",
-    "neckline": 85.68,
-    "stop": 78.7705,
-    "target_2R": 106.189,
-    "risk_per_share": 9.1395,
-    "shares": 3.2825,
-    "break_time": "2026-07-28T13:30:00Z",
-    "bars_since_break": 11,
-    "in_pullback": true,
-    "last_close": 86.56,
-    "last_bar_time": "2026-08-04T17:30:00Z",
-    "scan_date": "2026-08-04",
-    "entry": 86.56,
-    "entry_time": "2026-08-04T17:30:00Z",
-    "status": "open",
-    "max_price": 92.49,
-    "touched_1r": false,
-    "outcome": "open",
-    "exit_price": 91.6325,
-    "pnl_per_share": 5.0725,
-    "pnl_dollars": 16.65,
-    "r_multiple": 0.555
-  },
-  {
-    "symbol": "KO",
-    "type": "inverse_hns",
-    "neckline": 90.92,
-    "stop": 84.6318,
-    "target_2R": 105.4464,
-    "risk_per_share": 6.9382,
-    "shares": 4.3239,
-    "break_time": "2026-08-20T13:30:00Z",
-    "bars_since_break": 3,
-    "in_pullback": true,
-    "last_close": 91.095,
-    "last_bar_time": "2026-08-21T17:30:00Z",
-    "scan_date": "2026-08-21",
-    "entry": 91.095,
-    "entry_time": "2026-08-21T17:30:00Z",
-    "status": "open",
-    "max_price": 92.49,
-    "touched_1r": false,
-    "outcome": "open",
-    "exit_price": 91.6325,
-    "pnl_per_share": 0.5375,
-    "pnl_dollars": 2.32,
-    "r_multiple": 0.077
+    "r_multiple": -0.485,
+    "days_open": 13.83
   },
   {
     "symbol": "ILMN",
@@ -2343,7 +2324,8 @@
     "exit_price": 218.75,
     "pnl_per_share": 37.66,
     "pnl_dollars": 39.04,
-    "r_multiple": 1.301
+    "r_multiple": 1.301,
+    "days_open": 55.83
   },
   {
     "symbol": "ILMN",
@@ -2368,7 +2350,8 @@
     "exit_price": 218.75,
     "pnl_per_share": 34.87,
     "pnl_dollars": 36.15,
-    "r_multiple": 1.205
+    "r_multiple": 1.205,
+    "days_open": 53.83
   },
   {
     "symbol": "ILMN",
@@ -2393,7 +2376,8 @@
     "exit_price": 218.75,
     "pnl_per_share": 30.09,
     "pnl_dollars": 31.19,
-    "r_multiple": 1.04
+    "r_multiple": 1.04,
+    "days_open": 52.83
   },
   {
     "symbol": "ILMN",
@@ -2418,7 +2402,8 @@
     "exit_price": 218.75,
     "pnl_per_share": 13.61,
     "pnl_dollars": 18.16,
-    "r_multiple": 0.605
+    "r_multiple": 0.605,
+    "days_open": 24.83
   },
   {
     "symbol": "ILMN",
@@ -2443,7 +2428,8 @@
     "exit_price": 218.75,
     "pnl_per_share": 13.61,
     "pnl_dollars": 20.97,
-    "r_multiple": 0.699
+    "r_multiple": 0.699,
+    "days_open": 24.83
   },
   {
     "symbol": "ILMN",
@@ -2468,7 +2454,8 @@
     "exit_price": 218.75,
     "pnl_per_share": 13.57,
     "pnl_dollars": 18.11,
-    "r_multiple": 0.604
+    "r_multiple": 0.604,
+    "days_open": 23.83
   },
   {
     "symbol": "ILMN",
@@ -2493,7 +2480,8 @@
     "exit_price": 218.75,
     "pnl_per_share": 13.57,
     "pnl_dollars": 20.9,
-    "r_multiple": 0.697
+    "r_multiple": 0.697,
+    "days_open": 23.83
   },
   {
     "symbol": "ILMN",
@@ -2518,7 +2506,8 @@
     "exit_price": 218.75,
     "pnl_per_share": 15.65,
     "pnl_dollars": 20.88,
-    "r_multiple": 0.696
+    "r_multiple": 0.696,
+    "days_open": 19.83
   },
   {
     "symbol": "ILMN",
@@ -2543,7 +2532,8 @@
     "exit_price": 218.75,
     "pnl_per_share": 15.65,
     "pnl_dollars": 24.11,
-    "r_multiple": 0.804
+    "r_multiple": 0.804,
+    "days_open": 19.83
   },
   {
     "symbol": "ILMN",
@@ -2568,7 +2558,8 @@
     "exit_price": 218.75,
     "pnl_per_share": 18.8,
     "pnl_dollars": 25.08,
-    "r_multiple": 0.836
+    "r_multiple": 0.836,
+    "days_open": 18.83
   },
   {
     "symbol": "ILMN",
@@ -2593,7 +2584,8 @@
     "exit_price": 218.75,
     "pnl_per_share": 18.8,
     "pnl_dollars": 28.96,
-    "r_multiple": 0.965
+    "r_multiple": 0.965,
+    "days_open": 18.83
   },
   {
     "symbol": "SNOW",
@@ -2618,7 +2610,8 @@
     "exit_price": 325.93,
     "pnl_per_share": 71.64,
     "pnl_dollars": 46.7,
-    "r_multiple": 1.557
+    "r_multiple": 1.557,
+    "days_open": 54.83
   },
   {
     "symbol": "SNOW",
@@ -2643,32 +2636,8 @@
     "exit_price": 325.93,
     "pnl_per_share": 65.805,
     "pnl_dollars": 42.9,
-    "r_multiple": 1.43
-  },
-  {
-    "symbol": "SPG",
-    "type": "double_bottom",
-    "neckline": 220.435,
-    "stop": 200.7614,
-    "target_2R": 264.5671,
-    "risk_per_share": 21.2686,
-    "shares": 1.4105,
-    "break_time": "2026-06-24T17:30:00Z",
-    "bars_since_break": 10,
-    "in_pullback": true,
-    "last_close": 223.09,
-    "last_bar_time": "2026-07-01T17:30:00Z",
-    "scan_date": "2026-07-01",
-    "entry": 223.09,
-    "entry_time": "2026-07-01T17:30:00Z",
-    "status": "open",
-    "max_price": 238.5,
-    "touched_1r": false,
-    "outcome": "open",
-    "exit_price": 219.185,
-    "pnl_per_share": -3.905,
-    "pnl_dollars": -5.51,
-    "r_multiple": -0.184
+    "r_multiple": 1.43,
+    "days_open": 52.83
   },
   {
     "symbol": "NET",
@@ -2693,7 +2662,8 @@
     "exit_price": 284.225,
     "pnl_per_share": 42.045,
     "pnl_dollars": 28.42,
-    "r_multiple": 0.947
+    "r_multiple": 0.947,
+    "days_open": 52.83
   },
   {
     "symbol": "NET",
@@ -2718,7 +2688,8 @@
     "exit_price": 284.225,
     "pnl_per_share": 15.515,
     "pnl_dollars": 10.49,
-    "r_multiple": 0.35
+    "r_multiple": 0.35,
+    "days_open": 47.83
   },
   {
     "symbol": "MCO",
@@ -2743,7 +2714,8 @@
     "exit_price": 505.6,
     "pnl_per_share": 15.01,
     "pnl_dollars": 9.36,
-    "r_multiple": 0.312
+    "r_multiple": 0.312,
+    "days_open": 52.83
   },
   {
     "symbol": "MCO",
@@ -2768,7 +2740,8 @@
     "exit_price": 505.6,
     "pnl_per_share": 15.01,
     "pnl_dollars": 10.23,
-    "r_multiple": 0.341
+    "r_multiple": 0.341,
+    "days_open": 52.83
   },
   {
     "symbol": "MCO",
@@ -2793,7 +2766,8 @@
     "exit_price": 505.6,
     "pnl_per_share": 6.81,
     "pnl_dollars": 4.25,
-    "r_multiple": 0.142
+    "r_multiple": 0.142,
+    "days_open": 48.83
   },
   {
     "symbol": "MCO",
@@ -2818,7 +2792,8 @@
     "exit_price": 505.6,
     "pnl_per_share": 6.81,
     "pnl_dollars": 4.64,
-    "r_multiple": 0.155
+    "r_multiple": 0.155,
+    "days_open": 48.83
   },
   {
     "symbol": "MCO",
@@ -2843,7 +2818,8 @@
     "exit_price": 505.6,
     "pnl_per_share": 18.38,
     "pnl_dollars": 11.46,
-    "r_multiple": 0.382
+    "r_multiple": 0.382,
+    "days_open": 45.83
   },
   {
     "symbol": "MCO",
@@ -2868,7 +2844,8 @@
     "exit_price": 505.6,
     "pnl_per_share": 18.38,
     "pnl_dollars": 12.53,
-    "r_multiple": 0.418
+    "r_multiple": 0.418,
+    "days_open": 45.83
   },
   {
     "symbol": "TFC",
@@ -2893,7 +2870,8 @@
     "exit_price": 50.62,
     "pnl_per_share": -0.825,
     "pnl_dollars": -7.51,
-    "r_multiple": -0.25
+    "r_multiple": -0.25,
+    "days_open": 48.83
   },
   {
     "symbol": "TFC",
@@ -2918,7 +2896,8 @@
     "exit_price": 50.62,
     "pnl_per_share": -0.75,
     "pnl_dollars": -6.82,
-    "r_multiple": -0.227
+    "r_multiple": -0.227,
+    "days_open": 45.83
   },
   {
     "symbol": "TFC",
@@ -2943,7 +2922,8 @@
     "exit_price": 50.62,
     "pnl_per_share": -1.335,
     "pnl_dollars": -12.15,
-    "r_multiple": -0.405
+    "r_multiple": -0.405,
+    "days_open": 41.83
   },
   {
     "symbol": "TFC",
@@ -2968,7 +2948,8 @@
     "exit_price": 50.62,
     "pnl_per_share": -1.325,
     "pnl_dollars": -10.79,
-    "r_multiple": -0.36
+    "r_multiple": -0.36,
+    "days_open": 40.83
   },
   {
     "symbol": "MCK",
@@ -2993,7 +2974,8 @@
     "exit_price": 870.31,
     "pnl_per_share": 62.96,
     "pnl_dollars": 23.79,
-    "r_multiple": 0.793
+    "r_multiple": 0.793,
+    "days_open": 47.83
   },
   {
     "symbol": "MCK",
@@ -3018,32 +3000,8 @@
     "exit_price": 870.31,
     "pnl_per_share": 64.59,
     "pnl_dollars": 24.4,
-    "r_multiple": 0.813
-  },
-  {
-    "symbol": "RTX",
-    "type": "double_bottom",
-    "neckline": 194.17,
-    "stop": 177.5753,
-    "target_2R": 234.6043,
-    "risk_per_share": 19.0097,
-    "shares": 1.5781,
-    "break_time": "2026-07-02T13:30:00Z",
-    "bars_since_break": 9,
-    "in_pullback": true,
-    "last_close": 195.19,
-    "last_bar_time": "2026-07-09T17:30:00Z",
-    "scan_date": "2026-07-09",
-    "entry": 195.19,
-    "entry_time": "2026-07-09T17:30:00Z",
-    "status": "open",
-    "max_price": 226.884,
-    "touched_1r": true,
-    "outcome": "open",
-    "exit_price": 209.24,
-    "pnl_per_share": 14.05,
-    "pnl_dollars": 22.17,
-    "r_multiple": 0.739
+    "r_multiple": 0.813,
+    "days_open": 44.83
   },
   {
     "symbol": "RTX",
@@ -3068,7 +3026,8 @@
     "exit_price": 209.24,
     "pnl_per_share": 13.3,
     "pnl_dollars": 20.99,
-    "r_multiple": 0.7
+    "r_multiple": 0.7,
+    "days_open": 44.83
   },
   {
     "symbol": "MDT",
@@ -3093,7 +3052,8 @@
     "exit_price": 93.18,
     "pnl_per_share": 7.465,
     "pnl_dollars": 41.36,
-    "r_multiple": 1.379
+    "r_multiple": 1.379,
+    "days_open": 24.83
   },
   {
     "symbol": "MDT",
@@ -3118,7 +3078,8 @@
     "exit_price": 93.18,
     "pnl_per_share": 6.485,
     "pnl_dollars": 35.93,
-    "r_multiple": 1.198
+    "r_multiple": 1.198,
+    "days_open": 20.83
   },
   {
     "symbol": "MDT",
@@ -3143,7 +3104,8 @@
     "exit_price": 93.18,
     "pnl_per_share": 6.485,
     "pnl_dollars": 20.28,
-    "r_multiple": 0.676
+    "r_multiple": 0.676,
+    "days_open": 20.83
   },
   {
     "symbol": "MDT",
@@ -3168,7 +3130,8 @@
     "exit_price": 93.18,
     "pnl_per_share": 6.98,
     "pnl_dollars": 21.83,
-    "r_multiple": 0.728
+    "r_multiple": 0.728,
+    "days_open": 19.83
   },
   {
     "symbol": "MDT",
@@ -3193,7 +3156,8 @@
     "exit_price": 93.18,
     "pnl_per_share": 6.98,
     "pnl_dollars": 26.84,
-    "r_multiple": 0.895
+    "r_multiple": 0.895,
+    "days_open": 19.83
   },
   {
     "symbol": "MDT",
@@ -3218,7 +3182,8 @@
     "exit_price": 93.18,
     "pnl_per_share": 2.54,
     "pnl_dollars": 11.7,
-    "r_multiple": 0.39
+    "r_multiple": 0.39,
+    "days_open": 12.83
   },
   {
     "symbol": "MDT",
@@ -3243,7 +3208,8 @@
     "exit_price": 93.18,
     "pnl_per_share": 2.41,
     "pnl_dollars": 11.1,
-    "r_multiple": 0.37
+    "r_multiple": 0.37,
+    "days_open": 11.83
   },
   {
     "symbol": "BAC",
@@ -3268,7 +3234,8 @@
     "exit_price": 62.0692,
     "pnl_per_share": 2.5292,
     "pnl_dollars": 15.56,
-    "r_multiple": 0.519
+    "r_multiple": 0.519,
+    "days_open": 41.83
   },
   {
     "symbol": "BAC",
@@ -3293,7 +3260,8 @@
     "exit_price": 62.0692,
     "pnl_per_share": -0.9408,
     "pnl_dollars": -6.55,
-    "r_multiple": -0.218
+    "r_multiple": -0.218,
+    "days_open": 17.83
   },
   {
     "symbol": "BAC",
@@ -3318,7 +3286,8 @@
     "exit_price": 62.0692,
     "pnl_per_share": -1.0908,
     "pnl_dollars": -7.6,
-    "r_multiple": -0.253
+    "r_multiple": -0.253,
+    "days_open": 16.83
   },
   {
     "symbol": "BAC",
@@ -3343,7 +3312,8 @@
     "exit_price": 62.0692,
     "pnl_per_share": -1.8108,
     "pnl_dollars": -12.61,
-    "r_multiple": -0.42
+    "r_multiple": -0.42,
+    "days_open": 13.83
   },
   {
     "symbol": "BMY",
@@ -3368,7 +3338,8 @@
     "exit_price": 66.98,
     "pnl_per_share": 2.12,
     "pnl_dollars": 14.6,
-    "r_multiple": 0.487
+    "r_multiple": 0.487,
+    "days_open": 24.83
   },
   {
     "symbol": "BMY",
@@ -3393,7 +3364,8 @@
     "exit_price": 66.98,
     "pnl_per_share": 1.67,
     "pnl_dollars": 11.5,
-    "r_multiple": 0.383
+    "r_multiple": 0.383,
+    "days_open": 23.83
   },
   {
     "symbol": "BMY",
@@ -3418,7 +3390,8 @@
     "exit_price": 66.98,
     "pnl_per_share": 1.52,
     "pnl_dollars": 10.47,
-    "r_multiple": 0.349
+    "r_multiple": 0.349,
+    "days_open": 20.83
   },
   {
     "symbol": "ZBH",
@@ -3443,7 +3416,8 @@
     "exit_price": 101.01,
     "pnl_per_share": 7.28,
     "pnl_dollars": 20.52,
-    "r_multiple": 0.684
+    "r_multiple": 0.684,
+    "days_open": 38.83
   },
   {
     "symbol": "ZBH",
@@ -3468,7 +3442,8 @@
     "exit_price": 101.01,
     "pnl_per_share": 3.86,
     "pnl_dollars": 9.66,
-    "r_multiple": 0.322
+    "r_multiple": 0.322,
+    "days_open": 25.83
   },
   {
     "symbol": "ZBH",
@@ -3493,7 +3468,8 @@
     "exit_price": 101.01,
     "pnl_per_share": 3.86,
     "pnl_dollars": 11.05,
-    "r_multiple": 0.368
+    "r_multiple": 0.368,
+    "days_open": 25.83
   },
   {
     "symbol": "ZBH",
@@ -3518,7 +3494,8 @@
     "exit_price": 101.01,
     "pnl_per_share": 4.02,
     "pnl_dollars": 10.06,
-    "r_multiple": 0.335
+    "r_multiple": 0.335,
+    "days_open": 20.83
   },
   {
     "symbol": "ZBH",
@@ -3543,7 +3520,8 @@
     "exit_price": 101.01,
     "pnl_per_share": 4.02,
     "pnl_dollars": 11.51,
-    "r_multiple": 0.384
+    "r_multiple": 0.384,
+    "days_open": 20.83
   },
   {
     "symbol": "ZBH",
@@ -3568,7 +3546,8 @@
     "exit_price": 101.01,
     "pnl_per_share": 5.13,
     "pnl_dollars": 12.84,
-    "r_multiple": 0.428
+    "r_multiple": 0.428,
+    "days_open": 19.83
   },
   {
     "symbol": "ZBH",
@@ -3593,7 +3572,8 @@
     "exit_price": 101.01,
     "pnl_per_share": 5.13,
     "pnl_dollars": 14.69,
-    "r_multiple": 0.49
+    "r_multiple": 0.49,
+    "days_open": 19.83
   },
   {
     "symbol": "ZBH",
@@ -3618,7 +3598,8 @@
     "exit_price": 101.01,
     "pnl_per_share": 3.21,
     "pnl_dollars": 9.25,
-    "r_multiple": 0.308
+    "r_multiple": 0.308,
+    "days_open": 13.83
   },
   {
     "symbol": "ZBH",
@@ -3643,7 +3624,8 @@
     "exit_price": 101.01,
     "pnl_per_share": 3.11,
     "pnl_dollars": 8.96,
-    "r_multiple": 0.299
+    "r_multiple": 0.299,
+    "days_open": 11.83
   },
   {
     "symbol": "DXCM",
@@ -3668,7 +3650,8 @@
     "exit_price": 91.455,
     "pnl_per_share": 14.815,
     "pnl_dollars": 53.89,
-    "r_multiple": 1.796
+    "r_multiple": 1.796,
+    "days_open": 37.83
   },
   {
     "symbol": "PM",
@@ -3693,7 +3676,8 @@
     "exit_price": 191.785,
     "pnl_per_share": -1.015,
     "pnl_dollars": -1.62,
-    "r_multiple": -0.054
+    "r_multiple": -0.054,
+    "days_open": 37.83
   },
   {
     "symbol": "PM",
@@ -3718,7 +3702,8 @@
     "exit_price": 191.785,
     "pnl_per_share": -1.015,
     "pnl_dollars": -1.81,
-    "r_multiple": -0.06
+    "r_multiple": -0.06,
+    "days_open": 37.83
   },
   {
     "symbol": "PM",
@@ -3743,7 +3728,8 @@
     "exit_price": 191.785,
     "pnl_per_share": -0.94,
     "pnl_dollars": -1.5,
-    "r_multiple": -0.05
+    "r_multiple": -0.05,
+    "days_open": 34.83
   },
   {
     "symbol": "PM",
@@ -3768,7 +3754,8 @@
     "exit_price": 191.785,
     "pnl_per_share": -0.94,
     "pnl_dollars": -1.68,
-    "r_multiple": -0.056
+    "r_multiple": -0.056,
+    "days_open": 34.83
   },
   {
     "symbol": "PM",
@@ -3793,7 +3780,8 @@
     "exit_price": 191.785,
     "pnl_per_share": -2.495,
     "pnl_dollars": -3.99,
-    "r_multiple": -0.133
+    "r_multiple": -0.133,
+    "days_open": 32.83
   },
   {
     "symbol": "PM",
@@ -3818,7 +3806,8 @@
     "exit_price": 191.785,
     "pnl_per_share": -2.495,
     "pnl_dollars": -4.46,
-    "r_multiple": -0.148
+    "r_multiple": -0.148,
+    "days_open": 32.83
   },
   {
     "symbol": "PM",
@@ -3843,7 +3832,8 @@
     "exit_price": 191.785,
     "pnl_per_share": 0.715,
     "pnl_dollars": 1.14,
-    "r_multiple": 0.038
+    "r_multiple": 0.038,
+    "days_open": 31.83
   },
   {
     "symbol": "PM",
@@ -3868,7 +3858,8 @@
     "exit_price": 191.785,
     "pnl_per_share": 0.715,
     "pnl_dollars": 1.28,
-    "r_multiple": 0.043
+    "r_multiple": 0.043,
+    "days_open": 31.83
   },
   {
     "symbol": "PM",
@@ -3893,7 +3884,8 @@
     "exit_price": 191.785,
     "pnl_per_share": -3.885,
     "pnl_dollars": -8.33,
-    "r_multiple": -0.278
+    "r_multiple": -0.278,
+    "days_open": 27.83
   },
   {
     "symbol": "PLD",
@@ -3918,7 +3910,8 @@
     "exit_price": 142.67,
     "pnl_per_share": -4.84,
     "pnl_dollars": -10.54,
-    "r_multiple": -0.351
+    "r_multiple": -0.351,
+    "days_open": 34.83
   },
   {
     "symbol": "PLD",
@@ -3943,7 +3936,8 @@
     "exit_price": 142.67,
     "pnl_per_share": -7.3,
     "pnl_dollars": -15.9,
-    "r_multiple": -0.53
+    "r_multiple": -0.53,
+    "days_open": 33.83
   },
   {
     "symbol": "JPM",
@@ -3968,7 +3962,8 @@
     "exit_price": 355.69,
     "pnl_per_share": 10.53,
     "pnl_dollars": 10.15,
-    "r_multiple": 0.338
+    "r_multiple": 0.338,
+    "days_open": 33.83
   },
   {
     "symbol": "JPM",
@@ -3993,7 +3988,8 @@
     "exit_price": 355.69,
     "pnl_per_share": 7.32,
     "pnl_dollars": 7.06,
-    "r_multiple": 0.235
+    "r_multiple": 0.235,
+    "days_open": 32.83
   },
   {
     "symbol": "JPM",
@@ -4018,7 +4014,8 @@
     "exit_price": 355.69,
     "pnl_per_share": 2.53,
     "pnl_dollars": 3.37,
-    "r_multiple": 0.112
+    "r_multiple": 0.112,
+    "days_open": 30.83
   },
   {
     "symbol": "JPM",
@@ -4043,7 +4040,8 @@
     "exit_price": 355.69,
     "pnl_per_share": -0.49,
     "pnl_dollars": -0.65,
-    "r_multiple": -0.022
+    "r_multiple": -0.022,
+    "days_open": 27.83
   },
   {
     "symbol": "JPM",
@@ -4068,7 +4066,8 @@
     "exit_price": 355.69,
     "pnl_per_share": -1.7,
     "pnl_dollars": -2.26,
-    "r_multiple": -0.075
+    "r_multiple": -0.075,
+    "days_open": 26.83
   },
   {
     "symbol": "JPM",
@@ -4093,7 +4092,8 @@
     "exit_price": 355.69,
     "pnl_per_share": -4.14,
     "pnl_dollars": -5.21,
-    "r_multiple": -0.174
+    "r_multiple": -0.174,
+    "days_open": 13.83
   },
   {
     "symbol": "EOG",
@@ -4118,7 +4118,8 @@
     "exit_price": 149.55,
     "pnl_per_share": 6.1,
     "pnl_dollars": 18.82,
-    "r_multiple": 0.627
+    "r_multiple": 0.627,
+    "days_open": 33.83
   },
   {
     "symbol": "EOG",
@@ -4143,7 +4144,8 @@
     "exit_price": 149.55,
     "pnl_per_share": 3.11,
     "pnl_dollars": 9.59,
-    "r_multiple": 0.32
+    "r_multiple": 0.32,
+    "days_open": 30.83
   },
   {
     "symbol": "EOG",
@@ -4168,7 +4170,8 @@
     "exit_price": 149.55,
     "pnl_per_share": -2.678,
     "pnl_dollars": -6.91,
-    "r_multiple": -0.23
+    "r_multiple": -0.23,
+    "days_open": 3.83
   },
   {
     "symbol": "EOG",
@@ -4193,7 +4196,8 @@
     "exit_price": 149.55,
     "pnl_per_share": -3.51,
     "pnl_dollars": -9.06,
-    "r_multiple": -0.302
+    "r_multiple": -0.302,
+    "days_open": 2.83
   },
   {
     "symbol": "USB",
@@ -4218,7 +4222,8 @@
     "exit_price": 62.045,
     "pnl_per_share": -1.67,
     "pnl_dollars": -10.64,
-    "r_multiple": -0.355
+    "r_multiple": -0.355,
+    "days_open": 33.83
   },
   {
     "symbol": "USB",
@@ -4243,7 +4248,8 @@
     "exit_price": 62.045,
     "pnl_per_share": -2.42,
     "pnl_dollars": -15.42,
-    "r_multiple": -0.514
+    "r_multiple": -0.514,
+    "days_open": 32.83
   },
   {
     "symbol": "MRK",
@@ -4268,7 +4274,8 @@
     "exit_price": 150.6,
     "pnl_per_share": 20.11,
     "pnl_dollars": 44.7,
-    "r_multiple": 1.49
+    "r_multiple": 1.49,
+    "days_open": 31.83
   },
   {
     "symbol": "MRK",
@@ -4293,7 +4300,8 @@
     "exit_price": 150.6,
     "pnl_per_share": 18.765,
     "pnl_dollars": 41.71,
-    "r_multiple": 1.39
+    "r_multiple": 1.39,
+    "days_open": 26.83
   },
   {
     "symbol": "MRK",
@@ -4318,7 +4326,8 @@
     "exit_price": 150.6,
     "pnl_per_share": 14.75,
     "pnl_dollars": 45.16,
-    "r_multiple": 1.505
+    "r_multiple": 1.505,
+    "days_open": 9.83
   },
   {
     "symbol": "MRK",
@@ -4343,7 +4352,8 @@
     "exit_price": 150.6,
     "pnl_per_share": -1.62,
     "pnl_dollars": -4.96,
-    "r_multiple": -0.165
+    "r_multiple": -0.165,
+    "days_open": 4.83
   },
   {
     "symbol": "HIG",
@@ -4368,7 +4378,8 @@
     "exit_price": 138.81,
     "pnl_per_share": -3.37,
     "pnl_dollars": -7.84,
-    "r_multiple": -0.261
+    "r_multiple": -0.261,
+    "days_open": 31.83
   },
   {
     "symbol": "HIG",
@@ -4393,7 +4404,8 @@
     "exit_price": 138.81,
     "pnl_per_share": -4.62,
     "pnl_dollars": -10.74,
-    "r_multiple": -0.358
+    "r_multiple": -0.358,
+    "days_open": 26.83
   },
   {
     "symbol": "HIG",
@@ -4418,7 +4430,8 @@
     "exit_price": 138.81,
     "pnl_per_share": -6.9,
     "pnl_dollars": -16.47,
-    "r_multiple": -0.549
+    "r_multiple": -0.549,
+    "days_open": 25.83
   },
   {
     "symbol": "HIG",
@@ -4443,7 +4456,8 @@
     "exit_price": 138.81,
     "pnl_per_share": -4.28,
     "pnl_dollars": -10.22,
-    "r_multiple": -0.341
+    "r_multiple": -0.341,
+    "days_open": 24.83
   },
   {
     "symbol": "ITW",
@@ -4468,7 +4482,8 @@
     "exit_price": 282.56,
     "pnl_per_share": 5.63,
     "pnl_dollars": 6.41,
-    "r_multiple": 0.214
+    "r_multiple": 0.214,
+    "days_open": 31.83
   },
   {
     "symbol": "ITW",
@@ -4493,7 +4508,8 @@
     "exit_price": 282.56,
     "pnl_per_share": -4.5,
     "pnl_dollars": -3.98,
-    "r_multiple": -0.133
+    "r_multiple": -0.133,
+    "days_open": 23.83
   },
   {
     "symbol": "ITW",
@@ -4518,7 +4534,8 @@
     "exit_price": 282.56,
     "pnl_per_share": -4.5,
     "pnl_dollars": -4.24,
-    "r_multiple": -0.141
+    "r_multiple": -0.141,
+    "days_open": 23.83
   },
   {
     "symbol": "ITW",
@@ -4543,7 +4560,8 @@
     "exit_price": 282.56,
     "pnl_per_share": -5.94,
     "pnl_dollars": -5.26,
-    "r_multiple": -0.175
+    "r_multiple": -0.175,
+    "days_open": 20.83
   },
   {
     "symbol": "ITW",
@@ -4568,7 +4586,8 @@
     "exit_price": 282.56,
     "pnl_per_share": -5.94,
     "pnl_dollars": -5.59,
-    "r_multiple": -0.186
+    "r_multiple": -0.186,
+    "days_open": 20.83
   },
   {
     "symbol": "MMM",
@@ -4593,7 +4612,8 @@
     "exit_price": 178.58,
     "pnl_per_share": 5.98,
     "pnl_dollars": 7.41,
-    "r_multiple": 0.247
+    "r_multiple": 0.247,
+    "days_open": 30.83
   },
   {
     "symbol": "MMM",
@@ -4618,7 +4638,8 @@
     "exit_price": 178.58,
     "pnl_per_share": 0.37,
     "pnl_dollars": 0.46,
-    "r_multiple": 0.015
+    "r_multiple": 0.015,
+    "days_open": 27.83
   },
   {
     "symbol": "MMM",
@@ -4643,32 +4664,8 @@
     "exit_price": 178.58,
     "pnl_per_share": 0.37,
     "pnl_dollars": 0.81,
-    "r_multiple": 0.027
-  },
-  {
-    "symbol": "MMM",
-    "type": "inverse_hns",
-    "neckline": 176.16,
-    "stop": 163.1143,
-    "target_2R": 204.1415,
-    "risk_per_share": 13.6757,
-    "shares": 2.1937,
-    "break_time": "2026-07-27T13:30:00Z",
-    "bars_since_break": 9,
-    "in_pullback": true,
-    "last_close": 176.31,
-    "last_bar_time": "2026-07-31T17:30:00Z",
-    "scan_date": "2026-07-31",
-    "entry": 176.31,
-    "entry_time": "2026-07-31T17:30:00Z",
-    "status": "open",
-    "max_price": 184.69,
-    "touched_1r": false,
-    "outcome": "open",
-    "exit_price": 178.58,
-    "pnl_per_share": 2.27,
-    "pnl_dollars": 4.98,
-    "r_multiple": 0.166
+    "r_multiple": 0.027,
+    "days_open": 27.83
   },
   {
     "symbol": "MMM",
@@ -4693,7 +4690,8 @@
     "exit_price": 178.58,
     "pnl_per_share": 1.32,
     "pnl_dollars": 2.9,
-    "r_multiple": 0.097
+    "r_multiple": 0.097,
+    "days_open": 20.83
   },
   {
     "symbol": "ALL",
@@ -4718,32 +4716,8 @@
     "exit_price": 259.12,
     "pnl_per_share": -13.26,
     "pnl_dollars": -26.72,
-    "r_multiple": -0.891
-  },
-  {
-    "symbol": "ALL",
-    "type": "inverse_hns",
-    "neckline": 257.665,
-    "stop": 243.6163,
-    "target_2R": 288.2825,
-    "risk_per_share": 14.8887,
-    "shares": 2.0149,
-    "break_time": "2026-07-24T13:30:00Z",
-    "bars_since_break": 9,
-    "in_pullback": true,
-    "last_close": 265.38,
-    "last_bar_time": "2026-07-30T17:30:00Z",
-    "scan_date": "2026-07-30",
-    "entry": 265.38,
-    "entry_time": "2026-07-30T17:30:00Z",
-    "status": "open",
-    "max_price": 275.39,
-    "touched_1r": false,
-    "outcome": "open",
-    "exit_price": 259.12,
-    "pnl_per_share": -6.26,
-    "pnl_dollars": -12.61,
-    "r_multiple": -0.42
+    "r_multiple": -0.891,
+    "days_open": 26.83
   },
   {
     "symbol": "GE",
@@ -4768,7 +4742,8 @@
     "exit_price": 342.11,
     "pnl_per_share": -19.54,
     "pnl_dollars": -17.63,
-    "r_multiple": -0.588
+    "r_multiple": -0.588,
+    "days_open": 27.83
   },
   {
     "symbol": "GE",
@@ -4793,7 +4768,8 @@
     "exit_price": 342.11,
     "pnl_per_share": -21.54,
     "pnl_dollars": -19.44,
-    "r_multiple": -0.648
+    "r_multiple": -0.648,
+    "days_open": 26.83
   },
   {
     "symbol": "GE",
@@ -4818,7 +4794,8 @@
     "exit_price": 342.11,
     "pnl_per_share": -21.54,
     "pnl_dollars": -20.16,
-    "r_multiple": -0.672
+    "r_multiple": -0.672,
+    "days_open": 26.83
   },
   {
     "symbol": "GE",
@@ -4843,7 +4820,8 @@
     "exit_price": 342.11,
     "pnl_per_share": -26.84,
     "pnl_dollars": -24.22,
-    "r_multiple": -0.807
+    "r_multiple": -0.807,
+    "days_open": 20.83
   },
   {
     "symbol": "GE",
@@ -4868,7 +4846,8 @@
     "exit_price": 342.11,
     "pnl_per_share": -26.84,
     "pnl_dollars": -25.12,
-    "r_multiple": -0.837
+    "r_multiple": -0.837,
+    "days_open": 20.83
   },
   {
     "symbol": "GE",
@@ -4893,7 +4872,8 @@
     "exit_price": 342.11,
     "pnl_per_share": -35.22,
     "pnl_dollars": -33.52,
-    "r_multiple": -1.117
+    "r_multiple": -1.117,
+    "days_open": 19.83
   },
   {
     "symbol": "GE",
@@ -4918,7 +4898,8 @@
     "exit_price": 342.11,
     "pnl_per_share": -39.01,
     "pnl_dollars": -37.12,
-    "r_multiple": -1.237
+    "r_multiple": -1.237,
+    "days_open": 18.83
   },
   {
     "symbol": "LLY",
@@ -4943,7 +4924,8 @@
     "exit_price": 1243.87,
     "pnl_per_share": 45.995,
     "pnl_dollars": 13.52,
-    "r_multiple": 0.451
+    "r_multiple": 0.451,
+    "days_open": 27.83
   },
   {
     "symbol": "LLY",
@@ -4968,7 +4950,8 @@
     "exit_price": 1243.87,
     "pnl_per_share": 21.22,
     "pnl_dollars": 6.24,
-    "r_multiple": 0.208
+    "r_multiple": 0.208,
+    "days_open": 26.83
   },
   {
     "symbol": "SYK",
@@ -4993,7 +4976,8 @@
     "exit_price": 329.115,
     "pnl_per_share": -7.715,
     "pnl_dollars": -5.88,
-    "r_multiple": -0.196
+    "r_multiple": -0.196,
+    "days_open": 27.83
   },
   {
     "symbol": "SYK",
@@ -5018,7 +5002,8 @@
     "exit_price": 329.115,
     "pnl_per_share": -17.475,
     "pnl_dollars": -13.32,
-    "r_multiple": -0.444
+    "r_multiple": -0.444,
+    "days_open": 26.83
   },
   {
     "symbol": "SYK",
@@ -5043,7 +5028,8 @@
     "exit_price": 329.115,
     "pnl_per_share": -23.125,
     "pnl_dollars": -17.63,
-    "r_multiple": -0.588
+    "r_multiple": -0.588,
+    "days_open": 25.83
   },
   {
     "symbol": "SYK",
@@ -5068,7 +5054,8 @@
     "exit_price": 329.115,
     "pnl_per_share": -19.255,
     "pnl_dollars": -14.68,
-    "r_multiple": -0.489
+    "r_multiple": -0.489,
+    "days_open": 24.83
   },
   {
     "symbol": "SYK",
@@ -5093,7 +5080,8 @@
     "exit_price": 329.115,
     "pnl_per_share": -12.065,
     "pnl_dollars": -9.2,
-    "r_multiple": -0.307
+    "r_multiple": -0.307,
+    "days_open": 20.83
   },
   {
     "symbol": "GM",
@@ -5118,7 +5106,8 @@
     "exit_price": 86.62,
     "pnl_per_share": -0.42,
     "pnl_dollars": -0.97,
-    "r_multiple": -0.032
+    "r_multiple": -0.032,
+    "days_open": 27.83
   },
   {
     "symbol": "GM",
@@ -5143,7 +5132,8 @@
     "exit_price": 86.62,
     "pnl_per_share": -3.665,
     "pnl_dollars": -8.42,
-    "r_multiple": -0.281
+    "r_multiple": -0.281,
+    "days_open": 26.83
   },
   {
     "symbol": "GM",
@@ -5168,7 +5158,8 @@
     "exit_price": 86.62,
     "pnl_per_share": -1.81,
     "pnl_dollars": -4.16,
-    "r_multiple": -0.139
+    "r_multiple": -0.139,
+    "days_open": 24.83
   },
   {
     "symbol": "GM",
@@ -5193,32 +5184,8 @@
     "exit_price": 86.62,
     "pnl_per_share": -2.25,
     "pnl_dollars": -5.17,
-    "r_multiple": -0.172
-  },
-  {
-    "symbol": "GM",
-    "type": "inverse_hns",
-    "neckline": 85.41,
-    "stop": 72.9862,
-    "target_2R": 112.1475,
-    "risk_per_share": 13.0538,
-    "shares": 2.2982,
-    "break_time": "2026-07-27T13:30:00Z",
-    "bars_since_break": 11,
-    "in_pullback": true,
-    "last_close": 87.675,
-    "last_bar_time": "2026-08-03T17:30:00Z",
-    "scan_date": "2026-08-03",
-    "entry": 87.675,
-    "entry_time": "2026-08-03T17:30:00Z",
-    "status": "open",
-    "max_price": 89.98,
-    "touched_1r": false,
-    "outcome": "open",
-    "exit_price": 86.62,
-    "pnl_per_share": -1.055,
-    "pnl_dollars": -2.42,
-    "r_multiple": -0.081
+    "r_multiple": -0.172,
+    "days_open": 23.83
   },
   {
     "symbol": "DE",
@@ -5243,7 +5210,8 @@
     "exit_price": 651.23,
     "pnl_per_share": 26.16,
     "pnl_dollars": 14.4,
-    "r_multiple": 0.48
+    "r_multiple": 0.48,
+    "days_open": 27.83
   },
   {
     "symbol": "DE",
@@ -5268,7 +5236,8 @@
     "exit_price": 651.23,
     "pnl_per_share": 11.3,
     "pnl_dollars": 6.22,
-    "r_multiple": 0.207
+    "r_multiple": 0.207,
+    "days_open": 26.83
   },
   {
     "symbol": "ROST",
@@ -5293,7 +5262,8 @@
     "exit_price": 236.02,
     "pnl_per_share": -7.27,
     "pnl_dollars": -13.77,
-    "r_multiple": -0.459
+    "r_multiple": -0.459,
+    "days_open": 27.83
   },
   {
     "symbol": "ROST",
@@ -5318,7 +5288,8 @@
     "exit_price": 236.02,
     "pnl_per_share": -14.98,
     "pnl_dollars": -28.38,
-    "r_multiple": -0.946
+    "r_multiple": -0.946,
+    "days_open": 26.83
   },
   {
     "symbol": "ROST",
@@ -5343,7 +5314,8 @@
     "exit_price": 236.02,
     "pnl_per_share": -16.55,
     "pnl_dollars": -31.36,
-    "r_multiple": -1.045
+    "r_multiple": -1.045,
+    "days_open": 24.83
   },
   {
     "symbol": "ROST",
@@ -5368,7 +5340,8 @@
     "exit_price": 236.02,
     "pnl_per_share": -15.11,
     "pnl_dollars": -28.63,
-    "r_multiple": -0.954
+    "r_multiple": -0.954,
+    "days_open": 23.83
   },
   {
     "symbol": "ROST",
@@ -5393,7 +5366,8 @@
     "exit_price": 236.02,
     "pnl_per_share": -16.9,
     "pnl_dollars": -32.02,
-    "r_multiple": -1.067
+    "r_multiple": -1.067,
+    "days_open": 20.83
   },
   {
     "symbol": "EMR",
@@ -5418,7 +5392,8 @@
     "exit_price": 157.04,
     "pnl_per_share": 7.72,
     "pnl_dollars": 16.41,
-    "r_multiple": 0.547
+    "r_multiple": 0.547,
+    "days_open": 27.83
   },
   {
     "symbol": "EMR",
@@ -5443,7 +5418,8 @@
     "exit_price": 157.04,
     "pnl_per_share": 5.22,
     "pnl_dollars": 11.1,
-    "r_multiple": 0.37
+    "r_multiple": 0.37,
+    "days_open": 26.83
   },
   {
     "symbol": "EMR",
@@ -5468,7 +5444,8 @@
     "exit_price": 157.04,
     "pnl_per_share": 2.17,
     "pnl_dollars": 5.61,
-    "r_multiple": 0.187
+    "r_multiple": 0.187,
+    "days_open": 20.83
   },
   {
     "symbol": "EMR",
@@ -5493,7 +5470,8 @@
     "exit_price": 157.04,
     "pnl_per_share": -1.73,
     "pnl_dollars": -4.47,
-    "r_multiple": -0.149
+    "r_multiple": -0.149,
+    "days_open": 19.83
   },
   {
     "symbol": "EMR",
@@ -5518,7 +5496,8 @@
     "exit_price": 157.04,
     "pnl_per_share": 0.12,
     "pnl_dollars": 0.31,
-    "r_multiple": 0.01
+    "r_multiple": 0.01,
+    "days_open": 17.83
   },
   {
     "symbol": "PH",
@@ -5543,7 +5522,8 @@
     "exit_price": 1006.51,
     "pnl_per_share": 19.22,
     "pnl_dollars": 8.66,
-    "r_multiple": 0.289
+    "r_multiple": 0.289,
+    "days_open": 27.83
   },
   {
     "symbol": "PH",
@@ -5568,7 +5548,8 @@
     "exit_price": 1006.51,
     "pnl_per_share": 15.4,
     "pnl_dollars": 6.94,
-    "r_multiple": 0.231
+    "r_multiple": 0.231,
+    "days_open": 26.83
   },
   {
     "symbol": "PH",
@@ -5593,7 +5574,8 @@
     "exit_price": 1006.51,
     "pnl_per_share": -63.13,
     "pnl_dollars": -22.15,
-    "r_multiple": -0.738
+    "r_multiple": -0.738,
+    "days_open": 17.83
   },
   {
     "symbol": "TGT",
@@ -5618,7 +5600,8 @@
     "exit_price": 170.4,
     "pnl_per_share": 26.21,
     "pnl_dollars": 52.45,
-    "r_multiple": 1.748
+    "r_multiple": 1.748,
+    "days_open": 26.83
   },
   {
     "symbol": "TGT",
@@ -5643,7 +5626,8 @@
     "exit_price": 170.4,
     "pnl_per_share": 25.9,
     "pnl_dollars": 51.83,
-    "r_multiple": 1.728
+    "r_multiple": 1.728,
+    "days_open": 24.83
   },
   {
     "symbol": "TGT",
@@ -5668,7 +5652,8 @@
     "exit_price": 170.4,
     "pnl_per_share": 25.91,
     "pnl_dollars": 51.85,
-    "r_multiple": 1.728
+    "r_multiple": 1.728,
+    "days_open": 23.83
   },
   {
     "symbol": "TGT",
@@ -5693,7 +5678,8 @@
     "exit_price": 170.4,
     "pnl_per_share": 22.68,
     "pnl_dollars": 36.62,
-    "r_multiple": 1.221
+    "r_multiple": 1.221,
+    "days_open": 18.83
   },
   {
     "symbol": "TGT",
@@ -5718,7 +5704,8 @@
     "exit_price": 170.4,
     "pnl_per_share": 20.71,
     "pnl_dollars": 48.85,
-    "r_multiple": 1.628
+    "r_multiple": 1.628,
+    "days_open": 16.83
   },
   {
     "symbol": "A",
@@ -5743,7 +5730,8 @@
     "exit_price": 153.0,
     "pnl_per_share": 12.43,
     "pnl_dollars": 25.56,
-    "r_multiple": 0.852
+    "r_multiple": 0.852,
+    "days_open": 26.83
   },
   {
     "symbol": "A",
@@ -5768,32 +5756,8 @@
     "exit_price": 153.0,
     "pnl_per_share": 12.69,
     "pnl_dollars": 26.09,
-    "r_multiple": 0.87
-  },
-  {
-    "symbol": "A",
-    "type": "inverse_hns",
-    "neckline": 138.625,
-    "stop": 125.1386,
-    "target_2R": 168.9127,
-    "risk_per_share": 14.5914,
-    "shares": 2.056,
-    "break_time": "2026-07-23T17:30:00Z",
-    "bars_since_break": 10,
-    "in_pullback": true,
-    "last_close": 138.72,
-    "last_bar_time": "2026-07-30T17:30:00Z",
-    "scan_date": "2026-07-30",
-    "entry": 138.72,
-    "entry_time": "2026-07-30T17:30:00Z",
-    "status": "open",
-    "max_price": 160.51,
-    "touched_1r": true,
-    "outcome": "open",
-    "exit_price": 153.0,
-    "pnl_per_share": 14.28,
-    "pnl_dollars": 29.36,
-    "r_multiple": 0.979
+    "r_multiple": 0.87,
+    "days_open": 25.83
   },
   {
     "symbol": "A",
@@ -5818,7 +5782,8 @@
     "exit_price": 153.0,
     "pnl_per_share": 11.66,
     "pnl_dollars": 23.27,
-    "r_multiple": 0.776
+    "r_multiple": 0.776,
+    "days_open": 17.83
   },
   {
     "symbol": "A",
@@ -5843,7 +5808,8 @@
     "exit_price": 153.0,
     "pnl_per_share": 7.03,
     "pnl_dollars": 14.03,
-    "r_multiple": 0.468
+    "r_multiple": 0.468,
+    "days_open": 16.83
   },
   {
     "symbol": "A",
@@ -5868,7 +5834,8 @@
     "exit_price": 153.0,
     "pnl_per_share": 4.27,
     "pnl_dollars": 8.52,
-    "r_multiple": 0.284
+    "r_multiple": 0.284,
+    "days_open": 13.83
   },
   {
     "symbol": "A",
@@ -5893,7 +5860,8 @@
     "exit_price": 153.0,
     "pnl_per_share": 4.75,
     "pnl_dollars": 9.48,
-    "r_multiple": 0.316
+    "r_multiple": 0.316,
+    "days_open": 11.83
   },
   {
     "symbol": "FIS",
@@ -5918,7 +5886,8 @@
     "exit_price": 41.655,
     "pnl_per_share": -3.295,
     "pnl_dollars": -20.61,
-    "r_multiple": -0.687
+    "r_multiple": -0.687,
+    "days_open": 26.83
   },
   {
     "symbol": "FIS",
@@ -5943,7 +5912,8 @@
     "exit_price": 41.655,
     "pnl_per_share": -5.155,
     "pnl_dollars": -32.24,
-    "r_multiple": -1.075
+    "r_multiple": -1.075,
+    "days_open": 25.83
   },
   {
     "symbol": "FIS",
@@ -5968,32 +5938,8 @@
     "exit_price": 41.655,
     "pnl_per_share": -4.35,
     "pnl_dollars": -27.21,
-    "r_multiple": -0.907
-  },
-  {
-    "symbol": "FIS",
-    "type": "inverse_hns",
-    "neckline": 43.67,
-    "stop": 39.7974,
-    "target_2R": 55.2252,
-    "risk_per_share": 5.1426,
-    "shares": 5.8336,
-    "break_time": "2026-07-28T13:30:00Z",
-    "bars_since_break": 11,
-    "in_pullback": true,
-    "last_close": 44.265,
-    "last_bar_time": "2026-08-04T17:30:00Z",
-    "scan_date": "2026-08-04",
-    "entry": 44.265,
-    "entry_time": "2026-08-04T17:30:00Z",
-    "status": "open",
-    "max_price": 44.45,
-    "touched_1r": false,
-    "outcome": "open",
-    "exit_price": 41.655,
-    "pnl_per_share": -2.61,
-    "pnl_dollars": -15.23,
-    "r_multiple": -0.508
+    "r_multiple": -0.907,
+    "days_open": 24.83
   },
   {
     "symbol": "BRK-B",
@@ -6018,7 +5964,8 @@
     "exit_price": 501.385,
     "pnl_per_share": -8.395,
     "pnl_dollars": -8.92,
-    "r_multiple": -0.297
+    "r_multiple": -0.297,
+    "days_open": 24.83
   },
   {
     "symbol": "BRK-B",
@@ -6043,7 +5990,8 @@
     "exit_price": 501.385,
     "pnl_per_share": -11.705,
     "pnl_dollars": -12.44,
-    "r_multiple": -0.415
+    "r_multiple": -0.415,
+    "days_open": 20.83
   },
   {
     "symbol": "BRK-B",
@@ -6068,7 +6016,8 @@
     "exit_price": 501.385,
     "pnl_per_share": -15.565,
     "pnl_dollars": -16.54,
-    "r_multiple": -0.551
+    "r_multiple": -0.551,
+    "days_open": 19.83
   },
   {
     "symbol": "BRK-B",
@@ -6093,7 +6042,8 @@
     "exit_price": 501.385,
     "pnl_per_share": -17.315,
     "pnl_dollars": -15.63,
-    "r_multiple": -0.521
+    "r_multiple": -0.521,
+    "days_open": 18.83
   },
   {
     "symbol": "BRK-B",
@@ -6118,7 +6068,8 @@
     "exit_price": 501.385,
     "pnl_per_share": -23.415,
     "pnl_dollars": -21.14,
-    "r_multiple": -0.705
+    "r_multiple": -0.705,
+    "days_open": 17.83
   },
   {
     "symbol": "BRK-B",
@@ -6143,7 +6094,8 @@
     "exit_price": 501.385,
     "pnl_per_share": -19.365,
     "pnl_dollars": -17.48,
-    "r_multiple": -0.583
+    "r_multiple": -0.583,
+    "days_open": 16.83
   },
   {
     "symbol": "BDX",
@@ -6168,7 +6120,8 @@
     "exit_price": 190.93,
     "pnl_per_share": 25.29,
     "pnl_dollars": 44.79,
-    "r_multiple": 1.493
+    "r_multiple": 1.493,
+    "days_open": 23.83
   },
   {
     "symbol": "BDX",
@@ -6193,7 +6146,8 @@
     "exit_price": 190.93,
     "pnl_per_share": 20.73,
     "pnl_dollars": 36.71,
-    "r_multiple": 1.224
+    "r_multiple": 1.224,
+    "days_open": 20.83
   },
   {
     "symbol": "BDX",
@@ -6218,7 +6172,8 @@
     "exit_price": 190.93,
     "pnl_per_share": 20.84,
     "pnl_dollars": 36.91,
-    "r_multiple": 1.23
+    "r_multiple": 1.23,
+    "days_open": 19.83
   },
   {
     "symbol": "CMCSA",
@@ -6243,7 +6198,8 @@
     "exit_price": 27.065,
     "pnl_per_share": 2.115,
     "pnl_dollars": 26.85,
-    "r_multiple": 0.895
+    "r_multiple": 0.895,
+    "days_open": 19.83
   },
   {
     "symbol": "CMCSA",
@@ -6268,7 +6224,8 @@
     "exit_price": 27.065,
     "pnl_per_share": 2.315,
     "pnl_dollars": 29.39,
-    "r_multiple": 0.98
+    "r_multiple": 0.98,
+    "days_open": 18.83
   },
   {
     "symbol": "CMCSA",
@@ -6293,7 +6250,8 @@
     "exit_price": 27.065,
     "pnl_per_share": 1.87,
     "pnl_dollars": 23.74,
-    "r_multiple": 0.791
+    "r_multiple": 0.791,
+    "days_open": 17.83
   },
   {
     "symbol": "CMCSA",
@@ -6318,7 +6276,8 @@
     "exit_price": 27.065,
     "pnl_per_share": 1.845,
     "pnl_dollars": 23.42,
-    "r_multiple": 0.781
+    "r_multiple": 0.781,
+    "days_open": 13.83
   },
   {
     "symbol": "CMCSA",
@@ -6343,7 +6302,8 @@
     "exit_price": 27.065,
     "pnl_per_share": 1.4,
     "pnl_dollars": 17.77,
-    "r_multiple": 0.592
+    "r_multiple": 0.592,
+    "days_open": 12.83
   },
   {
     "symbol": "CMCSA",
@@ -6368,7 +6328,8 @@
     "exit_price": 27.065,
     "pnl_per_share": 0.87,
     "pnl_dollars": 7.96,
-    "r_multiple": 0.265
+    "r_multiple": 0.265,
+    "days_open": 10.83
   },
   {
     "symbol": "CMCSA",
@@ -6393,7 +6354,8 @@
     "exit_price": 27.065,
     "pnl_per_share": 0.86,
     "pnl_dollars": 7.87,
-    "r_multiple": 0.262
+    "r_multiple": 0.262,
+    "days_open": 5.83
   },
   {
     "symbol": "CMCSA",
@@ -6418,7 +6380,8 @@
     "exit_price": 27.065,
     "pnl_per_share": 0.645,
     "pnl_dollars": 5.9,
-    "r_multiple": 0.197
+    "r_multiple": 0.197,
+    "days_open": 3.83
   },
   {
     "symbol": "CLX",
@@ -6443,7 +6406,8 @@
     "exit_price": 107.9,
     "pnl_per_share": 3.34,
     "pnl_dollars": 9.71,
-    "r_multiple": 0.324
+    "r_multiple": 0.324,
+    "days_open": 19.83
   },
   {
     "symbol": "BLK",
@@ -6468,7 +6432,8 @@
     "exit_price": 1165.47,
     "pnl_per_share": 31.88,
     "pnl_dollars": 7.83,
-    "r_multiple": 0.261
+    "r_multiple": 0.261,
+    "days_open": 18.83
   },
   {
     "symbol": "BLK",
@@ -6493,7 +6458,8 @@
     "exit_price": 1165.47,
     "pnl_per_share": 35.465,
     "pnl_dollars": 8.71,
-    "r_multiple": 0.29
+    "r_multiple": 0.29,
+    "days_open": 17.83
   },
   {
     "symbol": "BLK",
@@ -6518,7 +6484,8 @@
     "exit_price": 1165.47,
     "pnl_per_share": 34.26,
     "pnl_dollars": 8.41,
-    "r_multiple": 0.281
+    "r_multiple": 0.281,
+    "days_open": 13.83
   },
   {
     "symbol": "RMD",
@@ -6543,7 +6510,8 @@
     "exit_price": 232.44,
     "pnl_per_share": 8.32,
     "pnl_dollars": 6.36,
-    "r_multiple": 0.212
+    "r_multiple": 0.212,
+    "days_open": 18.83
   },
   {
     "symbol": "RMD",
@@ -6568,7 +6536,8 @@
     "exit_price": 232.44,
     "pnl_per_share": 9.03,
     "pnl_dollars": 6.9,
-    "r_multiple": 0.23
+    "r_multiple": 0.23,
+    "days_open": 17.83
   },
   {
     "symbol": "RMD",
@@ -6593,7 +6562,8 @@
     "exit_price": 232.44,
     "pnl_per_share": 7.63,
     "pnl_dollars": 5.83,
-    "r_multiple": 0.194
+    "r_multiple": 0.194,
+    "days_open": 12.83
   },
   {
     "symbol": "RMD",
@@ -6618,7 +6588,8 @@
     "exit_price": 232.44,
     "pnl_per_share": 1.66,
     "pnl_dollars": 1.55,
-    "r_multiple": 0.052
+    "r_multiple": 0.052,
+    "days_open": 4.83
   },
   {
     "symbol": "ZS",
@@ -6643,7 +6614,8 @@
     "exit_price": 176.78,
     "pnl_per_share": 14.15,
     "pnl_dollars": 13.82,
-    "r_multiple": 0.461
+    "r_multiple": 0.461,
+    "days_open": 17.83
   },
   {
     "symbol": "ZS",
@@ -6668,7 +6640,8 @@
     "exit_price": 176.78,
     "pnl_per_share": 14.15,
     "pnl_dollars": 17.37,
-    "r_multiple": 0.579
+    "r_multiple": 0.579,
+    "days_open": 17.83
   },
   {
     "symbol": "ZS",
@@ -6693,7 +6666,8 @@
     "exit_price": 176.78,
     "pnl_per_share": 8.08,
     "pnl_dollars": 7.89,
-    "r_multiple": 0.263
+    "r_multiple": 0.263,
+    "days_open": 16.83
   },
   {
     "symbol": "ZS",
@@ -6718,7 +6692,8 @@
     "exit_price": 176.78,
     "pnl_per_share": 8.08,
     "pnl_dollars": 9.92,
-    "r_multiple": 0.331
+    "r_multiple": 0.331,
+    "days_open": 16.83
   },
   {
     "symbol": "LULU",
@@ -6743,7 +6718,8 @@
     "exit_price": 120.83,
     "pnl_per_share": -3.94,
     "pnl_dollars": -6.13,
-    "r_multiple": -0.204
+    "r_multiple": -0.204,
+    "days_open": 17.83
   },
   {
     "symbol": "LULU",
@@ -6768,7 +6744,8 @@
     "exit_price": 120.83,
     "pnl_per_share": -3.94,
     "pnl_dollars": -9.28,
-    "r_multiple": -0.309
+    "r_multiple": -0.309,
+    "days_open": 17.83
   },
   {
     "symbol": "LULU",
@@ -6793,7 +6770,8 @@
     "exit_price": 120.83,
     "pnl_per_share": -7.8,
     "pnl_dollars": -12.13,
-    "r_multiple": -0.404
+    "r_multiple": -0.404,
+    "days_open": 16.83
   },
   {
     "symbol": "LULU",
@@ -6818,7 +6796,8 @@
     "exit_price": 120.83,
     "pnl_per_share": -7.8,
     "pnl_dollars": -18.37,
-    "r_multiple": -0.612
+    "r_multiple": -0.612,
+    "days_open": 16.83
   },
   {
     "symbol": "LULU",
@@ -6843,7 +6822,8 @@
     "exit_price": 120.83,
     "pnl_per_share": -7.0,
     "pnl_dollars": -10.89,
-    "r_multiple": -0.363
+    "r_multiple": -0.363,
+    "days_open": 13.83
   },
   {
     "symbol": "LULU",
@@ -6868,7 +6848,8 @@
     "exit_price": 120.83,
     "pnl_per_share": -7.0,
     "pnl_dollars": -16.49,
-    "r_multiple": -0.55
+    "r_multiple": -0.55,
+    "days_open": 13.83
   },
   {
     "symbol": "LULU",
@@ -6893,7 +6874,8 @@
     "exit_price": 120.83,
     "pnl_per_share": -4.81,
     "pnl_dollars": -7.48,
-    "r_multiple": -0.249
+    "r_multiple": -0.249,
+    "days_open": 12.83
   },
   {
     "symbol": "LULU",
@@ -6918,7 +6900,8 @@
     "exit_price": 120.83,
     "pnl_per_share": -4.81,
     "pnl_dollars": -11.33,
-    "r_multiple": -0.378
+    "r_multiple": -0.378,
+    "days_open": 12.83
   },
   {
     "symbol": "NOC",
@@ -6943,7 +6926,8 @@
     "exit_price": 549.395,
     "pnl_per_share": -22.115,
     "pnl_dollars": -12.82,
-    "r_multiple": -0.427
+    "r_multiple": -0.427,
+    "days_open": 16.83
   },
   {
     "symbol": "NOC",
@@ -6968,7 +6952,8 @@
     "exit_price": 549.395,
     "pnl_per_share": -27.715,
     "pnl_dollars": -16.06,
-    "r_multiple": -0.535
+    "r_multiple": -0.535,
+    "days_open": 11.83
   },
   {
     "symbol": "NOC",
@@ -6993,7 +6978,8 @@
     "exit_price": 549.395,
     "pnl_per_share": -25.51,
     "pnl_dollars": -14.79,
-    "r_multiple": -0.493
+    "r_multiple": -0.493,
+    "days_open": 10.83
   },
   {
     "symbol": "PFE",
@@ -7018,32 +7004,8 @@
     "exit_price": 27.965,
     "pnl_per_share": 0.915,
     "pnl_dollars": 10.58,
-    "r_multiple": 0.353
-  },
-  {
-    "symbol": "PFE",
-    "type": "inverse_hns",
-    "neckline": 26.28,
-    "stop": 24.1498,
-    "target_2R": 31.1405,
-    "risk_per_share": 2.3302,
-    "shares": 12.8742,
-    "break_time": "2026-08-07T13:30:00Z",
-    "bars_since_break": 7,
-    "in_pullback": true,
-    "last_close": 26.31,
-    "last_bar_time": "2026-08-12T17:30:00Z",
-    "scan_date": "2026-08-12",
-    "entry": 26.31,
-    "entry_time": "2026-08-12T17:30:00Z",
-    "status": "open",
-    "max_price": 28.435,
-    "touched_1r": false,
-    "outcome": "open",
-    "exit_price": 27.965,
-    "pnl_per_share": 1.655,
-    "pnl_dollars": 21.31,
-    "r_multiple": 0.71
+    "r_multiple": 0.353,
+    "days_open": 13.83
   },
   {
     "symbol": "PFE",
@@ -7068,7 +7030,8 @@
     "exit_price": 27.965,
     "pnl_per_share": 0.705,
     "pnl_dollars": 13.41,
-    "r_multiple": 0.447
+    "r_multiple": 0.447,
+    "days_open": 5.83
   },
   {
     "symbol": "PFE",
@@ -7093,7 +7056,8 @@
     "exit_price": 27.965,
     "pnl_per_share": -0.29,
     "pnl_dollars": -5.51,
-    "r_multiple": -0.184
+    "r_multiple": -0.184,
+    "days_open": 4.83
   },
   {
     "symbol": "PFE",
@@ -7118,7 +7082,8 @@
     "exit_price": 27.965,
     "pnl_per_share": -0.105,
     "pnl_dollars": -2.0,
-    "r_multiple": -0.067
+    "r_multiple": -0.067,
+    "days_open": 2.83
   },
   {
     "symbol": "XOM",
@@ -7143,7 +7108,8 @@
     "exit_price": 162.62,
     "pnl_per_share": 2.83,
     "pnl_dollars": 7.5,
-    "r_multiple": 0.25
+    "r_multiple": 0.25,
+    "days_open": 13.83
   },
   {
     "symbol": "XOM",
@@ -7168,7 +7134,8 @@
     "exit_price": 162.62,
     "pnl_per_share": 2.82,
     "pnl_dollars": 7.47,
-    "r_multiple": 0.249
+    "r_multiple": 0.249,
+    "days_open": 12.83
   },
   {
     "symbol": "XOM",
@@ -7193,7 +7160,8 @@
     "exit_price": 162.62,
     "pnl_per_share": 2.86,
     "pnl_dollars": 7.58,
-    "r_multiple": 0.253
+    "r_multiple": 0.253,
+    "days_open": 11.83
   },
   {
     "symbol": "COP",
@@ -7218,7 +7186,8 @@
     "exit_price": 133.425,
     "pnl_per_share": 10.355,
     "pnl_dollars": 19.12,
-    "r_multiple": 0.637
+    "r_multiple": 0.637,
+    "days_open": 13.83
   },
   {
     "symbol": "COP",
@@ -7243,7 +7212,8 @@
     "exit_price": 133.425,
     "pnl_per_share": 7.505,
     "pnl_dollars": 13.86,
-    "r_multiple": 0.462
+    "r_multiple": 0.462,
+    "days_open": 12.83
   },
   {
     "symbol": "COP",
@@ -7268,7 +7238,8 @@
     "exit_price": 133.425,
     "pnl_per_share": 6.095,
     "pnl_dollars": 11.25,
-    "r_multiple": 0.375
+    "r_multiple": 0.375,
+    "days_open": 11.83
   },
   {
     "symbol": "COP",
@@ -7293,7 +7264,8 @@
     "exit_price": 133.425,
     "pnl_per_share": 5.845,
     "pnl_dollars": 10.79,
-    "r_multiple": 0.36
+    "r_multiple": 0.36,
+    "days_open": 6.83
   },
   {
     "symbol": "OXY",
@@ -7318,7 +7290,8 @@
     "exit_price": 59.665,
     "pnl_per_share": 1.015,
     "pnl_dollars": 4.06,
-    "r_multiple": 0.135
+    "r_multiple": 0.135,
+    "days_open": 13.83
   },
   {
     "symbol": "OXY",
@@ -7343,7 +7316,8 @@
     "exit_price": 59.665,
     "pnl_per_share": 1.11,
     "pnl_dollars": 4.43,
-    "r_multiple": 0.148
+    "r_multiple": 0.148,
+    "days_open": 11.83
   },
   {
     "symbol": "OXY",
@@ -7368,7 +7342,8 @@
     "exit_price": 59.665,
     "pnl_per_share": 0.61,
     "pnl_dollars": 2.44,
-    "r_multiple": 0.081
+    "r_multiple": 0.081,
+    "days_open": 6.83
   },
   {
     "symbol": "OXY",
@@ -7393,7 +7368,8 @@
     "exit_price": 59.665,
     "pnl_per_share": -0.15,
     "pnl_dollars": -0.63,
-    "r_multiple": -0.021
+    "r_multiple": -0.021,
+    "days_open": 5.83
   },
   {
     "symbol": "SLB",
@@ -7418,7 +7394,8 @@
     "exit_price": 53.135,
     "pnl_per_share": -0.555,
     "pnl_dollars": -2.49,
-    "r_multiple": -0.083
+    "r_multiple": -0.083,
+    "days_open": 12.83
   },
   {
     "symbol": "SLB",
@@ -7443,7 +7420,8 @@
     "exit_price": 53.135,
     "pnl_per_share": -0.75,
     "pnl_dollars": -3.37,
-    "r_multiple": -0.112
+    "r_multiple": -0.112,
+    "days_open": 6.83
   },
   {
     "symbol": "SLB",
@@ -7468,7 +7446,8 @@
     "exit_price": 53.135,
     "pnl_per_share": -0.09,
     "pnl_dollars": -0.4,
-    "r_multiple": -0.013
+    "r_multiple": -0.013,
+    "days_open": 5.83
   },
   {
     "symbol": "UBER",
@@ -7493,7 +7472,8 @@
     "exit_price": 78.5199,
     "pnl_per_share": -0.0201,
     "pnl_dollars": -0.07,
-    "r_multiple": -0.002
+    "r_multiple": -0.002,
+    "days_open": 12.83
   },
   {
     "symbol": "BSX",
@@ -7518,7 +7498,8 @@
     "exit_price": 49.27,
     "pnl_per_share": -1.93,
     "pnl_dollars": -10.89,
-    "r_multiple": -0.363
+    "r_multiple": -0.363,
+    "days_open": 12.83
   },
   {
     "symbol": "BSX",
@@ -7543,7 +7524,8 @@
     "exit_price": 49.27,
     "pnl_per_share": -2.14,
     "pnl_dollars": -12.08,
-    "r_multiple": -0.403
+    "r_multiple": -0.403,
+    "days_open": 11.83
   },
   {
     "symbol": "BSX",
@@ -7568,7 +7550,8 @@
     "exit_price": 49.27,
     "pnl_per_share": -2.44,
     "pnl_dollars": -13.77,
-    "r_multiple": -0.459
+    "r_multiple": -0.459,
+    "days_open": 10.83
   },
   {
     "symbol": "LMT",
@@ -7593,7 +7576,8 @@
     "exit_price": 565.48,
     "pnl_per_share": -32.25,
     "pnl_dollars": -14.9,
-    "r_multiple": -0.497
+    "r_multiple": -0.497,
+    "days_open": 12.83
   },
   {
     "symbol": "LMT",
@@ -7618,7 +7602,8 @@
     "exit_price": 565.48,
     "pnl_per_share": -41.37,
     "pnl_dollars": -19.12,
-    "r_multiple": -0.637
+    "r_multiple": -0.637,
+    "days_open": 11.83
   },
   {
     "symbol": "LMT",
@@ -7643,7 +7628,8 @@
     "exit_price": 565.48,
     "pnl_per_share": -32.8,
     "pnl_dollars": -15.16,
-    "r_multiple": -0.505
+    "r_multiple": -0.505,
+    "days_open": 10.83
   },
   {
     "symbol": "ACN",
@@ -7668,7 +7654,8 @@
     "exit_price": 185.56,
     "pnl_per_share": 5.72,
     "pnl_dollars": 6.41,
-    "r_multiple": 0.214
+    "r_multiple": 0.214,
+    "days_open": 12.83
   },
   {
     "symbol": "ACN",
@@ -7693,32 +7680,8 @@
     "exit_price": 185.56,
     "pnl_per_share": 5.44,
     "pnl_dollars": 6.1,
-    "r_multiple": 0.203
-  },
-  {
-    "symbol": "ACN",
-    "type": "inverse_hns",
-    "neckline": 176.4,
-    "stop": 152.4886,
-    "target_2R": 232.7727,
-    "risk_per_share": 26.7614,
-    "shares": 1.121,
-    "break_time": "2026-08-10T13:30:00Z",
-    "bars_since_break": 9,
-    "in_pullback": true,
-    "last_close": 176.91,
-    "last_bar_time": "2026-08-14T17:30:00Z",
-    "scan_date": "2026-08-14",
-    "entry": 176.91,
-    "entry_time": "2026-08-14T17:30:00Z",
-    "status": "open",
-    "max_price": 188.45,
-    "touched_1r": false,
-    "outcome": "open",
-    "exit_price": 185.56,
-    "pnl_per_share": 8.65,
-    "pnl_dollars": 9.7,
-    "r_multiple": 0.323
+    "r_multiple": 0.203,
+    "days_open": 11.83
   },
   {
     "symbol": "ANET",
@@ -7743,7 +7706,8 @@
     "exit_price": 188.93,
     "pnl_per_share": -8.8,
     "pnl_dollars": -5.6,
-    "r_multiple": -0.187
+    "r_multiple": -0.187,
+    "days_open": 12.83
   },
   {
     "symbol": "ANET",
@@ -7768,7 +7732,8 @@
     "exit_price": 188.93,
     "pnl_per_share": -8.8,
     "pnl_dollars": -5.66,
-    "r_multiple": -0.189
+    "r_multiple": -0.189,
+    "days_open": 12.83
   },
   {
     "symbol": "APD",
@@ -7793,7 +7758,8 @@
     "exit_price": 302.53,
     "pnl_per_share": -6.82,
     "pnl_dollars": -8.96,
-    "r_multiple": -0.299
+    "r_multiple": -0.299,
+    "days_open": 12.83
   },
   {
     "symbol": "APD",
@@ -7818,7 +7784,8 @@
     "exit_price": 302.53,
     "pnl_per_share": -6.35,
     "pnl_dollars": -8.35,
-    "r_multiple": -0.278
+    "r_multiple": -0.278,
+    "days_open": 9.83
   },
   {
     "symbol": "CAH",
@@ -7843,7 +7810,8 @@
     "exit_price": 231.0,
     "pnl_per_share": -8.89,
     "pnl_dollars": -13.66,
-    "r_multiple": -0.456
+    "r_multiple": -0.456,
+    "days_open": 12.83
   },
   {
     "symbol": "PANW",
@@ -7868,7 +7836,8 @@
     "exit_price": 350.73,
     "pnl_per_share": -36.37,
     "pnl_dollars": -21.89,
-    "r_multiple": -0.73
+    "r_multiple": -0.73,
+    "days_open": 11.83
   },
   {
     "symbol": "PANW",
@@ -7893,7 +7862,8 @@
     "exit_price": 350.73,
     "pnl_per_share": -45.21,
     "pnl_dollars": -27.21,
-    "r_multiple": -0.907
+    "r_multiple": -0.907,
+    "days_open": 10.83
   },
   {
     "symbol": "ADBE",
@@ -7918,7 +7888,8 @@
     "exit_price": 275.34,
     "pnl_per_share": 4.86,
     "pnl_dollars": 4.43,
-    "r_multiple": 0.148
+    "r_multiple": 0.148,
+    "days_open": 10.83
   },
   {
     "symbol": "GILD",
@@ -7943,7 +7914,8 @@
     "exit_price": 146.17,
     "pnl_per_share": 7.81,
     "pnl_dollars": 18.52,
-    "r_multiple": 0.617
+    "r_multiple": 0.617,
+    "days_open": 9.83
   },
   {
     "symbol": "GILD",
@@ -7968,7 +7940,8 @@
     "exit_price": 146.17,
     "pnl_per_share": 7.24,
     "pnl_dollars": 17.17,
-    "r_multiple": 0.572
+    "r_multiple": 0.572,
+    "days_open": 6.83
   },
   {
     "symbol": "GILD",
@@ -7993,7 +7966,8 @@
     "exit_price": 146.17,
     "pnl_per_share": 2.73,
     "pnl_dollars": 6.47,
-    "r_multiple": 0.216
+    "r_multiple": 0.216,
+    "days_open": 5.83
   },
   {
     "symbol": "GILD",
@@ -8018,7 +7992,8 @@
     "exit_price": 146.17,
     "pnl_per_share": -1.46,
     "pnl_dollars": -3.46,
-    "r_multiple": -0.115
+    "r_multiple": -0.115,
+    "days_open": 4.83
   },
   {
     "symbol": "FANG",
@@ -8043,7 +8018,8 @@
     "exit_price": 203.87,
     "pnl_per_share": -2.48,
     "pnl_dollars": -5.78,
-    "r_multiple": -0.193
+    "r_multiple": -0.193,
+    "days_open": 6.83
   },
   {
     "symbol": "FANG",
@@ -8068,7 +8044,8 @@
     "exit_price": 203.87,
     "pnl_per_share": -6.16,
     "pnl_dollars": -14.35,
-    "r_multiple": -0.478
+    "r_multiple": -0.478,
+    "days_open": 5.83
   },
   {
     "symbol": "BKR",
@@ -8093,7 +8070,8 @@
     "exit_price": 61.58,
     "pnl_per_share": -3.31,
     "pnl_dollars": -20.08,
-    "r_multiple": -0.669
+    "r_multiple": -0.669,
+    "days_open": 6.83
   },
   {
     "symbol": "DHR",
@@ -8118,7 +8096,8 @@
     "exit_price": 215.185,
     "pnl_per_share": 3.395,
     "pnl_dollars": 7.06,
-    "r_multiple": 0.235
+    "r_multiple": 0.235,
+    "days_open": 4.83
   },
   {
     "symbol": "DHR",
@@ -8143,7 +8122,8 @@
     "exit_price": 215.185,
     "pnl_per_share": -3.695,
     "pnl_dollars": -5.82,
-    "r_multiple": -0.194
+    "r_multiple": -0.194,
+    "days_open": 2.83
   },
   {
     "symbol": "DHR",
@@ -8168,7 +8148,8 @@
     "exit_price": 215.185,
     "pnl_per_share": -3.695,
     "pnl_dollars": -7.69,
-    "r_multiple": -0.256
+    "r_multiple": -0.256,
+    "days_open": 2.83
   },
   {
     "symbol": "DIS",
@@ -8193,7 +8174,8 @@
     "exit_price": 110.11,
     "pnl_per_share": 3.17,
     "pnl_dollars": 15.5,
-    "r_multiple": 0.517
+    "r_multiple": 0.517,
+    "days_open": 4.83
   },
   {
     "symbol": "DIS",
@@ -8218,7 +8200,8 @@
     "exit_price": 110.11,
     "pnl_per_share": 2.74,
     "pnl_dollars": 13.4,
-    "r_multiple": 0.447
+    "r_multiple": 0.447,
+    "days_open": 3.83
   },
   {
     "symbol": "DIS",
@@ -8243,7 +8226,8 @@
     "exit_price": 110.11,
     "pnl_per_share": 2.335,
     "pnl_dollars": 11.42,
-    "r_multiple": 0.381
+    "r_multiple": 0.381,
+    "days_open": 2.83
   },
   {
     "symbol": "SPGI",
@@ -8268,7 +8252,8 @@
     "exit_price": 432.31,
     "pnl_per_share": 0.13,
     "pnl_dollars": 0.11,
-    "r_multiple": 0.004
+    "r_multiple": 0.004,
+    "days_open": 3.83
   },
   {
     "symbol": "SPGI",
@@ -8293,7 +8278,8 @@
     "exit_price": 432.31,
     "pnl_per_share": 0.13,
     "pnl_dollars": 0.13,
-    "r_multiple": 0.004
+    "r_multiple": 0.004,
+    "days_open": 3.83
   },
   {
     "symbol": "SPGI",
@@ -8318,7 +8304,8 @@
     "exit_price": 432.31,
     "pnl_per_share": 1.27,
     "pnl_dollars": 1.1,
-    "r_multiple": 0.037
+    "r_multiple": 0.037,
+    "days_open": 2.83
   },
   {
     "symbol": "SPGI",
@@ -8343,7 +8330,8 @@
     "exit_price": 432.31,
     "pnl_per_share": 1.27,
     "pnl_dollars": 1.23,
-    "r_multiple": 0.041
+    "r_multiple": 0.041,
+    "days_open": 2.83
   },
   {
     "symbol": "CME",
@@ -8368,7 +8356,34 @@
     "exit_price": 277.46,
     "pnl_per_share": 2.48,
     "pnl_dollars": 4.3,
-    "r_multiple": 0.143
+    "r_multiple": 0.143,
+    "days_open": 2.83
+  },
+  {
+    "symbol": "KO",
+    "type": "inverse_hns",
+    "neckline": 90.92,
+    "stop": 84.6318,
+    "target_2R": 105.4464,
+    "risk_per_share": 6.9382,
+    "shares": 4.3239,
+    "break_time": "2026-08-20T13:30:00Z",
+    "bars_since_break": 3,
+    "in_pullback": true,
+    "last_close": 91.095,
+    "last_bar_time": "2026-08-21T17:30:00Z",
+    "scan_date": "2026-08-21",
+    "entry": 91.095,
+    "entry_time": "2026-08-21T17:30:00Z",
+    "status": "open",
+    "max_price": 92.49,
+    "touched_1r": false,
+    "outcome": "open",
+    "exit_price": 91.6325,
+    "pnl_per_share": 0.5375,
+    "pnl_dollars": 2.32,
+    "r_multiple": 0.077,
+    "days_open": 2.83
   },
   {
     "symbol": "NFLX",
@@ -8391,7 +8406,8 @@
     "exit_price": 80.2905,
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
-    "r_multiple": 0.0
+    "r_multiple": 0.0,
+    "days_open": 0.0
   },
   {
     "symbol": "COST",
@@ -8414,7 +8430,8 @@
     "exit_price": 968.66,
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
-    "r_multiple": 0.0
+    "r_multiple": 0.0,
+    "days_open": 0.0
   },
   {
     "symbol": "DIS",
@@ -8437,7 +8454,8 @@
     "exit_price": 110.11,
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
-    "r_multiple": 0.0
+    "r_multiple": 0.0,
+    "days_open": 0.0
   },
   {
     "symbol": "AMT",
@@ -8460,7 +8478,8 @@
     "exit_price": 178.57,
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
-    "r_multiple": 0.0
+    "r_multiple": 0.0,
+    "days_open": 0.0
   },
   {
     "symbol": "CME",
@@ -8483,7 +8502,8 @@
     "exit_price": 277.46,
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
-    "r_multiple": 0.0
+    "r_multiple": 0.0,
+    "days_open": 0.0
   },
   {
     "symbol": "PM",
@@ -8506,7 +8526,8 @@
     "exit_price": 191.785,
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
-    "r_multiple": 0.0
+    "r_multiple": 0.0,
+    "days_open": 0.0
   },
   {
     "symbol": "SPGI",
@@ -8529,7 +8550,8 @@
     "exit_price": 432.31,
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
-    "r_multiple": 0.0
+    "r_multiple": 0.0,
+    "days_open": 0.0
   },
   {
     "symbol": "SPGI",
@@ -8552,7 +8574,8 @@
     "exit_price": 432.31,
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
-    "r_multiple": 0.0
+    "r_multiple": 0.0,
+    "days_open": 0.0
   },
   {
     "symbol": "DLTR",
@@ -8575,6 +8598,7 @@
     "exit_price": 135.09,
     "pnl_per_share": 0.0,
     "pnl_dollars": 0.0,
-    "r_multiple": 0.0
+    "r_multiple": 0.0,
+    "days_open": 0.0
   }
 ]

@@ -2,7 +2,7 @@
   "date": "2026-07-21",
   "new_entries": 5,
   "closed_today": 8,
-  "open_count": 80,
+  "open_count": 77,
   "entries": [
     {
       "symbol": "JPM",
@@ -121,7 +121,8 @@
       "pnl_per_share": -26.1101,
       "pnl_dollars": -29.26,
       "r_multiple": -0.975,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 19.83
     },
     {
       "symbol": "DHR",
@@ -148,7 +149,8 @@
       "pnl_per_share": -30.1101,
       "pnl_dollars": -33.74,
       "r_multiple": -1.125,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 18.83
     },
     {
       "symbol": "DHR",
@@ -175,7 +177,8 @@
       "pnl_per_share": -15.7641,
       "pnl_dollars": -32.47,
       "r_multiple": -1.082,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 7.83
     },
     {
       "symbol": "DHR",
@@ -202,7 +205,8 @@
       "pnl_per_share": -14.6191,
       "pnl_dollars": -30.11,
       "r_multiple": -1.004,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 6.83
     },
     {
       "symbol": "DHR",
@@ -229,7 +233,8 @@
       "pnl_per_share": -20.5541,
       "pnl_dollars": -42.34,
       "r_multiple": -1.411,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 4.83
     },
     {
       "symbol": "DHR",
@@ -256,7 +261,8 @@
       "pnl_per_share": -19.3191,
       "pnl_dollars": -39.8,
       "r_multiple": -1.326,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 3.83
     },
     {
       "symbol": "MSCI",
@@ -283,7 +289,8 @@
       "pnl_per_share": -60.8124,
       "pnl_dollars": -41.65,
       "r_multiple": -1.388,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 4.83
     },
     {
       "symbol": "MSCI",
@@ -310,7 +317,8 @@
       "pnl_per_share": -52.5324,
       "pnl_dollars": -35.98,
       "r_multiple": -1.199,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 3.83
     }
   ],
   "watching_count": 15

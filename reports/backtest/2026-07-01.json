@@ -1,8 +1,8 @@
 {
   "date": "2026-07-01",
-  "new_entries": 5,
+  "new_entries": 4,
   "closed_today": 0,
-  "open_count": 18,
+  "open_count": 17,
   "entries": [
     {
       "symbol": "DHR",
@@ -59,24 +59,6 @@
       "status": "open"
     },
     {
-      "symbol": "SPG",
-      "type": "double_bottom",
-      "neckline": 220.435,
-      "stop": 200.7614,
-      "target_2R": 264.5671,
-      "risk_per_share": 21.2686,
-      "shares": 1.4105,
-      "break_time": "2026-06-24T17:30:00Z",
-      "bars_since_break": 10,
-      "in_pullback": true,
-      "last_close": 223.09,
-      "last_bar_time": "2026-07-01T17:30:00Z",
-      "scan_date": "2026-07-01",
-      "entry": 223.09,
-      "entry_time": "2026-07-01T17:30:00Z",
-      "status": "open"
-    },
-    {
       "symbol": "ILMN",
       "type": "inverse_hns",
       "neckline": 177.22,
@@ -96,5 +78,5 @@
     }
   ],
   "closed": [],
-  "watching_count": 17
+  "watching_count": 18
 }

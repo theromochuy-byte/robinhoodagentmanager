@@ -2,7 +2,7 @@
   "date": "2026-07-23",
   "new_entries": 6,
   "closed_today": 1,
-  "open_count": 86,
+  "open_count": 83,
   "entries": [
     {
       "symbol": "MRK",
@@ -139,7 +139,8 @@
       "pnl_per_share": -11.1176,
       "pnl_dollars": -26.21,
       "r_multiple": -0.874,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 5.83
     }
   ],
   "watching_count": 17

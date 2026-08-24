@@ -1,8 +1,8 @@
 {
   "date": "2026-07-31",
-  "new_entries": 11,
+  "new_entries": 10,
   "closed_today": 2,
-  "open_count": 146,
+  "open_count": 140,
   "entries": [
     {
       "symbol": "TGT",
@@ -73,24 +73,6 @@
       "last_bar_time": "2026-07-31T17:30:00Z",
       "scan_date": "2026-07-31",
       "entry": 88.87,
-      "entry_time": "2026-07-31T17:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "MMM",
-      "type": "inverse_hns",
-      "neckline": 176.16,
-      "stop": 163.1143,
-      "target_2R": 204.1415,
-      "risk_per_share": 13.6757,
-      "shares": 2.1937,
-      "break_time": "2026-07-27T13:30:00Z",
-      "bars_since_break": 9,
-      "in_pullback": true,
-      "last_close": 176.31,
-      "last_bar_time": "2026-07-31T17:30:00Z",
-      "scan_date": "2026-07-31",
-      "entry": 176.31,
       "entry_time": "2026-07-31T17:30:00Z",
       "status": "open"
     },
@@ -229,7 +211,8 @@
       "pnl_per_share": 6.2639,
       "pnl_dollars": 55.98,
       "r_multiple": 2.0,
-      "exit_reason": "2R_target"
+      "exit_reason": "2R_target",
+      "days_held": 17.83
     },
     {
       "symbol": "BMY",
@@ -256,8 +239,9 @@
       "pnl_per_share": 5.1189,
       "pnl_dollars": 45.75,
       "r_multiple": 2.0,
-      "exit_reason": "2R_target"
+      "exit_reason": "2R_target",
+      "days_held": 14.83
     }
   ],
-  "watching_count": 38
+  "watching_count": 39
 }

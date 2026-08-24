@@ -1,8 +1,8 @@
 {
   "date": "2026-08-14",
-  "new_entries": 6,
+  "new_entries": 5,
   "closed_today": 5,
-  "open_count": 239,
+  "open_count": 228,
   "entries": [
     {
       "symbol": "MRK",
@@ -37,24 +37,6 @@
       "last_bar_time": "2026-08-14T17:30:00Z",
       "scan_date": "2026-08-14",
       "entry": 227.34,
-      "entry_time": "2026-08-14T17:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "ACN",
-      "type": "inverse_hns",
-      "neckline": 176.4,
-      "stop": 152.4886,
-      "target_2R": 232.7727,
-      "risk_per_share": 26.7614,
-      "shares": 1.121,
-      "break_time": "2026-08-10T13:30:00Z",
-      "bars_since_break": 9,
-      "in_pullback": true,
-      "last_close": 176.91,
-      "last_bar_time": "2026-08-14T17:30:00Z",
-      "scan_date": "2026-08-14",
-      "entry": 176.91,
       "entry_time": "2026-08-14T17:30:00Z",
       "status": "open"
     },
@@ -139,7 +121,8 @@
       "pnl_per_share": 45.1746,
       "pnl_dollars": 58.09,
       "r_multiple": 2.0,
-      "exit_reason": "2R_target"
+      "exit_reason": "2R_target",
+      "days_held": 36.83
     },
     {
       "symbol": "PSX",
@@ -166,7 +149,8 @@
       "pnl_per_share": 44.6146,
       "pnl_dollars": 57.37,
       "r_multiple": 2.0,
-      "exit_reason": "2R_target"
+      "exit_reason": "2R_target",
+      "days_held": 34.83
     },
     {
       "symbol": "PSX",
@@ -193,7 +177,8 @@
       "pnl_per_share": 34.6746,
       "pnl_dollars": 44.59,
       "r_multiple": 2.0,
-      "exit_reason": "2R_target"
+      "exit_reason": "2R_target",
+      "days_held": 31.83
     },
     {
       "symbol": "PSX",
@@ -220,7 +205,8 @@
       "pnl_per_share": 31.5146,
       "pnl_dollars": 40.52,
       "r_multiple": 2.0,
-      "exit_reason": "2R_target"
+      "exit_reason": "2R_target",
+      "days_held": 30.83
     },
     {
       "symbol": "PSX",
@@ -247,8 +233,9 @@
       "pnl_per_share": 36.8046,
       "pnl_dollars": 47.33,
       "r_multiple": 2.0,
-      "exit_reason": "2R_target"
+      "exit_reason": "2R_target",
+      "days_held": 29.83
     }
   ],
-  "watching_count": 33
+  "watching_count": 34
 }

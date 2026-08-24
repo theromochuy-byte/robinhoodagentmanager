@@ -2,7 +2,7 @@
   "date": "2026-07-16",
   "new_entries": 4,
   "closed_today": 1,
-  "open_count": 73,
+  "open_count": 70,
   "entries": [
     {
       "symbol": "DHR",
@@ -103,7 +103,8 @@
       "pnl_per_share": 0.0,
       "pnl_dollars": 0.0,
       "r_multiple": 0.0,
-      "exit_reason": "breakeven_stop"
+      "exit_reason": "breakeven_stop",
+      "days_held": 6.83
     }
   ],
   "watching_count": 17

@@ -2,7 +2,7 @@
   "date": "2026-08-24",
   "new_entries": 9,
   "closed_today": 1,
-  "open_count": 265,
+  "open_count": 254,
   "entries": [
     {
       "symbol": "NFLX",
@@ -193,7 +193,8 @@
       "pnl_per_share": -15.3105,
       "pnl_dollars": -37.48,
       "r_multiple": -1.249,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 9.83
     }
   ],
   "watching_count": 33

@@ -2,7 +2,7 @@
   "date": "2026-07-28",
   "new_entries": 19,
   "closed_today": 3,
-  "open_count": 121,
+  "open_count": 118,
   "entries": [
     {
       "symbol": "JPM",
@@ -373,7 +373,8 @@
       "pnl_per_share": 0.0,
       "pnl_dollars": 0.0,
       "r_multiple": 0.0,
-      "exit_reason": "breakeven_stop"
+      "exit_reason": "breakeven_stop",
+      "days_held": 25.83
     },
     {
       "symbol": "UPS",
@@ -400,7 +401,8 @@
       "pnl_per_share": 0.0,
       "pnl_dollars": 0.0,
       "r_multiple": 0.0,
-      "exit_reason": "breakeven_stop"
+      "exit_reason": "breakeven_stop",
+      "days_held": 21.83
     },
     {
       "symbol": "UPS",
@@ -427,7 +429,8 @@
       "pnl_per_share": 0.0,
       "pnl_dollars": 0.0,
       "r_multiple": 0.0,
-      "exit_reason": "breakeven_stop"
+      "exit_reason": "breakeven_stop",
+      "days_held": 21.83
     }
   ],
   "watching_count": 31

@@ -2,7 +2,7 @@
   "date": "2026-08-20",
   "new_entries": 5,
   "closed_today": 3,
-  "open_count": 248,
+  "open_count": 237,
   "entries": [
     {
       "symbol": "EOG",
@@ -121,7 +121,8 @@
       "pnl_per_share": 8.5144,
       "pnl_dollars": 54.76,
       "r_multiple": 2.0,
-      "exit_reason": "2R_target"
+      "exit_reason": "2R_target",
+      "days_held": 51.83
     },
     {
       "symbol": "KO",
@@ -148,7 +149,8 @@
       "pnl_per_share": 7.1694,
       "pnl_dollars": 46.11,
       "r_multiple": 2.0,
-      "exit_reason": "2R_target"
+      "exit_reason": "2R_target",
+      "days_held": 48.83
     },
     {
       "symbol": "COF",
@@ -175,7 +177,8 @@
       "pnl_per_share": -15.3617,
       "pnl_dollars": -38.85,
       "r_multiple": -1.295,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 5.83
     }
   ],
   "watching_count": 36

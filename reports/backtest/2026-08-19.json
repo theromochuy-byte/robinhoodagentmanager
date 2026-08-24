@@ -2,7 +2,7 @@
   "date": "2026-08-19",
   "new_entries": 6,
   "closed_today": 10,
-  "open_count": 246,
+  "open_count": 235,
   "entries": [
     {
       "symbol": "PFE",
@@ -139,7 +139,8 @@
       "pnl_per_share": 89.6501,
       "pnl_dollars": 62.69,
       "r_multiple": 2.0,
-      "exit_reason": "2R_target"
+      "exit_reason": "2R_target",
+      "days_held": 43.83
     },
     {
       "symbol": "TMO",
@@ -166,7 +167,8 @@
       "pnl_per_share": 90.9801,
       "pnl_dollars": 63.62,
       "r_multiple": 2.0,
-      "exit_reason": "2R_target"
+      "exit_reason": "2R_target",
+      "days_held": 42.83
     },
     {
       "symbol": "TMO",
@@ -193,7 +195,8 @@
       "pnl_per_share": 82.8751,
       "pnl_dollars": 57.95,
       "r_multiple": 2.0,
-      "exit_reason": "2R_target"
+      "exit_reason": "2R_target",
+      "days_held": 40.83
     },
     {
       "symbol": "TMO",
@@ -220,7 +223,8 @@
       "pnl_per_share": 80.3351,
       "pnl_dollars": 56.18,
       "r_multiple": 2.0,
-      "exit_reason": "2R_target"
+      "exit_reason": "2R_target",
+      "days_held": 39.83
     },
     {
       "symbol": "MDT",
@@ -247,7 +251,8 @@
       "pnl_per_share": 10.5383,
       "pnl_dollars": 56.44,
       "r_multiple": 2.0,
-      "exit_reason": "2R_target"
+      "exit_reason": "2R_target",
+      "days_held": 39.83
     },
     {
       "symbol": "AMGN",
@@ -274,7 +279,8 @@
       "pnl_per_share": 64.2699,
       "pnl_dollars": 60.79,
       "r_multiple": 2.0,
-      "exit_reason": "2R_target"
+      "exit_reason": "2R_target",
+      "days_held": 22.83
     },
     {
       "symbol": "AMGN",
@@ -301,7 +307,8 @@
       "pnl_per_share": 47.4699,
       "pnl_dollars": 44.9,
       "r_multiple": 2.0,
-      "exit_reason": "2R_target"
+      "exit_reason": "2R_target",
+      "days_held": 21.83
     },
     {
       "symbol": "AMGN",
@@ -328,7 +335,8 @@
       "pnl_per_share": 52.6199,
       "pnl_dollars": 49.77,
       "r_multiple": 2.0,
-      "exit_reason": "2R_target"
+      "exit_reason": "2R_target",
+      "days_held": 19.83
     },
     {
       "symbol": "AMGN",
@@ -355,7 +363,8 @@
       "pnl_per_share": 55.1999,
       "pnl_dollars": 52.21,
       "r_multiple": 2.0,
-      "exit_reason": "2R_target"
+      "exit_reason": "2R_target",
+      "days_held": 18.83
     },
     {
       "symbol": "AON",
@@ -382,7 +391,8 @@
       "pnl_per_share": -35.3128,
       "pnl_dollars": -28.24,
       "r_multiple": -0.941,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 20.83
     }
   ],
   "watching_count": 30

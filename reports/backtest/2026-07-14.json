@@ -2,7 +2,7 @@
   "date": "2026-07-14",
   "new_entries": 6,
   "closed_today": 2,
-  "open_count": 69,
+  "open_count": 66,
   "entries": [
     {
       "symbol": "GS",
@@ -139,7 +139,8 @@
       "pnl_per_share": -37.5823,
       "pnl_dollars": -32.91,
       "r_multiple": -1.097,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 13.83
     },
     {
       "symbol": "IBM",
@@ -166,7 +167,8 @@
       "pnl_per_share": -45.5423,
       "pnl_dollars": -39.88,
       "r_multiple": -1.329,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 11.83
     }
   ],
   "watching_count": 10

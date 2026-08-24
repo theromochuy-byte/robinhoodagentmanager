@@ -1,8 +1,8 @@
 {
   "date": "2026-08-04",
-  "new_entries": 16,
+  "new_entries": 13,
   "closed_today": 7,
-  "open_count": 169,
+  "open_count": 159,
   "entries": [
     {
       "symbol": "GE",
@@ -149,42 +149,6 @@
       "status": "open"
     },
     {
-      "symbol": "KO",
-      "type": "double_bottom",
-      "neckline": 85.68,
-      "stop": 78.8505,
-      "target_2R": 106.029,
-      "risk_per_share": 9.0595,
-      "shares": 3.3114,
-      "break_time": "2026-07-28T13:30:00Z",
-      "bars_since_break": 11,
-      "in_pullback": true,
-      "last_close": 86.56,
-      "last_bar_time": "2026-08-04T17:30:00Z",
-      "scan_date": "2026-08-04",
-      "entry": 86.56,
-      "entry_time": "2026-08-04T17:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "KO",
-      "type": "inverse_hns",
-      "neckline": 85.68,
-      "stop": 78.7705,
-      "target_2R": 106.189,
-      "risk_per_share": 9.1395,
-      "shares": 3.2825,
-      "break_time": "2026-07-28T13:30:00Z",
-      "bars_since_break": 11,
-      "in_pullback": true,
-      "last_close": 86.56,
-      "last_bar_time": "2026-08-04T17:30:00Z",
-      "scan_date": "2026-08-04",
-      "entry": 86.56,
-      "entry_time": "2026-08-04T17:30:00Z",
-      "status": "open"
-    },
-    {
       "symbol": "CLX",
       "type": "inverse_hns",
       "neckline": 99.48,
@@ -257,24 +221,6 @@
       "status": "open"
     },
     {
-      "symbol": "FIS",
-      "type": "inverse_hns",
-      "neckline": 43.67,
-      "stop": 39.7974,
-      "target_2R": 55.2252,
-      "risk_per_share": 5.1426,
-      "shares": 5.8336,
-      "break_time": "2026-07-28T13:30:00Z",
-      "bars_since_break": 11,
-      "in_pullback": true,
-      "last_close": 44.265,
-      "last_bar_time": "2026-08-04T17:30:00Z",
-      "scan_date": "2026-08-04",
-      "entry": 44.265,
-      "entry_time": "2026-08-04T17:30:00Z",
-      "status": "open"
-    },
-    {
       "symbol": "EMR",
       "type": "inverse_hns",
       "neckline": 152.09,
@@ -319,7 +265,8 @@
       "pnl_per_share": -32.5545,
       "pnl_dollars": -27.54,
       "r_multiple": -0.918,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 38.83
     },
     {
       "symbol": "ROK",
@@ -346,7 +293,8 @@
       "pnl_per_share": -53.8989,
       "pnl_dollars": -41.9,
       "r_multiple": -1.397,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 34.83
     },
     {
       "symbol": "ROK",
@@ -373,7 +321,8 @@
       "r_multiple": -1.011,
       "max_price": 480.95,
       "touched_1r": false,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 0.83
     },
     {
       "symbol": "MCK",
@@ -400,7 +349,8 @@
       "pnl_per_share": 0.0,
       "pnl_dollars": 0.0,
       "r_multiple": 0.0,
-      "exit_reason": "breakeven_stop"
+      "exit_reason": "breakeven_stop",
+      "days_held": 26.83
     },
     {
       "symbol": "MCK",
@@ -427,7 +377,8 @@
       "pnl_per_share": 0.0,
       "pnl_dollars": 0.0,
       "r_multiple": 0.0,
-      "exit_reason": "breakeven_stop"
+      "exit_reason": "breakeven_stop",
+      "days_held": 21.83
     },
     {
       "symbol": "DUK",
@@ -454,7 +405,8 @@
       "pnl_per_share": -8.094,
       "pnl_dollars": -33.2,
       "r_multiple": -1.107,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 10.83
     },
     {
       "symbol": "ALL",
@@ -481,8 +433,9 @@
       "pnl_per_share": 0.0,
       "pnl_dollars": 0.0,
       "r_multiple": 0.0,
-      "exit_reason": "breakeven_stop"
+      "exit_reason": "breakeven_stop",
+      "days_held": 10.83
     }
   ],
-  "watching_count": 35
+  "watching_count": 38
 }

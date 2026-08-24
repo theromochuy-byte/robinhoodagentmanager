@@ -2,7 +2,7 @@
   "date": "2026-08-17",
   "new_entries": 6,
   "closed_today": 1,
-  "open_count": 244,
+  "open_count": 233,
   "entries": [
     {
       "symbol": "COP",
@@ -139,7 +139,8 @@
       "pnl_per_share": -8.5795,
       "pnl_dollars": -30.9,
       "r_multiple": -1.03,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 45.83
     }
   ],
   "watching_count": 30

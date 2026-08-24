@@ -2,7 +2,7 @@
   "date": "2026-07-22",
   "new_entries": 4,
   "closed_today": 3,
-  "open_count": 81,
+  "open_count": 78,
   "entries": [
     {
       "symbol": "JPM",
@@ -103,7 +103,8 @@
       "pnl_per_share": -10.0642,
       "pnl_dollars": -29.57,
       "r_multiple": -0.986,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 13.83
     },
     {
       "symbol": "NOW",
@@ -130,7 +131,8 @@
       "pnl_per_share": -11.1242,
       "pnl_dollars": -32.69,
       "r_multiple": -1.09,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 12.83
     },
     {
       "symbol": "NOW",
@@ -157,7 +159,8 @@
       "pnl_per_share": -9.9942,
       "pnl_dollars": -29.37,
       "r_multiple": -0.979,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 11.83
     }
   ],
   "watching_count": 15

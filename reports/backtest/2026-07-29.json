@@ -2,7 +2,7 @@
   "date": "2026-07-29",
   "new_entries": 7,
   "closed_today": 4,
-  "open_count": 124,
+  "open_count": 121,
   "entries": [
     {
       "symbol": "SYK",
@@ -157,7 +157,8 @@
       "pnl_per_share": -145.7808,
       "pnl_dollars": -33.35,
       "r_multiple": -1.112,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 14.83
     },
     {
       "symbol": "GS",
@@ -184,7 +185,8 @@
       "pnl_per_share": -139.9508,
       "pnl_dollars": -33.5,
       "r_multiple": -1.117,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 14.83
     },
     {
       "symbol": "GS",
@@ -211,7 +213,8 @@
       "pnl_per_share": -156.3708,
       "pnl_dollars": -35.78,
       "r_multiple": -1.192,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 13.83
     },
     {
       "symbol": "GS",
@@ -238,7 +241,8 @@
       "pnl_per_share": -150.5408,
       "pnl_dollars": -36.04,
       "r_multiple": -1.201,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 13.83
     }
   ],
   "watching_count": 43

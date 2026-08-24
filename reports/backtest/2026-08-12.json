@@ -1,27 +1,9 @@
 {
   "date": "2026-08-12",
-  "new_entries": 12,
+  "new_entries": 11,
   "closed_today": 5,
-  "open_count": 232,
+  "open_count": 222,
   "entries": [
-    {
-      "symbol": "PFE",
-      "type": "inverse_hns",
-      "neckline": 26.28,
-      "stop": 24.1498,
-      "target_2R": 31.1405,
-      "risk_per_share": 2.3302,
-      "shares": 12.8742,
-      "break_time": "2026-08-07T13:30:00Z",
-      "bars_since_break": 7,
-      "in_pullback": true,
-      "last_close": 26.31,
-      "last_bar_time": "2026-08-12T17:30:00Z",
-      "scan_date": "2026-08-12",
-      "entry": 26.31,
-      "entry_time": "2026-08-12T17:30:00Z",
-      "status": "open"
-    },
     {
       "symbol": "XOM",
       "type": "inverse_hns",
@@ -247,7 +229,8 @@
       "pnl_per_share": -11.3752,
       "pnl_dollars": -32.96,
       "r_multiple": -1.099,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 34.83
     },
     {
       "symbol": "EBAY",
@@ -274,7 +257,8 @@
       "pnl_per_share": -13.2902,
       "pnl_dollars": -38.5,
       "r_multiple": -1.283,
-      "exit_reason": "stop"
+      "exit_reason": "stop",
+      "days_held": 32.83
     },
     {
       "symbol": "VLO",
@@ -301,7 +285,8 @@
       "pnl_per_share": 49.3988,
       "pnl_dollars": 55.96,
       "r_multiple": 2.0,
-      "exit_reason": "2R_target"
+      "exit_reason": "2R_target",
+      "days_held": 33.0
     },
     {
       "symbol": "VLO",
@@ -328,7 +313,8 @@
       "pnl_per_share": 34.2588,
       "pnl_dollars": 38.81,
       "r_multiple": 2.0,
-      "exit_reason": "2R_target"
+      "exit_reason": "2R_target",
+      "days_held": 30.0
     },
     {
       "symbol": "VLO",
@@ -355,8 +341,9 @@
       "pnl_per_share": 29.0588,
       "pnl_dollars": 32.92,
       "r_multiple": 2.0,
-      "exit_reason": "2R_target"
+      "exit_reason": "2R_target",
+      "days_held": 29.0
     }
   ],
-  "watching_count": 25
+  "watching_count": 26
 }
