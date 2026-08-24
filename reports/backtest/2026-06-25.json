@@ -1,28 +1,9 @@
 {
   "date": "2026-06-25",
-  "new_entries": 1,
+  "new_entries": 0,
   "closed_today": 0,
-  "open_count": 2,
-  "entries": [
-    {
-      "symbol": "HD",
-      "type": "inverse_hns",
-      "neckline": 341.15,
-      "stop": 312.4294,
-      "target_2R": 403.3312,
-      "risk_per_share": 30.3006,
-      "shares": 0.9901,
-      "break_time": "2026-06-24T17:30:00Z",
-      "bars_since_break": 2,
-      "in_pullback": true,
-      "last_close": 344.81,
-      "last_bar_time": "2026-06-25T17:30:00Z",
-      "scan_date": "2026-06-25",
-      "entry": 344.81,
-      "entry_time": "2026-06-25T17:30:00Z",
-      "status": "open"
-    }
-  ],
+  "open_count": 0,
+  "entries": [],
   "closed": [],
-  "watching_count": 7
+  "watching_count": 0
 }

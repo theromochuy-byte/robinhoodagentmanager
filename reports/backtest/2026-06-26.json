@@ -1,46 +1,9 @@
 {
   "date": "2026-06-26",
-  "new_entries": 2,
+  "new_entries": 0,
   "closed_today": 0,
-  "open_count": 4,
-  "entries": [
-    {
-      "symbol": "CB",
-      "type": "inverse_hns",
-      "neckline": 333.55,
-      "stop": 315.4211,
-      "target_2R": 374.2179,
-      "risk_per_share": 19.5989,
-      "shares": 1.1193,
-      "break_time": "2026-06-24T13:30:00Z",
-      "bars_since_break": 5,
-      "in_pullback": true,
-      "last_close": 341.15,
-      "last_bar_time": "2026-06-26T17:30:00Z",
-      "scan_date": "2026-06-26",
-      "entry": 341.15,
-      "entry_time": "2026-06-26T17:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "ROK",
-      "type": "inverse_hns",
-      "neckline": 474.99,
-      "stop": 443.6455,
-      "target_2R": 550.039,
-      "risk_per_share": 35.4645,
-      "shares": 0.7827,
-      "break_time": "2026-06-22T13:30:00Z",
-      "bars_since_break": 9,
-      "in_pullback": true,
-      "last_close": 476.2,
-      "last_bar_time": "2026-06-26T17:30:00Z",
-      "scan_date": "2026-06-26",
-      "entry": 476.2,
-      "entry_time": "2026-06-26T17:30:00Z",
-      "status": "open"
-    }
-  ],
+  "open_count": 0,
+  "entries": [],
   "closed": [],
-  "watching_count": 6
+  "watching_count": 0
 }

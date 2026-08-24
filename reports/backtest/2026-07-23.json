@@ -1,8 +1,8 @@
 {
   "date": "2026-07-23",
-  "new_entries": 4,
-  "closed_today": 1,
-  "open_count": 65,
+  "new_entries": 2,
+  "closed_today": 0,
+  "open_count": 23,
   "entries": [
     {
       "symbol": "MRK",
@@ -23,24 +23,6 @@
       "status": "open"
     },
     {
-      "symbol": "PM",
-      "type": "inverse_hns",
-      "neckline": 189.7,
-      "stop": 173.0286,
-      "target_2R": 223.4329,
-      "risk_per_share": 16.8014,
-      "shares": 1.7856,
-      "break_time": "2026-07-16T17:30:00Z",
-      "bars_since_break": 10,
-      "in_pullback": true,
-      "last_close": 191.07,
-      "last_bar_time": "2026-07-23T17:30:00Z",
-      "scan_date": "2026-07-23",
-      "entry": 191.07,
-      "entry_time": "2026-07-23T17:30:00Z",
-      "status": "open"
-    },
-    {
       "symbol": "MCK",
       "type": "inverse_hns",
       "neckline": 823.86,
@@ -57,56 +39,8 @@
       "entry": 824.35,
       "entry_time": "2026-07-23T17:30:00Z",
       "status": "open"
-    },
-    {
-      "symbol": "HIG",
-      "type": "inverse_hns",
-      "neckline": 141.3,
-      "stop": 129.0698,
-      "target_2R": 167.7703,
-      "risk_per_share": 12.9002,
-      "shares": 2.3256,
-      "break_time": "2026-07-21T17:30:00Z",
-      "bars_since_break": 4,
-      "in_pullback": true,
-      "last_close": 142.18,
-      "last_bar_time": "2026-07-23T17:30:00Z",
-      "scan_date": "2026-07-23",
-      "entry": 142.18,
-      "entry_time": "2026-07-23T17:30:00Z",
-      "status": "open"
     }
   ],
-  "closed": [
-    {
-      "symbol": "DG",
-      "type": "inverse_hns",
-      "neckline": 125.75,
-      "stop": 114.6624,
-      "target_2R": 152.8452,
-      "risk_per_share": 12.7276,
-      "shares": 2.3571,
-      "break_time": "2026-07-16T13:30:00Z",
-      "bars_since_break": 3,
-      "in_pullback": true,
-      "last_close": 125.78,
-      "last_bar_time": "2026-07-17T17:30:00Z",
-      "scan_date": "2026-07-17",
-      "entry": 125.78,
-      "entry_time": "2026-07-17T17:30:00Z",
-      "status": "closed",
-      "max_price": 126.75,
-      "touched_1r": false,
-      "touched_2r": false,
-      "outcome": "loss",
-      "exit_price": 114.6624,
-      "exit_time": "2026-07-23T13:30:00Z",
-      "pnl_per_share": -11.1176,
-      "pnl_dollars": -26.21,
-      "r_multiple": -0.874,
-      "exit_reason": "stop",
-      "days_held": 5.83
-    }
-  ],
-  "watching_count": 15
+  "closed": [],
+  "watching_count": 4
 }

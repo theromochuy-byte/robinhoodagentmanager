@@ -1,45 +1,9 @@
 {
   "date": "2026-07-06",
-  "new_entries": 4,
+  "new_entries": 1,
   "closed_today": 0,
-  "open_count": 25,
+  "open_count": 4,
   "entries": [
-    {
-      "symbol": "TMO",
-      "type": "inverse_hns",
-      "neckline": 515.96,
-      "stop": 478.6675,
-      "target_2R": 607.3751,
-      "risk_per_share": 42.9025,
-      "shares": 0.6993,
-      "break_time": "2026-07-02T13:30:00Z",
-      "bars_since_break": 3,
-      "in_pullback": true,
-      "last_close": 517.725,
-      "last_bar_time": "2026-07-06T17:30:00Z",
-      "scan_date": "2026-07-06",
-      "entry": 517.725,
-      "entry_time": "2026-07-06T17:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "TFC",
-      "type": "inverse_hns",
-      "neckline": 51.195,
-      "stop": 48.0527,
-      "target_2R": 57.9447,
-      "risk_per_share": 3.2973,
-      "shares": 7.3028,
-      "break_time": "2026-07-06T13:30:00Z",
-      "bars_since_break": 1,
-      "in_pullback": true,
-      "last_close": 51.445,
-      "last_bar_time": "2026-07-06T17:30:00Z",
-      "scan_date": "2026-07-06",
-      "entry": 51.445,
-      "entry_time": "2026-07-06T17:30:00Z",
-      "status": "open"
-    },
     {
       "symbol": "MCO",
       "type": "inverse_hns",
@@ -57,26 +21,8 @@
       "entry": 498.79,
       "entry_time": "2026-07-06T17:30:00Z",
       "status": "open"
-    },
-    {
-      "symbol": "UPS",
-      "type": "inverse_hns",
-      "neckline": 109.4,
-      "stop": 103.2755,
-      "target_2R": 124.649,
-      "risk_per_share": 7.1245,
-      "shares": 3.3967,
-      "break_time": "2026-07-01T13:30:00Z",
-      "bars_since_break": 5,
-      "in_pullback": true,
-      "last_close": 110.03,
-      "last_bar_time": "2026-07-06T17:30:00Z",
-      "scan_date": "2026-07-06",
-      "entry": 110.03,
-      "entry_time": "2026-07-06T17:30:00Z",
-      "status": "open"
     }
   ],
   "closed": [],
-  "watching_count": 11
+  "watching_count": 2
 }

@@ -1,8 +1,8 @@
 {
   "date": "2026-07-02",
-  "new_entries": 6,
+  "new_entries": 2,
   "closed_today": 0,
-  "open_count": 21,
+  "open_count": 3,
   "entries": [
     {
       "symbol": "SNOW",
@@ -23,60 +23,6 @@
       "status": "open"
     },
     {
-      "symbol": "NET",
-      "type": "inverse_hns",
-      "neckline": 239.0,
-      "stop": 202.7625,
-      "target_2R": 335.895,
-      "risk_per_share": 44.3775,
-      "shares": 0.676,
-      "break_time": "2026-06-29T13:30:00Z",
-      "bars_since_break": 7,
-      "in_pullback": true,
-      "last_close": 242.18,
-      "last_bar_time": "2026-07-02T17:30:00Z",
-      "scan_date": "2026-07-02",
-      "entry": 242.18,
-      "entry_time": "2026-07-02T17:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "IBM",
-      "type": "inverse_hns",
-      "neckline": 276.62,
-      "stop": 243.6477,
-      "target_2R": 346.4196,
-      "risk_per_share": 34.2573,
-      "shares": 0.8757,
-      "break_time": "2026-06-29T17:30:00Z",
-      "bars_since_break": 6,
-      "in_pullback": true,
-      "last_close": 289.19,
-      "last_bar_time": "2026-07-02T17:30:00Z",
-      "scan_date": "2026-07-02",
-      "entry": 289.19,
-      "entry_time": "2026-07-02T17:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "ILMN",
-      "type": "inverse_hns",
-      "neckline": 177.22,
-      "stop": 151.7281,
-      "target_2R": 238.5387,
-      "risk_per_share": 28.9369,
-      "shares": 1.0367,
-      "break_time": "2026-06-25T13:30:00Z",
-      "bars_since_break": 11,
-      "in_pullback": true,
-      "last_close": 188.66,
-      "last_bar_time": "2026-07-02T17:30:00Z",
-      "scan_date": "2026-07-02",
-      "entry": 188.66,
-      "entry_time": "2026-07-02T17:30:00Z",
-      "status": "open"
-    },
-    {
       "symbol": "MCO",
       "type": "inverse_hns",
       "neckline": 472.43,
@@ -93,26 +39,8 @@
       "entry": 490.59,
       "entry_time": "2026-07-02T17:30:00Z",
       "status": "open"
-    },
-    {
-      "symbol": "UPS",
-      "type": "inverse_hns",
-      "neckline": 109.4,
-      "stop": 103.2755,
-      "target_2R": 124.649,
-      "risk_per_share": 7.1245,
-      "shares": 3.3967,
-      "break_time": "2026-07-01T13:30:00Z",
-      "bars_since_break": 3,
-      "in_pullback": true,
-      "last_close": 110.65,
-      "last_bar_time": "2026-07-02T17:30:00Z",
-      "scan_date": "2026-07-02",
-      "entry": 110.65,
-      "entry_time": "2026-07-02T17:30:00Z",
-      "status": "open"
     }
   ],
   "closed": [],
-  "watching_count": 9
+  "watching_count": 1
 }
