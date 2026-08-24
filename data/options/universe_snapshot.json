@@ -1,1173 +1,928 @@
 {
   "WBD": {
     "fundamentals": {
-      "average_volume_30_days": 22229709.6766,
-      "average_volume": 19206105.288753,
-      "pe_ratio": -22.17,
-      "high_52_weeks": 30.0,
-      "low_52_weeks": 11.25,
-      "market_cap": 71542492569.99858,
-      "pb_ratio": 2.15606,
+      "symbol": "WBD",
+      "average_volume_30_days": "21659189.952600",
+      "pe_ratio": "-22.420000",
+      "high_52_weeks": "30.000000",
+      "low_52_weeks": "11.250000",
       "dividend_yield": null,
-      "dividend_per_share": 40.610001,
+      "dividend_per_share": "40.610001",
       "distribution_frequency": null,
       "ex_dividend_date": "2014-08-07",
       "payable_date": "2014-08-06"
     },
-    "price": 28.235,
+    "price": 28.56,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 37296000000.0,
-        "gross_profit": null,
-        "net_income": 727000000.0,
-        "net_margin": 1.95
+        "net_income": 727000000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 39321000000.0,
-        "gross_profit": null,
-        "net_income": -11311000000.0,
-        "net_margin": -28.77
+        "net_income": -11311000000.0
       }
     ],
     "next_earnings_date": null
   },
   "SOFI": {
     "fundamentals": {
-      "average_volume_30_days": 66393909.1223,
-      "average_volume": 45311935.938194,
-      "pe_ratio": 37.781995,
-      "high_52_weeks": 32.73,
-      "low_52_weeks": 14.88,
-      "market_cap": 24662534549.88355,
-      "pb_ratio": 2.08757,
+      "symbol": "SOFI",
+      "average_volume_30_days": "65350682.174900",
+      "pe_ratio": "39.869281",
+      "high_52_weeks": "32.730000",
+      "low_52_weeks": "14.880000",
       "dividend_yield": null,
       "dividend_per_share": null,
       "distribution_frequency": null,
       "ex_dividend_date": null,
       "payable_date": null
     },
-    "price": 17.91,
+    "price": 18.905,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 3613354000.0,
-        "gross_profit": 3004356000.0,
-        "net_income": 481320000.0,
-        "net_margin": 13.32
+        "net_income": 481320000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 2674859000.0,
-        "gross_profit": 2213226000.0,
-        "net_income": 498665000.0,
-        "net_margin": 18.64
+        "net_income": 498665000.0
       }
     ],
     "next_earnings_date": null
   },
   "NOK": {
     "fundamentals": {
-      "average_volume_30_days": 90896758.9139,
-      "average_volume": 81870247.122824,
-      "pe_ratio": 68.673884,
-      "high_52_weeks": 17.45,
-      "low_52_weeks": 4.2,
-      "market_cap": 60043111379.41327,
-      "pb_ratio": 2.34507,
-      "dividend_yield": 1.176227,
-      "dividend_per_share": 0.033563,
+      "symbol": "NOK",
+      "average_volume_30_days": "89058140.824700",
+      "pe_ratio": "69.079838",
+      "high_52_weeks": "17.450000",
+      "low_52_weeks": "4.230000",
+      "dividend_yield": "1.169314",
+      "dividend_per_share": "0.033563",
       "distribution_frequency": "Quarterly",
       "ex_dividend_date": "2026-07-28",
       "payable_date": "2026-08-11"
     },
-    "price": 10.145,
+    "price": 10.21,
     "financials_annual": [],
     "next_earnings_date": null
   },
   "PCG": {
     "fundamentals": {
-      "average_volume_30_days": 26647091.4444,
-      "average_volume": 24359057.041908,
-      "pe_ratio": 13.100883,
-      "high_52_weeks": 19.155,
-      "low_52_weeks": 14.295,
-      "market_cap": 38849806800.0,
-      "pb_ratio": 1.22376,
-      "dividend_yield": 0.974388,
-      "dividend_per_share": 0.05,
+      "symbol": "PCG",
+      "average_volume_30_days": "27079743.490200",
+      "pe_ratio": "12.838281",
+      "high_52_weeks": "19.155000",
+      "low_52_weeks": "14.335000",
+      "dividend_yield": "0.994318",
+      "dividend_per_share": "0.050000",
       "distribution_frequency": "Quarterly",
       "ex_dividend_date": "2026-06-30",
       "payable_date": "2026-07-15"
     },
-    "price": 17.96,
+    "price": 17.605,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 24935000000.0,
-        "gross_profit": null,
-        "net_income": 2703000000.0,
-        "net_margin": 10.84
+        "net_income": 2703000000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 24419000000.0,
-        "gross_profit": null,
-        "net_income": 2512000000.0,
-        "net_margin": 10.29
+        "net_income": 2512000000.0
       }
     ],
     "next_earnings_date": null
   },
   "IREN": {
     "fundamentals": {
-      "average_volume_30_days": 46570586.6208,
-      "average_volume": 45896520.175091,
-      "pe_ratio": 84.15646,
-      "high_52_weeks": 76.87,
-      "low_52_weeks": 18.87,
-      "market_cap": 14909836957.754942,
-      "pb_ratio": 5.45153,
+      "symbol": "IREN",
+      "average_volume_30_days": "46521226.001900",
+      "pe_ratio": "82.734097",
+      "high_52_weeks": "76.870000",
+      "low_52_weeks": "18.870000",
       "dividend_yield": null,
       "dividend_per_share": null,
       "distribution_frequency": null,
       "ex_dividend_date": null,
       "payable_date": null
     },
-    "price": 42.6,
+    "price": 41.875,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 501023000.0,
-        "gross_profit": 342031000.0,
-        "net_income": 86941000.0,
-        "net_margin": 17.35
+        "net_income": 86941000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 187192000.0,
-        "gross_profit": null,
-        "net_income": -28920000.0,
-        "net_margin": -15.45
+        "net_income": -28920000.0
       }
     ],
     "next_earnings_date": "2026-08-27"
   },
   "SMCI": {
     "fundamentals": {
-      "average_volume_30_days": 61275660.7332,
-      "average_volume": 72920439.570905,
-      "pe_ratio": 11.196319,
-      "high_52_weeks": 58.78,
-      "low_52_weeks": 19.48,
-      "market_cap": 24024801424.291985,
-      "pb_ratio": 2.89756,
+      "symbol": "SMCI",
+      "average_volume_30_days": "60637308.482800",
+      "pe_ratio": "11.423313",
+      "high_52_weeks": "58.780000",
+      "low_52_weeks": "19.480000",
       "dividend_yield": null,
       "dividend_per_share": null,
       "distribution_frequency": null,
       "ex_dividend_date": null,
       "payable_date": null
     },
-    "price": 36.49,
+    "price": 37.25,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 21972042000.0,
-        "gross_profit": 2429922000.0,
-        "net_income": 1048854000.0,
-        "net_margin": 4.77
+        "net_income": 1048854000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 14989251000.0,
-        "gross_profit": 2061410000.0,
-        "net_income": 1152666000.0,
-        "net_margin": 7.69
+        "net_income": 1152666000.0
       }
     ],
     "next_earnings_date": null
   },
   "ET": {
     "fundamentals": {
-      "average_volume_30_days": 9805610.99307,
-      "average_volume": 9238064.085773,
-      "pe_ratio": 14.532374,
-      "high_52_weeks": 21.64,
-      "low_52_weeks": 16.18,
-      "market_cap": 72567547500.0,
-      "pb_ratio": 2.28325,
-      "dividend_yield": 6.294201,
-      "dividend_per_share": 0.34,
+      "symbol": "ET",
+      "average_volume_30_days": "9856488.319200",
+      "pe_ratio": "14.518671",
+      "high_52_weeks": "21.640000",
+      "low_52_weeks": "16.180000",
+      "dividend_yield": "6.300142",
+      "dividend_per_share": "0.340000",
       "distribution_frequency": "Quarterly",
       "ex_dividend_date": "2026-08-07",
       "payable_date": "2026-08-19"
     },
-    "price": 21.21,
+    "price": 21.195,
     "financials_annual": [],
     "next_earnings_date": null
   },
   "PFE": {
     "fundamentals": {
-      "average_volume_30_days": 39322325.4475,
-      "average_volume": 37461832.409331,
-      "pe_ratio": 36.798199,
-      "high_52_weeks": 28.745,
-      "low_52_weeks": 23.58,
-      "market_cap": 160730224340.36386,
-      "pb_ratio": 1.85908,
-      "dividend_yield": 6.189277,
-      "dividend_per_share": 0.43,
+      "symbol": "PFE",
+      "average_volume_30_days": "39747574.051000",
+      "pe_ratio": "37.168962",
+      "high_52_weeks": "28.745000",
+      "low_52_weeks": "23.580000",
+      "dividend_yield": "6.127538",
+      "dividend_per_share": "0.430000",
       "distribution_frequency": "Quarterly",
       "ex_dividend_date": "2026-07-24",
       "payable_date": "2026-09-01"
     },
-    "price": 27.814,
+    "price": 28.065,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 62579000000.0,
-        "gross_profit": 46512000000.0,
-        "net_income": 7771000000.0,
-        "net_margin": 12.42
+        "net_income": 7771000000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 63627000000.0,
-        "gross_profit": 45776000000.0,
-        "net_income": 8031000000.0,
-        "net_margin": 12.62
+        "net_income": 8031000000.0
       }
     ],
     "next_earnings_date": null
   },
   "BMNR": {
     "fundamentals": {
-      "average_volume_30_days": 34464761.1375,
-      "average_volume": 34206260.502013,
-      "pe_ratio": -2.53,
-      "high_52_weeks": 65.6,
-      "low_52_weeks": 12.8,
-      "market_cap": 13765566125.36,
-      "pb_ratio": 1.07789,
-      "dividend_yield": 0.046361,
-      "dividend_per_share": 0.01,
+      "symbol": "BMNR",
+      "average_volume_30_days": "35492272.402100",
+      "pe_ratio": "-2.680000",
+      "high_52_weeks": "65.600000",
+      "low_52_weeks": "12.800000",
+      "dividend_yield": "0.043802",
+      "dividend_per_share": "0.010000",
       "distribution_frequency": "Annual",
       "ex_dividend_date": "2025-12-08",
       "payable_date": "2025-12-29"
     },
-    "price": 21.555,
+    "price": 22.81,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 6095000.0,
-        "gross_profit": 310000.0,
-        "net_income": 348577000.0,
-        "net_margin": 5719.06
+        "net_income": 348577000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 3310348.0,
-        "gross_profit": 761027.0,
-        "net_income": -3293000.0,
-        "net_margin": -99.48
+        "net_income": -3293000.0
       }
     ],
     "next_earnings_date": null
   },
   "RIVN": {
     "fundamentals": {
-      "average_volume_30_days": 23305658.6155,
-      "average_volume": 20326684.385069,
-      "pe_ratio": -6.2,
-      "high_52_weeks": 22.69,
-      "low_52_weeks": 11.84,
-      "market_cap": 24575841038.34,
-      "pb_ratio": 4.27059,
+      "symbol": "RIVN",
+      "average_volume_30_days": "23726698.469000",
+      "pe_ratio": "-6.570000",
+      "high_52_weeks": "22.690000",
+      "low_52_weeks": "12.160000",
       "dividend_yield": null,
       "dividend_per_share": null,
       "distribution_frequency": null,
       "ex_dividend_date": null,
       "payable_date": null
     },
-    "price": 16.02,
+    "price": 16.96,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 5387000000.0,
-        "gross_profit": 144000000.0,
-        "net_income": -3646000000.0,
-        "net_margin": -67.68
+        "net_income": -3646000000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 4970000000.0,
-        "gross_profit": -1200000000.0,
-        "net_income": -4747000000.0,
-        "net_margin": -95.51
+        "net_income": -4747000000.0
       }
     ],
     "next_earnings_date": null
   },
   "CMG": {
     "fundamentals": {
-      "average_volume_30_days": 18959807.7998,
-      "average_volume": 16729928.504629,
-      "pe_ratio": 31.97122,
-      "high_52_weeks": 43.72,
-      "low_52_weeks": 28.035,
-      "market_cap": 48465521500.0,
-      "pb_ratio": 19.9761,
+      "symbol": "CMG",
+      "average_volume_30_days": "19356754.384100",
+      "pe_ratio": "34.037450",
+      "high_52_weeks": "43.720000",
+      "low_52_weeks": "28.035000",
       "dividend_yield": null,
       "dividend_per_share": null,
       "distribution_frequency": null,
       "ex_dividend_date": null,
       "payable_date": null
     },
-    "price": 35.29,
+    "price": 36.88,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 11925601000.0,
-        "gross_profit": null,
-        "net_income": 1535761000.0,
-        "net_margin": 12.88
+        "net_income": 1535761000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 11313853000.0,
-        "gross_profit": null,
-        "net_income": 1534110000.0,
-        "net_margin": 13.56
+        "net_income": 1534110000.0
       }
     ],
     "next_earnings_date": null
   },
   "NKE": {
     "fundamentals": {
-      "average_volume_30_days": 23548937.2209,
-      "average_volume": 28183757.203451,
-      "pe_ratio": 19.560659,
-      "high_52_weeks": 80.165,
-      "low_52_weeks": 38.86,
-      "market_cap": 59666315270.42678,
-      "pb_ratio": 4.09534,
-      "dividend_yield": 3.970767,
-      "dividend_per_share": 0.41,
+      "symbol": "NKE",
+      "average_volume_30_days": "23672798.486300",
+      "pe_ratio": "19.422472",
+      "high_52_weeks": "80.165000",
+      "low_52_weeks": "38.860000",
+      "dividend_yield": "3.999019",
+      "dividend_per_share": "0.410000",
       "distribution_frequency": "Quarterly",
       "ex_dividend_date": "2026-09-01",
       "payable_date": "2026-10-01"
     },
-    "price": 40.22,
+    "price": 40.755,
     "financials_annual": [
       {
         "fiscal_year": 2026,
-        "revenue": 46398000000.0,
-        "gross_profit": 19911000000.0,
-        "net_income": 3108000000.0,
-        "net_margin": 6.7
+        "net_income": 3108000000.0
       },
       {
         "fiscal_year": 2025,
-        "revenue": 46309000000.0,
-        "gross_profit": 19790000000.0,
-        "net_income": 3219000000.0,
-        "net_margin": 6.95
+        "net_income": 3219000000.0
       }
     ],
     "next_earnings_date": "2026-09-29"
   },
   "QXO": {
     "fundamentals": {
-      "average_volume_30_days": 19079717.5023,
-      "average_volume": 17653334.90492,
-      "pe_ratio": -14.93,
-      "high_52_weeks": 27.61,
-      "low_52_weeks": 13.145,
-      "market_cap": 13819376467.62013,
-      "pb_ratio": 1.0981,
+      "symbol": "QXO",
+      "average_volume_30_days": "18545173.251100",
+      "pe_ratio": "-15.400000",
+      "high_52_weeks": "27.610000",
+      "low_52_weeks": "13.145000",
       "dividend_yield": null,
-      "dividend_per_share": 3.2734,
+      "dividend_per_share": "3.273400",
       "distribution_frequency": null,
       "ex_dividend_date": "2024-06-05",
       "payable_date": "2024-06-12"
     },
-    "price": 13.32,
+    "price": 13.75,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 6842200000.0,
-        "gross_profit": 1572700000.0,
-        "net_income": -279400000.0,
-        "net_margin": -4.08
+        "net_income": -279400000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 56873000.0,
-        "gross_profit": 22932000.0,
-        "net_income": 27969000.0,
-        "net_margin": 49.18
+        "net_income": 27969000.0
       }
     ],
     "next_earnings_date": null
   },
   "PYPL": {
     "fundamentals": {
-      "average_volume_30_days": 11607668.7336,
-      "average_volume": 9694531.597509,
-      "pe_ratio": 11.574512,
-      "high_52_weeks": 79.215,
-      "low_52_weeks": 38.46,
-      "market_cap": 53282388385.0,
-      "pb_ratio": 2.66385,
-      "dividend_yield": 0.685714,
-      "dividend_per_share": 0.14,
+      "symbol": "PYPL",
+      "average_volume_30_days": "11413305.252200",
+      "pe_ratio": "11.631203",
+      "high_52_weeks": "79.215000",
+      "low_52_weeks": "38.460000",
+      "dividend_yield": "0.682372",
+      "dividend_per_share": "0.140000",
       "distribution_frequency": "Quarterly",
       "ex_dividend_date": "2026-09-04",
       "payable_date": "2026-09-25"
     },
-    "price": 62.285,
+    "price": 61.57,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 33172000000.0,
-        "gross_profit": null,
-        "net_income": 5233000000.0,
-        "net_margin": 15.78
+        "net_income": 5233000000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 31797000000.0,
-        "gross_profit": null,
-        "net_income": 4147000000.0,
-        "net_margin": 13.04
+        "net_income": 4147000000.0
       }
     ],
     "next_earnings_date": null
   },
   "AAL": {
     "fundamentals": {
-      "average_volume_30_days": 64217231.5589,
-      "average_volume": 50980332.204589,
-      "pe_ratio": -27.39,
-      "high_52_weeks": 18.79,
-      "low_52_weeks": 10.09,
-      "market_cap": 8956454100.0,
-      "pb_ratio": -2.2531,
+      "symbol": "AAL",
+      "average_volume_30_days": "63246180.539700",
+      "pe_ratio": "-28.000000",
+      "high_52_weeks": "18.790000",
+      "low_52_weeks": "10.090000",
       "dividend_yield": null,
-      "dividend_per_share": 0.1,
+      "dividend_per_share": "0.100000",
       "distribution_frequency": "Quarterly",
       "ex_dividend_date": "2020-02-04",
       "payable_date": "2020-02-19"
     },
-    "price": 13.53,
+    "price": 13.83,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 54633000000.0,
-        "gross_profit": null,
-        "net_income": 111000000.0,
-        "net_margin": 0.2
+        "net_income": 111000000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 54211000000.0,
-        "gross_profit": null,
-        "net_income": 846000000.0,
-        "net_margin": 1.56
+        "net_income": 846000000.0
       }
     ],
     "next_earnings_date": null
   },
   "T": {
     "fundamentals": {
-      "average_volume_30_days": 60283516.7974,
-      "average_volume": 33412063.965967,
-      "pe_ratio": 8.307153,
-      "high_52_weeks": 29.79,
-      "low_52_weeks": 19.89,
-      "market_cap": 172543180200.0,
-      "pb_ratio": 1.56455,
-      "dividend_yield": 4.41879,
-      "dividend_per_share": 0.2775,
+      "symbol": "T",
+      "average_volume_30_days": "55522931.587700",
+      "pe_ratio": "8.363372",
+      "high_52_weeks": "29.790000",
+      "low_52_weeks": "19.890000",
+      "dividend_yield": "4.389087",
+      "dividend_per_share": "0.277500",
       "distribution_frequency": "Quarterly",
       "ex_dividend_date": "2026-07-10",
       "payable_date": "2026-08-03"
     },
-    "price": 25.18,
+    "price": 25.31,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 125648000000.0,
-        "gross_profit": null,
-        "net_income": 21953000000.0,
-        "net_margin": 17.47
+        "net_income": 21953000000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 122336000000.0,
-        "gross_profit": null,
-        "net_income": 10948000000.0,
-        "net_margin": 8.95
+        "net_income": 10948000000.0
       }
     ],
     "next_earnings_date": null
   },
   "IONQ": {
     "fundamentals": {
-      "average_volume_30_days": 20479508.2186,
-      "average_volume": 19130676.725722,
-      "pe_ratio": -9.13,
-      "high_52_weeks": 84.64,
-      "low_52_weeks": 25.89,
-      "market_cap": 16825303396.663923,
-      "pb_ratio": 4.96575,
+      "symbol": "IONQ",
+      "average_volume_30_days": "20446005.256100",
+      "pe_ratio": "-9.870000",
+      "high_52_weeks": "84.640000",
+      "low_52_weeks": "25.890000",
       "dividend_yield": null,
       "dividend_per_share": null,
       "distribution_frequency": null,
       "ex_dividend_date": null,
       "payable_date": null
     },
-    "price": 41.5298,
+    "price": 44.85,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 130016000.0,
-        "gross_profit": null,
-        "net_income": -510378000.0,
-        "net_margin": -392.55
+        "net_income": -510378000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 43073000.0,
-        "gross_profit": null,
-        "net_income": -331647000.0,
-        "net_margin": -769.96
+        "net_income": -331647000.0
       }
     ],
     "next_earnings_date": null
   },
   "NU": {
     "fundamentals": {
-      "average_volume_30_days": 76757358.9087,
-      "average_volume": 77573656.775619,
-      "pe_ratio": 19.65559,
-      "high_52_weeks": 18.98,
-      "low_52_weeks": 11.2,
-      "market_cap": 68665337139.07,
-      "pb_ratio": 5.32665,
+      "symbol": "NU",
+      "average_volume_30_days": "73231027.172300",
+      "pe_ratio": "19.615229",
+      "high_52_weeks": "18.980000",
+      "low_52_weeks": "11.200000",
       "dividend_yield": null,
       "dividend_per_share": null,
       "distribution_frequency": null,
       "ex_dividend_date": null,
       "payable_date": null
     },
-    "price": 14.215,
+    "price": 14.575,
     "financials_annual": [],
     "next_earnings_date": null
   },
   "RKT": {
     "fundamentals": {
-      "average_volume_30_days": 27233958.296,
-      "average_volume": 26861000.693904,
-      "pe_ratio": 97.338656,
-      "high_52_weeks": 24.36,
-      "low_52_weeks": 12.17,
-      "market_cap": 29548019877.65,
-      "pb_ratio": 1.75877,
+      "symbol": "RKT",
+      "average_volume_30_days": "27331859.781000",
+      "pe_ratio": "92.681304",
+      "high_52_weeks": "24.360000",
+      "low_52_weeks": "12.170000",
       "dividend_yield": null,
-      "dividend_per_share": 0.8,
+      "dividend_per_share": "0.800000",
       "distribution_frequency": "Other Frequency",
       "ex_dividend_date": "2025-03-20",
       "payable_date": "2025-04-03"
     },
-    "price": 14.05,
+    "price": 13.925,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": null,
-        "gross_profit": null,
-        "net_income": -68000000.0,
-        "net_margin": null
+        "net_income": -68000000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": null,
-        "gross_profit": 2312959000.0,
-        "net_income": 29370000.0,
-        "net_margin": null
+        "net_income": 29370000.0
       }
     ],
     "next_earnings_date": null
   },
   "F": {
     "fundamentals": {
-      "average_volume_30_days": 51005275.3257,
-      "average_volume": 37379645.834943,
-      "pe_ratio": -8.08,
-      "high_52_weeks": 17.78,
-      "low_52_weeks": 11.11,
-      "market_cap": 55848348200.431046,
-      "pb_ratio": 1.71634,
-      "dividend_yield": 4.137931,
-      "dividend_per_share": 0.15,
+      "symbol": "F",
+      "average_volume_30_days": "50839389.801700",
+      "pe_ratio": "-8.320000",
+      "high_52_weeks": "17.780000",
+      "low_52_weeks": "11.110000",
+      "dividend_yield": "4.163775",
+      "dividend_per_share": "0.150000",
       "distribution_frequency": "Quarterly",
       "ex_dividend_date": "2026-08-11",
       "payable_date": "2026-09-01"
     },
-    "price": 14.005,
+    "price": 14.415,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 187267000000.0,
-        "gross_profit": 12801000000.0,
-        "net_income": -8162000000.0,
-        "net_margin": -4.36
+        "net_income": -8162000000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 184992000000.0,
-        "gross_profit": 26558000000.0,
-        "net_income": 5879000000.0,
-        "net_margin": 3.18
+        "net_income": 5879000000.0
       }
     ],
     "next_earnings_date": null
   },
   "VZ": {
     "fundamentals": {
-      "average_volume_30_days": 22949359.9963,
-      "average_volume": 15362701.05933,
-      "pe_ratio": 12.854167,
-      "high_52_weeks": 51.68,
-      "low_52_weeks": 38.39,
-      "market_cap": 204498271600.0,
-      "pb_ratio": 1.97344,
-      "dividend_yield": 5.66248,
-      "dividend_per_share": 0.7075,
+      "symbol": "VZ",
+      "average_volume_30_days": "22720747.520200",
+      "pe_ratio": "12.877604",
+      "high_52_weeks": "51.680000",
+      "low_52_weeks": "38.390000",
+      "dividend_yield": "5.652174",
+      "dividend_per_share": "0.707500",
       "distribution_frequency": "Quarterly",
       "ex_dividend_date": "2026-07-10",
       "payable_date": "2026-08-03"
     },
-    "price": 49.22,
+    "price": 49.45,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 138191000000.0,
-        "gross_profit": null,
-        "net_income": 17174000000.0,
-        "net_margin": 12.43
+        "net_income": 17174000000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 134788000000.0,
-        "gross_profit": null,
-        "net_income": 17506000000.0,
-        "net_margin": 12.99
+        "net_income": 17506000000.0
       }
     ],
     "next_earnings_date": null
   },
   "AGNC": {
     "fundamentals": {
-      "average_volume_30_days": 19045360.0989,
-      "average_volume": 14230394.287264,
-      "pe_ratio": 5.811697,
-      "high_52_weeks": 12.19,
-      "low_52_weeks": 9.62,
-      "market_cap": 12951385137.053247,
-      "pb_ratio": 1.2198,
-      "dividend_yield": 12.99639,
-      "dividend_per_share": 0.12,
+      "symbol": "AGNC",
+      "average_volume_30_days": "18429419.232200",
+      "pe_ratio": "5.712038",
+      "high_52_weeks": "12.190000",
+      "low_52_weeks": "9.620000",
+      "dividend_yield": "13.223140",
+      "dividend_per_share": "0.120000",
       "distribution_frequency": "Monthly",
       "ex_dividend_date": "2026-08-31",
       "payable_date": "2026-09-10"
     },
-    "price": 10.925,
+    "price": 10.895,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": null,
-        "gross_profit": null,
-        "net_income": 1670000000.0,
-        "net_margin": null
+        "net_income": 1670000000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": null,
-        "gross_profit": null,
-        "net_income": 863000000.0,
-        "net_margin": null
+        "net_income": 863000000.0
       }
     ],
     "next_earnings_date": null
   },
   "CMCSA": {
     "fundamentals": {
-      "average_volume_30_days": 29346893.208,
-      "average_volume": 20994594.716924,
-      "pe_ratio": 8.555145,
-      "high_52_weeks": 32.855,
-      "low_52_weeks": 21.28,
-      "market_cap": 93758523558.50612,
-      "pb_ratio": 1.04382,
-      "dividend_yield": 4.996215,
-      "dividend_per_share": 0.33,
+      "symbol": "CMCSA",
+      "average_volume_30_days": "29051817.711200",
+      "pe_ratio": "8.694385",
+      "high_52_weeks": "32.855000",
+      "low_52_weeks": "21.280000",
+      "dividend_yield": "4.916201",
+      "dividend_per_share": "0.330000",
       "distribution_frequency": "Quarterly",
       "ex_dividend_date": "2026-10-07",
       "payable_date": "2026-10-28"
     },
-    "price": 26.421,
+    "price": 26.84,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 123707000000.0,
-        "gross_profit": null,
-        "net_income": 19998000000.0,
-        "net_margin": 16.17
+        "net_income": 19998000000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 123731000000.0,
-        "gross_profit": null,
-        "net_income": 16192000000.0,
-        "net_margin": 13.09
+        "net_income": 16192000000.0
       }
     ],
     "next_earnings_date": null
   },
   "NVO": {
     "fundamentals": {
-      "average_volume_30_days": 13340415.2564,
-      "average_volume": 11660127.623945,
-      "pe_ratio": 11.345994,
-      "high_52_weeks": 64.16,
-      "low_52_weeks": 35.12,
-      "market_cap": 207244175494.3468,
-      "pb_ratio": 6.07115,
-      "dividend_yield": 2.647642,
-      "dividend_per_share": 0.407811,
+      "symbol": "NVO",
+      "average_volume_30_days": "13563321.319000",
+      "pe_ratio": "11.409462",
+      "high_52_weeks": "64.160000",
+      "low_52_weeks": "35.120000",
+      "dividend_yield": "2.632914",
+      "dividend_per_share": "0.407811",
       "distribution_frequency": "Semi-Annual",
       "ex_dividend_date": "2026-08-17",
       "payable_date": "2026-08-25"
     },
-    "price": 46.18,
+    "price": 46.721,
     "financials_annual": [],
     "next_earnings_date": null
   },
   "FHN": {
     "fundamentals": {
-      "average_volume_30_days": 5060590.78004,
-      "average_volume": 4917548.946621,
-      "pe_ratio": 11.94123,
-      "high_52_weeks": 26.56,
-      "low_52_weeks": 19.8001,
-      "market_cap": 11688083427.780067,
-      "pb_ratio": 1.38892,
-      "dividend_yield": 2.573382,
-      "dividend_per_share": 0.17,
+      "symbol": "FHN",
+      "average_volume_30_days": "4910913.028250",
+      "pe_ratio": "11.825995",
+      "high_52_weeks": "26.560000",
+      "low_52_weeks": "19.800100",
+      "dividend_yield": "2.598457",
+      "dividend_per_share": "0.170000",
       "distribution_frequency": "Quarterly",
       "ex_dividend_date": "2026-09-11",
       "payable_date": "2026-10-01"
     },
-    "price": 24.67,
+    "price": 24.6259,
     "financials_annual": [],
     "next_earnings_date": null
   },
   "PBR": {
     "fundamentals": {
-      "average_volume_30_days": 15634438.9836,
-      "average_volume": 17667065.19386,
-      "pe_ratio": 4.68916,
-      "high_52_weeks": 22.24,
-      "low_52_weeks": 11.43,
-      "market_cap": 117584285580.43689,
-      "pb_ratio": 1.28582,
-      "dividend_yield": 5.185059,
-      "dividend_per_share": 0.225356,
+      "symbol": "PBR",
+      "average_volume_30_days": "15771096.070600",
+      "pe_ratio": "4.843442",
+      "high_52_weeks": "22.240000",
+      "low_52_weeks": "11.430000",
+      "dividend_yield": "4.986517",
+      "dividend_per_share": "0.225356",
       "distribution_frequency": "Other Frequency",
       "ex_dividend_date": "2026-06-03",
       "payable_date": "2026-08-27"
     },
-    "price": 19.02,
+    "price": 19.15,
     "financials_annual": [],
     "next_earnings_date": null
   },
   "VALE": {
     "fundamentals": {
-      "average_volume_30_days": 23245360.6637,
-      "average_volume": 22724563.234073,
-      "pe_ratio": 29.189416,
-      "high_52_weeks": 17.94,
-      "low_52_weeks": 9.68,
-      "market_cap": 63328376952.19424,
-      "pb_ratio": 1.55712,
-      "dividend_yield": 6.536288,
-      "dividend_per_share": 0.326659,
+      "symbol": "VALE",
+      "average_volume_30_days": "23837105.194900",
+      "pe_ratio": "30.638387",
+      "high_52_weeks": "17.940000",
+      "low_52_weeks": "9.800000",
+      "dividend_yield": "6.227169",
+      "dividend_per_share": "0.326659",
       "distribution_frequency": "Other Frequency",
       "ex_dividend_date": "2026-08-13",
       "payable_date": "2026-09-10"
     },
-    "price": 14.225,
+    "price": 14.585,
     "financials_annual": [],
     "next_earnings_date": null
   },
   "U": {
     "fundamentals": {
-      "average_volume_30_days": 12215093.1319,
-      "average_volume": 12244717.349967,
-      "pe_ratio": -34.18,
-      "high_52_weeks": 52.15,
-      "low_52_weeks": 16.78,
-      "market_cap": 20475140725.0,
-      "pb_ratio": 6.83208,
+      "symbol": "U",
+      "average_volume_30_days": "12125123.334500",
+      "pe_ratio": "-34.470000",
+      "high_52_weeks": "52.150000",
+      "low_52_weeks": "16.780000",
       "dividend_yield": null,
       "dividend_per_share": null,
       "distribution_frequency": null,
       "ex_dividend_date": null,
       "payable_date": null
     },
-    "price": 46.525,
+    "price": 46.93,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 1849648000.0,
-        "gross_profit": 1371909000.0,
-        "net_income": -402765000.0,
-        "net_margin": -21.78
+        "net_income": -402765000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 1813255000.0,
-        "gross_profit": 1332402000.0,
-        "net_income": -664114000.0,
-        "net_margin": -36.63
+        "net_income": -664114000.0
       }
     ],
     "next_earnings_date": null
   },
   "OWL": {
     "fundamentals": {
-      "average_volume_30_days": 20570893.055,
-      "average_volume": 19750186.765569,
-      "pe_ratio": 148.798989,
-      "high_52_weeks": 19.2894,
-      "low_52_weeks": 7.95,
-      "market_cap": 17765855563.816055,
-      "pb_ratio": 4.0318,
-      "dividend_yield": 7.68904,
-      "dividend_per_share": 0.23,
+      "symbol": "OWL",
+      "average_volume_30_days": "20449546.224200",
+      "pe_ratio": "147.534766",
+      "high_52_weeks": "19.289400",
+      "low_52_weeks": "7.950000",
+      "dividend_yield": "7.754927",
+      "dividend_per_share": "0.230000",
       "distribution_frequency": "Quarterly",
       "ex_dividend_date": "2026-08-13",
       "payable_date": "2026-08-27"
     },
-    "price": 11.395,
+    "price": 11.68,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 567754000.0,
-        "gross_profit": null,
-        "net_income": 78833000.0,
-        "net_margin": 13.89
+        "net_income": 78833000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 527859000.0,
-        "gross_profit": null,
-        "net_income": 109584000.0,
-        "net_margin": 20.76
+        "net_income": 109584000.0
       }
     ],
     "next_earnings_date": null
   },
   "BSX": {
     "fundamentals": {
-      "average_volume_30_days": 19990517.1946,
-      "average_volume": 16366567.308302,
-      "pe_ratio": 20.019464,
-      "high_52_weeks": 109.5,
-      "low_52_weeks": 42.2,
-      "market_cap": 71577469700.0,
-      "pb_ratio": 2.86498,
+      "symbol": "BSX",
+      "average_volume_30_days": "20468009.595000",
+      "pe_ratio": "20.424962",
+      "high_52_weeks": "109.500000",
+      "low_52_weeks": "42.200000",
       "dividend_yield": null,
       "dividend_per_share": null,
       "distribution_frequency": null,
       "ex_dividend_date": null,
       "payable_date": null
     },
-    "price": 49.39,
+    "price": 50.39,
     "financials_annual": [],
     "next_earnings_date": null
   },
   "HPE": {
     "fundamentals": {
-      "average_volume_30_days": 16239031.3575,
-      "average_volume": 16007584.255641,
-      "pe_ratio": 49.967084,
-      "high_52_weeks": 64.25,
-      "low_52_weeks": 19.84,
-      "market_cap": 70103331031.1071,
-      "pb_ratio": 2.7798,
-      "dividend_yield": 1.049313,
-      "dividend_per_share": 0.1425,
+      "symbol": "HPE",
+      "average_volume_30_days": "16007577.940100",
+      "pe_ratio": "50.268033",
+      "high_52_weeks": "64.250000",
+      "low_52_weeks": "19.840000",
+      "dividend_yield": "1.043031",
+      "dividend_per_share": "0.142500",
       "distribution_frequency": "Quarterly",
       "ex_dividend_date": "2026-06-16",
       "payable_date": "2026-07-15"
     },
-    "price": 52.94,
+    "price": 53.46,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 34296000000.0,
-        "gross_profit": null,
-        "net_income": 57000000.0,
-        "net_margin": 0.17
+        "net_income": 57000000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 30127000000.0,
-        "gross_profit": null,
-        "net_income": 2579000000.0,
-        "net_margin": 8.56
+        "net_income": 2579000000.0
       }
     ],
     "next_earnings_date": "2026-09-02"
   },
   "CCL": {
     "fundamentals": {
-      "average_volume_30_days": 18193955.2537,
-      "average_volume": 15898643.096028,
-      "pe_ratio": 12.020357,
-      "high_52_weeks": 34.03,
-      "low_52_weeks": 23.45,
-      "market_cap": 34775393522.855,
-      "pb_ratio": 2.82399,
-      "dividend_yield": 1.124016,
-      "dividend_per_share": 0.15,
+      "symbol": "CCL",
+      "average_volume_30_days": "18237924.190300",
+      "pe_ratio": "11.588002",
+      "high_52_weeks": "34.030000",
+      "low_52_weeks": "23.450000",
+      "dividend_yield": "1.165954",
+      "dividend_per_share": "0.150000",
       "distribution_frequency": "Quarterly",
       "ex_dividend_date": "2026-08-07",
       "payable_date": "2026-08-28"
     },
-    "price": 25.39,
+    "price": 25.72,
     "financials_annual": [],
     "next_earnings_date": "2026-09-28"
   },
   "RBLX": {
     "fundamentals": {
-      "average_volume_30_days": 14841752.3438,
-      "average_volume": 13262619.824977,
-      "pe_ratio": -27.28,
-      "high_52_weeks": 141.9999,
-      "low_52_weeks": 33.88,
-      "market_cap": 27599916760.0,
-      "pb_ratio": 181.814,
+      "symbol": "RBLX",
+      "average_volume_30_days": "15035620.158000",
+      "pe_ratio": "-27.100000",
+      "high_52_weeks": "141.999900",
+      "low_52_weeks": "33.880000",
       "dividend_yield": null,
       "dividend_per_share": null,
       "distribution_frequency": null,
       "ex_dividend_date": null,
       "payable_date": null
     },
-    "price": 38.635,
+    "price": 38.398,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 4890551000.0,
-        "gross_profit": 3818252000.0,
-        "net_income": -1065057000.0,
-        "net_margin": -21.78
+        "net_income": -1065057000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 3601979000.0,
-        "gross_profit": 2800817000.0,
-        "net_income": -935384000.0,
-        "net_margin": -25.97
+        "net_income": -935384000.0
       }
     ],
     "next_earnings_date": null
   },
   "HPQ": {
     "fundamentals": {
-      "average_volume_30_days": 14069623.5891,
-      "average_volume": 12597060.550769,
-      "pe_ratio": 11.049601,
-      "high_52_weeks": 32.19,
-      "low_52_weeks": 17.56,
-      "market_cap": 26946420195.0,
-      "pb_ratio": -187.1349,
-      "dividend_yield": 3.972612,
-      "dividend_per_share": 0.3,
+      "symbol": "HPQ",
+      "average_volume_30_days": "13977949.127300",
+      "pe_ratio": "10.964718",
+      "high_52_weeks": "32.190000",
+      "low_52_weeks": "17.560000",
+      "dividend_yield": "4.003366",
+      "dividend_per_share": "0.300000",
       "distribution_frequency": "Quarterly",
       "ex_dividend_date": "2026-09-09",
       "payable_date": "2026-10-07"
     },
-    "price": 29.465,
+    "price": 29.705,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 55295000000.0,
-        "gross_profit": 11392000000.0,
-        "net_income": 2529000000.0,
-        "net_margin": 4.57
+        "net_income": 2529000000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 53559000000.0,
-        "gross_profit": 11818000000.0,
-        "net_income": 2775000000.0,
-        "net_margin": 5.18
+        "net_income": 2775000000.0
       }
     ],
     "next_earnings_date": "2026-08-26"
   },
   "B": {
     "fundamentals": {
-      "average_volume_30_days": 10662397.6631,
-      "average_volume": 14045255.651331,
-      "pe_ratio": 11.902251,
-      "high_52_weeks": 54.69,
-      "low_52_weeks": 24.89,
-      "market_cap": 76275829226.96631,
-      "pb_ratio": 2.78895,
-      "dividend_yield": 1.971963,
-      "dividend_per_share": 0.175,
+      "symbol": "B",
+      "average_volume_30_days": "10837278.914700",
+      "pe_ratio": "12.244373",
+      "high_52_weeks": "54.690000",
+      "low_52_weeks": "25.280000",
+      "dividend_yield": "1.916864",
+      "dividend_per_share": "0.175000",
       "distribution_frequency": "Quarterly",
       "ex_dividend_date": "2026-08-31",
       "payable_date": "2026-09-15"
     },
-    "price": 46.2887,
+    "price": 47.615,
     "financials_annual": [],
     "next_earnings_date": null
   },
   "JD": {
     "fundamentals": {
-      "average_volume_30_days": 9110878.82024,
-      "average_volume": 11676742.477944,
-      "pe_ratio": 19.835435,
-      "high_52_weeks": 36.86,
-      "low_52_weeks": 24.508,
-      "market_cap": 40177039836.32574,
-      "pb_ratio": 1.2805,
-      "dividend_yield": 3.3322,
-      "dividend_per_share": 0.98,
+      "symbol": "JD",
+      "average_volume_30_days": "9077023.952620",
+      "pe_ratio": "19.808458",
+      "high_52_weeks": "36.860000",
+      "low_52_weeks": "24.508000",
+      "dividend_yield": "3.336738",
+      "dividend_per_share": "0.980000",
       "distribution_frequency": "Annual",
       "ex_dividend_date": "2026-04-09",
       "payable_date": "2026-04-29"
     },
-    "price": 29.42,
+    "price": 29.375,
     "financials_annual": [],
     "next_earnings_date": null
   },
   "MRNA": {
     "fundamentals": {
-      "average_volume_30_days": 17847614.7166,
-      "average_volume": 34608087.781711,
-      "pe_ratio": -16.7,
-      "high_52_weeks": 176.66,
-      "low_52_weeks": 22.28,
-      "market_cap": 53234128240.0,
-      "pb_ratio": 7.86787,
+      "symbol": "MRNA",
+      "average_volume_30_days": "21454513.789000",
+      "pe_ratio": "-18.180000",
+      "high_52_weeks": "176.660000",
+      "low_52_weeks": "22.280000",
       "dividend_yield": null,
       "dividend_per_share": null,
       "distribution_frequency": null,
       "ex_dividend_date": null,
       "payable_date": null
     },
-    "price": 133.34,
+    "price": 145.13,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 1944000000.0,
-        "gross_profit": 1076000000.0,
-        "net_income": -2822000000.0,
-        "net_margin": -145.16
+        "net_income": -2822000000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 3236000000.0,
-        "gross_profit": 1772000000.0,
-        "net_income": -3561000000.0,
-        "net_margin": -110.04
+        "net_income": -3561000000.0
       }
     ],
     "next_earnings_date": null
   },
   "DKNG": {
     "fundamentals": {
-      "average_volume_30_days": 13086457.7242,
-      "average_volume": 12642142.493685,
-      "pe_ratio": -67.19,
-      "high_52_weeks": 48.78,
-      "low_52_weeks": 20.46,
-      "market_cap": 11665374840.0,
-      "pb_ratio": 22.0453,
+      "symbol": "DKNG",
+      "average_volume_30_days": "13026362.204300",
+      "pe_ratio": "-70.260000",
+      "high_52_weeks": "48.780000",
+      "low_52_weeks": "20.460000",
       "dividend_yield": null,
       "dividend_per_share": null,
       "distribution_frequency": null,
       "ex_dividend_date": null,
       "payable_date": null
     },
-    "price": 25.02,
+    "price": 26.17,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 6054525000.0,
-        "gross_profit": 2497578000.0,
-        "net_income": 3710000.0,
-        "net_margin": 0.06
+        "net_income": 3710000.0
       },
       {
         "fiscal_year": 2024,
-        "revenue": 4767699000.0,
-        "gross_profit": 1817138000.0,
-        "net_income": -507285000.0,
-        "net_margin": -10.64
+        "net_income": -507285000.0
       }
     ],
     "next_earnings_date": null
   },
   "STM": {
     "fundamentals": {
-      "average_volume_30_days": 10908005.9341,
-      "average_volume": 8080185.490105,
-      "pe_ratio": 98.226812,
-      "high_52_weeks": 81.42,
-      "low_52_weeks": 21.11,
-      "market_cap": 46272405439.32704,
-      "pb_ratio": 2.54158,
-      "dividend_yield": 0.607022,
-      "dividend_per_share": 0.0765,
+      "symbol": "STM",
+      "average_volume_30_days": "10693302.291800",
+      "pe_ratio": "98.519096",
+      "high_52_weeks": "81.420000",
+      "low_52_weeks": "21.110000",
+      "dividend_yield": "0.605222",
+      "dividend_per_share": "0.076500",
       "distribution_frequency": "Quarterly",
       "ex_dividend_date": "2026-09-22",
       "payable_date": "2026-09-29"
     },
-    "price": 49.925,
+    "price": 50.58,
     "financials_annual": [],
     "next_earnings_date": null
   },
   "FIG": {
     "fundamentals": {
-      "average_volume_30_days": 22066760.3879,
-      "average_volume": 17849227.353464,
-      "pe_ratio": -8.91,
-      "high_52_weeks": 78.0,
-      "low_52_weeks": 16.6,
-      "market_cap": 14551169614.800001,
-      "pb_ratio": 9.61766,
+      "symbol": "FIG",
+      "average_volume_30_days": "21216128.437300",
+      "pe_ratio": "-8.840000",
+      "high_52_weeks": "78.000000",
+      "low_52_weeks": "16.600000",
       "dividend_yield": null,
       "dividend_per_share": null,
       "distribution_frequency": null,
       "ex_dividend_date": null,
       "payable_date": null
     },
-    "price": 27.3,
+    "price": 27.1,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "revenue": 1055788000.0,
-        "gross_profit": 870261000.0,
-        "net_income": -1250463000.0,
-        "net_margin": -118.44
+        "net_income": -1250463000.0
       }
     ],
     "next_earnings_date": null
