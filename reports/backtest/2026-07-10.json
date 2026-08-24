@@ -1,27 +1,9 @@
 {
   "date": "2026-07-10",
-  "new_entries": 9,
+  "new_entries": 8,
   "closed_today": 1,
-  "open_count": 55,
+  "open_count": 45,
   "entries": [
-    {
-      "symbol": "RTX",
-      "type": "double_bottom",
-      "neckline": 194.17,
-      "stop": 177.5753,
-      "target_2R": 234.6043,
-      "risk_per_share": 19.0097,
-      "shares": 1.5781,
-      "break_time": "2026-07-02T13:30:00Z",
-      "bars_since_break": 11,
-      "in_pullback": true,
-      "last_close": 195.94,
-      "last_bar_time": "2026-07-10T17:30:00Z",
-      "scan_date": "2026-07-10",
-      "entry": 195.94,
-      "entry_time": "2026-07-10T17:30:00Z",
-      "status": "open"
-    },
     {
       "symbol": "RTX",
       "type": "inverse_hns",
@@ -198,5 +180,5 @@
       "days_held": 10.83
     }
   ],
-  "watching_count": 12
+  "watching_count": 10
 }

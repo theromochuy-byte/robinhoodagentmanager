@@ -1,8 +1,8 @@
 {
   "date": "2026-08-04",
-  "new_entries": 13,
+  "new_entries": 9,
   "closed_today": 7,
-  "open_count": 159,
+  "open_count": 126,
   "entries": [
     {
       "symbol": "GE",
@@ -37,42 +37,6 @@
       "last_bar_time": "2026-08-04T17:30:00Z",
       "scan_date": "2026-08-04",
       "entry": 516.95,
-      "entry_time": "2026-08-04T17:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "DDOG",
-      "type": "double_bottom",
-      "neckline": 271.54,
-      "stop": 235.3699,
-      "target_2R": 345.2303,
-      "risk_per_share": 36.6201,
-      "shares": 0.8192,
-      "break_time": "2026-07-31T13:30:00Z",
-      "bars_since_break": 5,
-      "in_pullback": true,
-      "last_close": 288.2,
-      "last_bar_time": "2026-08-04T17:30:00Z",
-      "scan_date": "2026-08-04",
-      "entry": 288.2,
-      "entry_time": "2026-08-04T17:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "MDT",
-      "type": "double_bottom",
-      "neckline": 85.99,
-      "stop": 77.427,
-      "target_2R": 106.206,
-      "risk_per_share": 9.593,
-      "shares": 3.1273,
-      "break_time": "2026-07-28T13:30:00Z",
-      "bars_since_break": 11,
-      "in_pullback": true,
-      "last_close": 86.2,
-      "last_bar_time": "2026-08-04T17:30:00Z",
-      "scan_date": "2026-08-04",
-      "entry": 86.2,
       "entry_time": "2026-08-04T17:30:00Z",
       "status": "open"
     },
@@ -114,24 +78,6 @@
     },
     {
       "symbol": "ZBH",
-      "type": "double_bottom",
-      "neckline": 95.48,
-      "stop": 83.9777,
-      "target_2R": 119.9247,
-      "risk_per_share": 11.9823,
-      "shares": 2.5037,
-      "break_time": "2026-07-28T13:30:00Z",
-      "bars_since_break": 11,
-      "in_pullback": true,
-      "last_close": 95.88,
-      "last_bar_time": "2026-08-04T17:30:00Z",
-      "scan_date": "2026-08-04",
-      "entry": 95.88,
-      "entry_time": "2026-08-04T17:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "ZBH",
       "type": "inverse_hns",
       "neckline": 95.48,
       "stop": 85.4837,
@@ -163,24 +109,6 @@
       "last_bar_time": "2026-08-04T17:30:00Z",
       "scan_date": "2026-08-04",
       "entry": 104.56,
-      "entry_time": "2026-08-04T17:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "ILMN",
-      "type": "double_bottom",
-      "neckline": 199.1395,
-      "stop": 177.3964,
-      "target_2R": 244.8472,
-      "risk_per_share": 22.4836,
-      "shares": 1.3343,
-      "break_time": "2026-07-30T13:30:00Z",
-      "bars_since_break": 7,
-      "in_pullback": true,
-      "last_close": 203.1,
-      "last_bar_time": "2026-08-04T17:30:00Z",
-      "scan_date": "2026-08-04",
-      "entry": 203.1,
       "entry_time": "2026-08-04T17:30:00Z",
       "status": "open"
     },
@@ -444,5 +372,5 @@
       "days_held": 10.83
     }
   ],
-  "watching_count": 38
+  "watching_count": 29
 }

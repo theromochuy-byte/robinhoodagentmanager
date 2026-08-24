@@ -1,8 +1,8 @@
 {
   "date": "2026-08-24",
-  "new_entries": 9,
-  "closed_today": 2,
-  "open_count": 260,
+  "new_entries": 6,
+  "closed_today": 1,
+  "open_count": 213,
   "entries": [
     {
       "symbol": "NFLX",
@@ -19,24 +19,6 @@
       "last_bar_time": "2026-08-24T13:30:00Z",
       "scan_date": "2026-08-24",
       "entry": 80.2905,
-      "entry_time": "2026-08-24T13:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "COST",
-      "type": "double_bottom",
-      "neckline": 966.135,
-      "stop": 919.6431,
-      "target_2R": 1059.5838,
-      "risk_per_share": 46.6469,
-      "shares": 0.3881,
-      "break_time": "2026-08-18T13:30:00Z",
-      "bars_since_break": 8,
-      "in_pullback": true,
-      "last_close": 968.66,
-      "last_bar_time": "2026-08-24T13:30:00Z",
-      "scan_date": "2026-08-24",
-      "entry": 968.66,
       "entry_time": "2026-08-24T13:30:00Z",
       "status": "open"
     },
@@ -114,24 +96,6 @@
     },
     {
       "symbol": "SPGI",
-      "type": "double_bottom",
-      "neckline": 424.34,
-      "stop": 394.9451,
-      "target_2R": 499.2098,
-      "risk_per_share": 34.7549,
-      "shares": 0.8632,
-      "break_time": "2026-08-19T13:30:00Z",
-      "bars_since_break": 6,
-      "in_pullback": true,
-      "last_close": 432.31,
-      "last_bar_time": "2026-08-24T13:30:00Z",
-      "scan_date": "2026-08-24",
-      "entry": 432.31,
-      "entry_time": "2026-08-24T13:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "SPGI",
       "type": "inverse_hns",
       "neckline": 424.34,
       "stop": 398.7951,
@@ -147,56 +111,9 @@
       "entry": 432.31,
       "entry_time": "2026-08-24T13:30:00Z",
       "status": "open"
-    },
-    {
-      "symbol": "DLTR",
-      "type": "double_bottom",
-      "neckline": 131.83,
-      "stop": 123.5887,
-      "target_2R": 149.8577,
-      "risk_per_share": 8.7563,
-      "shares": 2.8335,
-      "break_time": "2026-08-19T13:30:00Z",
-      "bars_since_break": 6,
-      "in_pullback": true,
-      "last_close": 135.09,
-      "last_bar_time": "2026-08-24T13:30:00Z",
-      "scan_date": "2026-08-24",
-      "entry": 135.09,
-      "entry_time": "2026-08-24T13:30:00Z",
-      "status": "open"
     }
   ],
   "closed": [
-    {
-      "symbol": "KO",
-      "type": "double_bottom",
-      "neckline": 81.575,
-      "stop": 77.1453,
-      "target_2R": 91.1394,
-      "risk_per_share": 4.6647,
-      "shares": 4.5838,
-      "break_time": "2026-06-26T13:30:00Z",
-      "bars_since_break": 3,
-      "in_pullback": true,
-      "last_close": 82.625,
-      "last_bar_time": "2026-06-29T17:30:00Z",
-      "scan_date": "2026-06-29",
-      "entry": 82.625,
-      "entry_time": "2026-06-29T17:30:00Z",
-      "status": "closed",
-      "max_price": 92.49,
-      "touched_1r": true,
-      "touched_2r": true,
-      "outcome": "win_2r",
-      "exit_price": 91.9544,
-      "exit_time": "2026-08-24T13:30:00Z",
-      "pnl_per_share": 9.3294,
-      "pnl_dollars": 42.76,
-      "r_multiple": 2.0,
-      "exit_reason": "2R_stop",
-      "days_held": 55.83
-    },
     {
       "symbol": "DLR",
       "type": "inverse_hns",
@@ -227,5 +144,5 @@
       "days_held": 9.83
     }
   ],
-  "watching_count": 33
+  "watching_count": 28
 }

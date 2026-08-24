@@ -62,7 +62,7 @@ def _scan_symbol_asof(
     bias       = daily_bias_series(daily)
     atr_series = atr(h4, 14)
     ema9_series = ema(h4["close"], 9)
-    patterns   = detect_double_bottom(h4) + detect_inverse_hns(h4)
+    patterns   = detect_inverse_hns(h4)  # double_bottom suspended pending investigation
     patterns.sort(key=lambda p: p["break_index"])
 
     last_bar = len(h4) - 1

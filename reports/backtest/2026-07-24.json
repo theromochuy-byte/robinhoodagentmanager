@@ -1,8 +1,8 @@
 {
   "date": "2026-07-24",
-  "new_entries": 6,
+  "new_entries": 5,
   "closed_today": 2,
-  "open_count": 87,
+  "open_count": 68,
   "entries": [
     {
       "symbol": "JPM",
@@ -37,24 +37,6 @@
       "last_bar_time": "2026-07-24T17:30:00Z",
       "scan_date": "2026-07-24",
       "entry": 146.44,
-      "entry_time": "2026-07-24T17:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "MMM",
-      "type": "double_bottom",
-      "neckline": 169.76,
-      "stop": 146.9426,
-      "target_2R": 219.6097,
-      "risk_per_share": 24.2224,
-      "shares": 1.2385,
-      "break_time": "2026-07-21T13:30:00Z",
-      "bars_since_break": 7,
-      "in_pullback": true,
-      "last_close": 172.6,
-      "last_bar_time": "2026-07-24T17:30:00Z",
-      "scan_date": "2026-07-24",
-      "entry": 172.6,
       "entry_time": "2026-07-24T17:30:00Z",
       "status": "open"
     },
@@ -173,5 +155,5 @@
       "days_held": 23.0
     }
   ],
-  "watching_count": 13
+  "watching_count": 12
 }

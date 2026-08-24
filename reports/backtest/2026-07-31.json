@@ -1,8 +1,8 @@
 {
   "date": "2026-07-31",
-  "new_entries": 10,
+  "new_entries": 8,
   "closed_today": 0,
-  "open_count": 142,
+  "open_count": 117,
   "entries": [
     {
       "symbol": "TGT",
@@ -78,24 +78,6 @@
     },
     {
       "symbol": "ILMN",
-      "type": "double_bottom",
-      "neckline": 199.1395,
-      "stop": 177.3964,
-      "target_2R": 244.8472,
-      "risk_per_share": 22.4836,
-      "shares": 1.3343,
-      "break_time": "2026-07-30T13:30:00Z",
-      "bars_since_break": 3,
-      "in_pullback": true,
-      "last_close": 205.18,
-      "last_bar_time": "2026-07-31T17:30:00Z",
-      "scan_date": "2026-07-31",
-      "entry": 205.18,
-      "entry_time": "2026-07-31T17:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "ILMN",
       "type": "inverse_hns",
       "neckline": 199.1395,
       "stop": 180.4064,
@@ -150,24 +132,6 @@
     },
     {
       "symbol": "ITW",
-      "type": "double_bottom",
-      "neckline": 285.07,
-      "stop": 262.2491,
-      "target_2R": 363.9219,
-      "risk_per_share": 33.8909,
-      "shares": 0.8852,
-      "break_time": "2026-07-28T13:30:00Z",
-      "bars_since_break": 7,
-      "in_pullback": true,
-      "last_close": 287.06,
-      "last_bar_time": "2026-07-31T17:30:00Z",
-      "scan_date": "2026-07-31",
-      "entry": 287.06,
-      "entry_time": "2026-07-31T17:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "ITW",
       "type": "inverse_hns",
       "neckline": 285.07,
       "stop": 264.2791,
@@ -186,5 +150,5 @@
     }
   ],
   "closed": [],
-  "watching_count": 39
+  "watching_count": 32
 }

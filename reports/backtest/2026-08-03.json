@@ -1,27 +1,9 @@
 {
   "date": "2026-08-03",
-  "new_entries": 16,
+  "new_entries": 12,
   "closed_today": 5,
-  "open_count": 153,
+  "open_count": 124,
   "entries": [
-    {
-      "symbol": "GE",
-      "type": "double_bottom",
-      "neckline": 357.095,
-      "stop": 325.8199,
-      "target_2R": 425.5553,
-      "risk_per_share": 33.2451,
-      "shares": 0.9024,
-      "break_time": "2026-07-27T13:30:00Z",
-      "bars_since_break": 11,
-      "in_pullback": true,
-      "last_close": 368.95,
-      "last_bar_time": "2026-08-03T17:30:00Z",
-      "scan_date": "2026-08-03",
-      "entry": 368.95,
-      "entry_time": "2026-08-03T17:30:00Z",
-      "status": "open"
-    },
     {
       "symbol": "GE",
       "type": "inverse_hns",
@@ -95,24 +77,6 @@
       "status": "open"
     },
     {
-      "symbol": "MDT",
-      "type": "double_bottom",
-      "neckline": 85.99,
-      "stop": 77.427,
-      "target_2R": 106.206,
-      "risk_per_share": 9.593,
-      "shares": 3.1273,
-      "break_time": "2026-07-28T13:30:00Z",
-      "bars_since_break": 9,
-      "in_pullback": true,
-      "last_close": 86.695,
-      "last_bar_time": "2026-08-03T17:30:00Z",
-      "scan_date": "2026-08-03",
-      "entry": 86.695,
-      "entry_time": "2026-08-03T17:30:00Z",
-      "status": "open"
-    },
-    {
       "symbol": "SYK",
       "type": "inverse_hns",
       "neckline": 334.75,
@@ -145,24 +109,6 @@
       "last_bar_time": "2026-08-03T17:30:00Z",
       "scan_date": "2026-08-03",
       "entry": 177.26,
-      "entry_time": "2026-08-03T17:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "ZBH",
-      "type": "double_bottom",
-      "neckline": 95.48,
-      "stop": 83.9777,
-      "target_2R": 119.9247,
-      "risk_per_share": 11.9823,
-      "shares": 2.5037,
-      "break_time": "2026-07-28T13:30:00Z",
-      "bars_since_break": 9,
-      "in_pullback": true,
-      "last_close": 96.99,
-      "last_bar_time": "2026-08-03T17:30:00Z",
-      "scan_date": "2026-08-03",
-      "entry": 96.99,
       "entry_time": "2026-08-03T17:30:00Z",
       "status": "open"
     },
@@ -235,24 +181,6 @@
       "last_bar_time": "2026-08-03T17:30:00Z",
       "scan_date": "2026-08-03",
       "entry": 154.87,
-      "entry_time": "2026-08-03T17:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "ITW",
-      "type": "double_bottom",
-      "neckline": 285.07,
-      "stop": 262.2491,
-      "target_2R": 363.9219,
-      "risk_per_share": 33.8909,
-      "shares": 0.8852,
-      "break_time": "2026-07-28T13:30:00Z",
-      "bars_since_break": 9,
-      "in_pullback": true,
-      "last_close": 288.5,
-      "last_bar_time": "2026-08-03T17:30:00Z",
-      "scan_date": "2026-08-03",
-      "entry": 288.5,
       "entry_time": "2026-08-03T17:30:00Z",
       "status": "open"
     },
@@ -440,5 +368,5 @@
       "days_held": 6.83
     }
   ],
-  "watching_count": 34
+  "watching_count": 29
 }

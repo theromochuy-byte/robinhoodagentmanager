@@ -281,7 +281,7 @@ def scan_symbol(
 
     atr_series = atr(h4, 14)
     ema9_series = ema(h4["close"], 9)
-    patterns   = detect_double_bottom(h4) + detect_inverse_hns(h4) + detect_cup_and_handle(h4)
+    patterns   = detect_inverse_hns(h4) + detect_cup_and_handle(h4)  # double_bottom suspended
     patterns.sort(key=lambda p: p["break_index"])
 
     last_bar   = len(h4) - 1

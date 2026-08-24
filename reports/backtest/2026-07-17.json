@@ -1,8 +1,8 @@
 {
   "date": "2026-07-17",
-  "new_entries": 6,
+  "new_entries": 5,
   "closed_today": 0,
-  "open_count": 76,
+  "open_count": 62,
   "entries": [
     {
       "symbol": "DHR",
@@ -37,24 +37,6 @@
       "last_bar_time": "2026-07-17T17:30:00Z",
       "scan_date": "2026-07-17",
       "entry": 76.64,
-      "entry_time": "2026-07-17T17:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "PM",
-      "type": "double_bottom",
-      "neckline": 189.7,
-      "stop": 171.0786,
-      "target_2R": 227.3329,
-      "risk_per_share": 18.7514,
-      "shares": 1.5999,
-      "break_time": "2026-07-16T17:30:00Z",
-      "bars_since_break": 2,
-      "in_pullback": true,
-      "last_close": 192.8,
-      "last_bar_time": "2026-07-17T17:30:00Z",
-      "scan_date": "2026-07-17",
-      "entry": 192.8,
       "entry_time": "2026-07-17T17:30:00Z",
       "status": "open"
     },
@@ -114,5 +96,5 @@
     }
   ],
   "closed": [],
-  "watching_count": 16
+  "watching_count": 12
 }

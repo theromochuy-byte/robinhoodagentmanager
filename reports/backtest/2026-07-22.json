@@ -1,27 +1,9 @@
 {
   "date": "2026-07-22",
-  "new_entries": 4,
+  "new_entries": 2,
   "closed_today": 3,
-  "open_count": 78,
+  "open_count": 62,
   "entries": [
-    {
-      "symbol": "JPM",
-      "type": "double_bottom",
-      "neckline": 343.4485,
-      "stop": 316.0257,
-      "target_2R": 409.3837,
-      "risk_per_share": 31.1193,
-      "shares": 0.964,
-      "break_time": "2026-07-15T13:30:00Z",
-      "bars_since_break": 11,
-      "in_pullback": true,
-      "last_close": 348.37,
-      "last_bar_time": "2026-07-22T17:30:00Z",
-      "scan_date": "2026-07-22",
-      "entry": 348.37,
-      "entry_time": "2026-07-22T17:30:00Z",
-      "status": "open"
-    },
     {
       "symbol": "USB",
       "type": "inverse_hns",
@@ -37,24 +19,6 @@
       "last_bar_time": "2026-07-22T17:30:00Z",
       "scan_date": "2026-07-22",
       "entry": 64.465,
-      "entry_time": "2026-07-22T17:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "PM",
-      "type": "double_bottom",
-      "neckline": 189.7,
-      "stop": 171.0786,
-      "target_2R": 227.3329,
-      "risk_per_share": 18.7514,
-      "shares": 1.5999,
-      "break_time": "2026-07-16T17:30:00Z",
-      "bars_since_break": 8,
-      "in_pullback": true,
-      "last_close": 194.28,
-      "last_bar_time": "2026-07-22T17:30:00Z",
-      "scan_date": "2026-07-22",
-      "entry": 194.28,
       "entry_time": "2026-07-22T17:30:00Z",
       "status": "open"
     },
@@ -166,5 +130,5 @@
       "days_held": 11.83
     }
   ],
-  "watching_count": 15
+  "watching_count": 12
 }
