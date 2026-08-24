@@ -53,6 +53,10 @@ def build_trade(
     primary_target = struct if (struct and struct > entry) else r3
 
     shares = (equity * risk_pct) / risk_per_share
+    # Cap notional position size at 25% of equity
+    max_notional = equity * 0.25
+    if shares * entry > max_notional:
+        shares = max_notional / entry
 
     trade = {
         "type": pattern["type"],
