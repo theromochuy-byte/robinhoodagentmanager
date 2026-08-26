@@ -15,10 +15,10 @@
     "scanned_at": "2026-07-08T21:56:18.309270+00:00",
     "entry": 357.76,
     "entry_time": "2026-07-02T16:00:00Z",
-    "status": "entered",
+    "status": "voided",
+    "void_reason": "stale_break_bar",
+    "void_note": "Break bar was >11 bars old at scan date 2026-07-08; entered before freshness gate was in effect. Retroactively voided on 2026-08-26.",
     "last_price": 337.88,
-    "unrealized_pnl": -15.78,
-    "checked_at": "2026-08-25T20:44:17.434771+00:00",
     "touched_1r": false
   },
   {
@@ -37,10 +37,10 @@
     "scanned_at": "2026-07-08T21:56:18.310627+00:00",
     "entry": 357.76,
     "entry_time": "2026-07-02T16:00:00Z",
-    "status": "entered",
+    "status": "voided",
+    "void_reason": "stale_break_bar",
+    "void_note": "Break bar was >11 bars old at scan date 2026-07-08; entered before freshness gate was in effect. Retroactively voided on 2026-08-26.",
     "last_price": 337.88,
-    "unrealized_pnl": -17.44,
-    "checked_at": "2026-08-25T20:44:17.434771+00:00",
     "touched_1r": false
   },
   {
@@ -59,7 +59,16 @@
     "scanned_at": "2026-07-08T21:56:18.729636+00:00",
     "entry": 507.33,
     "entry_time": "2026-07-02T16:00:00Z",
-    "status": "entered"
+    "status": "breakeven",
+    "exit_price": 507.33,
+    "exit_reason": "breakeven_stop",
+    "exit_time": "2026-08-13",
+    "realized_pnl": 0.00,
+    "touched_1r": true,
+    "touched_2r": false,
+    "max_price": 537.74,
+    "days_held": 42.0,
+    "retroactive_note": "Hit 1R (max $537.74 on ~2026-07-17), stop moved to breakeven. Stopped out 2026-08-13. Corrected retroactively on 2026-08-26."
   },
   {
     "symbol": "CL",
@@ -78,11 +87,11 @@
     "scanned_at": "2026-08-10T21:00:43.747398+00:00",
     "entry": 95.09,
     "entry_time": "2026-07-02T16:00:00Z",
-    "status": "entered",
+    "status": "voided",
+    "void_reason": "stale_break_bar",
+    "void_note": "Break bar from 2026-06-29 was >11 bars old at scan date 2026-08-10 (6+ weeks stale). No valid pattern structure found. Retroactively voided on 2026-08-26.",
     "quality_score": 0.4312,
     "last_price": 91.33,
-    "unrealized_pnl": -17.99,
-    "checked_at": "2026-08-25T20:44:17.434771+00:00",
     "touched_1r": false
   },
   {
@@ -102,11 +111,11 @@
     "scanned_at": "2026-08-10T21:00:43.748223+00:00",
     "entry": 95.09,
     "entry_time": "2026-07-02T16:00:00Z",
-    "status": "entered",
+    "status": "voided",
+    "void_reason": "no_valid_pattern",
+    "void_note": "No inverse HnS structure found in 4h data at scan date or entry date, even without volume filter. Retroactively voided on 2026-08-26.",
     "quality_score": 0.4267,
     "last_price": 91.33,
-    "unrealized_pnl": -19.54,
-    "checked_at": "2026-08-25T20:44:17.434771+00:00",
     "touched_1r": false
   }
 ]
