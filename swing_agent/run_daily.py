@@ -210,7 +210,12 @@ def run_scan() -> list[dict]:
 
 def git_commit_push(mode: str) -> None:
     print("=== COMMITTING ===")
-    subprocess.run(["git", "add", "data/", "reports/"], cwd=ROOT)
+    if mode in ("morning", "midday"):
+        # Only persist the live ledger — exits and new entries must survive
+        # container recycles before the evening full commit.
+        subprocess.run(["git", "add", str(LIVE_LEDGER)], cwd=ROOT)
+    else:
+        subprocess.run(["git", "add", "data/", "reports/"], cwd=ROOT)
     result = subprocess.run(
         ["git", "diff", "--cached", "--quiet"], cwd=ROOT
     )
@@ -266,6 +271,9 @@ if __name__ == "__main__":
     # Send email digest
     print("=== SENDING EMAIL DIGEST ===")
     send_digest(new_entries, closes, quotes)
+
+    if mode in ("morning", "midday"):
+        git_commit_push(mode)
 
     if mode == "evening":
         print("=== BACKTEST ===")
