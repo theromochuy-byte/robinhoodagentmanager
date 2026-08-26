@@ -1,16 +1,16 @@
 {
   "date": "2026-08-11",
-  "new_entries": 4,
+  "new_entries": 3,
   "closed_today": 0,
-  "open_count": 66,
+  "open_count": 65,
   "entries": [
     {
       "symbol": "XOM",
       "type": "inverse_hns",
       "neckline": 158.71,
-      "stop": 147.7286,
-      "target_2R": 181.6928,
-      "risk_per_share": 11.3214,
+      "stop": 147.7294,
+      "target_2R": 181.6912,
+      "risk_per_share": 11.3206,
       "shares": 2.3577,
       "break_time": "2026-08-10T13:30:00Z",
       "bars_since_break": 3,
@@ -23,30 +23,12 @@
       "status": "open"
     },
     {
-      "symbol": "BSX",
-      "type": "inverse_hns",
-      "neckline": 50.1407,
-      "stop": 45.2783,
-      "target_2R": 61.2283,
-      "risk_per_share": 5.3167,
-      "shares": 5.6426,
-      "break_time": "2026-08-10T13:30:00Z",
-      "bars_since_break": 3,
-      "in_pullback": true,
-      "last_close": 51.2,
-      "last_bar_time": "2026-08-11T17:30:00Z",
-      "scan_date": "2026-08-11",
-      "entry": 51.2,
-      "entry_time": "2026-08-11T17:30:00Z",
-      "status": "open"
-    },
-    {
       "symbol": "ANET",
       "type": "inverse_hns",
       "neckline": 189.817,
-      "stop": 146.6096,
-      "target_2R": 286.6508,
-      "risk_per_share": 46.6804,
+      "stop": 146.6155,
+      "target_2R": 286.639,
+      "risk_per_share": 46.6745,
       "shares": 0.6427,
       "break_time": "2026-08-04T13:30:00Z",
       "bars_since_break": 11,
@@ -62,9 +44,9 @@
       "symbol": "RMD",
       "type": "inverse_hns",
       "neckline": 222.43,
-      "stop": 183.7671,
-      "target_2R": 301.6159,
-      "risk_per_share": 39.2829,
+      "stop": 183.769,
+      "target_2R": 301.6119,
+      "risk_per_share": 39.281,
       "shares": 0.7637,
       "break_time": "2026-08-04T17:30:00Z",
       "bars_since_break": 10,
@@ -78,5 +60,5 @@
     }
   ],
   "closed": [],
-  "watching_count": 10
+  "watching_count": 11
 }

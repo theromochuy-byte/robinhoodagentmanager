@@ -137,10 +137,10 @@
     "entry_time": "2026-08-25T17:30:00Z",
     "status": "entered",
     "quality_score": 0.5114,
-    "last_price": 81.69,
-    "unrealized_pnl": -3.17,
+    "last_price": 81.645,
+    "unrealized_pnl": -3.42,
     "touched_1r": false,
-    "checked_at": "2026-08-26T14:04:38.223850+00:00",
+    "checked_at": "2026-08-26T19:50:39.339576+00:00",
     "touched_2r": false
   },
   {
@@ -162,10 +162,10 @@
     "entry_time": "2026-08-25T17:30:00Z",
     "status": "entered",
     "quality_score": 0.4094,
-    "last_price": 133.02,
-    "unrealized_pnl": -6.05,
+    "last_price": 131.92,
+    "unrealized_pnl": -10.57,
     "touched_1r": false,
-    "checked_at": "2026-08-26T14:04:38.223850+00:00",
+    "checked_at": "2026-08-26T19:50:39.339576+00:00",
     "touched_2r": false
   },
   {
@@ -209,10 +209,10 @@
     "entry_time": "2026-08-25T17:30:00Z",
     "status": "entered",
     "quality_score": 0.2392,
-    "last_price": 178.45,
-    "unrealized_pnl": -0.67,
+    "last_price": 176.25,
+    "unrealized_pnl": -8.42,
     "touched_1r": false,
-    "checked_at": "2026-08-26T14:04:38.223850+00:00",
+    "checked_at": "2026-08-26T19:50:39.339576+00:00",
     "touched_2r": false
   },
   {
@@ -235,6 +235,9 @@
     "status": "entered",
     "quality_score": 0.3779,
     "touched_2r": false,
-    "touched_1r": false
+    "touched_1r": false,
+    "last_price": 427.4,
+    "unrealized_pnl": -3.26,
+    "checked_at": "2026-08-26T19:50:39.339576+00:00"
   }
 ]
