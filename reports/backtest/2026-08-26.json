@@ -1,8 +1,8 @@
 {
   "date": "2026-08-26",
-  "new_entries": 2,
+  "new_entries": 1,
   "closed_today": 1,
-  "open_count": 77,
+  "open_count": 76,
   "entries": [
     {
       "symbol": "DHR",
@@ -15,28 +15,10 @@
       "break_time": "2026-08-19T13:30:00Z",
       "bars_since_break": 11,
       "in_pullback": true,
-      "last_close": 215.55,
+      "last_close": 215.51,
       "last_bar_time": "2026-08-26T17:30:00Z",
       "scan_date": "2026-08-26",
-      "entry": 215.55,
-      "entry_time": "2026-08-26T17:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "ZBH",
-      "type": "inverse_hns",
-      "neckline": 101.155,
-      "stop": 95.3801,
-      "target_2R": 113.2748,
-      "risk_per_share": 5.9649,
-      "shares": 3.7002,
-      "break_time": "2026-08-26T13:30:00Z",
-      "bars_since_break": 1,
-      "in_pullback": true,
-      "last_close": 101.54,
-      "last_bar_time": "2026-08-26T17:30:00Z",
-      "scan_date": "2026-08-26",
-      "entry": 101.54,
+      "entry": 215.51,
       "entry_time": "2026-08-26T17:30:00Z",
       "status": "open"
     }
@@ -72,5 +54,5 @@
       "days_held": 19.83
     }
   ],
-  "watching_count": 14
+  "watching_count": 15
 }
