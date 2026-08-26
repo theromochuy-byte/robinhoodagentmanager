@@ -438,6 +438,8 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
     # double-counting them against available equity.
     ledger = _load_live_ledger()
     existing_keys = {(t["symbol"], t.get("entry_time")) for t in ledger}
+    # One position per symbol: seed from any currently open/entered ledger record
+    symbols_entered = {t["symbol"] for t in ledger if t.get("status") == "entered"}
     new_entries   = []
     skipped       = []
 
@@ -458,6 +460,14 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
             mark_triggered(t["symbol"], t["type"], t["break_time"],
                            t["entry"], t["entry_time"])
             continue
+        if t["symbol"] in symbols_entered:
+            skipped.append({"symbol": t["symbol"], "type": t["type"],
+                            "cost": round(t["entry"] * t.get("shares", 0), 2),
+                            "available": round(available, 2),
+                            "quality_score": t.get("quality_score", 0),
+                            "skip_reason": "one_per_symbol"})
+            mark_missed(t["symbol"], t["type"], t["break_time"], reason="one_per_symbol")
+            continue
         if high_vix:
             skipped.append({"symbol": t["symbol"], "type": t["type"],
                             "cost": round(t["entry"] * t.get("shares", 0), 2),
@@ -476,6 +486,7 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
             continue
         new_entries.append(t)
         available = round(available - cost, 2)
+        symbols_entered.add(t["symbol"])
         mark_triggered(t["symbol"], t["type"], t["break_time"],
                        t["entry"], t["entry_time"])
 
