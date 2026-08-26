@@ -242,18 +242,35 @@ itself resolves, however it resolves:
 So a missing leg's retry window is bounded by its sibling's own open
 lifetime, not by any separate cap or timeout — no extra "give up after N
 days" logic was needed once this was traced through.
+
+**50/50 split cap — considered, not changed (2026-08-26).** A shift to a
+40%/25% `threshold_of_risk`/`low_prob` split (freeing the other 35% for
+a wider budget elsewhere) was floated as a fix for the `low_prob` leg
+going unfilled. Investigation found the real cause was two liquidity/yield
+gates rejecting genuinely-liquid near-misses (RIVN, PBR) plus the missing-
+leg budget going idle once its sibling filled — both fixed directly
+(`max_spread_pct`/`min_yield_pct` loosening + the retry mechanism above,
+both 2026-08-24). Once those were in place, a real fetch-and-scan run
+filled the `low_prob` leg (RIVN $14 CSP) without touching the 50/50 split
+at all, so there's no live evidence the split itself is the constraint.
+Leaving it at 50/50 until the retry mechanism/gate changes prove
+insufficient on their own — revisit only if `low_prob` starts going
+unfilled again with the current gates in place.
 - Expiration: 21–45 days to expiration (DTE).
 - Liquidity filter: `open_interest >= 100`, bid >= $0.05, and
-  `(ask - bid) <= 15%` of the mid price.
+  `(ask - bid) <= 25%` of the mid price (`max_spread_pct` 0.15→0.25,
+  2026-08-24 sign-off — see the `options_config.json` note for the
+  RIVN/PBR near-misses that motivated the loosening).
 - Log the contract's `chance_of_profit_short` from the quote alongside the
   delta — Robinhood computes this directly, and it's worth comparing against
   the delta-implied probability once we have enough logged trades.
 - Credit = mid price x 100. Collateral = strike x 100.
-- Minimum yield floor: credit must be at least 1% of collateral
-  (`return_on_collateral_pct >= min_yield_pct` in `screener.screen_csp`).
-  A contract can sit inside the delta/DTE band and still not pay enough to
-  justify tying up the collateral — this is a separate check, not a
-  substitute for the delta band.
+- Minimum yield floor: credit must be at least 0.9% of collateral
+  (`return_on_collateral_pct >= min_yield_pct` in `screener.screen_csp`;
+  `min_yield_pct` 1.0→0.9, same 2026-08-24 sign-off). A contract can sit
+  inside the delta/DTE band and still not pay enough to justify tying up
+  the collateral — this is a separate check, not a substitute for the
+  delta band.
 - Log two ROI figures per contract, not one: `return_on_collateral_pct`
   (credit ÷ full strike x 100, gross) and `return_on_net_capital_pct`
   (credit ÷ (collateral − credit), a third source's convention — the credit
