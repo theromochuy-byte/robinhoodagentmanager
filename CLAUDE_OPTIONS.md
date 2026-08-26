@@ -67,6 +67,16 @@ below for why.
   external tool, for this step; Robinhood's native scanner does the same
   job). It's a snapshot, not a hand-curated list — refresh it by re-running
   the scan rather than editing it directly.
+- **Manual additions (sign-off 2026-08-26)**: the scanner's $8-$60 price
+  gate doesn't know about this account's actual collateral budget ($1,250
+  per barbell leg, effectively needing strikes well under the $60 ceiling)
+  — only 4 of the original 40 scanner names (AGNC/NU/RIVN/PBR) were ever
+  both quality-screen-passing and budget-viable on a given day. Six names
+  (HBAN, KSS, LYFT, M, SIRI, KMI) were added by hand after verifying each
+  against `premium_agent.quality_screen` with live fundamentals — not
+  scanner output, since the scanner has no quality/EPS-growth filter of
+  its own. This is a deliberate one-time exception to "don't edit the file
+  by hand," not a change to how the base 40 get refreshed.
 - Only take a new cash-secured put on a name you would genuinely be willing to
   own at the strike — this is a quality screen, not just a premium screen.
 - Quantitative gate (`premium_agent.quality_screen.screen_quality`, config in

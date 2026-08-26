@@ -110,7 +110,12 @@ native scanner (`get_scanner_filter_specs` / `create_scan` / `run_scan`) is
 the "no third-party screener" way to build that universe --
 `data/options_universe.txt` is a snapshot from one (price $8-$60, 30d avg
 volume > 2M, 30d avg options volume > 500), not something to hand-edit;
-refresh it by re-running the scan periodically.
+refresh it by re-running the scan periodically. (2026-08-26 exception: 6
+names verified against `quality_screen` with live fundamentals were added
+by hand to fix a scanner blind spot -- its price gate doesn't know the
+account's actual $1,250-per-barbell-leg collateral budget, so most of the
+scanner's own $8-$60 names were never budget-viable in practice. See
+CLAUDE_OPTIONS.md Step 1 for the full rationale.)
 
 Each cycle, the agent:
 1. Fetches `get_equity_fundamentals` + `get_equity_quotes` + `get_financials`

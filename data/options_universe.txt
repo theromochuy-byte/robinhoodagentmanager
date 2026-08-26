@@ -7,3 +7,19 @@
 # Refresh periodically by re-running the scan (scan_id: ee5cf59c-db50-41fb-bc76-4218d49df32c)
 # rather than editing this file by hand.
 WBD SOFI NOK PCG IREN SMCI ET PFE BMNR RIVN CMG NKE QXO PYPL AAL T IONQ NU RKT F VZ AGNC CMCSA NVO FHN PBR VALE U OWL BSX HPE CCL RBLX HPQ B JD MRNA DKNG STM FIG
+
+# Manual addition (sign-off 2026-08-26): the scanner's $8-$60 price gate
+# doesn't account for this account's actual collateral budget ($1,250 per
+# barbell leg -> effectively needs strikes under ~$12.50-15, i.e. spot
+# prices well under the $60 ceiling). Of the scanner's original 40, only
+# 4 (AGNC/NU/RIVN/PBR) were ever both quality-screen-passing AND
+# budget-viable on any given day. These 6 were added after verifying each
+# against premium_agent.quality_screen with live fundamentals (see
+# reports/options -- not the scanner, since the scanner has no
+# quality/EPS-growth filter of its own): HBAN, KSS, LYFT, M priced for
+# likely budget fit; SIRI, KMI pass quality but are likely too pricey for
+# the barbell open specifically -- kept in for supplemental-CSP/covered-call
+# use once the post-assignment budget widens. Re-verify against
+# quality_screen on each addition; don't assume these stay quality-passing
+# indefinitely just because they were added.
+HBAN KSS LYFT M SIRI KMI
