@@ -694,4 +694,14 @@ if __name__ == "__main__":
     print(f"Skipped {len(cycle['skipped'])} symbol(s):")
     for sym, reasons in cycle["skipped"].items():
         print(f"  {sym}: {'; '.join(reasons)}")
+    report = json.loads(Path(cycle["report_path"]).read_text())
+    lots = report.get("lots", [])
+    if lots:
+        print(f"Held lots ({len(lots)}):")
+        for lot in lots:
+            progress = lot.get("breakeven_progress_pct")
+            progress_str = f"{progress:.1f}%" if progress is not None else "n/a"
+            paid_off = " (paid off)" if lot.get("paid_off") else ""
+            print(f"  {lot['symbol']:6s} cost_basis={lot['cost_basis']:.2f} "
+                  f"breakeven_progress={progress_str}{paid_off}")
     print(f"Report written to {cycle['report_path']}")

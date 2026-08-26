@@ -85,6 +85,18 @@ def render_html(report: dict) -> str:
     else:
         parts.append("<p style='font-family:sans-serif'>\U0001F7E2 <strong>Proposed today:</strong> none</p>")
 
+    lots = report.get("lots", [])
+    if lots:
+        rows = []
+        for lot in lots:
+            progress = lot.get("breakeven_progress_pct")
+            progress_str = f"{progress:.1f}%" if progress is not None else "n/a"
+            if lot.get("paid_off"):
+                progress_str += " ✅ paid off"
+            rows.append([lot["symbol"], f"${lot['cost_basis']:.2f}", progress_str])
+        parts.append("<h3 style='font-family:sans-serif;color:#06c'>\U0001F4C8 Held lots (payback progress)</h3>")
+        parts.append(_html_table(rows, ["Symbol", "Cost basis", "Progress to zero cost basis"]))
+
     skipped = report.get("skipped", {})
     if skipped:
         rows = [[sym, "; ".join(reasons)] for sym, reasons in skipped.items()]

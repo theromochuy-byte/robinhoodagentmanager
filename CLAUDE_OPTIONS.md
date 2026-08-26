@@ -470,14 +470,17 @@ sign-offs:
 Not a contradiction: all four rules serve the same top priority, just
 applied to different states of the same account.
 
-**Not yet built, worth flagging given this priority**: `data/options_positions.json`
-records `symbol`/`shares`/`cost_basis`/`since` but no link back to the
-option chain that produced the assignment, so there's no way yet to compute
-`breakeven_progress_pct` automatically for a held position from
-`premium_agent.notify`'s digest — it has to be looked up manually against
-the ledger's roll chain. Surfacing "how close is each held position to
-zero cost basis" in the daily email would directly serve the stated
-priority and is a reasonable next step.
+**Built (2026-08-26 sign-off)**: `premium_agent.scan.write_report` already
+computed `breakeven_progress_pct`/`paid_off` per lot into
+`reports/options/scan_<date>.json`'s `"lots"` array (via each lot's
+`source_instrument_id`, no manual roll-chain lookup needed) but nothing
+downstream rendered it — `premium_agent.notify.render_html` skipped
+`"lots"` entirely and the CLI summary in `scan.py`'s `__main__` didn't
+print it either. Both now surface a "Held lots (payback progress)"
+table (symbol, cost basis, `breakeven_progress_pct`, a "paid off" badge
+once a lot clears 100%) whenever `report["lots"]` is non-empty; the
+section is omitted on days with no assigned lots, which is every day so
+far since nothing has been assigned yet.
 
 ## Data requirements (confirmed against the live Robinhood MCP)
 
