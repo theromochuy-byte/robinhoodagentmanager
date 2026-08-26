@@ -539,7 +539,13 @@ Confirmed by direct calls during setup (2026-08-09):
   `data/paper_options_ledger.json`.
 - Performance reports go to `reports/options/`: win rate, average
   return-on-collateral, annualized ROC, assignment rate, broken out by
-  CSP vs. covered-call leg.
+  **exit reason** (profit_take / rolled / assigned / expired_otm /
+  called_away) and **barbell leg** (threshold_of_risk / low_prob) --
+  sign-off 2026-08-26, superseding the original "CSP vs. covered-call
+  leg" breakdown, which stayed empty through the first review since no
+  CSP had been assigned yet to spawn a covered-call leg. Add a CSP-vs.-
+  covered-call cut back in once covered-call trades actually exist to
+  break out.
 - Review cadence: weekly, or after every 20 logged trades, whichever comes
   first — same cadence as the swing strategy.
 
