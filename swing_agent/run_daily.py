@@ -148,8 +148,8 @@ def check_exits(quotes: dict[str, float]) -> tuple[list[dict], list[dict]]:
             t["checked_at"]     = now
 
             # Progress tracking toward 2R
-            if risk and price > entry and target > entry:
-                progress_pct = (price - entry) / (target - entry)
+            if risk and price > entry and target_2r > entry:
+                progress_pct = (price - entry) / (target_2r - entry)
                 entry_time   = t.get("entry_time", "")
                 if progress_pct > 0.01 and entry_time:
                     try:
