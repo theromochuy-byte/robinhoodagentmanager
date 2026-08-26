@@ -175,7 +175,9 @@
     "scanned_at": "2026-08-26T03:23:58.875612+00:00",
     "entry": 134.49,
     "entry_time": "2026-08-25T17:30:00Z",
-    "status": "entered",
+    "status": "voided",
+    "void_reason": "one_per_symbol",
+    "void_note": "Lower-scored duplicate: DLTR cup_and_handle (0.4094) already entered same bar. Voided retroactively on 2026-08-26 when one-position-per-symbol rule was added.",
     "quality_score": 0.4087
   },
   {
