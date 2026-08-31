@@ -3,18 +3,27 @@ name: Options Daily Email
 # Sends the options-agent digest email only -- headless, no Robinhood auth.
 # The fetch+scan step needs live Robinhood MCP access and runs separately,
 # in a scheduled Claude Code Routine that commits its results to this
-# branch before this workflow's scheduled time. This job just reads
-# whatever reports/options/scan_<date>.json is already there and emails it,
-# reusing the same NOTIFY_EMAIL_* secrets as the swing agent's workflow --
-# no new credentials anywhere.
-
+# branch. This job just reads whatever reports/options/scan_<date>.json
+# is already there and emails it, reusing the same NOTIFY_EMAIL_* secrets
+# as the swing agent's workflow -- no new credentials anywhere.
+#
+# Trigger (2026-08-31 sign-off): push, not schedule. The old schedule
+# trigger (cron 15:00 UTC, previously padded to "two hours after the
+# Routine's typical push time" per the 2026-08-21 note below) required
+# guessing a safe delay -- workable while GitHub's scheduled-workflow
+# delivery jitter was tens of minutes, but by 2026-08-28 that jitter had
+# grown to ~9 hours (this repo's swing agent runs daily-scan.yml very
+# frequently, which appears to deprioritize this repo's other scheduled
+# runs under GitHub's load-based scheduling), causing repeat "No scan
+# report for today" failures and runs landing after midnight. A push
+# trigger scoped to the report path fires the instant the day's report
+# actually lands -- no timing guesswork, no schedule-delivery dependency.
 on:
-  schedule:
-    # 10:00 AM CT (CDT) -- the options Routine's fetch+scan starts at 8:00 AM
-    # CT but the full cycle (many Robinhood MCP calls) routinely runs well
-    # past the old 8:20 AM slot, so this workflow kept finding no report yet
-    # and failing (see 2026-08-21 run). Two hours of headroom instead.
-    - cron: '0 15 * * 1-5'
+  push:
+    branches:
+      - claude/options-premium-agent-ne3ye8
+    paths:
+      - 'reports/options/scan_*.json'
   workflow_dispatch: {}
 
 jobs:
