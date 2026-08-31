@@ -1,9 +1,28 @@
 {
   "date": "2026-08-31",
-  "new_entries": 0,
+  "new_entries": 1,
   "closed_today": 7,
-  "open_count": 64,
-  "entries": [],
+  "open_count": 65,
+  "entries": [
+    {
+      "symbol": "HAL",
+      "type": "inverse_hns",
+      "neckline": 36.2,
+      "stop": 33.75,
+      "target_2R": 41.2049,
+      "risk_per_share": 2.485,
+      "shares": 10.3491,
+      "break_time": "2026-08-28T13:30:00Z",
+      "bars_since_break": 3,
+      "in_pullback": true,
+      "last_close": 36.86,
+      "last_bar_time": "2026-08-31T17:30:00Z",
+      "scan_date": "2026-08-31",
+      "entry": 36.86,
+      "entry_time": "2026-08-31T17:30:00Z",
+      "status": "open"
+    }
+  ],
   "closed": [
     {
       "symbol": "PSX",
@@ -209,5 +228,5 @@
       "days_held": 27.83
     }
   ],
-  "watching_count": 7
+  "watching_count": 8
 }

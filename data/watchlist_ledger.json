@@ -25511,6 +25511,11 @@
         "time": "2026-08-31T19:31:51.502654+00:00",
         "price": 415.94,
         "note": "update"
+      },
+      {
+        "time": "2026-08-31T22:38:15.437136+00:00",
+        "price": 414.34,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -25736,6 +25741,11 @@
         "time": "2026-08-31T19:31:51.622787+00:00",
         "price": 124.92,
         "note": "update"
+      },
+      {
+        "time": "2026-08-31T22:38:15.558422+00:00",
+        "price": 126.59,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -25839,6 +25849,11 @@
       {
         "time": "2026-08-31T19:31:51.430436+00:00",
         "price": 81.38,
+        "note": "update"
+      },
+      {
+        "time": "2026-08-31T22:38:15.340432+00:00",
+        "price": 81.04,
         "note": "update"
       }
     ],
@@ -25986,6 +26001,11 @@
         "time": "2026-08-31T19:31:51.526485+00:00",
         "price": 188.17,
         "note": "update"
+      },
+      {
+        "time": "2026-08-31T22:38:15.461521+00:00",
+        "price": 187.38,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -26107,6 +26127,11 @@
         "time": "2026-08-31T19:31:51.478942+00:00",
         "price": 171.7,
         "note": "update"
+      },
+      {
+        "time": "2026-08-31T22:38:15.412804+00:00",
+        "price": 170.94,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -26149,6 +26174,11 @@
         "time": "2026-08-31T19:31:51.550358+00:00",
         "price": 126.445,
         "note": "update"
+      },
+      {
+        "time": "2026-08-31T22:38:15.485562+00:00",
+        "price": 126.72,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -26185,6 +26215,11 @@
       {
         "time": "2026-08-31T19:31:51.455073+00:00",
         "price": 60.155,
+        "note": "update"
+      },
+      {
+        "time": "2026-08-31T22:38:15.364492+00:00",
+        "price": 60.13,
         "note": "update"
       }
     ],
@@ -26260,6 +26295,43 @@
         "time": "2026-08-31T19:31:51.646642+00:00",
         "price": 463.17,
         "note": "update"
+      },
+      {
+        "time": "2026-08-31T22:38:15.582409+00:00",
+        "price": 456.88,
+        "note": "update"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "DE__cup_and_handle__2026-08-31T13:30:00Z",
+    "symbol": "DE",
+    "type": "cup_and_handle",
+    "neckline": 643.99,
+    "break_time": "2026-08-31T13:30:00Z",
+    "first_seen": "2026-08-31T22:38:15.388486+00:00",
+    "status": "watching",
+    "suggested_entry": 643.99,
+    "suggested_entry_zone": [
+      640.77,
+      647.2099
+    ],
+    "stop": 596.6408,
+    "target_1R": 708.2092,
+    "target_2R": 763.9933,
+    "risk_per_share": 55.7842,
+    "price_history": [
+      {
+        "time": "2026-08-31T22:38:15.388486+00:00",
+        "price": 655.08,
+        "note": "first_seen"
       }
     ],
     "trigger_time": null,
