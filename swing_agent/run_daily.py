@@ -63,28 +63,19 @@ def full_refresh() -> None:
 # ---------------------------------------------------------------------------
 
 def _fetch_intraday_highs(symbols: list[str]) -> dict[str, float]:
-    """Fetch today's intraday high for each symbol via Robinhood historicals.
+    """Fetch today's session high for each symbol via yfinance 30-minute bars.
 
-    Uses 30-minute bars for the current session. Returns {symbol: high}.
-    Falls back to an empty dict on any error so the caller degrades gracefully.
+    Used solely for 1R/2R milestone detection — catches intraday wicks that
+    close back below the milestone level before end of day.
+    Falls back to an empty dict per symbol on any error.
     """
     if not symbols:
         return {}
     try:
-        from datetime import date
-        import importlib, sys as _sys
-        # Dynamically import the MCP client the scanner already uses
-        # (avoid hard coupling — just use yfinance fallback if unavailable)
-        today = str(date.today())
-        start = f"{today}T13:30:00Z"   # market open UTC
-        end   = f"{today}T21:00:00Z"   # market close UTC
-
-        # Try robinhood MCP via subprocess json call used elsewhere
-        # If unavailable, return empty and milestone check falls back to quote
-        from swing_agent.fetch_yf import fetch_quotes as _fq  # noqa: F401 — just check import
-        # fetch_yf doesn't expose intraday highs; skip and return empty
-        return {}
-    except Exception:
+        from swing_agent.fetch_yf import fetch_intraday_highs
+        return fetch_intraday_highs(symbols)
+    except Exception as e:
+        print(f"  WARNING: intraday highs fetch failed: {e}", file=sys.stderr)
         return {}
 
 

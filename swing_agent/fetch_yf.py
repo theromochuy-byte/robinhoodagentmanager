@@ -163,6 +163,31 @@ def fetch_4hour(symbols: list[str]) -> dict[str, list[dict]]:
     return results
 
 
+def fetch_intraday_highs(symbols: list[str]) -> dict[str, float]:
+    """Return {symbol: today_session_high} using yfinance 30-minute bars.
+
+    Used exclusively for milestone detection (1R/2R touch via intraday wick).
+    Falls back silently per symbol on any error.
+    """
+    import yfinance as yf
+    import pandas as pd
+    highs = {}
+    for sym in symbols:
+        try:
+            df = yf.download(sym, period="1d", interval="30m",
+                             auto_adjust=True, progress=False)
+            if df is None or df.empty:
+                continue
+            if isinstance(df.columns, pd.MultiIndex):
+                df.columns = df.columns.get_level_values(0)
+            day_high = float(df["High"].max())
+            if day_high and day_high == day_high:  # guard NaN
+                highs[sym] = round(day_high, 4)
+        except Exception as e:
+            print(f"  WARNING: {sym} intraday high failed: {e}", file=sys.stderr)
+    return highs
+
+
 def fetch_quotes(symbols: list[str]) -> dict[str, float]:
     """Return {symbol: last_price} using yfinance fast_info."""
     import yfinance as yf
