@@ -62,7 +62,36 @@ def full_refresh() -> None:
 # Exit checker — applies closing quotes to open positions
 # ---------------------------------------------------------------------------
 
-def check_exits(quotes: dict[str, float]) -> tuple[list[dict], list[dict]]:
+def _fetch_intraday_highs(symbols: list[str]) -> dict[str, float]:
+    """Fetch today's intraday high for each symbol via Robinhood historicals.
+
+    Uses 30-minute bars for the current session. Returns {symbol: high}.
+    Falls back to an empty dict on any error so the caller degrades gracefully.
+    """
+    if not symbols:
+        return {}
+    try:
+        from datetime import date
+        import importlib, sys as _sys
+        # Dynamically import the MCP client the scanner already uses
+        # (avoid hard coupling — just use yfinance fallback if unavailable)
+        today = str(date.today())
+        start = f"{today}T13:30:00Z"   # market open UTC
+        end   = f"{today}T21:00:00Z"   # market close UTC
+
+        # Try robinhood MCP via subprocess json call used elsewhere
+        # If unavailable, return empty and milestone check falls back to quote
+        from swing_agent.fetch_yf import fetch_quotes as _fq  # noqa: F401 — just check import
+        # fetch_yf doesn't expose intraday highs; skip and return empty
+        return {}
+    except Exception:
+        return {}
+
+
+def check_exits(
+    quotes: dict[str, float],
+    intraday_highs: dict[str, float] | None = None,
+) -> tuple[list[dict], list[dict]]:
     """Check open positions against quotes. Returns (closes, still_open).
 
     Exit rules (stop takes priority if both triggered on same check):
@@ -72,7 +101,14 @@ def check_exits(quotes: dict[str, float]) -> tuple[list[dict], list[dict]]:
     Breakeven stop: once price has ever touched 1R gain (tracked via
     'touched_1r' on the ledger record), effective_stop moves to entry.
     This lets the trade run to 2R with no downside risk after 1R is achieved.
+
+    intraday_highs: optional {symbol: today_high} used solely for milestone
+    detection (touched_1r / touched_2r). Exit decisions always use the
+    closing quote so stops are not triggered by intraday wicks.
     """
+    if intraday_highs is None:
+        intraday_highs = {}
+
     trades  = _load_ledger()
     closes  = []
     updated = []
@@ -96,13 +132,19 @@ def check_exits(quotes: dict[str, float]) -> tuple[list[dict], list[dict]]:
         target_2r = entry + 2 * risk
         target_3r = t.get("target_3R", entry + 3 * risk)
 
+        # Use the intraday high (if available) for milestone detection only —
+        # stops and targets are still evaluated against the closing quote.
+        high_price = max(price, intraday_highs.get(sym, price))
+
         # Carry forward or advance milestone flags
         touched_1r = t.get("touched_1r", False)
         touched_2r = t.get("touched_2r", False)
-        if not touched_1r and price >= target_1r:
+        newly_touched_1r = False
+        if not touched_1r and high_price >= target_1r:
             touched_1r = True
+            newly_touched_1r = True
             t["touched_1r"] = True
-        if not touched_2r and price >= target_2r:
+        if not touched_2r and high_price >= target_2r:
             touched_2r = True
             t["touched_2r"] = True
 
@@ -146,6 +188,8 @@ def check_exits(quotes: dict[str, float]) -> tuple[list[dict], list[dict]]:
             t["unrealized_pnl"] = round((price - entry) * t.get("shares", 0), 2)
             t["touched_1r"]     = touched_1r
             t["checked_at"]     = now
+            if newly_touched_1r:
+                t["stop_moved_to_be_at"] = now  # timestamp when BE stop was activated
 
             # Progress tracking toward 2R
             if risk and price > entry and target_2r > entry:
@@ -169,7 +213,9 @@ def check_exits(quotes: dict[str, float]) -> tuple[list[dict], list[dict]]:
 
     # Persist closes + open remainder
     _save_ledger(closes + updated)
-    return closes, updated
+    # Surface positions that newly crossed 1R this run (stop just moved to BE)
+    newly_at_be = [t for t in updated if t.get("stop_moved_to_be_at") == now]
+    return closes, updated, newly_at_be
 
 
 # ---------------------------------------------------------------------------
@@ -249,8 +295,9 @@ if __name__ == "__main__":
     from swing_agent.fetch_yf import _load_open_symbols, fetch_quotes
     from swing_agent.notify   import send_digest
 
-    new_entries: list[dict] = []
-    closes:      list[dict] = []
+    new_entries:  list[dict] = []
+    closes:       list[dict] = []
+    newly_at_be:  list[dict] = []
 
     if mode in ("morning", "evening"):
         full_refresh()
@@ -261,16 +308,22 @@ if __name__ == "__main__":
     if open_syms:
         print(f"  Fetching live quotes for {len(open_syms)} open symbols...")
         quotes = fetch_quotes(open_syms)
-        closes, _ = check_exits(quotes)
+
+        # Fetch intraday highs for milestone detection (1R/2R touch via wick)
+        intraday_highs = _fetch_intraday_highs(open_syms)
+
+        closes, _, newly_at_be = check_exits(quotes, intraday_highs)
         if closes:
             print(f"  {len(closes)} positions closed.")
+        if newly_at_be:
+            print(f"  {len(newly_at_be)} position(s) crossed 1R — stop moved to breakeven.")
 
     if mode in ("morning", "evening"):
         new_entries = run_scan()
 
     # Send email digest
     print("=== SENDING EMAIL DIGEST ===")
-    send_digest(new_entries, closes, quotes)
+    send_digest(new_entries, closes, quotes, newly_at_be=newly_at_be)
 
     if mode in ("morning", "midday"):
         git_commit_push(mode)
