@@ -40,53 +40,20 @@ def open_positions(trades: list[dict]) -> list[dict]:
 
 
 def check_exits(trades: list[dict], quotes: dict[str, float]) -> list[dict]:
-    """Apply current quotes to open positions, mark stop/target hits.
+    """Delegate to run_daily.check_exits — single source of truth for exit logic.
 
-    quotes: {symbol: last_price}
-    Returns the full trade list with open positions updated in place.
+    Returns the full updated trade list (closes + still-open).
     """
-    now = datetime.now(timezone.utc).isoformat()
-    for t in trades:
-        if t.get("status") != "entered":
-            continue
-        sym = t["symbol"]
-        price = quotes.get(sym)
-        if price is None:
-            continue
+    from swing_agent.run_daily import check_exits as _check
+    closes, still_open, _ = _check(quotes)
+    return closes + still_open
 
-        stop   = t["stop"]
-        target = t["target_2R"]
 
-        if price <= stop:
-            pnl = round((stop - t["entry"]) * t["shares"], 2)
-            t.update({
-                "status":     "stopped_out",
-                "exit_price": stop,
-                "exit_time":  now,
-                "outcome":    "loss",
-                "pnl_dollars": pnl,
-            })
-        elif price >= target:
-            pnl = round((target - t["entry"]) * t["shares"], 2)
-            t.update({
-                "status":     "target_hit",
-                "exit_price": target,
-                "exit_time":  now,
-                "outcome":    "win",
-                "pnl_dollars": pnl,
-            })
-        else:
-            unrealized = round((price - t["entry"]) * t["shares"], 2)
-            t["last_price"]   = round(price, 4)
-            t["unrealized_pnl"] = unrealized
-            t["checked_at"]   = now
-
-    return trades
-
+CLOSED_STATUSES = ("stopped", "breakeven", "win_2r", "target_hit")
 
 def print_status(trades: list[dict], quotes: dict[str, float] | None = None) -> None:
     open_t   = [t for t in trades if t.get("status") == "entered"]
-    closed_t = [t for t in trades if t.get("status") in ("stopped_out", "target_hit")]
+    closed_t = [t for t in trades if t.get("status") in CLOSED_STATUSES]
 
     print(f"\n{'='*70}")
     print(f"PAPER POSITION MONITOR  {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
@@ -94,7 +61,7 @@ def print_status(trades: list[dict], quotes: dict[str, float] | None = None) -> 
 
     if open_t:
         print(f"\nOPEN POSITIONS ({len(open_t)})")
-        header = f"  {'SYM':<6} {'TYPE':<14} {'ENTRY':>8} {'STOP':>8} {'2R':>8} {'LAST':>8} {'UNRL PnL':>10}"
+        header = f"  {'SYM':<6} {'TYPE':<14} {'ENTRY':>8} {'STOP':>8} {'2R':>8} {'LAST':>8} {'UNRL PnL':>10}  BE"
         print(header)
         print("  " + "-" * (len(header) - 2))
         for t in open_t:
@@ -102,24 +69,24 @@ def print_status(trades: list[dict], quotes: dict[str, float] | None = None) -> 
             unrl = t.get("unrealized_pnl", "")
             unrl_str = f"${unrl:+.2f}" if isinstance(unrl, (int, float)) else "—"
             last_str = f"{last:.2f}" if isinstance(last, (int, float)) else "—"
+            be_flag  = "✓" if t.get("touched_1r") else " "
             print(f"  {t['symbol']:<6} {t['type']:<14} {t['entry']:>8.2f} {t['stop']:>8.2f} "
-                  f"{t['target_2R']:>8.2f} {last_str:>8} {unrl_str:>10}")
+                  f"{t['target_2R']:>8.2f} {last_str:>8} {unrl_str:>10}  {be_flag}")
     else:
         print("\n  No open positions.")
 
     if closed_t:
-        print(f"\nCLOSED TODAY ({len(closed_t)})")
+        print(f"\nCLOSED ({len(closed_t)})")
         for t in closed_t:
-            outcome = "WIN " if t["outcome"] == "win" else "LOSS"
-            pnl     = t.get("pnl_dollars", 0)
-            print(f"  {t['symbol']:<6} {t['type']:<14} {outcome}  "
-                  f"exit={t.get('exit_price', '?')}  P&L=${pnl:+.2f}")
+            status = t["status"]
+            label  = {"stopped": "LOSS", "breakeven": "BE  ", "win_2r": "W-2R", "target_hit": "WIN "}.get(status, status)
+            pnl    = t.get("realized_pnl", 0)
+            print(f"  {t['symbol']:<6} {t['type']:<14} {label}  "
+                  f"exit=${t.get('exit_price', '?')}  P&L=${pnl:+.2f}")
 
-    total_open_pnl = sum(
-        t.get("unrealized_pnl", 0) for t in open_t if isinstance(t.get("unrealized_pnl"), (int, float))
-    )
-    total_closed_pnl = sum(t.get("pnl_dollars", 0) for t in closed_t)
-    print(f"\nUnrealized P&L: ${total_open_pnl:+.2f}  |  Realized today: ${total_closed_pnl:+.2f}")
+    total_open_pnl   = sum(t.get("unrealized_pnl", 0) for t in open_t if isinstance(t.get("unrealized_pnl"), (int, float)))
+    total_closed_pnl = sum(t.get("realized_pnl",   0) for t in closed_t)
+    print(f"\nUnrealized P&L: ${total_open_pnl:+.2f}  |  Realized: ${total_closed_pnl:+.2f}")
     print(f"{'='*70}\n")
 
 
