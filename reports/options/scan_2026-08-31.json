@@ -1,0 +1,171 @@
+{
+  "scan_date": "2026-08-31",
+  "management_actions": [
+    {
+      "symbol": "AGNC",
+      "instrument_id": "c396830e-baf1-4feb-a315-6fc37ee99aa0",
+      "action": "no_action",
+      "mark_price": 0.105,
+      "dte": 25,
+      "itm": false
+    },
+    {
+      "symbol": "RIVN",
+      "instrument_id": "15fc4be0-c978-4596-8d35-5a87a2874f2d",
+      "action": "no_action",
+      "mark_price": 0.11,
+      "dte": 18,
+      "itm": false
+    }
+  ],
+  "proposed": [],
+  "skipped": {
+    "WBD": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "SOFI": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "NOK": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "PCG": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "IREN": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "SMCI": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "ET": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "PFE": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "BMNR": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "RIVN": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "CMG": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "NKE": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "QXO": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "PYPL": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "AAL": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "T": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "IONQ": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "NU": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "RKT": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "F": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "VZ": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "AGNC": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "CMCSA": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "NVO": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "FHN": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "PBR": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "VALE": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "U": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "OWL": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "BSX": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "HPE": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "CCL": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "RBLX": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "HPQ": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "B": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "JD": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "MRNA": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "DKNG": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "STM": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "FIG": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "HBAN": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "KSS": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "LYFT": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "M": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "SIRI": [
+      "max_concurrent_positions (2) reached"
+    ],
+    "KMI": [
+      "max_concurrent_positions (2) reached"
+    ]
+  },
+  "open_positions": 2,
+  "lots": [],
+  "equity": {
+    "starting_equity": 5000,
+    "csp_collateral": 2450.0,
+    "assigned_shares_capital": 0,
+    "capital_in_use": 2450.0,
+    "available_capital": 50.0
+  }
+}
