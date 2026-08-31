@@ -272,6 +272,33 @@ def git_commit_push(mode: str) -> None:
 # Main
 # ---------------------------------------------------------------------------
 
+# NYSE market holidays — update each December for the following year.
+_NYSE_HOLIDAYS = {
+    "2026-01-01",  # New Year's Day
+    "2026-01-19",  # MLK Day
+    "2026-02-16",  # Presidents' Day
+    "2026-04-03",  # Good Friday
+    "2026-05-25",  # Memorial Day
+    "2026-07-03",  # Independence Day (observed)
+    "2026-09-07",  # Labor Day
+    "2026-11-26",  # Thanksgiving
+    "2026-12-25",  # Christmas
+    "2027-01-01",  # New Year's Day
+    "2027-01-18",  # MLK Day
+    "2027-02-15",  # Presidents' Day
+    "2027-03-26",  # Good Friday
+    "2027-05-31",  # Memorial Day
+    "2027-07-05",  # Independence Day (observed)
+    "2027-09-06",  # Labor Day
+    "2027-11-25",  # Thanksgiving
+    "2027-12-24",  # Christmas (observed)
+}
+
+
+def _is_market_holiday(d: date | None = None) -> bool:
+    return str(d or date.today()) in _NYSE_HOLIDAYS
+
+
 if __name__ == "__main__":
     args = sys.argv[1:]
     if "--mode" not in args:
@@ -282,6 +309,10 @@ if __name__ == "__main__":
     if mode not in ("morning", "midday", "evening"):
         print(f"Unknown mode: {mode}. Use morning, midday, or evening.", file=sys.stderr)
         sys.exit(1)
+
+    if _is_market_holiday():
+        print(f"Market holiday ({date.today()}) — skipping run.")
+        sys.exit(0)
 
     from swing_agent.fetch_yf import _load_open_symbols, fetch_quotes
     from swing_agent.notify   import send_digest
