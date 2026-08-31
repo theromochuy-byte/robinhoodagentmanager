@@ -23850,7 +23850,7 @@
     "neckline": 422.0,
     "break_time": "2026-08-21T13:30:00Z",
     "first_seen": "2026-08-21T20:40:26.826105+00:00",
-    "status": "watching",
+    "status": "expired",
     "suggested_entry": 422.0,
     "suggested_entry_zone": [
       419.89,
@@ -23905,6 +23905,11 @@
         "time": "2026-08-28T23:04:19.341325+00:00",
         "price": 417.82,
         "note": "update"
+      },
+      {
+        "time": "2026-08-31T19:31:51.670324+00:00",
+        "price": 417.82,
+        "note": "expired"
       }
     ],
     "trigger_time": null,
@@ -23912,7 +23917,7 @@
     "close_time": null,
     "close_price": null,
     "outcome": null,
-    "elapsed_watching_hours": null,
+    "elapsed_watching_hours": 238.9,
     "elapsed_total_hours": null
   },
   {
@@ -24353,7 +24358,7 @@
     "neckline": 72.275,
     "break_time": "2026-08-21T13:30:00Z",
     "first_seen": "2026-08-21T20:40:27.018706+00:00",
-    "status": "watching",
+    "status": "expired",
     "suggested_entry": 72.275,
     "suggested_entry_zone": [
       71.9136,
@@ -24408,6 +24413,11 @@
         "time": "2026-08-28T23:04:19.410416+00:00",
         "price": 76.47,
         "note": "update"
+      },
+      {
+        "time": "2026-08-31T19:31:51.670324+00:00",
+        "price": 76.47,
+        "note": "expired"
       }
     ],
     "trigger_time": null,
@@ -24415,7 +24425,7 @@
     "close_time": null,
     "close_price": null,
     "outcome": null,
-    "elapsed_watching_hours": null,
+    "elapsed_watching_hours": 238.9,
     "elapsed_total_hours": null
   },
   {
@@ -25496,6 +25506,11 @@
         "time": "2026-08-28T23:04:19.358525+00:00",
         "price": 417.82,
         "note": "update"
+      },
+      {
+        "time": "2026-08-31T19:31:51.502654+00:00",
+        "price": 415.94,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -25716,6 +25731,11 @@
         "time": "2026-08-28T23:04:19.479612+00:00",
         "price": 128.26,
         "note": "update"
+      },
+      {
+        "time": "2026-08-31T19:31:51.622787+00:00",
+        "price": 124.92,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -25814,6 +25834,11 @@
       {
         "time": "2026-08-28T23:04:19.234043+00:00",
         "price": 81.73,
+        "note": "update"
+      },
+      {
+        "time": "2026-08-31T19:31:51.430436+00:00",
+        "price": 81.38,
         "note": "update"
       }
     ],
@@ -25956,6 +25981,11 @@
         "time": "2026-08-28T23:04:19.375764+00:00",
         "price": 191.88,
         "note": "update"
+      },
+      {
+        "time": "2026-08-31T19:31:51.526485+00:00",
+        "price": 188.17,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -26010,7 +26040,7 @@
     "neckline": 227.92,
     "break_time": "2026-08-27T13:30:00Z",
     "first_seen": "2026-08-27T22:58:45.659265+00:00",
-    "status": "watching",
+    "status": "expired",
     "suggested_entry": 227.92,
     "suggested_entry_zone": [
       226.7804,
@@ -26030,6 +26060,11 @@
         "time": "2026-08-28T23:04:19.215535+00:00",
         "price": 217.54,
         "note": "update"
+      },
+      {
+        "time": "2026-08-31T19:31:51.670324+00:00",
+        "price": 217.54,
+        "note": "expired"
       }
     ],
     "trigger_time": null,
@@ -26037,7 +26072,7 @@
     "close_time": null,
     "close_price": null,
     "outcome": null,
-    "elapsed_watching_hours": null,
+    "elapsed_watching_hours": 92.6,
     "elapsed_total_hours": null
   },
   {
@@ -26066,6 +26101,11 @@
       {
         "time": "2026-08-28T23:04:19.324031+00:00",
         "price": 166.0,
+        "note": "update"
+      },
+      {
+        "time": "2026-08-31T19:31:51.478942+00:00",
+        "price": 171.7,
         "note": "update"
       }
     ],
@@ -26104,6 +26144,11 @@
         "time": "2026-08-28T23:04:19.427676+00:00",
         "price": 122.86,
         "note": "update"
+      },
+      {
+        "time": "2026-08-31T19:31:51.550358+00:00",
+        "price": 126.445,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -26136,6 +26181,11 @@
         "time": "2026-08-28T23:04:19.306577+00:00",
         "price": 57.325,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-08-31T19:31:51.455073+00:00",
+        "price": 60.155,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -26153,7 +26203,7 @@
     "neckline": 36.2,
     "break_time": "2026-08-28T13:30:00Z",
     "first_seen": "2026-08-28T23:04:19.393217+00:00",
-    "status": "watching",
+    "status": "expired",
     "suggested_entry": 36.2,
     "suggested_entry_zone": [
       36.019,
@@ -26168,6 +26218,11 @@
         "time": "2026-08-28T23:04:19.393217+00:00",
         "price": 36.18,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-08-31T19:31:51.670324+00:00",
+        "price": 36.18,
+        "note": "expired"
       }
     ],
     "trigger_time": null,
@@ -26175,7 +26230,7 @@
     "close_time": null,
     "close_price": null,
     "outcome": null,
-    "elapsed_watching_hours": null,
+    "elapsed_watching_hours": 68.5,
     "elapsed_total_hours": null
   },
   {
@@ -26200,6 +26255,11 @@
         "time": "2026-08-28T23:04:19.507722+00:00",
         "price": 456.07,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-08-31T19:31:51.646642+00:00",
+        "price": 463.17,
+        "note": "update"
       }
     ],
     "trigger_time": null,

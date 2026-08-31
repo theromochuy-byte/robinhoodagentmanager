@@ -2,16 +2,16 @@
   "date": "2026-08-27",
   "new_entries": 0,
   "closed_today": 2,
-  "open_count": 74,
+  "open_count": 71,
   "entries": [],
   "closed": [
     {
       "symbol": "EOG",
       "type": "inverse_hns",
       "neckline": 140.4799,
-      "stop": 131.757,
-      "target_2R": 160.9261,
-      "risk_per_share": 9.723,
+      "stop": 131.7369,
+      "target_2R": 160.9662,
+      "risk_per_share": 9.7431,
       "shares": 2.6506,
       "break_time": "2026-07-20T13:30:00Z",
       "bars_since_break": 3,
@@ -38,9 +38,9 @@
       "symbol": "DLTR",
       "type": "inverse_hns",
       "neckline": 133.26,
-      "stop": 124.2896,
-      "target_2R": 155.8958,
-      "risk_per_share": 10.5354,
+      "stop": 124.2958,
+      "target_2R": 155.8833,
+      "risk_per_share": 10.5292,
       "shares": 2.7814,
       "break_time": "2026-08-24T13:30:00Z",
       "bars_since_break": 3,
@@ -55,14 +55,14 @@
       "touched_1r": false,
       "touched_2r": false,
       "outcome": "loss",
-      "exit_price": 124.2896,
+      "exit_price": 124.2958,
       "exit_time": "2026-08-27T13:30:00Z",
-      "pnl_per_share": -10.2004,
-      "pnl_dollars": -28.37,
+      "pnl_per_share": -10.1942,
+      "pnl_dollars": -28.35,
       "r_multiple": -0.968,
       "exit_reason": "stop",
       "days_held": 1.83
     }
   ],
-  "watching_count": 13
+  "watching_count": 12
 }
