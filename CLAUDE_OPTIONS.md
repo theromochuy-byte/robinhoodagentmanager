@@ -2,9 +2,15 @@
 
 This file defines a second, independent strategy running in this repo, alongside
 the equity swing strategy in `CLAUDE.md`. Read both at the start of every
-session. This is a **first draft** — review the numbers below (equity, deltas,
-DTEs, caps) before letting any automation run unattended, the same way the
-swing strategy rules were signed off before being coded.
+session. The starting numbers (equity, deltas, DTEs, caps) were reviewed and
+signed off 2026-08-19 before the strategy was allowed to run unattended, the
+same way the swing strategy rules were signed off before being coded; the
+strategy has run a recurring weekday automation since 2026-08-12 and every
+rule change since has its own sign-off date inline (barbell entry, payback
+tracking, missing-leg retry, liquidity/yield gate tuning, universe widening
+— see each section below). Nothing here is still an unreviewed first draft,
+but the same discipline holds going forward: **propose changes and wait for
+sign-off before changing a rule** rather than tuning silently.
 
 Step 1's quality screen, the minimum-yield floor in Steps 3/5, and the
 protective collar in Step 4a are adapted from two wheel-strategy walkthroughs

@@ -87,7 +87,7 @@ puts, plus covered calls on any resulting assignment). Same safety posture —
 PAPER mode only, read-only option tools, every decision logged before anything
 else happens with it.
 
-- `CLAUDE_OPTIONS.md` ......... strategy and safety rules (first draft, needs review)
+- `CLAUDE_OPTIONS.md` ......... strategy and safety rules, reviewed and signed off 2026-08-19; running daily since 2026-08-12
 - `premium_agent/dataio.py` ... parse Robinhood option contract+quote JSON
 - `premium_agent/quality_screen.py` . Step 1 fundamental/liquidity gate (volume, P/E, 52wk range, trailing growth) + dividend lookup
 - `premium_agent/trend.py` .... Step 1 technical gate: price above 20/50-day SMA, from local daily bars
