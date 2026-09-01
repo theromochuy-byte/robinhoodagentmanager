@@ -2,8 +2,8 @@
   "WBD": {
     "fundamentals": {
       "symbol": "WBD",
-      "average_volume_30_days": "19847311.9593",
-      "pe_ratio": "-22.600000",
+      "average_volume_30_days": "19442121.1351",
+      "pe_ratio": "-22.410000",
       "high_52_weeks": "30.000000",
       "low_52_weeks": "11.250000",
       "dividend_yield": null,
@@ -12,7 +12,7 @@
       "ex_dividend_date": "2014-08-07",
       "payable_date": "2014-08-06"
     },
-    "price": 28.77,
+    "price": 28.53,
     "financials_annual": [
       {
         "fiscal_year": 2025,
@@ -28,7 +28,7 @@
   "SOFI": {
     "fundamentals": {
       "symbol": "SOFI",
-      "average_volume_30_days": "56094950.9846",
+      "average_volume_30_days": "47292724.8871",
       "pe_ratio": "38.077166",
       "high_52_weeks": "32.730000",
       "low_52_weeks": "14.880000",
@@ -38,7 +38,7 @@
       "ex_dividend_date": null,
       "payable_date": null
     },
-    "price": 18.06,
+    "price": 17.88,
     "financials_annual": [
       {
         "fiscal_year": 2025,
@@ -54,7 +54,7 @@
   "NOK": {
     "fundamentals": {
       "symbol": "NOK",
-      "average_volume_30_days": "73812538.9777",
+      "average_volume_30_days": "69038023.6980",
       "pe_ratio": "69.079838",
       "high_52_weeks": "17.450000",
       "low_52_weeks": "4.230000",
@@ -64,24 +64,24 @@
       "ex_dividend_date": "2026-07-28",
       "payable_date": "2026-08-11"
     },
-    "price": 10.21,
+    "price": 10.14,
     "financials_annual": null,
     "next_earnings_date": null
   },
   "PCG": {
     "fundamentals": {
       "symbol": "PCG",
-      "average_volume_30_days": "29767721.8197",
-      "pe_ratio": "12.108834",
+      "average_volume_30_days": "35680884.0954",
+      "pe_ratio": "9.679772",
       "high_52_weeks": "19.155000",
-      "low_52_weeks": "14.335000",
-      "dividend_yield": "1.054217",
+      "low_52_weeks": "13.085000",
+      "dividend_yield": "1.318764",
       "dividend_per_share": "0.050000",
       "distribution_frequency": "Quarterly",
       "ex_dividend_date": "2026-06-30",
       "payable_date": "2026-07-15"
     },
-    "price": 16.6,
+    "price": 13.27,
     "financials_annual": [
       {
         "fiscal_year": 2025,
@@ -97,8 +97,8 @@
   "IREN": {
     "fundamentals": {
       "symbol": "IREN",
-      "average_volume_30_days": "48468712.3282",
-      "pe_ratio": "70.030000",
+      "average_volume_30_days": "45000656.8259",
+      "pe_ratio": "-18.740000",
       "high_52_weeks": "76.870000",
       "low_52_weeks": "25.310000",
       "dividend_yield": null,
@@ -107,7 +107,7 @@
       "ex_dividend_date": null,
       "payable_date": null
     },
-    "price": 35.45,
+    "price": 37.115,
     "financials_annual": [
       {
         "fiscal_year": 2026,
@@ -123,7 +123,7 @@
   "SMCI": {
     "fundamentals": {
       "symbol": "SMCI",
-      "average_volume_30_days": "52841322.7356",
+      "average_volume_30_days": "53517723.6266",
       "pe_ratio": "11.374233",
       "high_52_weeks": "58.780000",
       "low_52_weeks": "19.480000",
@@ -133,15 +133,15 @@
       "ex_dividend_date": null,
       "payable_date": null
     },
-    "price": 37.08,
+    "price": 37.28,
     "financials_annual": [
+      {
+        "fiscal_year": 2026,
+        "net_income": 2230453000.0
+      },
       {
         "fiscal_year": 2025,
         "net_income": 1048854000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": 1152666000.0
       }
     ],
     "next_earnings_date": null
@@ -149,7 +149,7 @@
   "ET": {
     "fundamentals": {
       "symbol": "ET",
-      "average_volume_30_days": "9296633.9853",
+      "average_volume_30_days": "9358513.7219",
       "pe_ratio": "14.600891",
       "high_52_weeks": "21.640000",
       "low_52_weeks": "16.180000",
@@ -159,14 +159,14 @@
       "ex_dividend_date": "2026-08-07",
       "payable_date": "2026-08-19"
     },
-    "price": 21.31,
+    "price": 21.51,
     "financials_annual": null,
     "next_earnings_date": null
   },
   "PFE": {
     "fundamentals": {
       "symbol": "PFE",
-      "average_volume_30_days": "38361531.6392",
+      "average_volume_30_days": "38467426.9643",
       "pe_ratio": "37.023305",
       "high_52_weeks": "28.745000",
       "low_52_weeks": "23.580000",
@@ -176,7 +176,7 @@
       "ex_dividend_date": "2026-07-24",
       "payable_date": "2026-09-01"
     },
-    "price": 27.96,
+    "price": 28.46,
     "financials_annual": [
       {
         "fiscal_year": 2025,
@@ -192,17 +192,17 @@
   "BMNR": {
     "fundamentals": {
       "symbol": "BMNR",
-      "average_volume_30_days": "38387454.6298",
-      "pe_ratio": "-2.790000",
+      "average_volume_30_days": "39073328.7156",
+      "pe_ratio": "-2.970000",
       "high_52_weeks": "65.600000",
       "low_52_weeks": "12.800000",
-      "dividend_yield": "0.042017",
+      "dividend_yield": "0.039494",
       "dividend_per_share": "0.010000",
       "distribution_frequency": "Annual",
       "ex_dividend_date": "2025-12-08",
       "payable_date": "2025-12-29"
     },
-    "price": 23.8,
+    "price": 25.32,
     "financials_annual": [
       {
         "fiscal_year": 2025,
@@ -218,8 +218,8 @@
   "RIVN": {
     "fundamentals": {
       "symbol": "RIVN",
-      "average_volume_30_days": "22912031.9057",
-      "pe_ratio": "-6.230000",
+      "average_volume_30_days": "21449525.2218",
+      "pe_ratio": "-6.220000",
       "high_52_weeks": "22.690000",
       "low_52_weeks": "12.390000",
       "dividend_yield": null,
@@ -228,7 +228,7 @@
       "ex_dividend_date": null,
       "payable_date": null
     },
-    "price": 16.07,
+    "price": 16.06,
     "financials_annual": [
       {
         "fiscal_year": 2025,
@@ -244,7 +244,7 @@
   "CMG": {
     "fundamentals": {
       "symbol": "CMG",
-      "average_volume_30_days": "18773171.9035",
+      "average_volume_30_days": "18088433.8411",
       "pe_ratio": "35.079790",
       "high_52_weeks": "42.815000",
       "low_52_weeks": "28.035000",
@@ -270,17 +270,17 @@
   "NKE": {
     "fundamentals": {
       "symbol": "NKE",
-      "average_volume_30_days": "26283722.9007",
+      "average_volume_30_days": "27323897.5138",
       "pe_ratio": "18.869723",
-      "high_52_weeks": "79.130000",
+      "high_52_weeks": "76.970000",
       "low_52_weeks": "38.170000",
-      "dividend_yield": "4.223892",
+      "dividend_yield": "4.116162",
       "dividend_per_share": "0.410000",
       "distribution_frequency": "Quarterly",
       "ex_dividend_date": "2026-09-01",
       "payable_date": "2026-10-01"
     },
-    "price": 39.6,
+    "price": 39.06,
     "financials_annual": [
       {
         "fiscal_year": 2026,
@@ -291,13 +291,13 @@
         "net_income": 3219000000.0
       }
     ],
-    "next_earnings_date": null
+    "next_earnings_date": "2026-10-01"
   },
   "QXO": {
     "fundamentals": {
       "symbol": "QXO",
-      "average_volume_30_days": "16851103.2750",
-      "pe_ratio": "-15.130000",
+      "average_volume_30_days": "16408388.1739",
+      "pe_ratio": "-14.860000",
       "high_52_weeks": "27.610000",
       "low_52_weeks": "13.145000",
       "dividend_yield": null,
@@ -306,7 +306,7 @@
       "ex_dividend_date": "2024-06-05",
       "payable_date": "2024-06-12"
     },
-    "price": 13.52,
+    "price": 13.28,
     "financials_annual": [
       {
         "fiscal_year": 2025,
@@ -322,7 +322,7 @@
   "PYPL": {
     "fundamentals": {
       "symbol": "PYPL",
-      "average_volume_30_days": "11464598.3038",
+      "average_volume_30_days": "11574197.6116",
       "pe_ratio": "10.140217",
       "high_52_weeks": "79.215000",
       "low_52_weeks": "38.460000",
@@ -332,7 +332,7 @@
       "ex_dividend_date": "2026-09-04",
       "payable_date": "2026-09-25"
     },
-    "price": 53.66,
+    "price": 52.665,
     "financials_annual": [
       {
         "fiscal_year": 2025,
@@ -348,8 +348,8 @@
   "AAL": {
     "fundamentals": {
       "symbol": "AAL",
-      "average_volume_30_days": "55814596.1255",
-      "pe_ratio": "-27.630000",
+      "average_volume_30_days": "56777256.4912",
+      "pe_ratio": "-27.210000",
       "high_52_weeks": "18.790000",
       "low_52_weeks": "10.090000",
       "dividend_yield": null,
@@ -358,7 +358,7 @@
       "ex_dividend_date": "2020-02-04",
       "payable_date": "2020-02-19"
     },
-    "price": 13.64,
+    "price": 13.43,
     "financials_annual": [
       {
         "fiscal_year": 2025,
@@ -374,7 +374,7 @@
   "T": {
     "fundamentals": {
       "symbol": "T",
-      "average_volume_30_days": "39302544.0959",
+      "average_volume_30_days": "36013147.4724",
       "pe_ratio": "8.601475",
       "high_52_weeks": "29.790000",
       "low_52_weeks": "19.890000",
@@ -384,7 +384,7 @@
       "ex_dividend_date": "2026-07-10",
       "payable_date": "2026-08-03"
     },
-    "price": 26.01,
+    "price": 25.89,
     "financials_annual": [
       {
         "fiscal_year": 2025,
@@ -400,8 +400,8 @@
   "IONQ": {
     "fundamentals": {
       "symbol": "IONQ",
-      "average_volume_30_days": "19657588.5413",
-      "pe_ratio": "-8.620000",
+      "average_volume_30_days": "20330012.3139",
+      "pe_ratio": "-8.650000",
       "high_52_weeks": "84.640000",
       "low_52_weeks": "25.890000",
       "dividend_yield": null,
@@ -410,7 +410,7 @@
       "ex_dividend_date": null,
       "payable_date": null
     },
-    "price": 39.2,
+    "price": 39.31,
     "financials_annual": [
       {
         "fiscal_year": 2025,
@@ -426,7 +426,7 @@
   "NU": {
     "fundamentals": {
       "symbol": "NU",
-      "average_volume_30_days": "64361917.7391",
+      "average_volume_30_days": "68153286.7775",
       "pe_ratio": "19.238531",
       "high_52_weeks": "18.980000",
       "low_52_weeks": "11.200000",
@@ -436,14 +436,14 @@
       "ex_dividend_date": null,
       "payable_date": null
     },
-    "price": 14.3,
+    "price": 14.55,
     "financials_annual": null,
     "next_earnings_date": null
   },
   "RKT": {
     "fundamentals": {
       "symbol": "RKT",
-      "average_volume_30_days": "26528449.5215",
+      "average_volume_30_days": "25180262.3890",
       "pe_ratio": "91.616766",
       "high_52_weeks": "24.360000",
       "low_52_weeks": "12.170000",
@@ -453,7 +453,7 @@
       "ex_dividend_date": "2025-03-20",
       "payable_date": "2025-04-03"
     },
-    "price": 13.77,
+    "price": 13.41,
     "financials_annual": [
       {
         "fiscal_year": 2025,
@@ -469,17 +469,17 @@
   "F": {
     "fundamentals": {
       "symbol": "F",
-      "average_volume_30_days": "44617207.7081",
-      "pe_ratio": "-8.020000",
+      "average_volume_30_days": "40611825.0804",
+      "pe_ratio": "-8.050000",
       "high_52_weeks": "17.780000",
       "low_52_weeks": "11.110000",
-      "dividend_yield": "4.322767",
+      "dividend_yield": "4.304161",
       "dividend_per_share": "0.150000",
       "distribution_frequency": "Quarterly",
       "ex_dividend_date": "2026-08-11",
       "payable_date": "2026-09-01"
     },
-    "price": 13.88,
+    "price": 13.94,
     "financials_annual": [
       {
         "fiscal_year": 2025,
@@ -495,7 +495,7 @@
   "VZ": {
     "fundamentals": {
       "symbol": "VZ",
-      "average_volume_30_days": "20161694.7021",
+      "average_volume_30_days": "18785810.5598",
       "pe_ratio": "13.046875",
       "high_52_weeks": "51.680000",
       "low_52_weeks": "38.390000",
@@ -521,7 +521,7 @@
   "AGNC": {
     "fundamentals": {
       "symbol": "AGNC",
-      "average_volume_30_days": "16392784.9159",
+      "average_volume_30_days": "15561383.6900",
       "pe_ratio": "5.717283",
       "high_52_weeks": "12.190000",
       "low_52_weeks": "9.620000",
@@ -547,7 +547,7 @@
   "CMCSA": {
     "fundamentals": {
       "symbol": "CMCSA",
-      "average_volume_30_days": "23723880.0288",
+      "average_volume_30_days": "22591676.3250",
       "pe_ratio": "8.762386",
       "high_52_weeks": "32.855000",
       "low_52_weeks": "21.280000",
@@ -573,7 +573,7 @@
   "NVO": {
     "fundamentals": {
       "symbol": "NVO",
-      "average_volume_30_days": "14085656.2469",
+      "average_volume_30_days": "13593552.2913",
       "pe_ratio": "11.133623",
       "high_52_weeks": "64.160000",
       "low_52_weeks": "35.120000",
@@ -590,7 +590,7 @@
   "FHN": {
     "fundamentals": {
       "symbol": "FHN",
-      "average_volume_30_days": "4759156.8200",
+      "average_volume_30_days": "4653234.3626",
       "pe_ratio": "11.835598",
       "high_52_weeks": "26.560000",
       "low_52_weeks": "19.800100",
@@ -607,7 +607,7 @@
   "PBR": {
     "fundamentals": {
       "symbol": "PBR",
-      "average_volume_30_days": "17723396.8311",
+      "average_volume_30_days": "18509396.7652",
       "pe_ratio": "4.686631",
       "high_52_weeks": "22.240000",
       "low_52_weeks": "11.430000",
@@ -624,7 +624,7 @@
   "VALE": {
     "fundamentals": {
       "symbol": "VALE",
-      "average_volume_30_days": "25757447.3346",
+      "average_volume_30_days": "25753960.2419",
       "pe_ratio": "31.562369",
       "high_52_weeks": "17.940000",
       "low_52_weeks": "10.080000",
@@ -634,15 +634,15 @@
       "ex_dividend_date": "2026-08-13",
       "payable_date": "2026-09-10"
     },
-    "price": 15.03,
+    "price": 15.31,
     "financials_annual": null,
     "next_earnings_date": null
   },
   "U": {
     "fundamentals": {
       "symbol": "U",
-      "average_volume_30_days": "12646046.5564",
-      "pe_ratio": "-31.810000",
+      "average_volume_30_days": "13136921.6214",
+      "pe_ratio": "-30.920000",
       "high_52_weeks": "52.150000",
       "low_52_weeks": "16.780000",
       "dividend_yield": null,
@@ -667,7 +667,7 @@
   "OWL": {
     "fundamentals": {
       "symbol": "OWL",
-      "average_volume_30_days": "20619680.4144",
+      "average_volume_30_days": "19327086.0792",
       "pe_ratio": "151.959545",
       "high_52_weeks": "19.289400",
       "low_52_weeks": "7.950000",
@@ -693,7 +693,7 @@
   "BSX": {
     "fundamentals": {
       "symbol": "BSX",
-      "average_volume_30_days": "21078028.4568",
+      "average_volume_30_days": "19420374.1504",
       "pe_ratio": "18.993553",
       "high_52_weeks": "109.500000",
       "low_52_weeks": "42.200000",
@@ -710,7 +710,7 @@
   "HPE": {
     "fundamentals": {
       "symbol": "HPE",
-      "average_volume_30_days": "15489128.9753",
+      "average_volume_30_days": "16034802.3688",
       "pe_ratio": "49.195900",
       "high_52_weeks": "64.250000",
       "low_52_weeks": "19.840000",
@@ -736,7 +736,7 @@
   "CCL": {
     "fundamentals": {
       "symbol": "CCL",
-      "average_volume_30_days": "17302798.9561",
+      "average_volume_30_days": "17525980.8773",
       "pe_ratio": "11.151144",
       "high_52_weeks": "34.030000",
       "low_52_weeks": "23.450000",
@@ -753,8 +753,8 @@
   "RBLX": {
     "fundamentals": {
       "symbol": "RBLX",
-      "average_volume_30_days": "15743365.5893",
-      "pe_ratio": "-27.210000",
+      "average_volume_30_days": "13578472.0861",
+      "pe_ratio": "-29.160000",
       "high_52_weeks": "141.999900",
       "low_52_weeks": "33.880000",
       "dividend_yield": null,
@@ -779,7 +779,7 @@
   "HPQ": {
     "fundamentals": {
       "symbol": "HPQ",
-      "average_volume_30_days": "15310579.8938",
+      "average_volume_30_days": "15031811.6446",
       "pe_ratio": "11.635975",
       "high_52_weeks": "32.190000",
       "low_52_weeks": "17.560000",
@@ -805,10 +805,10 @@
   "B": {
     "fundamentals": {
       "symbol": "B",
-      "average_volume_30_days": "11923525.4547",
+      "average_volume_30_days": "12223873.4903",
       "pe_ratio": "11.742765",
       "high_52_weeks": "54.690000",
-      "low_52_weeks": "26.160000",
+      "low_52_weeks": "26.550000",
       "dividend_yield": "1.998746",
       "dividend_per_share": "0.175000",
       "distribution_frequency": "Quarterly",
@@ -822,7 +822,7 @@
   "JD": {
     "fundamentals": {
       "symbol": "JD",
-      "average_volume_30_days": "8616380.9902",
+      "average_volume_30_days": "8365756.1252",
       "pe_ratio": "19.383557",
       "high_52_weeks": "36.860000",
       "low_52_weeks": "24.508000",
@@ -839,8 +839,8 @@
   "MRNA": {
     "fundamentals": {
       "symbol": "MRNA",
-      "average_volume_30_days": "27112521.0104",
-      "pe_ratio": "-17.280000",
+      "average_volume_30_days": "29789725.1902",
+      "pe_ratio": "-17.580000",
       "high_52_weeks": "176.660000",
       "low_52_weeks": "22.280000",
       "dividend_yield": null,
@@ -865,8 +865,8 @@
   "DKNG": {
     "fundamentals": {
       "symbol": "DKNG",
-      "average_volume_30_days": "12583625.4997",
-      "pe_ratio": "-67.810000",
+      "average_volume_30_days": "13054438.3806",
+      "pe_ratio": "-65.210000",
       "high_52_weeks": "48.780000",
       "low_52_weeks": "20.460000",
       "dividend_yield": null,
@@ -891,7 +891,7 @@
   "STM": {
     "fundamentals": {
       "symbol": "STM",
-      "average_volume_30_days": "8320821.4437",
+      "average_volume_30_days": "7756928.8213",
       "pe_ratio": "96.219797",
       "high_52_weeks": "81.420000",
       "low_52_weeks": "21.110000",
@@ -908,8 +908,8 @@
   "FIG": {
     "fundamentals": {
       "symbol": "FIG",
-      "average_volume_30_days": "21166515.9799",
-      "pe_ratio": "-9.400000",
+      "average_volume_30_days": "21218070.2474",
+      "pe_ratio": "-8.970000",
       "high_52_weeks": "71.480000",
       "low_52_weeks": "16.600000",
       "dividend_yield": null,
@@ -930,7 +930,7 @@
   "HBAN": {
     "fundamentals": {
       "symbol": "HBAN",
-      "average_volume_30_days": "22028925.4819",
+      "average_volume_30_days": "21947972.2493",
       "pe_ratio": "13.043478",
       "high_52_weeks": "19.455000",
       "low_52_weeks": "14.890000",
@@ -940,7 +940,7 @@
       "ex_dividend_date": "2026-09-17",
       "payable_date": "2026-10-01"
     },
-    "price": 16.92,
+    "price": 16.685,
     "financials_annual": [
       {
         "fiscal_year": 2025,
@@ -956,8 +956,8 @@
   "KSS": {
     "fundamentals": {
       "symbol": "KSS",
-      "average_volume_30_days": "4252741.5351",
-      "pe_ratio": "7.631923",
+      "average_volume_30_days": "4445854.3914",
+      "pe_ratio": "7.771478",
       "high_52_weeks": "25.220000",
       "low_52_weeks": "11.380000",
       "dividend_yield": "2.862049",
@@ -966,7 +966,7 @@
       "ex_dividend_date": "2026-09-09",
       "payable_date": "2026-09-23"
     },
-    "price": 17.5,
+    "price": 17.82,
     "financials_annual": [
       {
         "fiscal_year": 2026,
@@ -982,7 +982,7 @@
   "LYFT": {
     "fundamentals": {
       "symbol": "LYFT",
-      "average_volume_30_days": "11105034.8942",
+      "average_volume_30_days": "11110388.1882",
       "pe_ratio": "2.475455",
       "high_52_weeks": "25.540000",
       "low_52_weeks": "12.460000",
@@ -992,7 +992,7 @@
       "ex_dividend_date": null,
       "payable_date": null
     },
-    "price": 17.7,
+    "price": 16.9,
     "financials_annual": [
       {
         "fiscal_year": 2025,
@@ -1008,17 +1008,17 @@
   "M": {
     "fundamentals": {
       "symbol": "M",
-      "average_volume_30_days": "5017468.6168",
+      "average_volume_30_days": "4913404.3845",
       "pe_ratio": "9.055005",
       "high_52_weeks": "26.585000",
       "low_52_weeks": "13.090000",
       "dividend_yield": "3.397547",
       "dividend_per_share": "0.191500",
       "distribution_frequency": "Quarterly",
-      "ex_dividend_date": "2026-06-15",
-      "payable_date": "2026-07-01"
+      "ex_dividend_date": "2026-09-15",
+      "payable_date": "2026-10-01"
     },
-    "price": 22.01,
+    "price": 21.96,
     "financials_annual": [
       {
         "fiscal_year": 2026,
@@ -1034,7 +1034,7 @@
   "SIRI": {
     "fundamentals": {
       "symbol": "SIRI",
-      "average_volume_30_days": "4094477.8617",
+      "average_volume_30_days": "3677919.0947",
       "pe_ratio": "11.241531",
       "high_52_weeks": "32.660000",
       "low_52_weeks": "19.765000",
@@ -1044,7 +1044,7 @@
       "ex_dividend_date": "2026-08-10",
       "payable_date": "2026-08-26"
     },
-    "price": 28.54,
+    "price": 28.17,
     "financials_annual": [
       {
         "fiscal_year": 2025,
@@ -1060,17 +1060,17 @@
   "KMI": {
     "fundamentals": {
       "symbol": "KMI",
-      "average_volume_30_days": "10283654.3929",
-      "pe_ratio": "20.358663",
+      "average_volume_30_days": "10511332.9455",
+      "pe_ratio": "20.797316",
       "high_52_weeks": "34.805000",
       "low_52_weeks": "25.600000",
-      "dividend_yield": "3.723067",
+      "dividend_yield": "3.644541",
       "dividend_per_share": "0.297500",
       "distribution_frequency": "Quarterly",
       "ex_dividend_date": "2026-08-03",
       "payable_date": "2026-08-17"
     },
-    "price": 31.56,
+    "price": 32.24,
     "financials_annual": [
       {
         "fiscal_year": 2025,
