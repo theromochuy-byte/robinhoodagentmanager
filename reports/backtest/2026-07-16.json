@@ -1,28 +1,9 @@
 {
   "date": "2026-07-16",
-  "new_entries": 1,
+  "new_entries": 0,
   "closed_today": 0,
-  "open_count": 17,
-  "entries": [
-    {
-      "symbol": "BMY",
-      "type": "inverse_hns",
-      "neckline": 58.88,
-      "stop": 55.5555,
-      "target_2R": 65.6339,
-      "risk_per_share": 3.3595,
-      "shares": 6.3651,
-      "break_time": "2026-07-13T13:30:00Z",
-      "bars_since_break": 7,
-      "in_pullback": true,
-      "last_close": 60.51,
-      "last_bar_time": "2026-07-16T17:30:00Z",
-      "scan_date": "2026-07-16",
-      "entry": 60.51,
-      "entry_time": "2026-07-16T17:30:00Z",
-      "status": "open"
-    }
-  ],
+  "open_count": 1,
+  "entries": [],
   "closed": [],
-  "watching_count": 4
+  "watching_count": 3
 }
