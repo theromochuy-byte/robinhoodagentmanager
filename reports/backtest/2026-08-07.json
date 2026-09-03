@@ -1,28 +1,9 @@
 {
   "date": "2026-08-07",
-  "new_entries": 1,
+  "new_entries": 0,
   "closed_today": 0,
-  "open_count": 39,
-  "entries": [
-    {
-      "symbol": "ZS",
-      "type": "inverse_hns",
-      "neckline": 156.98,
-      "stop": 137.4352,
-      "target_2R": 210.6046,
-      "risk_per_share": 24.3898,
-      "shares": 1.23,
-      "break_time": "2026-08-04T13:30:00Z",
-      "bars_since_break": 7,
-      "in_pullback": true,
-      "last_close": 168.7,
-      "last_bar_time": "2026-08-07T17:30:00Z",
-      "scan_date": "2026-08-07",
-      "entry": 168.7,
-      "entry_time": "2026-08-07T17:30:00Z",
-      "status": "open"
-    }
-  ],
+  "open_count": 37,
+  "entries": [],
   "closed": [],
   "watching_count": 8
 }

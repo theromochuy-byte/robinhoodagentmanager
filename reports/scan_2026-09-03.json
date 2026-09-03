@@ -20,17 +20,17 @@
       "symbol": "ORCL",
       "type": "cup_and_handle",
       "neckline": 148.35,
-      "stop": 133.1846,
-      "target_1R": 175.6554,
+      "stop": 133.1845,
+      "target_1R": 175.6555,
       "target_2R": 196.8909,
-      "risk_per_share": 21.2354,
+      "risk_per_share": 21.2355,
       "shares": 2.3546,
       "break_time": "2026-09-03T13:30:00Z",
       "bars_since_break": 1,
       "in_pullback": false,
       "last_close": 154.05,
       "last_bar_time": "2026-09-03T17:30:00Z",
-      "scanned_at": "2026-09-03T20:41:00.258416+00:00",
+      "scanned_at": "2026-09-03T22:34:34.901810+00:00",
       "status": "watching"
     },
     {
@@ -47,7 +47,7 @@
       "in_pullback": true,
       "last_close": 177.74,
       "last_bar_time": "2026-09-03T17:30:00Z",
-      "scanned_at": "2026-09-03T20:41:01.430796+00:00",
+      "scanned_at": "2026-09-03T22:34:36.341066+00:00",
       "status": "watching"
     },
     {
@@ -64,7 +64,7 @@
       "in_pullback": false,
       "last_close": 450.64,
       "last_bar_time": "2026-09-03T17:30:00Z",
-      "scanned_at": "2026-09-03T20:41:02.833546+00:00",
+      "scanned_at": "2026-09-03T22:34:38.072158+00:00",
       "status": "watching"
     },
     {
@@ -81,7 +81,7 @@
       "in_pullback": false,
       "last_close": 450.64,
       "last_bar_time": "2026-09-03T17:30:00Z",
-      "scanned_at": "2026-09-03T20:41:02.834456+00:00",
+      "scanned_at": "2026-09-03T22:34:38.073174+00:00",
       "status": "watching"
     },
     {
@@ -98,7 +98,7 @@
       "in_pullback": true,
       "last_close": 921.15,
       "last_bar_time": "2026-09-03T17:30:00Z",
-      "scanned_at": "2026-09-03T20:41:02.745827+00:00",
+      "scanned_at": "2026-09-03T22:34:37.961117+00:00",
       "status": "watching"
     },
     {
@@ -115,7 +115,7 @@
       "in_pullback": true,
       "last_close": 248.52,
       "last_bar_time": "2026-09-03T17:30:00Z",
-      "scanned_at": "2026-09-03T20:41:02.785325+00:00",
+      "scanned_at": "2026-09-03T22:34:38.010926+00:00",
       "status": "watching"
     },
     {
@@ -132,7 +132,7 @@
       "in_pullback": false,
       "last_close": 248.52,
       "last_bar_time": "2026-09-03T17:30:00Z",
-      "scanned_at": "2026-09-03T20:41:02.786301+00:00",
+      "scanned_at": "2026-09-03T22:34:38.012026+00:00",
       "status": "watching"
     },
     {
@@ -149,7 +149,7 @@
       "in_pullback": false,
       "last_close": 694.32,
       "last_bar_time": "2026-09-03T17:30:00Z",
-      "scanned_at": "2026-09-03T20:41:01.215968+00:00",
+      "scanned_at": "2026-09-03T22:34:36.079986+00:00",
       "status": "watching"
     },
     {
@@ -166,7 +166,7 @@
       "in_pullback": true,
       "last_close": 921.15,
       "last_bar_time": "2026-09-03T17:30:00Z",
-      "scanned_at": "2026-09-03T20:41:02.744866+00:00",
+      "scanned_at": "2026-09-03T22:34:37.960040+00:00",
       "status": "watching"
     },
     {
@@ -183,7 +183,7 @@
       "in_pullback": true,
       "last_close": 131.275,
       "last_bar_time": "2026-09-03T17:30:00Z",
-      "scanned_at": "2026-09-03T20:41:03.216024+00:00",
+      "scanned_at": "2026-09-03T22:34:38.543422+00:00",
       "status": "watching"
     },
     {
@@ -200,24 +200,24 @@
       "in_pullback": true,
       "last_close": 37.29,
       "last_bar_time": "2026-09-03T17:30:00Z",
-      "scanned_at": "2026-09-03T20:41:02.151660+00:00",
+      "scanned_at": "2026-09-03T22:34:37.225343+00:00",
       "status": "watching"
     },
     {
       "symbol": "FTNT",
       "type": "inverse_hns",
       "neckline": 172.09,
-      "stop": 153.7457,
-      "target_1R": 191.8343,
-      "target_2R": 210.8787,
-      "risk_per_share": 19.0443,
-      "shares": 2.6255,
+      "stop": 153.7443,
+      "target_1R": 191.8357,
+      "target_2R": 210.8814,
+      "risk_per_share": 19.0457,
+      "shares": 2.6253,
       "break_time": "2026-08-27T17:30:00Z",
       "bars_since_break": 10,
       "in_pullback": true,
       "last_close": 156.34,
       "last_bar_time": "2026-09-03T17:30:00Z",
-      "scanned_at": "2026-09-03T20:41:01.692932+00:00",
+      "scanned_at": "2026-09-03T22:34:36.661600+00:00",
       "status": "watching"
     },
     {
@@ -234,7 +234,7 @@
       "in_pullback": true,
       "last_close": 131.275,
       "last_bar_time": "2026-09-03T17:30:00Z",
-      "scanned_at": "2026-09-03T20:41:03.215078+00:00",
+      "scanned_at": "2026-09-03T22:34:38.542382+00:00",
       "status": "watching"
     }
   ],
@@ -253,7 +253,7 @@
       "in_pullback": true,
       "last_close": 99.24,
       "last_bar_time": "2026-09-03T17:30:00Z",
-      "scanned_at": "2026-09-03T20:41:01.863291+00:00",
+      "scanned_at": "2026-09-03T22:34:36.868381+00:00",
       "entry": 99.24,
       "entry_time": "2026-09-03T17:30:00Z",
       "status": "entered",
@@ -273,7 +273,7 @@
       "in_pullback": true,
       "last_close": 278.44,
       "last_bar_time": "2026-09-03T17:30:00Z",
-      "scanned_at": "2026-09-03T20:40:59.520015+00:00",
+      "scanned_at": "2026-09-03T22:34:33.991179+00:00",
       "entry": 278.44,
       "entry_time": "2026-09-03T17:30:00Z",
       "status": "entered",
@@ -285,7 +285,7 @@
       "neckline": 222.15,
       "stop": 208.1984,
       "target_1R": 237.2416,
-      "target_2R": 251.7633,
+      "target_2R": 251.7631,
       "risk_per_share": 14.5216,
       "shares": 2.8062,
       "break_time": "2026-09-02T17:30:00Z",
@@ -293,7 +293,7 @@
       "in_pullback": true,
       "last_close": 224.405,
       "last_bar_time": "2026-09-03T17:30:00Z",
-      "scanned_at": "2026-09-03T20:41:02.645279+00:00",
+      "scanned_at": "2026-09-03T22:34:37.836469+00:00",
       "entry": 224.405,
       "entry_time": "2026-09-03T17:30:00Z",
       "status": "entered",
@@ -313,7 +313,7 @@
       "in_pullback": true,
       "last_close": 278.44,
       "last_bar_time": "2026-09-03T17:30:00Z",
-      "scanned_at": "2026-09-03T20:40:59.519079+00:00",
+      "scanned_at": "2026-09-03T22:34:33.990134+00:00",
       "entry": 278.44,
       "entry_time": "2026-09-03T17:30:00Z",
       "status": "entered",
@@ -1122,7 +1122,7 @@
         "target_2R": 210.8818,
         "first_seen": "2026-08-27T22:58:45.755463+00:00",
         "latest_price": 156.34,
-        "price_snapshots": 10
+        "price_snapshots": 11
       },
       {
         "symbol": "DG",
@@ -1138,7 +1138,7 @@
         "target_2R": 151.9431,
         "first_seen": "2026-08-27T22:58:46.021593+00:00",
         "latest_price": 131.275,
-        "price_snapshots": 10
+        "price_snapshots": 11
       },
       {
         "symbol": "DE",
@@ -1154,7 +1154,7 @@
         "target_2R": 795.4335,
         "first_seen": "2026-09-01T20:44:31.659873+00:00",
         "latest_price": 694.32,
-        "price_snapshots": 5
+        "price_snapshots": 6
       },
       {
         "symbol": "DG",
@@ -1170,7 +1170,7 @@
         "target_2R": 173.9582,
         "first_seen": "2026-09-01T20:44:31.753541+00:00",
         "latest_price": 131.275,
-        "price_snapshots": 5
+        "price_snapshots": 6
       },
       {
         "symbol": "MCK",
@@ -1186,7 +1186,7 @@
         "target_2R": 1055.3542,
         "first_seen": "2026-09-02T20:42:32.894267+00:00",
         "latest_price": 921.15,
-        "price_snapshots": 3
+        "price_snapshots": 4
       },
       {
         "symbol": "CAH",
@@ -1202,7 +1202,7 @@
         "target_2R": 278.672,
         "first_seen": "2026-09-02T20:42:32.917713+00:00",
         "latest_price": 248.52,
-        "price_snapshots": 3
+        "price_snapshots": 4
       },
       {
         "symbol": "ORCL",
@@ -1218,7 +1218,7 @@
         "target_2R": 196.8909,
         "first_seen": "2026-09-03T20:41:03.810986+00:00",
         "latest_price": 154.05,
-        "price_snapshots": 1
+        "price_snapshots": 2
       },
       {
         "symbol": "AMT",
@@ -1234,7 +1234,7 @@
         "target_2R": 197.6885,
         "first_seen": "2026-09-03T20:41:03.863745+00:00",
         "latest_price": 177.74,
-        "price_snapshots": 1
+        "price_snapshots": 2
       },
       {
         "symbol": "CAH",
@@ -1250,7 +1250,7 @@
         "target_2R": 275.6916,
         "first_seen": "2026-09-03T20:41:03.994592+00:00",
         "latest_price": 248.52,
-        "price_snapshots": 1
+        "price_snapshots": 2
       },
       {
         "symbol": "SPGI",
@@ -1266,7 +1266,7 @@
         "target_2R": 511.1064,
         "first_seen": "2026-09-03T20:41:04.047493+00:00",
         "latest_price": 450.64,
-        "price_snapshots": 1
+        "price_snapshots": 2
       },
       {
         "symbol": "SPGI",
@@ -1282,7 +1282,7 @@
         "target_2R": 511.1064,
         "first_seen": "2026-09-03T20:41:04.113658+00:00",
         "latest_price": 450.64,
-        "price_snapshots": 1
+        "price_snapshots": 2
       }
     ]
   }
