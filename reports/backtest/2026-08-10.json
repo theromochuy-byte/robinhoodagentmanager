@@ -2,15 +2,15 @@
   "date": "2026-08-10",
   "new_entries": 2,
   "closed_today": 0,
-  "open_count": 43,
+  "open_count": 41,
   "entries": [
     {
       "symbol": "JPM",
       "type": "inverse_hns",
       "neckline": 359.3,
-      "stop": 336.3048,
-      "target_2R": 407.8105,
-      "risk_per_share": 23.8352,
+      "stop": 336.3321,
+      "target_2R": 407.7558,
+      "risk_per_share": 23.8079,
       "shares": 1.0413,
       "break_time": "2026-08-04T13:30:00Z",
       "bars_since_break": 9,
@@ -26,10 +26,10 @@
       "symbol": "ZBH",
       "type": "inverse_hns",
       "neckline": 97.6,
-      "stop": 87.758,
-      "target_2R": 118.994,
-      "risk_per_share": 10.412,
-      "shares": 2.8813,
+      "stop": 87.7575,
+      "target_2R": 118.9951,
+      "risk_per_share": 10.4125,
+      "shares": 2.8811,
       "break_time": "2026-08-05T17:30:00Z",
       "bars_since_break": 6,
       "in_pullback": true,
@@ -42,5 +42,5 @@
     }
   ],
   "closed": [],
-  "watching_count": 10
+  "watching_count": 9
 }
