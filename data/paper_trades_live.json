@@ -137,10 +137,10 @@
     "entry_time": "2026-08-25T17:30:00Z",
     "status": "entered",
     "quality_score": 0.5114,
-    "last_price": 82.67,
-    "unrealized_pnl": 2.33,
+    "last_price": 79.26,
+    "unrealized_pnl": -16.78,
     "touched_1r": false,
-    "checked_at": "2026-09-03T22:33:29.755289+00:00",
+    "checked_at": "2026-09-04T16:51:57.167941+00:00",
     "touched_2r": false,
     "progress_pct": 2.3,
     "est_days_to_2r": 276.4,
@@ -165,10 +165,10 @@
     "entry_time": "2026-08-25T17:30:00Z",
     "status": "entered",
     "quality_score": 0.4094,
-    "last_price": 131.04,
-    "unrealized_pnl": -14.19,
+    "last_price": 131.4375,
+    "unrealized_pnl": -12.56,
     "touched_1r": false,
-    "checked_at": "2026-09-03T22:33:29.755289+00:00",
+    "checked_at": "2026-09-04T16:51:57.167941+00:00",
     "touched_2r": false
   },
   {
@@ -212,10 +212,10 @@
     "entry_time": "2026-08-25T17:30:00Z",
     "status": "entered",
     "quality_score": 0.2392,
-    "last_price": 177.75,
-    "unrealized_pnl": -3.14,
+    "last_price": 176.615,
+    "unrealized_pnl": -7.13,
     "touched_1r": false,
-    "checked_at": "2026-09-03T22:33:29.755289+00:00",
+    "checked_at": "2026-09-04T16:51:57.167941+00:00",
     "touched_2r": false
   },
   {
@@ -239,8 +239,8 @@
     "quality_score": 0.3779,
     "touched_2r": false,
     "touched_1r": false,
-    "last_price": 409.2,
-    "unrealized_pnl": -25.93,
-    "checked_at": "2026-09-03T22:33:29.755289+00:00"
+    "last_price": 405.77,
+    "unrealized_pnl": -30.21,
+    "checked_at": "2026-09-04T16:51:57.167941+00:00"
   }
 ]
