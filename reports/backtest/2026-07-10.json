@@ -1,28 +1,9 @@
 {
   "date": "2026-07-10",
-  "new_entries": 1,
+  "new_entries": 0,
   "closed_today": 0,
-  "open_count": 1,
-  "entries": [
-    {
-      "symbol": "MDT",
-      "type": "inverse_hns",
-      "neckline": 82.48,
-      "stop": 77.5885,
-      "target_2R": 94.3779,
-      "risk_per_share": 5.5965,
-      "shares": 4.508,
-      "break_time": "2026-07-02T17:30:00Z",
-      "bars_since_break": 10,
-      "in_pullback": true,
-      "last_close": 83.85,
-      "last_bar_time": "2026-07-10T17:30:00Z",
-      "scan_date": "2026-07-10",
-      "entry": 83.85,
-      "entry_time": "2026-07-10T17:30:00Z",
-      "status": "open"
-    }
-  ],
+  "open_count": 0,
+  "entries": [],
   "closed": [],
   "watching_count": 1
 }

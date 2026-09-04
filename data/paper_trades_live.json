@@ -137,10 +137,10 @@
     "entry_time": "2026-08-25T17:30:00Z",
     "status": "entered",
     "quality_score": 0.5114,
-    "last_price": 79.26,
-    "unrealized_pnl": -16.78,
+    "last_price": 78.25,
+    "unrealized_pnl": -22.44,
     "touched_1r": false,
-    "checked_at": "2026-09-04T16:51:57.167941+00:00",
+    "checked_at": "2026-09-04T20:26:58.776853+00:00",
     "touched_2r": false,
     "progress_pct": 2.3,
     "est_days_to_2r": 276.4,
@@ -165,10 +165,10 @@
     "entry_time": "2026-08-25T17:30:00Z",
     "status": "entered",
     "quality_score": 0.4094,
-    "last_price": 131.4375,
-    "unrealized_pnl": -12.56,
+    "last_price": 131.42,
+    "unrealized_pnl": -12.63,
     "touched_1r": false,
-    "checked_at": "2026-09-04T16:51:57.167941+00:00",
+    "checked_at": "2026-09-04T20:26:58.776853+00:00",
     "touched_2r": false
   },
   {
@@ -212,10 +212,10 @@
     "entry_time": "2026-08-25T17:30:00Z",
     "status": "entered",
     "quality_score": 0.2392,
-    "last_price": 176.615,
-    "unrealized_pnl": -7.13,
+    "last_price": 175.85,
+    "unrealized_pnl": -9.83,
     "touched_1r": false,
-    "checked_at": "2026-09-04T16:51:57.167941+00:00",
+    "checked_at": "2026-09-04T20:26:58.776853+00:00",
     "touched_2r": false
   },
   {
@@ -239,8 +239,28 @@
     "quality_score": 0.3779,
     "touched_2r": false,
     "touched_1r": false,
-    "last_price": 405.77,
-    "unrealized_pnl": -30.21,
-    "checked_at": "2026-09-04T16:51:57.167941+00:00"
+    "last_price": 405.0,
+    "unrealized_pnl": -31.17,
+    "checked_at": "2026-09-04T20:26:58.776853+00:00"
+  },
+  {
+    "symbol": "DG",
+    "type": "inverse_hns",
+    "neckline": 130.61,
+    "stop": 109.8653,
+    "target_1R": 152.5947,
+    "target_2R": 173.9594,
+    "risk_per_share": 21.3647,
+    "shares": 2.3403,
+    "break_time": "2026-09-01T13:30:00Z",
+    "bars_since_break": 7,
+    "in_pullback": true,
+    "last_close": 133.15,
+    "last_bar_time": "2026-09-04T17:30:00Z",
+    "scanned_at": "2026-09-04T20:27:54.669188+00:00",
+    "entry": 133.15,
+    "entry_time": "2026-09-04T17:30:00Z",
+    "status": "entered",
+    "quality_score": 0.2877
   }
 ]
