@@ -97,6 +97,8 @@ def add_position(
         "source_instrument_id": source_instrument_id,
         "strike_at_assignment": strike_at_assignment,
         "since": datetime.now(timezone.utc).isoformat(),
+        "dividends_received": 0.0,
+        "dividend_dates_credited": [],
     }
     positions.append(position)
     _save(path, positions)
@@ -117,6 +119,52 @@ def remove_position(source_instrument_id: str, path: str | Path = DEFAULT_POSITI
     return match
 
 
+def credit_dividend(
+    source_instrument_id: str,
+    payable_date: str,
+    amount: float,
+    path: str | Path = DEFAULT_POSITIONS,
+) -> bool:
+    """Credit one dividend payment to a lot's payback counter, keyed by
+    payable_date so the same payment never gets counted twice across daily
+    cycles (manage.credit_dividends calls this once per lot per cycle, and
+    payable_date stays the same across every one of those calls until the
+    next ex-dividend date rolls around).
+
+    TESTING (2026-09-04): dividends are folded into breakeven_progress_pct
+    as a third income stream alongside CSP/covered-call premium -- "Option
+    A" from the DRIP conversation, not the full DRIP share-count model
+    ("Option B"). Whether the dividend was actually taken as cash or DRIP'd
+    in the real brokerage account, this credits the same dollar amount either
+    way; it does not model DRIP's actual mechanism (buying more shares at
+    the payment-date price). Revisit after we've seen how this tracks in
+    practice -- CLAUDE_OPTIONS.md Step 5 doesn't have a signed-off dividend
+    rule yet, this is exploratory.
+
+    amount is a *total* dollar amount for the lot (dividend_per_share x
+    shares -- see manage.credit_dividends), stored on the lot as-is under
+    dividends_received. breakeven_progress_pct divides it back down to
+    per-share before folding it into its per-share premium ratio -- don't
+    pass a per-share amount here, it would get double-divided.
+
+    Returns True if credited, False if this payable_date was already
+    credited for this lot (or the lot doesn't exist).
+    """
+    path = Path(path)
+    positions = _load(path)
+    for p in positions:
+        if p["source_instrument_id"] != source_instrument_id:
+            continue
+        credited = p.setdefault("dividend_dates_credited", [])
+        if payable_date in credited:
+            return False
+        p["dividends_received"] = p.get("dividends_received", 0.0) + amount
+        credited.append(payable_date)
+        _save(path, positions)
+        return True
+    return False
+
+
 def breakeven_progress_pct(
     source_instrument_id: str,
     ledger_path: str | Path = ledger.DEFAULT_LEDGER,
@@ -125,9 +173,19 @@ def breakeven_progress_pct(
     """This lot's own, independent progress toward zero cost basis: the CSP
     premium collected before assignment (strike_at_assignment - cost_basis)
     plus every covered-call trade ever written against this lot since
-    (ledger.covered_call_premium_for_lot), as a percentage of the original
-    strike. 100% means this specific lot -- and no other -- has fully paid
-    for itself. Returns None if no lot with this source_instrument_id is open.
+    (ledger.covered_call_premium_for_lot), plus dividends credited to this
+    lot since assignment (credit_dividend -- testing as of 2026-09-04, see
+    that function's docstring), as a percentage of the original strike. 100%
+    means this specific lot -- and no other -- has fully paid for itself.
+    Returns None if no lot with this source_instrument_id is open.
+
+    Units note: csp_premium and call_premium are both per-share dollar
+    amounts (the ledger stores `credit` per-share, standard options
+    convention) -- the whole ratio is share-count-independent by
+    construction. dividends_received on the lot is stored as a *total*
+    dollar amount (dividend_per_share x shares, see credit_dividend), so it
+    has to be divided back down to per-share here before joining the same
+    ratio, or it would swamp the percentage for any lot with shares > 1.
     """
     lot = lot_by_source(source_instrument_id, path)
     if lot is None:
@@ -137,7 +195,9 @@ def breakeven_progress_pct(
         return 0.0
     csp_premium = strike - lot["cost_basis"]
     call_premium = ledger.covered_call_premium_for_lot(source_instrument_id, path=ledger_path)
-    return round((csp_premium + call_premium) / strike * 100, 2)
+    shares = lot.get("shares") or 1
+    dividends_per_share = lot.get("dividends_received", 0.0) / shares
+    return round((csp_premium + call_premium + dividends_per_share) / strike * 100, 2)
 
 
 def is_paid_off(

@@ -81,6 +81,68 @@ def _find_roll_candidate(
     return candidates.iloc[0]
 
 
+def credit_dividends(
+    snapshot: dict,
+    *,
+    positions_path: str | Path = positions.DEFAULT_POSITIONS,
+    as_of: date | None = None,
+    dry_run: bool = False,
+) -> list[dict]:
+    """TESTING (2026-09-04, DRIP conversation "Option A"): for every open
+    lot, check its symbol's fundamentals in this cycle's universe_snapshot.json
+    for a dividend whose payable_date has arrived (payable_date <= as_of) --
+    if so, credit dividend_per_share * shares to that lot via
+    positions.credit_dividend, which is itself idempotent per payable_date so
+    running this every cycle never double-counts the same payment. Skips (and
+    says so, same "say so and skip" rule as everywhere else) when the
+    snapshot has no fundamentals for the lot's symbol, or when
+    dividend_per_share/payable_date is missing -- never invents a payment
+    that wasn't actually fetched. Not yet wired into CLAUDE_OPTIONS.md as a
+    signed-off rule -- see positions.credit_dividend's docstring.
+    """
+    as_of = as_of or date.today()
+    actions: list[dict] = []
+    for lot in positions.open_positions(positions_path):
+        symbol = lot["symbol"]
+        source_iid = lot["source_instrument_id"]
+        entry = snapshot.get(symbol)
+        fundamentals = (entry or {}).get("fundamentals", {})
+        payable_date = fundamentals.get("payable_date")
+        dividend_per_share = fundamentals.get("dividend_per_share")
+
+        if entry is None or payable_date is None or dividend_per_share is None:
+            actions.append({"symbol": symbol, "source_instrument_id": source_iid,
+                             "action": "skipped", "reason": "no dividend schedule in universe_snapshot.json"})
+            continue
+
+        try:
+            payable = date.fromisoformat(payable_date)
+        except ValueError:
+            actions.append({"symbol": symbol, "source_instrument_id": source_iid,
+                             "action": "skipped", "reason": f"unparseable payable_date {payable_date!r}"})
+            continue
+
+        if payable > as_of:
+            actions.append({"symbol": symbol, "source_instrument_id": source_iid,
+                             "action": "no_action", "reason": f"payable_date {payable_date} not reached yet"})
+            continue
+
+        amount = float(dividend_per_share) * lot["shares"]
+        if dry_run:
+            already = payable_date in lot.get("dividend_dates_credited", [])
+            actions.append({"symbol": symbol, "source_instrument_id": source_iid,
+                             "action": "skipped" if already else "credited_dividend",
+                             "payable_date": payable_date, "amount": amount})
+            continue
+
+        credited = positions.credit_dividend(source_iid, payable_date, amount, path=positions_path)
+        actions.append({"symbol": symbol, "source_instrument_id": source_iid,
+                         "action": "credited_dividend" if credited else "skipped",
+                         "reason": None if credited else f"payable_date {payable_date} already credited",
+                         "payable_date": payable_date, "amount": amount if credited else None})
+    return actions
+
+
 def simulate_management(
     config: dict,
     snapshot: dict,

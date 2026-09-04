@@ -602,6 +602,7 @@ def write_report(
     positions_path: str | Path = positions.DEFAULT_POSITIONS,
     as_of: date | None = None,
     management_actions: list[dict] | None = None,
+    dividend_actions: list[dict] | None = None,
 ) -> Path:
     """Save today's scan result to reports/options/scan_<date>.json, mirroring
     swing_agent.scanner's reports/scan_<date>.json convention -- this is what
@@ -623,6 +624,7 @@ def write_report(
     report = {
         "scan_date": today,
         "management_actions": management_actions or [],
+        "dividend_actions": dividend_actions or [],
         "proposed": result["proposed"],
         "skipped": result["skipped"],
         "open_positions": len(ledger.open_trades(ledger_path)),
@@ -675,9 +677,17 @@ def run_daily_cycle(config: dict | None = None, *, as_of: date | None = None, dr
         mgmt_result = manage.simulate_management(config, snapshot, quotes, OPTIONS_DIR, as_of=as_of, dry_run=dry_run)
         mgmt_actions = mgmt_result["actions"]
 
+    # TESTING (2026-09-04): dividend crediting toward breakeven_progress_pct,
+    # "Option A" from the DRIP conversation -- see manage.credit_dividends
+    # and positions.credit_dividend docstrings. Runs off open lots directly,
+    # independent of open_trades_today/quotes above.
+    dividend_actions: list[dict] = []
+    if positions.open_positions():
+        dividend_actions = manage.credit_dividends(snapshot, as_of=as_of, dry_run=dry_run)
+
     result = propose_candidates(config=config, snapshot=snapshot, as_of=as_of, dry_run=dry_run)
-    out = write_report(result, config, as_of=as_of, management_actions=mgmt_actions)
-    return {"management_actions": mgmt_actions, **result, "report_path": out}
+    out = write_report(result, config, as_of=as_of, management_actions=mgmt_actions, dividend_actions=dividend_actions)
+    return {"management_actions": mgmt_actions, "dividend_actions": dividend_actions, **result, "report_path": out}
 
 
 if __name__ == "__main__":
@@ -686,6 +696,12 @@ if __name__ == "__main__":
         print(f"Management actions ({len(cycle['management_actions'])}):")
         for a in cycle["management_actions"]:
             extra = {k: v for k, v in a.items() if k not in ("symbol", "instrument_id", "action")}
+            print(f"  {a['symbol']:6s} {a['action']:20s} {extra}")
+    if cycle["dividend_actions"]:
+        credited = [a for a in cycle["dividend_actions"] if a["action"] == "credited_dividend"]
+        print(f"Dividend actions ({len(cycle['dividend_actions'])}, {len(credited)} credited):")
+        for a in cycle["dividend_actions"]:
+            extra = {k: v for k, v in a.items() if k not in ("symbol", "source_instrument_id", "action") and v is not None}
             print(f"  {a['symbol']:6s} {a['action']:20s} {extra}")
     print(f"Proposed {len(cycle['proposed'])} trade(s):")
     for t in cycle["proposed"]:
