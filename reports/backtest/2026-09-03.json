@@ -2,7 +2,7 @@
   "date": "2026-09-03",
   "new_entries": 3,
   "closed_today": 0,
-  "open_count": 51,
+  "open_count": 50,
   "entries": [
     {
       "symbol": "JNJ",
@@ -44,9 +44,9 @@
       "symbol": "BIIB",
       "type": "inverse_hns",
       "neckline": 222.15,
-      "stop": 208.1989,
-      "target_2R": 251.7621,
-      "risk_per_share": 14.5211,
+      "stop": 208.199,
+      "target_2R": 251.762,
+      "risk_per_share": 14.521,
       "shares": 1.6837,
       "break_time": "2026-09-02T17:30:00Z",
       "bars_since_break": 2,
