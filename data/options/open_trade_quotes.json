@@ -1,26 +1,26 @@
 {
   "c396830e-baf1-4feb-a315-6fc37ee99aa0": {
-    "mark_price": 0.105,
+    "mark_price": 0.11,
     "adjusted_mark_price": 0.11,
-    "bid_price": 0.06,
-    "ask_price": 0.15,
-    "delta": -0.279123,
-    "implied_volatility": 0.263229,
-    "open_interest": 5082,
-    "volume": 0,
-    "chance_of_profit_short": 0.762246,
-    "updated_at": "2026-09-08T13:55:08.624320702Z"
+    "bid_price": 0.10,
+    "ask_price": 0.12,
+    "delta": -0.336096,
+    "implied_volatility": 0.214651,
+    "open_interest": 5122,
+    "volume": 2505,
+    "chance_of_profit_short": 0.730000,
+    "updated_at": "2026-09-09T14:26:05.44167207Z"
   },
   "15fc4be0-c978-4596-8d35-5a87a2874f2d": {
-    "mark_price": 0.07,
-    "adjusted_mark_price": 0.07,
-    "bid_price": 0.06,
-    "ask_price": 0.08,
-    "delta": -0.091477,
-    "implied_volatility": 0.592843,
-    "open_interest": 13376,
-    "volume": 26,
-    "chance_of_profit_short": 0.900232,
-    "updated_at": "2026-09-08T13:55:21.076084416Z"
+    "mark_price": 0.055,
+    "adjusted_mark_price": 0.06,
+    "bid_price": 0.05,
+    "ask_price": 0.06,
+    "delta": -0.072762,
+    "implied_volatility": 0.684187,
+    "open_interest": 13337,
+    "volume": 124,
+    "chance_of_profit_short": 0.917163,
+    "updated_at": "2026-09-09T14:25:54.75191667Z"
   }
 }

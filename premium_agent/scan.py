@@ -101,7 +101,7 @@ def screen_step1(
     )
     trend_is_hard = for_covered_call and "covered_call" in qs_cfg.get("trend_gate_hard_for", [])
 
-    growth_pct = quality_screen.trailing_eps_growth_pct(entry.get("financials_annual", []))
+    growth_pct = quality_screen.trailing_eps_growth_pct(entry.get("financials_annual") or [])
     min_growth = qs_cfg["min_trailing_eps_growth_pct"]
     # Missing growth data doesn't fail the gate -- same "skip when not
     # applicable" convention as the P/E check; we don't invent data.
