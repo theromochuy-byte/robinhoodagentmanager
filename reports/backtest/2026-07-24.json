@@ -1,16 +1,16 @@
 {
   "date": "2026-07-24",
-  "new_entries": 2,
+  "new_entries": 1,
   "closed_today": 0,
-  "open_count": 6,
+  "open_count": 1,
   "entries": [
     {
       "symbol": "JPM",
       "type": "inverse_hns",
       "neckline": 351.24,
-      "stop": 329.9243,
-      "target_2R": 397.6511,
-      "risk_per_share": 22.5756,
+      "stop": 329.962,
+      "target_2R": 397.5757,
+      "risk_per_share": 22.5379,
       "shares": 1.0638,
       "break_time": "2026-07-24T13:30:00Z",
       "bars_since_break": 1,
@@ -21,26 +21,8 @@
       "entry": 353.16,
       "entry_time": "2026-07-24T17:30:00Z",
       "status": "open"
-    },
-    {
-      "symbol": "EOG",
-      "type": "inverse_hns",
-      "neckline": 140.4799,
-      "stop": 131.6818,
-      "target_2R": 161.0764,
-      "risk_per_share": 9.7982,
-      "shares": 2.6506,
-      "break_time": "2026-07-20T13:30:00Z",
-      "bars_since_break": 9,
-      "in_pullback": true,
-      "last_close": 146.44,
-      "last_bar_time": "2026-07-24T17:30:00Z",
-      "scan_date": "2026-07-24",
-      "entry": 146.44,
-      "entry_time": "2026-07-24T17:30:00Z",
-      "status": "open"
     }
   ],
   "closed": [],
-  "watching_count": 2
+  "watching_count": 0
 }

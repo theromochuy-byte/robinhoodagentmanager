@@ -1,46 +1,9 @@
 {
   "date": "2026-07-21",
-  "new_entries": 2,
+  "new_entries": 0,
   "closed_today": 0,
-  "open_count": 2,
-  "entries": [
-    {
-      "symbol": "EOG",
-      "type": "inverse_hns",
-      "neckline": 140.4799,
-      "stop": 131.6818,
-      "target_2R": 161.0764,
-      "risk_per_share": 9.7982,
-      "shares": 2.6506,
-      "break_time": "2026-07-20T13:30:00Z",
-      "bars_since_break": 3,
-      "in_pullback": true,
-      "last_close": 143.45,
-      "last_bar_time": "2026-07-21T17:30:00Z",
-      "scan_date": "2026-07-21",
-      "entry": 143.45,
-      "entry_time": "2026-07-21T17:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "USB",
-      "type": "inverse_hns",
-      "neckline": 63.39,
-      "stop": 59.3241,
-      "target_2R": 73.5017,
-      "risk_per_share": 4.7259,
-      "shares": 5.8548,
-      "break_time": "2026-07-16T13:30:00Z",
-      "bars_since_break": 7,
-      "in_pullback": true,
-      "last_close": 63.715,
-      "last_bar_time": "2026-07-21T17:30:00Z",
-      "scan_date": "2026-07-21",
-      "entry": 63.715,
-      "entry_time": "2026-07-21T17:30:00Z",
-      "status": "open"
-    }
-  ],
+  "open_count": 0,
+  "entries": [],
   "closed": [],
   "watching_count": 0
 }

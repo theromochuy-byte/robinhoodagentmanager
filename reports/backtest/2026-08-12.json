@@ -2,16 +2,16 @@
   "date": "2026-08-12",
   "new_entries": 1,
   "closed_today": 0,
-  "open_count": 38,
+  "open_count": 34,
   "entries": [
     {
       "symbol": "ZBH",
       "type": "inverse_hns",
       "neckline": 97.6,
-      "stop": 87.758,
-      "target_2R": 118.994,
-      "risk_per_share": 10.412,
-      "shares": 2.8813,
+      "stop": 87.7569,
+      "target_2R": 118.9961,
+      "risk_per_share": 10.4131,
+      "shares": 2.881,
       "break_time": "2026-08-05T17:30:00Z",
       "bars_since_break": 10,
       "in_pullback": true,
@@ -24,5 +24,5 @@
     }
   ],
   "closed": [],
-  "watching_count": 5
+  "watching_count": 4
 }

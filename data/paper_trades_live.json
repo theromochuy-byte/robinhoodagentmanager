@@ -166,10 +166,10 @@
     "entry_time": "2026-08-25T17:30:00Z",
     "status": "entered",
     "quality_score": 0.5114,
-    "last_price": 76.255,
-    "unrealized_pnl": -33.62,
+    "last_price": 76.03,
+    "unrealized_pnl": -34.88,
     "touched_1r": false,
-    "checked_at": "2026-09-09T17:09:13.783706+00:00",
+    "checked_at": "2026-09-09T20:38:19.136827+00:00",
     "touched_2r": false,
     "progress_pct": 2.3,
     "est_days_to_2r": 276.4,
@@ -216,10 +216,10 @@
     "entry_time": "2026-08-25T17:30:00Z",
     "status": "entered",
     "quality_score": 0.2392,
-    "last_price": 175.46,
-    "unrealized_pnl": -11.2,
+    "last_price": 175.43,
+    "unrealized_pnl": -11.31,
     "touched_1r": false,
-    "checked_at": "2026-09-09T17:09:13.783706+00:00",
+    "checked_at": "2026-09-09T20:38:19.136827+00:00",
     "touched_2r": false
   },
   {
@@ -243,9 +243,9 @@
     "quality_score": 0.3779,
     "touched_2r": false,
     "touched_1r": false,
-    "last_price": 417.31,
-    "unrealized_pnl": -15.83,
-    "checked_at": "2026-09-09T17:09:13.783706+00:00"
+    "last_price": 421.83,
+    "unrealized_pnl": -10.2,
+    "checked_at": "2026-09-09T20:38:19.136827+00:00"
   },
   {
     "symbol": "DG",
@@ -266,9 +266,9 @@
     "entry_time": "2026-09-04T17:30:00Z",
     "status": "entered",
     "quality_score": 0.2877,
-    "last_price": 125.85,
-    "unrealized_pnl": -17.08,
+    "last_price": 124.57,
+    "unrealized_pnl": -20.08,
     "touched_1r": false,
-    "checked_at": "2026-09-09T17:09:13.783706+00:00"
+    "checked_at": "2026-09-09T20:38:19.136827+00:00"
   }
 ]
