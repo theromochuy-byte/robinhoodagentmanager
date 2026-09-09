@@ -2,15 +2,15 @@
   "date": "2026-08-10",
   "new_entries": 2,
   "closed_today": 0,
-  "open_count": 32,
+  "open_count": 30,
   "entries": [
     {
       "symbol": "JPM",
       "type": "inverse_hns",
       "neckline": 359.3,
-      "stop": 336.3224,
-      "target_2R": 407.7753,
-      "risk_per_share": 23.8176,
+      "stop": 336.31,
+      "target_2R": 407.8,
+      "risk_per_share": 23.83,
       "shares": 1.0413,
       "break_time": "2026-08-04T13:30:00Z",
       "bars_since_break": 9,
@@ -42,5 +42,5 @@
     }
   ],
   "closed": [],
-  "watching_count": 8
+  "watching_count": 7
 }
