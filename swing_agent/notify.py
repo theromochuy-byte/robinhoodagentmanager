@@ -134,7 +134,7 @@ def build_digest(
     realized = sum(
         t.get("realized_pnl", 0.0)
         for t in trades
-        if t.get("status") in ("stopped", "target_hit", "breakeven", "win_2r")
+        if t.get("status") in ("stopped", "target_hit", "breakeven", "win_2r", "time_stop")
     )
 
     # Load equity state

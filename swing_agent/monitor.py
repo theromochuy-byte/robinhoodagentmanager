@@ -49,7 +49,7 @@ def check_exits(trades: list[dict], quotes: dict[str, float]) -> list[dict]:
     return closes + still_open
 
 
-CLOSED_STATUSES = ("stopped", "breakeven", "win_2r", "target_hit")
+CLOSED_STATUSES = ("stopped", "breakeven", "win_2r", "target_hit", "time_stop")
 
 def print_status(trades: list[dict], quotes: dict[str, float] | None = None) -> None:
     open_t   = [t for t in trades if t.get("status") == "entered"]
@@ -79,7 +79,7 @@ def print_status(trades: list[dict], quotes: dict[str, float] | None = None) -> 
         print(f"\nCLOSED ({len(closed_t)})")
         for t in closed_t:
             status = t["status"]
-            label  = {"stopped": "LOSS", "breakeven": "BE  ", "win_2r": "W-2R", "target_hit": "WIN "}.get(status, status)
+            label  = {"stopped": "LOSS", "breakeven": "BE  ", "win_2r": "W-2R", "target_hit": "WIN ", "time_stop": "TIME"}.get(status, status)
             pnl    = t.get("realized_pnl", 0)
             print(f"  {t['symbol']:<6} {t['type']:<14} {label}  "
                   f"exit=${t.get('exit_price', '?')}  P&L=${pnl:+.2f}")

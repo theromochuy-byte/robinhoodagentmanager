@@ -79,15 +79,20 @@ def _fetch_intraday_highs(symbols: list[str]) -> dict[str, float]:
         return {}
 
 
+TIME_STOP_TRADING_DAYS = 15  # close if no 1R touch within ~3 weeks
+
+
 def check_exits(
     quotes: dict[str, float],
     intraday_highs: dict[str, float] | None = None,
 ) -> tuple[list[dict], list[dict]]:
     """Check open positions against quotes. Returns (closes, still_open).
 
-    Exit rules (stop takes priority if both triggered on same check):
-      - quote <= effective_stop  → stopped out
-      - quote >= 2R              → target hit
+    Exit rules (stop takes priority if triggered):
+      - quote <= effective_stop              → stopped out
+      - quote >= 3R                          → target hit
+      - held > TIME_STOP_TRADING_DAYS,
+        no 1R touch yet                     → time stop (stale trade)
 
     Breakeven stop: once price has ever touched 1R gain (tracked via
     'touched_1r' on the ledger record), effective_stop moves to entry.
@@ -175,6 +180,24 @@ def check_exits(
             t["touched_2r"]   = True
             closes.append(t)
         else:
+            # Time stop: if no 1R touch yet and held long enough, exit to free capital
+            if not touched_1r:
+                entry_time_str = t.get("entry_time", "")
+                try:
+                    entry_dt = datetime.fromisoformat(entry_time_str.replace("Z", "+00:00"))
+                    days_held = (datetime.now(timezone.utc) - entry_dt).total_seconds() / 86400
+                    if days_held * (5 / 7) >= TIME_STOP_TRADING_DAYS:
+                        t["status"]       = "time_stop"
+                        t["exit_price"]   = price
+                        t["exit_reason"]  = "time_stop"
+                        t["exit_time"]    = now
+                        t["realized_pnl"] = round((price - entry) * t.get("shares", 0), 2)
+                        t["days_held"]    = round(days_held, 1)
+                        closes.append(t)
+                        continue
+                except Exception:
+                    pass
+
             t["last_price"]     = price
             t["unrealized_pnl"] = round((price - entry) * t.get("shares", 0), 2)
             t["touched_1r"]     = touched_1r
