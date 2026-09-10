@@ -1,0 +1,12 @@
+[
+  {"id": "871f0348-d43d-4baf-8539-a77274118d58", "chain_symbol": "AGNC", "expiration_date": "2026-10-23", "strike_price": "9.0000", "type": "put",
+   "quote": {"bid_price": "0.000000", "ask_price": "0.160000", "mark_price": "0.080000", "delta": "-0.028177", "implied_volatility": "0.247732", "open_interest": 4, "volume": 3, "chance_of_profit_short": "0.966836", "chance_of_profit_long": "0.033164"}},
+  {"id": "8e53d51e-982b-49bc-824a-747dab38aea0", "chain_symbol": "AGNC", "expiration_date": "2026-10-23", "strike_price": "9.5000", "type": "put",
+   "quote": {"bid_price": "0.060000", "ask_price": "0.110000", "mark_price": "0.085000", "delta": "-0.148843", "implied_volatility": "0.308529", "open_interest": 357, "volume": 302, "chance_of_profit_short": "0.847490", "chance_of_profit_long": "0.152510"}},
+  {"id": "42002dd8-e3a6-4807-89bf-c85dee5a7167", "chain_symbol": "AGNC", "expiration_date": "2026-10-23", "strike_price": "10.0000", "type": "put",
+   "quote": {"bid_price": "0.120000", "ask_price": "0.200000", "mark_price": "0.160000", "delta": "-0.263333", "implied_volatility": "0.264719", "open_interest": 41, "volume": 19, "chance_of_profit_short": "0.764742", "chance_of_profit_long": "0.235258"}},
+  {"id": "cc462ff3-7ceb-4d89-ad90-ec6cf596175f", "chain_symbol": "AGNC", "expiration_date": "2026-10-23", "strike_price": "10.5000", "type": "put",
+   "quote": {"bid_price": "0.320000", "ask_price": "0.370000", "mark_price": "0.345000", "delta": "-0.463504", "implied_volatility": "0.260100", "open_interest": 199, "volume": 53, "chance_of_profit_short": "0.651638", "chance_of_profit_long": "0.348362"}},
+  {"id": "203d576c-3863-4167-bb1b-cab5c7e68b52", "chain_symbol": "AGNC", "expiration_date": "2026-10-23", "strike_price": "11.0000", "type": "put",
+   "quote": {"bid_price": "0.500000", "ask_price": "0.780000", "mark_price": "0.640000", "delta": "-0.679781", "implied_volatility": "0.251755", "open_interest": 2907, "volume": 0, "chance_of_profit_short": "0.567246", "chance_of_profit_long": "0.432754"}}
+]

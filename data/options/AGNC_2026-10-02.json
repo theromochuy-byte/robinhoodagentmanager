@@ -1,87 +1,12 @@
 [
-  {
-    "id": "fc4ac1fe-5187-402e-adac-ec101ecc57c7",
-    "chain_symbol": "AGNC",
-    "expiration_date": "2026-10-02",
-    "strike_price": "9.0000",
-    "type": "put",
-    "quote": {
-      "bid_price": "0.010000",
-      "ask_price": "0.110000",
-      "mark_price": "0.060000",
-      "delta": "-0.077771",
-      "implied_volatility": "0.433996",
-      "open_interest": 0,
-      "volume": 0,
-      "chance_of_profit_short": "0.906311"
-    }
-  },
-  {
-    "id": "e348e67c-c4fa-48fd-bec1-009c92e3eb12",
-    "chain_symbol": "AGNC",
-    "expiration_date": "2026-10-02",
-    "strike_price": "9.5000",
-    "type": "put",
-    "quote": {
-      "bid_price": "0.020000",
-      "ask_price": "0.130000",
-      "mark_price": "0.075000",
-      "delta": "-0.113189",
-      "implied_volatility": "0.370815",
-      "open_interest": 2003,
-      "volume": 1,
-      "chance_of_profit_short": "0.875207"
-    }
-  },
-  {
-    "id": "3606df21-abe8-424c-b21c-d391ea725149",
-    "chain_symbol": "AGNC",
-    "expiration_date": "2026-10-02",
-    "strike_price": "10.0000",
-    "type": "put",
-    "quote": {
-      "bid_price": "0.070000",
-      "ask_price": "0.110000",
-      "mark_price": "0.090000",
-      "delta": "-0.155869",
-      "implied_volatility": "0.284687",
-      "open_interest": 264,
-      "volume": 5,
-      "chance_of_profit_short": "0.843590"
-    }
-  },
-  {
-    "id": "b27e02ff-7b47-4954-a6cc-8e5c674b238a",
-    "chain_symbol": "AGNC",
-    "expiration_date": "2026-10-02",
-    "strike_price": "10.5000",
-    "type": "put",
-    "quote": {
-      "bid_price": "0.180000",
-      "ask_price": "0.220000",
-      "mark_price": "0.200000",
-      "delta": "-0.299322",
-      "implied_volatility": "0.270829",
-      "open_interest": 160,
-      "volume": 14,
-      "chance_of_profit_short": "0.741014"
-    }
-  },
-  {
-    "id": "6c62ec8d-2bd4-41d3-bec5-812e682872fa",
-    "chain_symbol": "AGNC",
-    "expiration_date": "2026-10-02",
-    "strike_price": "11.0000",
-    "type": "put",
-    "quote": {
-      "bid_price": "0.420000",
-      "ask_price": "0.450000",
-      "mark_price": "0.435000",
-      "delta": "-0.492343",
-      "implied_volatility": "0.288114",
-      "open_interest": 3948,
-      "volume": 4,
-      "chance_of_profit_short": "0.635862"
-    }
-  }
+  {"id": "fc4ac1fe-5187-402e-adac-ec101ecc57c7", "chain_symbol": "AGNC", "expiration_date": "2026-10-02", "strike_price": "9.0000", "type": "put",
+   "quote": {"bid_price": "0.000000", "ask_price": "0.180000", "mark_price": "0.090000", "delta": "-0.028491", "implied_volatility": "0.341311", "open_interest": 3, "volume": 0, "chance_of_profit_short": "0.966552", "chance_of_profit_long": "0.033448"}},
+  {"id": "e348e67c-c4fa-48fd-bec1-009c92e3eb12", "chain_symbol": "AGNC", "expiration_date": "2026-10-02", "strike_price": "9.5000", "type": "put",
+   "quote": {"bid_price": "0.000000", "ask_price": "0.060000", "mark_price": "0.030000", "delta": "-0.038967", "implied_volatility": "0.240281", "open_interest": 2007, "volume": 0, "chance_of_profit_short": "0.957402", "chance_of_profit_long": "0.042598"}},
+  {"id": "3606df21-abe8-424c-b21c-d391ea725149", "chain_symbol": "AGNC", "expiration_date": "2026-10-02", "strike_price": "10.0000", "type": "put",
+   "quote": {"bid_price": "0.070000", "ask_price": "0.100000", "mark_price": "0.085000", "delta": "-0.214266", "implied_volatility": "0.275299", "open_interest": 10067, "volume": 28, "chance_of_profit_short": "0.804439", "chance_of_profit_long": "0.195561"}},
+  {"id": "b27e02ff-7b47-4954-a6cc-8e5c674b238a", "chain_symbol": "AGNC", "expiration_date": "2026-10-02", "strike_price": "10.5000", "type": "put",
+   "quote": {"bid_price": "0.220000", "ask_price": "0.300000", "mark_price": "0.260000", "delta": "-0.471921", "implied_volatility": "0.265017", "open_interest": 826, "volume": 7, "chance_of_profit_short": "0.652902", "chance_of_profit_long": "0.347098"}},
+  {"id": "6c62ec8d-2bd4-41d3-bec5-812e682872fa", "chain_symbol": "AGNC", "expiration_date": "2026-10-02", "strike_price": "11.0000", "type": "put",
+   "quote": {"bid_price": "0.520000", "ask_price": "0.680000", "mark_price": "0.600000", "delta": "-0.723704", "implied_volatility": "0.290498", "open_interest": 4079, "volume": 40, "chance_of_profit_short": "0.554345", "chance_of_profit_long": "0.445655"}}
 ]
