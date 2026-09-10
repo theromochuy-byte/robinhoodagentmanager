@@ -6,7 +6,7 @@ paper trades to data/paper_trades_live.json. Run once per day after close.
 A setup is "live" when:
   1. A qualifying pattern broke its neckline within the last 12 4h bars.
   2. Daily bias is long at the time of the break.
-  3. Pattern depth >= 3%.
+  3. Pattern depth in [3%, 12%] — too shallow misses structure, too wide means a distant stop that bleeds slowly.
   4. The retest has NOT yet triggered (still watching) OR just triggered today.
 
 Outputs:
@@ -301,7 +301,8 @@ def scan_symbol(
         elif not bias_asof(bias, p["break_time"]):
             continue
 
-        if (p["neckline"] - p["stop_basis"]) / p["neckline"] < 0.03:
+        depth = (p["neckline"] - p["stop_basis"]) / p["neckline"]
+        if depth < 0.03 or depth > 0.12:
             continue
 
         trade = build_trade(h4, p, atr_series, equity, risk_pct,

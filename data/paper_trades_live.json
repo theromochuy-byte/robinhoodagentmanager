@@ -264,11 +264,13 @@
     "scanned_at": "2026-09-04T20:27:54.669188+00:00",
     "entry": 133.15,
     "entry_time": "2026-09-04T17:30:00Z",
-    "status": "entered",
+    "status": "voided",
     "quality_score": 0.2877,
     "last_price": 124.16,
     "unrealized_pnl": -21.04,
     "touched_1r": false,
-    "checked_at": "2026-09-10T16:59:32.918389+00:00"
+    "checked_at": "2026-09-10T16:59:32.918389+00:00",
+    "void_reason": "neckline_failure",
+    "void_note": "Price broke back below neckline ($130.61) within 4 bars of entry. Daily bias also failed (close $124.57 < EMA20 $126.12) by 2026-09-09. Pattern stop 16% wide (depth 15.9%) \u2014 well above 12% max-depth gate added retroactively on 2026-09-10. Voided manually 2026-09-10."
   }
 ]
