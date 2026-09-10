@@ -7,7 +7,12 @@ A setup is "live" when:
   1. A qualifying pattern broke its neckline within the last 12 4h bars.
   2. Daily bias is long at the time of the break.
   3. Pattern depth in [3%, 12%] — too shallow misses structure, too wide means a distant stop that bleeds slowly.
-  4. The retest has NOT yet triggered (still watching) OR just triggered today.
+  4. EMA20 > SMA50 > SMA200 on daily — confirms full multi-timeframe uptrend.
+  5. Stock 20-day return > SPY 20-day return — relative strength confirms leadership.
+  6. Break bar volume >= 1.2× 20-bar average — high-conviction neckline break.
+  7. Quality score >= MIN_QUALITY_SCORE — filters marginal setups.
+  8. The retest has NOT yet triggered (still watching) OR just triggered today.
+  9. At most MAX_ENTRIES_PER_DAY new positions opened per scan.
 
 Outputs:
   data/paper_trades_live.json  — all open paper positions + today's new entries
@@ -42,8 +47,12 @@ SESSION_UNIVERSE = DATA / "session_universe.txt"
 INDICATOR_CACHE  = DATA / "indicator_cache.json"
 CACHE_MAX_AGE    = 8 * 3600  # 8 hours
 
-VIX_HIGH_THRESHOLD = 25.0  # skip new entries when VIX is elevated
-VIX_CACHE_FILE     = DATA / "vix_cache.json"
+VIX_HIGH_THRESHOLD  = 25.0  # skip new entries when VIX is elevated
+VIX_CACHE_FILE      = DATA / "vix_cache.json"
+MIN_QUALITY_SCORE   = 0.45  # skip triggered setups below this quality threshold
+MAX_ENTRIES_PER_DAY = 2     # cap new entries per scan day (best by quality score)
+SPY_RS_CACHE_FILE   = DATA / "spy_rs_cache.json"
+SPY_RS_CACHE_AGE    = 8 * 3600
 
 # Sector ETF map: symbol prefix/membership → SPDR sector ETF
 # Covers the 11 GICS sectors; unmapped symbols are allowed through (no false blocks)
@@ -164,6 +173,28 @@ def _load_vix() -> float | None:
     return _fetch_vix()
 
 
+def _fetch_spy_20d_return() -> float | None:
+    """Return SPY's 20-day price return, cached for 8 hours. Returns None on failure."""
+    if SPY_RS_CACHE_FILE.exists():
+        age = time.time() - SPY_RS_CACHE_FILE.stat().st_mtime
+        if age < SPY_RS_CACHE_AGE:
+            return json.loads(SPY_RS_CACHE_FILE.read_text()).get("return_20d")
+    try:
+        url = "https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&range=35d"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            data = json.loads(resp.read())
+        closes = data["chart"]["result"][0]["indicators"]["quote"][0]["close"]
+        closes = [c for c in closes if c is not None]
+        if len(closes) < 21:
+            return None
+        ret = (closes[-1] - closes[-21]) / closes[-21]
+        SPY_RS_CACHE_FILE.write_text(json.dumps({"return_20d": ret, "fetched_at": time.time()}))
+        return ret
+    except Exception:
+        return None
+
+
 def _load_session_cache() -> dict[str, dict]:
     """Load live indicator cache written by Robinhood MCP session fetch.
     Returns {symbol: {ema20_daily, atr14_4hour}} or {} if missing/stale.
@@ -245,11 +276,13 @@ def scan_symbol(
     equity: float,
     risk_pct: float = 0.02,
     indicator_cache: dict | None = None,
+    spy_20d_return: float | None = None,
 ) -> dict:
     """Scan one symbol. Returns dict with 'watching' and 'triggered' lists.
 
     indicator_cache: optional {ema20_daily, atr14_4hour} for this symbol,
     fetched live from Robinhood API. When provided, replaces bar-computed values.
+    spy_20d_return: optional SPY 20-day return for relative-strength filter.
     """
     daily_path = DATA / f"{symbol}_day.json"
     h4_path    = DATA / f"{symbol}_4hour.json"
@@ -270,14 +303,29 @@ def scan_symbol(
         last_close_daily = float(daily.iloc[-1]["close"])
         last_low_daily   = float(daily.iloc[-1]["low"])
         sma50_daily      = float(daily["close"].rolling(50).mean().iloc[-1])
+        sma200_daily     = float(daily["close"].rolling(200).mean().iloc[-1]) if len(daily) >= 200 else 0.0
         current_bias     = (
             (last_close_daily > live_ema)
             and (last_low_daily > live_ema)
             and (live_ema > sma50_daily)
+            and (sma50_daily > sma200_daily)  # EMA stack: 20 > 50 > 200
         )
         bias = None  # will use current_bias for asof check
     else:
         bias = daily_bias_series(daily)
+        # EMA stack filter for fallback path: 20 EMA > SMA50 > SMA200
+        if len(daily) >= 200:
+            ema20_d  = float(ema(daily["close"], 20).iloc[-1])
+            sma50_d  = float(daily["close"].rolling(50).mean().iloc[-1])
+            sma200_d = float(daily["close"].rolling(200).mean().iloc[-1])
+            if not (ema20_d > sma50_d > sma200_d):
+                return {"watching": [], "triggered": []}
+
+    # Relative strength vs SPY: stock must have outperformed over last 20 days
+    if spy_20d_return is not None and len(daily) >= 21:
+        stock_20d = (float(daily.iloc[-1]["close"]) - float(daily.iloc[-21]["close"])) / float(daily.iloc[-21]["close"])
+        if stock_20d < spy_20d_return:
+            return {"watching": [], "triggered": []}
 
     atr_series = atr(h4, 14)
     ema9_series = ema(h4["close"], 9)
@@ -304,6 +352,13 @@ def scan_symbol(
         depth = (p["neckline"] - p["stop_basis"]) / p["neckline"]
         if depth < 0.03 or depth > 0.12:
             continue
+
+        # Volume confirmation: break bar must have >= 1.2× its 20-bar average volume
+        if bi >= 20 and "volume" in h4.columns:
+            avg_vol = float(h4["volume"].rolling(20).mean().iloc[bi])
+            if avg_vol > 0 and not pd.isna(avg_vol):
+                if float(h4.loc[bi, "volume"]) < 1.2 * avg_vol:
+                    continue
 
         trade = build_trade(h4, p, atr_series, equity, risk_pct,
                             atr_override=live_atr)
@@ -355,7 +410,13 @@ def scan_symbol(
             setup["entry_time"]  = str(h4.loc[last_bar, "begins_at"])
             setup["status"]      = "entered"
             setup["quality_score"] = _quality_score(setup)
-            triggered.append(setup)
+            if setup["quality_score"] < MIN_QUALITY_SCORE:
+                # Retest triggered but quality too low — demote to watching
+                setup["status"]      = "watching"
+                setup["skip_reason"] = "low_quality"
+                watching.append(setup)
+            else:
+                triggered.append(setup)
         else:
             setup["status"] = "watching"
             watching.append(setup)
@@ -393,6 +454,13 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         print(f"  [Sector] Filtered {filtered_out} symbol(s) in bearish sectors "
               f"({original_count} → {len(symbols)})")
 
+    # Relative strength benchmark: SPY 20-day return
+    spy_return = _fetch_spy_20d_return()
+    if spy_return is not None:
+        print(f"  [RS] SPY 20d return: {spy_return*100:.1f}% — stocks must beat this to qualify")
+    else:
+        print("  [RS] SPY return unavailable — relative strength filter bypassed")
+
     # VIX market context gate — skip new entries when volatility is elevated
     vix = _load_vix()
     high_vix = vix is not None and vix >= VIX_HIGH_THRESHOLD
@@ -418,7 +486,8 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         # Use full starting equity for position sizing (risk % of starting capital)
         # but gate entry on available equity
         result = scan_symbol(sym, starting, risk_pct,
-                             indicator_cache=indicator_cache.get(sym))
+                             indicator_cache=indicator_cache.get(sym),
+                             spy_20d_return=spy_return)
         all_watching.extend(result["watching"])
         all_triggered.extend(result["triggered"])
 
@@ -455,6 +524,7 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         print(f"  [Rank] {len(new_candidates)} new trigger(s) ranked by quality score — "
               f"top: {top['symbol']} {top['type']} score={top.get('quality_score', 0):.4f}")
 
+    entries_today = 0
     for t in already_open + new_candidates:
         if (t["symbol"], t.get("entry_time")) in existing_keys:
             # already in ledger — still update watchlist state if not yet done
@@ -485,7 +555,15 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
                             "skip_reason": "no_capital"})
             mark_missed(t["symbol"], t["type"], t["break_time"], reason="no_capital")
             continue
+        if entries_today >= MAX_ENTRIES_PER_DAY:
+            skipped.append({"symbol": t["symbol"], "type": t["type"],
+                            "cost": cost, "available": round(available, 2),
+                            "quality_score": t.get("quality_score", 0),
+                            "skip_reason": "daily_cap"})
+            mark_missed(t["symbol"], t["type"], t["break_time"], reason="daily_cap")
+            continue
         new_entries.append(t)
+        entries_today += 1
         available = round(available - cost, 2)
         symbols_entered.add(t["symbol"])
         mark_triggered(t["symbol"], t["type"], t["break_time"],
