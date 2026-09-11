@@ -1,0 +1,171 @@
+{
+  "scan_date": "2026-09-11",
+  "management_actions": [],
+  "dividend_actions": [
+    {
+      "symbol": "AGNC",
+      "source_instrument_id": "c396830e-baf1-4feb-a315-6fc37ee99aa0",
+      "action": "skipped",
+      "reason": "ex_dividend_date 2026-08-31 predates lot's since 2026-09-11 -- assigned too late to be entitled"
+    }
+  ],
+  "proposed": [],
+  "skipped": {
+    "WBD": [
+      "no option contract data in data/options"
+    ],
+    "SOFI": [
+      "no option contract data in data/options"
+    ],
+    "NOK": [
+      "no option contract data in data/options"
+    ],
+    "PCG": [
+      "no option contract data in data/options"
+    ],
+    "IREN": [
+      "no option contract data in data/options"
+    ],
+    "SMCI": [
+      "no option contract data in data/options"
+    ],
+    "ET": [
+      "no option contract data in data/options"
+    ],
+    "PFE": [
+      "no option contract data in data/options"
+    ],
+    "BMNR": [
+      "no supplemental CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "RIVN": [
+      "no supplemental CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "CMG": [
+      "no option contract data in data/options"
+    ],
+    "NKE": [
+      "no option contract data in data/options"
+    ],
+    "QXO": [
+      "no option contract data in data/options"
+    ],
+    "PYPL": [
+      "no supplemental CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "AAL": [
+      "no option contract data in data/options"
+    ],
+    "T": [
+      "no supplemental CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "IONQ": [
+      "no option contract data in data/options"
+    ],
+    "NU": [
+      "no supplemental CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "RKT": [
+      "no option contract data in data/options"
+    ],
+    "F": [
+      "no option contract data in data/options"
+    ],
+    "VZ": [
+      "no option contract data in data/options"
+    ],
+    "AGNC": [
+      "price 10.19 < 20-period SMA 10.79",
+      "price 10.19 < 50-period SMA 10.86"
+    ],
+    "CMCSA": [
+      "no supplemental CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "NVO": [
+      "no supplemental CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "FHN": [
+      "no option contract data in data/options"
+    ],
+    "PBR": [
+      "price 21.38 > 90% of 52wk high 22.24 (not 'on sale')"
+    ],
+    "VALE": [
+      "pe_ratio 32.4 > 30"
+    ],
+    "U": [
+      "no supplemental CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "OWL": [
+      "no option contract data in data/options"
+    ],
+    "BSX": [
+      "no supplemental CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "HPE": [
+      "no option contract data in data/options"
+    ],
+    "CCL": [
+      "no supplemental CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "RBLX": [
+      "no option contract data in data/options"
+    ],
+    "HPQ": [
+      "no option contract data in data/options"
+    ],
+    "B": [
+      "no supplemental CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "JD": [
+      "no supplemental CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "MRNA": [
+      "no supplemental CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "DKNG": [
+      "no supplemental CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "STM": [
+      "no option contract data in data/options"
+    ],
+    "FIG": [
+      "no supplemental CSP candidate cleared delta/DTE/liquidity/yield/collateral-budget"
+    ],
+    "HBAN": [
+      "no option contract data in data/options"
+    ],
+    "KSS": [
+      "no option contract data in data/options"
+    ],
+    "LYFT": [
+      "no option contract data in data/options"
+    ],
+    "M": [
+      "no option contract data in data/options"
+    ],
+    "SIRI": [
+      "no option contract data in data/options"
+    ],
+    "KMI": [
+      "no option contract data in data/options"
+    ]
+  },
+  "open_positions": 0,
+  "lots": [
+    {
+      "symbol": "AGNC",
+      "source_instrument_id": "c396830e-baf1-4feb-a315-6fc37ee99aa0",
+      "cost_basis": 10.36,
+      "breakeven_progress_pct": 1.33,
+      "paid_off": false
+    }
+  ],
+  "equity": {
+    "starting_equity": 5000,
+    "csp_collateral": 0,
+    "assigned_shares_capital": 1036.0,
+    "capital_in_use": 1036.0,
+    "available_capital": 3964.0
+  }
+}

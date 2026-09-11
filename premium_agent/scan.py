@@ -129,7 +129,10 @@ def _account_state(ledger_path: str | Path, positions_path: str | Path) -> tuple
     """(has_assignment, has_open_csp) -- the two independent triggers the rest
     of this module keys off of. has_assignment (any shares held at all, in
     any lot) switches on the post-assignment budget/concurrency expansion and
-    the supplemental-CSP posture. has_open_csp (any CSP leg still open,
+    the supplemental-CSP posture -- it also blocks a fresh barbell from
+    opening, same as has_open_csp does, since CLAUDE_OPTIONS.md's barbell
+    rule requires the account to be fully flat (zero open CSPs AND zero held
+    lots), not just free of open CSPs. has_open_csp (any CSP leg still open,
     un-assigned) blocks opening a fresh barbell pair until the current one has
     fully resolved -- profit-take, expiry, or assignment on both legs."""
     has_assignment = len(positions.open_positions(positions_path)) > 0
@@ -421,7 +424,13 @@ def propose_candidates(
     Held symbols (positions.py) are screened for covered calls (Step 5) --
     one proposal per open lot, since a symbol can hold more than one lot at
     once. Everything else is screened for cash-secured puts: if no CSP leg
-    is currently open anywhere (_account_state's has_open_csp), a fresh
+    is currently open anywhere AND no lot is held (_account_state's
+    has_open_csp / has_assignment -- both must be false, per CLAUDE_OPTIONS.md
+    "a fresh barbell only opens again once the account has zero open CSPs
+    and zero held lots"; fixed 2026-09-11, the barbell-open check had only
+    ever tested has_open_csp, so it would have wrongly opened a fresh
+    barbell pair alongside an existing held lot -- never actually reachable
+    until AGNC's first assignment that same cycle exposed it), a fresh
     barbell pair opens first (_open_barbell); if a barbell is already
     running but one of its two legs never filled, this retries just that
     missing leg (_active_barbell_episode / _retry_barbell_leg, 2026-08-24
@@ -445,7 +454,7 @@ def propose_candidates(
     max_positions = _effective_max_concurrent(config, has_assignment)
 
     barbell_symbols: set[str] = set()
-    if not has_open_csp and open_count < max_positions:
+    if not has_open_csp and not has_assignment and open_count < max_positions:
         barbell_trades, barbell_skipped = _open_barbell(
             config, universe, snapshot, options_dir, ledger_path, positions_path, as_of, dry_run
         )

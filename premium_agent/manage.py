@@ -109,6 +109,7 @@ def credit_dividends(
         fundamentals = (entry or {}).get("fundamentals", {})
         payable_date = fundamentals.get("payable_date")
         dividend_per_share = fundamentals.get("dividend_per_share")
+        ex_dividend_date = fundamentals.get("ex_dividend_date")
 
         if entry is None or payable_date is None or dividend_per_share is None:
             actions.append({"symbol": symbol, "source_instrument_id": source_iid,
@@ -125,6 +126,26 @@ def credit_dividends(
         if payable > as_of:
             actions.append({"symbol": symbol, "source_instrument_id": source_iid,
                              "action": "no_action", "reason": f"payable_date {payable_date} not reached yet"})
+            continue
+
+        # Must have been assigned (owned the shares) before the ex-dividend
+        # date to actually be entitled to this payment -- a lot assigned
+        # after the ex-date (e.g. the same cycle a CSP assigns, when the
+        # dividend's ex-date already passed while it was still a short put)
+        # never earned it, even though payable_date <= as_of. Caught
+        # 2026-09-11 on AGNC's very first assignment: its dividend had
+        # ex_dividend_date 2026-08-31 / payable_date 2026-09-10, both before
+        # the lot's own `since` (2026-09-11) -- crediting it would invent
+        # income the paper account never actually held shares to earn.
+        since_date = date.fromisoformat(lot["since"][:10])
+        if ex_dividend_date is None:
+            actions.append({"symbol": symbol, "source_instrument_id": source_iid,
+                             "action": "skipped", "reason": "no ex_dividend_date in universe_snapshot.json -- can't verify entitlement"})
+            continue
+        if date.fromisoformat(ex_dividend_date) < since_date:
+            actions.append({"symbol": symbol, "source_instrument_id": source_iid,
+                             "action": "skipped",
+                             "reason": f"ex_dividend_date {ex_dividend_date} predates lot's since {since_date.isoformat()} -- assigned too late to be entitled"})
             continue
 
         amount = float(dividend_per_share) * lot["shares"]
