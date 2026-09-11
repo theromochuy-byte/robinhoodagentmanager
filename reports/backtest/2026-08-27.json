@@ -2,16 +2,16 @@
   "date": "2026-08-27",
   "new_entries": 0,
   "closed_today": 1,
-  "open_count": 45,
+  "open_count": 32,
   "entries": [],
   "closed": [
     {
       "symbol": "DLTR",
       "type": "inverse_hns",
       "neckline": 133.26,
-      "stop": 124.2942,
-      "target_2R": 155.8866,
-      "risk_per_share": 10.5308,
+      "stop": 124.2963,
+      "target_2R": 155.8824,
+      "risk_per_share": 10.5287,
       "shares": 2.7814,
       "break_time": "2026-08-24T13:30:00Z",
       "bars_since_break": 3,
@@ -26,14 +26,14 @@
       "touched_1r": false,
       "touched_2r": false,
       "outcome": "loss",
-      "exit_price": 124.2942,
+      "exit_price": 124.2963,
       "exit_time": "2026-08-27T13:30:00Z",
-      "pnl_per_share": -10.1958,
-      "pnl_dollars": -28.36,
+      "pnl_per_share": -10.1937,
+      "pnl_dollars": -28.35,
       "r_multiple": -0.968,
       "exit_reason": "stop",
       "days_held": 1.83
     }
   ],
-  "watching_count": 10
+  "watching_count": 9
 }

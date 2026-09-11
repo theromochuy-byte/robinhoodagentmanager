@@ -1,28 +1,9 @@
 {
   "date": "2026-08-18",
-  "new_entries": 1,
+  "new_entries": 0,
   "closed_today": 0,
-  "open_count": 35,
-  "entries": [
-    {
-      "symbol": "PFE",
-      "type": "inverse_hns",
-      "neckline": 27.2,
-      "stop": 25.6371,
-      "target_2R": 30.3709,
-      "risk_per_share": 1.5779,
-      "shares": 13.7792,
-      "break_time": "2026-08-18T13:30:00Z",
-      "bars_since_break": 1,
-      "in_pullback": true,
-      "last_close": 27.26,
-      "last_bar_time": "2026-08-18T17:30:00Z",
-      "scan_date": "2026-08-18",
-      "entry": 27.26,
-      "entry_time": "2026-08-18T17:30:00Z",
-      "status": "open"
-    }
-  ],
+  "open_count": 25,
+  "entries": [],
   "closed": [],
   "watching_count": 3
 }
