@@ -30,7 +30,7 @@
       "in_pullback": true,
       "last_close": 181.93,
       "last_bar_time": "2026-09-11T17:30:00Z",
-      "scanned_at": "2026-09-11T20:39:56.378546+00:00",
+      "scanned_at": "2026-09-11T22:34:21.232210+00:00",
       "status": "watching"
     },
     {
@@ -47,7 +47,7 @@
       "in_pullback": false,
       "last_close": 181.93,
       "last_bar_time": "2026-09-11T17:30:00Z",
-      "scanned_at": "2026-09-11T20:39:56.379642+00:00",
+      "scanned_at": "2026-09-11T22:34:21.233261+00:00",
       "status": "watching"
     },
     {
@@ -64,7 +64,7 @@
       "in_pullback": true,
       "last_close": 974.94,
       "last_bar_time": "2026-09-11T17:30:00Z",
-      "scanned_at": "2026-09-11T20:39:56.425970+00:00",
+      "scanned_at": "2026-09-11T22:34:21.279094+00:00",
       "status": "watching"
     },
     {
@@ -81,7 +81,7 @@
       "in_pullback": true,
       "last_close": 97.16,
       "last_bar_time": "2026-09-11T17:30:00Z",
-      "scanned_at": "2026-09-11T20:39:56.933602+00:00",
+      "scanned_at": "2026-09-11T22:34:21.730454+00:00",
       "status": "watching"
     }
   ],
@@ -871,7 +871,7 @@
         "target_2R": 1255.7313,
         "first_seen": "2026-09-04T20:27:55.593317+00:00",
         "latest_price": 974.94,
-        "price_snapshots": 9
+        "price_snapshots": 10
       },
       {
         "symbol": "MET",
@@ -887,7 +887,7 @@
         "target_2R": 111.9913,
         "first_seen": "2026-09-04T20:27:55.655045+00:00",
         "latest_price": 97.16,
-        "price_snapshots": 9
+        "price_snapshots": 10
       },
       {
         "symbol": "QCOM",
@@ -903,7 +903,7 @@
         "target_2R": 228.4403,
         "first_seen": "2026-09-11T20:39:57.642151+00:00",
         "latest_price": 181.93,
-        "price_snapshots": 1
+        "price_snapshots": 2
       },
       {
         "symbol": "QCOM",
@@ -919,7 +919,7 @@
         "target_2R": 228.4403,
         "first_seen": "2026-09-11T20:39:57.669871+00:00",
         "latest_price": 181.93,
-        "price_snapshots": 1
+        "price_snapshots": 2
       }
     ]
   }
