@@ -27400,7 +27400,7 @@
     "neckline": 969.44,
     "break_time": "2026-09-04T13:30:00Z",
     "first_seen": "2026-09-04T20:27:55.593317+00:00",
-    "status": "watching",
+    "status": "expired",
     "suggested_entry": 969.44,
     "suggested_entry_zone": [
       964.5928,
@@ -27460,6 +27460,11 @@
         "time": "2026-09-11T22:34:22.460813+00:00",
         "price": 974.94,
         "note": "update"
+      },
+      {
+        "time": "2026-09-14T21:38:15.081552+00:00",
+        "price": 974.94,
+        "note": "expired"
       }
     ],
     "trigger_time": null,
@@ -27467,7 +27472,7 @@
     "close_time": null,
     "close_price": null,
     "outcome": null,
-    "elapsed_watching_hours": null,
+    "elapsed_watching_hours": 241.2,
     "elapsed_total_hours": null
   },
   {
@@ -27477,7 +27482,7 @@
     "neckline": 98.58,
     "break_time": "2026-09-03T13:30:00Z",
     "first_seen": "2026-09-04T20:27:55.655045+00:00",
-    "status": "watching",
+    "status": "expired",
     "suggested_entry": 98.58,
     "suggested_entry_zone": [
       98.0871,
@@ -27537,6 +27542,11 @@
         "time": "2026-09-11T22:34:22.486335+00:00",
         "price": 97.16,
         "note": "update"
+      },
+      {
+        "time": "2026-09-14T21:38:15.081552+00:00",
+        "price": 97.16,
+        "note": "expired"
       }
     ],
     "trigger_time": null,
@@ -27544,7 +27554,7 @@
     "close_time": null,
     "close_price": null,
     "outcome": null,
-    "elapsed_watching_hours": null,
+    "elapsed_watching_hours": 241.2,
     "elapsed_total_hours": null
   },
   {
@@ -27574,6 +27584,11 @@
         "time": "2026-09-11T22:34:22.409146+00:00",
         "price": 181.93,
         "note": "update"
+      },
+      {
+        "time": "2026-09-14T21:38:15.026172+00:00",
+        "price": 180.13,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -27591,7 +27606,7 @@
     "neckline": 178.65,
     "break_time": "2026-09-11T13:30:00Z",
     "first_seen": "2026-09-11T20:39:57.669871+00:00",
-    "status": "watching",
+    "status": "expired",
     "suggested_entry": 178.65,
     "suggested_entry_zone": [
       177.7568,
@@ -27611,6 +27626,75 @@
         "time": "2026-09-11T22:34:22.435161+00:00",
         "price": 181.93,
         "note": "update"
+      },
+      {
+        "time": "2026-09-14T21:38:15.081552+00:00",
+        "price": 181.93,
+        "note": "expired"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": 73.0,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "NET__cup_and_handle__2026-09-14T13:30:00Z",
+    "symbol": "NET",
+    "type": "cup_and_handle",
+    "neckline": 319.43,
+    "break_time": "2026-09-14T13:30:00Z",
+    "first_seen": "2026-09-14T21:38:15.045390+00:00",
+    "status": "watching",
+    "suggested_entry": 319.43,
+    "suggested_entry_zone": [
+      317.8329,
+      321.0271
+    ],
+    "stop": 286.9007,
+    "target_1R": 374.5593,
+    "target_2R": 418.3886,
+    "risk_per_share": 43.8293,
+    "price_history": [
+      {
+        "time": "2026-09-14T21:38:15.045390+00:00",
+        "price": 330.47,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "FTNT__cup_and_handle__2026-09-14T13:30:00Z",
+    "symbol": "FTNT",
+    "type": "cup_and_handle",
+    "neckline": 161.98,
+    "break_time": "2026-09-14T13:30:00Z",
+    "first_seen": "2026-09-14T21:38:15.063463+00:00",
+    "status": "watching",
+    "suggested_entry": 161.98,
+    "suggested_entry_zone": [
+      161.1701,
+      162.7899
+    ],
+    "stop": 148.2709,
+    "target_1R": 192.7091,
+    "target_2R": 214.9283,
+    "risk_per_share": 22.2191,
+    "price_history": [
+      {
+        "time": "2026-09-14T21:38:15.063463+00:00",
+        "price": 170.12,
+        "note": "first_seen"
       }
     ],
     "trigger_time": null,

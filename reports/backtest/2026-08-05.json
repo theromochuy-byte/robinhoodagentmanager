@@ -9,9 +9,9 @@
       "symbol": "BMY",
       "type": "inverse_hns",
       "neckline": 62.29,
-      "stop": 58.38,
-      "target_2R": 71.43,
-      "risk_per_share": 4.35,
+      "stop": 58.338,
+      "target_2R": 71.5141,
+      "risk_per_share": 4.392,
       "shares": 5.978,
       "break_time": "2026-07-27T13:30:00Z",
       "bars_since_break": 3,
@@ -35,5 +35,5 @@
       "days_held": 7.83
     }
   ],
-  "watching_count": 7
+  "watching_count": 6
 }
