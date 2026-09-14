@@ -1,0 +1,62 @@
+[
+  {
+    "id": "5269a000-a120-47ba-ba46-556b80c6a978",
+    "chain_symbol": "SMCI",
+    "expiration_date": "2026-10-16",
+    "strike_price": "30",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.49,
+      "ask_price": 0.67,
+      "mark_price": 0.58,
+      "adjusted_mark_price": 0.58,
+      "delta": -0.126328,
+      "implied_volatility": 0.746921,
+      "open_interest": 2381,
+      "volume": 7,
+      "chance_of_profit_short": 0.843783,
+      "chance_of_profit_long": 0.156217,
+      "updated_at": "2026-09-14T13:44:48Z"
+    }
+  },
+  {
+    "id": "003a597c-373a-494e-aaf2-0607f6479b3b",
+    "chain_symbol": "SMCI",
+    "expiration_date": "2026-10-16",
+    "strike_price": "32",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.94,
+      "ask_price": 1.0,
+      "mark_price": 0.97,
+      "adjusted_mark_price": 0.97,
+      "delta": -0.193049,
+      "implied_volatility": 0.731125,
+      "open_interest": 1436,
+      "volume": 10,
+      "chance_of_profit_short": 0.785696,
+      "chance_of_profit_long": 0.214304,
+      "updated_at": "2026-09-14T13:44:48Z"
+    }
+  },
+  {
+    "id": "38ab5a8a-6d7b-4f09-a403-5f7ac231c65b",
+    "chain_symbol": "SMCI",
+    "expiration_date": "2026-10-16",
+    "strike_price": "34",
+    "type": "put",
+    "quote": {
+      "bid_price": 1.47,
+      "ask_price": 1.6,
+      "mark_price": 1.535,
+      "adjusted_mark_price": 1.54,
+      "delta": -0.276618,
+      "implied_volatility": 0.720397,
+      "open_interest": 662,
+      "volume": 45,
+      "chance_of_profit_short": 0.724483,
+      "chance_of_profit_long": 0.275517,
+      "updated_at": "2026-09-14T13:44:49Z"
+    }
+  }
+]

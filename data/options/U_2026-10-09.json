@@ -1,0 +1,62 @@
+[
+  {
+    "id": "0e89d5a5-63cf-4513-9f82-6db21bc2148d",
+    "chain_symbol": "U",
+    "expiration_date": "2026-10-09",
+    "strike_price": "33",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.0,
+      "ask_price": 1.43,
+      "mark_price": 0.715,
+      "adjusted_mark_price": 0.01,
+      "delta": -0.006342,
+      "implied_volatility": 0.41686,
+      "open_interest": 9,
+      "volume": 0,
+      "chance_of_profit_short": 0.991475,
+      "chance_of_profit_long": 0.008525,
+      "updated_at": "2026-09-14T13:44:31Z"
+    }
+  },
+  {
+    "id": "bf331d49-e2bf-4b16-a2e4-165ccc250db4",
+    "chain_symbol": "U",
+    "expiration_date": "2026-10-09",
+    "strike_price": "34",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.01,
+      "ask_price": 0.43,
+      "mark_price": 0.22,
+      "adjusted_mark_price": 0.22,
+      "delta": -0.065683,
+      "implied_volatility": 0.633225,
+      "open_interest": 7,
+      "volume": 0,
+      "chance_of_profit_short": 0.916399,
+      "chance_of_profit_long": 0.083601,
+      "updated_at": "2026-09-14T13:44:55Z"
+    }
+  },
+  {
+    "id": "ce567cd3-7101-4791-9153-34328c670672",
+    "chain_symbol": "U",
+    "expiration_date": "2026-10-09",
+    "strike_price": "35",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.01,
+      "ask_price": 0.52,
+      "mark_price": 0.265,
+      "adjusted_mark_price": 0.27,
+      "delta": -0.081597,
+      "implied_volatility": 0.602528,
+      "open_interest": 6,
+      "volume": 0,
+      "chance_of_profit_short": 0.90059,
+      "chance_of_profit_long": 0.09941,
+      "updated_at": "2026-09-14T13:44:55Z"
+    }
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cb0e7c5c-32c0-4b0d-b22e-30e7fcb23393",
+    "chain_symbol": "HBAN",
+    "expiration_date": "2026-10-16",
+    "strike_price": "13",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.0,
+      "ask_price": 0.3,
+      "mark_price": 0.15,
+      "adjusted_mark_price": 0.01,
+      "delta": -0.01298,
+      "implied_volatility": 0.41984,
+      "open_interest": 695,
+      "volume": 0,
+      "chance_of_profit_short": 0.982494,
+      "chance_of_profit_long": 0.017506,
+      "updated_at": "2026-09-14T13:34:22Z"
+    }
+  },
+  {
+    "id": "e71f3e6c-7c29-4514-8c87-2b68556321b8",
+    "chain_symbol": "HBAN",
+    "expiration_date": "2026-10-16",
+    "strike_price": "14",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.05,
+      "ask_price": 0.2,
+      "mark_price": 0.125,
+      "adjusted_mark_price": 0.13,
+      "delta": -0.095549,
+      "implied_volatility": 0.537112,
+      "open_interest": 902,
+      "volume": 0,
+      "chance_of_profit_short": 0.88616,
+      "chance_of_profit_long": 0.11384,
+      "updated_at": "2026-09-14T13:31:22Z"
+    }
+  },
+  {
+    "id": "0a5d9f62-b7bc-4078-84f2-775d6ba5d9b9",
+    "chain_symbol": "HBAN",
+    "expiration_date": "2026-10-16",
+    "strike_price": "15",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.05,
+      "ask_price": 0.2,
+      "mark_price": 0.125,
+      "adjusted_mark_price": 0.13,
+      "delta": -0.125618,
+      "implied_volatility": 0.392273,
+      "open_interest": 925,
+      "volume": 0,
+      "chance_of_profit_short": 0.8656,
+      "chance_of_profit_long": 0.1344,
+      "updated_at": "2026-09-14T13:42:16Z"
+    }
+  }
+]

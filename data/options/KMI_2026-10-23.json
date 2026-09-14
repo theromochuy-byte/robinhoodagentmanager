@@ -1,0 +1,42 @@
+[
+  {
+    "id": "6dbd3da7-72ab-4eca-8981-d32d6c7be90b",
+    "chain_symbol": "KMI",
+    "expiration_date": "2026-10-23",
+    "strike_price": "23",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.0,
+      "ask_price": 0.13,
+      "mark_price": 0.065,
+      "adjusted_mark_price": 0.01,
+      "delta": -0.00732,
+      "implied_volatility": 0.39272,
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": 0.989715,
+      "chance_of_profit_long": 0.010285,
+      "updated_at": "2026-09-14T13:45:06Z"
+    }
+  },
+  {
+    "id": "4adcf939-3c06-4358-9ab0-47d169a9e2d1",
+    "chain_symbol": "KMI",
+    "expiration_date": "2026-10-23",
+    "strike_price": "25",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.01,
+      "ask_price": 0.15,
+      "mark_price": 0.08,
+      "adjusted_mark_price": 0.08,
+      "delta": -0.043908,
+      "implied_volatility": 0.414327,
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": 0.944633,
+      "chance_of_profit_long": 0.055367,
+      "updated_at": "2026-09-14T13:45:06Z"
+    }
+  }
+]

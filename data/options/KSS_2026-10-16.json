@@ -1,0 +1,62 @@
+[
+  {
+    "id": "4c4fcd3f-4543-4ae9-b3f7-8479aacdc73c",
+    "chain_symbol": "KSS",
+    "expiration_date": "2026-10-16",
+    "strike_price": "13",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.03,
+      "ask_price": 0.33,
+      "mark_price": 0.18,
+      "adjusted_mark_price": 0.18,
+      "delta": -0.09018,
+      "implied_volatility": 0.767037,
+      "open_interest": 192,
+      "volume": 0,
+      "chance_of_profit_short": 0.8796,
+      "chance_of_profit_long": 0.1204,
+      "updated_at": "2026-09-14T13:45:03Z"
+    }
+  },
+  {
+    "id": "76f80130-934b-42be-9370-24cb13c1e646",
+    "chain_symbol": "KSS",
+    "expiration_date": "2026-10-16",
+    "strike_price": "14",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.11,
+      "ask_price": 0.35,
+      "mark_price": 0.23,
+      "adjusted_mark_price": 0.23,
+      "delta": -0.126086,
+      "implied_volatility": 0.659749,
+      "open_interest": 264,
+      "volume": 0,
+      "chance_of_profit_short": 0.849377,
+      "chance_of_profit_long": 0.150623,
+      "updated_at": "2026-09-14T13:45:06Z"
+    }
+  },
+  {
+    "id": "d9622f21-16ad-4cfa-9cdf-6c2bca031f4c",
+    "chain_symbol": "KSS",
+    "expiration_date": "2026-10-16",
+    "strike_price": "15",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.27,
+      "ask_price": 0.51,
+      "mark_price": 0.39,
+      "adjusted_mark_price": 0.39,
+      "delta": -0.202209,
+      "implied_volatility": 0.618026,
+      "open_interest": 363,
+      "volume": 1,
+      "chance_of_profit_short": 0.786432,
+      "chance_of_profit_long": 0.213568,
+      "updated_at": "2026-09-14T13:45:11Z"
+    }
+  }
+]

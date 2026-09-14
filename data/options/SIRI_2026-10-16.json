@@ -1,0 +1,62 @@
+[
+  {
+    "id": "69ad5063-3346-4b03-9a06-fba576924746",
+    "chain_symbol": "SIRI",
+    "expiration_date": "2026-10-16",
+    "strike_price": "22",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.0,
+      "ask_price": 0.75,
+      "mark_price": 0.375,
+      "adjusted_mark_price": 0.01,
+      "delta": -0.007794,
+      "implied_volatility": 0.425205,
+      "open_interest": 10,
+      "volume": 0,
+      "chance_of_profit_short": 0.989152,
+      "chance_of_profit_long": 0.010848,
+      "updated_at": "2026-09-14T13:45:13Z"
+    }
+  },
+  {
+    "id": "246afce0-af3c-4e5d-8abe-c3f92d76faed",
+    "chain_symbol": "SIRI",
+    "expiration_date": "2026-10-16",
+    "strike_price": "23",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.0,
+      "ask_price": 0.1,
+      "mark_price": 0.05,
+      "adjusted_mark_price": 0.01,
+      "delta": -0.00892,
+      "implied_volatility": 0.368133,
+      "open_interest": 16,
+      "volume": 0,
+      "chance_of_profit_short": 0.988197,
+      "chance_of_profit_long": 0.011803,
+      "updated_at": "2026-09-14T13:44:40Z"
+    }
+  },
+  {
+    "id": "e66cca1f-3af8-4a20-a48e-b3cc61209efa",
+    "chain_symbol": "SIRI",
+    "expiration_date": "2026-10-16",
+    "strike_price": "24",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.0,
+      "ask_price": 1.0,
+      "mark_price": 0.5,
+      "adjusted_mark_price": 0.01,
+      "delta": -0.010387,
+      "implied_volatility": 0.31285,
+      "open_interest": 118,
+      "volume": 0,
+      "chance_of_profit_short": 0.986912,
+      "chance_of_profit_long": 0.013088,
+      "updated_at": "2026-09-14T13:45:13Z"
+    }
+  }
+]
