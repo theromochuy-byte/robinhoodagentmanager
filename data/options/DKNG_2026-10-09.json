@@ -7,16 +7,16 @@
     "type": "put",
     "quote": {
       "bid_price": 0.0,
-      "ask_price": 0.75,
-      "mark_price": 0.375,
+      "ask_price": 0.72,
+      "mark_price": 0.36,
       "adjusted_mark_price": 0.01,
-      "delta": -0.009434,
-      "implied_volatility": 0.48019,
+      "delta": -0.008411,
+      "implied_volatility": 0.537857,
       "open_interest": 1,
       "volume": 0,
-      "chance_of_profit_short": 0.987001,
-      "chance_of_profit_long": 0.012999,
-      "updated_at": "2026-09-14T13:44:56Z"
+      "chance_of_profit_short": 0.987973,
+      "chance_of_profit_long": 0.012027,
+      "updated_at": "2026-09-15T16:35:12Z"
     }
   },
   {
@@ -27,16 +27,16 @@
     "type": "put",
     "quote": {
       "bid_price": 0.0,
-      "ask_price": 0.75,
-      "mark_price": 0.375,
+      "ask_price": 0.68,
+      "mark_price": 0.34,
       "adjusted_mark_price": 0.01,
-      "delta": -0.011181,
-      "implied_volatility": 0.399575,
+      "delta": -0.009798,
+      "implied_volatility": 0.456348,
       "open_interest": 2,
       "volume": 0,
-      "chance_of_profit_short": 0.985523,
-      "chance_of_profit_long": 0.014477,
-      "updated_at": "2026-09-14T13:44:56Z"
+      "chance_of_profit_short": 0.98683,
+      "chance_of_profit_long": 0.01317,
+      "updated_at": "2026-09-15T16:34:33Z"
     }
   },
   {
@@ -46,17 +46,17 @@
     "strike_price": "20",
     "type": "put",
     "quote": {
-      "bid_price": 0.0,
-      "ask_price": 0.75,
-      "mark_price": 0.375,
-      "adjusted_mark_price": 0.01,
-      "delta": -0.013675,
-      "implied_volatility": 0.32194,
+      "bid_price": 0.07,
+      "ask_price": 0.2,
+      "mark_price": 0.135,
+      "adjusted_mark_price": 0.14,
+      "delta": -0.074785,
+      "implied_volatility": 0.61594,
       "open_interest": 16,
       "volume": 0,
-      "chance_of_profit_short": 0.98332,
-      "chance_of_profit_long": 0.01668,
-      "updated_at": "2026-09-14T13:44:51Z"
+      "chance_of_profit_short": 0.907768,
+      "chance_of_profit_long": 0.092232,
+      "updated_at": "2026-09-15T16:36:35Z"
     }
   }
 ]

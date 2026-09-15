@@ -1,0 +1,62 @@
+[
+  {
+    "id": "12293403-6aa8-4708-8e12-8c3328f8c3e2",
+    "chain_symbol": "CCL",
+    "expiration_date": "2026-10-23",
+    "strike_price": "17",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.06,
+      "ask_price": 1.15,
+      "mark_price": 0.605,
+      "adjusted_mark_price": 0.61,
+      "delta": -0.153918,
+      "implied_volatility": 0.928268,
+      "open_interest": 3,
+      "volume": 0,
+      "chance_of_profit_short": 0.800098,
+      "chance_of_profit_long": 0.199902,
+      "updated_at": "2026-09-15T16:37:23Z"
+    }
+  },
+  {
+    "id": "a321cd9c-80b8-49f3-ab73-c1a3f70fb09a",
+    "chain_symbol": "CCL",
+    "expiration_date": "2026-10-23",
+    "strike_price": "18",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.14,
+      "ask_price": 0.27,
+      "mark_price": 0.205,
+      "adjusted_mark_price": 0.21,
+      "delta": -0.105565,
+      "implied_volatility": 0.542477,
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": 0.873356,
+      "chance_of_profit_long": 0.126644,
+      "updated_at": "2026-09-15T16:37:23Z"
+    }
+  },
+  {
+    "id": "fe50846d-1769-4646-a48d-ddeef5f17086",
+    "chain_symbol": "CCL",
+    "expiration_date": "2026-10-23",
+    "strike_price": "19",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.25,
+      "ask_price": 0.41,
+      "mark_price": 0.33,
+      "adjusted_mark_price": 0.33,
+      "delta": -0.160475,
+      "implied_volatility": 0.509098,
+      "open_interest": 5,
+      "volume": 0,
+      "chance_of_profit_short": 0.825122,
+      "chance_of_profit_long": 0.174878,
+      "updated_at": "2026-09-15T16:37:13Z"
+    }
+  }
+]

@@ -7,16 +7,16 @@
     "type": "put",
     "quote": {
       "bid_price": 0.0,
-      "ask_price": 1.0,
-      "mark_price": 0.5,
+      "ask_price": 0.75,
+      "mark_price": 0.375,
       "adjusted_mark_price": 0.01,
-      "delta": -0.008731,
-      "implied_volatility": 0.447258,
+      "delta": -0.009375,
+      "implied_volatility": 0.429228,
       "open_interest": 0,
       "volume": 0,
-      "chance_of_profit_short": 0.987273,
-      "chance_of_profit_long": 0.012727,
-      "updated_at": "2026-09-14T13:45:09Z"
+      "chance_of_profit_short": 0.986663,
+      "chance_of_profit_long": 0.013337,
+      "updated_at": "2026-09-15T16:36:40Z"
     }
   },
   {
@@ -27,16 +27,16 @@
     "type": "put",
     "quote": {
       "bid_price": 0.0,
-      "ask_price": 1.8,
-      "mark_price": 0.9,
+      "ask_price": 0.95,
+      "mark_price": 0.475,
       "adjusted_mark_price": 0.01,
-      "delta": -0.010304,
-      "implied_volatility": 0.375137,
+      "delta": -0.011178,
+      "implied_volatility": 0.355467,
       "open_interest": 0,
       "volume": 0,
-      "chance_of_profit_short": 0.985986,
-      "chance_of_profit_long": 0.014014,
-      "updated_at": "2026-09-14T13:45:13Z"
+      "chance_of_profit_short": 0.985168,
+      "chance_of_profit_long": 0.014832,
+      "updated_at": "2026-09-15T16:36:39Z"
     }
   },
   {
@@ -46,17 +46,17 @@
     "strike_price": "18",
     "type": "put",
     "quote": {
-      "bid_price": 0.0,
-      "ask_price": 0.36,
-      "mark_price": 0.18,
-      "adjusted_mark_price": 0.01,
-      "delta": -0.012436,
-      "implied_volatility": 0.305995,
+      "bid_price": 0.06,
+      "ask_price": 0.35,
+      "mark_price": 0.205,
+      "adjusted_mark_price": 0.21,
+      "delta": -0.107621,
+      "implied_volatility": 0.53294,
       "open_interest": 1,
       "volume": 0,
-      "chance_of_profit_short": 0.984169,
-      "chance_of_profit_long": 0.015831,
-      "updated_at": "2026-09-14T13:45:13Z"
+      "chance_of_profit_short": 0.871918,
+      "chance_of_profit_long": 0.128082,
+      "updated_at": "2026-09-15T16:37:21Z"
     }
   }
 ]

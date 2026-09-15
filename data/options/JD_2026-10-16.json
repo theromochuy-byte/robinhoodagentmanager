@@ -1,0 +1,62 @@
+[
+  {
+    "id": "6f8feecf-5cc1-4e1d-b0f2-9860b9cb2cc9",
+    "chain_symbol": "JD",
+    "expiration_date": "2026-10-16",
+    "strike_price": "21",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.0,
+      "ask_price": 0.13,
+      "mark_price": 0.065,
+      "adjusted_mark_price": 0.01,
+      "delta": -0.009209,
+      "implied_volatility": 0.392124,
+      "open_interest": 112,
+      "volume": 0,
+      "chance_of_profit_short": 0.987672,
+      "chance_of_profit_long": 0.012328,
+      "updated_at": "2026-09-15T16:37:10Z"
+    }
+  },
+  {
+    "id": "a69ef8dd-4267-402b-93a0-346d2900f8b2",
+    "chain_symbol": "JD",
+    "expiration_date": "2026-10-16",
+    "strike_price": "22",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.0,
+      "ask_price": 0.14,
+      "mark_price": 0.07,
+      "adjusted_mark_price": 0.01,
+      "delta": -0.010797,
+      "implied_volatility": 0.330135,
+      "open_interest": 744,
+      "volume": 0,
+      "chance_of_profit_short": 0.9863,
+      "chance_of_profit_long": 0.0137,
+      "updated_at": "2026-09-15T16:37:10Z"
+    }
+  },
+  {
+    "id": "4a397ea9-9f8d-4fd9-91e9-9dffd12f0cbd",
+    "chain_symbol": "JD",
+    "expiration_date": "2026-10-16",
+    "strike_price": "23",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.03,
+      "ask_price": 0.1,
+      "mark_price": 0.065,
+      "adjusted_mark_price": 0.07,
+      "delta": -0.052938,
+      "implied_volatility": 0.377968,
+      "open_interest": 2234,
+      "volume": 3,
+      "chance_of_profit_short": 0.937532,
+      "chance_of_profit_long": 0.062468,
+      "updated_at": "2026-09-15T16:37:36Z"
+    }
+  }
+]

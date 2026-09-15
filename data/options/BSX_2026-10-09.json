@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ffb77bd3-d4c8-4412-9c6f-e22441aff867",
+    "chain_symbol": "BSX",
+    "expiration_date": "2026-10-09",
+    "strike_price": "35",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.0,
+      "ask_price": 1.4,
+      "mark_price": 0.7,
+      "adjusted_mark_price": 0.01,
+      "delta": -0.006857,
+      "implied_volatility": 0.381544,
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": 0.991093,
+      "chance_of_profit_long": 0.008907,
+      "updated_at": "2026-09-15T16:36:50Z"
+    }
+  },
+  {
+    "id": "239930ab-6c9c-45cc-a207-dc76065eb1c8",
+    "chain_symbol": "BSX",
+    "expiration_date": "2026-10-09",
+    "strike_price": "37",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.0,
+      "ask_price": 2.2,
+      "mark_price": 1.1,
+      "adjusted_mark_price": 0.01,
+      "delta": -0.008551,
+      "implied_volatility": 0.30078,
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": 0.989574,
+      "chance_of_profit_long": 0.010426,
+      "updated_at": "2026-09-15T16:37:21Z"
+    }
+  },
+  {
+    "id": "3102d994-412a-4db0-8ffb-ede0c721e6fb",
+    "chain_symbol": "BSX",
+    "expiration_date": "2026-10-09",
+    "strike_price": "39",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.15,
+      "ask_price": 0.35,
+      "mark_price": 0.25,
+      "adjusted_mark_price": 0.25,
+      "delta": -0.10513,
+      "implied_volatility": 0.417605,
+      "open_interest": 29,
+      "volume": 0,
+      "chance_of_profit_short": 0.886013,
+      "chance_of_profit_long": 0.113987,
+      "updated_at": "2026-09-15T16:37:25Z"
+    }
+  }
+]

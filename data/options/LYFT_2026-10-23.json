@@ -7,16 +7,16 @@
     "type": "put",
     "quote": {
       "bid_price": 0.0,
-      "ask_price": 2.0,
-      "mark_price": 1.0,
+      "ask_price": 0.75,
+      "mark_price": 0.375,
       "adjusted_mark_price": 0.01,
-      "delta": -0.010974,
-      "implied_volatility": 0.492409,
+      "delta": -0.010616,
+      "implied_volatility": 0.511631,
       "open_interest": 0,
       "volume": 0,
-      "chance_of_profit_short": 0.983638,
-      "chance_of_profit_long": 0.016362,
-      "updated_at": "2026-09-14T13:43:31Z"
+      "chance_of_profit_short": 0.983984,
+      "chance_of_profit_long": 0.016016,
+      "updated_at": "2026-09-15T16:32:33Z"
     }
   },
   {
@@ -27,16 +27,16 @@
     "type": "put",
     "quote": {
       "bid_price": 0.0,
-      "ask_price": 0.75,
-      "mark_price": 0.375,
+      "ask_price": 1.15,
+      "mark_price": 0.575,
       "adjusted_mark_price": 0.01,
-      "delta": -0.013825,
-      "implied_volatility": 0.384822,
+      "delta": -0.013308,
+      "implied_volatility": 0.403002,
       "open_interest": 22,
       "volume": 0,
-      "chance_of_profit_short": 0.981359,
-      "chance_of_profit_long": 0.018641,
-      "updated_at": "2026-09-14T13:43:33Z"
+      "chance_of_profit_short": 0.981838,
+      "chance_of_profit_long": 0.018162,
+      "updated_at": "2026-09-15T16:32:33Z"
     }
   },
   {
@@ -47,16 +47,16 @@
     "type": "put",
     "quote": {
       "bid_price": 0.08,
-      "ask_price": 0.2,
-      "mark_price": 0.14,
-      "adjusted_mark_price": 0.14,
-      "delta": -0.106504,
-      "implied_volatility": 0.497475,
+      "ask_price": 0.26,
+      "mark_price": 0.17,
+      "adjusted_mark_price": 0.17,
+      "delta": -0.113894,
+      "implied_volatility": 0.554845,
       "open_interest": 18,
-      "volume": 0,
-      "chance_of_profit_short": 0.874711,
-      "chance_of_profit_long": 0.125289,
-      "updated_at": "2026-09-14T13:44:47Z"
+      "volume": 2,
+      "chance_of_profit_short": 0.864446,
+      "chance_of_profit_long": 0.135554,
+      "updated_at": "2026-09-15T16:37:13Z"
     }
   }
 ]

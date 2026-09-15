@@ -1,0 +1,62 @@
+[
+  {
+    "id": "f7b0ad6e-ebf7-4368-bdd4-44b685f6fd52",
+    "chain_symbol": "NVO",
+    "expiration_date": "2026-10-09",
+    "strike_price": "35",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.0,
+      "ask_price": 1.0,
+      "mark_price": 0.5,
+      "adjusted_mark_price": 0.01,
+      "delta": -0.008047,
+      "implied_volatility": 0.33237,
+      "open_interest": 2,
+      "volume": 0,
+      "chance_of_profit_short": 0.989955,
+      "chance_of_profit_long": 0.010045,
+      "updated_at": "2026-09-15T16:37:14Z"
+    }
+  },
+  {
+    "id": "218617bc-51ab-4ce4-96d1-b1dac1cccf45",
+    "chain_symbol": "NVO",
+    "expiration_date": "2026-10-09",
+    "strike_price": "36",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.0,
+      "ask_price": 0.15,
+      "mark_price": 0.075,
+      "adjusted_mark_price": 0.01,
+      "delta": -0.009099,
+      "implied_volatility": 0.290945,
+      "open_interest": 1,
+      "volume": 0,
+      "chance_of_profit_short": 0.989003,
+      "chance_of_profit_long": 0.010997,
+      "updated_at": "2026-09-15T16:37:14Z"
+    }
+  },
+  {
+    "id": "0a5de089-2e33-4344-998c-3cd801641edf",
+    "chain_symbol": "NVO",
+    "expiration_date": "2026-10-09",
+    "strike_price": "37",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.0,
+      "ask_price": 0.5,
+      "mark_price": 0.25,
+      "adjusted_mark_price": 0.01,
+      "delta": -0.010451,
+      "implied_volatility": 0.250116,
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": 0.987765,
+      "chance_of_profit_long": 0.012235,
+      "updated_at": "2026-09-15T16:37:21Z"
+    }
+  }
+]
