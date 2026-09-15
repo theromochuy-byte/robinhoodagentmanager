@@ -2,15 +2,15 @@
   "date": "2026-07-30",
   "new_entries": 3,
   "closed_today": 0,
-  "open_count": 9,
+  "open_count": 8,
   "entries": [
     {
       "symbol": "BRK-B",
       "type": "inverse_hns",
       "neckline": 502.99,
-      "stop": 479.8339,
-      "target_2R": 564.6623,
-      "risk_per_share": 28.2761,
+      "stop": 479.8867,
+      "target_2R": 564.5565,
+      "risk_per_share": 28.2233,
       "shares": 0.738,
       "break_time": "2026-07-28T13:30:00Z",
       "bars_since_break": 5,
@@ -26,9 +26,9 @@
       "symbol": "BMY",
       "type": "inverse_hns",
       "neckline": 62.29,
-      "stop": 58.338,
-      "target_2R": 71.5141,
-      "risk_per_share": 4.392,
+      "stop": 58.3808,
+      "target_2R": 71.4284,
+      "risk_per_share": 4.3492,
       "shares": 5.978,
       "break_time": "2026-07-27T13:30:00Z",
       "bars_since_break": 7,
@@ -44,9 +44,9 @@
       "symbol": "MDT",
       "type": "inverse_hns",
       "neckline": 84.788,
-      "stop": 79.5715,
-      "target_2R": 95.752,
-      "risk_per_share": 5.3935,
+      "stop": 79.5369,
+      "target_2R": 95.8213,
+      "risk_per_share": 5.4281,
       "shares": 4.4136,
       "break_time": "2026-07-27T13:30:00Z",
       "bars_since_break": 7,
@@ -60,5 +60,5 @@
     }
   ],
   "closed": [],
-  "watching_count": 4
+  "watching_count": 3
 }

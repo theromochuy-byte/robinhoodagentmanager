@@ -27594,6 +27594,11 @@
         "time": "2026-09-14T23:08:44.195845+00:00",
         "price": 180.13,
         "note": "update"
+      },
+      {
+        "time": "2026-09-15T20:59:24.567765+00:00",
+        "price": 187.87,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -27673,6 +27678,11 @@
         "time": "2026-09-14T23:08:44.215909+00:00",
         "price": 330.47,
         "note": "update"
+      },
+      {
+        "time": "2026-09-15T20:59:24.620648+00:00",
+        "price": 327.11,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -27710,6 +27720,43 @@
         "time": "2026-09-14T23:08:44.235525+00:00",
         "price": 170.12,
         "note": "update"
+      },
+      {
+        "time": "2026-09-15T20:59:24.646461+00:00",
+        "price": 172.39,
+        "note": "update"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "QCOM__inverse_hns__2026-09-15T13:30:00Z",
+    "symbol": "QCOM",
+    "type": "inverse_hns",
+    "neckline": 183.49,
+    "break_time": "2026-09-15T13:30:00Z",
+    "first_seen": "2026-09-15T20:59:24.594444+00:00",
+    "status": "watching",
+    "suggested_entry": 183.49,
+    "suggested_entry_zone": [
+      182.5726,
+      184.4074
+    ],
+    "stop": 162.1404,
+    "target_1R": 216.1596,
+    "target_2R": 243.1692,
+    "risk_per_share": 27.0096,
+    "price_history": [
+      {
+        "time": "2026-09-15T20:59:24.594444+00:00",
+        "price": 187.87,
+        "note": "first_seen"
       }
     ],
     "trigger_time": null,
