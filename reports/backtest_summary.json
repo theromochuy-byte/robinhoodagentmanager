@@ -1,6 +1,6 @@
 {
-  "from_date": "2026-06-22",
-  "to_date": "2026-09-15",
+  "from_date": "2026-06-23",
+  "to_date": "2026-09-16",
   "symbols_scanned": 188,
   "total_entries": 36,
   "closed_trades": 5,
@@ -12,12 +12,12 @@
   "full_win_rate": 0.0,
   "avg_R": -0.825,
   "total_R": -4.12,
-  "closed_pnl": -113.45,
-  "open_unrealized": -230.1,
-  "total_pnl": -343.55,
+  "closed_pnl": -113.5,
+  "open_unrealized": -314.51,
+  "total_pnl": -428.01,
   "open_positions": 31,
   "equity_start": 1500.0,
-  "equity_end": 1386.55,
+  "equity_end": 1386.5,
   "by_pattern": {
     "inverse_hns": {
       "wins_3r": 0,
