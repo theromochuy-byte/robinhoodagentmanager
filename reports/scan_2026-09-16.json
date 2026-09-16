@@ -20,17 +20,17 @@
       "symbol": "QCOM",
       "type": "inverse_hns",
       "neckline": 183.49,
-      "stop": 162.1422,
-      "target_1R": 216.1578,
-      "target_2R": 243.1655,
-      "risk_per_share": 27.0078,
+      "stop": 162.1423,
+      "target_1R": 216.1577,
+      "target_2R": 243.1654,
+      "risk_per_share": 27.0077,
       "shares": 1.8513,
       "break_time": "2026-09-15T13:30:00Z",
       "bars_since_break": 3,
       "in_pullback": true,
       "last_close": 184.84,
       "last_bar_time": "2026-09-16T17:30:00Z",
-      "scanned_at": "2026-09-16T21:01:15.080070+00:00",
+      "scanned_at": "2026-09-16T22:56:31.731106+00:00",
       "status": "watching"
     },
     {
@@ -47,41 +47,41 @@
       "in_pullback": true,
       "last_close": 324.62,
       "last_bar_time": "2026-09-16T17:30:00Z",
-      "scanned_at": "2026-09-16T21:01:15.185193+00:00",
+      "scanned_at": "2026-09-16T22:56:31.860629+00:00",
       "status": "watching"
     },
     {
       "symbol": "FTNT",
       "type": "cup_and_handle",
       "neckline": 161.98,
-      "stop": 148.2712,
-      "target_1R": 192.7088,
-      "target_2R": 214.9276,
-      "risk_per_share": 22.2188,
-      "shares": 2.2503,
+      "stop": 148.2715,
+      "target_1R": 192.7085,
+      "target_2R": 214.927,
+      "risk_per_share": 22.2185,
+      "shares": 2.2504,
       "break_time": "2026-09-14T13:30:00Z",
       "bars_since_break": 5,
       "in_pullback": false,
       "last_close": 171.73,
       "last_bar_time": "2026-09-16T17:30:00Z",
-      "scanned_at": "2026-09-16T21:01:15.481465+00:00",
+      "scanned_at": "2026-09-16T22:56:32.228602+00:00",
       "status": "watching"
     },
     {
       "symbol": "QCOM",
       "type": "inverse_hns",
       "neckline": 183.49,
-      "stop": 163.3838,
-      "target_1R": 206.7562,
-      "target_2R": 228.4424,
-      "risk_per_share": 21.6862,
+      "stop": 163.3839,
+      "target_1R": 206.7561,
+      "target_2R": 228.4422,
+      "risk_per_share": 21.6861,
       "shares": 2.3056,
       "break_time": "2026-09-11T13:30:00Z",
       "bars_since_break": 7,
       "in_pullback": true,
       "last_close": 184.84,
       "last_bar_time": "2026-09-16T17:30:00Z",
-      "scanned_at": "2026-09-16T21:01:15.079173+00:00",
+      "scanned_at": "2026-09-16T22:56:31.729997+00:00",
       "status": "watching"
     }
   ],
@@ -871,7 +871,7 @@
         "target_2R": 228.4403,
         "first_seen": "2026-09-11T20:39:57.642151+00:00",
         "latest_price": 184.84,
-        "price_snapshots": 7
+        "price_snapshots": 8
       },
       {
         "symbol": "NET",
@@ -887,7 +887,7 @@
         "target_2R": 418.3886,
         "first_seen": "2026-09-14T21:38:15.045390+00:00",
         "latest_price": 324.62,
-        "price_snapshots": 5
+        "price_snapshots": 6
       },
       {
         "symbol": "FTNT",
@@ -903,7 +903,7 @@
         "target_2R": 214.9283,
         "first_seen": "2026-09-14T21:38:15.063463+00:00",
         "latest_price": 171.73,
-        "price_snapshots": 5
+        "price_snapshots": 6
       },
       {
         "symbol": "QCOM",
@@ -919,7 +919,7 @@
         "target_2R": 243.1692,
         "first_seen": "2026-09-15T20:59:24.594444+00:00",
         "latest_price": 184.84,
-        "price_snapshots": 3
+        "price_snapshots": 4
       }
     ]
   }
