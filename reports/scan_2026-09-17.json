@@ -20,68 +20,68 @@
       "symbol": "INTC",
       "type": "inverse_hns",
       "neckline": 107.57,
-      "stop": 93.3447,
-      "target_1R": 128.7753,
-      "target_2R": 146.4907,
-      "risk_per_share": 17.7153,
+      "stop": 93.3444,
+      "target_1R": 128.7756,
+      "target_2R": 146.4911,
+      "risk_per_share": 17.7156,
       "shares": 2.8224,
       "break_time": "2026-09-17T13:30:00Z",
       "bars_since_break": 1,
       "in_pullback": false,
       "last_close": 108.75,
       "last_bar_time": "2026-09-17T17:30:00Z",
-      "scanned_at": "2026-09-17T21:04:32.599935+00:00",
+      "scanned_at": "2026-09-17T22:52:40.852820+00:00",
       "status": "watching"
     },
     {
       "symbol": "INTC",
       "type": "cup_and_handle",
       "neckline": 106.69,
-      "stop": 88.528,
-      "target_1R": 133.592,
-      "target_2R": 156.1241,
-      "risk_per_share": 22.532,
-      "shares": 2.2191,
+      "stop": 88.5277,
+      "target_1R": 133.5923,
+      "target_2R": 156.1245,
+      "risk_per_share": 22.5323,
+      "shares": 2.219,
       "break_time": "2026-09-17T13:30:00Z",
       "bars_since_break": 1,
       "in_pullback": false,
       "last_close": 108.75,
       "last_bar_time": "2026-09-17T17:30:00Z",
-      "scanned_at": "2026-09-17T21:04:32.601135+00:00",
+      "scanned_at": "2026-09-17T22:52:40.854070+00:00",
       "status": "watching"
     },
     {
       "symbol": "ILMN",
       "type": "inverse_hns",
       "neckline": 231.81,
-      "stop": 196.0128,
-      "target_1R": 291.3472,
-      "target_2R": 339.0145,
-      "risk_per_share": 47.6672,
+      "stop": 196.0124,
+      "target_1R": 291.3476,
+      "target_2R": 339.0152,
+      "risk_per_share": 47.6676,
       "shares": 1.0489,
       "break_time": "2026-09-17T13:30:00Z",
       "bars_since_break": 1,
       "in_pullback": false,
       "last_close": 245.13,
       "last_bar_time": "2026-09-17T17:30:00Z",
-      "scanned_at": "2026-09-17T21:04:33.727375+00:00",
+      "scanned_at": "2026-09-17T22:52:41.999760+00:00",
       "status": "watching"
     },
     {
       "symbol": "QCOM",
       "type": "inverse_hns",
       "neckline": 183.49,
-      "stop": 162.1428,
-      "target_1R": 216.1572,
-      "target_2R": 243.1644,
-      "risk_per_share": 27.0072,
+      "stop": 162.1427,
+      "target_1R": 216.1573,
+      "target_2R": 243.1646,
+      "risk_per_share": 27.0073,
       "shares": 1.8514,
       "break_time": "2026-09-15T13:30:00Z",
       "bars_since_break": 5,
       "in_pullback": true,
       "last_close": 188.71,
       "last_bar_time": "2026-09-17T17:30:00Z",
-      "scanned_at": "2026-09-17T21:04:32.562443+00:00",
+      "scanned_at": "2026-09-17T22:52:40.814636+00:00",
       "status": "watching"
     },
     {
@@ -98,7 +98,7 @@
       "in_pullback": true,
       "last_close": 334.17,
       "last_bar_time": "2026-09-17T17:30:00Z",
-      "scanned_at": "2026-09-17T21:04:32.773343+00:00",
+      "scanned_at": "2026-09-17T22:52:41.026577+00:00",
       "entry": 334.17,
       "entry_time": "2026-09-17T17:30:00Z",
       "status": "watching",
@@ -109,34 +109,34 @@
       "symbol": "FTNT",
       "type": "cup_and_handle",
       "neckline": 161.98,
-      "stop": 148.2717,
-      "target_1R": 192.7083,
-      "target_2R": 214.9265,
-      "risk_per_share": 22.2183,
+      "stop": 148.2715,
+      "target_1R": 192.7085,
+      "target_2R": 214.9271,
+      "risk_per_share": 22.2185,
       "shares": 2.2504,
       "break_time": "2026-09-14T13:30:00Z",
       "bars_since_break": 7,
       "in_pullback": false,
       "last_close": 172.5,
       "last_bar_time": "2026-09-17T17:30:00Z",
-      "scanned_at": "2026-09-17T21:04:33.315231+00:00",
+      "scanned_at": "2026-09-17T22:52:41.568296+00:00",
       "status": "watching"
     },
     {
       "symbol": "QCOM",
       "type": "inverse_hns",
       "neckline": 183.49,
-      "stop": 163.3846,
-      "target_1R": 206.7554,
-      "target_2R": 228.4409,
-      "risk_per_share": 21.6854,
+      "stop": 163.3845,
+      "target_1R": 206.7555,
+      "target_2R": 228.4411,
+      "risk_per_share": 21.6855,
       "shares": 2.3057,
       "break_time": "2026-09-11T13:30:00Z",
       "bars_since_break": 9,
       "in_pullback": true,
       "last_close": 188.71,
       "last_bar_time": "2026-09-17T17:30:00Z",
-      "scanned_at": "2026-09-17T21:04:32.561168+00:00",
+      "scanned_at": "2026-09-17T22:52:40.813358+00:00",
       "status": "watching"
     }
   ],
@@ -926,7 +926,7 @@
         "target_2R": 228.4403,
         "first_seen": "2026-09-11T20:39:57.642151+00:00",
         "latest_price": 188.71,
-        "price_snapshots": 9
+        "price_snapshots": 10
       },
       {
         "symbol": "NET",
@@ -942,7 +942,7 @@
         "target_2R": 418.3886,
         "first_seen": "2026-09-14T21:38:15.045390+00:00",
         "latest_price": 334.17,
-        "price_snapshots": 7
+        "price_snapshots": 8
       },
       {
         "symbol": "FTNT",
@@ -958,7 +958,7 @@
         "target_2R": 214.9283,
         "first_seen": "2026-09-14T21:38:15.063463+00:00",
         "latest_price": 172.5,
-        "price_snapshots": 7
+        "price_snapshots": 8
       },
       {
         "symbol": "QCOM",
@@ -974,7 +974,7 @@
         "target_2R": 243.1692,
         "first_seen": "2026-09-15T20:59:24.594444+00:00",
         "latest_price": 188.71,
-        "price_snapshots": 5
+        "price_snapshots": 6
       },
       {
         "symbol": "INTC",
@@ -990,7 +990,7 @@
         "target_2R": 146.4907,
         "first_seen": "2026-09-17T21:04:34.083521+00:00",
         "latest_price": 108.75,
-        "price_snapshots": 1
+        "price_snapshots": 2
       },
       {
         "symbol": "INTC",
@@ -1006,7 +1006,7 @@
         "target_2R": 156.1241,
         "first_seen": "2026-09-17T21:04:34.108331+00:00",
         "latest_price": 108.75,
-        "price_snapshots": 1
+        "price_snapshots": 2
       },
       {
         "symbol": "ILMN",
@@ -1022,7 +1022,7 @@
         "target_2R": 339.0145,
         "first_seen": "2026-09-17T21:04:34.181574+00:00",
         "latest_price": 245.13,
-        "price_snapshots": 1
+        "price_snapshots": 2
       }
     ]
   }
