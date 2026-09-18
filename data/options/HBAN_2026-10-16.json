@@ -7,16 +7,16 @@
     "type": "put",
     "quote": {
       "bid_price": 0.0,
-      "ask_price": 0.3,
-      "mark_price": 0.15,
+      "ask_price": 0.25,
+      "mark_price": 0.125,
       "adjusted_mark_price": 0.01,
-      "delta": -0.013673,
-      "implied_volatility": 0.409856,
+      "delta": -0.017124,
+      "implied_volatility": 0.354871,
       "open_interest": 695,
       "volume": 0,
-      "chance_of_profit_short": 0.981839,
-      "chance_of_profit_long": 0.018161,
-      "updated_at": "2026-09-15T14:34:38Z"
+      "chance_of_profit_short": 0.978635,
+      "chance_of_profit_long": 0.021365,
+      "updated_at": "2026-09-18T14:59:55.613267401Z"
     }
   },
   {
@@ -30,13 +30,13 @@
       "ask_price": 0.2,
       "mark_price": 0.1,
       "adjusted_mark_price": 0.01,
-      "delta": -0.017966,
-      "implied_volatility": 0.304952,
-      "open_interest": 902,
-      "volume": 0,
-      "chance_of_profit_short": 0.978138,
-      "chance_of_profit_long": 0.021862,
-      "updated_at": "2026-09-15T15:54:05Z"
+      "delta": -0.024374,
+      "implied_volatility": 0.241175,
+      "open_interest": 905,
+      "volume": 2,
+      "chance_of_profit_short": 0.972222,
+      "chance_of_profit_long": 0.027778,
+      "updated_at": "2026-09-18T15:00:09.195261761Z"
     }
   },
   {
@@ -46,17 +46,17 @@
     "strike_price": "15",
     "type": "put",
     "quote": {
-      "bid_price": 0.05,
-      "ask_price": 0.15,
-      "mark_price": 0.1,
-      "adjusted_mark_price": 0.1,
-      "delta": -0.117031,
-      "implied_volatility": 0.341907,
-      "open_interest": 925,
-      "volume": 0,
-      "chance_of_profit_short": 0.87647,
-      "chance_of_profit_long": 0.12353,
-      "updated_at": "2026-09-15T16:37:01Z"
+      "bid_price": 0.1,
+      "ask_price": 0.25,
+      "mark_price": 0.175,
+      "adjusted_mark_price": 0.18,
+      "delta": -0.223261,
+      "implied_volatility": 0.304207,
+      "open_interest": 952,
+      "volume": 2,
+      "chance_of_profit_short": 0.79406,
+      "chance_of_profit_long": 0.20594,
+      "updated_at": "2026-09-18T15:01:10.587793583Z"
     }
   }
 ]

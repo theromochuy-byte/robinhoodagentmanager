@@ -2527,5 +2527,32 @@
     "low_price": "10.020000",
     "volume": 27148999,
     "session": "reg"
+  },
+  {
+    "begins_at": "2026-09-15T00:00:00Z",
+    "open_price": "10.090000",
+    "close_price": "9.960000",
+    "high_price": "10.130000",
+    "low_price": "9.940000",
+    "volume": 28437040,
+    "session": "reg"
+  },
+  {
+    "begins_at": "2026-09-16T00:00:00Z",
+    "open_price": "10.010000",
+    "close_price": "9.880000",
+    "high_price": "10.115000",
+    "low_price": "9.785000",
+    "volume": 39298575,
+    "session": "reg"
+  },
+  {
+    "begins_at": "2026-09-17T00:00:00Z",
+    "open_price": "10.070000",
+    "close_price": "9.910000",
+    "high_price": "10.100000",
+    "low_price": "9.910000",
+    "volume": 32103573,
+    "session": "reg"
   }
 ]

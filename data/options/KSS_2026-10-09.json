@@ -6,17 +6,17 @@
     "strike_price": "13",
     "type": "put",
     "quote": {
-      "bid_price": 0.07,
-      "ask_price": 0.11,
-      "mark_price": 0.09,
-      "adjusted_mark_price": 0.09,
-      "delta": -0.069975,
-      "implied_volatility": 0.647083,
-      "open_interest": 1,
-      "volume": 1,
-      "chance_of_profit_short": 0.911723,
-      "chance_of_profit_long": 0.088277,
-      "updated_at": "2026-09-15T16:37:08Z"
+      "bid_price": 0.0,
+      "ask_price": 1.0,
+      "mark_price": 0.5,
+      "adjusted_mark_price": 0.01,
+      "delta": -0.014169,
+      "implied_volatility": 0.481233,
+      "open_interest": 3,
+      "volume": 0,
+      "chance_of_profit_short": 0.981386,
+      "chance_of_profit_long": 0.018614,
+      "updated_at": "2026-09-18T15:01:04.539271936Z"
     }
   },
   {
@@ -26,17 +26,17 @@
     "strike_price": "14",
     "type": "put",
     "quote": {
-      "bid_price": 0.15,
-      "ask_price": 0.24,
-      "mark_price": 0.195,
-      "adjusted_mark_price": 0.2,
-      "delta": -0.141028,
-      "implied_volatility": 0.615045,
-      "open_interest": 27,
+      "bid_price": 0.04,
+      "ask_price": 0.72,
+      "mark_price": 0.38,
+      "adjusted_mark_price": 0.38,
+      "delta": -0.178788,
+      "implied_volatility": 0.884607,
+      "open_interest": 28,
       "volume": 0,
-      "chance_of_profit_short": 0.843469,
-      "chance_of_profit_long": 0.156531,
-      "updated_at": "2026-09-15T16:37:06Z"
+      "chance_of_profit_short": 0.798461,
+      "chance_of_profit_long": 0.201539,
+      "updated_at": "2026-09-18T15:00:40.286513645Z"
     }
   },
   {
@@ -46,17 +46,17 @@
     "strike_price": "15",
     "type": "put",
     "quote": {
-      "bid_price": 0.32,
-      "ask_price": 0.38,
-      "mark_price": 0.35,
-      "adjusted_mark_price": 0.35,
-      "delta": -0.241242,
-      "implied_volatility": 0.544861,
-      "open_interest": 26,
-      "volume": 20,
-      "chance_of_profit_short": 0.767738,
-      "chance_of_profit_long": 0.232262,
-      "updated_at": "2026-09-15T16:36:16Z"
+      "bid_price": 0.22,
+      "ask_price": 0.29,
+      "mark_price": 0.255,
+      "adjusted_mark_price": 0.26,
+      "delta": -0.197728,
+      "implied_volatility": 0.553355,
+      "open_interest": 49,
+      "volume": 0,
+      "chance_of_profit_short": 0.801765,
+      "chance_of_profit_long": 0.198235,
+      "updated_at": "2026-09-18T15:01:21.83489048Z"
     }
   }
 ]
