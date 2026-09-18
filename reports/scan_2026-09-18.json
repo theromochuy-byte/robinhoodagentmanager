@@ -20,17 +20,17 @@
       "symbol": "INTC",
       "type": "inverse_hns",
       "neckline": 107.57,
-      "stop": 93.3423,
-      "target_1R": 128.7777,
-      "target_2R": 146.4955,
-      "risk_per_share": 17.7177,
+      "stop": 93.342,
+      "target_1R": 128.778,
+      "target_2R": 146.496,
+      "risk_per_share": 17.718,
       "shares": 2.822,
       "break_time": "2026-09-17T13:30:00Z",
       "bars_since_break": 3,
       "in_pullback": true,
       "last_close": 108.62,
       "last_bar_time": "2026-09-18T17:30:00Z",
-      "scanned_at": "2026-09-18T20:35:24.858696+00:00",
+      "scanned_at": "2026-09-18T22:34:38.329515+00:00",
       "entry": 108.62,
       "entry_time": "2026-09-18T17:30:00Z",
       "status": "watching",
@@ -41,34 +41,34 @@
       "symbol": "ILMN",
       "type": "inverse_hns",
       "neckline": 231.81,
-      "stop": 196.0142,
-      "target_1R": 291.3458,
-      "target_2R": 339.0116,
-      "risk_per_share": 47.6658,
+      "stop": 196.0138,
+      "target_1R": 291.3462,
+      "target_2R": 339.0124,
+      "risk_per_share": 47.6662,
       "shares": 1.049,
       "break_time": "2026-09-17T13:30:00Z",
       "bars_since_break": 3,
       "in_pullback": false,
       "last_close": 239.56,
       "last_bar_time": "2026-09-18T17:30:00Z",
-      "scanned_at": "2026-09-18T20:35:26.039050+00:00",
+      "scanned_at": "2026-09-18T22:34:39.507826+00:00",
       "status": "watching"
     },
     {
       "symbol": "QCOM",
       "type": "inverse_hns",
       "neckline": 183.49,
-      "stop": 162.1393,
-      "target_1R": 216.1607,
-      "target_2R": 243.1714,
-      "risk_per_share": 27.0107,
+      "stop": 162.1392,
+      "target_1R": 216.1608,
+      "target_2R": 243.1715,
+      "risk_per_share": 27.0108,
       "shares": 1.8511,
       "break_time": "2026-09-15T13:30:00Z",
       "bars_since_break": 7,
       "in_pullback": true,
       "last_close": 178.01,
       "last_bar_time": "2026-09-18T17:30:00Z",
-      "scanned_at": "2026-09-18T20:35:24.820929+00:00",
+      "scanned_at": "2026-09-18T22:34:38.289628+00:00",
       "status": "watching"
     },
     {
@@ -85,41 +85,41 @@
       "in_pullback": true,
       "last_close": 323.795,
       "last_bar_time": "2026-09-18T17:30:00Z",
-      "scanned_at": "2026-09-18T20:35:25.038834+00:00",
+      "scanned_at": "2026-09-18T22:34:38.521802+00:00",
       "status": "watching"
     },
     {
       "symbol": "FTNT",
       "type": "cup_and_handle",
       "neckline": 161.98,
-      "stop": 148.2704,
-      "target_1R": 192.7096,
-      "target_2R": 214.9291,
-      "risk_per_share": 22.2196,
-      "shares": 2.2503,
+      "stop": 148.2702,
+      "target_1R": 192.7098,
+      "target_2R": 214.9297,
+      "risk_per_share": 22.2198,
+      "shares": 2.2502,
       "break_time": "2026-09-14T13:30:00Z",
       "bars_since_break": 9,
       "in_pullback": false,
       "last_close": 169.81,
       "last_bar_time": "2026-09-18T17:30:00Z",
-      "scanned_at": "2026-09-18T20:35:25.534883+00:00",
+      "scanned_at": "2026-09-18T22:34:39.009929+00:00",
       "status": "watching"
     },
     {
       "symbol": "QCOM",
       "type": "inverse_hns",
       "neckline": 183.49,
-      "stop": 163.3799,
-      "target_1R": 206.7601,
-      "target_2R": 228.4503,
-      "risk_per_share": 21.6901,
+      "stop": 163.3798,
+      "target_1R": 206.7602,
+      "target_2R": 228.4505,
+      "risk_per_share": 21.6902,
       "shares": 2.3052,
       "break_time": "2026-09-11T13:30:00Z",
       "bars_since_break": 11,
       "in_pullback": true,
       "last_close": 178.01,
       "last_bar_time": "2026-09-18T17:30:00Z",
-      "scanned_at": "2026-09-18T20:35:24.819572+00:00",
+      "scanned_at": "2026-09-18T22:34:38.288194+00:00",
       "status": "watching"
     }
   ],
@@ -128,24 +128,24 @@
       "symbol": "INTC",
       "type": "cup_and_handle",
       "neckline": 106.69,
-      "stop": 88.5256,
-      "target_1R": 133.5944,
-      "target_2R": 156.1289,
-      "risk_per_share": 22.5344,
+      "stop": 88.5253,
+      "target_1R": 133.5947,
+      "target_2R": 156.1294,
+      "risk_per_share": 22.5347,
       "shares": 2.2188,
       "break_time": "2026-09-17T13:30:00Z",
       "bars_since_break": 3,
       "in_pullback": true,
       "last_close": 108.62,
       "last_bar_time": "2026-09-18T17:30:00Z",
-      "scanned_at": "2026-09-18T20:35:24.860024+00:00",
+      "scanned_at": "2026-09-18T22:34:38.330980+00:00",
       "entry": 108.62,
       "entry_time": "2026-09-18T17:30:00Z",
       "status": "entered",
       "quality_score": 0.4601
     }
   ],
-  "new_entries": 1,
+  "new_entries": 0,
   "skipped": [],
   "total_open": 1,
   "equity": {
@@ -930,7 +930,7 @@
         "target_2R": 228.4403,
         "first_seen": "2026-09-11T20:39:57.642151+00:00",
         "latest_price": 178.01,
-        "price_snapshots": 11
+        "price_snapshots": 12
       },
       {
         "symbol": "NET",
@@ -946,7 +946,7 @@
         "target_2R": 418.3886,
         "first_seen": "2026-09-14T21:38:15.045390+00:00",
         "latest_price": 323.795,
-        "price_snapshots": 9
+        "price_snapshots": 10
       },
       {
         "symbol": "FTNT",
@@ -962,7 +962,7 @@
         "target_2R": 214.9283,
         "first_seen": "2026-09-14T21:38:15.063463+00:00",
         "latest_price": 169.81,
-        "price_snapshots": 9
+        "price_snapshots": 10
       },
       {
         "symbol": "QCOM",
@@ -978,7 +978,7 @@
         "target_2R": 243.1692,
         "first_seen": "2026-09-15T20:59:24.594444+00:00",
         "latest_price": 178.01,
-        "price_snapshots": 7
+        "price_snapshots": 8
       },
       {
         "symbol": "INTC",
@@ -994,7 +994,7 @@
         "target_2R": 146.4907,
         "first_seen": "2026-09-17T21:04:34.083521+00:00",
         "latest_price": 108.62,
-        "price_snapshots": 3
+        "price_snapshots": 4
       },
       {
         "symbol": "INTC",
@@ -1026,7 +1026,7 @@
         "target_2R": 339.0145,
         "first_seen": "2026-09-17T21:04:34.181574+00:00",
         "latest_price": 239.56,
-        "price_snapshots": 3
+        "price_snapshots": 4
       }
     ]
   }
