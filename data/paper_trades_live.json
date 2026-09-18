@@ -286,5 +286,25 @@
     "checked_at": "2026-09-10T16:59:32.918389+00:00",
     "void_reason": "neckline_failure",
     "void_note": "Price broke back below neckline ($130.61) within 4 bars of entry. Daily bias also failed (close $124.57 < EMA20 $126.12) by 2026-09-09. Pattern stop 16% wide (depth 15.9%) \u2014 well above 12% max-depth gate added retroactively on 2026-09-10. Voided manually 2026-09-10."
+  },
+  {
+    "symbol": "INTC",
+    "type": "cup_and_handle",
+    "neckline": 106.69,
+    "stop": 88.5256,
+    "target_1R": 133.5944,
+    "target_2R": 156.1289,
+    "risk_per_share": 22.5344,
+    "shares": 2.2188,
+    "break_time": "2026-09-17T13:30:00Z",
+    "bars_since_break": 3,
+    "in_pullback": true,
+    "last_close": 108.62,
+    "last_bar_time": "2026-09-18T17:30:00Z",
+    "scanned_at": "2026-09-18T20:35:24.860024+00:00",
+    "entry": 108.62,
+    "entry_time": "2026-09-18T17:30:00Z",
+    "status": "entered",
+    "quality_score": 0.4601
   }
 ]

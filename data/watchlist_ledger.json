@@ -27624,6 +27624,11 @@
         "time": "2026-09-17T22:52:42.305809+00:00",
         "price": 188.71,
         "note": "update"
+      },
+      {
+        "time": "2026-09-18T20:35:26.413317+00:00",
+        "price": 178.01,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -27733,6 +27738,11 @@
         "time": "2026-09-17T22:52:42.430476+00:00",
         "price": 334.17,
         "note": "update"
+      },
+      {
+        "time": "2026-09-18T20:35:26.491408+00:00",
+        "price": 323.795,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -27800,6 +27810,11 @@
         "time": "2026-09-17T22:52:42.455673+00:00",
         "price": 172.5,
         "note": "update"
+      },
+      {
+        "time": "2026-09-18T20:35:26.516325+00:00",
+        "price": 169.81,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -27857,6 +27872,11 @@
         "time": "2026-09-17T22:52:42.331454+00:00",
         "price": 188.71,
         "note": "update"
+      },
+      {
+        "time": "2026-09-18T20:35:26.439878+00:00",
+        "price": 178.01,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -27894,6 +27914,11 @@
         "time": "2026-09-17T22:52:42.356582+00:00",
         "price": 108.75,
         "note": "update"
+      },
+      {
+        "time": "2026-09-18T20:35:26.465697+00:00",
+        "price": 108.62,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -27911,7 +27936,7 @@
     "neckline": 106.69,
     "break_time": "2026-09-17T13:30:00Z",
     "first_seen": "2026-09-17T21:04:34.108331+00:00",
-    "status": "watching",
+    "status": "triggered",
     "suggested_entry": 106.69,
     "suggested_entry_zone": [
       106.1565,
@@ -27931,14 +27956,19 @@
         "time": "2026-09-17T22:52:42.380818+00:00",
         "price": 108.75,
         "note": "update"
+      },
+      {
+        "time": "2026-09-18T17:30:00Z",
+        "price": 108.62,
+        "note": "triggered"
       }
     ],
-    "trigger_time": null,
-    "trigger_price": null,
+    "trigger_time": "2026-09-18T17:30:00Z",
+    "trigger_price": 108.62,
     "close_time": null,
     "close_price": null,
     "outcome": null,
-    "elapsed_watching_hours": null,
+    "elapsed_watching_hours": 20.4,
     "elapsed_total_hours": null
   },
   {
@@ -27967,6 +27997,11 @@
       {
         "time": "2026-09-17T22:52:42.480054+00:00",
         "price": 245.13,
+        "note": "update"
+      },
+      {
+        "time": "2026-09-18T20:35:26.541587+00:00",
+        "price": 239.56,
         "note": "update"
       }
     ],

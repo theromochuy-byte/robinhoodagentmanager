@@ -8,9 +8,9 @@
       "symbol": "BRK-B",
       "type": "inverse_hns",
       "neckline": 502.99,
-      "stop": 479.7751,
-      "target_2R": 564.7799,
-      "risk_per_share": 28.3349,
+      "stop": 479.6887,
+      "target_2R": 564.9527,
+      "risk_per_share": 28.4213,
       "shares": 0.738,
       "break_time": "2026-07-28T13:30:00Z",
       "bars_since_break": 11,
@@ -26,9 +26,9 @@
       "symbol": "EMR",
       "type": "inverse_hns",
       "neckline": 152.09,
-      "stop": 140.6844,
-      "target_2R": 175.5312,
-      "risk_per_share": 11.6156,
+      "stop": 140.6248,
+      "target_2R": 175.6505,
+      "risk_per_share": 11.6752,
       "shares": 2.4622,
       "break_time": "2026-08-03T13:30:00Z",
       "bars_since_break": 3,
@@ -42,5 +42,5 @@
     }
   ],
   "closed": [],
-  "watching_count": 4
+  "watching_count": 5
 }
