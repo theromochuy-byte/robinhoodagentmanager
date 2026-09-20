@@ -79,7 +79,81 @@ def _fetch_intraday_highs(symbols: list[str]) -> dict[str, float]:
         return {}
 
 
-from swing_agent.config import TIME_STOP_TRADING_DAYS, TIME_STOP_MIN_PROGRESS_FRAC
+from swing_agent.config import (
+    TIME_STOP_TRADING_DAYS, TIME_STOP_MIN_PROGRESS_FRAC,
+    RISK_PCT, STARTING_EQUITY,
+)
+
+
+# ---------------------------------------------------------------------------
+# Pending-fill resolver — morning step, runs before check_exits
+# ---------------------------------------------------------------------------
+
+def resolve_pending_fills(quotes: dict[str, float]) -> list[dict]:
+    """Convert pending_fill trades to entered using today's opening quote.
+
+    Evening scanner logs triggers as pending_fill with signal_price (the 4H
+    close). This function runs at morning open and fills at the first live
+    quote, which is the price you'd actually have paid. Risk parameters are
+    recomputed from the real fill price; the stop level is unchanged.
+
+    Trades that gap through their stop overnight are voided rather than filled.
+
+    Returns list of newly-filled trades (status changed to entered this run).
+    """
+    trades = _load_ledger()
+    filled = []
+    now = datetime.now(timezone.utc).isoformat()
+
+    for t in trades:
+        if t.get("status") != "pending_fill":
+            continue
+
+        sym = t["symbol"]
+        price = quotes.get(sym)
+        if price is None:
+            continue  # no quote yet — leave pending
+
+        stop = t["stop"]  # absolute level from pattern, does not change
+        signal_price = t.get("signal_price", price)
+
+        if price <= stop:
+            # Gapped through stop overnight — void without entering
+            t["status"] = "voided"
+            t["void_reason"] = "gapped_through_stop"
+            t["fill_price"] = price
+            t["fill_time"] = now
+            t["fill_slip"] = round(price - signal_price, 4)
+            print(f"  [Fill] {sym} VOIDED — opened at {price:.2f}, below stop {stop:.2f}")
+            continue
+
+        risk = price - stop
+        shares = (STARTING_EQUITY * RISK_PCT) / risk
+        max_notional = STARTING_EQUITY * 0.25
+        if shares * price > max_notional:
+            shares = max_notional / price
+
+        fill_slip = round(price - signal_price, 4)
+        slip_pct = round(fill_slip / signal_price * 100, 2) if signal_price else 0.0
+
+        t["status"] = "entered"
+        t["entry"] = round(price, 4)
+        t["entry_time"] = now
+        t["fill_slip"] = fill_slip
+        t["fill_slip_pct"] = slip_pct
+        t["risk_per_share"] = round(risk, 4)
+        t["target_1R"] = round(price + risk, 4)
+        t["target_2R"] = round(price + 2 * risk, 4)
+        t["target_3R"] = round(price + 3 * risk, 4)
+        t["shares"] = round(shares, 4)
+
+        direction = "gap-up" if fill_slip > 0 else "gap-down" if fill_slip < 0 else "flat"
+        print(f"  [Fill] {sym} filled at {price:.2f}  "
+              f"signal={signal_price:.2f}  slip={fill_slip:+.2f} ({slip_pct:+.2f}%)  [{direction}]")
+        filled.append(t)
+
+    _save_ledger(trades)
+    return filled
 
 
 def check_exits(
@@ -352,17 +426,29 @@ if __name__ == "__main__":
     new_entries:  list[dict] = []
     closes:       list[dict] = []
     newly_at_be:  list[dict] = []
+    newly_filled: list[dict] = []
 
     if mode in ("morning", "evening"):
         full_refresh()
 
-    # Always fetch live quotes for open positions
+    # Always fetch live quotes for open + pending positions
     open_syms = _load_open_symbols()
     quotes: dict[str, float] = {}
     if open_syms:
         print(f"  Fetching live quotes for {len(open_syms)} open symbols...")
         quotes = fetch_quotes(open_syms)
 
+    # Morning/midday: resolve pending fills at the opening quote BEFORE exit check.
+    # Evening scanner does not fill — it only creates pending_fill records.
+    if mode in ("morning", "midday"):
+        print("=== RESOLVE PENDING FILLS ===")
+        newly_filled = resolve_pending_fills(quotes)
+        if newly_filled:
+            print(f"  {len(newly_filled)} position(s) filled at open.")
+        else:
+            print("  No pending fills.")
+
+    if open_syms:
         # Fetch intraday highs for milestone detection (1R/2R touch via wick)
         intraday_highs = _fetch_intraday_highs(open_syms)
 
@@ -377,7 +463,8 @@ if __name__ == "__main__":
 
     # Send email digest
     print("=== SENDING EMAIL DIGEST ===")
-    send_digest(new_entries, closes, quotes, newly_at_be=newly_at_be)
+    send_digest(new_entries, closes, quotes, newly_at_be=newly_at_be,
+                newly_filled=newly_filled)
 
     if mode in ("morning", "midday"):
         git_commit_push(mode)

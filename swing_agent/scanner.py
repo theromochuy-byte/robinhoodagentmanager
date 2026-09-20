@@ -406,12 +406,14 @@ def scan_symbol(
         }
 
         if triggered_today:
-            setup["entry"]       = round(last_close, 4)
-            setup["entry_time"]  = str(h4.loc[last_bar, "begins_at"])
-            setup["status"]      = "entered"
+            # Record the 4H close that confirmed the retest as signal_price.
+            # The actual entry price is NOT known yet — it will be the next
+            # morning's opening quote, resolved by resolve_pending_fills().
+            setup["signal_price"] = round(last_close, 4)
+            setup["signal_time"]  = str(h4.loc[last_bar, "begins_at"])
+            setup["status"]       = "pending_fill"
             setup["quality_score"] = _quality_score(setup)
             if setup["quality_score"] < MIN_QUALITY_SCORE:
-                # Retest triggered but quality too low — demote to watching
                 setup["status"]      = "watching"
                 setup["skip_reason"] = "low_quality"
                 watching.append(setup)
@@ -507,15 +509,26 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
     # Existing ledger entries (already opened) are processed first to avoid
     # double-counting them against available equity.
     ledger = _load_live_ledger()
-    existing_keys = {(t["symbol"], t.get("entry_time")) for t in ledger}
-    # One position per symbol: seed from any currently open/entered ledger record
-    symbols_entered = {t["symbol"] for t in ledger if t.get("status") == "entered"}
+    # Dedup key uses signal_time (the 4H bar that confirmed the retest).
+    # For legacy entered trades that predate this change, fall back to entry_time.
+    existing_keys = {
+        (t["symbol"], t.get("signal_time", t.get("entry_time"))) for t in ledger
+    }
+    # Block a second signal on any symbol that's already entered or awaiting fill.
+    symbols_entered = {
+        t["symbol"] for t in ledger
+        if t.get("status") in ("entered", "pending_fill")
+    }
     new_entries   = []
     skipped       = []
 
-    already_open  = [t for t in all_triggered if (t["symbol"], t.get("entry_time")) in existing_keys]
+    already_open = [
+        t for t in all_triggered
+        if (t["symbol"], t.get("signal_time")) in existing_keys
+    ]
     new_candidates = sorted(
-        [t for t in all_triggered if (t["symbol"], t.get("entry_time")) not in existing_keys],
+        [t for t in all_triggered
+         if (t["symbol"], t.get("signal_time")) not in existing_keys],
         key=lambda t: t.get("quality_score", 0),
         reverse=True,
     )
@@ -526,48 +539,45 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
 
     entries_today = 0
     for t in already_open + new_candidates:
-        if (t["symbol"], t.get("entry_time")) in existing_keys:
-            # already in ledger — still update watchlist state if not yet done
+        if (t["symbol"], t.get("signal_time")) in existing_keys:
+            # already in ledger — update watchlist state
             mark_triggered(t["symbol"], t["type"], t["break_time"],
-                           t["entry"], t["entry_time"])
+                           t["signal_price"], t["signal_time"])
             continue
         if t["symbol"] in symbols_entered:
             skipped.append({"symbol": t["symbol"], "type": t["type"],
-                            "cost": round(t["entry"] * t.get("shares", 0), 2),
-                            "available": round(available, 2),
                             "quality_score": t.get("quality_score", 0),
                             "skip_reason": "one_per_symbol"})
             mark_missed(t["symbol"], t["type"], t["break_time"], reason="one_per_symbol")
             continue
         if high_vix:
             skipped.append({"symbol": t["symbol"], "type": t["type"],
-                            "cost": round(t["entry"] * t.get("shares", 0), 2),
-                            "available": round(available, 2),
                             "quality_score": t.get("quality_score", 0),
                             "skip_reason": "high_vix"})
             mark_missed(t["symbol"], t["type"], t["break_time"], reason="high_vix")
             continue
-        cost = round(t["entry"] * t.get("shares", 0), 2)
-        if cost > available:
+        # Capital pre-check uses signal_price * shares as a rough estimate.
+        # Actual cost is recomputed at fill time from the morning quote.
+        est_cost = round(t["signal_price"] * t.get("shares", 0), 2)
+        if est_cost > available:
             skipped.append({"symbol": t["symbol"], "type": t["type"],
-                            "cost": cost, "available": round(available, 2),
+                            "est_cost": est_cost, "available": round(available, 2),
                             "quality_score": t.get("quality_score", 0),
                             "skip_reason": "no_capital"})
             mark_missed(t["symbol"], t["type"], t["break_time"], reason="no_capital")
             continue
         if entries_today >= MAX_ENTRIES_PER_DAY:
             skipped.append({"symbol": t["symbol"], "type": t["type"],
-                            "cost": cost, "available": round(available, 2),
                             "quality_score": t.get("quality_score", 0),
                             "skip_reason": "daily_cap"})
             mark_missed(t["symbol"], t["type"], t["break_time"], reason="daily_cap")
             continue
         new_entries.append(t)
         entries_today += 1
-        available = round(available - cost, 2)
+        available = round(available - est_cost, 2)
         symbols_entered.add(t["symbol"])
         mark_triggered(t["symbol"], t["type"], t["break_time"],
-                       t["entry"], t["entry_time"])
+                       t["signal_price"], t["signal_time"])
 
     ledger.extend(new_entries)
     _save_live_ledger(ledger)

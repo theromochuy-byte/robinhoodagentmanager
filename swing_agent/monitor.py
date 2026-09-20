@@ -49,7 +49,7 @@ def check_exits(trades: list[dict], quotes: dict[str, float]) -> list[dict]:
     return closes + still_open
 
 
-CLOSED_STATUSES = ("stopped", "breakeven", "win_2r", "target_hit", "time_stop")
+CLOSED_STATUSES = ("stopped", "breakeven", "win_2r", "target_hit", "time_stop", "voided")
 
 def print_status(trades: list[dict], quotes: dict[str, float] | None = None) -> None:
     open_t   = [t for t in trades if t.get("status") == "entered"]
@@ -59,9 +59,18 @@ def print_status(trades: list[dict], quotes: dict[str, float] | None = None) -> 
     print(f"PAPER POSITION MONITOR  {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
     print(f"{'='*70}")
 
+    pending_t = [t for t in trades if t.get("status") == "pending_fill"]
+    if pending_t:
+        print(f"\nPENDING FILL ({len(pending_t)}) — fills at tomorrow's open")
+        for t in pending_t:
+            slip_str = ""
+            print(f"  {t['symbol']:<6} {t['type']:<14} "
+                  f"signal={t.get('signal_price', '?')}  stop={t['stop']}  "
+                  f"2R={t.get('target_2R', '?')}  [{t.get('signal_time', '')[:10]}]")
+
     if open_t:
         print(f"\nOPEN POSITIONS ({len(open_t)})")
-        header = f"  {'SYM':<6} {'TYPE':<14} {'ENTRY':>8} {'STOP':>8} {'2R':>8} {'LAST':>8} {'UNRL PnL':>10}  BE"
+        header = f"  {'SYM':<6} {'TYPE':<14} {'ENTRY':>8} {'STOP':>8} {'2R':>8} {'LAST':>8} {'UNRL PnL':>10}  BE  SLIP"
         print(header)
         print("  " + "-" * (len(header) - 2))
         for t in open_t:
@@ -70,8 +79,10 @@ def print_status(trades: list[dict], quotes: dict[str, float] | None = None) -> 
             unrl_str = f"${unrl:+.2f}" if isinstance(unrl, (int, float)) else "—"
             last_str = f"{last:.2f}" if isinstance(last, (int, float)) else "—"
             be_flag  = "✓" if t.get("touched_1r") else " "
+            slip = t.get("fill_slip")
+            slip_str = f"{slip:+.2f}" if isinstance(slip, (int, float)) else "  —  "
             print(f"  {t['symbol']:<6} {t['type']:<14} {t['entry']:>8.2f} {t['stop']:>8.2f} "
-                  f"{t['target_2R']:>8.2f} {last_str:>8} {unrl_str:>10}  {be_flag}")
+                  f"{t['target_2R']:>8.2f} {last_str:>8} {unrl_str:>10}  {be_flag}  {slip_str}")
     else:
         print("\n  No open positions.")
 
@@ -79,7 +90,7 @@ def print_status(trades: list[dict], quotes: dict[str, float] | None = None) -> 
         print(f"\nCLOSED ({len(closed_t)})")
         for t in closed_t:
             status = t["status"]
-            label  = {"stopped": "LOSS", "breakeven": "BE  ", "win_2r": "W-2R", "target_hit": "WIN ", "time_stop": "TIME"}.get(status, status)
+            label  = {"stopped": "LOSS", "breakeven": "BE  ", "win_2r": "W-2R", "target_hit": "WIN ", "time_stop": "TIME", "voided": "VOID"}.get(status, status)
             pnl    = t.get("realized_pnl", 0)
             print(f"  {t['symbol']:<6} {t['type']:<14} {label}  "
                   f"exit=${t.get('exit_price', '?')}  P&L=${pnl:+.2f}")

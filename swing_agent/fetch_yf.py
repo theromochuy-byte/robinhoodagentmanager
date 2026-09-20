@@ -35,7 +35,10 @@ def _load_open_symbols() -> list[str]:
     if not ledger.exists():
         return []
     trades = json.loads(ledger.read_text())
-    return sorted({t["symbol"] for t in trades if t.get("status") == "entered"})
+    return sorted({
+        t["symbol"] for t in trades
+        if t.get("status") in ("entered", "pending_fill")
+    })
 
 
 def _df_to_bars(df) -> list[dict]:

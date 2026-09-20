@@ -343,11 +343,14 @@ def send_digest(
     quotes: dict[str, float],
     scan_date: str | None = None,
     newly_at_be: list[dict] | None = None,
+    newly_filled: list[dict] | None = None,
 ) -> bool:
     if scan_date is None:
         scan_date = str(date.today())
     if newly_at_be is None:
         newly_at_be = []
+    if newly_filled is None:
+        newly_filled = []
 
     digest = build_digest(new_entries, closes, quotes, scan_date, newly_at_be)
     html   = render_html(digest, scan_date)
