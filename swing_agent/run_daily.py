@@ -79,7 +79,7 @@ def _fetch_intraday_highs(symbols: list[str]) -> dict[str, float]:
         return {}
 
 
-TIME_STOP_TRADING_DAYS = 15  # close if no 1R touch within ~3 weeks
+from swing_agent.config import TIME_STOP_TRADING_DAYS, TIME_STOP_MIN_PROGRESS_FRAC
 
 
 def check_exits(
@@ -180,21 +180,30 @@ def check_exits(
             t["touched_2r"]   = True
             closes.append(t)
         else:
-            # Time stop: if no 1R touch yet and held long enough, exit to free capital
+            # Time stop: exit if held long enough without showing a sign of working.
+            # "Sign of working" = touched 1R at any point, OR price has made at
+            # least TIME_STOP_MIN_PROGRESS_FRAC of the way from entry toward 1R.
             if not touched_1r:
                 entry_time_str = t.get("entry_time", "")
                 try:
                     entry_dt = datetime.fromisoformat(entry_time_str.replace("Z", "+00:00"))
                     days_held = (datetime.now(timezone.utc) - entry_dt).total_seconds() / 86400
                     if days_held * (5 / 7) >= TIME_STOP_TRADING_DAYS:
-                        t["status"]       = "time_stop"
-                        t["exit_price"]   = price
-                        t["exit_reason"]  = "time_stop"
-                        t["exit_time"]    = now
-                        t["realized_pnl"] = round((price - entry) * t.get("shares", 0), 2)
-                        t["days_held"]    = round(days_held, 1)
-                        closes.append(t)
-                        continue
+                        progress = (price - entry) / risk if risk > 0 else 0.0
+                        sign_of_working = (
+                            TIME_STOP_MIN_PROGRESS_FRAC > 0
+                            and progress >= TIME_STOP_MIN_PROGRESS_FRAC
+                        )
+                        if not sign_of_working:
+                            t["status"]       = "time_stop"
+                            t["exit_price"]   = price
+                            t["exit_reason"]  = "time_stop"
+                            t["exit_time"]    = now
+                            t["realized_pnl"] = round((price - entry) * t.get("shares", 0), 2)
+                            t["days_held"]    = round(days_held, 1)
+                            t["progress_at_exit"] = round(progress * 100, 1)
+                            closes.append(t)
+                            continue
                 except Exception:
                     pass
 

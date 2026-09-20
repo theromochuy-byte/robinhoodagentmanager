@@ -217,7 +217,7 @@ def _load_session_universe() -> list[str] | None:
         return None
     return SESSION_UNIVERSE.read_text().split()
 
-STARTING_EQUITY = 2500.0
+from swing_agent.config import STARTING_EQUITY
 
 
 def _load_equity() -> dict:
