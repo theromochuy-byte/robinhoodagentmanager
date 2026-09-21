@@ -1,13 +1,13 @@
 """Fetch market data via yfinance (no auth required).
 
 Replaces the Robinhood robin_stocks fetcher for automated CI runs.
-Produces identical per-symbol JSON files: data/<SYM>_day.json and
-data/<SYM>_4hour.json, in the same bar dict format the rest of the
-pipeline expects.
+Produces identical per-symbol JSON files: data/<SYM>_day.json,
+data/<SYM>_4hour.json, and data/<SYM>_1hour.json, in the same bar
+dict format the rest of the pipeline expects.
 
 Usage:
   python3 -m swing_agent.fetch_yf --daily
-  python3 -m swing_agent.fetch_yf --intraday
+  python3 -m swing_agent.fetch_yf --intraday    # saves both _4hour and _1hour
   python3 -m swing_agent.fetch_yf --quotes
   python3 -m swing_agent.fetch_yf --all
 """
@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 
 DAY_PERIOD  = "2y"    # ~2 years of daily bars
-H1_PERIOD   = "60d"   # 60 days of 1-hour bars (resampled to 4-hour); yfinance 1.x limit
+H1_PERIOD   = "60d"   # 60 days of 1-hour bars; yfinance 1.x practical limit for intraday
 BATCH_SIZE  = 20      # yfinance handles multi-symbol downloads well
 
 
@@ -143,6 +143,9 @@ def fetch_4hour(symbols: list[str]) -> dict[str, list[dict]]:
 
     Downloads one symbol at a time to avoid yfinance 1.x multi-ticker column
     structure issues with intraday intervals.
+
+    Also saves raw 1-hour bars to data/<SYM>_1hour.json as a side effect,
+    since the data is already in memory and costs no extra API calls.
     """
     import yfinance as yf
     import pandas as pd
@@ -157,6 +160,9 @@ def fetch_4hour(symbols: list[str]) -> dict[str, list[dict]]:
             if isinstance(df.columns, pd.MultiIndex):
                 df.columns = df.columns.get_level_values(0)
             bars_1h = _df_to_bars(df.dropna())
+            # Save 1H bars directly — free since the data is already here
+            if bars_1h:
+                (DATA / f"{sym}_1hour.json").write_text(json.dumps(bars_1h))
             bars_4h = _resample_1h_to_4h(bars_1h)
             if bars_4h:
                 results[sym] = bars_4h

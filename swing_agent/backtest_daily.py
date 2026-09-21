@@ -1,12 +1,14 @@
 """Day-by-day paper backtest: replays the forward scanner over historical data.
 
-For each trading day in the 4-hour data, slices all bars to that date,
-runs the scanner logic, checks open positions for stop/target hits, and
-accumulates a full P&L ledger.
+For each trading day in the entry-timeframe data, slices all bars to that
+date, runs the scanner logic, checks open positions for stop/target hits,
+and accumulates a full P&L ledger.
 
 Usage:
   python3 -m swing_agent.backtest_daily
   python3 -m swing_agent.backtest_daily --from 2026-04-01
+  python3 -m swing_agent.backtest_daily --timeframe 1hour
+  python3 -m swing_agent.backtest_daily --timeframe 4hour --from 2026-04-01
 """
 from __future__ import annotations
 
@@ -28,14 +30,21 @@ DATA    = ROOT / "data"
 REPORTS = ROOT / "reports"
 BACKTEST_LEDGER = DATA / "paper_backtest.json"
 
+# Freshness window: how many entry-timeframe bars back a pattern break can be
+# and still qualify. Scales with bar size so the real-time lookback is ~the same.
+FRESHNESS_BARS = {
+    "4hour": 12,   # 12 × 4h ≈ 2 trading days
+    "1hour": 48,   # 48 × 1h ≈ 6 trading days (matches 4h window in calendar time)
+}
+
 
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
 
-def _trading_dates(symbol: str = "AAPL") -> list[str]:
-    h4 = load(DATA / f"{symbol}_4hour.json", symbol)
-    dates = sorted(set(str(ts)[:10] for ts in h4["begins_at"]))
+def _trading_dates(timeframe: str = "4hour", symbol: str = "AAPL") -> list[str]:
+    df = load(DATA / f"{symbol}_{timeframe}.json", symbol)
+    dates = sorted(set(str(ts)[:10] for ts in df["begins_at"]))
     return dates
 
 
@@ -48,40 +57,49 @@ def _slice_to_date(df: pd.DataFrame, date_str: str) -> pd.DataFrame:
 def _scan_symbol_asof(
     symbol: str,
     daily_full: pd.DataFrame,
-    h4_full: pd.DataFrame,
+    entry_full: pd.DataFrame,
     date_str: str,
     equity: float,
     risk_pct: float,
+    timeframe: str = "4hour",
 ) -> dict:
     """Same logic as scanner.scan_symbol but operates on data sliced to date_str."""
-    daily = _slice_to_date(daily_full, date_str)
-    h4    = _slice_to_date(h4_full, date_str)
+    daily  = _slice_to_date(daily_full, date_str)
+    h4     = _slice_to_date(entry_full, date_str)
     if len(daily) < 30 or len(h4) < 30:
         return {"watching": [], "triggered": []}
 
-    bias       = daily_bias_series(daily)
-    atr_series = atr(h4, 14)
+    freshness_bars = FRESHNESS_BARS.get(timeframe, 12)
+
+    bias        = daily_bias_series(daily)
+    atr_series  = atr(h4, 14)
     ema9_series = ema(h4["close"], 9)
-    patterns   = detect_inverse_hns(h4)  # double_bottom suspended pending investigation
+    patterns    = detect_inverse_hns(h4)  # double_bottom suspended pending investigation
     patterns.sort(key=lambda p: p["break_index"])
 
-    last_bar = len(h4) - 1
+    last_bar  = len(h4) - 1
     watching  = []
     triggered = []
 
     for p in patterns:
         bi = p["break_index"]
-        # Freshness: break must be within the last 11 bars (~2.75 trading days on 4h)
-        if bi < last_bar - 11:
+        # Freshness: break must be within the last N bars (scaled to timeframe)
+        if bi < last_bar - (freshness_bars - 1):
             continue
         if not bias_asof(bias, p["break_time"]):
             continue
-        # Minimum risk distance: stop must be at least 3% below neckline
-        if (p["neckline"] - p["stop_basis"]) / p["neckline"] < 0.03:
+        # Structural depth pre-check (same as scanner)
+        struct_depth = (p["neckline"] - p["stop_basis"]) / p["neckline"]
+        if struct_depth < 0.03 or struct_depth > 0.15:
             continue
 
         trade = build_trade(h4, p, atr_series, equity, risk_pct)
         if trade is None:
+            continue
+
+        # Definitive depth gate on ATR-buffered stop
+        depth = (p["neckline"] - trade["stop"]) / p["neckline"]
+        if depth < 0.03 or depth > 0.12:
             continue
 
         neckline   = p["neckline"]
@@ -259,23 +277,26 @@ def run_backtest(
     equity: float = 1500.0,
     risk_pct: float = 0.02,
     from_date: str | None = None,
+    timeframe: str = "4hour",
 ) -> dict:
     REPORTS.mkdir(exist_ok=True)
-    backtest_dir = REPORTS / "backtest"
+    backtest_dir = REPORTS / f"backtest_{timeframe}"
     backtest_dir.mkdir(exist_ok=True)
+
+    print(f"Timeframe: {timeframe}  (freshness window: {FRESHNESS_BARS.get(timeframe, 12)} bars)", flush=True)
 
     # Load all symbol data once
     print("Loading data...", flush=True)
-    all_daily: dict[str, pd.DataFrame] = {}
-    all_h4:    dict[str, pd.DataFrame] = {}
+    all_daily:  dict[str, pd.DataFrame] = {}
+    all_entry:  dict[str, pd.DataFrame] = {}
     for sym in symbols:
-        dp = DATA / f"{sym}_day.json"
-        h4p = DATA / f"{sym}_4hour.json"
-        if dp.exists() and h4p.exists():
+        dp  = DATA / f"{sym}_day.json"
+        ep  = DATA / f"{sym}_{timeframe}.json"
+        if dp.exists() and ep.exists():
             all_daily[sym] = load(dp, sym)
-            all_h4[sym]    = load(h4p, sym)
+            all_entry[sym] = load(ep, sym)
 
-    trading_dates = _trading_dates()
+    trading_dates = _trading_dates(timeframe)
     if from_date:
         trading_dates = [d for d in trading_dates if d >= from_date]
 
@@ -291,8 +312,8 @@ def run_backtest(
         # 1. Check exits for all open positions on today's bars
         todays_bars: dict[str, pd.DataFrame] = {}
         for sym in {p["symbol"] for p in open_positions}:
-            if sym in all_h4:
-                df = all_h4[sym]
+            if sym in all_entry:
+                df = all_entry[sym]
                 mask = pd.to_datetime(df["begins_at"]).dt.strftime("%Y-%m-%d") == date_str
                 todays_bars[sym] = df[mask].reset_index(drop=True)
 
@@ -316,9 +337,10 @@ def run_backtest(
         new_entries   = []
         new_watching  = []
         for sym in symbols:
-            if sym not in all_daily or sym not in all_h4:
+            if sym not in all_daily or sym not in all_entry:
                 continue
-            result = _scan_symbol_asof(sym, all_daily[sym], all_h4[sym], date_str, equity, risk_pct)
+            result = _scan_symbol_asof(sym, all_daily[sym], all_entry[sym], date_str, equity, risk_pct,
+                                       timeframe=timeframe)
             for t in result["triggered"]:
                 key = (t["symbol"], t["type"], t.get("entry_time"))
                 if key not in seen_entries:
@@ -350,8 +372,8 @@ def run_backtest(
     last_date_ts = trading_dates[-1] + "T23:59:00Z"
     for pos in open_positions:
         sym = pos["symbol"]
-        if sym in all_h4:
-            df = all_h4[sym]
+        if sym in all_entry:
+            df = all_entry[sym]
             last_bar_ts  = str(df.iloc[-1]["begins_at"])
             last_close   = float(df.iloc[-1]["close"])
             days_open    = _days_between(pos.get("entry_time", ""), last_bar_ts)
@@ -429,8 +451,10 @@ def run_backtest(
         },
     }
 
-    BACKTEST_LEDGER.write_text(json.dumps(all_closed, indent=2))
-    (REPORTS / "backtest_summary.json").write_text(json.dumps(summary, indent=2))
+    ledger_path  = DATA / f"paper_backtest_{timeframe}.json"
+    summary_path = REPORTS / f"backtest_summary_{timeframe}.json"
+    ledger_path.write_text(json.dumps(all_closed, indent=2))
+    summary_path.write_text(json.dumps(summary, indent=2))
 
     return summary
 
@@ -438,14 +462,20 @@ def run_backtest(
 if __name__ == "__main__":
     args = sys.argv[1:]
     from_date = None
+    timeframe = "4hour"
     if "--from" in args:
         from_date = args[args.index("--from") + 1]
+    if "--timeframe" in args:
+        timeframe = args[args.index("--timeframe") + 1]
+    if timeframe not in FRESHNESS_BARS:
+        print(f"Unknown timeframe '{timeframe}'. Choose from: {list(FRESHNESS_BARS)}", file=sys.stderr)
+        sys.exit(1)
 
     symbols = (ROOT / "data" / "universe.txt").read_text().split()
-    summary = run_backtest(symbols, from_date=from_date)
+    summary = run_backtest(symbols, from_date=from_date, timeframe=timeframe)
 
     print(f"\n{'='*60}")
-    print(f"BACKTEST SUMMARY  {summary['from_date']} → {summary['to_date']}")
+    print(f"BACKTEST SUMMARY [{timeframe}]  {summary['from_date']} → {summary['to_date']}")
     print(f"{'='*60}")
     print(f"Symbols scanned:   {summary['symbols_scanned']}")
     print(f"Total entries:     {summary['total_entries']}")
