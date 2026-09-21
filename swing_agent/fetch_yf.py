@@ -225,9 +225,23 @@ def save(data: dict[str, list[dict]], suffix: str) -> list[str]:
 
 if __name__ == "__main__":
     args = set(sys.argv[1:])
-    if not args or not (args & {"--daily", "--intraday", "--quotes", "--all"}):
-        print("Usage: python3 -m swing_agent.fetch_yf [--daily] [--intraday] [--quotes] [--all]")
+    if not args or not (args & {"--daily", "--intraday", "--quotes", "--all", "--resample-4h"}):
+        print("Usage: python3 -m swing_agent.fetch_yf [--daily] [--intraday] [--quotes] [--all] [--resample-4h]")
         sys.exit(1)
+
+    if "--resample-4h" in args:
+        print("Resampling all cached 1H files → 4H (overwrites existing _4hour.json for those symbols)...")
+        resampled = 0
+        for f in sorted(DATA.glob("*_1hour.json")):
+            sym = f.stem.replace("_1hour", "")
+            bars_1h = json.loads(f.read_text())
+            bars_4h = _resample_1h_to_4h(bars_1h)
+            if bars_4h:
+                (DATA / f"{sym}_4hour.json").write_text(json.dumps(bars_4h))
+                resampled += 1
+                print(f"  {sym}: {len(bars_4h)} 4H bars ({bars_4h[0]['begins_at'][:10]} → {bars_4h[-1]['begins_at'][:10]})")
+        print(f"Done. Resampled {resampled} symbols.")
+        sys.exit(0)
 
     do_daily    = "--all" in args or "--daily"    in args
     do_intraday = "--all" in args or "--intraday" in args
