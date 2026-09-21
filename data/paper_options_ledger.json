@@ -167,8 +167,11 @@
       "trailing_eps_growth_pct": 10685.39,
       "price": 25.03
     },
-    "status": "PROPOSED",
-    "proposed_at": "2026-09-14T13:47:34.794390+00:00"
+    "status": "closed",
+    "proposed_at": "2026-09-14T13:47:34.794390+00:00",
+    "close_debit": 0.145,
+    "closed_at": "2026-09-21T16:59:52.491226+00:00",
+    "close_reason": "profit_take"
   },
   {
     "symbol": "RIVN",
@@ -209,5 +212,45 @@
     },
     "status": "PROPOSED",
     "proposed_at": "2026-09-14T13:47:34.809398+00:00"
+  },
+  {
+    "symbol": "BMNR",
+    "type": "csp",
+    "instrument_id": "bb3d8af0-e091-416c-b03b-d1dc01cdf743",
+    "strike": 21.0,
+    "expiration_date": "2026-10-30",
+    "dte": 39,
+    "delta": 0.111271,
+    "credit": 0.45,
+    "collateral": 2100.0,
+    "supplemental": true,
+    "return_on_collateral_pct": 2.143,
+    "return_on_net_capital_pct": 2.19,
+    "annualized_roc_pct": 20.1,
+    "chance_of_profit_short": 0.849788,
+    "step1_gate": {
+      "symbol": "BMNR",
+      "pass": true,
+      "reasons": [],
+      "quality": {
+        "pass": true,
+        "reasons": [],
+        "pe_ratio": -3.05,
+        "pe_applicable": false,
+        "avg_volume_30d": 49533709.3887,
+        "high_52_weeks": 65.6
+      },
+      "trend": {
+        "pass": false,
+        "reasons": [
+          "no daily bar file for BMNR"
+        ]
+      },
+      "trend_advisory_only": true,
+      "trailing_eps_growth_pct": 10685.39,
+      "price": 25.99
+    },
+    "status": "PROPOSED",
+    "proposed_at": "2026-09-21T16:59:52.535945+00:00"
   }
 ]

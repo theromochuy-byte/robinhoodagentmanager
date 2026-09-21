@@ -1,0 +1,22 @@
+[
+  {
+    "id": "ac3635ed-bdbf-4f34-87bb-948c42212ab0",
+    "chain_symbol": "FIG",
+    "expiration_date": "2026-10-30",
+    "strike_price": "20",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.8,
+      "ask_price": 0.9,
+      "mark_price": 0.85,
+      "adjusted_mark_price": 0.85,
+      "delta": -0.258413,
+      "implied_volatility": 0.66407,
+      "open_interest": 834,
+      "volume": 513,
+      "chance_of_profit_short": 0.736251,
+      "chance_of_profit_long": 0.263749,
+      "updated_at": "2026-09-21T16:54:36.317773964Z"
+    }
+  }
+]

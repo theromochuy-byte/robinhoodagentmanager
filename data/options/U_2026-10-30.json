@@ -1,0 +1,22 @@
+[
+  {
+    "id": "9b522afb-f982-43ac-a284-3c058f2e5d75",
+    "chain_symbol": "U",
+    "expiration_date": "2026-10-30",
+    "strike_price": "35",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.35,
+      "ask_price": 0.71,
+      "mark_price": 0.53,
+      "adjusted_mark_price": 0.53,
+      "delta": -0.11762,
+      "implied_volatility": 0.59776,
+      "open_interest": 18,
+      "volume": 0,
+      "chance_of_profit_short": 0.857614,
+      "chance_of_profit_long": 0.142386,
+      "updated_at": "2026-09-21T16:55:21.598870483Z"
+    }
+  }
+]

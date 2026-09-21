@@ -1,0 +1,22 @@
+[
+  {
+    "id": "aa834847-79cb-4703-b9bd-ac1adb6cf4d6",
+    "chain_symbol": "NVO",
+    "expiration_date": "2026-10-30",
+    "strike_price": "35",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.26,
+      "ask_price": 0.3,
+      "mark_price": 0.28,
+      "adjusted_mark_price": 0.28,
+      "delta": -0.117136,
+      "implied_volatility": 0.356659,
+      "open_interest": 25,
+      "volume": 129,
+      "chance_of_profit_short": 0.873278,
+      "chance_of_profit_long": 0.126722,
+      "updated_at": "2026-09-21T16:55:19.706939101Z"
+    }
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "4b9a06f3-409b-444f-a922-c57f446965e3",
+    "chain_symbol": "CMCSA",
+    "expiration_date": "2026-10-30",
+    "strike_price": "19",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.08,
+      "ask_price": 0.15,
+      "mark_price": 0.115,
+      "adjusted_mark_price": 0.12,
+      "delta": -0.076295,
+      "implied_volatility": 0.438467,
+      "open_interest": 1,
+      "volume": 1,
+      "chance_of_profit_short": 0.908457,
+      "chance_of_profit_long": 0.091543,
+      "updated_at": "2026-09-21T16:54:51.436400644Z"
+    }
+  },
+  {
+    "id": "63362912-df88-4602-a30b-2b2d089beac6",
+    "chain_symbol": "CMCSA",
+    "expiration_date": "2026-10-30",
+    "strike_price": "20",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.17,
+      "ask_price": 0.21,
+      "mark_price": 0.19,
+      "adjusted_mark_price": 0.19,
+      "delta": -0.121427,
+      "implied_volatility": 0.398085,
+      "open_interest": 36,
+      "volume": 36929,
+      "chance_of_profit_short": 0.86679,
+      "chance_of_profit_long": 0.13321,
+      "updated_at": "2026-09-21T16:55:02.553717794Z"
+    }
+  },
+  {
+    "id": "834b5f27-7d7a-46a3-8301-faf545a9c104",
+    "chain_symbol": "CMCSA",
+    "expiration_date": "2026-10-30",
+    "strike_price": "21",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.35,
+      "ask_price": 0.4,
+      "mark_price": 0.375,
+      "adjusted_mark_price": 0.38,
+      "delta": -0.212035,
+      "implied_volatility": 0.39421,
+      "open_interest": 76,
+      "volume": 5,
+      "chance_of_profit_short": 0.791907,
+      "chance_of_profit_long": 0.208093,
+      "updated_at": "2026-09-21T16:54:39.012440339Z"
+    }
+  }
+]

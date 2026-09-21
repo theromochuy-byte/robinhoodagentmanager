@@ -10,13 +10,13 @@
       "ask_price": 1.15,
       "mark_price": 0.575,
       "adjusted_mark_price": 0.01,
-      "delta": -0.010579,
-      "implied_volatility": 0.316426,
+      "delta": -0.010196,
+      "implied_volatility": 0.341609,
       "open_interest": 0,
       "volume": 0,
-      "chance_of_profit_short": 0.986501,
-      "chance_of_profit_long": 0.013499,
-      "updated_at": "2026-09-18T15:01:34.4903344Z"
+      "chance_of_profit_short": 0.986866,
+      "chance_of_profit_long": 0.013134,
+      "updated_at": "2026-09-21T16:53:25.123509117Z"
     }
   },
   {
@@ -27,16 +27,16 @@
     "type": "put",
     "quote": {
       "bid_price": 0.0,
-      "ask_price": 0.97,
-      "mark_price": 0.485,
+      "ask_price": 1.0,
+      "mark_price": 0.5,
       "adjusted_mark_price": 0.01,
-      "delta": -0.012679,
-      "implied_volatility": 0.259951,
+      "delta": -0.012142,
+      "implied_volatility": 0.28275,
       "open_interest": 0,
       "volume": 0,
-      "chance_of_profit_short": 0.984638,
-      "chance_of_profit_long": 0.015362,
-      "updated_at": "2026-09-18T15:01:34.49140192Z"
+      "chance_of_profit_short": 0.985146,
+      "chance_of_profit_long": 0.014854,
+      "updated_at": "2026-09-21T16:53:56.993256872Z"
     }
   },
   {
@@ -46,17 +46,17 @@
     "strike_price": "24",
     "type": "put",
     "quote": {
-      "bid_price": 0.09,
-      "ask_price": 0.91,
-      "mark_price": 0.5,
-      "adjusted_mark_price": 0.5,
-      "delta": -0.185818,
-      "implied_volatility": 0.534728,
+      "bid_price": 0.08,
+      "ask_price": 0.69,
+      "mark_price": 0.385,
+      "adjusted_mark_price": 0.39,
+      "delta": -0.160187,
+      "implied_volatility": 0.525638,
       "open_interest": 4,
       "volume": 0,
-      "chance_of_profit_short": 0.803679,
-      "chance_of_profit_long": 0.196321,
-      "updated_at": "2026-09-18T15:01:35.538958637Z"
+      "chance_of_profit_short": 0.827252,
+      "chance_of_profit_long": 0.172748,
+      "updated_at": "2026-09-21T16:54:40.411451966Z"
     }
   }
 ]

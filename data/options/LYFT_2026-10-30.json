@@ -1,0 +1,62 @@
+[
+  {
+    "id": "c6a1a0fc-a219-4600-92aa-5166958ebfc5",
+    "chain_symbol": "LYFT",
+    "expiration_date": "2026-10-30",
+    "strike_price": "11",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.0,
+      "ask_price": 0.75,
+      "mark_price": 0.375,
+      "adjusted_mark_price": 0.01,
+      "delta": -0.011931,
+      "implied_volatility": 0.462458,
+      "open_interest": 98,
+      "volume": 0,
+      "chance_of_profit_short": 0.982742,
+      "chance_of_profit_long": 0.017258,
+      "updated_at": "2026-09-21T16:48:46.488652785Z"
+    }
+  },
+  {
+    "id": "0bc75401-719f-4aad-a859-29d9325ef33f",
+    "chain_symbol": "LYFT",
+    "expiration_date": "2026-10-30",
+    "strike_price": "12",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.04,
+      "ask_price": 0.37,
+      "mark_price": 0.205,
+      "adjusted_mark_price": 0.21,
+      "delta": -0.114691,
+      "implied_volatility": 0.68225,
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": 0.854977,
+      "chance_of_profit_long": 0.145023,
+      "updated_at": "2026-09-21T16:55:03.557336747Z"
+    }
+  },
+  {
+    "id": "402e1479-5ad0-4230-ab79-00b57f82832c",
+    "chain_symbol": "LYFT",
+    "expiration_date": "2026-10-30",
+    "strike_price": "13",
+    "type": "put",
+    "quote": {
+      "bid_price": 0.12,
+      "ask_price": 0.21,
+      "mark_price": 0.165,
+      "adjusted_mark_price": 0.17,
+      "delta": -0.131664,
+      "implied_volatility": 0.48019,
+      "open_interest": 44,
+      "volume": 0,
+      "chance_of_profit_short": 0.852133,
+      "chance_of_profit_long": 0.147867,
+      "updated_at": "2026-09-21T16:55:11.740541904Z"
+    }
+  }
+]
