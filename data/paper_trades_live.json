@@ -306,9 +306,12 @@
     "entry_time": "2026-09-18T17:30:00Z",
     "status": "entered",
     "quality_score": 0.4601,
-    "last_price": 108.6,
-    "unrealized_pnl": -0.04,
+    "last_price": 121.42,
+    "unrealized_pnl": 28.4,
     "touched_1r": false,
-    "checked_at": "2026-09-18T22:34:00.067580+00:00"
+    "checked_at": "2026-09-21T18:41:21.369636+00:00",
+    "progress_pct": 28.4,
+    "est_days_to_2r": 5.5,
+    "days_held": 3.0
   }
 ]
