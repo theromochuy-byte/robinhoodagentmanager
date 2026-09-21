@@ -232,12 +232,21 @@ def _save_equity(state: dict) -> None:
 
 
 def _recompute_equity() -> dict:
-    """Recompute capital_in_use from the live ledger and save."""
+    """Recompute capital_in_use from the live ledger and save.
+
+    Counts both entered positions (at actual fill price) and pending_fill
+    positions (at signal_price estimate) so available_equity stays accurate
+    between the evening scan and next morning's open resolution.
+    """
     ledger = _load_live_ledger()
     in_use = sum(
         t["entry"] * t.get("shares", 0)
         for t in ledger
         if t.get("status") == "entered"
+    ) + sum(
+        t.get("signal_price", 0) * t.get("shares", 0)
+        for t in ledger
+        if t.get("status") == "pending_fill"
     )
     state = _load_equity()
     state["capital_in_use"] = round(in_use, 2)
