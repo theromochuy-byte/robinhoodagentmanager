@@ -349,8 +349,12 @@ def scan_symbol(
         elif not bias_asof(bias, p["break_time"]):
             continue
 
-        depth = (p["neckline"] - p["stop_basis"]) / p["neckline"]
-        if depth < 0.03 or depth > 0.12:
+        # Pre-check: pattern structure depth (neckline to stop_basis, no ATR buffer).
+        # This rejects obviously shallow or obviously wide patterns before building
+        # the full trade. The effective stop (stop_basis - 1.5×ATR) is checked again
+        # below after build_trade, using the actual stop level.
+        struct_depth = (p["neckline"] - p["stop_basis"]) / p["neckline"]
+        if struct_depth < 0.03 or struct_depth > 0.15:  # wider pre-filter to not over-block
             continue
 
         # Volume confirmation: break bar must have >= 1.2× its 20-bar average volume
@@ -363,6 +367,12 @@ def scan_symbol(
         trade = build_trade(h4, p, atr_series, equity, risk_pct,
                             atr_override=live_atr)
         if trade is None:
+            continue
+
+        # Definitive depth gate: use the actual ATR-buffered stop, not stop_basis.
+        # This is the number that goes in the ledger and drives real risk.
+        depth = (p["neckline"] - trade["stop"]) / p["neckline"]
+        if depth < 0.03 or depth > 0.12:
             continue
 
         neckline   = p["neckline"]
