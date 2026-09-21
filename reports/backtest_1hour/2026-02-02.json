@@ -1,0 +1,46 @@
+{
+  "date": "2026-02-02",
+  "new_entries": 2,
+  "closed_today": 0,
+  "open_count": 6,
+  "entries": [
+    {
+      "symbol": "PFE",
+      "type": "inverse_hns",
+      "neckline": 26.31,
+      "stop": 25.2577,
+      "target_2R": 29.2096,
+      "risk_per_share": 1.3173,
+      "shares": 14.111,
+      "break_time": "2026-01-27T15:00:00Z",
+      "bars_since_break": 29,
+      "in_pullback": true,
+      "last_close": 26.65,
+      "last_bar_time": "2026-02-02T20:00:00Z",
+      "scan_date": "2026-02-02",
+      "entry": 26.65,
+      "entry_time": "2026-02-02T20:00:00Z",
+      "status": "open"
+    },
+    {
+      "symbol": "MRK",
+      "type": "inverse_hns",
+      "neckline": 112.87,
+      "stop": 107.278,
+      "target_2R": 124.294,
+      "risk_per_share": 5.672,
+      "shares": 3.3201,
+      "break_time": "2026-02-02T19:00:00Z",
+      "bars_since_break": 1,
+      "in_pullback": true,
+      "last_close": 113.4,
+      "last_bar_time": "2026-02-02T20:00:00Z",
+      "scan_date": "2026-02-02",
+      "entry": 113.4,
+      "entry_time": "2026-02-02T20:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 3
+}

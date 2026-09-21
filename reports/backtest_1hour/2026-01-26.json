@@ -1,0 +1,28 @@
+{
+  "date": "2026-01-26",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 3,
+  "entries": [
+    {
+      "symbol": "UNH",
+      "type": "inverse_hns",
+      "neckline": 347.65,
+      "stop": 326.5737,
+      "target_2R": 390.0725,
+      "risk_per_share": 21.1663,
+      "shares": 1.0784,
+      "break_time": "2026-01-21T20:00:00Z",
+      "bars_since_break": 18,
+      "in_pullback": true,
+      "last_close": 351.58,
+      "last_bar_time": "2026-01-26T20:00:00Z",
+      "scan_date": "2026-01-26",
+      "entry": 351.58,
+      "entry_time": "2026-01-26T20:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 2
+}

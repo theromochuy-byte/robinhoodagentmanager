@@ -1,0 +1,58 @@
+{
+  "date": "2026-01-27",
+  "new_entries": 1,
+  "closed_today": 1,
+  "open_count": 3,
+  "entries": [
+    {
+      "symbol": "PFE",
+      "type": "inverse_hns",
+      "neckline": 26.31,
+      "stop": 25.2577,
+      "target_2R": 29.2096,
+      "risk_per_share": 1.3173,
+      "shares": 14.111,
+      "break_time": "2026-01-27T15:00:00Z",
+      "bars_since_break": 5,
+      "in_pullback": true,
+      "last_close": 26.485,
+      "last_bar_time": "2026-01-27T20:00:00Z",
+      "scan_date": "2026-01-27",
+      "entry": 26.485,
+      "entry_time": "2026-01-27T20:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [
+    {
+      "symbol": "UNH",
+      "type": "inverse_hns",
+      "neckline": 347.65,
+      "stop": 326.5737,
+      "target_2R": 390.0725,
+      "risk_per_share": 21.1663,
+      "shares": 1.0784,
+      "break_time": "2026-01-21T20:00:00Z",
+      "bars_since_break": 18,
+      "in_pullback": true,
+      "last_close": 351.58,
+      "last_bar_time": "2026-01-26T20:00:00Z",
+      "scan_date": "2026-01-26",
+      "entry": 351.58,
+      "entry_time": "2026-01-26T20:00:00Z",
+      "status": "closed",
+      "outcome": "loss",
+      "exit_price": 326.5737,
+      "exit_time": "2026-01-27T15:00:00Z",
+      "pnl_per_share": -25.0063,
+      "pnl_dollars": -26.97,
+      "r_multiple": -1.181,
+      "max_price": 351.58,
+      "touched_1r": false,
+      "touched_2r": false,
+      "exit_reason": "stop",
+      "days_held": 0.79
+    }
+  ],
+  "watching_count": 3
+}

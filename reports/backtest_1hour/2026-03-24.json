@@ -1,0 +1,58 @@
+{
+  "date": "2026-03-24",
+  "new_entries": 1,
+  "closed_today": 1,
+  "open_count": 12,
+  "entries": [
+    {
+      "symbol": "COP",
+      "type": "inverse_hns",
+      "neckline": 120.83,
+      "stop": 113.8561,
+      "target_2R": 136.1128,
+      "risk_per_share": 7.4189,
+      "shares": 3.0921,
+      "break_time": "2026-03-13T16:00:00Z",
+      "bars_since_break": 45,
+      "in_pullback": true,
+      "last_close": 129.355,
+      "last_bar_time": "2026-03-24T19:00:00Z",
+      "scan_date": "2026-03-24",
+      "entry": 129.355,
+      "entry_time": "2026-03-24T19:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [
+    {
+      "symbol": "COP",
+      "type": "inverse_hns",
+      "neckline": 111.91,
+      "stop": 106.9588,
+      "target_2R": 123.0124,
+      "risk_per_share": 5.3512,
+      "shares": 3.339,
+      "break_time": "2026-02-19T15:00:00Z",
+      "bars_since_break": 47,
+      "in_pullback": true,
+      "last_close": 118.21,
+      "last_bar_time": "2026-03-02T20:00:00Z",
+      "scan_date": "2026-03-02",
+      "entry": 118.21,
+      "entry_time": "2026-03-02T20:00:00Z",
+      "status": "closed",
+      "max_price": 130.75,
+      "touched_1r": true,
+      "touched_2r": true,
+      "outcome": "win_2r",
+      "exit_price": 128.9124,
+      "exit_time": "2026-03-24T18:00:00Z",
+      "pnl_per_share": 10.7024,
+      "pnl_dollars": 35.74,
+      "r_multiple": 2.0,
+      "exit_reason": "2R_stop",
+      "days_held": 21.92
+    }
+  ],
+  "watching_count": 0
+}
