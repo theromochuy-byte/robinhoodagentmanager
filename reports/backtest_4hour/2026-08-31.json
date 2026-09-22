@@ -2,16 +2,16 @@
   "date": "2026-08-31",
   "new_entries": 1,
   "closed_today": 0,
-  "open_count": 24,
+  "open_count": 23,
   "entries": [
     {
       "symbol": "HAL",
       "type": "inverse_hns",
       "neckline": 36.2,
-      "stop": 32.0006,
-      "target_2R": 44.7037,
-      "risk_per_share": 4.2344,
-      "shares": 7.0849,
+      "stop": 32.001,
+      "target_2R": 44.703,
+      "risk_per_share": 4.234,
+      "shares": 7.0855,
       "break_time": "2026-08-28T13:30:00Z",
       "bars_since_break": 3,
       "in_pullback": true,
@@ -24,5 +24,5 @@
     }
   ],
   "closed": [],
-  "watching_count": 5
+  "watching_count": 4
 }
