@@ -49,8 +49,6 @@ CACHE_MAX_AGE    = 8 * 3600  # 8 hours
 
 VIX_HIGH_THRESHOLD  = 25.0  # skip new entries when VIX is elevated
 VIX_CACHE_FILE      = DATA / "vix_cache.json"
-MIN_QUALITY_SCORE   = 0.45  # skip triggered setups below this quality threshold
-MAX_ENTRIES_PER_DAY = 2     # cap new entries per scan day (best by quality score)
 SPY_RS_CACHE_FILE   = DATA / "spy_rs_cache.json"
 SPY_RS_CACHE_AGE    = 8 * 3600
 
@@ -217,7 +215,10 @@ def _load_session_universe() -> list[str] | None:
         return None
     return SESSION_UNIVERSE.read_text().split()
 
-from swing_agent.config import STARTING_EQUITY, ENTRY_TIMEFRAME, FRESHNESS_BARS
+from swing_agent.config import (
+    STARTING_EQUITY, ENTRY_TIMEFRAME, FRESHNESS_BARS,
+    MIN_QUALITY_SCORE, MAX_ENTRIES_PER_DAY,
+)
 
 
 def _load_equity() -> dict:
@@ -629,15 +630,20 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
 
 
 if __name__ == "__main__":
+    import sys as _sys
     from swing_agent.fetch_yf import _load_universe, fetch_daily, fetch_4hour, save as yf_save
 
     syms = _load_universe()
-    print("=== DATA REFRESH ===")
-    daily_data = fetch_daily(syms)
-    yf_save(daily_data, "_day")
-    h4_data = fetch_4hour(syms)
-    yf_save(h4_data, "_4hour")
-    print(f"  Refreshed {len(syms)} symbols\n")
+
+    # Skip data refresh when invoked via run_daily (avoids double-fetch).
+    # Pass --refresh to force a refresh when running scanner standalone.
+    if "--refresh" in _sys.argv:
+        print("=== DATA REFRESH ===")
+        daily_data = fetch_daily(syms)
+        yf_save(daily_data, "_day")
+        h4_data = fetch_4hour(syms)
+        yf_save(h4_data, "_4hour")
+        print(f"  Refreshed {len(syms)} symbols\n")
 
     result = run_scan(syms)
 

@@ -159,8 +159,8 @@ def resolve_pending_fills(quotes: dict[str, float]) -> list[dict]:
 def check_exits(
     quotes: dict[str, float],
     intraday_highs: dict[str, float] | None = None,
-) -> tuple[list[dict], list[dict]]:
-    """Check open positions against quotes. Returns (closes, still_open).
+) -> tuple[list[dict], list[dict], list[dict]]:
+    """Check open positions against quotes. Returns (closes, still_open, newly_at_be).
 
     Exit rules (stop takes priority if triggered):
       - quote <= effective_stop              → stopped out
