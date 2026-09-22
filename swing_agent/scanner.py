@@ -217,7 +217,7 @@ def _load_session_universe() -> list[str] | None:
         return None
     return SESSION_UNIVERSE.read_text().split()
 
-from swing_agent.config import STARTING_EQUITY
+from swing_agent.config import STARTING_EQUITY, ENTRY_TIMEFRAME, FRESHNESS_BARS
 
 
 def _load_equity() -> dict:
@@ -276,7 +276,7 @@ def _quality_score(setup: dict) -> float:
                        and have less time to fail before the 12-bar window closes.
     """
     depth     = (setup["neckline"] - setup["stop"]) / setup["neckline"]
-    freshness = (12 - setup.get("bars_since_break", 0)) / 12
+    freshness = (FRESHNESS_BARS - setup.get("bars_since_break", 0)) / FRESHNESS_BARS
     return round(depth * 0.5 + freshness * 0.5, 4)
 
 
@@ -294,7 +294,7 @@ def scan_symbol(
     spy_20d_return: optional SPY 20-day return for relative-strength filter.
     """
     daily_path = DATA / f"{symbol}_day.json"
-    h4_path    = DATA / f"{symbol}_4hour.json"
+    h4_path    = DATA / f"{symbol}_{ENTRY_TIMEFRAME}.json"
     if not daily_path.exists() or not h4_path.exists():
         return {"watching": [], "triggered": []}
 
@@ -304,7 +304,7 @@ def scan_symbol(
         return {"watching": [], "triggered": []}
 
     live_ema = indicator_cache.get("ema20_daily") if indicator_cache else None
-    live_atr = indicator_cache.get("atr14_4hour") if indicator_cache else None
+    live_atr = indicator_cache.get(f"atr14_{ENTRY_TIMEFRAME}") if indicator_cache else None
 
     # Bias: prefer live EMA from Robinhood; fall back to bar-computed series
     # Both paths enforce: close > 20 EMA AND 20 EMA > 50 SMA (confirmed uptrend)
@@ -348,8 +348,8 @@ def scan_symbol(
 
     for p in patterns:
         bi = p["break_index"]
-        # only patterns whose break is within the last 12 bars
-        if bi < last_bar - 11:
+        # only patterns whose break is within the last FRESHNESS_BARS bars
+        if bi < last_bar - (FRESHNESS_BARS - 1):
             continue
         # Bias check: live EMA uses current daily bias; fallback uses series
         if bias is None:

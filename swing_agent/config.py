@@ -22,6 +22,10 @@ TIME_STOP_TRADING_DAYS: int   = 12    # trading days before stale-trade exit fir
 TIME_STOP_MIN_PROGRESS_FRAC: float = 0.0  # 0.0 = only touched_1r counts (original behaviour)
                                            # 0.25 = also exits if < 25% of way to 1R after deadline
 
+# ── Entry timeframe ────────────────────────────────────────────────────────────
+ENTRY_TIMEFRAME: str = "1hour"  # bar size used by scanner for pattern detection
+FRESHNESS_BARS: int  = 48       # max bars since neckline break to qualify (48×1H ≈ 6 trading days)
+
 # ── Risk / sizing ──────────────────────────────────────────────────────────────
 RISK_PCT: float = 0.02          # fraction of starting equity risked per trade
 STARTING_EQUITY: float = 2500.0
