@@ -6,17 +6,17 @@
     "strike_price": "35",
     "type": "put",
     "quote": {
-      "bid_price": 0.17,
-      "ask_price": 0.22,
-      "mark_price": 0.195,
-      "adjusted_mark_price": 0.2,
-      "delta": -0.067178,
-      "implied_volatility": 0.565127,
-      "open_interest": 240,
-      "volume": 2023,
-      "chance_of_profit_short": 0.917379,
-      "chance_of_profit_long": 0.082621,
-      "updated_at": "2026-09-21T16:55:09.069192613Z"
+      "bid_price": "0.010000",
+      "ask_price": "0.310000",
+      "mark_price": "0.160000",
+      "adjusted_mark_price": "0.160000",
+      "delta": "-0.056786",
+      "implied_volatility": "0.558272",
+      "open_interest": 2254,
+      "volume": 4,
+      "chance_of_profit_short": "0.929271",
+      "chance_of_profit_long": "0.070729",
+      "updated_at": "2026-09-22T13:52:39.421949691Z"
     }
   }
 ]
