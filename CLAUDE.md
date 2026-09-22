@@ -75,6 +75,24 @@ Log all three so we can learn which exit rule performs best:
 - Review cadence: weekly, or after every 20 logged trades, whichever comes first.
 - **Weekly check-in task (every Monday):** Compare live paper trading performance since switching the scanner to 1H entry timeframe. Pull up the current ledger state, summarize open positions, closed P&L, and win rate on 1H live trades vs the 4H backtest baseline (-0.74R avg). Flag any positions approaching their time stop (config: 12 trading days).
 
+## Go-live checklist
+
+Do not switch to live order execution until every box below is checked. At each weekly check-in, mark off any criteria that have been met.
+
+**Strategy validation (all must pass):**
+- [ ] ≥ 30 closed live-paper trades on the 1H scanner
+- [ ] Win rate ≥ 40% over those trades
+- [ ] Average R ≥ +0.3R over those trades
+- [ ] Time stop firing rate < 30% (stale-trade exits)
+- [ ] No single symbol or pattern accounts for > 50% of wins (concentration check)
+- [ ] Results reviewed over at least 2 calendar months of live-paper data
+
+**Technical readiness (all must be completed before going live):**
+- [ ] Data layer rewritten to use `mcp__robinhood_MCP__get_equity_historicals` instead of yfinance — live decisions must use Robinhood prices
+- [ ] Execution flow changed from GitHub Actions cron to Claude-orchestrated session: fetch via MCP → scan → propose trade → user approves → Claude executes
+- [ ] Position sizing updated to use actual Robinhood account equity (not fixed `STARTING_EQUITY` constant)
+- [ ] Circuit breaker implemented: halt new entries if account drawdown exceeds 10% until manual review
+
 ## What you must not do
 
 - Do not place live trades. Ever, in this phase.
