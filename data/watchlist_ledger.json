@@ -27768,6 +27768,11 @@
         "time": "2026-09-21T23:17:05.059706+00:00",
         "price": 351.7564,
         "note": "update"
+      },
+      {
+        "time": "2026-09-22T02:00:56.047487+00:00",
+        "price": 351.7564,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -27785,7 +27790,7 @@
     "neckline": 161.98,
     "break_time": "2026-09-14T13:30:00Z",
     "first_seen": "2026-09-14T21:38:15.063463+00:00",
-    "status": "watching",
+    "status": "expired",
     "suggested_entry": 161.98,
     "suggested_entry_zone": [
       161.1701,
@@ -27855,6 +27860,11 @@
         "time": "2026-09-21T23:17:05.136711+00:00",
         "price": 175.211,
         "note": "update"
+      },
+      {
+        "time": "2026-09-22T02:00:56.503575+00:00",
+        "price": 175.211,
+        "note": "expired"
       }
     ],
     "trigger_time": null,
@@ -27862,7 +27872,7 @@
     "close_time": null,
     "close_price": null,
     "outcome": null,
-    "elapsed_watching_hours": null,
+    "elapsed_watching_hours": 172.4,
     "elapsed_total_hours": null
   },
   {
@@ -27872,7 +27882,7 @@
     "neckline": 183.49,
     "break_time": "2026-09-15T13:30:00Z",
     "first_seen": "2026-09-15T20:59:24.594444+00:00",
-    "status": "watching",
+    "status": "expired",
     "suggested_entry": 183.49,
     "suggested_entry_zone": [
       182.5726,
@@ -27932,6 +27942,11 @@
         "time": "2026-09-21T23:17:05.033261+00:00",
         "price": 194.26,
         "note": "update"
+      },
+      {
+        "time": "2026-09-22T02:00:56.503575+00:00",
+        "price": 194.26,
+        "note": "expired"
       }
     ],
     "trigger_time": null,
@@ -27939,7 +27954,7 @@
     "close_time": null,
     "close_price": null,
     "outcome": null,
-    "elapsed_watching_hours": null,
+    "elapsed_watching_hours": 149.0,
     "elapsed_total_hours": null
   },
   {
@@ -28095,7 +28110,7 @@
     "neckline": 332.22,
     "break_time": "2026-09-21T13:30:00Z",
     "first_seen": "2026-09-21T21:49:02.579534+00:00",
-    "status": "watching",
+    "status": "expired",
     "suggested_entry": 332.22,
     "suggested_entry_zone": [
       330.5589,
@@ -28115,6 +28130,11 @@
         "time": "2026-09-21T23:17:05.086034+00:00",
         "price": 351.7564,
         "note": "update"
+      },
+      {
+        "time": "2026-09-22T02:00:56.503575+00:00",
+        "price": 351.7564,
+        "note": "expired"
       }
     ],
     "trigger_time": null,
@@ -28122,7 +28142,7 @@
     "close_time": null,
     "close_price": null,
     "outcome": null,
-    "elapsed_watching_hours": null,
+    "elapsed_watching_hours": 4.2,
     "elapsed_total_hours": null
   },
   {
@@ -28132,7 +28152,7 @@
     "neckline": 247.89,
     "break_time": "2026-09-21T13:30:00Z",
     "first_seen": "2026-09-21T21:49:02.595594+00:00",
-    "status": "watching",
+    "status": "expired",
     "suggested_entry": 247.89,
     "suggested_entry_zone": [
       246.6505,
@@ -28152,6 +28172,11 @@
         "time": "2026-09-21T23:17:05.111437+00:00",
         "price": 257.33,
         "note": "update"
+      },
+      {
+        "time": "2026-09-22T02:00:56.503575+00:00",
+        "price": 257.33,
+        "note": "expired"
       }
     ],
     "trigger_time": null,
@@ -28159,7 +28184,7 @@
     "close_time": null,
     "close_price": null,
     "outcome": null,
-    "elapsed_watching_hours": null,
+    "elapsed_watching_hours": 4.2,
     "elapsed_total_hours": null
   },
   {
@@ -28169,7 +28194,7 @@
     "neckline": 177.88,
     "break_time": "2026-09-21T13:30:00Z",
     "first_seen": "2026-09-21T21:49:02.628089+00:00",
-    "status": "watching",
+    "status": "expired",
     "suggested_entry": 177.88,
     "suggested_entry_zone": [
       176.9906,
@@ -28189,6 +28214,779 @@
         "time": "2026-09-21T23:17:05.162025+00:00",
         "price": 183.08,
         "note": "update"
+      },
+      {
+        "time": "2026-09-22T02:00:56.503575+00:00",
+        "price": 183.08,
+        "note": "expired"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": 4.2,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "AMD__inverse_hns__2026-09-17T13:30:00Z",
+    "symbol": "AMD",
+    "type": "inverse_hns",
+    "neckline": 530.13,
+    "break_time": "2026-09-17T13:30:00Z",
+    "first_seen": "2026-09-22T02:00:55.836082+00:00",
+    "status": "watching",
+    "suggested_entry": 530.13,
+    "suggested_entry_zone": [
+      527.4793,
+      532.7806
+    ],
+    "stop": 468.7805,
+    "target_1R": 601.2095,
+    "target_2R": 667.4239,
+    "risk_per_share": 66.2145,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:55.836082+00:00",
+        "price": 615.36,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "AMD__cup_and_handle__2026-09-17T13:30:00Z",
+    "symbol": "AMD",
+    "type": "cup_and_handle",
+    "neckline": 526.79,
+    "break_time": "2026-09-17T13:30:00Z",
+    "first_seen": "2026-09-22T02:00:55.872626+00:00",
+    "status": "watching",
+    "suggested_entry": 526.79,
+    "suggested_entry_zone": [
+      524.156,
+      529.4239
+    ],
+    "stop": 492.7605,
+    "target_1R": 577.2295,
+    "target_2R": 619.4639,
+    "risk_per_share": 42.2345,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:55.872626+00:00",
+        "price": 615.36,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "AMD__inverse_hns__2026-09-21T13:30:00Z",
+    "symbol": "AMD",
+    "type": "inverse_hns",
+    "neckline": 572.5,
+    "break_time": "2026-09-21T13:30:00Z",
+    "first_seen": "2026-09-22T02:00:55.896776+00:00",
+    "status": "watching",
+    "suggested_entry": 572.5,
+    "suggested_entry_zone": [
+      569.6375,
+      575.3625
+    ],
+    "stop": 524.5988,
+    "target_1R": 694.5722,
+    "target_2R": 779.5589,
+    "risk_per_share": 84.9867,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:55.896776+00:00",
+        "price": 615.36,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "EOG__inverse_hns__2026-09-15T17:30:00Z",
+    "symbol": "EOG",
+    "type": "inverse_hns",
+    "neckline": 153.67,
+    "break_time": "2026-09-15T17:30:00Z",
+    "first_seen": "2026-09-22T02:00:55.920830+00:00",
+    "status": "watching",
+    "suggested_entry": 153.67,
+    "suggested_entry_zone": [
+      152.9016,
+      154.4383
+    ],
+    "stop": 146.819,
+    "target_1R": 160.901,
+    "target_2R": 167.9421,
+    "risk_per_share": 7.041,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:55.920830+00:00",
+        "price": 141.58,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "DHR__inverse_hns__2026-09-18T13:30:00Z",
+    "symbol": "DHR",
+    "type": "inverse_hns",
+    "neckline": 213.13,
+    "break_time": "2026-09-18T13:30:00Z",
+    "first_seen": "2026-09-22T02:00:55.946036+00:00",
+    "status": "watching",
+    "suggested_entry": 213.13,
+    "suggested_entry_zone": [
+      212.0643,
+      214.1956
+    ],
+    "stop": 203.7799,
+    "target_1R": 224.9201,
+    "target_2R": 235.4902,
+    "risk_per_share": 10.5701,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:55.946036+00:00",
+        "price": 215.84,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "INTC__inverse_hns__2026-09-21T13:30:00Z",
+    "symbol": "INTC",
+    "type": "inverse_hns",
+    "neckline": 111.37,
+    "break_time": "2026-09-21T13:30:00Z",
+    "first_seen": "2026-09-22T02:00:55.995729+00:00",
+    "status": "watching",
+    "suggested_entry": 111.37,
+    "suggested_entry_zone": [
+      110.8132,
+      111.9268
+    ],
+    "stop": 102.7802,
+    "target_1R": 139.3998,
+    "target_2R": 157.7095,
+    "risk_per_share": 18.3098,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:55.995729+00:00",
+        "price": 121.78,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "MU__inverse_hns__2026-09-21T13:30:00Z",
+    "symbol": "MU",
+    "type": "inverse_hns",
+    "neckline": 1035.5,
+    "break_time": "2026-09-21T13:30:00Z",
+    "first_seen": "2026-09-22T02:00:56.020876+00:00",
+    "status": "watching",
+    "suggested_entry": 1035.5,
+    "suggested_entry_zone": [
+      1030.3225,
+      1040.6775
+    ],
+    "stop": 934.067,
+    "target_1R": 1138.3436,
+    "target_2R": 1240.482,
+    "risk_per_share": 102.1383,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:56.020876+00:00",
+        "price": 1043.3149,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "ZS__inverse_hns__2026-09-17T13:30:00Z",
+    "symbol": "ZS",
+    "type": "inverse_hns",
+    "neckline": 196.575,
+    "break_time": "2026-09-17T13:30:00Z",
+    "first_seen": "2026-09-22T02:00:56.072326+00:00",
+    "status": "watching",
+    "suggested_entry": 196.575,
+    "suggested_entry_zone": [
+      195.5921,
+      197.5579
+    ],
+    "stop": 181.8865,
+    "target_1R": 214.6935,
+    "target_2R": 231.0971,
+    "risk_per_share": 16.4035,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:56.072326+00:00",
+        "price": 207.15,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "MRVL__inverse_hns__2026-09-17T13:30:00Z",
+    "symbol": "MRVL",
+    "type": "inverse_hns",
+    "neckline": 240.2,
+    "break_time": "2026-09-17T13:30:00Z",
+    "first_seen": "2026-09-22T02:00:56.101316+00:00",
+    "status": "watching",
+    "suggested_entry": 240.2,
+    "suggested_entry_zone": [
+      238.999,
+      241.401
+    ],
+    "stop": 213.3188,
+    "target_1R": 269.1812,
+    "target_2R": 297.1123,
+    "risk_per_share": 27.9312,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:56.101316+00:00",
+        "price": 257.33,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "MRVL__cup_and_handle__2026-09-17T13:30:00Z",
+    "symbol": "MRVL",
+    "type": "cup_and_handle",
+    "neckline": 231.8925,
+    "break_time": "2026-09-17T13:30:00Z",
+    "first_seen": "2026-09-22T02:00:56.127039+00:00",
+    "status": "watching",
+    "suggested_entry": 231.8925,
+    "suggested_entry_zone": [
+      230.733,
+      233.052
+    ],
+    "stop": 217.0087,
+    "target_1R": 265.4913,
+    "target_2R": 289.7325,
+    "risk_per_share": 24.2413,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:56.127039+00:00",
+        "price": 257.33,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "MRVL__inverse_hns__2026-09-21T13:30:00Z",
+    "symbol": "MRVL",
+    "type": "inverse_hns",
+    "neckline": 247.89,
+    "break_time": "2026-09-21T13:30:00Z",
+    "first_seen": "2026-09-22T02:00:56.152307+00:00",
+    "status": "watching",
+    "suggested_entry": 247.89,
+    "suggested_entry_zone": [
+      246.6505,
+      249.1294
+    ],
+    "stop": 230.0668,
+    "target_1R": 272.893,
+    "target_2R": 294.3061,
+    "risk_per_share": 21.4131,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:56.152307+00:00",
+        "price": 257.33,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "FTNT__inverse_hns__2026-09-14T13:30:00Z",
+    "symbol": "FTNT",
+    "type": "inverse_hns",
+    "neckline": 161.98,
+    "break_time": "2026-09-14T13:30:00Z",
+    "first_seen": "2026-09-22T02:00:56.177664+00:00",
+    "status": "watching",
+    "suggested_entry": 161.98,
+    "suggested_entry_zone": [
+      161.1701,
+      162.7899
+    ],
+    "stop": 151.8574,
+    "target_1R": 180.1426,
+    "target_2R": 194.2851,
+    "risk_per_share": 14.1426,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:56.177664+00:00",
+        "price": 175.211,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "FTNT__inverse_hns__2026-09-17T13:30:00Z",
+    "symbol": "FTNT",
+    "type": "inverse_hns",
+    "neckline": 173.8899,
+    "break_time": "2026-09-17T13:30:00Z",
+    "first_seen": "2026-09-22T02:00:56.203346+00:00",
+    "status": "watching",
+    "suggested_entry": 173.8899,
+    "suggested_entry_zone": [
+      173.0205,
+      174.7593
+    ],
+    "stop": 157.0161,
+    "target_1R": 193.5339,
+    "target_2R": 211.7929,
+    "risk_per_share": 18.2589,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:56.203346+00:00",
+        "price": 175.211,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "TRV__inverse_hns__2026-09-14T13:30:00Z",
+    "symbol": "TRV",
+    "type": "inverse_hns",
+    "neckline": 376.57,
+    "break_time": "2026-09-14T13:30:00Z",
+    "first_seen": "2026-09-22T02:00:56.228800+00:00",
+    "status": "watching",
+    "suggested_entry": 376.57,
+    "suggested_entry_zone": [
+      374.6871,
+      378.4528
+    ],
+    "stop": 361.068,
+    "target_1R": 393.972,
+    "target_2R": 410.4241,
+    "risk_per_share": 16.452,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:56.228800+00:00",
+        "price": 371.28,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "MRNA__inverse_hns__2026-09-17T13:30:00Z",
+    "symbol": "MRNA",
+    "type": "inverse_hns",
+    "neckline": 156.4151,
+    "break_time": "2026-09-17T13:30:00Z",
+    "first_seen": "2026-09-22T02:00:56.255287+00:00",
+    "status": "watching",
+    "suggested_entry": 156.4151,
+    "suggested_entry_zone": [
+      155.633,
+      157.1972
+    ],
+    "stop": 140.7053,
+    "target_1R": 181.4147,
+    "target_2R": 201.7694,
+    "risk_per_share": 20.3547,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:56.255287+00:00",
+        "price": 172.93,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "MRNA__inverse_hns__2026-09-21T13:30:00Z",
+    "symbol": "MRNA",
+    "type": "inverse_hns",
+    "neckline": 161.9599,
+    "break_time": "2026-09-21T13:30:00Z",
+    "first_seen": "2026-09-22T02:00:56.279989+00:00",
+    "status": "watching",
+    "suggested_entry": 161.9599,
+    "suggested_entry_zone": [
+      161.1501,
+      162.7697
+    ],
+    "stop": 147.3517,
+    "target_1R": 191.2783,
+    "target_2R": 213.2416,
+    "risk_per_share": 21.9633,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:56.279989+00:00",
+        "price": 172.93,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "MRNA__cup_and_handle__2026-09-21T13:30:00Z",
+    "symbol": "MRNA",
+    "type": "cup_and_handle",
+    "neckline": 156.4151,
+    "break_time": "2026-09-21T13:30:00Z",
+    "first_seen": "2026-09-22T02:00:56.304165+00:00",
+    "status": "watching",
+    "suggested_entry": 156.4151,
+    "suggested_entry_zone": [
+      155.633,
+      157.1972
+    ],
+    "stop": 143.8117,
+    "target_1R": 194.8183,
+    "target_2R": 220.3216,
+    "risk_per_share": 25.5033,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:56.304165+00:00",
+        "price": 172.93,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "BBY__inverse_hns__2026-09-11T18:30:00Z",
+    "symbol": "BBY",
+    "type": "inverse_hns",
+    "neckline": 91.265,
+    "break_time": "2026-09-11T18:30:00Z",
+    "first_seen": "2026-09-22T02:00:56.328698+00:00",
+    "status": "watching",
+    "suggested_entry": 91.265,
+    "suggested_entry_zone": [
+      90.8087,
+      91.7213
+    ],
+    "stop": 84.4259,
+    "target_1R": 98.2041,
+    "target_2R": 105.0933,
+    "risk_per_share": 6.8891,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:56.328698+00:00",
+        "price": 93.22,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "PLTR__inverse_hns__2026-09-17T13:30:00Z",
+    "symbol": "PLTR",
+    "type": "inverse_hns",
+    "neckline": 176.59,
+    "break_time": "2026-09-17T13:30:00Z",
+    "first_seen": "2026-09-22T02:00:56.353257+00:00",
+    "status": "watching",
+    "suggested_entry": 176.59,
+    "suggested_entry_zone": [
+      175.7071,
+      177.4729
+    ],
+    "stop": 167.235,
+    "target_1R": 187.165,
+    "target_2R": 197.1299,
+    "risk_per_share": 9.965,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:56.353257+00:00",
+        "price": 183.08,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "PLTR__inverse_hns__2026-09-21T13:30:00Z",
+    "symbol": "PLTR",
+    "type": "inverse_hns",
+    "neckline": 177.88,
+    "break_time": "2026-09-21T13:30:00Z",
+    "first_seen": "2026-09-22T02:00:56.377620+00:00",
+    "status": "watching",
+    "suggested_entry": 177.88,
+    "suggested_entry_zone": [
+      176.9906,
+      178.7694
+    ],
+    "stop": 168.5188,
+    "target_1R": 195.6066,
+    "target_2R": 209.1504,
+    "risk_per_share": 13.5439,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:56.377620+00:00",
+        "price": 183.08,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "ARM__inverse_hns__2026-09-21T13:30:00Z",
+    "symbol": "ARM",
+    "type": "inverse_hns",
+    "neckline": 295.57,
+    "break_time": "2026-09-21T13:30:00Z",
+    "first_seen": "2026-09-22T02:00:56.403030+00:00",
+    "status": "watching",
+    "suggested_entry": 295.57,
+    "suggested_entry_zone": [
+      294.0922,
+      297.0478
+    ],
+    "stop": 264.812,
+    "target_1R": 355.248,
+    "target_2R": 400.466,
+    "risk_per_share": 45.218,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:56.403030+00:00",
+        "price": 323.1,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "ARM__cup_and_handle__2026-09-21T13:30:00Z",
+    "symbol": "ARM",
+    "type": "cup_and_handle",
+    "neckline": 288.9899,
+    "break_time": "2026-09-21T13:30:00Z",
+    "first_seen": "2026-09-22T02:00:56.428519+00:00",
+    "status": "watching",
+    "suggested_entry": 288.9899,
+    "suggested_entry_zone": [
+      287.545,
+      290.4348
+    ],
+    "stop": 257.122,
+    "target_1R": 362.938,
+    "target_2R": 415.846,
+    "risk_per_share": 52.908,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:56.428519+00:00",
+        "price": 323.1,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "DELL__cup_and_handle__2026-09-16T13:30:00Z",
+    "symbol": "DELL",
+    "type": "cup_and_handle",
+    "neckline": 562.9899,
+    "break_time": "2026-09-16T13:30:00Z",
+    "first_seen": "2026-09-22T02:00:56.453375+00:00",
+    "status": "watching",
+    "suggested_entry": 562.9899,
+    "suggested_entry_zone": [
+      560.175,
+      565.8048
+    ],
+    "stop": 524.6212,
+    "target_1R": 610.8788,
+    "target_2R": 654.0077,
+    "risk_per_share": 43.1288,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:56.453375+00:00",
+        "price": 575.5,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "DELL__cup_and_handle__2026-09-17T13:30:00Z",
+    "symbol": "DELL",
+    "type": "cup_and_handle",
+    "neckline": 567.75,
+    "break_time": "2026-09-17T13:30:00Z",
+    "first_seen": "2026-09-22T02:00:56.478365+00:00",
+    "status": "watching",
+    "suggested_entry": 567.75,
+    "suggested_entry_zone": [
+      564.9112,
+      570.5887
+    ],
+    "stop": 531.7614,
+    "target_1R": 637.0186,
+    "target_2R": 689.6471,
+    "risk_per_share": 52.6286,
+    "price_history": [
+      {
+        "time": "2026-09-22T02:00:56.478365+00:00",
+        "price": 575.5,
+        "note": "first_seen"
       }
     ],
     "trigger_time": null,
