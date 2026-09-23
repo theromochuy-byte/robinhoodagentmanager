@@ -10,13 +10,13 @@
       "ask_price": "0.750000",
       "mark_price": "0.375000",
       "adjusted_mark_price": "0.010000",
-      "delta": "-0.011719",
-      "implied_volatility": "0.524893",
+      "delta": "-0.013042",
+      "implied_volatility": "0.491217",
       "open_interest": 0,
       "volume": 0,
-      "chance_of_profit_short": "0.982936",
-      "chance_of_profit_long": "0.017064",
-      "updated_at": "2026-09-22T13:48:47.335347941Z"
+      "chance_of_profit_short": "0.981697",
+      "chance_of_profit_long": "0.018303",
+      "updated_at": "2026-09-23T15:09:47.932367683Z"
     }
   },
   {
@@ -30,13 +30,13 @@
       "ask_price": "0.750000",
       "mark_price": "0.375000",
       "adjusted_mark_price": "0.010000",
-      "delta": "-0.014986",
-      "implied_volatility": "0.403449",
+      "delta": "-0.017121",
+      "implied_volatility": "0.366047",
       "open_interest": 22,
       "volume": 0,
-      "chance_of_profit_short": "0.980278",
-      "chance_of_profit_long": "0.019722",
-      "updated_at": "2026-09-22T13:47:56.838842656Z"
+      "chance_of_profit_short": "0.978303",
+      "chance_of_profit_long": "0.021697",
+      "updated_at": "2026-09-23T15:10:03.395744061Z"
     }
   },
   {
@@ -46,17 +46,17 @@
     "strike_price": "13",
     "type": "put",
     "quote": {
-      "bid_price": "0.010000",
-      "ask_price": "0.760000",
-      "mark_price": "0.385000",
-      "adjusted_mark_price": "0.390000",
-      "delta": "-0.189333",
-      "implied_volatility": "0.749901",
-      "open_interest": 26,
-      "volume": 0,
-      "chance_of_profit_short": "0.788235",
-      "chance_of_profit_long": "0.211765",
-      "updated_at": "2026-09-22T13:52:00.356794351Z"
+      "bid_price": "0.110000",
+      "ask_price": "0.190000",
+      "mark_price": "0.150000",
+      "adjusted_mark_price": "0.150000",
+      "delta": "-0.138683",
+      "implied_volatility": "0.468418",
+      "open_interest": 29,
+      "volume": 10,
+      "chance_of_profit_short": "0.850392",
+      "chance_of_profit_long": "0.149608",
+      "updated_at": "2026-09-23T15:12:22.842899334Z"
     }
   }
 ]

@@ -1,0 +1,362 @@
+[
+  {
+    "id": "5e7e49b9-7e8f-4e2f-944d-de2fb553ca57",
+    "chain_symbol": "FHN",
+    "expiration_date": "2026-10-16",
+    "strike_price": "17",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.000000",
+      "ask_price": "0.050000",
+      "mark_price": "0.025000",
+      "adjusted_mark_price": "0.010000",
+      "delta": "-0.008764",
+      "implied_volatility": "0.553653",
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": "0.987458",
+      "chance_of_profit_long": "0.012542",
+      "updated_at": "2026-09-23T14:53:46.094302554Z"
+    }
+  },
+  {
+    "id": "ae2ba74d-6a92-4962-aa05-1b0f2ad96403",
+    "chain_symbol": "FHN",
+    "expiration_date": "2026-10-16",
+    "strike_price": "18",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.000000",
+      "ask_price": "0.050000",
+      "mark_price": "0.025000",
+      "adjusted_mark_price": "0.010000",
+      "delta": "-0.010328",
+      "implied_volatility": "0.465438",
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": "0.986155",
+      "chance_of_profit_long": "0.013845",
+      "updated_at": "2026-09-23T15:02:17.807986849Z"
+    }
+  },
+  {
+    "id": "e32f4158-119c-42a5-b410-b8b2ba8be82a",
+    "chain_symbol": "FHN",
+    "expiration_date": "2026-10-16",
+    "strike_price": "19",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.000000",
+      "ask_price": "0.100000",
+      "mark_price": "0.050000",
+      "adjusted_mark_price": "0.010000",
+      "delta": "-0.012436",
+      "implied_volatility": "0.380501",
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": "0.984340",
+      "chance_of_profit_long": "0.015660",
+      "updated_at": "2026-09-23T15:08:15.264680299Z"
+    }
+  },
+  {
+    "id": "c9102af3-b24c-47a2-ac13-a8a379fca371",
+    "chain_symbol": "FHN",
+    "expiration_date": "2026-10-16",
+    "strike_price": "20",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.000000",
+      "ask_price": "0.100000",
+      "mark_price": "0.050000",
+      "adjusted_mark_price": "0.010000",
+      "delta": "-0.015570",
+      "implied_volatility": "0.298396",
+      "open_interest": 1,
+      "volume": 0,
+      "chance_of_profit_short": "0.981545",
+      "chance_of_profit_long": "0.018455",
+      "updated_at": "2026-09-23T15:07:16.465338231Z"
+    }
+  },
+  {
+    "id": "7f4786ce-22e4-4542-b681-06f1bb91f23e",
+    "chain_symbol": "FHN",
+    "expiration_date": "2026-10-16",
+    "strike_price": "21",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.050000",
+      "ask_price": "0.150000",
+      "mark_price": "0.100000",
+      "adjusted_mark_price": "0.100000",
+      "delta": "-0.098455",
+      "implied_volatility": "0.351742",
+      "open_interest": 25,
+      "volume": 0,
+      "chance_of_profit_short": "0.895411",
+      "chance_of_profit_long": "0.104589",
+      "updated_at": "2026-09-23T15:12:42.066675019Z"
+    }
+  },
+  {
+    "id": "6b3a9b49-3ae7-46fb-ae21-7993473c6237",
+    "chain_symbol": "FHN",
+    "expiration_date": "2026-10-16",
+    "strike_price": "22",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.100000",
+      "ask_price": "0.250000",
+      "mark_price": "0.175000",
+      "adjusted_mark_price": "0.180000",
+      "delta": "-0.183952",
+      "implied_volatility": "0.293776",
+      "open_interest": 40,
+      "volume": 0,
+      "chance_of_profit_short": "0.825890",
+      "chance_of_profit_long": "0.174110",
+      "updated_at": "2026-09-23T15:12:31.099467336Z"
+    }
+  },
+  {
+    "id": "3079ff04-b220-4643-ad82-b7ed25c6af55",
+    "chain_symbol": "FHN",
+    "expiration_date": "2026-10-16",
+    "strike_price": "23",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.350000",
+      "ask_price": "0.550000",
+      "mark_price": "0.450000",
+      "adjusted_mark_price": "0.450000",
+      "delta": "-0.378394",
+      "implied_volatility": "0.279322",
+      "open_interest": 452,
+      "volume": 9,
+      "chance_of_profit_short": "0.699519",
+      "chance_of_profit_long": "0.300481",
+      "updated_at": "2026-09-23T15:12:20.971625447Z"
+    }
+  },
+  {
+    "id": "b5959490-b4c2-439c-8038-f6fd89dfd1ad",
+    "chain_symbol": "FHN",
+    "expiration_date": "2026-10-16",
+    "strike_price": "24",
+    "type": "put",
+    "quote": {
+      "bid_price": "0.850000",
+      "ask_price": "1.000000",
+      "mark_price": "0.925000",
+      "adjusted_mark_price": "0.930000",
+      "delta": "-0.630997",
+      "implied_volatility": "0.258908",
+      "open_interest": 60,
+      "volume": 2,
+      "chance_of_profit_short": "0.587196",
+      "chance_of_profit_long": "0.412804",
+      "updated_at": "2026-09-23T15:12:20.972620437Z"
+    }
+  },
+  {
+    "id": "7537d365-423d-418f-9518-cd1d6b91494c",
+    "chain_symbol": "FHN",
+    "expiration_date": "2026-10-16",
+    "strike_price": "25",
+    "type": "put",
+    "quote": {
+      "bid_price": "1.550000",
+      "ask_price": "1.900000",
+      "mark_price": "1.725000",
+      "adjusted_mark_price": "1.730000",
+      "delta": "-0.815473",
+      "implied_volatility": "0.284240",
+      "open_interest": 2,
+      "volume": 0,
+      "chance_of_profit_short": "0.529552",
+      "chance_of_profit_long": "0.470448",
+      "updated_at": "2026-09-23T15:12:20.970585462Z"
+    }
+  },
+  {
+    "id": "836497d7-2914-422f-8c64-57c79216674b",
+    "chain_symbol": "FHN",
+    "expiration_date": "2026-10-16",
+    "strike_price": "26",
+    "type": "put",
+    "quote": {
+      "bid_price": "2.450000",
+      "ask_price": "2.900000",
+      "mark_price": "2.675000",
+      "adjusted_mark_price": "2.680000",
+      "delta": "-0.884516",
+      "implied_volatility": "0.344589",
+      "open_interest": 2,
+      "volume": 0,
+      "chance_of_profit_short": "0.509003",
+      "chance_of_profit_long": "0.490997",
+      "updated_at": "2026-09-23T15:08:15.264685279Z"
+    }
+  },
+  {
+    "id": "cd7d9448-f968-4258-9f62-158d485faab2",
+    "chain_symbol": "FHN",
+    "expiration_date": "2026-10-16",
+    "strike_price": "27",
+    "type": "put",
+    "quote": {
+      "bid_price": "3.400000",
+      "ask_price": "4.000000",
+      "mark_price": "3.700000",
+      "adjusted_mark_price": "3.700000",
+      "delta": "-0.886587",
+      "implied_volatility": "0.450537",
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": "0.500497",
+      "chance_of_profit_long": "0.499503",
+      "updated_at": "2026-09-23T15:09:11.600870687Z"
+    }
+  },
+  {
+    "id": "0a619d30-9991-4d6a-a986-19d36d8d15f7",
+    "chain_symbol": "FHN",
+    "expiration_date": "2026-10-16",
+    "strike_price": "28",
+    "type": "put",
+    "quote": {
+      "bid_price": "4.300000",
+      "ask_price": "4.900000",
+      "mark_price": "4.600000",
+      "adjusted_mark_price": "4.600000",
+      "delta": "-1.000000",
+      "implied_volatility": "0.000522",
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": "1.000000",
+      "chance_of_profit_long": "0.000000",
+      "updated_at": "2026-09-23T15:00:36.644606647Z"
+    }
+  },
+  {
+    "id": "1c4ae632-0555-4624-b5c9-8a3c67215c7b",
+    "chain_symbol": "FHN",
+    "expiration_date": "2026-10-16",
+    "strike_price": "29",
+    "type": "put",
+    "quote": {
+      "bid_price": "5.300000",
+      "ask_price": "5.900000",
+      "mark_price": "5.600000",
+      "adjusted_mark_price": "5.600000",
+      "delta": "-1.000000",
+      "implied_volatility": "0.000522",
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": "1.000000",
+      "chance_of_profit_long": "0.000000",
+      "updated_at": "2026-09-23T15:00:36.644606647Z"
+    }
+  },
+  {
+    "id": "d91ab34f-e567-4869-8e92-94079e8ccfe4",
+    "chain_symbol": "FHN",
+    "expiration_date": "2026-10-16",
+    "strike_price": "30",
+    "type": "put",
+    "quote": {
+      "bid_price": "6.300000",
+      "ask_price": "6.900000",
+      "mark_price": "6.600000",
+      "adjusted_mark_price": "6.600000",
+      "delta": "-1.000000",
+      "implied_volatility": "0.000522",
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": "1.000000",
+      "chance_of_profit_long": "0.000000",
+      "updated_at": "2026-09-23T15:00:36.644606647Z"
+    }
+  },
+  {
+    "id": "1f110e5c-bb73-480d-a701-21f423907062",
+    "chain_symbol": "FHN",
+    "expiration_date": "2026-10-16",
+    "strike_price": "31",
+    "type": "put",
+    "quote": {
+      "bid_price": "7.300000",
+      "ask_price": "7.900000",
+      "mark_price": "7.600000",
+      "adjusted_mark_price": "7.600000",
+      "delta": "-1.000000",
+      "implied_volatility": "0.000522",
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": "1.000000",
+      "chance_of_profit_long": "0.000000",
+      "updated_at": "2026-09-23T15:00:36.442977628Z"
+    }
+  },
+  {
+    "id": "68992a88-cc02-4e14-804c-d95e9647c6cf",
+    "chain_symbol": "FHN",
+    "expiration_date": "2026-10-16",
+    "strike_price": "32",
+    "type": "put",
+    "quote": {
+      "bid_price": "8.300000",
+      "ask_price": "9.100000",
+      "mark_price": "8.700000",
+      "adjusted_mark_price": "8.700000",
+      "delta": "-0.885284",
+      "implied_volatility": "0.860021",
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": "0.468912",
+      "chance_of_profit_long": "0.531088",
+      "updated_at": "2026-09-23T15:00:36.644606647Z"
+    }
+  },
+  {
+    "id": "0402e424-dbeb-4852-9a36-7a0c4ae0d003",
+    "chain_symbol": "FHN",
+    "expiration_date": "2026-10-16",
+    "strike_price": "33",
+    "type": "put",
+    "quote": {
+      "bid_price": "9.300000",
+      "ask_price": "10.000000",
+      "mark_price": "9.650000",
+      "adjusted_mark_price": "9.650000",
+      "delta": "-0.890015",
+      "implied_volatility": "0.889525",
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": "0.463233",
+      "chance_of_profit_long": "0.536767",
+      "updated_at": "2026-09-23T15:00:36.644606647Z"
+    }
+  },
+  {
+    "id": "dbe2297d-3078-4fe1-b274-ecb049648c0b",
+    "chain_symbol": "FHN",
+    "expiration_date": "2026-10-16",
+    "strike_price": "34",
+    "type": "put",
+    "quote": {
+      "bid_price": "10.100000",
+      "ask_price": "11.100000",
+      "mark_price": "10.600000",
+      "adjusted_mark_price": "10.600000",
+      "delta": "-1.000000",
+      "implied_volatility": "0.000522",
+      "open_interest": 0,
+      "volume": 0,
+      "chance_of_profit_short": "1.000000",
+      "chance_of_profit_long": "0.000000",
+      "updated_at": "2026-09-23T15:10:41.795068861Z"
+    }
+  }
+]

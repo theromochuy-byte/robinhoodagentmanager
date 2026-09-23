@@ -7,16 +7,16 @@
     "type": "put",
     "quote": {
       "bid_price": "0.000000",
-      "ask_price": "0.540000",
-      "mark_price": "0.270000",
+      "ask_price": "0.780000",
+      "mark_price": "0.390000",
       "adjusted_mark_price": "0.010000",
-      "delta": "-0.008702",
-      "implied_volatility": "0.410303",
+      "delta": "-0.009324",
+      "implied_volatility": "0.393912",
       "open_interest": 0,
       "volume": 0,
-      "chance_of_profit_short": "0.988152",
-      "chance_of_profit_long": "0.011848",
-      "updated_at": "2026-09-22T13:51:19.504769233Z"
+      "chance_of_profit_short": "0.987566",
+      "chance_of_profit_long": "0.012434",
+      "updated_at": "2026-09-23T15:06:25.535994042Z"
     }
   },
   {
@@ -27,16 +27,16 @@
     "type": "put",
     "quote": {
       "bid_price": "0.000000",
-      "ask_price": "0.550000",
-      "mark_price": "0.275000",
+      "ask_price": "0.740000",
+      "mark_price": "0.370000",
       "adjusted_mark_price": "0.010000",
-      "delta": "-0.010109",
-      "implied_volatility": "0.348762",
+      "delta": "-0.010952",
+      "implied_volatility": "0.330880",
       "open_interest": 1,
       "volume": 0,
-      "chance_of_profit_short": "0.986950",
-      "chance_of_profit_long": "0.013050",
-      "updated_at": "2026-09-22T13:51:19.504774547Z"
+      "chance_of_profit_short": "0.986155",
+      "chance_of_profit_long": "0.013845",
+      "updated_at": "2026-09-23T15:10:06.403505106Z"
     }
   },
   {
@@ -50,13 +50,13 @@
       "ask_price": "0.750000",
       "mark_price": "0.375000",
       "adjusted_mark_price": "0.010000",
-      "delta": "-0.012023",
-      "implied_volatility": "0.289157",
+      "delta": "-0.013255",
+      "implied_volatility": "0.269786",
       "open_interest": 35,
       "volume": 0,
-      "chance_of_profit_short": "0.985259",
-      "chance_of_profit_long": "0.014741",
-      "updated_at": "2026-09-22T13:51:39.412872069Z"
+      "chance_of_profit_short": "0.984093",
+      "chance_of_profit_long": "0.015907",
+      "updated_at": "2026-09-23T15:07:40.410848857Z"
     }
   }
 ]

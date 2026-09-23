@@ -7,16 +7,16 @@
     "type": "put",
     "quote": {
       "bid_price": "0.000000",
-      "ask_price": "0.110000",
-      "mark_price": "0.055000",
+      "ask_price": "0.120000",
+      "mark_price": "0.060000",
       "adjusted_mark_price": "0.010000",
-      "delta": "-0.008712",
-      "implied_volatility": "0.464544",
+      "delta": "-0.009351",
+      "implied_volatility": "0.448301",
       "open_interest": 113,
       "volume": 0,
-      "chance_of_profit_short": "0.988148",
-      "chance_of_profit_long": "0.011852",
-      "updated_at": "2026-09-22T13:52:19.636306295Z"
+      "chance_of_profit_short": "0.987539",
+      "chance_of_profit_long": "0.012461",
+      "updated_at": "2026-09-23T15:12:04.024150324Z"
     }
   },
   {
@@ -30,13 +30,13 @@
       "ask_price": "0.120000",
       "mark_price": "0.060000",
       "adjusted_mark_price": "0.010000",
-      "delta": "-0.010144",
-      "implied_volatility": "0.394806",
+      "delta": "-0.011010",
+      "implied_volatility": "0.376478",
       "open_interest": 741,
       "volume": 0,
-      "chance_of_profit_short": "0.986916",
-      "chance_of_profit_long": "0.013084",
-      "updated_at": "2026-09-22T13:52:19.636441361Z"
+      "chance_of_profit_short": "0.986095",
+      "chance_of_profit_long": "0.013905",
+      "updated_at": "2026-09-23T15:12:05.285232567Z"
     }
   },
   {
@@ -47,16 +47,16 @@
     "type": "put",
     "quote": {
       "bid_price": "0.010000",
-      "ask_price": "0.130000",
-      "mark_price": "0.070000",
-      "adjusted_mark_price": "0.070000",
-      "delta": "-0.049490",
-      "implied_volatility": "0.454858",
-      "open_interest": 2233,
+      "ask_price": "0.110000",
+      "mark_price": "0.060000",
+      "adjusted_mark_price": "0.060000",
+      "delta": "-0.048697",
+      "implied_volatility": "0.416115",
+      "open_interest": 2234,
       "volume": 0,
-      "chance_of_profit_short": "0.940463",
-      "chance_of_profit_long": "0.059537",
-      "updated_at": "2026-09-22T13:52:26.455305557Z"
+      "chance_of_profit_short": "0.942685",
+      "chance_of_profit_long": "0.057315",
+      "updated_at": "2026-09-23T15:12:05.285152498Z"
     }
   }
 ]
