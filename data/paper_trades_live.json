@@ -306,13 +306,13 @@
     "entry_time": "2026-09-18T17:30:00Z",
     "status": "entered",
     "quality_score": 0.4601,
-    "last_price": 125.6652,
-    "unrealized_pnl": 37.82,
+    "last_price": 127.39,
+    "unrealized_pnl": 41.65,
     "touched_1r": false,
-    "checked_at": "2026-09-24T18:24:17.650320+00:00",
-    "progress_pct": 37.8,
-    "est_days_to_2r": 7.1,
-    "days_held": 6.0
+    "checked_at": "2026-09-24T21:57:17.092262+00:00",
+    "progress_pct": 41.6,
+    "est_days_to_2r": 6.2,
+    "days_held": 6.2
   },
   {
     "symbol": "A",
@@ -338,13 +338,13 @@
     "fill_slip": -2.56,
     "fill_slip_pct": -1.53,
     "target_3R": 207.1323,
-    "last_price": 172.1,
-    "unrealized_pnl": 26.16,
+    "last_price": 172.84,
+    "unrealized_pnl": 28.77,
     "touched_1r": false,
-    "checked_at": "2026-09-24T18:24:17.650320+00:00",
-    "progress_pct": 26.2,
+    "checked_at": "2026-09-24T21:57:17.092262+00:00",
+    "progress_pct": 28.8,
     "est_days_to_2r": 2.0,
-    "days_held": 1.0
+    "days_held": 1.1
   },
   {
     "symbol": "DHR",
@@ -370,13 +370,13 @@
     "fill_slip": -0.15,
     "fill_slip_pct": -0.07,
     "target_3R": 273.0155,
-    "last_price": 223.2725,
-    "unrealized_pnl": 6.26,
+    "last_price": 223.77,
+    "unrealized_pnl": 7.66,
     "touched_1r": false,
-    "checked_at": "2026-09-24T18:24:17.650320+00:00",
-    "progress_pct": 6.4,
-    "est_days_to_2r": 10.5,
-    "days_held": 1.0
+    "checked_at": "2026-09-24T21:57:17.092262+00:00",
+    "progress_pct": 7.8,
+    "est_days_to_2r": 9.7,
+    "days_held": 1.1
   },
   {
     "symbol": "PANW",
@@ -402,9 +402,9 @@
     "fill_slip": -1.63,
     "fill_slip_pct": -0.41,
     "target_3R": 488.4161,
-    "last_price": 391.67,
-    "unrealized_pnl": 0.0,
+    "last_price": 389.92,
+    "unrealized_pnl": -2.71,
     "touched_1r": false,
-    "checked_at": "2026-09-24T18:24:17.650320+00:00"
+    "checked_at": "2026-09-24T21:57:17.092262+00:00"
   }
 ]

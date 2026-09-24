@@ -1,0 +1,58 @@
+{
+  "date": "2026-09-24",
+  "new_entries": 1,
+  "closed_today": 1,
+  "open_count": 28,
+  "entries": [
+    {
+      "symbol": "BIIB",
+      "type": "inverse_hns",
+      "neckline": 225.8,
+      "stop": 207.3787,
+      "target_2R": 268.0126,
+      "risk_per_share": 20.2113,
+      "shares": 1.4843,
+      "break_time": "2026-09-23T17:30:00Z",
+      "bars_since_break": 2,
+      "in_pullback": true,
+      "last_close": 226.43,
+      "last_bar_time": "2026-09-24T17:30:00Z",
+      "scan_date": "2026-09-24",
+      "entry": 226.43,
+      "entry_time": "2026-09-24T17:30:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [
+    {
+      "symbol": "JPM",
+      "type": "inverse_hns",
+      "neckline": 359.3,
+      "stop": 336.0513,
+      "target_2R": 408.3174,
+      "risk_per_share": 24.0887,
+      "shares": 1.0413,
+      "break_time": "2026-08-04T13:30:00Z",
+      "bars_since_break": 9,
+      "in_pullback": true,
+      "last_close": 359.83,
+      "last_bar_time": "2026-08-10T17:30:00Z",
+      "scan_date": "2026-08-10",
+      "entry": 359.83,
+      "entry_time": "2026-08-10T17:30:00Z",
+      "status": "closed",
+      "max_price": 366.5,
+      "touched_1r": false,
+      "touched_2r": false,
+      "outcome": "loss",
+      "exit_price": 336.0513,
+      "exit_time": "2026-09-24T13:30:00Z",
+      "pnl_per_share": -23.7787,
+      "pnl_dollars": -24.76,
+      "r_multiple": -0.987,
+      "exit_reason": "stop",
+      "days_held": 44.83
+    }
+  ],
+  "watching_count": 2
+}
