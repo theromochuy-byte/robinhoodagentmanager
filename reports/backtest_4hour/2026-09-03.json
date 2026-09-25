@@ -2,15 +2,15 @@
   "date": "2026-09-03",
   "new_entries": 3,
   "closed_today": 0,
-  "open_count": 26,
+  "open_count": 25,
   "entries": [
     {
       "symbol": "JNJ",
       "type": "inverse_hns",
       "neckline": 276.47,
-      "stop": 261.3549,
-      "target_2R": 311.7702,
-      "risk_per_share": 16.8051,
+      "stop": 261.3449,
+      "target_2R": 311.7903,
+      "risk_per_share": 16.8151,
       "shares": 1.3481,
       "break_time": "2026-09-03T13:30:00Z",
       "bars_since_break": 1,
@@ -26,9 +26,9 @@
       "symbol": "MET",
       "type": "inverse_hns",
       "neckline": 98.58,
-      "stop": 91.9923,
-      "target_2R": 111.9954,
-      "risk_per_share": 6.6677,
+      "stop": 91.9942,
+      "target_2R": 111.9915,
+      "risk_per_share": 6.6658,
       "shares": 3.8009,
       "break_time": "2026-09-03T13:30:00Z",
       "bars_since_break": 1,
@@ -44,9 +44,9 @@
       "symbol": "BIIB",
       "type": "inverse_hns",
       "neckline": 222.15,
-      "stop": 208.1966,
-      "target_2R": 251.7668,
-      "risk_per_share": 14.5234,
+      "stop": 208.1906,
+      "target_2R": 251.7788,
+      "risk_per_share": 14.5294,
       "shares": 1.6837,
       "break_time": "2026-09-02T17:30:00Z",
       "bars_since_break": 2,
@@ -60,5 +60,5 @@
     }
   ],
   "closed": [],
-  "watching_count": 5
+  "watching_count": 4
 }
