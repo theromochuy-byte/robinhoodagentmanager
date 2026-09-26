@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-14",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 16,
+  "entries": [
+    {
+      "symbol": "ORCL",
+      "type": "inverse_hns",
+      "neckline": 189.18,
+      "stop": 176.067,
+      "target_2R": 223.806,
+      "risk_per_share": 15.913,
+      "shares": 1.8853,
+      "break_time": "2026-05-06T15:00:00Z",
+      "bars_since_break": 40,
+      "in_pullback": true,
+      "last_close": 197.04,
+      "last_bar_time": "2026-05-14T19:00:00Z",
+      "scan_date": "2026-05-14",
+      "entry": 197.04,
+      "entry_time": "2026-05-14T19:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 8
+}

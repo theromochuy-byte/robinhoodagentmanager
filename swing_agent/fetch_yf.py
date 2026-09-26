@@ -1,13 +1,13 @@
 """Fetch market data via yfinance (no auth required).
 
 Replaces the Robinhood robin_stocks fetcher for automated CI runs.
-Produces identical per-symbol JSON files: data/<SYM>_day.json and
-data/<SYM>_4hour.json, in the same bar dict format the rest of the
-pipeline expects.
+Produces identical per-symbol JSON files: data/<SYM>_day.json,
+data/<SYM>_4hour.json, and data/<SYM>_1hour.json, in the same bar
+dict format the rest of the pipeline expects.
 
 Usage:
   python3 -m swing_agent.fetch_yf --daily
-  python3 -m swing_agent.fetch_yf --intraday
+  python3 -m swing_agent.fetch_yf --intraday    # saves both _4hour and _1hour
   python3 -m swing_agent.fetch_yf --quotes
   python3 -m swing_agent.fetch_yf --all
 """
@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 
 DAY_PERIOD  = "2y"    # ~2 years of daily bars
-H1_PERIOD   = "3mo"   # 3 months of 1-hour bars (resampled to 4-hour)
+H1_PERIOD   = "60d"   # 60 days of 1-hour bars; yfinance 1.x practical limit for intraday
 BATCH_SIZE  = 20      # yfinance handles multi-symbol downloads well
 
 
@@ -35,20 +35,25 @@ def _load_open_symbols() -> list[str]:
     if not ledger.exists():
         return []
     trades = json.loads(ledger.read_text())
-    return sorted({t["symbol"] for t in trades if t.get("status") == "entered"})
+    return sorted({
+        t["symbol"] for t in trades
+        if t.get("status") in ("entered", "pending_fill")
+    })
 
 
 def _df_to_bars(df) -> list[dict]:
     """Convert a yfinance DataFrame to the bar dict list format."""
     bars = []
     for ts, row in df.iterrows():
-        # ts is a pandas Timestamp; convert to ISO string
+        # ts is a pandas Timestamp; normalize to UTC ISO string
         if hasattr(ts, "isoformat"):
-            begins_at = ts.isoformat()
-            if begins_at.endswith("+00:00"):
-                begins_at = begins_at[:-6] + "Z"
-            elif "+" not in begins_at and begins_at[-1] != "Z":
-                begins_at += "Z"
+            if hasattr(ts, "tzinfo") and ts.tzinfo is not None:
+                # Timezone-aware: convert to UTC then format
+                begins_at = ts.tz_convert("UTC").strftime("%Y-%m-%dT%H:%M:%SZ")
+            else:
+                begins_at = ts.isoformat()
+                if not begins_at.endswith("Z"):
+                    begins_at += "Z"
         else:
             begins_at = str(ts) + "Z"
 
@@ -134,31 +139,62 @@ def fetch_daily(symbols: list[str]) -> dict[str, list[dict]]:
 
 
 def fetch_4hour(symbols: list[str]) -> dict[str, list[dict]]:
-    """Fetch 1-hour bars and resample to 4-hour."""
-    import yfinance as yf
-    results = {}
-    for i in range(0, len(symbols), BATCH_SIZE):
-        batch = symbols[i : i + BATCH_SIZE]
-        tickers = " ".join(batch)
-        try:
-            df = yf.download(tickers, period=H1_PERIOD, interval="1h",
-                             group_by="ticker", auto_adjust=True, progress=False,
-                             threads=True)
-        except Exception as e:
-            print(f"  WARNING: batch 1h download failed: {e}", file=sys.stderr)
-            continue
+    """Fetch 1-hour bars (60m interval) per symbol and resample to 4-hour.
 
-        for sym in batch:
-            try:
-                sym_df = df[sym].dropna() if len(batch) > 1 else df.dropna()
-                bars_1h = _df_to_bars(sym_df)
-                bars_4h = _resample_1h_to_4h(bars_1h)
-                if bars_4h:
-                    results[sym] = bars_4h
-            except Exception as e:
-                print(f"  WARNING: {sym} 4h failed: {e}", file=sys.stderr)
+    Downloads one symbol at a time to avoid yfinance 1.x multi-ticker column
+    structure issues with intraday intervals.
+
+    Also saves raw 1-hour bars to data/<SYM>_1hour.json as a side effect,
+    since the data is already in memory and costs no extra API calls.
+    """
+    import yfinance as yf
+    import pandas as pd
+    results = {}
+    for sym in symbols:
+        try:
+            df = yf.download(sym, period=H1_PERIOD, interval="60m",
+                             auto_adjust=True, progress=False)
+            if df is None or df.empty:
+                continue
+            # Flatten MultiIndex columns if present (yfinance 1.x single-ticker)
+            if isinstance(df.columns, pd.MultiIndex):
+                df.columns = df.columns.get_level_values(0)
+            bars_1h = _df_to_bars(df.dropna())
+            # Save 1H bars directly — free since the data is already here
+            if bars_1h:
+                (DATA / f"{sym}_1hour.json").write_text(json.dumps(bars_1h))
+            bars_4h = _resample_1h_to_4h(bars_1h)
+            if bars_4h:
+                results[sym] = bars_4h
+        except Exception as e:
+            print(f"  WARNING: {sym} 4h failed: {e}", flush=True)
 
     return results
+
+
+def fetch_intraday_highs(symbols: list[str]) -> dict[str, float]:
+    """Return {symbol: today_session_high} using yfinance 30-minute bars.
+
+    Used exclusively for milestone detection (1R/2R touch via intraday wick).
+    Falls back silently per symbol on any error.
+    """
+    import yfinance as yf
+    import pandas as pd
+    highs = {}
+    for sym in symbols:
+        try:
+            df = yf.download(sym, period="1d", interval="30m",
+                             auto_adjust=True, progress=False)
+            if df is None or df.empty:
+                continue
+            if isinstance(df.columns, pd.MultiIndex):
+                df.columns = df.columns.get_level_values(0)
+            day_high = float(df["High"].max())
+            if day_high and day_high == day_high:  # guard NaN
+                highs[sym] = round(day_high, 4)
+        except Exception as e:
+            print(f"  WARNING: {sym} intraday high failed: {e}", file=sys.stderr)
+    return highs
 
 
 def fetch_quotes(symbols: list[str]) -> dict[str, float]:
@@ -189,9 +225,23 @@ def save(data: dict[str, list[dict]], suffix: str) -> list[str]:
 
 if __name__ == "__main__":
     args = set(sys.argv[1:])
-    if not args or not (args & {"--daily", "--intraday", "--quotes", "--all"}):
-        print("Usage: python3 -m swing_agent.fetch_yf [--daily] [--intraday] [--quotes] [--all]")
+    if not args or not (args & {"--daily", "--intraday", "--quotes", "--all", "--resample-4h"}):
+        print("Usage: python3 -m swing_agent.fetch_yf [--daily] [--intraday] [--quotes] [--all] [--resample-4h]")
         sys.exit(1)
+
+    if "--resample-4h" in args:
+        print("Resampling all cached 1H files → 4H (overwrites existing _4hour.json for those symbols)...")
+        resampled = 0
+        for f in sorted(DATA.glob("*_1hour.json")):
+            sym = f.stem.replace("_1hour", "")
+            bars_1h = json.loads(f.read_text())
+            bars_4h = _resample_1h_to_4h(bars_1h)
+            if bars_4h:
+                (DATA / f"{sym}_4hour.json").write_text(json.dumps(bars_4h))
+                resampled += 1
+                print(f"  {sym}: {len(bars_4h)} 4H bars ({bars_4h[0]['begins_at'][:10]} → {bars_4h[-1]['begins_at'][:10]})")
+        print(f"Done. Resampled {resampled} symbols.")
+        sys.exit(0)
 
     do_daily    = "--all" in args or "--daily"    in args
     do_intraday = "--all" in args or "--intraday" in args

@@ -6,8 +6,13 @@ paper trades to data/paper_trades_live.json. Run once per day after close.
 A setup is "live" when:
   1. A qualifying pattern broke its neckline within the last 12 4h bars.
   2. Daily bias is long at the time of the break.
-  3. Pattern depth >= 3%.
-  4. The retest has NOT yet triggered (still watching) OR just triggered today.
+  3. Pattern depth in [3%, 12%] — too shallow misses structure, too wide means a distant stop that bleeds slowly.
+  4. EMA20 > SMA50 > SMA200 on daily — confirms full multi-timeframe uptrend.
+  5. Stock 20-day return > SPY 20-day return — relative strength confirms leadership.
+  6. Break bar volume >= 1.2× 20-bar average — high-conviction neckline break.
+  7. Quality score >= MIN_QUALITY_SCORE — filters marginal setups.
+  8. The retest has NOT yet triggered (still watching) OR just triggered today.
+  9. At most MAX_ENTRIES_PER_DAY new positions opened per scan.
 
 Outputs:
   data/paper_trades_live.json  — all open paper positions + today's new entries
@@ -42,8 +47,10 @@ SESSION_UNIVERSE = DATA / "session_universe.txt"
 INDICATOR_CACHE  = DATA / "indicator_cache.json"
 CACHE_MAX_AGE    = 8 * 3600  # 8 hours
 
-VIX_HIGH_THRESHOLD = 25.0  # skip new entries when VIX is elevated
-VIX_CACHE_FILE     = DATA / "vix_cache.json"
+VIX_HIGH_THRESHOLD  = 25.0  # skip new entries when VIX is elevated
+VIX_CACHE_FILE      = DATA / "vix_cache.json"
+SPY_RS_CACHE_FILE   = DATA / "spy_rs_cache.json"
+SPY_RS_CACHE_AGE    = 8 * 3600
 
 # Sector ETF map: symbol prefix/membership → SPDR sector ETF
 # Covers the 11 GICS sectors; unmapped symbols are allowed through (no false blocks)
@@ -164,6 +171,28 @@ def _load_vix() -> float | None:
     return _fetch_vix()
 
 
+def _fetch_spy_20d_return() -> float | None:
+    """Return SPY's 20-day price return, cached for 8 hours. Returns None on failure."""
+    if SPY_RS_CACHE_FILE.exists():
+        age = time.time() - SPY_RS_CACHE_FILE.stat().st_mtime
+        if age < SPY_RS_CACHE_AGE:
+            return json.loads(SPY_RS_CACHE_FILE.read_text()).get("return_20d")
+    try:
+        url = "https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&range=35d"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            data = json.loads(resp.read())
+        closes = data["chart"]["result"][0]["indicators"]["quote"][0]["close"]
+        closes = [c for c in closes if c is not None]
+        if len(closes) < 21:
+            return None
+        ret = (closes[-1] - closes[-21]) / closes[-21]
+        SPY_RS_CACHE_FILE.write_text(json.dumps({"return_20d": ret, "fetched_at": time.time()}))
+        return ret
+    except Exception:
+        return None
+
+
 def _load_session_cache() -> dict[str, dict]:
     """Load live indicator cache written by Robinhood MCP session fetch.
     Returns {symbol: {ema20_daily, atr14_4hour}} or {} if missing/stale.
@@ -186,7 +215,10 @@ def _load_session_universe() -> list[str] | None:
         return None
     return SESSION_UNIVERSE.read_text().split()
 
-STARTING_EQUITY = 2500.0
+from swing_agent.config import (
+    STARTING_EQUITY, ENTRY_TIMEFRAME, FRESHNESS_BARS,
+    MIN_QUALITY_SCORE, MAX_ENTRIES_PER_DAY,
+)
 
 
 def _load_equity() -> dict:
@@ -201,12 +233,21 @@ def _save_equity(state: dict) -> None:
 
 
 def _recompute_equity() -> dict:
-    """Recompute capital_in_use from the live ledger and save."""
+    """Recompute capital_in_use from the live ledger and save.
+
+    Counts both entered positions (at actual fill price) and pending_fill
+    positions (at signal_price estimate) so available_equity stays accurate
+    between the evening scan and next morning's open resolution.
+    """
     ledger = _load_live_ledger()
     in_use = sum(
         t["entry"] * t.get("shares", 0)
         for t in ledger
         if t.get("status") == "entered"
+    ) + sum(
+        t.get("signal_price", 0) * t.get("shares", 0)
+        for t in ledger
+        if t.get("status") == "pending_fill"
     )
     state = _load_equity()
     state["capital_in_use"] = round(in_use, 2)
@@ -236,7 +277,7 @@ def _quality_score(setup: dict) -> float:
                        and have less time to fail before the 12-bar window closes.
     """
     depth     = (setup["neckline"] - setup["stop"]) / setup["neckline"]
-    freshness = (12 - setup.get("bars_since_break", 0)) / 12
+    freshness = (FRESHNESS_BARS - setup.get("bars_since_break", 0)) / FRESHNESS_BARS
     return round(depth * 0.5 + freshness * 0.5, 4)
 
 
@@ -245,14 +286,16 @@ def scan_symbol(
     equity: float,
     risk_pct: float = 0.02,
     indicator_cache: dict | None = None,
+    spy_20d_return: float | None = None,
 ) -> dict:
     """Scan one symbol. Returns dict with 'watching' and 'triggered' lists.
 
     indicator_cache: optional {ema20_daily, atr14_4hour} for this symbol,
     fetched live from Robinhood API. When provided, replaces bar-computed values.
+    spy_20d_return: optional SPY 20-day return for relative-strength filter.
     """
     daily_path = DATA / f"{symbol}_day.json"
-    h4_path    = DATA / f"{symbol}_4hour.json"
+    h4_path    = DATA / f"{symbol}_{ENTRY_TIMEFRAME}.json"
     if not daily_path.exists() or not h4_path.exists():
         return {"watching": [], "triggered": []}
 
@@ -262,7 +305,7 @@ def scan_symbol(
         return {"watching": [], "triggered": []}
 
     live_ema = indicator_cache.get("ema20_daily") if indicator_cache else None
-    live_atr = indicator_cache.get("atr14_4hour") if indicator_cache else None
+    live_atr = indicator_cache.get(f"atr14_{ENTRY_TIMEFRAME}") if indicator_cache else None
 
     # Bias: prefer live EMA from Robinhood; fall back to bar-computed series
     # Both paths enforce: close > 20 EMA AND 20 EMA > 50 SMA (confirmed uptrend)
@@ -270,18 +313,33 @@ def scan_symbol(
         last_close_daily = float(daily.iloc[-1]["close"])
         last_low_daily   = float(daily.iloc[-1]["low"])
         sma50_daily      = float(daily["close"].rolling(50).mean().iloc[-1])
+        sma200_daily     = float(daily["close"].rolling(200).mean().iloc[-1]) if len(daily) >= 200 else 0.0
         current_bias     = (
             (last_close_daily > live_ema)
             and (last_low_daily > live_ema)
             and (live_ema > sma50_daily)
+            and (sma50_daily > sma200_daily)  # EMA stack: 20 > 50 > 200
         )
         bias = None  # will use current_bias for asof check
     else:
         bias = daily_bias_series(daily)
+        # EMA stack filter for fallback path: 20 EMA > SMA50 > SMA200
+        if len(daily) >= 200:
+            ema20_d  = float(ema(daily["close"], 20).iloc[-1])
+            sma50_d  = float(daily["close"].rolling(50).mean().iloc[-1])
+            sma200_d = float(daily["close"].rolling(200).mean().iloc[-1])
+            if not (ema20_d > sma50_d > sma200_d):
+                return {"watching": [], "triggered": []}
+
+    # Relative strength vs SPY: stock must have outperformed over last 20 days
+    if spy_20d_return is not None and len(daily) >= 21:
+        stock_20d = (float(daily.iloc[-1]["close"]) - float(daily.iloc[-21]["close"])) / float(daily.iloc[-21]["close"])
+        if stock_20d < spy_20d_return:
+            return {"watching": [], "triggered": []}
 
     atr_series = atr(h4, 14)
     ema9_series = ema(h4["close"], 9)
-    patterns   = detect_double_bottom(h4) + detect_inverse_hns(h4) + detect_cup_and_handle(h4)
+    patterns   = detect_inverse_hns(h4) + detect_cup_and_handle(h4)  # double_bottom suspended
     patterns.sort(key=lambda p: p["break_index"])
 
     last_bar   = len(h4) - 1
@@ -291,8 +349,8 @@ def scan_symbol(
 
     for p in patterns:
         bi = p["break_index"]
-        # only patterns whose break is within the last 12 bars
-        if bi < last_bar - 11:
+        # only patterns whose break is within the last FRESHNESS_BARS bars
+        if bi < last_bar - (FRESHNESS_BARS - 1):
             continue
         # Bias check: live EMA uses current daily bias; fallback uses series
         if bias is None:
@@ -301,12 +359,30 @@ def scan_symbol(
         elif not bias_asof(bias, p["break_time"]):
             continue
 
-        if (p["neckline"] - p["stop_basis"]) / p["neckline"] < 0.03:
+        # Pre-check: pattern structure depth (neckline to stop_basis, no ATR buffer).
+        # This rejects obviously shallow or obviously wide patterns before building
+        # the full trade. The effective stop (stop_basis - 1.5×ATR) is checked again
+        # below after build_trade, using the actual stop level.
+        struct_depth = (p["neckline"] - p["stop_basis"]) / p["neckline"]
+        if struct_depth < 0.03 or struct_depth > 0.15:  # wider pre-filter to not over-block
             continue
+
+        # Volume confirmation: break bar must have >= 1.2× its 20-bar average volume
+        if bi >= 20 and "volume" in h4.columns:
+            avg_vol = float(h4["volume"].rolling(20).mean().iloc[bi])
+            if avg_vol > 0 and not pd.isna(avg_vol):
+                if float(h4.loc[bi, "volume"]) < 1.2 * avg_vol:
+                    continue
 
         trade = build_trade(h4, p, atr_series, equity, risk_pct,
                             atr_override=live_atr)
         if trade is None:
+            continue
+
+        # Definitive depth gate: use the actual ATR-buffered stop, not stop_basis.
+        # This is the number that goes in the ledger and drives real risk.
+        depth = (p["neckline"] - trade["stop"]) / p["neckline"]
+        if depth < 0.03 or depth > 0.12:
             continue
 
         neckline   = p["neckline"]
@@ -350,11 +426,19 @@ def scan_symbol(
         }
 
         if triggered_today:
-            setup["entry"]       = round(last_close, 4)
-            setup["entry_time"]  = str(h4.loc[last_bar, "begins_at"])
-            setup["status"]      = "entered"
+            # Record the 4H close that confirmed the retest as signal_price.
+            # The actual entry price is NOT known yet — it will be the next
+            # morning's opening quote, resolved by resolve_pending_fills().
+            setup["signal_price"] = round(last_close, 4)
+            setup["signal_time"]  = str(h4.loc[last_bar, "begins_at"])
+            setup["status"]       = "pending_fill"
             setup["quality_score"] = _quality_score(setup)
-            triggered.append(setup)
+            if setup["quality_score"] < MIN_QUALITY_SCORE:
+                setup["status"]      = "watching"
+                setup["skip_reason"] = "low_quality"
+                watching.append(setup)
+            else:
+                triggered.append(setup)
         else:
             setup["status"] = "watching"
             watching.append(setup)
@@ -392,6 +476,13 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         print(f"  [Sector] Filtered {filtered_out} symbol(s) in bearish sectors "
               f"({original_count} → {len(symbols)})")
 
+    # Relative strength benchmark: SPY 20-day return
+    spy_return = _fetch_spy_20d_return()
+    if spy_return is not None:
+        print(f"  [RS] SPY 20d return: {spy_return*100:.1f}% — stocks must beat this to qualify")
+    else:
+        print("  [RS] SPY return unavailable — relative strength filter bypassed")
+
     # VIX market context gate — skip new entries when volatility is elevated
     vix = _load_vix()
     high_vix = vix is not None and vix >= VIX_HIGH_THRESHOLD
@@ -417,7 +508,8 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         # Use full starting equity for position sizing (risk % of starting capital)
         # but gate entry on available equity
         result = scan_symbol(sym, starting, risk_pct,
-                             indicator_cache=indicator_cache.get(sym))
+                             indicator_cache=indicator_cache.get(sym),
+                             spy_20d_return=spy_return)
         all_watching.extend(result["watching"])
         all_triggered.extend(result["triggered"])
 
@@ -437,13 +529,26 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
     # Existing ledger entries (already opened) are processed first to avoid
     # double-counting them against available equity.
     ledger = _load_live_ledger()
-    existing_keys = {(t["symbol"], t.get("entry_time")) for t in ledger}
+    # Dedup key uses signal_time (the 4H bar that confirmed the retest).
+    # For legacy entered trades that predate this change, fall back to entry_time.
+    existing_keys = {
+        (t["symbol"], t.get("signal_time", t.get("entry_time"))) for t in ledger
+    }
+    # Block a second signal on any symbol that's already entered or awaiting fill.
+    symbols_entered = {
+        t["symbol"] for t in ledger
+        if t.get("status") in ("entered", "pending_fill")
+    }
     new_entries   = []
     skipped       = []
 
-    already_open  = [t for t in all_triggered if (t["symbol"], t.get("entry_time")) in existing_keys]
+    already_open = [
+        t for t in all_triggered
+        if (t["symbol"], t.get("signal_time")) in existing_keys
+    ]
     new_candidates = sorted(
-        [t for t in all_triggered if (t["symbol"], t.get("entry_time")) not in existing_keys],
+        [t for t in all_triggered
+         if (t["symbol"], t.get("signal_time")) not in existing_keys],
         key=lambda t: t.get("quality_score", 0),
         reverse=True,
     )
@@ -452,32 +557,47 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         print(f"  [Rank] {len(new_candidates)} new trigger(s) ranked by quality score — "
               f"top: {top['symbol']} {top['type']} score={top.get('quality_score', 0):.4f}")
 
+    entries_today = 0
     for t in already_open + new_candidates:
-        if (t["symbol"], t.get("entry_time")) in existing_keys:
-            # already in ledger — still update watchlist state if not yet done
+        if (t["symbol"], t.get("signal_time")) in existing_keys:
+            # already in ledger — update watchlist state
             mark_triggered(t["symbol"], t["type"], t["break_time"],
-                           t["entry"], t["entry_time"])
+                           t["signal_price"], t["signal_time"])
+            continue
+        if t["symbol"] in symbols_entered:
+            skipped.append({"symbol": t["symbol"], "type": t["type"],
+                            "quality_score": t.get("quality_score", 0),
+                            "skip_reason": "one_per_symbol"})
+            mark_missed(t["symbol"], t["type"], t["break_time"], reason="one_per_symbol")
             continue
         if high_vix:
             skipped.append({"symbol": t["symbol"], "type": t["type"],
-                            "cost": round(t["entry"] * t.get("shares", 0), 2),
-                            "available": round(available, 2),
                             "quality_score": t.get("quality_score", 0),
                             "skip_reason": "high_vix"})
             mark_missed(t["symbol"], t["type"], t["break_time"], reason="high_vix")
             continue
-        cost = round(t["entry"] * t.get("shares", 0), 2)
-        if cost > available:
+        # Capital pre-check uses signal_price * shares as a rough estimate.
+        # Actual cost is recomputed at fill time from the morning quote.
+        est_cost = round(t["signal_price"] * t.get("shares", 0), 2)
+        if est_cost > available:
             skipped.append({"symbol": t["symbol"], "type": t["type"],
-                            "cost": cost, "available": round(available, 2),
+                            "est_cost": est_cost, "available": round(available, 2),
                             "quality_score": t.get("quality_score", 0),
                             "skip_reason": "no_capital"})
             mark_missed(t["symbol"], t["type"], t["break_time"], reason="no_capital")
             continue
+        if entries_today >= MAX_ENTRIES_PER_DAY:
+            skipped.append({"symbol": t["symbol"], "type": t["type"],
+                            "quality_score": t.get("quality_score", 0),
+                            "skip_reason": "daily_cap"})
+            mark_missed(t["symbol"], t["type"], t["break_time"], reason="daily_cap")
+            continue
         new_entries.append(t)
-        available = round(available - cost, 2)
+        entries_today += 1
+        available = round(available - est_cost, 2)
+        symbols_entered.add(t["symbol"])
         mark_triggered(t["symbol"], t["type"], t["break_time"],
-                       t["entry"], t["entry_time"])
+                       t["signal_price"], t["signal_time"])
 
     ledger.extend(new_entries)
     _save_live_ledger(ledger)
@@ -510,15 +630,20 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
 
 
 if __name__ == "__main__":
+    import sys as _sys
     from swing_agent.fetch_yf import _load_universe, fetch_daily, fetch_4hour, save as yf_save
 
     syms = _load_universe()
-    print("=== DATA REFRESH ===")
-    daily_data = fetch_daily(syms)
-    yf_save(daily_data, "_day")
-    h4_data = fetch_4hour(syms)
-    yf_save(h4_data, "_4hour")
-    print(f"  Refreshed {len(syms)} symbols\n")
+
+    # Skip data refresh when invoked via run_daily (avoids double-fetch).
+    # Pass --refresh to force a refresh when running scanner standalone.
+    if "--refresh" in _sys.argv:
+        print("=== DATA REFRESH ===")
+        daily_data = fetch_daily(syms)
+        yf_save(daily_data, "_day")
+        h4_data = fetch_4hour(syms)
+        yf_save(h4_data, "_4hour")
+        print(f"  Refreshed {len(syms)} symbols\n")
 
     result = run_scan(syms)
 

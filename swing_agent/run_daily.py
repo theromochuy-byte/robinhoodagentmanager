@@ -62,13 +62,123 @@ def full_refresh() -> None:
 # Exit checker — applies closing quotes to open positions
 # ---------------------------------------------------------------------------
 
-def check_exits(quotes: dict[str, float]) -> tuple[list[dict], list[dict]]:
-    """Check open positions against quotes. Returns (closes, still_open).
+def _fetch_intraday_highs(symbols: list[str]) -> dict[str, float]:
+    """Fetch today's session high for each symbol via yfinance 30-minute bars.
 
-    A position closes when:
-      - quote <= stop  → stopped out (stop takes priority on same bar)
-      - quote >= 2R    → target hit
+    Used solely for 1R/2R milestone detection — catches intraday wicks that
+    close back below the milestone level before end of day.
+    Falls back to an empty dict per symbol on any error.
     """
+    if not symbols:
+        return {}
+    try:
+        from swing_agent.fetch_yf import fetch_intraday_highs
+        return fetch_intraday_highs(symbols)
+    except Exception as e:
+        print(f"  WARNING: intraday highs fetch failed: {e}", file=sys.stderr)
+        return {}
+
+
+from swing_agent.config import (
+    TIME_STOP_TRADING_DAYS, TIME_STOP_MIN_PROGRESS_FRAC,
+    RISK_PCT, STARTING_EQUITY,
+)
+
+
+# ---------------------------------------------------------------------------
+# Pending-fill resolver — morning step, runs before check_exits
+# ---------------------------------------------------------------------------
+
+def resolve_pending_fills(quotes: dict[str, float]) -> list[dict]:
+    """Convert pending_fill trades to entered using today's opening quote.
+
+    Evening scanner logs triggers as pending_fill with signal_price (the 4H
+    close). This function runs at morning open and fills at the first live
+    quote, which is the price you'd actually have paid. Risk parameters are
+    recomputed from the real fill price; the stop level is unchanged.
+
+    Trades that gap through their stop overnight are voided rather than filled.
+
+    Returns list of newly-filled trades (status changed to entered this run).
+    """
+    trades = _load_ledger()
+    filled = []
+    now = datetime.now(timezone.utc).isoformat()
+
+    for t in trades:
+        if t.get("status") != "pending_fill":
+            continue
+
+        sym = t["symbol"]
+        price = quotes.get(sym)
+        if price is None:
+            continue  # no quote yet — leave pending
+
+        stop = t["stop"]  # absolute level from pattern, does not change
+        signal_price = t.get("signal_price", price)
+
+        if price <= stop:
+            # Gapped through stop overnight — void without entering
+            t["status"] = "voided"
+            t["void_reason"] = "gapped_through_stop"
+            t["fill_price"] = price
+            t["fill_time"] = now
+            t["fill_slip"] = round(price - signal_price, 4)
+            print(f"  [Fill] {sym} VOIDED — opened at {price:.2f}, below stop {stop:.2f}")
+            continue
+
+        risk = price - stop
+        shares = (STARTING_EQUITY * RISK_PCT) / risk
+        max_notional = STARTING_EQUITY * 0.25
+        if shares * price > max_notional:
+            shares = max_notional / price
+
+        fill_slip = round(price - signal_price, 4)
+        slip_pct = round(fill_slip / signal_price * 100, 2) if signal_price else 0.0
+
+        t["status"] = "entered"
+        t["entry"] = round(price, 4)
+        t["entry_time"] = now
+        t["fill_slip"] = fill_slip
+        t["fill_slip_pct"] = slip_pct
+        t["risk_per_share"] = round(risk, 4)
+        t["target_1R"] = round(price + risk, 4)
+        t["target_2R"] = round(price + 2 * risk, 4)
+        t["target_3R"] = round(price + 3 * risk, 4)
+        t["shares"] = round(shares, 4)
+
+        direction = "gap-up" if fill_slip > 0 else "gap-down" if fill_slip < 0 else "flat"
+        print(f"  [Fill] {sym} filled at {price:.2f}  "
+              f"signal={signal_price:.2f}  slip={fill_slip:+.2f} ({slip_pct:+.2f}%)  [{direction}]")
+        filled.append(t)
+
+    _save_ledger(trades)
+    return filled
+
+
+def check_exits(
+    quotes: dict[str, float],
+    intraday_highs: dict[str, float] | None = None,
+) -> tuple[list[dict], list[dict], list[dict]]:
+    """Check open positions against quotes. Returns (closes, still_open, newly_at_be).
+
+    Exit rules (stop takes priority if triggered):
+      - quote <= effective_stop              → stopped out
+      - quote >= 3R                          → target hit
+      - held > TIME_STOP_TRADING_DAYS,
+        no 1R touch yet                     → time stop (stale trade)
+
+    Breakeven stop: once price has ever touched 1R gain (tracked via
+    'touched_1r' on the ledger record), effective_stop moves to entry.
+    This lets the trade run to 2R with no downside risk after 1R is achieved.
+
+    intraday_highs: optional {symbol: today_high} used solely for milestone
+    detection (touched_1r / touched_2r). Exit decisions always use the
+    closing quote so stops are not triggered by intraday wicks.
+    """
+    if intraday_highs is None:
+        intraday_highs = {}
+
     trades  = _load_ledger()
     closes  = []
     updated = []
@@ -85,34 +195,102 @@ def check_exits(quotes: dict[str, float]) -> tuple[list[dict], list[dict]]:
             updated.append(t)
             continue
 
-        stop   = t["stop"]
-        target = t["target_2R"]
+        entry     = t["entry"]
+        risk      = t.get("risk_per_share", 0)
+        stop      = t["stop"]
+        target_1r = entry + risk
+        target_2r = entry + 2 * risk
+        target_3r = t.get("target_3R", entry + 3 * risk)
 
-        if price <= stop:
-            t["status"]       = "stopped"
+        # Use the intraday high (if available) for milestone detection only —
+        # stops and targets are still evaluated against the closing quote.
+        high_price = max(price, intraday_highs.get(sym, price))
+
+        # Carry forward or advance milestone flags
+        touched_1r = t.get("touched_1r", False)
+        touched_2r = t.get("touched_2r", False)
+        newly_touched_1r = False
+        if not touched_1r and high_price >= target_1r:
+            touched_1r = True
+            newly_touched_1r = True
+            t["touched_1r"] = True
+        if not touched_2r and high_price >= target_2r:
+            touched_2r = True
+            t["touched_2r"] = True
+
+        # Stop ladder: original → breakeven at 1R → 2R floor at 2R
+        if touched_2r:
+            effective_stop = target_2r
+        elif touched_1r:
+            effective_stop = entry
+        else:
+            effective_stop = stop
+
+        if price <= effective_stop:
+            if touched_2r:
+                outcome    = "win_2r"
+                exit_reason = "2R_stop"
+            elif touched_1r:
+                outcome    = "breakeven"
+                exit_reason = "breakeven_stop"
+            else:
+                outcome    = "stopped"
+                exit_reason = "stop"
+            t["status"]       = outcome
             t["exit_price"]   = price
-            t["exit_reason"]  = "stop"
+            t["exit_reason"]  = exit_reason
             t["exit_time"]    = now
-            t["realized_pnl"] = round((price - t["entry"]) * t.get("shares", 0), 2)
+            t["realized_pnl"] = round((price - entry) * t.get("shares", 0), 2)
+            t["touched_1r"]   = touched_1r
+            t["touched_2r"]   = touched_2r
             closes.append(t)
-        elif price >= target:
+        elif price >= target_3r:
             t["status"]       = "target_hit"
             t["exit_price"]   = price
-            t["exit_reason"]  = "2R"
+            t["exit_reason"]  = "3R"
             t["exit_time"]    = now
-            t["realized_pnl"] = round((price - t["entry"]) * t.get("shares", 0), 2)
+            t["realized_pnl"] = round((price - entry) * t.get("shares", 0), 2)
+            t["touched_1r"]   = True
+            t["touched_2r"]   = True
             closes.append(t)
         else:
-            t["last_price"]     = price
-            t["unrealized_pnl"] = round((price - t["entry"]) * t.get("shares", 0), 2)
-            t["checked_at"]     = now
+            # Time stop: exit if held long enough without showing a sign of working.
+            # "Sign of working" = touched 1R at any point, OR price has made at
+            # least TIME_STOP_MIN_PROGRESS_FRAC of the way from entry toward 1R.
+            if not touched_1r:
+                entry_time_str = t.get("entry_time", "")
+                try:
+                    entry_dt = datetime.fromisoformat(entry_time_str.replace("Z", "+00:00"))
+                    days_held = (datetime.now(timezone.utc) - entry_dt).total_seconds() / 86400
+                    if days_held * (5 / 7) >= TIME_STOP_TRADING_DAYS:
+                        progress = (price - entry) / risk if risk > 0 else 0.0
+                        sign_of_working = (
+                            TIME_STOP_MIN_PROGRESS_FRAC > 0
+                            and progress >= TIME_STOP_MIN_PROGRESS_FRAC
+                        )
+                        if not sign_of_working:
+                            t["status"]       = "time_stop"
+                            t["exit_price"]   = price
+                            t["exit_reason"]  = "time_stop"
+                            t["exit_time"]    = now
+                            t["realized_pnl"] = round((price - entry) * t.get("shares", 0), 2)
+                            t["days_held"]    = round(days_held, 1)
+                            t["progress_at_exit"] = round(progress * 100, 1)
+                            closes.append(t)
+                            continue
+                except Exception:
+                    pass
 
-            # Estimate trading days to 2R based on current pace
-            entry  = t["entry"]
-            target = t["target_2R"]
-            risk   = t.get("risk_per_share", 0)
-            if risk and price > entry and target > entry:
-                progress_pct = (price - entry) / (target - entry)
+            t["last_price"]     = price
+            t["unrealized_pnl"] = round((price - entry) * t.get("shares", 0), 2)
+            t["touched_1r"]     = touched_1r
+            t["checked_at"]     = now
+            if newly_touched_1r:
+                t["stop_moved_to_be_at"] = now  # timestamp when BE stop was activated
+
+            # Progress tracking toward 2R
+            if risk and price > entry and target_2r > entry:
+                progress_pct = (price - entry) / (target_2r - entry)
                 entry_time   = t.get("entry_time", "")
                 if progress_pct > 0.01 and entry_time:
                     try:
@@ -124,6 +302,7 @@ def check_exits(quotes: dict[str, float]) -> tuple[list[dict], list[dict]]:
                         est_remaining = max(0.0, est_total - trading_days_held)
                         t["progress_pct"]   = round(progress_pct * 100, 1)
                         t["est_days_to_2r"] = round(est_remaining, 1)
+                        t["days_held"]      = round(days_held, 1)
                     except Exception:
                         pass
 
@@ -131,7 +310,9 @@ def check_exits(quotes: dict[str, float]) -> tuple[list[dict], list[dict]]:
 
     # Persist closes + open remainder
     _save_ledger(closes + updated)
-    return closes, updated
+    # Surface positions that newly crossed 1R this run (stop just moved to BE)
+    newly_at_be = [t for t in updated if t.get("stop_moved_to_be_at") == now]
+    return closes, updated, newly_at_be
 
 
 # ---------------------------------------------------------------------------
@@ -172,7 +353,12 @@ def run_scan() -> list[dict]:
 
 def git_commit_push(mode: str) -> None:
     print("=== COMMITTING ===")
-    subprocess.run(["git", "add", "data/", "reports/"], cwd=ROOT)
+    if mode in ("morning", "midday"):
+        # Only persist the live ledger — exits and new entries must survive
+        # container recycles before the evening full commit.
+        subprocess.run(["git", "add", str(LIVE_LEDGER)], cwd=ROOT)
+    else:
+        subprocess.run(["git", "add", "data/", "reports/"], cwd=ROOT)
     result = subprocess.run(
         ["git", "diff", "--cached", "--quiet"], cwd=ROOT
     )
@@ -192,6 +378,33 @@ def git_commit_push(mode: str) -> None:
 # Main
 # ---------------------------------------------------------------------------
 
+# NYSE market holidays — update each December for the following year.
+_NYSE_HOLIDAYS = {
+    "2026-01-01",  # New Year's Day
+    "2026-01-19",  # MLK Day
+    "2026-02-16",  # Presidents' Day
+    "2026-04-03",  # Good Friday
+    "2026-05-25",  # Memorial Day
+    "2026-07-03",  # Independence Day (observed)
+    "2026-09-07",  # Labor Day
+    "2026-11-26",  # Thanksgiving
+    "2026-12-25",  # Christmas
+    "2027-01-01",  # New Year's Day
+    "2027-01-18",  # MLK Day
+    "2027-02-15",  # Presidents' Day
+    "2027-03-26",  # Good Friday
+    "2027-05-31",  # Memorial Day
+    "2027-07-05",  # Independence Day (observed)
+    "2027-09-06",  # Labor Day
+    "2027-11-25",  # Thanksgiving
+    "2027-12-24",  # Christmas (observed)
+}
+
+
+def _is_market_holiday(d: date | None = None) -> bool:
+    return str(d or date.today()) in _NYSE_HOLIDAYS
+
+
 if __name__ == "__main__":
     args = sys.argv[1:]
     if "--mode" not in args:
@@ -203,31 +416,70 @@ if __name__ == "__main__":
         print(f"Unknown mode: {mode}. Use morning, midday, or evening.", file=sys.stderr)
         sys.exit(1)
 
+    if _is_market_holiday():
+        print(f"Market holiday ({date.today()}) — skipping run.")
+        sys.exit(0)
+
     from swing_agent.fetch_yf import _load_open_symbols, fetch_quotes
     from swing_agent.notify   import send_digest
 
-    new_entries: list[dict] = []
-    closes:      list[dict] = []
+    new_entries:  list[dict] = []
+    closes:       list[dict] = []
+    newly_at_be:  list[dict] = []
+    newly_filled: list[dict] = []
 
     if mode in ("morning", "evening"):
         full_refresh()
 
-    # Always fetch live quotes for open positions
+    # Always fetch live quotes for open + pending positions
     open_syms = _load_open_symbols()
     quotes: dict[str, float] = {}
     if open_syms:
         print(f"  Fetching live quotes for {len(open_syms)} open symbols...")
         quotes = fetch_quotes(open_syms)
-        closes, _ = check_exits(quotes)
+
+    # Morning/midday: resolve pending fills at the opening quote BEFORE exit check.
+    # Evening scanner does not fill — it only creates pending_fill records.
+    if mode in ("morning", "midday"):
+        print("=== RESOLVE PENDING FILLS ===")
+        newly_filled = resolve_pending_fills(quotes)
+        if newly_filled:
+            print(f"  {len(newly_filled)} position(s) filled at open.")
+        else:
+            print("  No pending fills.")
+
+    if open_syms:
+        # Fetch intraday highs for milestone detection (1R/2R touch via wick)
+        intraday_highs = _fetch_intraday_highs(open_syms)
+
+        closes, _, newly_at_be = check_exits(quotes, intraday_highs)
         if closes:
             print(f"  {len(closes)} positions closed.")
+        if newly_at_be:
+            print(f"  {len(newly_at_be)} position(s) crossed 1R — stop moved to breakeven.")
 
     if mode in ("morning", "evening"):
         new_entries = run_scan()
 
     # Send email digest
     print("=== SENDING EMAIL DIGEST ===")
-    send_digest(new_entries, closes, quotes)
+    send_digest(new_entries, closes, quotes, newly_at_be=newly_at_be,
+                newly_filled=newly_filled)
+
+    if mode in ("morning", "midday"):
+        git_commit_push(mode)
 
     if mode == "evening":
+        print("=== BACKTEST ===")
+        try:
+            result = subprocess.run(
+                [sys.executable, "-m", "swing_agent.backtest_daily"],
+                cwd=ROOT, capture_output=True, text=True, timeout=300
+            )
+            if result.stdout:
+                print(result.stdout.rstrip())
+            if result.returncode != 0 and result.stderr:
+                print(f"  WARNING: backtest stderr: {result.stderr[:500]}", file=sys.stderr)
+        except Exception as e:
+            print(f"  WARNING: backtest failed: {e}", file=sys.stderr)
         git_commit_push(mode)

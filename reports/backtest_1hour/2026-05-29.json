@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-29",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 18,
+  "entries": [
+    {
+      "symbol": "LLY",
+      "type": "inverse_hns",
+      "neckline": 1054.49,
+      "stop": 979.0595,
+      "target_2R": 1216.6009,
+      "risk_per_share": 79.1805,
+      "shares": 0.3544,
+      "break_time": "2026-05-22T14:00:00Z",
+      "bars_since_break": 29,
+      "in_pullback": true,
+      "last_close": 1105.365,
+      "last_bar_time": "2026-05-29T19:00:00Z",
+      "scan_date": "2026-05-29",
+      "entry": 1105.365,
+      "entry_time": "2026-05-29T19:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 7
+}

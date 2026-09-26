@@ -134,6 +134,39 @@ def detect_double_bottom(
     return _dedupe(patterns)
 
 
+def _volume_confirms_inverse_hns(
+    df: pd.DataFrame,
+    ls_idx: int,
+    head_idx: int,
+    rs_idx: int,
+    break_idx: int,
+    vol_avg: pd.Series,
+) -> bool:
+    """Volume signature for inverse head and shoulders.
+
+    Passes when ALL of the following hold (any check skipped if volume unavailable):
+      1. Head volume >= left-shoulder volume (capitulation / selling climax at head).
+      2. Right-shoulder volume < head volume (sellers exhausted, contraction).
+      3. Breakout volume > rolling average (buyers confirm the break).
+    """
+    v_ls  = _vol_around(df, ls_idx)
+    v_head = _vol_around(df, head_idx)
+    v_rs  = _vol_around(df, rs_idx)
+    v_brk = float(df["volume"].iloc[break_idx])
+    avg_at_brk = vol_avg.iloc[break_idx] if break_idx < len(vol_avg) else None
+
+    # Head must show at least as much selling pressure as the left shoulder
+    if v_head < v_ls:
+        return False
+    # Right shoulder must be quieter than the head (exhaustion)
+    if v_rs >= v_head:
+        return False
+    # Breakout bar must exceed the rolling average volume
+    if avg_at_brk and v_brk < avg_at_brk:
+        return False
+    return True
+
+
 def detect_inverse_hns(
     df: pd.DataFrame,
     left: int = 3,
@@ -144,10 +177,13 @@ def detect_inverse_hns(
 ) -> list[dict]:
     """Left shoulder, lower head, higher-low right shoulder; neckline across the
     two intervening highs. Imperfect shoulders allowed within shoulder_tol.
+    Volume confirm: head >= LS (capitulation), RS < head (exhaustion),
+    breakout > avg (confirmation). Skipped when volume data unavailable.
     """
     marked = swing_points(df, left, right)
     lows = pivots(marked, "low")
     highs = pivots(marked, "high")
+    vol_avg = _vol_avg(df)
     patterns = []
 
     for i in range(len(lows)):
@@ -164,7 +200,6 @@ def detect_inverse_hns(
                 # shoulders roughly comparable
                 if abs(rs["price"] - ls["price"]) / ls["price"] > shoulder_tol:
                     continue
-                # right shoulder is a higher low than the head (already true) -> ok
                 # neckline = the two highs between LS-head and head-RS
                 peak1 = [h for h in highs if ls["index"] < h["index"] < head["index"]]
                 peak2 = [h for h in highs if head["index"] < h["index"] < rs["index"]]
@@ -174,6 +209,13 @@ def detect_inverse_hns(
                 brk = _confirm_break(df, neckline, rs["index"])
                 if not brk:
                     continue
+                # Volume: capitulation at head, exhaustion at RS, expansion at break
+                if vol_avg is not None:
+                    if not _volume_confirms_inverse_hns(
+                        df, ls["index"], head["index"], rs["index"],
+                        brk["break_index"], vol_avg,
+                    ):
+                        continue
                 patterns.append(
                     {
                         "type": "inverse_hns",
