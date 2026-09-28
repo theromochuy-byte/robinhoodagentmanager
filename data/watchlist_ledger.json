@@ -28470,6 +28470,11 @@
         "time": "2026-09-25T23:58:21.617130+00:00",
         "price": 630.35,
         "note": "update"
+      },
+      {
+        "time": "2026-09-28T20:33:03.478717+00:00",
+        "price": 607.86,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -28534,7 +28539,7 @@
     "neckline": 213.13,
     "break_time": "2026-09-18T13:30:00Z",
     "first_seen": "2026-09-22T02:00:55.946036+00:00",
-    "status": "watching",
+    "status": "expired",
     "suggested_entry": 213.13,
     "suggested_entry_zone": [
       212.0643,
@@ -28599,6 +28604,11 @@
         "time": "2026-09-25T23:58:21.676039+00:00",
         "price": 224.59,
         "note": "update"
+      },
+      {
+        "time": "2026-09-28T20:33:03.931723+00:00",
+        "price": 224.59,
+        "note": "expired"
       }
     ],
     "trigger_time": null,
@@ -28606,7 +28616,7 @@
     "close_time": null,
     "close_price": null,
     "outcome": null,
-    "elapsed_watching_hours": null,
+    "elapsed_watching_hours": 162.5,
     "elapsed_total_hours": null
   },
   {
@@ -28680,6 +28690,11 @@
       {
         "time": "2026-09-25T23:58:21.794045+00:00",
         "price": 122.96,
+        "note": "update"
+      },
+      {
+        "time": "2026-09-28T20:33:03.591746+00:00",
+        "price": 116.13,
         "note": "update"
       }
     ],
@@ -28762,6 +28777,11 @@
       {
         "time": "2026-09-25T23:58:21.823337+00:00",
         "price": 1081.6899,
+        "note": "update"
+      },
+      {
+        "time": "2026-09-28T20:33:03.619830+00:00",
+        "price": 1053.89,
         "note": "update"
       }
     ],
@@ -29075,6 +29095,11 @@
       {
         "time": "2026-09-25T23:58:21.852811+00:00",
         "price": 261.89,
+        "note": "update"
+      },
+      {
+        "time": "2026-09-28T20:33:03.704815+00:00",
+        "price": 251.89,
         "note": "update"
       }
     ],
@@ -29406,6 +29431,11 @@
         "time": "2026-09-25T23:58:21.882969+00:00",
         "price": 198.89,
         "note": "update"
+      },
+      {
+        "time": "2026-09-28T20:33:03.733062+00:00",
+        "price": 197.35,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -29487,6 +29517,11 @@
       {
         "time": "2026-09-25T23:58:21.912871+00:00",
         "price": 198.89,
+        "note": "update"
+      },
+      {
+        "time": "2026-09-28T20:33:03.761741+00:00",
+        "price": 197.35,
         "note": "update"
       }
     ],
@@ -29694,6 +29729,11 @@
         "time": "2026-09-25T23:58:21.972107+00:00",
         "price": 189.66,
         "note": "update"
+      },
+      {
+        "time": "2026-09-28T20:33:03.818095+00:00",
+        "price": 187.56,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -29776,6 +29816,11 @@
         "time": "2026-09-25T23:58:22.031750+00:00",
         "price": 310.55,
         "note": "update"
+      },
+      {
+        "time": "2026-09-28T20:33:03.874898+00:00",
+        "price": 283.26,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -29857,6 +29902,11 @@
       {
         "time": "2026-09-25T23:58:22.061157+00:00",
         "price": 310.55,
+        "note": "update"
+      },
+      {
+        "time": "2026-09-28T20:33:03.903182+00:00",
+        "price": 283.26,
         "note": "update"
       }
     ],
@@ -30153,6 +30203,11 @@
         "time": "2026-09-25T23:58:21.705836+00:00",
         "price": 224.59,
         "note": "update"
+      },
+      {
+        "time": "2026-09-28T20:33:03.535324+00:00",
+        "price": 227.48,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -30262,6 +30317,11 @@
         "time": "2026-09-25T23:58:21.942808+00:00",
         "price": 172.79,
         "note": "update"
+      },
+      {
+        "time": "2026-09-28T20:33:03.789869+00:00",
+        "price": 175.2,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -30318,6 +30378,11 @@
       {
         "time": "2026-09-25T23:58:22.001836+00:00",
         "price": 189.66,
+        "note": "update"
+      },
+      {
+        "time": "2026-09-28T20:33:03.846510+00:00",
+        "price": 187.56,
         "note": "update"
       }
     ],
@@ -30398,6 +30463,11 @@
         "time": "2026-09-25T23:58:21.586639+00:00",
         "price": 516.1,
         "note": "update"
+      },
+      {
+        "time": "2026-09-28T20:33:03.421347+00:00",
+        "price": 509.47,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -30435,6 +30505,43 @@
         "time": "2026-09-25T23:58:21.734985+00:00",
         "price": 201.95,
         "note": "update"
+      },
+      {
+        "time": "2026-09-28T20:33:03.563283+00:00",
+        "price": 187.41,
+        "note": "update"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "NVDA__cup_and_handle__2026-09-28T13:30:00Z",
+    "symbol": "NVDA",
+    "type": "cup_and_handle",
+    "neckline": 230.47,
+    "break_time": "2026-09-28T13:30:00Z",
+    "first_seen": "2026-09-28T20:33:03.449956+00:00",
+    "status": "watching",
+    "suggested_entry": 230.47,
+    "suggested_entry_zone": [
+      229.3176,
+      231.6223
+    ],
+    "stop": 220.3481,
+    "target_1R": 242.1919,
+    "target_2R": 253.1139,
+    "risk_per_share": 10.9219,
+    "price_history": [
+      {
+        "time": "2026-09-28T20:33:03.449956+00:00",
+        "price": 228.88,
+        "note": "first_seen"
       }
     ],
     "trigger_time": null,
