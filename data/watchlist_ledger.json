@@ -30524,7 +30524,7 @@
     "neckline": 188.37,
     "break_time": "2026-09-23T13:30:00Z",
     "first_seen": "2026-09-23T21:58:35.973851+00:00",
-    "status": "watching",
+    "status": "expired",
     "suggested_entry": 188.37,
     "suggested_entry_zone": [
       187.4282,
@@ -30594,6 +30594,11 @@
         "time": "2026-09-30T22:47:29.149643+00:00",
         "price": 187.04,
         "note": "update"
+      },
+      {
+        "time": "2026-10-01T19:32:02.471845+00:00",
+        "price": 187.04,
+        "note": "expired"
       }
     ],
     "trigger_time": null,
@@ -30601,7 +30606,7 @@
     "close_time": null,
     "close_price": null,
     "outcome": null,
-    "elapsed_watching_hours": null,
+    "elapsed_watching_hours": 189.6,
     "elapsed_total_hours": null
   },
   {
@@ -30703,6 +30708,11 @@
         "time": "2026-09-30T22:47:29.004670+00:00",
         "price": 512.96,
         "note": "update"
+      },
+      {
+        "time": "2026-10-01T19:32:02.093966+00:00",
+        "price": 515.87,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -30770,6 +30780,11 @@
         "time": "2026-09-30T22:47:29.064376+00:00",
         "price": 184.06,
         "note": "update"
+      },
+      {
+        "time": "2026-10-01T19:32:02.378158+00:00",
+        "price": 183.62,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -30827,6 +30842,43 @@
         "time": "2026-09-30T22:47:29.035746+00:00",
         "price": 228.29,
         "note": "update"
+      },
+      {
+        "time": "2026-10-01T19:32:02.118567+00:00",
+        "price": 231.39,
+        "note": "update"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "VLO__cup_and_handle__2026-10-01T14:30:00Z",
+    "symbol": "VLO",
+    "type": "cup_and_handle",
+    "neckline": 398.505,
+    "break_time": "2026-10-01T14:30:00Z",
+    "first_seen": "2026-10-01T19:32:02.448345+00:00",
+    "status": "watching",
+    "suggested_entry": 398.505,
+    "suggested_entry_zone": [
+      396.5125,
+      400.4975
+    ],
+    "stop": 375.3464,
+    "target_1R": 432.6136,
+    "target_2R": 461.2472,
+    "risk_per_share": 28.6336,
+    "price_history": [
+      {
+        "time": "2026-10-01T19:32:02.448345+00:00",
+        "price": 407.125,
+        "note": "first_seen"
       }
     ],
     "trigger_time": null,
