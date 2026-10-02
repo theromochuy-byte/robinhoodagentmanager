@@ -1,767 +1,877 @@
 {
-  "AAL": {
+  "WBD": {
+    "fundamentals": {
+      "average_volume_30_days": 42493102.1716,
+      "average_volume": 70439751.577763,
+      "pe_ratio": -24.23,
+      "high_52_weeks": 30.92
+    },
+    "price": 30.835,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "net_income": 111000000.0
+        "net_income": 727000000.0,
+        "revenue": 37296000000.0
       },
       {
         "fiscal_year": 2024,
-        "net_income": 846000000.0
+        "net_income": -11311000000.0,
+        "revenue": 39321000000.0
       }
     ],
-    "fundamentals": {
-      "average_volume_30_days": 69007892.1092,
-      "high_52_weeks": 18.79,
-      "pe_ratio": -27.05
-    },
-    "next_earnings_date": "2026-10-22",
-    "price": 13.35
-  },
-  "AGNC": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": 1670000000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": 863000000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 31390234.2249,
-      "dividend_per_share": 0.12,
-      "ex_dividend_date": "2026-09-30",
-      "high_52_weeks": 12.19,
-      "payable_date": "2026-10-09",
-      "pe_ratio": 5.198007
-    },
-    "next_earnings_date": "2026-10-19",
-    "price": 9.91
-  },
-  "B": {
-    "financials_annual": [],
-    "fundamentals": {
-      "average_volume_30_days": 9302939.04893,
-      "high_52_weeks": 54.69,
-      "pe_ratio": 11.28746
-    },
-    "next_earnings_date": null,
-    "price": 42.49
-  },
-  "BMNR": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": 348577000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": -3293000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 46324714.9317,
-      "high_52_weeks": 65.6,
-      "pe_ratio": -3.22
-    },
-    "next_earnings_date": null,
-    "price": 27.46
-  },
-  "BSX": {
-    "financials_annual": [],
-    "fundamentals": {
-      "average_volume_30_days": 21853166.323,
-      "high_52_weeks": 105.65,
-      "pe_ratio": 18.093346
-    },
-    "next_earnings_date": "2026-10-28",
-    "price": 44.62
-  },
-  "CCL": {
-    "financials_annual": [],
-    "fundamentals": {
-      "average_volume_30_days": 21678242.9839,
-      "high_52_weeks": 34.03,
-      "pe_ratio": 9.818051
-    },
-    "next_earnings_date": "2026-09-28",
-    "price": 21.8
-  },
-  "CMCSA": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": 19998000000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": 16192000000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 27864040.7172,
-      "high_52_weeks": 32.855,
-      "pe_ratio": 7.259892
-    },
-    "next_earnings_date": "2026-10-22",
-    "price": 22.55
-  },
-  "CMG": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": 1535761000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": 1534110000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 12580686.7775,
-      "high_52_weeks": 42.815,
-      "pe_ratio": 30.172493
-    },
-    "next_earnings_date": "2026-10-28",
-    "price": 32.71
-  },
-  "DKNG": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": 3710000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": -507285000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 11300429.5596,
-      "high_52_weeks": 43.66,
-      "pe_ratio": -57.05
-    },
-    "next_earnings_date": "2026-11-05",
-    "price": 21.25
-  },
-  "ET": {
-    "financials_annual": [],
-    "fundamentals": {
-      "average_volume_30_days": 7612664.46435,
-      "high_52_weeks": 21.84,
-      "pe_ratio": 14.039054
-    },
-    "next_earnings_date": "2026-11-04",
-    "price": 20.49
-  },
-  "F": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": -8162000000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": 5879000000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 47559972.9431,
-      "high_52_weeks": 17.78,
-      "pe_ratio": -7.48
-    },
-    "next_earnings_date": "2026-10-22",
-    "price": 12.94
-  },
-  "FHN": {
-    "financials_annual": [],
-    "fundamentals": {
-      "average_volume_30_days": 4695426.9195,
-      "high_52_weeks": 26.56,
-      "pe_ratio": 11.05296
-    },
-    "next_earnings_date": "2026-10-15",
-    "price": 23.02
-  },
-  "FIG": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": -1250463000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 15087933.0609,
-      "high_52_weeks": 71.48,
-      "pe_ratio": -7.1
-    },
-    "next_earnings_date": "2026-11-04",
-    "price": 21.76
-  },
-  "HBAN": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": 2211000000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": 1940000000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 26769255.5109,
-      "high_52_weeks": 19.455,
-      "pe_ratio": 11.856306
-    },
-    "next_earnings_date": "2026-10-16",
-    "price": 15.38
-  },
-  "HPE": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": 57000000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": 2579000000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 26066650.4352,
-      "high_52_weeks": 64.25,
-      "pe_ratio": 31.822922
-    },
-    "next_earnings_date": null,
-    "price": 62.33
-  },
-  "HPQ": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": 2529000000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": 2775000000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 18079776.8221,
-      "high_52_weeks": 36.225,
-      "pe_ratio": 12.215487
-    },
-    "next_earnings_date": null,
-    "price": 32.16
-  },
-  "IONQ": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": -510378000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": -331647000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 21230306.6015,
-      "high_52_weeks": 84.64,
-      "pe_ratio": -9.36
-    },
-    "next_earnings_date": "2026-11-04",
-    "price": 42.54
-  },
-  "IREN": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2026,
-        "net_income": -702621000.0
-      },
-      {
-        "fiscal_year": 2025,
-        "net_income": 86941000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 40135386.8425,
-      "high_52_weeks": 76.87,
-      "pe_ratio": -23.75
-    },
-    "next_earnings_date": "2026-11-05",
-    "price": 47.05
-  },
-  "JD": {
-    "financials_annual": [],
-    "fundamentals": {
-      "average_volume_30_days": 5794566.18614,
-      "high_52_weeks": 36.86,
-      "pe_ratio": 18.466311
-    },
-    "next_earnings_date": null,
-    "price": 27.16
-  },
-  "KMI": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": 3056000000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": 2613000000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 12978161.5346,
-      "high_52_weeks": 34.805,
-      "pe_ratio": 20.171591
-    },
-    "next_earnings_date": "2026-10-21",
-    "price": 31.37
-  },
-  "KSS": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2026,
-        "net_income": 272000000.0
-      },
-      {
-        "fiscal_year": 2025,
-        "net_income": 109000000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 4709866.19012,
-      "high_52_weeks": 25.22,
-      "pe_ratio": 7.432609
-    },
-    "next_earnings_date": null,
-    "price": 17.04
-  },
-  "LYFT": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": 2844008000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": 22784000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 10342922.2194,
-      "high_52_weeks": 25.54,
-      "pe_ratio": 2.065676
-    },
-    "next_earnings_date": "2026-11-04",
-    "price": 14.77
-  },
-  "M": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2026,
-        "net_income": 642000000.0
-      },
-      {
-        "fiscal_year": 2025,
-        "net_income": 582000000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 6752119.79595,
-      "high_52_weeks": 26.585,
-      "pe_ratio": 8.125982
-    },
-    "next_earnings_date": null,
-    "price": 22.24
-  },
-  "MRNA": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": -2822000000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": -3561000000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 18886542.624,
-      "high_52_weeks": 192.31,
-      "pe_ratio": -22.81
-    },
-    "next_earnings_date": "2026-11-05",
-    "price": 182.11
-  },
-  "NKE": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2026,
-        "net_income": 3108000000.0
-      },
-      {
-        "fiscal_year": 2025,
-        "net_income": 3219000000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 32111115.9829,
-      "high_52_weeks": 76.97,
-      "pe_ratio": 17.201944
-    },
-    "next_earnings_date": "2026-10-01",
-    "price": 36.05
-  },
-  "NOK": {
-    "financials_annual": [],
-    "fundamentals": {
-      "average_volume_30_days": 81804900.1258,
-      "high_52_weeks": 17.45,
-      "pe_ratio": 71.921516
-    },
-    "next_earnings_date": "2026-10-22",
-    "price": 10.63
-  },
-  "NU": {
-    "financials_annual": [],
-    "fundamentals": {
-      "average_volume_30_days": 68086138.0624,
-      "high_52_weeks": 18.98,
-      "pe_ratio": 18.323692
-    },
-    "next_earnings_date": null,
-    "price": 13.62
-  },
-  "NVO": {
-    "financials_annual": [],
-    "fundamentals": {
-      "average_volume_30_days": 12755275.6512,
-      "high_52_weeks": 64.16,
-      "pe_ratio": 9.617732
-    },
-    "next_earnings_date": "2026-11-04",
-    "price": 38.17
-  },
-  "OWL": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": 78833000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": 109584000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 18449156.0211,
-      "high_52_weeks": 18.7777,
-      "pe_ratio": 121.36536
-    },
-    "next_earnings_date": "2026-10-29",
-    "price": 9.6
-  },
-  "PBR": {
-    "financials_annual": [],
-    "fundamentals": {
-      "average_volume_30_days": 23288650.307,
-      "high_52_weeks": 22.24,
-      "pe_ratio": 5.346755
-    },
-    "next_earnings_date": null,
-    "price": 21.14
-  },
-  "PCG": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": 2703000000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": 2512000000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 55922594.4436,
-      "high_52_weeks": 19.155,
-      "pe_ratio": 9.395288
-    },
-    "next_earnings_date": "2026-10-22",
-    "price": 12.41
-  },
-  "PFE": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": 7771000000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": 8031000000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 33254821.7851,
-      "high_52_weeks": 29.21,
-      "pe_ratio": 36.983581
-    },
-    "next_earnings_date": "2026-11-03",
-    "price": 28.18
-  },
-  "PYPL": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": 5233000000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": 4147000000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 13649917.8701,
-      "high_52_weeks": 79.215,
-      "pe_ratio": 9.9229
-    },
-    "next_earnings_date": "2026-10-27",
-    "price": 52.51
-  },
-  "QXO": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": -279400000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": 27969000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 16175027.662,
-      "high_52_weeks": 27.61,
-      "pe_ratio": -13.74
-    },
-    "next_earnings_date": "2026-11-05",
-    "price": 12.28
-  },
-  "RBLX": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": -1065057000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": -935384000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 10260255.708,
-      "high_52_weeks": 141.9999,
-      "pe_ratio": -34.6
-    },
-    "next_earnings_date": "2026-10-29",
-    "price": 48.99
-  },
-  "RIVN": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": -3646000000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": -4747000000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 20824076.6636,
-      "high_52_weeks": 22.69,
-      "pe_ratio": -5.82
-    },
-    "next_earnings_date": "2026-11-03",
-    "price": 15.02
-  },
-  "RKT": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": -68000000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": 29370000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 30584443.7572,
-      "high_52_weeks": 24.36,
-      "pe_ratio": 84.763806
-    },
-    "next_earnings_date": "2026-10-29",
-    "price": 12.15
-  },
-  "SIRI": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2025,
-        "net_income": 805000000.0
-      },
-      {
-        "fiscal_year": 2024,
-        "net_income": -1665000000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 4113971.31745,
-      "high_52_weeks": 32.66,
-      "pe_ratio": 10.449819
-    },
-    "next_earnings_date": "2026-10-29",
-    "price": 26.28
-  },
-  "SMCI": {
-    "financials_annual": [
-      {
-        "fiscal_year": 2026,
-        "net_income": 2230453000.0
-      },
-      {
-        "fiscal_year": 2025,
-        "net_income": 1048854000.0
-      }
-    ],
-    "fundamentals": {
-      "average_volume_30_days": 38112416.3283,
-      "high_52_weeks": 58.78,
-      "pe_ratio": 12.729618
-    },
-    "next_earnings_date": "2026-11-03",
-    "price": 41.44
+    "next_earnings_date": "2026-11-05"
   },
   "SOFI": {
+    "fundamentals": {
+      "average_volume_30_days": 44556514.1289,
+      "average_volume": 53398148.089,
+      "pe_ratio": 33.54417,
+      "high_52_weeks": 32.73
+    },
+    "price": 16.1401,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "net_income": 481320000.0
+        "net_income": 481320000.0,
+        "revenue": 3613354000.0
       },
       {
         "fiscal_year": 2024,
-        "net_income": 498665000.0
+        "net_income": 498665000.0,
+        "revenue": 2674859000.0
       }
     ],
-    "fundamentals": {
-      "average_volume_30_days": 43301389.7481,
-      "high_52_weeks": 32.73,
-      "pe_ratio": 34.893527
-    },
-    "next_earnings_date": "2026-10-27",
-    "price": 16.55
+    "next_earnings_date": "2026-10-27"
   },
-  "STM": {
-    "financials_annual": [],
+  "NOK": {
     "fundamentals": {
-      "average_volume_30_days": 7787809.0387,
-      "high_52_weeks": 81.42,
-      "pe_ratio": 104.072486
+      "average_volume_30_days": 84843847.1733,
+      "average_volume": 93229086.309079,
+      "pe_ratio": 70.094723,
+      "high_52_weeks": 17.45
     },
-    "next_earnings_date": "2026-10-29",
-    "price": 52.46
+    "price": 10.335,
+    "financials_annual": null,
+    "next_earnings_date": "2026-10-22"
+  },
+  "PCG": {
+    "fundamentals": {
+      "average_volume_30_days": 56645525.0032,
+      "average_volume": 40003060.154042,
+      "pe_ratio": 8.884674,
+      "high_52_weeks": 19.155
+    },
+    "price": 12.175,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": 2703000000.0,
+        "revenue": 24935000000.0
+      },
+      {
+        "fiscal_year": 2024,
+        "net_income": 2512000000.0,
+        "revenue": 24419000000.0
+      }
+    ],
+    "next_earnings_date": "2026-10-22"
+  },
+  "IREN": {
+    "fundamentals": {
+      "average_volume_30_days": 36644239.4431,
+      "average_volume": 36513679.379342,
+      "pe_ratio": -20.89,
+      "high_52_weeks": 76.87
+    },
+    "price": 41.525,
+    "financials_annual": [
+      {
+        "fiscal_year": 2026,
+        "net_income": -702621000.0,
+        "revenue": 707007000.0
+      },
+      {
+        "fiscal_year": 2025,
+        "net_income": 86941000.0,
+        "revenue": 501023000.0
+      }
+    ],
+    "next_earnings_date": "2026-11-05"
+  },
+  "SMCI": {
+    "fundamentals": {
+      "average_volume_30_days": 37375691.0883,
+      "average_volume": 40030291.079876,
+      "pe_ratio": 12.600602,
+      "high_52_weeks": 58.78
+    },
+    "price": 41.08,
+    "financials_annual": [
+      {
+        "fiscal_year": 2026,
+        "net_income": 2230453000.0,
+        "revenue": 39063072000.0
+      },
+      {
+        "fiscal_year": 2025,
+        "net_income": 1048854000.0,
+        "revenue": 21972042000.0
+      }
+    ],
+    "next_earnings_date": "2026-11-03"
+  },
+  "ET": {
+    "fundamentals": {
+      "average_volume_30_days": 8469749.05378,
+      "average_volume": 9661111.95229,
+      "pe_ratio": 13.641658,
+      "high_52_weeks": 21.84
+    },
+    "price": 19.94,
+    "financials_annual": null,
+    "next_earnings_date": "2026-11-04"
+  },
+  "PFE": {
+    "fundamentals": {
+      "average_volume_30_days": 33486418.2587,
+      "average_volume": 34071040.006532,
+      "pe_ratio": 38.029661,
+      "high_52_weeks": 29.21
+    },
+    "price": 28.575,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": 7771000000.0,
+        "revenue": 62579000000.0
+      },
+      {
+        "fiscal_year": 2024,
+        "net_income": 8031000000.0,
+        "revenue": 63627000000.0
+      }
+    ],
+    "next_earnings_date": "2026-11-03"
+  },
+  "BMNR": {
+    "fundamentals": {
+      "average_volume_30_days": 41456652.9431,
+      "average_volume": 40311015.101854,
+      "pe_ratio": -3.13,
+      "high_52_weeks": 65.6
+    },
+    "price": 26.915,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": 348577000.0,
+        "revenue": 6095000.0
+      },
+      {
+        "fiscal_year": 2024,
+        "net_income": -3293000.0,
+        "revenue": 3310348.0
+      }
+    ],
+    "next_earnings_date": null
+  },
+  "RIVN": {
+    "fundamentals": {
+      "average_volume_30_days": 21172263.7576,
+      "average_volume": 25058052.446792,
+      "pe_ratio": -5.8,
+      "high_52_weeks": 22.69
+    },
+    "price": 15.2701,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": -3646000000.0,
+        "revenue": 5387000000.0
+      },
+      {
+        "fiscal_year": 2024,
+        "net_income": -4747000000.0,
+        "revenue": 4970000000.0
+      }
+    ],
+    "next_earnings_date": "2026-11-03"
+  },
+  "CMG": {
+    "fundamentals": {
+      "average_volume_30_days": 13627677.683,
+      "average_volume": 16123041.920767,
+      "pe_ratio": 29.406881,
+      "high_52_weeks": 42.815
+    },
+    "price": 31.815,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": 1535761000.0,
+        "revenue": 11925601000.0
+      },
+      {
+        "fiscal_year": 2024,
+        "net_income": 1534110000.0,
+        "revenue": 11313853000.0
+      }
+    ],
+    "next_earnings_date": "2026-10-28"
+  },
+  "NKE": {
+    "fundamentals": {
+      "average_volume_30_days": 32544195.5244,
+      "average_volume": 38342193.806415,
+      "pe_ratio": 17.078052,
+      "high_52_weeks": 76.97
+    },
+    "price": 35.81,
+    "financials_annual": [
+      {
+        "fiscal_year": 2026,
+        "net_income": 3108000000.0,
+        "revenue": 46398000000.0
+      },
+      {
+        "fiscal_year": 2025,
+        "net_income": 3219000000.0,
+        "revenue": 46309000000.0
+      }
+    ],
+    "next_earnings_date": "2026-10-01"
+  },
+  "QXO": {
+    "fundamentals": {
+      "average_volume_30_days": 18543042.4396,
+      "average_volume": 22118777.093086,
+      "pe_ratio": -13.0,
+      "high_52_weeks": 27.61
+    },
+    "price": 11.805,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": -279400000.0,
+        "revenue": 6842200000.0
+      },
+      {
+        "fiscal_year": 2024,
+        "net_income": 27969000.0,
+        "revenue": 56873000.0
+      }
+    ],
+    "next_earnings_date": "2026-11-05"
+  },
+  "PYPL": {
+    "fundamentals": {
+      "average_volume_30_days": 12920373.8401,
+      "average_volume": 13994886.638555,
+      "pe_ratio": 10.18368,
+      "high_52_weeks": 79.215
+    },
+    "price": 53.695,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": 5233000000.0,
+        "revenue": 33172000000.0
+      },
+      {
+        "fiscal_year": 2024,
+        "net_income": 4147000000.0,
+        "revenue": 31797000000.0
+      }
+    ],
+    "next_earnings_date": "2026-10-27"
+  },
+  "AAL": {
+    "fundamentals": {
+      "average_volume_30_days": 70383812.4103,
+      "average_volume": 77067488.456209,
+      "pe_ratio": -27.57,
+      "high_52_weeks": 18.79
+    },
+    "price": 13.5,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": 111000000.0,
+        "revenue": 54633000000.0
+      },
+      {
+        "fiscal_year": 2024,
+        "net_income": 846000000.0,
+        "revenue": 54211000000.0
+      }
+    ],
+    "next_earnings_date": "2026-10-22"
   },
   "T": {
+    "fundamentals": {
+      "average_volume_30_days": 38204925.2288,
+      "average_volume": 39481382.299004,
+      "pe_ratio": 8.095506,
+      "high_52_weeks": 29.435
+    },
+    "price": 24.47,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "net_income": 21953000000.0
+        "net_income": 21953000000.0,
+        "revenue": 125648000000.0
       },
       {
         "fiscal_year": 2024,
-        "net_income": 10948000000.0
+        "net_income": 10948000000.0,
+        "revenue": 122336000000.0
       }
     ],
-    "fundamentals": {
-      "average_volume_30_days": 36893788.1082,
-      "high_52_weeks": 29.435,
-      "pe_ratio": 8.366679
-    },
-    "next_earnings_date": "2026-10-21",
-    "price": 25.3
+    "next_earnings_date": "2026-10-21"
   },
-  "U": {
+  "IONQ": {
+    "fundamentals": {
+      "average_volume_30_days": 24475584.4477,
+      "average_volume": 29077796.416076,
+      "pe_ratio": -9.66,
+      "high_52_weeks": 84.64
+    },
+    "price": 47.215,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "net_income": -402765000.0
+        "net_income": -510378000.0,
+        "revenue": 130016000.0
       },
       {
         "fiscal_year": 2024,
-        "net_income": -664114000.0
+        "net_income": -331647000.0,
+        "revenue": 43073000.0
       }
     ],
-    "fundamentals": {
-      "average_volume_30_days": 8715015.54243,
-      "high_52_weeks": 52.15,
-      "pe_ratio": -32.39
-    },
-    "next_earnings_date": "2026-11-04",
-    "price": 44.1
+    "next_earnings_date": "2026-11-04"
   },
-  "VALE": {
-    "financials_annual": [],
+  "NU": {
     "fundamentals": {
-      "average_volume_30_days": 30076313.8474,
-      "high_52_weeks": 17.94,
-      "pe_ratio": 29.02142
+      "average_volume_30_days": 73339210.3052,
+      "average_volume": 77245389.451334,
+      "pe_ratio": 16.615095,
+      "high_52_weeks": 18.98
     },
-    "next_earnings_date": "2026-10-29",
-    "price": 13.82
+    "price": 12.3437,
+    "financials_annual": null,
+    "next_earnings_date": "2026-11-12"
+  },
+  "RKT": {
+    "fundamentals": {
+      "average_volume_30_days": 34342820.4659,
+      "average_volume": 45787567.097254,
+      "pe_ratio": 77.777778,
+      "high_52_weeks": 24.36
+    },
+    "price": 11.725,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": -68000000.0,
+        "revenue": null
+      },
+      {
+        "fiscal_year": 2024,
+        "net_income": 29370000.0,
+        "revenue": null
+      }
+    ],
+    "next_earnings_date": "2026-10-29"
+  },
+  "F": {
+    "fundamentals": {
+      "average_volume_30_days": 48509351.0849,
+      "average_volume": 50909407.91307,
+      "pe_ratio": -7.11,
+      "high_52_weeks": 17.78
+    },
+    "price": 12.2695,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": -8162000000.0,
+        "revenue": 187267000000.0
+      },
+      {
+        "fiscal_year": 2024,
+        "net_income": 5879000000.0,
+        "revenue": 184992000000.0
+      }
+    ],
+    "next_earnings_date": "2026-10-22"
   },
   "VZ": {
+    "fundamentals": {
+      "average_volume_30_days": 21180402.2956,
+      "average_volume": 24268543.265967,
+      "pe_ratio": 11.973958,
+      "high_52_weeks": 51.68
+    },
+    "price": 45.775,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "net_income": 17174000000.0
+        "net_income": 17174000000.0,
+        "revenue": 138191000000.0
       },
       {
         "fiscal_year": 2024,
-        "net_income": 17506000000.0
+        "net_income": 17506000000.0,
+        "revenue": 134788000000.0
       }
     ],
-    "fundamentals": {
-      "average_volume_30_days": 21273414.7596,
-      "high_52_weeks": 51.68,
-      "pe_ratio": 12.114583
-    },
-    "next_earnings_date": "2026-10-28",
-    "price": 46.52
+    "next_earnings_date": "2026-10-26"
   },
-  "WBD": {
+  "AGNC": {
+    "fundamentals": {
+      "average_volume_30_days": 37179050.4682,
+      "average_volume": 50911690.740247,
+      "pe_ratio": 4.956727,
+      "high_52_weeks": 12.19
+    },
+    "price": 9.335,
     "financials_annual": [
       {
         "fiscal_year": 2025,
-        "net_income": 727000000.0
+        "net_income": 1670000000.0,
+        "revenue": null
       },
       {
         "fiscal_year": 2024,
-        "net_income": -11311000000.0
+        "net_income": 863000000.0,
+        "revenue": null
       }
     ],
+    "next_earnings_date": "2026-10-19"
+  },
+  "CMCSA": {
     "fundamentals": {
-      "average_volume_30_days": 37007999.9794,
-      "high_52_weeks": 30.92,
-      "pe_ratio": -24.16
+      "average_volume_30_days": 30968842.2783,
+      "average_volume": 37058597.169969,
+      "pe_ratio": 6.994366,
+      "high_52_weeks": 32.855
     },
-    "next_earnings_date": "2026-11-05",
-    "price": 30.76
+    "price": 21.84,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": 19998000000.0,
+        "revenue": 123707000000.0
+      },
+      {
+        "fiscal_year": 2024,
+        "net_income": 16192000000.0,
+        "revenue": 123731000000.0
+      }
+    ],
+    "next_earnings_date": "2026-10-22"
+  },
+  "NVO": {
+    "fundamentals": {
+      "average_volume_30_days": 13141254.5671,
+      "average_volume": 17818740.52475,
+      "pe_ratio": 9.351657,
+      "high_52_weeks": 64.16
+    },
+    "price": 38.064,
+    "financials_annual": null,
+    "next_earnings_date": "2026-11-04"
+  },
+  "FHN": {
+    "fundamentals": {
+      "average_volume_30_days": 4968148.09838,
+      "average_volume": 5176276.414318,
+      "pe_ratio": 11.091372,
+      "high_52_weeks": 26.56
+    },
+    "price": 23.13,
+    "financials_annual": null,
+    "next_earnings_date": "2026-10-15"
+  },
+  "PBR": {
+    "fundamentals": {
+      "average_volume_30_days": 21865183.5477,
+      "average_volume": 18947623.176589,
+      "pe_ratio": 5.222824,
+      "high_52_weeks": 22.24
+    },
+    "price": 20.945,
+    "financials_annual": null,
+    "next_earnings_date": "2026-11-10"
+  },
+  "VALE": {
+    "fundamentals": {
+      "average_volume_30_days": 29175952.4399,
+      "average_volume": 26847757.019038,
+      "pe_ratio": 28.538429,
+      "high_52_weeks": 17.94
+    },
+    "price": 13.535,
+    "financials_annual": null,
+    "next_earnings_date": "2026-10-29"
+  },
+  "U": {
+    "fundamentals": {
+      "average_volume_30_days": 10251602.6124,
+      "average_volume": 11931800.07812,
+      "pe_ratio": -29.17,
+      "high_52_weeks": 52.15
+    },
+    "price": 41.025,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": -402765000.0,
+        "revenue": 1849648000.0
+      },
+      {
+        "fiscal_year": 2024,
+        "net_income": -664114000.0,
+        "revenue": 1813255000.0
+      }
+    ],
+    "next_earnings_date": "2026-11-04"
+  },
+  "OWL": {
+    "fundamentals": {
+      "average_volume_30_days": 19932767.948,
+      "average_volume": 17632093.543181,
+      "pe_ratio": 117.319848,
+      "high_52_weeks": 17.58
+    },
+    "price": 9.27,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": 78833000.0,
+        "revenue": 2870178000.0
+      },
+      {
+        "fiscal_year": 2024,
+        "net_income": 109584000.0,
+        "revenue": 2295427000.0
+      }
+    ],
+    "next_earnings_date": "2026-10-29"
+  },
+  "BSX": {
+    "fundamentals": {
+      "average_volume_30_days": 20964413.7051,
+      "average_volume": 22386431.598164,
+      "pe_ratio": 17.793277,
+      "high_52_weeks": 105.65
+    },
+    "price": 43.61,
+    "financials_annual": null,
+    "next_earnings_date": "2026-10-28"
+  },
+  "HPE": {
+    "fundamentals": {
+      "average_volume_30_days": 27470542.4395,
+      "average_volume": 19298357.549034,
+      "pe_ratio": 32.06278,
+      "high_52_weeks": 67.1008
+    },
+    "price": 64.14,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": 57000000.0,
+        "revenue": 34296000000.0
+      },
+      {
+        "fiscal_year": 2024,
+        "net_income": 2579000000.0,
+        "revenue": 30127000000.0
+      }
+    ],
+    "next_earnings_date": null
+  },
+  "CCL": {
+    "fundamentals": {
+      "average_volume_30_days": 25900319.5118,
+      "average_volume": 31599473.862839,
+      "pe_ratio": 10.964587,
+      "high_52_weeks": 34.03
+    },
+    "price": 25.415,
+    "financials_annual": null,
+    "next_earnings_date": null
+  },
+  "RBLX": {
+    "fundamentals": {
+      "average_volume_30_days": 11856659.2899,
+      "average_volume": 13368022.349964,
+      "pe_ratio": -29.08,
+      "high_52_weeks": 141.95
+    },
+    "price": 42.705,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": -1065057000.0,
+        "revenue": 4890551000.0
+      },
+      {
+        "fiscal_year": 2024,
+        "net_income": -935384000.0,
+        "revenue": 3601979000.0
+      }
+    ],
+    "next_earnings_date": "2026-10-29"
+  },
+  "HPQ": {
+    "fundamentals": {
+      "average_volume_30_days": 16276582.2511,
+      "average_volume": 15978598.352544,
+      "pe_ratio": 11.716039,
+      "high_52_weeks": 36.225
+    },
+    "price": 30.76,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": 2529000000.0,
+        "revenue": 55295000000.0
+      },
+      {
+        "fiscal_year": 2024,
+        "net_income": 2775000000.0,
+        "revenue": 53559000000.0
+      }
+    ],
+    "next_earnings_date": null
+  },
+  "B": {
+    "fundamentals": {
+      "average_volume_30_days": 8619940.77889,
+      "average_volume": 8887299.94698,
+      "pe_ratio": 10.60836,
+      "high_52_weeks": 54.69
+    },
+    "price": 41.2601,
+    "financials_annual": null,
+    "next_earnings_date": "2026-11-09"
+  },
+  "JD": {
+    "fundamentals": {
+      "average_volume_30_days": 6098877.13934,
+      "average_volume": 5995188.197694,
+      "pe_ratio": 17.737911,
+      "high_52_weeks": 36.86
+    },
+    "price": 26.615,
+    "financials_annual": null,
+    "next_earnings_date": "2026-11-12"
+  },
+  "MRNA": {
+    "fundamentals": {
+      "average_volume_30_days": 15193132.9058,
+      "average_volume": 16821362.804072,
+      "pe_ratio": -25.48,
+      "high_52_weeks": 208.9032
+    },
+    "price": 189.43,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": -2822000000.0,
+        "revenue": 1944000000.0
+      },
+      {
+        "fiscal_year": 2024,
+        "net_income": -3561000000.0,
+        "revenue": 3236000000.0
+      }
+    ],
+    "next_earnings_date": "2026-11-05"
+  },
+  "DKNG": {
+    "fundamentals": {
+      "average_volume_30_days": 13245913.8755,
+      "average_volume": 17755442.967707,
+      "pe_ratio": -52.59,
+      "high_52_weeks": 41.94
+    },
+    "price": 19.7227,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": 3710000.0,
+        "revenue": 6054525000.0
+      },
+      {
+        "fiscal_year": 2024,
+        "net_income": -507285000.0,
+        "revenue": 4767699000.0
+      }
+    ],
+    "next_earnings_date": "2026-11-05"
+  },
+  "STM": {
+    "fundamentals": {
+      "average_volume_30_days": 8304901.24185,
+      "average_volume": 9138474.193594,
+      "pe_ratio": 103.741231,
+      "high_52_weeks": 81.42
+    },
+    "price": 53.195,
+    "financials_annual": null,
+    "next_earnings_date": "2026-10-29"
+  },
+  "FIG": {
+    "fundamentals": {
+      "average_volume_30_days": 14211255.873,
+      "average_volume": 13435442.345459,
+      "pe_ratio": -6.76,
+      "high_52_weeks": 71.48
+    },
+    "price": 21.245,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": -1250463000.0,
+        "revenue": 1055788000.0
+      }
+    ],
+    "next_earnings_date": "2026-11-04"
+  },
+  "HBAN": {
+    "fundamentals": {
+      "average_volume_30_days": 30054560.8131,
+      "average_volume": 38824438.758567,
+      "pe_ratio": 11.771508,
+      "high_52_weeks": 19.455
+    },
+    "price": 15.35,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": 2211000000.0,
+        "revenue": 1562000000.0
+      },
+      {
+        "fiscal_year": 2024,
+        "net_income": 1940000000.0,
+        "revenue": 1468000000.0
+      }
+    ],
+    "next_earnings_date": "2026-10-22"
+  },
+  "KSS": {
+    "fundamentals": {
+      "average_volume_30_days": 3993092.67803,
+      "average_volume": 3858073.591705,
+      "pe_ratio": 7.990927,
+      "high_52_weeks": 25.22
+    },
+    "price": 18.71,
+    "financials_annual": [
+      {
+        "fiscal_year": 2026,
+        "net_income": 272000000.0,
+        "revenue": 15527000000.0
+      },
+      {
+        "fiscal_year": 2025,
+        "net_income": 109000000.0,
+        "revenue": 16221000000.0
+      }
+    ],
+    "next_earnings_date": null
+  },
+  "LYFT": {
+    "fundamentals": {
+      "average_volume_30_days": 9818110.40303,
+      "average_volume": 8747146.109455,
+      "pe_ratio": 2.107633,
+      "high_52_weeks": 25.54
+    },
+    "price": 15.225,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": 2844008000.0,
+        "revenue": 6316261000.0
+      },
+      {
+        "fiscal_year": 2024,
+        "net_income": 22784000.0,
+        "revenue": 5786016000.0
+      }
+    ],
+    "next_earnings_date": "2026-11-04"
+  },
+  "M": {
+    "fundamentals": {
+      "average_volume_30_days": 6875052.76054,
+      "average_volume": 5953488.430863,
+      "pe_ratio": 8.50232,
+      "high_52_weeks": 26.585
+    },
+    "price": 23.145,
+    "financials_annual": [
+      {
+        "fiscal_year": 2026,
+        "net_income": 642000000.0,
+        "revenue": 22621000000.0
+      },
+      {
+        "fiscal_year": 2025,
+        "net_income": 582000000.0,
+        "revenue": 23006000000.0
+      }
+    ],
+    "next_earnings_date": null
+  },
+  "SIRI": {
+    "fundamentals": {
+      "average_volume_30_days": 4355034.8276,
+      "average_volume": 5068766.567986,
+      "pe_ratio": 10.146526,
+      "high_52_weeks": 32.66
+    },
+    "price": 25.88,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": 805000000.0,
+        "revenue": 8558000000.0
+      },
+      {
+        "fiscal_year": 2024,
+        "net_income": -1665000000.0,
+        "revenue": 8699000000.0
+      }
+    ],
+    "next_earnings_date": "2026-10-29"
+  },
+  "KMI": {
+    "fundamentals": {
+      "average_volume_30_days": 12859990.1347,
+      "average_volume": 13912193.837597,
+      "pe_ratio": 19.642627,
+      "high_52_weeks": 34.805
+    },
+    "price": 30.355,
+    "financials_annual": [
+      {
+        "fiscal_year": 2025,
+        "net_income": 3056000000.0,
+        "revenue": 16937000000.0
+      },
+      {
+        "fiscal_year": 2024,
+        "net_income": 2613000000.0,
+        "revenue": 15100000000.0
+      }
+    ],
+    "next_earnings_date": "2026-10-21"
   }
 }
