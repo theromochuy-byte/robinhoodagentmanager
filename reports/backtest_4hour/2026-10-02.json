@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-02",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 19,
+  "entries": [
+    {
+      "symbol": "ADI",
+      "type": "inverse_hns",
+      "neckline": 396.26,
+      "stop": 369.5044,
+      "target_2R": 456.1012,
+      "risk_per_share": 28.8656,
+      "shares": 0.9413,
+      "break_time": "2026-09-29T13:30:00Z",
+      "bars_since_break": 7,
+      "in_pullback": true,
+      "last_close": 416.225,
+      "last_bar_time": "2026-10-02T17:30:00Z",
+      "scan_date": "2026-10-02",
+      "entry": 416.225,
+      "entry_time": "2026-10-02T17:30:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 4
+}
