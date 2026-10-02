@@ -665,8 +665,9 @@ if __name__ == "__main__":
     if result["triggered_today"]:
         print(f"\n--- ENTRIES TODAY ---")
         for s in result["triggered_today"]:
+            entry = s.get('entry') or s.get('signal_price', 'pending')
             print(f"  {s['symbol']:<6} {s['type']:<14} "
-                  f"entry={s['entry']} stop={s['stop']} 2R={s['target_2R']} "
-                  f"shares={s['shares']} score={s.get('quality_score', 0):.4f}")
+                  f"entry={entry} stop={s['stop']} 2R={s.get('target_2R', 'n/a')} "
+                  f"shares={s.get('shares', 'n/a')} score={s.get('quality_score', 0):.4f}")
     else:
         print(f"\n  No entries triggered today.")
