@@ -51,6 +51,9 @@ VIX_HIGH_THRESHOLD  = 25.0  # skip new entries when VIX is elevated
 VIX_CACHE_FILE      = DATA / "vix_cache.json"
 SPY_RS_CACHE_FILE   = DATA / "spy_rs_cache.json"
 SPY_RS_CACHE_AGE    = 8 * 3600
+SPY_REGIME_CACHE_FILE = DATA / "spy_regime_cache.json"
+SPY_REGIME_CACHE_AGE  = 8 * 3600
+SPY_EMA_PERIOD        = 20  # daily bars
 
 # Sector ETF map: symbol prefix/membership → SPDR sector ETF
 # Covers the 11 GICS sectors; unmapped symbols are allowed through (no false blocks)
@@ -189,6 +192,42 @@ def _fetch_spy_20d_return() -> float | None:
         ret = (closes[-1] - closes[-21]) / closes[-21]
         SPY_RS_CACHE_FILE.write_text(json.dumps({"return_20d": ret, "fetched_at": time.time()}))
         return ret
+    except Exception:
+        return None
+
+
+def _fetch_spy_ema_bias() -> bool | None:
+    """Return True if SPY close > 20-day EMA (bull regime), False if not, None on failure.
+    Result cached for 8 hours to avoid repeated Yahoo fetches.
+    """
+    if SPY_REGIME_CACHE_FILE.exists():
+        age = time.time() - SPY_REGIME_CACHE_FILE.stat().st_mtime
+        if age < SPY_REGIME_CACHE_AGE:
+            val = json.loads(SPY_REGIME_CACHE_FILE.read_text()).get("bull_regime")
+            if val is not None:
+                return bool(val)
+    try:
+        bars_needed = SPY_EMA_PERIOD + 5
+        url = (f"https://query1.finance.yahoo.com/v8/finance/chart/SPY"
+               f"?interval=1d&range={bars_needed}d")
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            data = json.loads(resp.read())
+        closes = data["chart"]["result"][0]["indicators"]["quote"][0]["close"]
+        closes = [c for c in closes if c is not None]
+        if len(closes) < SPY_EMA_PERIOD:
+            return None
+        # Compute EMA(20) using standard multiplier
+        k = 2 / (SPY_EMA_PERIOD + 1)
+        ema_val = sum(closes[:SPY_EMA_PERIOD]) / SPY_EMA_PERIOD
+        for c in closes[SPY_EMA_PERIOD:]:
+            ema_val = c * k + ema_val * (1 - k)
+        bull = closes[-1] > ema_val
+        SPY_REGIME_CACHE_FILE.write_text(
+            json.dumps({"bull_regime": bull, "spy_close": closes[-1],
+                        "spy_ema20": round(ema_val, 4), "fetched_at": time.time()})
+        )
+        return bull
     except Exception:
         return None
 
@@ -493,6 +532,16 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         print("  [VIX] unavailable — proceeding without gate")
         high_vix = False
 
+    # SPY regime gate — skip new entries when SPY is below its 20-day EMA
+    spy_bull = _fetch_spy_ema_bias()
+    bear_regime = spy_bull is False  # None (unavailable) passes through
+    if spy_bull is True:
+        print("  [Regime] SPY above 20-day EMA — bull regime confirmed")
+    elif spy_bull is False:
+        print("  [Regime] SPY below 20-day EMA ⚠ BEAR REGIME — new entries blocked")
+    else:
+        print("  [Regime] SPY EMA unavailable — regime gate bypassed")
+
     # Recompute equity state from ledger before scanning
     equity_state = _recompute_equity()
     available    = equity_state["available_equity"]
@@ -575,6 +624,12 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
                             "quality_score": t.get("quality_score", 0),
                             "skip_reason": "high_vix"})
             mark_missed(t["symbol"], t["type"], t["break_time"], reason="high_vix")
+            continue
+        if bear_regime:
+            skipped.append({"symbol": t["symbol"], "type": t["type"],
+                            "quality_score": t.get("quality_score", 0),
+                            "skip_reason": "bear_regime"})
+            mark_missed(t["symbol"], t["type"], t["break_time"], reason="bear_regime")
             continue
         # Capital pre-check uses signal_price * shares as a rough estimate.
         # Actual cost is recomputed at fill time from the morning quote.
