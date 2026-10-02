@@ -58,7 +58,7 @@ def check_ledger_age(now: datetime) -> None:
         check(FAIL, "Ledger", "paper_trades_live.json not found")
         return
     age_h = (now.timestamp() - LEDGER.stat().st_mtime) / 3600
-    if age_h > 25:
+    if age_h > 13:
         check(FAIL, "Ledger", f"Last modified {age_h:.1f}h ago — CI may not be committing")
     else:
         check(OK, "Ledger", f"Last modified {age_h:.1f}h ago")
@@ -79,8 +79,8 @@ def check_position_freshness(trades: list, now: datetime) -> None:
             continue
         dt = datetime.fromisoformat(checked.replace("Z", "+00:00"))
         age_h = (now - dt).total_seconds() / 3600
-        if age_h > 25:
-            check(FAIL, "Freshness", f"{sym}: price last updated {age_h:.1f}h ago (>25h)")
+        if age_h > 13:
+            check(FAIL, "Freshness", f"{sym}: price last updated {age_h:.1f}h ago (>13h)")
         else:
             check(OK, "Freshness", f"{sym}: checked {age_h:.1f}h ago")
 
@@ -149,10 +149,10 @@ def check_pending_fills(trades: list, now: datetime) -> None:
         if sig:
             dt = datetime.fromisoformat(sig.replace("Z", "+00:00"))
             age_h = (now - dt).total_seconds() / 3600
-            level = FAIL if age_h > 25 else WARN
+            level = FAIL if age_h > 13 else WARN
             check(level, "Pending",
                   f"{sym}: pending_fill for {age_h:.1f}h — "
-                  + ("resolve_pending_fills() may have not run" if age_h > 25 else "ok if signal was tonight"))
+                  + ("resolve_pending_fills() may have not run" if age_h > 13 else "ok if signal was tonight"))
         else:
             check(WARN, "Pending", f"{sym}: pending_fill with no signal_time")
 
