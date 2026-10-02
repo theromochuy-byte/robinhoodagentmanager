@@ -73,7 +73,7 @@ Log all three so we can learn which exit rule performs best:
 - Proposed trades and their simulated outcomes go to `data/paper_ledger.json`.
 - Performance reports go to `reports/`: win rate, average R, expectancy, broken out by pattern and by exit rule.
 - Review cadence: weekly, or after every 20 logged trades, whichever comes first.
-- **Weekly check-in task (every Monday):** Compare live paper trading performance since switching the scanner to 1H entry timeframe. Pull up the current ledger state, summarize open positions, closed P&L, and win rate on 1H live trades vs the 4H backtest baseline (-0.74R avg). Flag any positions approaching their time stop (config: 12 trading days).
+- **Weekly check-in task (every Monday):** Run `python scripts/health_check.py` first to verify system health (ledger freshness, position prices, stop ladder, pending fills, module imports). Resolve any FAILs before proceeding. Then compare live paper trading performance since switching the scanner to 1H entry timeframe. Pull up the current ledger state, summarize open positions, closed P&L, and win rate on 1H live trades vs the 4H backtest baseline (-0.74R avg). Flag any positions approaching their time stop (config: 12 trading days).
 
 ## Go-live checklist
 
