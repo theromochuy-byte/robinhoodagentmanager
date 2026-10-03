@@ -1,0 +1,28 @@
+{
+  "date": "2026-04-07",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 9,
+  "entries": [
+    {
+      "symbol": "NFLX",
+      "type": "inverse_hns",
+      "neckline": 96.1,
+      "stop": 90.3194,
+      "target_2R": 107.8111,
+      "risk_per_share": 5.8306,
+      "shares": 3.9002,
+      "break_time": "2026-03-31T18:00:00Z",
+      "bars_since_break": 8,
+      "in_pullback": true,
+      "last_close": 98.85,
+      "last_bar_time": "2026-04-07T18:00:00Z",
+      "scan_date": "2026-04-07",
+      "entry": 98.85,
+      "entry_time": "2026-04-07T18:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 1
+}

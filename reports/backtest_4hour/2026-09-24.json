@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-24",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 15,
+  "entries": [
+    {
+      "symbol": "BIIB",
+      "type": "inverse_hns",
+      "neckline": 225.8,
+      "stop": 207.3787,
+      "target_2R": 268.0127,
+      "risk_per_share": 20.2113,
+      "shares": 1.4843,
+      "break_time": "2026-09-23T17:30:00Z",
+      "bars_since_break": 2,
+      "in_pullback": true,
+      "last_close": 226.43,
+      "last_bar_time": "2026-09-24T17:30:00Z",
+      "scan_date": "2026-09-24",
+      "entry": 226.43,
+      "entry_time": "2026-09-24T17:30:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 2
+}

@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-18",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 16,
+  "entries": [
+    {
+      "symbol": "WMT",
+      "type": "inverse_hns",
+      "neckline": 132.46,
+      "stop": 124.181,
+      "target_2R": 149.828,
+      "risk_per_share": 8.549,
+      "shares": 2.8253,
+      "break_time": "2026-05-14T14:00:00Z",
+      "bars_since_break": 5,
+      "in_pullback": true,
+      "last_close": 132.87,
+      "last_bar_time": "2026-05-18T18:00:00Z",
+      "scan_date": "2026-05-18",
+      "entry": 132.87,
+      "entry_time": "2026-05-18T18:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 0
+}
