@@ -19,7 +19,7 @@ import json
 import os
 import smtplib
 import sys
-from datetime import date
+from datetime import date, datetime, timezone
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from pathlib import Path
@@ -117,6 +117,16 @@ def build_digest(
         d2r_dollar, d2r_r   = _dist(target)
         dbe_dollar, dbe_r   = _dist(entry)   # distance to breakeven (entry price)
 
+        # Days held
+        entry_time_str = t.get("entry_time", "")
+        days_held = None
+        if entry_time_str:
+            try:
+                et = datetime.fromisoformat(entry_time_str.replace("Z", "+00:00"))
+                days_held = round((datetime.now(timezone.utc) - et).total_seconds() / 86400, 1)
+            except Exception:
+                pass
+
         open_positions.append({
             "symbol":        sym,
             "type":          t["type"],
@@ -134,6 +144,7 @@ def build_digest(
             "dist_to_1r":    {"dollar": d1r_dollar, "r": d1r_r},
             "dist_to_2r":    {"dollar": d2r_dollar, "r": d2r_r},
             "dist_to_be":    {"dollar": dbe_dollar, "r": dbe_r},
+            "days_held":     days_held,
         })
 
         if _pct_gap(price, stop) <= NEAR_PCT:
@@ -289,12 +300,22 @@ def render_html(digest: dict, scan_date: str) -> str:
             r1_cell = _milestone_cell(p.get("dist_to_1r"),  "1R",  p.get("touched_1r", False))
             r2_cell = _milestone_cell(p.get("dist_to_2r"),  "2R",  p.get("touched_2r", False))
 
+            dh = p.get("days_held")
+            dh_str = f"{dh:.1f}d" if dh is not None else "—"
+            from swing_agent.config import TIME_STOP_TRADING_DAYS
+            trading_days = dh * (5 / 7) if dh is not None else None
+            days_left = round(TIME_STOP_TRADING_DAYS - trading_days, 1) if trading_days is not None else None
+            dh_color = "#c00" if days_left is not None and days_left < 3 else "#555"
+            dh_cell = f"<span style='color:{dh_color}'>{dh_str} (~{days_left}td left)</span>" \
+                      if days_left is not None else dh_str
+
             rows.append([
                 f"{p['symbol']} {p['type']}{be_flag}",
                 f"${p['price']:.2f}",
                 f"${p['entry']:.2f}",
                 p["eff_stop_label"],
                 f"<span style='color:{pct_color}'>{pct_str} above stop</span>",
+                dh_cell,
                 be_cell,
                 r1_cell,
                 r2_cell,
@@ -302,7 +323,7 @@ def render_html(digest: dict, scan_date: str) -> str:
             ])
         parts.append("<h3 style='font-family:sans-serif'>📋 Open positions</h3>")
         parts.append(_html_table(rows, ["Position", "Price", "Entry", "Eff. Stop",
-                                        "Buffer", "→ BE", "→ 1R", "→ 2R", "Unreal. P&L"]))
+                                        "Buffer", "Held", "→ BE", "→ 1R", "→ 2R", "Unreal. P&L"]))
 
     # Near 2R
     near_2r = digest["near_2r"]
