@@ -102,6 +102,21 @@ def build_digest(
 
         pct_to_stop = (price - stop) / risk * 100 if risk else None
 
+        target_1r = t.get("target_1R", entry + risk) if risk else None
+        r_size    = risk  # dollar distance entry→stop = 1R
+
+        # Distance to each milestone (positive = still above, negative = already past)
+        def _dist(level):
+            if level is None or r_size == 0:
+                return None, None
+            dollar = level - price
+            r_dist  = dollar / r_size  # in R units
+            return round(dollar, 2), round(r_dist, 2)
+
+        d1r_dollar, d1r_r   = _dist(target_1r)
+        d2r_dollar, d2r_r   = _dist(target)
+        dbe_dollar, dbe_r   = _dist(entry)   # distance to breakeven (entry price)
+
         open_positions.append({
             "symbol":        sym,
             "type":          t["type"],
@@ -110,10 +125,15 @@ def build_digest(
             "price":         price,
             "stop":          stop,
             "eff_stop_label": eff_stop_label,
+            "target_1R":     target_1r,
             "target_2R":     target,
             "unrealized_pnl": round(upnl, 2),
             "pct_to_stop":   round(pct_to_stop, 1) if pct_to_stop is not None else None,
             "touched_1r":    t.get("touched_1r", False),
+            "touched_2r":    t.get("touched_2r", False),
+            "dist_to_1r":    {"dollar": d1r_dollar, "r": d1r_r},
+            "dist_to_2r":    {"dollar": d2r_dollar, "r": d2r_r},
+            "dist_to_be":    {"dollar": dbe_dollar, "r": dbe_r},
         })
 
         if _pct_gap(price, stop) <= NEAR_PCT:
@@ -249,21 +269,40 @@ def render_html(digest: dict, scan_date: str) -> str:
         for p in sorted(open_pos, key=lambda x: x["unrealized_pnl"]):
             upnl = p["unrealized_pnl"]
             upnl_str = f"<span style='color:{'#080' if upnl >= 0 else '#c00'}'>${upnl:+.2f}</span>"
-            be_flag = " ✓BE" if p.get("touched_1r") else ""
-            pct = p.get("pct_to_stop")
-            pct_str = f"{pct:.0f}%" if pct is not None else "—"
-            # Highlight danger zone
+            be_flag  = " ✓2R" if p.get("touched_2r") else (" ✓BE" if p.get("touched_1r") else "")
+            pct      = p.get("pct_to_stop")
+            pct_str  = f"{pct:.0f}%" if pct is not None else "—"
             pct_color = "#c00" if pct is not None and pct < 25 else "#333"
+
+            def _milestone_cell(dist: dict | None, label: str, already: bool) -> str:
+                if already:
+                    return f"<span style='color:#080'>✓ {label} hit</span>"
+                if dist is None or dist["dollar"] is None:
+                    return "—"
+                d, r = dist["dollar"], dist["r"]
+                color = "#080" if d <= 0 else "#555"
+                sign  = "+" if d <= 0 else ""
+                return f"<span style='color:{color}'>{sign}${abs(d):.2f} ({r:+.2f}R)</span>" if d <= 0 \
+                    else f"<span style='color:{color}'>${d:.2f} away ({r:.2f}R)</span>"
+
+            be_cell = _milestone_cell(p.get("dist_to_be"),  "BE",  p.get("touched_1r", False))
+            r1_cell = _milestone_cell(p.get("dist_to_1r"),  "1R",  p.get("touched_1r", False))
+            r2_cell = _milestone_cell(p.get("dist_to_2r"),  "2R",  p.get("touched_2r", False))
+
             rows.append([
                 f"{p['symbol']} {p['type']}{be_flag}",
                 f"${p['price']:.2f}",
                 f"${p['entry']:.2f}",
                 p["eff_stop_label"],
                 f"<span style='color:{pct_color}'>{pct_str} above stop</span>",
+                be_cell,
+                r1_cell,
+                r2_cell,
                 upnl_str,
             ])
         parts.append("<h3 style='font-family:sans-serif'>📋 Open positions</h3>")
-        parts.append(_html_table(rows, ["Position", "Price", "Entry", "Eff. Stop", "Buffer", "Unreal. P&L"]))
+        parts.append(_html_table(rows, ["Position", "Price", "Entry", "Eff. Stop",
+                                        "Buffer", "→ BE", "→ 1R", "→ 2R", "Unreal. P&L"]))
 
     # Near 2R
     near_2r = digest["near_2r"]
