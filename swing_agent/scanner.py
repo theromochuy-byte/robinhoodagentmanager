@@ -103,49 +103,93 @@ SECTOR_ETF_MAP: dict[str, str] = {
 SECTOR_ETF_CACHE_FILE = DATA / "sector_etf_cache.json"
 SECTOR_ETF_CACHE_AGE  = 8 * 3600  # 8 hours
 
-
-def _fetch_etf_price(ticker: str) -> float | None:
-    """Fetch latest close for a sector ETF via Yahoo Finance."""
-    try:
-        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}?interval=1d&range=5d"
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req, timeout=5) as resp:
-            data = json.loads(resp.read())
-        meta = data["chart"]["result"][0]["meta"]
-        return float(meta["regularMarketPrice"])
-    except Exception:
-        return None
+# Sector momentum stack thresholds
+# Score 0–3: weekly EMA20 (1pt) + daily EMA20 (1pt) + daily EMA8 (1pt)
+SECTOR_SCORE_MIN      = 2   # score < 2 → skip entirely
+SECTOR_SCORE_FULL     = 3   # score == 3 → full scan; score == 2 → capped entries
 
 
-def _load_sector_etf_bias() -> dict[str, bool]:
-    """Return {etf: is_bullish} for all sector ETFs, using cache when fresh.
+def _ema(closes: list[float], period: int) -> float:
+    """Compute EMA of the last values in closes over the given period."""
+    k = 2 / (period + 1)
+    val = closes[0]
+    for c in closes[1:]:
+        val = c * k + val * (1 - k)
+    return val
 
-    Bullish = ETF price > its 20-bar SMA (approximated via Yahoo Finance 60-day daily bars).
-    Falls back to allowing all sectors when the fetch fails.
+
+def _load_sector_etf_bias() -> dict[str, int]:
+    """Return {etf: score} for all sector ETFs, using cache when fresh.
+
+    Score 0–3 based on three momentum checks (far-to-near):
+      +1  Weekly EMA(20): weekly closes above 20-week EMA  → long-term uptrend
+      +1  Daily  EMA(20): daily close above 20-day EMA     → medium-term uptrend
+      +1  Daily  EMA(8):  daily close above 8-day EMA      → near-term thrust
+
+    Falls back to score=3 (allow through) when data is unavailable.
     """
     if SECTOR_ETF_CACHE_FILE.exists():
         age = time.time() - SECTOR_ETF_CACHE_FILE.stat().st_mtime
         if age < SECTOR_ETF_CACHE_AGE:
-            return json.loads(SECTOR_ETF_CACHE_FILE.read_text())
+            cached = json.loads(SECTOR_ETF_CACHE_FILE.read_text())
+            # Migrate old bool cache to int scores transparently
+            if cached and isinstance(next(iter(cached.values())), bool):
+                cached = {k: (3 if v else 0) for k, v in cached.items()}
+            return cached
 
     etfs = set(SECTOR_ETF_MAP.values())
-    result: dict[str, bool] = {}
+    result: dict[str, int] = {}
     for etf in sorted(etfs):
         try:
-            url = f"https://query1.finance.yahoo.com/v8/finance/chart/{etf}?interval=1d&range=60d"
+            # Fetch ~2 years of daily bars to derive weekly closes and all EMAs
+            url = (f"https://query1.finance.yahoo.com/v8/finance/chart/{etf}"
+                   f"?interval=1d&range=500d")
             req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, timeout=5) as resp:
+            with urllib.request.urlopen(req, timeout=8) as resp:
                 data = json.loads(resp.read())
-            closes = data["chart"]["result"][0]["indicators"]["quote"][0]["close"]
-            closes = [c for c in closes if c is not None]
-            if len(closes) < 20:
-                result[etf] = True  # not enough data — allow through
+            closes_raw = data["chart"]["result"][0]["indicators"]["quote"][0]["close"]
+            timestamps = data["chart"]["result"][0]["timestamps"]
+            closes_raw = [c for c in closes_raw if c is not None]
+            if len(closes_raw) < 40:
+                result[etf] = 3  # not enough data — allow through
                 continue
-            price = closes[-1]
-            sma20 = sum(closes[-20:]) / 20
-            result[etf] = price > sma20
+
+            price = closes_raw[-1]
+            score = 0
+
+            # Daily EMA(20) and EMA(8)
+            if len(closes_raw) >= 20:
+                d_ema20 = _ema(closes_raw[-60:], 20)
+                if price > d_ema20:
+                    score += 1
+            if len(closes_raw) >= 8:
+                d_ema8 = _ema(closes_raw[-30:], 8)
+                if price > d_ema8:
+                    score += 1
+
+            # Weekly EMA(20): resample daily closes to weekly (Friday close)
+            import datetime as _dt
+            weekly_closes: list[float] = []
+            week_closes_tmp: list[float] = []
+            for ts, c in zip(timestamps, closes_raw):
+                if c is None:
+                    continue
+                dow = _dt.datetime.utcfromtimestamp(ts).weekday()  # 0=Mon, 4=Fri
+                week_closes_tmp.append(c)
+                if dow == 4:  # Friday — record week close
+                    weekly_closes.append(week_closes_tmp[-1])
+                    week_closes_tmp = []
+            if week_closes_tmp:  # partial current week
+                weekly_closes.append(week_closes_tmp[-1])
+            if len(weekly_closes) >= 20:
+                w_ema20 = _ema(weekly_closes[-40:], 20)
+                if weekly_closes[-1] > w_ema20:
+                    score += 1
+
+            result[etf] = score
         except Exception:
-            result[etf] = True  # fetch failed — allow through
+            result[etf] = 3  # fetch failed — allow through
+
     SECTOR_ETF_CACHE_FILE.write_text(json.dumps(result))
     return result
 
@@ -500,20 +544,28 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
     if indicator_cache:
         print(f"  [Session] Live indicator cache loaded for {len(indicator_cache)} symbols")
 
-    # Sector ETF pre-filter — only scan symbols in bullish sectors
+    # Sector ETF momentum stack — score 0-3 (weekly EMA20 + daily EMA20 + daily EMA8)
     sector_bias = _load_sector_etf_bias()
-    bearish_etfs = [e for e, bull in sector_bias.items() if not bull]
-    if bearish_etfs:
-        print(f"  [Sector] Bearish ETFs: {', '.join(sorted(bearish_etfs))}")
+    for score_label, threshold in [(3, "Strong (3/3)"), (2, "Moderate (2/3)"),
+                                    (1, "Weak (1/3)"), (0, "Bearish (0/3)")]:
+        etfs_at = sorted(e for e, s in sector_bias.items() if s == score_label)
+        if etfs_at:
+            print(f"  [Sector] {threshold}: {', '.join(etfs_at)}")
     original_count = len(symbols)
     symbols = [
         s for s in symbols
-        if sector_bias.get(SECTOR_ETF_MAP.get(s, ""), True)  # unmapped symbols pass through
+        if sector_bias.get(SECTOR_ETF_MAP.get(s, ""), SECTOR_SCORE_FULL) >= SECTOR_SCORE_MIN
     ]
     filtered_out = original_count - len(symbols)
     if filtered_out:
-        print(f"  [Sector] Filtered {filtered_out} symbol(s) in bearish sectors "
+        print(f"  [Sector] Filtered {filtered_out} symbol(s) with sector score < {SECTOR_SCORE_MIN} "
               f"({original_count} → {len(symbols)})")
+
+    # Tag each symbol with its sector score for downstream priority
+    symbol_sector_score: dict[str, int] = {
+        s: sector_bias.get(SECTOR_ETF_MAP.get(s, ""), SECTOR_SCORE_FULL)
+        for s in symbols
+    }
 
     # Relative strength benchmark: SPY 20-day return
     spy_return = _fetch_spy_20d_return()
@@ -559,6 +611,9 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         result = scan_symbol(sym, starting, risk_pct,
                              indicator_cache=indicator_cache.get(sym),
                              spy_20d_return=spy_return)
+        sec_score = symbol_sector_score.get(sym, SECTOR_SCORE_FULL)
+        for s in result["watching"] + result["triggered"]:
+            s["sector_score"] = sec_score
         all_watching.extend(result["watching"])
         all_triggered.extend(result["triggered"])
 
@@ -598,13 +653,15 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
     new_candidates = sorted(
         [t for t in all_triggered
          if (t["symbol"], t.get("signal_time")) not in existing_keys],
-        key=lambda t: t.get("quality_score", 0),
+        key=lambda t: (t.get("sector_score", SECTOR_SCORE_FULL), t.get("quality_score", 0)),
         reverse=True,
     )
     if new_candidates:
         top = new_candidates[0]
-        print(f"  [Rank] {len(new_candidates)} new trigger(s) ranked by quality score — "
-              f"top: {top['symbol']} {top['type']} score={top.get('quality_score', 0):.4f}")
+        print(f"  [Rank] {len(new_candidates)} new trigger(s) ranked by sector score then "
+              f"quality score — top: {top['symbol']} {top['type']} "
+              f"sector={top.get('sector_score', SECTOR_SCORE_FULL)}/3 "
+              f"score={top.get('quality_score', 0):.4f}")
 
     entries_today = 0
     for t in already_open + new_candidates:
@@ -647,6 +704,14 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
                             "skip_reason": "daily_cap"})
             mark_missed(t["symbol"], t["type"], t["break_time"], reason="daily_cap")
             continue
+        # Moderate sector (2/3) — cap at 1 entry per day regardless of global cap
+        if t.get("sector_score", SECTOR_SCORE_FULL) < SECTOR_SCORE_FULL and entries_today >= 1:
+            skipped.append({"symbol": t["symbol"], "type": t["type"],
+                            "quality_score": t.get("quality_score", 0),
+                            "sector_score": t.get("sector_score"),
+                            "skip_reason": "sector_cap"})
+            mark_missed(t["symbol"], t["type"], t["break_time"], reason="sector_cap")
+            continue
         new_entries.append(t)
         entries_today += 1
         available = round(available - est_cost, 2)
@@ -665,10 +730,11 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         "scan_date":       today,
         "vix":             vix,
         "high_vix":        high_vix,
-        "sector_bias":     sector_bias,
+        "sector_scores":   sector_bias,
         "watching":        sorted(all_watching, key=lambda x: x["bars_since_break"]),
         "triggered_today": sorted(all_triggered,
-                                   key=lambda x: x.get("quality_score", 0), reverse=True),
+                                   key=lambda x: (x.get("sector_score", SECTOR_SCORE_FULL),
+                                                  x.get("quality_score", 0)), reverse=True),
         "new_entries":     len(new_entries),
         "skipped":         skipped,
         "total_open":      len([t for t in ledger if t.get("status") == "entered"]),
