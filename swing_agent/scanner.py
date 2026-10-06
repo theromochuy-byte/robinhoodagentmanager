@@ -35,6 +35,7 @@ from .patterns import detect_double_bottom, detect_inverse_hns, detect_cup_and_h
 from .simulator import build_trade
 from .watchlist import (
     upsert_watching, mark_triggered, mark_missed, expire_stale, watchlist_summary,
+    purge_legacy_entries,
 )
 
 ROOT        = Path(__file__).resolve().parent.parent
@@ -533,6 +534,9 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
     REPORTS.mkdir(exist_ok=True)
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
+    # Remove stale legacy watchlist entries (no scanner data) on first run of the day
+    purge_legacy_entries()
+
     # Session overrides: options-filtered universe and live indicator cache
     session_syms = _load_session_universe()
     if session_syms is not None:
@@ -747,6 +751,61 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
     }
     report_path = REPORTS / f"scan_{today}.json"
     report_path.write_text(json.dumps(report, indent=2))
+
+    # Write always-current scan summary — single file, overwritten every run
+    spy_regime_str = "bull" if spy_bull is True else ("bear" if spy_bull is False else "unknown")
+    watching_ranked = sorted(
+        all_watching,
+        key=lambda x: (x.get("sector_score", SECTOR_SCORE_FULL), x.get("quality_score", 0)),
+        reverse=True,
+    )
+    summary = {
+        "as_of":          datetime.now(timezone.utc).isoformat(),
+        "scan_date":      today,
+        "regime": {
+            "spy_ema20":  spy_regime_str,
+            "vix":        vix,
+            "high_vix":   high_vix,
+        },
+        "sector_scores":  sector_bias,
+        "watching": [
+            {
+                "symbol":        s["symbol"],
+                "type":          s["type"],
+                "sector_score":  s.get("sector_score", SECTOR_SCORE_FULL),
+                "quality_score": round(s.get("quality_score", 0), 4),
+                "bars_since_break": s.get("bars_since_break"),
+                "neckline":      s.get("neckline"),
+                "last_price":    s.get("last_close"),
+                "stop":          s.get("stop"),
+                "target_1R":     s.get("target_1R"),
+                "target_2R":     s.get("target_2R"),
+            }
+            for s in watching_ranked
+        ],
+        "triggered_today": [
+            {
+                "symbol":        t["symbol"],
+                "type":          t["type"],
+                "sector_score":  t.get("sector_score", SECTOR_SCORE_FULL),
+                "quality_score": round(t.get("quality_score", 0), 4),
+                "signal_price":  t.get("signal_price"),
+                "stop":          t.get("stop"),
+                "target_1R":     t.get("target_1R"),
+                "target_2R":     t.get("target_2R"),
+            }
+            for t in report["triggered_today"]
+        ],
+        "new_entries":    len(new_entries),
+        "skipped":        skipped,
+        "open_positions": report["total_open"],
+        "equity":         report["equity"],
+    }
+    SCAN_SUMMARY_FILE = DATA / "scan_summary.json"
+    SCAN_SUMMARY_FILE.write_text(json.dumps(summary, indent=2))
+    print(f"  [Summary] scan_summary.json updated ({len(all_watching)} watching, "
+          f"{len(report['triggered_today'])} triggered)")
+
     return report
 
 

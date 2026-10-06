@@ -16,7 +16,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 DATA = ROOT / "data"
-LEDGER = DATA / "paper_trades_live.json"
+LEDGER        = DATA / "paper_trades_live.json"
+SCAN_SUMMARY  = DATA / "scan_summary.json"
 
 WARN = "WARN"
 FAIL = "FAIL"
@@ -179,7 +180,36 @@ def check_field_integrity(trades: list) -> None:
             check(FAIL, "Integrity", f"{t['symbol']}: missing closed fields {missing}")
 
 
-# ── 8. Python imports ─────────────────────────────────────────────────────────
+# ── 8. Scan summary freshness ─────────────────────────────────────────────────
+
+def check_scan_summary(now: datetime) -> None:
+    if not SCAN_SUMMARY.exists():
+        check(WARN, "ScanSummary", "scan_summary.json not found — no scan has run yet")
+        return
+    age_h = (now.timestamp() - SCAN_SUMMARY.stat().st_mtime) / 3600
+    if age_h > 13:
+        check(FAIL, "ScanSummary", f"scan_summary.json is {age_h:.1f}h old — CI may not be scanning")
+        return
+    try:
+        summary = json.loads(SCAN_SUMMARY.read_text())
+        watching = summary.get("watching", [])
+        triggered = summary.get("triggered_today", [])
+        regime = summary.get("regime", {})
+        check(OK, "ScanSummary",
+              f"Updated {age_h:.1f}h ago | "
+              f"watching={len(watching)} triggered={len(triggered)} | "
+              f"SPY={regime.get('spy_ema20','?')} VIX={regime.get('vix','?')}")
+        if watching:
+            top = watching[0]
+            check(OK, "ScanSummary",
+                  f"Top setup: {top['symbol']} {top['type']} "
+                  f"score={top.get('quality_score',0):.3f} "
+                  f"sector={top.get('sector_score','?')}/3")
+    except Exception as e:
+        check(WARN, "ScanSummary", f"Could not parse scan_summary.json: {e}")
+
+
+# ── 9. Python imports ─────────────────────────────────────────────────────────
 
 def check_imports() -> None:
     for mod in ["swing_agent.scanner", "swing_agent.run_daily",
@@ -250,6 +280,7 @@ def main() -> int:
     check_time_stops(trades, now)
     check_pending_fills(trades, now)
     check_field_integrity(trades)
+    check_scan_summary(now)
     check_imports()
 
     # Print findings grouped by section
