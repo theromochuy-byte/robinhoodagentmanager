@@ -30842,7 +30842,7 @@
     "neckline": 230.47,
     "break_time": "2026-09-28T13:30:00Z",
     "first_seen": "2026-09-28T20:33:03.449956+00:00",
-    "status": "watching",
+    "status": "expired",
     "suggested_entry": 230.47,
     "suggested_entry_zone": [
       229.3176,
@@ -30907,6 +30907,11 @@
         "time": "2026-10-05T21:29:36.280389+00:00",
         "price": 239.11,
         "note": "update"
+      },
+      {
+        "time": "2026-10-06T19:31:26.051935+00:00",
+        "price": 239.11,
+        "note": "expired"
       }
     ],
     "trigger_time": null,
@@ -30914,7 +30919,7 @@
     "close_time": null,
     "close_price": null,
     "outcome": null,
-    "elapsed_watching_hours": null,
+    "elapsed_watching_hours": 191.0,
     "elapsed_total_hours": null
   },
   {
@@ -30959,6 +30964,11 @@
         "time": "2026-10-05T21:29:36.453127+00:00",
         "price": 419.51,
         "note": "update"
+      },
+      {
+        "time": "2026-10-06T19:31:25.879825+00:00",
+        "price": 422.325,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -31000,6 +31010,11 @@
       {
         "time": "2026-10-05T21:29:36.310158+00:00",
         "price": 631.91,
+        "note": "update"
+      },
+      {
+        "time": "2026-10-06T19:31:25.732569+00:00",
+        "price": 654.0425,
         "note": "update"
       }
     ],
@@ -31043,6 +31058,11 @@
         "time": "2026-10-05T21:29:36.337614+00:00",
         "price": 116.28,
         "note": "update"
+      },
+      {
+        "time": "2026-10-06T19:31:25.763395+00:00",
+        "price": 113.7649,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -31084,6 +31104,11 @@
       {
         "time": "2026-10-05T21:29:36.365682+00:00",
         "price": 406.83,
+        "note": "update"
+      },
+      {
+        "time": "2026-10-06T19:31:25.793318+00:00",
+        "price": 419.535,
         "note": "update"
       }
     ],
@@ -31127,6 +31152,11 @@
         "time": "2026-10-05T21:29:36.424919+00:00",
         "price": 419.51,
         "note": "update"
+      },
+      {
+        "time": "2026-10-06T19:31:25.850889+00:00",
+        "price": 422.325,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -31168,6 +31198,11 @@
       {
         "time": "2026-10-05T21:29:36.481274+00:00",
         "price": 295.07,
+        "note": "update"
+      },
+      {
+        "time": "2026-10-06T19:31:25.908478+00:00",
+        "price": 297.0,
         "note": "update"
       }
     ],
@@ -31211,6 +31246,11 @@
         "time": "2026-10-05T21:29:36.509771+00:00",
         "price": 184.2,
         "note": "update"
+      },
+      {
+        "time": "2026-10-06T19:31:25.965864+00:00",
+        "price": 189.82,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -31242,6 +31282,107 @@
       {
         "time": "2026-10-05T21:29:36.395411+00:00",
         "price": 359.63,
+        "note": "first_seen"
+      },
+      {
+        "time": "2026-10-06T19:31:25.822162+00:00",
+        "price": 355.7675,
+        "note": "update"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "MRVL__inverse_hns__2026-10-06T13:30:00Z",
+    "symbol": "MRVL",
+    "type": "inverse_hns",
+    "neckline": 280.0,
+    "break_time": "2026-10-06T13:30:00Z",
+    "first_seen": "2026-10-06T19:31:25.937143+00:00",
+    "status": "watching",
+    "suggested_entry": 280.0,
+    "suggested_entry_zone": [
+      278.6,
+      281.4
+    ],
+    "stop": 259.1533,
+    "target_1R": 322.2467,
+    "target_2R": 353.7935,
+    "risk_per_share": 31.5467,
+    "price_history": [
+      {
+        "time": "2026-10-06T19:31:25.937143+00:00",
+        "price": 286.72,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "DELL__inverse_hns__2026-10-06T13:30:00Z",
+    "symbol": "DELL",
+    "type": "inverse_hns",
+    "neckline": 573.8,
+    "break_time": "2026-10-06T13:30:00Z",
+    "first_seen": "2026-10-06T19:31:25.994475+00:00",
+    "status": "watching",
+    "suggested_entry": 573.8,
+    "suggested_entry_zone": [
+      570.931,
+      576.669
+    ],
+    "stop": 533.1073,
+    "target_1R": 624.8927,
+    "target_2R": 670.7854,
+    "risk_per_share": 45.8927,
+    "price_history": [
+      {
+        "time": "2026-10-06T19:31:25.994475+00:00",
+        "price": 575.945,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null
+  },
+  {
+    "id": "DELL__cup_and_handle__2026-10-06T13:30:00Z",
+    "symbol": "DELL",
+    "type": "cup_and_handle",
+    "neckline": 567.9999,
+    "break_time": "2026-10-06T13:30:00Z",
+    "first_seen": "2026-10-06T19:31:26.023175+00:00",
+    "status": "watching",
+    "suggested_entry": 567.9999,
+    "suggested_entry_zone": [
+      565.1599,
+      570.8399
+    ],
+    "stop": 533.1073,
+    "target_1R": 624.8927,
+    "target_2R": 670.7854,
+    "risk_per_share": 45.8927,
+    "price_history": [
+      {
+        "time": "2026-10-06T19:31:26.023175+00:00",
+        "price": 575.945,
         "note": "first_seen"
       }
     ],
