@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-07T19:59:16.523896+00:00",
+  "as_of": "2026-10-07T23:26:58.082558+00:00",
   "scan_date": "2026-10-07",
   "regime": {
     "spy_ema20": "bull",
@@ -27,22 +27,10 @@
       "quality_score": 0.2579,
       "bars_since_break": 27,
       "neckline": 638.95,
-      "last_price": 646.525,
+      "last_price": 645.83,
       "stop": 588.8956,
       "target_1R": 697.4846,
       "target_2R": 751.7791
-    },
-    {
-      "symbol": "TXN",
-      "type": "cup_and_handle",
-      "sector_score": 3,
-      "quality_score": 0.2431,
-      "bars_since_break": 27,
-      "neckline": 285.515,
-      "last_price": 289.58,
-      "stop": 271.5995,
-      "target_1R": 315.7805,
-      "target_2R": 337.871
     },
     {
       "symbol": "VLO",
@@ -51,7 +39,7 @@
       "quality_score": 0.1857,
       "bars_since_break": 33,
       "neckline": 398.88,
-      "last_price": 423.825,
+      "last_price": 424.01,
       "stop": 375.3465,
       "target_1R": 432.6135,
       "target_2R": 461.2471
@@ -63,7 +51,7 @@
       "quality_score": 0.1853,
       "bars_since_break": 33,
       "neckline": 398.505,
-      "last_price": 423.825,
+      "last_price": 424.01,
       "stop": 375.3465,
       "target_1R": 432.6135,
       "target_2R": 461.2471
@@ -75,7 +63,7 @@
       "quality_score": 0,
       "bars_since_break": 27,
       "neckline": 125.01,
-      "last_price": 113.3,
+      "last_price": 113.06,
       "stop": 114.4225,
       "target_1R": 136.0475,
       "target_2R": 146.8599
@@ -87,7 +75,7 @@
       "quality_score": 0,
       "bars_since_break": 27,
       "neckline": 404.6879,
-      "last_price": 405.9,
+      "last_price": 405.41,
       "stop": 378.9481,
       "target_1R": 432.9519,
       "target_2R": 459.9539
@@ -99,10 +87,22 @@
       "quality_score": 0,
       "bars_since_break": 20,
       "neckline": 357.6399,
-      "last_price": 342.31,
+      "last_price": 342.82,
       "stop": 338.9469,
       "target_1R": 385.0531,
       "target_2R": 408.1062
+    },
+    {
+      "symbol": "TXN",
+      "type": "cup_and_handle",
+      "sector_score": 3,
+      "quality_score": 0,
+      "bars_since_break": 27,
+      "neckline": 285.515,
+      "last_price": 288.95,
+      "stop": 271.5995,
+      "target_1R": 315.7805,
+      "target_2R": 337.871
     },
     {
       "symbol": "MRVL",
@@ -111,7 +111,7 @@
       "quality_score": 0,
       "bars_since_break": 13,
       "neckline": 280.0,
-      "last_price": 284.945,
+      "last_price": 284.73,
       "stop": 259.1533,
       "target_1R": 322.2467,
       "target_2R": 353.7935
@@ -123,7 +123,7 @@
       "quality_score": 0,
       "bars_since_break": 27,
       "neckline": 181.36,
-      "last_price": 189.49,
+      "last_price": 189.28,
       "stop": 172.2479,
       "target_1R": 192.3521,
       "target_2R": 202.4043
@@ -135,7 +135,7 @@
       "quality_score": 0,
       "bars_since_break": 13,
       "neckline": 573.8,
-      "last_price": 578.83,
+      "last_price": 578.85,
       "stop": 533.1073,
       "target_1R": 624.8927,
       "target_2R": 670.7854
@@ -147,7 +147,7 @@
       "quality_score": 0,
       "bars_since_break": 13,
       "neckline": 567.9999,
-      "last_price": 578.83,
+      "last_price": 578.85,
       "stop": 533.1073,
       "target_1R": 624.8927,
       "target_2R": 670.7854

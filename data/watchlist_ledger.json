@@ -2892,6 +2892,11 @@
         "time": "2026-10-07T19:59:16.483390+00:00",
         "price": 646.525,
         "note": "update"
+      },
+      {
+        "time": "2026-10-07T23:26:58.049061+00:00",
+        "price": 645.83,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -2904,7 +2909,7 @@
     "quality_score": 0.2579,
     "bars_since_break": 27,
     "sector_score": 3,
-    "last_seen": "2026-10-07T19:59:16.483390+00:00",
+    "last_seen": "2026-10-07T23:26:58.049061+00:00",
     "skip_reason": "low_quality"
   },
   {
@@ -2976,6 +2981,11 @@
         "time": "2026-10-07T19:59:16.486701+00:00",
         "price": 113.3,
         "note": "update"
+      },
+      {
+        "time": "2026-10-07T23:26:58.051838+00:00",
+        "price": 113.06,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -2988,7 +2998,7 @@
     "quality_score": 0,
     "bars_since_break": 27,
     "sector_score": 3,
-    "last_seen": "2026-10-07T19:59:16.486701+00:00",
+    "last_seen": "2026-10-07T23:26:58.051838+00:00",
     "skip_reason": null
   },
   {
@@ -3018,6 +3028,11 @@
         "time": "2026-10-07T19:59:16.489753+00:00",
         "price": 405.9,
         "note": "update"
+      },
+      {
+        "time": "2026-10-07T23:26:58.054498+00:00",
+        "price": 405.41,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3030,7 +3045,7 @@
     "quality_score": 0,
     "bars_since_break": 27,
     "sector_score": 3,
-    "last_seen": "2026-10-07T19:59:16.489753+00:00",
+    "last_seen": "2026-10-07T23:26:58.054498+00:00",
     "skip_reason": null
   },
   {
@@ -3060,6 +3075,11 @@
         "time": "2026-10-07T19:59:16.492828+00:00",
         "price": 342.31,
         "note": "update"
+      },
+      {
+        "time": "2026-10-07T23:26:58.057129+00:00",
+        "price": 342.82,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3072,7 +3092,7 @@
     "quality_score": 0,
     "bars_since_break": 20,
     "sector_score": 3,
-    "last_seen": "2026-10-07T19:59:16.492828+00:00",
+    "last_seen": "2026-10-07T23:26:58.057129+00:00",
     "skip_reason": null
   },
   {
@@ -3102,6 +3122,11 @@
         "time": "2026-10-07T19:59:16.496041+00:00",
         "price": 423.825,
         "note": "update"
+      },
+      {
+        "time": "2026-10-07T23:26:58.059749+00:00",
+        "price": 424.01,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3114,7 +3139,7 @@
     "quality_score": 0.1857,
     "bars_since_break": 33,
     "sector_score": 3,
-    "last_seen": "2026-10-07T19:59:16.496041+00:00",
+    "last_seen": "2026-10-07T23:26:58.059749+00:00",
     "skip_reason": "low_quality"
   },
   {
@@ -3144,6 +3169,11 @@
         "time": "2026-10-07T19:59:16.499265+00:00",
         "price": 423.825,
         "note": "update"
+      },
+      {
+        "time": "2026-10-07T23:26:58.062455+00:00",
+        "price": 424.01,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3156,7 +3186,7 @@
     "quality_score": 0.1853,
     "bars_since_break": 33,
     "sector_score": 3,
-    "last_seen": "2026-10-07T19:59:16.499265+00:00",
+    "last_seen": "2026-10-07T23:26:58.062455+00:00",
     "skip_reason": "low_quality"
   },
   {
@@ -3186,6 +3216,11 @@
         "time": "2026-10-07T19:59:16.502388+00:00",
         "price": 289.58,
         "note": "update"
+      },
+      {
+        "time": "2026-10-07T23:26:58.065093+00:00",
+        "price": 288.95,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3195,11 +3230,11 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.2431,
+    "quality_score": 0,
     "bars_since_break": 27,
     "sector_score": 3,
-    "last_seen": "2026-10-07T19:59:16.502388+00:00",
-    "skip_reason": "low_quality"
+    "last_seen": "2026-10-07T23:26:58.065093+00:00",
+    "skip_reason": null
   },
   {
     "id": "TXN__inverse_hns__2026-10-06T14:30:00Z",
@@ -3270,6 +3305,11 @@
         "time": "2026-10-07T19:59:16.505463+00:00",
         "price": 284.945,
         "note": "update"
+      },
+      {
+        "time": "2026-10-07T23:26:58.067599+00:00",
+        "price": 284.73,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3282,7 +3322,7 @@
     "quality_score": 0,
     "bars_since_break": 13,
     "sector_score": 3,
-    "last_seen": "2026-10-07T19:59:16.505463+00:00",
+    "last_seen": "2026-10-07T23:26:58.067599+00:00",
     "skip_reason": null
   },
   {
@@ -3312,6 +3352,11 @@
         "time": "2026-10-07T19:59:16.508606+00:00",
         "price": 189.49,
         "note": "update"
+      },
+      {
+        "time": "2026-10-07T23:26:58.070120+00:00",
+        "price": 189.28,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3324,7 +3369,7 @@
     "quality_score": 0,
     "bars_since_break": 27,
     "sector_score": 3,
-    "last_seen": "2026-10-07T19:59:16.508606+00:00",
+    "last_seen": "2026-10-07T23:26:58.070120+00:00",
     "skip_reason": null
   },
   {
@@ -3354,6 +3399,11 @@
         "time": "2026-10-07T19:59:16.511831+00:00",
         "price": 578.83,
         "note": "update"
+      },
+      {
+        "time": "2026-10-07T23:26:58.072628+00:00",
+        "price": 578.85,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3366,7 +3416,7 @@
     "quality_score": 0,
     "bars_since_break": 13,
     "sector_score": 3,
-    "last_seen": "2026-10-07T19:59:16.511831+00:00",
+    "last_seen": "2026-10-07T23:26:58.072628+00:00",
     "skip_reason": null
   },
   {
@@ -3396,6 +3446,11 @@
         "time": "2026-10-07T19:59:16.515008+00:00",
         "price": 578.83,
         "note": "update"
+      },
+      {
+        "time": "2026-10-07T23:26:58.075182+00:00",
+        "price": 578.85,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3408,7 +3463,7 @@
     "quality_score": 0,
     "bars_since_break": 13,
     "sector_score": 3,
-    "last_seen": "2026-10-07T19:59:16.515008+00:00",
+    "last_seen": "2026-10-07T23:26:58.075182+00:00",
     "skip_reason": null
   }
 ]
