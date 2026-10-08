@@ -2902,6 +2902,11 @@
         "time": "2026-10-08T19:55:41.206384+00:00",
         "price": 618.7025,
         "note": "update"
+      },
+      {
+        "time": "2026-10-08T23:38:36.927318+00:00",
+        "price": 620.73,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -2914,7 +2919,7 @@
     "quality_score": 0,
     "bars_since_break": 34,
     "sector_score": 3,
-    "last_seen": "2026-10-08T19:55:41.206384+00:00",
+    "last_seen": "2026-10-08T23:38:36.927318+00:00",
     "skip_reason": null
   },
   {
@@ -2996,6 +3001,11 @@
         "time": "2026-10-08T19:55:41.208691+00:00",
         "price": 106.82,
         "note": "update"
+      },
+      {
+        "time": "2026-10-08T23:38:36.930863+00:00",
+        "price": 107.14,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3008,7 +3018,7 @@
     "quality_score": 0,
     "bars_since_break": 34,
     "sector_score": 3,
-    "last_seen": "2026-10-08T19:55:41.208691+00:00",
+    "last_seen": "2026-10-08T23:38:36.930863+00:00",
     "skip_reason": null
   },
   {
@@ -3048,6 +3058,11 @@
         "time": "2026-10-08T19:55:41.210781+00:00",
         "price": 397.515,
         "note": "update"
+      },
+      {
+        "time": "2026-10-08T23:38:36.934266+00:00",
+        "price": 398.36,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3060,7 +3075,7 @@
     "quality_score": 0,
     "bars_since_break": 34,
     "sector_score": 3,
-    "last_seen": "2026-10-08T19:55:41.210781+00:00",
+    "last_seen": "2026-10-08T23:38:36.934266+00:00",
     "skip_reason": null
   },
   {
@@ -3100,6 +3115,11 @@
         "time": "2026-10-08T19:55:41.212840+00:00",
         "price": 341.24,
         "note": "update"
+      },
+      {
+        "time": "2026-10-08T23:38:36.937621+00:00",
+        "price": 341.7,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3112,7 +3132,7 @@
     "quality_score": 0,
     "bars_since_break": 27,
     "sector_score": 3,
-    "last_seen": "2026-10-08T19:55:41.212840+00:00",
+    "last_seen": "2026-10-08T23:38:36.937621+00:00",
     "skip_reason": null
   },
   {
@@ -3152,6 +3172,11 @@
         "time": "2026-10-08T19:55:41.216979+00:00",
         "price": 443.615,
         "note": "update"
+      },
+      {
+        "time": "2026-10-08T23:38:36.944400+00:00",
+        "price": 443.93,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3164,7 +3189,7 @@
     "quality_score": 0,
     "bars_since_break": 40,
     "sector_score": 3,
-    "last_seen": "2026-10-08T19:55:41.216979+00:00",
+    "last_seen": "2026-10-08T23:38:36.944400+00:00",
     "skip_reason": null
   },
   {
@@ -3204,6 +3229,11 @@
         "time": "2026-10-08T19:55:41.219048+00:00",
         "price": 443.615,
         "note": "update"
+      },
+      {
+        "time": "2026-10-08T23:38:36.947731+00:00",
+        "price": 443.93,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3216,7 +3246,7 @@
     "quality_score": 0,
     "bars_since_break": 40,
     "sector_score": 3,
-    "last_seen": "2026-10-08T19:55:41.219048+00:00",
+    "last_seen": "2026-10-08T23:38:36.947731+00:00",
     "skip_reason": null
   },
   {
@@ -3256,6 +3286,11 @@
         "time": "2026-10-08T19:55:41.223179+00:00",
         "price": 287.31,
         "note": "update"
+      },
+      {
+        "time": "2026-10-08T23:38:36.954572+00:00",
+        "price": 288.24,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3265,11 +3300,11 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0,
+    "quality_score": 0.1702,
     "bars_since_break": 34,
     "sector_score": 3,
-    "last_seen": "2026-10-08T19:55:41.223179+00:00",
-    "skip_reason": null
+    "last_seen": "2026-10-08T23:38:36.954572+00:00",
+    "skip_reason": "low_quality"
   },
   {
     "id": "TXN__inverse_hns__2026-10-06T14:30:00Z",
@@ -3350,6 +3385,11 @@
         "time": "2026-10-08T19:55:41.225252+00:00",
         "price": 273.425,
         "note": "update"
+      },
+      {
+        "time": "2026-10-08T23:38:36.958009+00:00",
+        "price": 274.61,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3362,7 +3402,7 @@
     "quality_score": 0,
     "bars_since_break": 20,
     "sector_score": 3,
-    "last_seen": "2026-10-08T19:55:41.225252+00:00",
+    "last_seen": "2026-10-08T23:38:36.958009+00:00",
     "skip_reason": null
   },
   {
@@ -3402,6 +3442,11 @@
         "time": "2026-10-08T19:55:41.227335+00:00",
         "price": 189.13,
         "note": "update"
+      },
+      {
+        "time": "2026-10-08T23:38:36.961453+00:00",
+        "price": 189.1,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3414,7 +3459,7 @@
     "quality_score": 0,
     "bars_since_break": 34,
     "sector_score": 3,
-    "last_seen": "2026-10-08T19:55:41.227335+00:00",
+    "last_seen": "2026-10-08T23:38:36.961453+00:00",
     "skip_reason": null
   },
   {
@@ -3454,6 +3499,11 @@
         "time": "2026-10-08T19:55:41.235690+00:00",
         "price": 574.12,
         "note": "update"
+      },
+      {
+        "time": "2026-10-08T23:38:36.975103+00:00",
+        "price": 574.73,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3466,7 +3516,7 @@
     "quality_score": 0,
     "bars_since_break": 20,
     "sector_score": 3,
-    "last_seen": "2026-10-08T19:55:41.235690+00:00",
+    "last_seen": "2026-10-08T23:38:36.975103+00:00",
     "skip_reason": null
   },
   {
@@ -3506,6 +3556,11 @@
         "time": "2026-10-08T19:55:41.237787+00:00",
         "price": 574.12,
         "note": "update"
+      },
+      {
+        "time": "2026-10-08T23:38:36.978534+00:00",
+        "price": 574.73,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3518,7 +3573,7 @@
     "quality_score": 0,
     "bars_since_break": 20,
     "sector_score": 3,
-    "last_seen": "2026-10-08T19:55:41.237787+00:00",
+    "last_seen": "2026-10-08T23:38:36.978534+00:00",
     "skip_reason": null
   },
   {
@@ -3543,6 +3598,11 @@
         "time": "2026-10-08T19:55:41.214854+00:00",
         "price": 217.83,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-10-08T23:38:36.941042+00:00",
+        "price": 216.81,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3552,11 +3612,11 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.4852,
+    "quality_score": 0,
     "bars_since_break": 6,
     "sector_score": 3,
-    "last_seen": "2026-10-08T19:55:41.214854+00:00",
-    "skip_reason": "low_quality"
+    "last_seen": "2026-10-08T23:38:36.941042+00:00",
+    "skip_reason": null
   },
   {
     "id": "PSX__inverse_hns__2026-10-08T13:30:00Z",
@@ -3580,6 +3640,11 @@
         "time": "2026-10-08T19:55:41.221103+00:00",
         "price": 280.87,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-10-08T23:38:36.951183+00:00",
+        "price": 281.53,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3592,7 +3657,7 @@
     "quality_score": 0,
     "bars_since_break": 6,
     "sector_score": 3,
-    "last_seen": "2026-10-08T19:55:41.221103+00:00",
+    "last_seen": "2026-10-08T23:38:36.951183+00:00",
     "skip_reason": null
   },
   {
@@ -3617,6 +3682,11 @@
         "time": "2026-10-08T19:55:41.229410+00:00",
         "price": 48.97,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-10-08T23:38:36.964847+00:00",
+        "price": 48.92,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3629,7 +3699,7 @@
     "quality_score": 0,
     "bars_since_break": 3,
     "sector_score": 3,
-    "last_seen": "2026-10-08T19:55:41.229410+00:00",
+    "last_seen": "2026-10-08T23:38:36.964847+00:00",
     "skip_reason": null
   },
   {
@@ -3654,6 +3724,11 @@
         "time": "2026-10-08T19:55:41.231486+00:00",
         "price": 48.97,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-10-08T23:38:36.968259+00:00",
+        "price": 48.92,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3666,7 +3741,7 @@
     "quality_score": 0,
     "bars_since_break": 3,
     "sector_score": 3,
-    "last_seen": "2026-10-08T19:55:41.231486+00:00",
+    "last_seen": "2026-10-08T23:38:36.968259+00:00",
     "skip_reason": null
   },
   {
@@ -3691,6 +3766,11 @@
         "time": "2026-10-08T19:55:41.233589+00:00",
         "price": 45.49,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-10-08T23:38:36.971683+00:00",
+        "price": 45.475,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -3703,7 +3783,7 @@
     "quality_score": 0,
     "bars_since_break": 6,
     "sector_score": 3,
-    "last_seen": "2026-10-08T19:55:41.233589+00:00",
+    "last_seen": "2026-10-08T23:38:36.971683+00:00",
     "skip_reason": null
   }
 ]
