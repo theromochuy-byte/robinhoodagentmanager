@@ -27,7 +27,7 @@ ENTRY_TIMEFRAME: str = "1hour"  # bar size used by scanner for pattern detection
 FRESHNESS_BARS: int  = 48       # max bars since neckline break to qualify (48×1H ≈ 6 trading days)
 
 # ── Scanner quality / entry caps ───────────────────────────────────────────────
-MIN_QUALITY_SCORE: float = 0.50  # skip triggered setups below this threshold
+MIN_QUALITY_SCORE: float = 0.05  # skip triggered setups below this threshold
 MAX_ENTRIES_PER_DAY: int  = 2    # cap new paper positions opened per scan run
 
 # ── Risk / sizing ──────────────────────────────────────────────────────────────
