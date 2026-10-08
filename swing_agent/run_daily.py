@@ -24,6 +24,7 @@ from pathlib import Path
 ROOT        = Path(__file__).resolve().parent.parent
 DATA        = ROOT / "data"
 LIVE_LEDGER = DATA / "paper_trades_live.json"
+PNL_LOG     = DATA / "daily_pnl_log.json"
 
 
 def _load_ledger() -> list[dict]:
@@ -348,15 +349,93 @@ def run_scan() -> list[dict]:
 
 
 # ---------------------------------------------------------------------------
+# Daily P&L snapshot — appended once per run for each open position
+# ---------------------------------------------------------------------------
+
+def snapshot_daily_pnl(quotes: dict[str, float], mode: str) -> None:
+    """Append one row per open position to data/daily_pnl_log.json.
+
+    Each row captures: date, mode, symbol, price, entry, stop, target_1R,
+    target_2R, unrealized_pnl, pnl_r (in R multiples), days_held,
+    touched_1r, and pct_to_1r / pct_to_2r (how far along each milestone).
+    This lets us reconstruct the peak-and-drawback curve for every trade.
+    """
+    trades = _load_ledger()
+    open_t = [t for t in trades if t.get("status") == "entered"]
+    if not open_t:
+        return
+
+    now_dt  = datetime.now(timezone.utc)
+    now_iso = now_dt.isoformat()
+    today   = str(date.today())
+
+    rows: list[dict] = []
+    for t in open_t:
+        sym   = t["symbol"]
+        price = quotes.get(sym, t.get("last_price", t["entry"]))
+        entry = t["entry"]
+        risk  = t.get("risk_per_share", 0)
+        shares = t.get("shares", 0)
+        t1r   = t.get("target_1R", entry + risk)
+        t2r   = t.get("target_2R", entry + 2 * risk)
+        upnl  = round((price - entry) * shares, 2)
+        pnl_r = round((price - entry) / risk, 3) if risk else None
+
+        days_held = None
+        entry_time_str = t.get("entry_time", "")
+        if entry_time_str:
+            try:
+                et = datetime.fromisoformat(entry_time_str.replace("Z", "+00:00"))
+                days_held = round((now_dt - et).total_seconds() / 86400, 1)
+            except Exception:
+                pass
+
+        pct_to_1r = round((price - entry) / (t1r - entry) * 100, 1) if (t1r - entry) else None
+        pct_to_2r = round((price - entry) / (t2r - entry) * 100, 1) if (t2r - entry) else None
+
+        rows.append({
+            "date":       today,
+            "time":       now_iso,
+            "mode":       mode,
+            "symbol":     sym,
+            "price":      round(price, 4),
+            "entry":      round(entry, 4),
+            "stop":       t.get("stop", 0),
+            "target_1R":  round(t1r, 4),
+            "target_2R":  round(t2r, 4),
+            "unrealized_pnl": upnl,
+            "pnl_r":      pnl_r,
+            "days_held":  days_held,
+            "touched_1r": t.get("touched_1r", False),
+            "touched_2r": t.get("touched_2r", False),
+            "pct_to_1r":  pct_to_1r,
+            "pct_to_2r":  pct_to_2r,
+        })
+
+    if not rows:
+        return
+
+    existing: list[dict] = []
+    if PNL_LOG.exists():
+        try:
+            existing = json.loads(PNL_LOG.read_text())
+        except Exception:
+            existing = []
+
+    PNL_LOG.write_text(json.dumps(existing + rows, indent=2))
+    print(f"  P&L snapshot: {len(rows)} row(s) appended to daily_pnl_log.json")
+
+
+# ---------------------------------------------------------------------------
 # Git commit + push
 # ---------------------------------------------------------------------------
 
 def git_commit_push(mode: str) -> None:
     print("=== COMMITTING ===")
     if mode in ("morning", "midday"):
-        # Only persist the live ledger — exits and new entries must survive
-        # container recycles before the evening full commit.
-        subprocess.run(["git", "add", str(LIVE_LEDGER)], cwd=ROOT)
+        # Persist the live ledger and P&L log — exits and new entries must
+        # survive container recycles before the evening full commit.
+        subprocess.run(["git", "add", str(LIVE_LEDGER), str(PNL_LOG)], cwd=ROOT)
     else:
         subprocess.run(["git", "add", "data/", "reports/"], cwd=ROOT)
     result = subprocess.run(
@@ -460,6 +539,10 @@ if __name__ == "__main__":
 
     if mode in ("morning", "evening"):
         new_entries = run_scan()
+
+    # Daily P&L snapshot — append one row per open position
+    print("=== P&L SNAPSHOT ===")
+    snapshot_daily_pnl(quotes, mode)
 
     # Send email digest
     print("=== SENDING EMAIL DIGEST ===")
