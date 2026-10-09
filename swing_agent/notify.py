@@ -144,6 +144,7 @@ def build_digest(
             "dist_to_1r":    {"dollar": d1r_dollar, "r": d1r_r},
             "dist_to_2r":    {"dollar": d2r_dollar, "r": d2r_r},
             "dist_to_be":    {"dollar": dbe_dollar, "r": dbe_r},
+            "above_be":      price >= entry,
             "days_held":     days_held,
         })
 
@@ -291,12 +292,12 @@ def render_html(digest: dict, scan_date: str) -> str:
                 if dist is None or dist["dollar"] is None:
                     return "—"
                 d, r = dist["dollar"], dist["r"]
-                color = "#080" if d <= 0 else "#555"
-                sign  = "+" if d <= 0 else ""
-                return f"<span style='color:{color}'>{sign}${abs(d):.2f} ({r:+.2f}R)</span>" if d <= 0 \
-                    else f"<span style='color:{color}'>${d:.2f} away ({r:.2f}R)</span>"
+                # d = level - price: positive means still ahead, negative means already past
+                if d <= 0:
+                    return f"<span style='color:#080'>✓ {label} hit</span>"
+                return f"<span style='color:#555'>${d:.2f} away ({r:.2f}R)</span>"
 
-            be_cell = _milestone_cell(p.get("dist_to_be"),  "BE",  p.get("touched_1r", False))
+            be_cell = _milestone_cell(p.get("dist_to_be"),  "BE",  p.get("above_be", False))
             r1_cell = _milestone_cell(p.get("dist_to_1r"),  "1R",  p.get("touched_1r", False))
             r2_cell = _milestone_cell(p.get("dist_to_2r"),  "2R",  p.get("touched_2r", False))
 
