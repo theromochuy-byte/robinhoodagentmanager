@@ -525,6 +525,7 @@ def scan_symbol(
                 triggered.append(setup)
         else:
             setup["status"] = "watching"
+            setup["quality_score"] = _quality_score(setup)
             watching.append(setup)
 
     return {"watching": watching, "triggered": triggered}

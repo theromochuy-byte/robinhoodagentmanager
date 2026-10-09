@@ -19,8 +19,8 @@ After editing, the next run_daily invocation picks up the new values.
 # Tune TIME_STOP_TRADING_DAYS first; tighten TIME_STOP_MIN_PROGRESS_FRAC if
 # you want to catch earlier "nothing is happening" behaviour.
 TIME_STOP_TRADING_DAYS: int   = 12    # trading days before stale-trade exit fires
-TIME_STOP_MIN_PROGRESS_FRAC: float = 0.0  # 0.0 = only touched_1r counts (original behaviour)
-                                           # 0.25 = also exits if < 25% of way to 1R after deadline
+TIME_STOP_MIN_PROGRESS_FRAC: float = 0.25  # 0.0 = only touched_1r counts (original behaviour)
+                                            # 0.25 = also exits if < 25% of way to 1R after deadline
 
 # ── Entry timeframe ────────────────────────────────────────────────────────────
 ENTRY_TIMEFRAME: str = "1hour"  # bar size used by scanner for pattern detection

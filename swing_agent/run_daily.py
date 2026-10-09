@@ -427,6 +427,38 @@ def snapshot_daily_pnl(quotes: dict[str, float], mode: str) -> None:
 
 
 # ---------------------------------------------------------------------------
+# Scan report retention — keep 60 days, delete older reports
+# ---------------------------------------------------------------------------
+
+def purge_old_scan_reports(keep_days: int = 60) -> None:
+    """Delete scan_YYYY-MM-DD.json reports older than keep_days from data/.
+
+    The archive summary (scan_report_archive_summary.json) is always kept.
+    Runs once per evening to prevent unbounded growth.
+    """
+    from datetime import timedelta
+    cutoff = date.today() - timedelta(days=keep_days)
+    deleted = 0
+    for p in DATA.glob("scan_*.json"):
+        # skip non-daily-report files
+        stem = p.stem  # e.g. "scan_2026-07-04"
+        if not stem.startswith("scan_") or stem == "scan_report_archive_summary":
+            continue
+        date_part = stem[len("scan_"):]
+        try:
+            report_date = date.fromisoformat(date_part)
+        except ValueError:
+            continue
+        if report_date < cutoff:
+            p.unlink()
+            deleted += 1
+    if deleted:
+        print(f"  Purged {deleted} scan report(s) older than {keep_days} days.")
+    else:
+        print(f"  No scan reports to purge (all within {keep_days} days).")
+
+
+# ---------------------------------------------------------------------------
 # Git commit + push
 # ---------------------------------------------------------------------------
 
@@ -553,6 +585,9 @@ if __name__ == "__main__":
         git_commit_push(mode)
 
     if mode == "evening":
+        print("=== SCAN REPORT RETENTION ===")
+        purge_old_scan_reports(keep_days=60)
+
         print("=== BACKTEST ===")
         try:
             result = subprocess.run(
