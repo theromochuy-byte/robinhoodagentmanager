@@ -157,6 +157,29 @@ def resolve_pending_fills(quotes: dict[str, float]) -> list[dict]:
     return filled
 
 
+def _stamp_bars_since_break(t: dict, now_iso: str) -> None:
+    """Add bars_since_break_at_exit to a closing trade record.
+
+    bars_since_break on the entry is the age at signal time. This field
+    captures the age at exit so we can correlate early vs late entries
+    with outcome after enough trades accumulate.
+    """
+    break_time_str = t.get("break_time") or t.get("last_bar_time", "")
+    if not break_time_str:
+        return
+    try:
+        break_dt = datetime.fromisoformat(str(break_time_str).replace("Z", "+00:00"))
+        exit_dt  = datetime.fromisoformat(now_iso.replace("Z", "+00:00"))
+        # 1-hour bars: elapsed hours × trading-hours fraction ≈ bars elapsed
+        elapsed_hours = (exit_dt - break_dt).total_seconds() / 3600
+        # ~6.5 trading hours per day, 5 days per 7
+        bars_elapsed = round(elapsed_hours * (6.5 / 24) * (5 / 7))
+        t["bars_since_break_at_exit"] = bars_elapsed
+        t["bars_since_break_at_entry"] = t.get("bars_since_break")
+    except Exception:
+        pass
+
+
 def check_exits(
     quotes: dict[str, float],
     intraday_highs: dict[str, float] | None = None,
@@ -244,6 +267,7 @@ def check_exits(
             t["realized_pnl"] = round((price - entry) * t.get("shares", 0), 2)
             t["touched_1r"]   = touched_1r
             t["touched_2r"]   = touched_2r
+            _stamp_bars_since_break(t, now)
             closes.append(t)
         elif price >= target_3r:
             t["status"]       = "target_hit"
@@ -253,6 +277,7 @@ def check_exits(
             t["realized_pnl"] = round((price - entry) * t.get("shares", 0), 2)
             t["touched_1r"]   = True
             t["touched_2r"]   = True
+            _stamp_bars_since_break(t, now)
             closes.append(t)
         else:
             # Time stop: exit if held long enough without showing a sign of working.
@@ -277,6 +302,7 @@ def check_exits(
                             t["realized_pnl"] = round((price - entry) * t.get("shares", 0), 2)
                             t["days_held"]    = round(days_held, 1)
                             t["progress_at_exit"] = round(progress * 100, 1)
+                            _stamp_bars_since_break(t, now)
                             closes.append(t)
                             continue
                 except Exception:

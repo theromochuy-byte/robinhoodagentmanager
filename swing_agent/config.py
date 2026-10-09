@@ -24,7 +24,7 @@ TIME_STOP_MIN_PROGRESS_FRAC: float = 0.25  # 0.0 = only touched_1r counts (origi
 
 # ── Entry timeframe ────────────────────────────────────────────────────────────
 ENTRY_TIMEFRAME: str = "1hour"  # bar size used by scanner for pattern detection
-FRESHNESS_BARS: int  = 48       # max bars since neckline break to qualify (48×1H ≈ 6 trading days)
+FRESHNESS_BARS: int  = 36       # max bars since neckline break to qualify (36×1H ≈ 4.5 trading days)
 
 # ── Scanner quality / entry caps ───────────────────────────────────────────────
 MIN_QUALITY_SCORE: float = 0.45  # skip triggered setups below this threshold
