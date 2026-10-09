@@ -23,6 +23,7 @@ from pathlib import Path
 
 ROOT        = Path(__file__).resolve().parent.parent
 DATA        = ROOT / "data"
+REPORTS     = ROOT / "reports"
 LIVE_LEDGER = DATA / "paper_trades_live.json"
 PNL_LOG     = DATA / "daily_pnl_log.json"
 
@@ -465,7 +466,7 @@ def purge_old_scan_reports(keep_days: int = 60) -> None:
     from datetime import timedelta
     cutoff = date.today() - timedelta(days=keep_days)
     deleted = 0
-    for p in DATA.glob("scan_*.json"):
+    for p in REPORTS.glob("scan_*.json"):
         # skip non-daily-report files
         stem = p.stem  # e.g. "scan_2026-07-04"
         if not stem.startswith("scan_") or stem == "scan_report_archive_summary":
@@ -505,8 +506,13 @@ def git_commit_push(mode: str) -> None:
     today = str(date.today())
     msg = f"auto: {mode} run {today} — data refresh, exit check, scan"
     subprocess.run(["git", "commit", "-m", msg], cwd=ROOT, check=True)
+    branch_result = subprocess.run(
+        ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+        capture_output=True, text=True, cwd=ROOT
+    )
+    branch = branch_result.stdout.strip() if branch_result.returncode == 0 else "claude/wonderful-cerf-sa7c0d"
     subprocess.run(
-        ["git", "push", "-u", "origin", "claude/wonderful-cerf-sa7c0d"],
+        ["git", "push", "-u", "origin", branch],
         cwd=ROOT, check=True,
     )
 
@@ -605,7 +611,7 @@ if __name__ == "__main__":
     # Send email digest
     print("=== SENDING EMAIL DIGEST ===")
     send_digest(new_entries, closes, quotes, newly_at_be=newly_at_be,
-                newly_filled=newly_filled)
+                newly_filled=newly_filled, trades=_load_ledger())
 
     if mode in ("morning", "midday"):
         git_commit_push(mode)

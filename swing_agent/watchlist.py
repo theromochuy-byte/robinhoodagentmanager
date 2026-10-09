@@ -160,6 +160,97 @@ def _hours_between(iso_a: str, iso_b: str) -> float:
     return round(abs((b - a).total_seconds()) / 3600, 1)
 
 
+def batch_update(setups_watching: list[dict],
+                 triggered: list[tuple[str, str, str, float, str]],
+                 missed: list[tuple[str, str, str, str]],
+                 watching_ids: set[tuple[str, str, str]],
+                 triggered_ids: set[tuple[str, str, str]]) -> list[str]:
+    """Single-load, single-save update for a full scan run.
+
+    Replaces individual upsert_watching / mark_triggered / mark_missed /
+    expire_stale calls that each load+save the whole file. Returns list of
+    expired symbols.
+    """
+    entries = load_watchlist()
+    now = datetime.now(timezone.utc).isoformat()
+
+    for setup in setups_watching:
+        sid = _sid(setup["symbol"], setup["type"], setup["break_time"])
+        existing = next((e for e in entries if e["id"] == sid), None)
+        price = setup["last_close"]
+        scanner_fields = {
+            "quality_score":    setup.get("quality_score", 0),
+            "bars_since_break": setup.get("bars_since_break"),
+            "sector_score":     setup.get("sector_score"),
+            "last_seen":        now,
+            "skip_reason":      setup.get("skip_reason"),
+        }
+        if existing is None:
+            nl = setup["neckline"]
+            entries.append({
+                "id":           sid,
+                "symbol":       setup["symbol"],
+                "type":         setup["type"],
+                "neckline":     setup["neckline"],
+                "break_time":   setup["break_time"],
+                "first_seen":   now,
+                "status":       "watching",
+                "suggested_entry":      setup["neckline"],
+                "suggested_entry_zone": [round(nl * 0.995, 4), round(nl * 1.005, 4)],
+                "stop":        setup["stop"],
+                "target_1R":   setup.get("target_1R"),
+                "target_2R":   setup["target_2R"],
+                "risk_per_share": setup["risk_per_share"],
+                "price_history": [{"time": now, "price": price, "note": "first_seen"}],
+                "trigger_time": None, "trigger_price": None,
+                "close_time": None, "close_price": None,
+                "outcome": None,
+                "elapsed_watching_hours": None, "elapsed_total_hours": None,
+                **scanner_fields,
+            })
+        elif existing["status"] == "watching":
+            existing["price_history"].append({"time": now, "price": price, "note": "update"})
+            existing.update(scanner_fields)
+
+    for symbol, pattern_type, break_time, entry_price, entry_time in triggered:
+        sid = _sid(symbol, pattern_type, break_time)
+        for e in entries:
+            if e["id"] == sid and e["status"] == "watching":
+                e["status"]        = "triggered"
+                e["trigger_time"]  = entry_time
+                e["trigger_price"] = entry_price
+                e["elapsed_watching_hours"] = _hours_between(e["first_seen"], entry_time)
+                e["price_history"].append({"time": entry_time, "price": entry_price,
+                                           "note": "triggered"})
+                break
+
+    for symbol, pattern_type, break_time, reason in missed:
+        sid = _sid(symbol, pattern_type, break_time)
+        for e in entries:
+            if e["id"] == sid and e["status"] == "watching":
+                e["status"] = "missed"
+                e["elapsed_watching_hours"] = _hours_between(e["first_seen"], now)
+                last_price = e["price_history"][-1]["price"] if e["price_history"] else 0
+                e["price_history"].append({"time": now, "price": last_price,
+                                           "note": f"missed_{reason}"})
+                break
+
+    expired_symbols = []
+    for e in entries:
+        if e["status"] != "watching":
+            continue
+        key = (e["symbol"], e["type"], e["break_time"])
+        if key not in watching_ids and key not in triggered_ids:
+            e["status"] = "expired"
+            e["elapsed_watching_hours"] = _hours_between(e["first_seen"], now)
+            last_price = e["price_history"][-1]["price"] if e["price_history"] else 0
+            e["price_history"].append({"time": now, "price": last_price, "note": "expired"})
+            expired_symbols.append(e["symbol"])
+
+    save_watchlist(entries)
+    return expired_symbols
+
+
 def upsert_watching(setup: dict) -> None:
     """Add a new watching setup or append a price snapshot to an existing one.
 

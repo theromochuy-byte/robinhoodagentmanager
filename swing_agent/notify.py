@@ -42,6 +42,7 @@ def build_digest(
     quotes: dict[str, float],
     scan_date: str,
     newly_at_be: list[dict] | None = None,
+    trades: list[dict] | None = None,
 ) -> dict:
     """Build the digest payload from pipeline results.
 
@@ -51,6 +52,7 @@ def build_digest(
         quotes:       {symbol: price} for all open positions.
         scan_date:    YYYY-MM-DD string.
         newly_at_be:  positions that crossed 1R this run (stop → breakeven).
+        trades:       full ledger list; if None, loaded from disk.
 
     Returns dict with keys: new_entries, closes, near_stop, near_2r,
     newly_at_be, realized_pnl, open_positions, unrealized_pnl, equity, open_count.
@@ -58,17 +60,17 @@ def build_digest(
     if newly_at_be is None:
         newly_at_be = []
 
-    # Load full ledger to compute proximity alerts and P&L
-    ledger_path = DATA / "paper_trades_live.json"
-    if not ledger_path.exists():
-        return {"new_entries": new_entries, "closes": closes,
-                "near_stop": [], "near_2r": [], "newly_at_be": newly_at_be,
-                "realized_pnl": 0.0, "open_positions": [],
-                "unrealized_pnl": 0.0,
-                "equity": {"starting_equity": 2500.0, "capital_in_use": 0.0, "available_equity": 2500.0},
-                "open_count": 0}
+    if trades is None:
+        ledger_path = DATA / "paper_trades_live.json"
+        if not ledger_path.exists():
+            return {"new_entries": new_entries, "closes": closes,
+                    "near_stop": [], "near_2r": [], "newly_at_be": newly_at_be,
+                    "realized_pnl": 0.0, "open_positions": [],
+                    "unrealized_pnl": 0.0,
+                    "equity": {"starting_equity": 2500.0, "capital_in_use": 0.0, "available_equity": 2500.0},
+                    "open_count": 0}
+        trades = json.loads(ledger_path.read_text())
 
-    trades = json.loads(ledger_path.read_text())
     open_trades = [t for t in trades if t.get("status") == "entered"]
 
     near_stop      = []
@@ -405,6 +407,7 @@ def send_digest(
     scan_date: str | None = None,
     newly_at_be: list[dict] | None = None,
     newly_filled: list[dict] | None = None,
+    trades: list[dict] | None = None,
 ) -> bool:
     if scan_date is None:
         scan_date = str(date.today())
@@ -413,7 +416,7 @@ def send_digest(
     if newly_filled is None:
         newly_filled = []
 
-    digest = build_digest(new_entries, closes, quotes, scan_date, newly_at_be)
+    digest = build_digest(new_entries, closes, quotes, scan_date, newly_at_be, trades)
     html   = render_html(digest, scan_date)
 
     n_close = len(digest["closes"])

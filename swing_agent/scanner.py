@@ -35,14 +35,15 @@ from .patterns import detect_double_bottom, detect_inverse_hns, detect_cup_and_h
 from .simulator import build_trade
 from .watchlist import (
     upsert_watching, mark_triggered, mark_missed, expire_stale, watchlist_summary,
-    purge_legacy_entries,
+    purge_legacy_entries, batch_update,
 )
 
 ROOT        = Path(__file__).resolve().parent.parent
-DATA        = ROOT / "data"
-REPORTS     = ROOT / "reports"
-LIVE_LEDGER = DATA / "paper_trades_live.json"
-EQUITY_FILE = DATA / "equity.json"
+DATA             = ROOT / "data"
+REPORTS          = ROOT / "reports"
+LIVE_LEDGER      = DATA / "paper_trades_live.json"
+EQUITY_FILE      = DATA / "equity.json"
+SCAN_SUMMARY_FILE = DATA / "scan_summary.json"
 
 SESSION_UNIVERSE = DATA / "session_universe.txt"
 INDICATOR_CACHE  = DATA / "indicator_cache.json"
@@ -129,6 +130,7 @@ def _load_sector_etf_bias() -> dict[str, int]:
 
     Falls back to score=3 (allow through) when data is unavailable.
     """
+    import datetime as _dt
     if SECTOR_ETF_CACHE_FILE.exists():
         age = time.time() - SECTOR_ETF_CACHE_FILE.stat().st_mtime
         if age < SECTOR_ETF_CACHE_AGE:
@@ -169,7 +171,6 @@ def _load_sector_etf_bias() -> dict[str, int]:
                     score += 1
 
             # Weekly EMA(20): resample daily closes to weekly (Friday close)
-            import datetime as _dt
             weekly_closes: list[float] = []
             week_closes_tmp: list[float] = []
             for ts, c in zip(timestamps, closes_raw):
@@ -316,14 +317,16 @@ def _save_equity(state: dict) -> None:
     EQUITY_FILE.write_text(json.dumps(state, indent=2))
 
 
-def _recompute_equity() -> dict:
+def _recompute_equity(ledger: list[dict] | None = None) -> dict:
     """Recompute capital_in_use from the live ledger and save.
 
     Counts both entered positions (at actual fill price) and pending_fill
     positions (at signal_price estimate) so available_equity stays accurate
     between the evening scan and next morning's open resolution.
+    Pass an already-loaded ledger to avoid a redundant file read.
     """
-    ledger = _load_live_ledger()
+    if ledger is None:
+        ledger = _load_live_ledger()
     in_use = sum(
         t["entry"] * t.get("shares", 0)
         for t in ledger
@@ -622,34 +625,23 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         all_watching.extend(result["watching"])
         all_triggered.extend(result["triggered"])
 
-    # ── Watchlist ledger: upsert every watching setup ──────────────────────────
-    for s in all_watching:
-        upsert_watching(s)
-
-    # Expire setups that aged out of the 12-bar window this scan
     watching_ids  = {(s["symbol"], s["type"], s["break_time"]) for s in all_watching}
     triggered_ids = {(s["symbol"], s["type"], s["break_time"]) for s in all_triggered}
-    expired = expire_stale(watching_ids, triggered_ids)
-    if expired:
-        print(f"  [Watchlist] Expired {len(expired)} stale setup(s): {', '.join(expired)}")
 
     # ── Merge triggered entries — only add if we have enough capital ────────────────────────
-    # Sort by quality score descending so the best setups get capital first.
-    # Existing ledger entries (already opened) are processed first to avoid
-    # double-counting them against available equity.
+    # Load ledger once here; reuse it for equity check and final save.
     ledger = _load_live_ledger()
-    # Dedup key uses signal_time (the 4H bar that confirmed the retest).
-    # For legacy entered trades that predate this change, fall back to entry_time.
     existing_keys = {
         (t["symbol"], t.get("signal_time", t.get("entry_time"))) for t in ledger
     }
-    # Block a second signal on any symbol that's already entered or awaiting fill.
     symbols_entered = {
         t["symbol"] for t in ledger
         if t.get("status") in ("entered", "pending_fill")
     }
     new_entries   = []
     skipped       = []
+    wl_triggered: list[tuple[str, str, str, float, str]] = []
+    wl_missed:    list[tuple[str, str, str, str]]         = []
 
     already_open = [
         t for t in all_triggered
@@ -671,64 +663,66 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
     entries_today = 0
     for t in already_open + new_candidates:
         if (t["symbol"], t.get("signal_time")) in existing_keys:
-            # already in ledger — update watchlist state
-            mark_triggered(t["symbol"], t["type"], t["break_time"],
-                           t["signal_price"], t["signal_time"])
+            wl_triggered.append((t["symbol"], t["type"], t["break_time"],
+                                  t["signal_price"], t["signal_time"]))
             continue
         if t["symbol"] in symbols_entered:
             skipped.append({"symbol": t["symbol"], "type": t["type"],
                             "quality_score": t.get("quality_score", 0),
                             "skip_reason": "one_per_symbol"})
-            mark_missed(t["symbol"], t["type"], t["break_time"], reason="one_per_symbol")
+            wl_missed.append((t["symbol"], t["type"], t["break_time"], "one_per_symbol"))
             continue
         if high_vix:
             skipped.append({"symbol": t["symbol"], "type": t["type"],
                             "quality_score": t.get("quality_score", 0),
                             "skip_reason": "high_vix"})
-            mark_missed(t["symbol"], t["type"], t["break_time"], reason="high_vix")
+            wl_missed.append((t["symbol"], t["type"], t["break_time"], "high_vix"))
             continue
         if bear_regime:
             skipped.append({"symbol": t["symbol"], "type": t["type"],
                             "quality_score": t.get("quality_score", 0),
                             "skip_reason": "bear_regime"})
-            mark_missed(t["symbol"], t["type"], t["break_time"], reason="bear_regime")
+            wl_missed.append((t["symbol"], t["type"], t["break_time"], "bear_regime"))
             continue
-        # Capital pre-check uses signal_price * shares as a rough estimate.
-        # Actual cost is recomputed at fill time from the morning quote.
         est_cost = round(t["signal_price"] * t.get("shares", 0), 2)
         if est_cost > available:
             skipped.append({"symbol": t["symbol"], "type": t["type"],
                             "est_cost": est_cost, "available": round(available, 2),
                             "quality_score": t.get("quality_score", 0),
                             "skip_reason": "no_capital"})
-            mark_missed(t["symbol"], t["type"], t["break_time"], reason="no_capital")
+            wl_missed.append((t["symbol"], t["type"], t["break_time"], "no_capital"))
             continue
         if entries_today >= MAX_ENTRIES_PER_DAY:
             skipped.append({"symbol": t["symbol"], "type": t["type"],
                             "quality_score": t.get("quality_score", 0),
                             "skip_reason": "daily_cap"})
-            mark_missed(t["symbol"], t["type"], t["break_time"], reason="daily_cap")
+            wl_missed.append((t["symbol"], t["type"], t["break_time"], "daily_cap"))
             continue
-        # Moderate sector (2/3) — cap at 1 entry per day regardless of global cap
         if t.get("sector_score", SECTOR_SCORE_FULL) < SECTOR_SCORE_FULL and entries_today >= 1:
             skipped.append({"symbol": t["symbol"], "type": t["type"],
                             "quality_score": t.get("quality_score", 0),
                             "sector_score": t.get("sector_score"),
                             "skip_reason": "sector_cap"})
-            mark_missed(t["symbol"], t["type"], t["break_time"], reason="sector_cap")
+            wl_missed.append((t["symbol"], t["type"], t["break_time"], "sector_cap"))
             continue
         new_entries.append(t)
         entries_today += 1
         available = round(available - est_cost, 2)
         symbols_entered.add(t["symbol"])
-        mark_triggered(t["symbol"], t["type"], t["break_time"],
-                       t["signal_price"], t["signal_time"])
+        wl_triggered.append((t["symbol"], t["type"], t["break_time"],
+                              t["signal_price"], t["signal_time"]))
 
     ledger.extend(new_entries)
     _save_live_ledger(ledger)
 
-    # Recompute and save final equity state
-    final_state = _recompute_equity()
+    # ── Single watchlist write for the entire scan run ─────────────────────────
+    expired = batch_update(all_watching, wl_triggered, wl_missed,
+                           watching_ids, triggered_ids)
+    if expired:
+        print(f"  [Watchlist] Expired {len(expired)} stale setup(s): {', '.join(expired)}")
+
+    # Recompute and save final equity state (reuse the ledger already in memory)
+    final_state = _recompute_equity(ledger)
 
     wl_summary = watchlist_summary()
     report = {
@@ -802,7 +796,6 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         "open_positions": report["total_open"],
         "equity":         report["equity"],
     }
-    SCAN_SUMMARY_FILE = DATA / "scan_summary.json"
     SCAN_SUMMARY_FILE.write_text(json.dumps(summary, indent=2))
     print(f"  [Summary] scan_summary.json updated ({len(all_watching)} watching, "
           f"{len(report['triggered_today'])} triggered)")
