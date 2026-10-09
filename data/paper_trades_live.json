@@ -343,13 +343,13 @@
     "fill_slip": -2.56,
     "fill_slip_pct": -1.53,
     "target_3R": 207.1323,
-    "last_price": 168.17,
-    "unrealized_pnl": 12.27,
+    "last_price": 171.17,
+    "unrealized_pnl": 22.87,
     "touched_1r": false,
-    "checked_at": "2026-10-09T01:13:59.951804+00:00",
-    "progress_pct": 12.3,
-    "est_days_to_2r": 78.1,
-    "days_held": 15.3
+    "checked_at": "2026-10-09T19:32:23.904558+00:00",
+    "progress_pct": 22.9,
+    "est_days_to_2r": 38.7,
+    "days_held": 16.0
   },
   {
     "symbol": "DHR",
@@ -375,10 +375,10 @@
     "fill_slip": -0.15,
     "fill_slip_pct": -0.07,
     "target_3R": 273.0155,
-    "last_price": 217.46,
-    "unrealized_pnl": -10.18,
+    "last_price": 220.025,
+    "unrealized_pnl": -2.93,
     "touched_1r": false,
-    "checked_at": "2026-10-09T01:13:59.951804+00:00",
+    "checked_at": "2026-10-09T19:32:23.904558+00:00",
     "progress_pct": 1.4,
     "est_days_to_2r": 361.2,
     "days_held": 7.3
@@ -407,13 +407,13 @@
     "fill_slip": -1.63,
     "fill_slip_pct": -0.41,
     "target_3R": 488.4161,
-    "last_price": 398.5,
-    "unrealized_pnl": 10.59,
+    "last_price": 418.98,
+    "unrealized_pnl": 42.34,
     "touched_1r": true,
-    "checked_at": "2026-10-09T01:13:59.951804+00:00",
-    "progress_pct": 10.6,
-    "est_days_to_2r": 86.1,
-    "days_held": 14.3,
+    "checked_at": "2026-10-09T19:32:23.904558+00:00",
+    "progress_pct": 42.3,
+    "est_days_to_2r": 14.6,
+    "days_held": 15.0,
     "stop_moved_to_be_at": "2026-10-06T19:31:10.854016+00:00"
   }
 ]
