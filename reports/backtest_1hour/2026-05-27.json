@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-27",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 19,
+  "entries": [
+    {
+      "symbol": "AMZN",
+      "type": "inverse_hns",
+      "neckline": 270.72,
+      "stop": 258.7929,
+      "target_2R": 296.4342,
+      "risk_per_share": 12.5471,
+      "shares": 1.382,
+      "break_time": "2026-05-27T16:00:00Z",
+      "bars_since_break": 3,
+      "in_pullback": true,
+      "last_close": 271.8673,
+      "last_bar_time": "2026-05-27T19:00:00Z",
+      "scan_date": "2026-05-27",
+      "entry": 271.8673,
+      "entry_time": "2026-05-27T19:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 7
+}

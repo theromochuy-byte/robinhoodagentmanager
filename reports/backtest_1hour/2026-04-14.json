@@ -1,0 +1,58 @@
+{
+  "date": "2026-04-14",
+  "new_entries": 1,
+  "closed_today": 1,
+  "open_count": 16,
+  "entries": [
+    {
+      "symbol": "AMZN",
+      "type": "inverse_hns",
+      "neckline": 247.775,
+      "stop": 234.2783,
+      "target_2R": 276.0132,
+      "risk_per_share": 13.9116,
+      "shares": 1.5109,
+      "break_time": "2026-04-14T15:00:00Z",
+      "bars_since_break": 4,
+      "in_pullback": true,
+      "last_close": 249.25,
+      "last_bar_time": "2026-04-14T19:00:00Z",
+      "scan_date": "2026-04-14",
+      "entry": 249.25,
+      "entry_time": "2026-04-14T19:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [
+    {
+      "symbol": "TGT",
+      "type": "inverse_hns",
+      "neckline": 122.45,
+      "stop": 117.32,
+      "target_2R": 134.72,
+      "risk_per_share": 5.8,
+      "shares": 3.0458,
+      "break_time": "2026-04-08T19:00:00Z",
+      "bars_since_break": 6,
+      "in_pullback": true,
+      "last_close": 124.04,
+      "last_bar_time": "2026-04-09T19:00:00Z",
+      "scan_date": "2026-04-09",
+      "entry": 124.04,
+      "entry_time": "2026-04-09T19:00:00Z",
+      "status": "closed",
+      "max_price": 124.04,
+      "touched_1r": false,
+      "touched_2r": false,
+      "outcome": "loss",
+      "exit_price": 117.32,
+      "exit_time": "2026-04-14T14:00:00Z",
+      "pnl_per_share": -6.72,
+      "pnl_dollars": -20.47,
+      "r_multiple": -1.159,
+      "exit_reason": "stop",
+      "days_held": 4.79
+    }
+  ],
+  "watching_count": 4
+}

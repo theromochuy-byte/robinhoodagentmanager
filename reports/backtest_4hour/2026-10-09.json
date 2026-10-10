@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-09",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 16,
+  "entries": [
+    {
+      "symbol": "EMR",
+      "type": "inverse_hns",
+      "neckline": 159.82,
+      "stop": 148.4483,
+      "target_2R": 186.5834,
+      "risk_per_share": 12.7117,
+      "shares": 2.3269,
+      "break_time": "2026-10-02T13:30:00Z",
+      "bars_since_break": 11,
+      "in_pullback": true,
+      "last_close": 161.83,
+      "last_bar_time": "2026-10-09T17:30:00Z",
+      "scan_date": "2026-10-09",
+      "entry": 161.83,
+      "entry_time": "2026-10-09T17:30:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 7
+}

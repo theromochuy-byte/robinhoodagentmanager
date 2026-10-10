@@ -1,0 +1,189 @@
+{
+  "as_of": "2026-10-09T23:00:16.703612+00:00",
+  "scan_date": "2026-10-09",
+  "regime": {
+    "spy_ema20": "bull",
+    "vix": 14.55,
+    "high_vix": false
+  },
+  "sector_scores": {
+    "XLB": 3,
+    "XLC": 3,
+    "XLE": 3,
+    "XLF": 3,
+    "XLI": 3,
+    "XLK": 3,
+    "XLP": 3,
+    "XLRE": 3,
+    "XLU": 3,
+    "XLV": 3,
+    "XLY": 3
+  },
+  "watching": [
+    {
+      "symbol": "HUM",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.4648,
+      "bars_since_break": 6,
+      "neckline": 415.77,
+      "last_price": 431.7979,
+      "stop": 375.721,
+      "target_1R": 490.639,
+      "target_2R": 548.0979
+    },
+    {
+      "symbol": "MRNA",
+      "type": "cup_and_handle",
+      "sector_score": 3,
+      "quality_score": 0.4539,
+      "bars_since_break": 6,
+      "neckline": 199.92,
+      "last_price": 224.9799,
+      "stop": 185.0345,
+      "target_1R": 244.4155,
+      "target_2R": 274.106
+    },
+    {
+      "symbol": "DDOG",
+      "type": "cup_and_handle",
+      "sector_score": 3,
+      "quality_score": 0.444,
+      "bars_since_break": 6,
+      "neckline": 278.8982,
+      "last_price": 293.27,
+      "stop": 263.6577,
+      "target_1R": 297.5823,
+      "target_2R": 314.5447
+    },
+    {
+      "symbol": "NOW",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.4423,
+      "bars_since_break": 6,
+      "neckline": 140.8,
+      "last_price": 140.865,
+      "stop": 133.5857,
+      "target_1R": 148.0843,
+      "target_2R": 155.3336
+    },
+    {
+      "symbol": "NOW",
+      "type": "cup_and_handle",
+      "sector_score": 3,
+      "quality_score": 0.4423,
+      "bars_since_break": 6,
+      "neckline": 140.16,
+      "last_price": 140.865,
+      "stop": 132.9857,
+      "target_1R": 148.6843,
+      "target_2R": 156.5336
+    },
+    {
+      "symbol": "SNOW",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.442,
+      "bars_since_break": 6,
+      "neckline": 348.61,
+      "last_price": 368.92,
+      "stop": 330.938,
+      "target_1R": 383.942,
+      "target_2R": 410.4441
+    },
+    {
+      "symbol": "ZS",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.3672,
+      "bars_since_break": 13,
+      "neckline": 216.9698,
+      "last_price": 233.89,
+      "stop": 196.2554,
+      "target_1R": 239.5546,
+      "target_2R": 261.2042
+    },
+    {
+      "symbol": "PSX",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.3533,
+      "bars_since_break": 13,
+      "neckline": 277.12,
+      "last_price": 278.115,
+      "stop": 258.3402,
+      "target_1R": 296.8598,
+      "target_2R": 316.1196
+    },
+    {
+      "symbol": "APA",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.3505,
+      "bars_since_break": 13,
+      "neckline": 45.615,
+      "last_price": 45.88,
+      "stop": 42.7822,
+      "target_1R": 48.4878,
+      "target_2R": 51.3406
+    },
+    {
+      "symbol": "MRVL",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.1622,
+      "bars_since_break": 27,
+      "neckline": 280.0,
+      "last_price": 275.33,
+      "stop": 259.1533,
+      "target_1R": 322.2467,
+      "target_2R": 353.7935
+    },
+    {
+      "symbol": "DELL",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.1605,
+      "bars_since_break": 27,
+      "neckline": 573.8,
+      "last_price": 586.38,
+      "stop": 533.1073,
+      "target_1R": 624.8927,
+      "target_2R": 670.7854
+    },
+    {
+      "symbol": "DELL",
+      "type": "cup_and_handle",
+      "sector_score": 3,
+      "quality_score": 0.1557,
+      "bars_since_break": 27,
+      "neckline": 567.9999,
+      "last_price": 586.38,
+      "stop": 533.1073,
+      "target_1R": 624.8927,
+      "target_2R": 670.7854
+    },
+    {
+      "symbol": "NET",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.0539,
+      "bars_since_break": 34,
+      "neckline": 357.6399,
+      "last_price": 360.93,
+      "stop": 338.9469,
+      "target_1R": 385.0531,
+      "target_2R": 408.1062
+    }
+  ],
+  "triggered_today": [],
+  "new_entries": 0,
+  "skipped": [],
+  "open_positions": 3,
+  "equity": {
+    "starting": 2500.0,
+    "in_use": 1814.5,
+    "available": 685.5
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "date": "2026-04-08",
+  "new_entries": 1,
+  "closed_today": 1,
+  "open_count": 14,
+  "entries": [
+    {
+      "symbol": "TGT",
+      "type": "inverse_hns",
+      "neckline": 120.79,
+      "stop": 115.0154,
+      "target_2R": 133.3591,
+      "risk_per_share": 6.1146,
+      "shares": 3.0958,
+      "break_time": "2026-03-27T15:00:00Z",
+      "bars_since_break": 46,
+      "in_pullback": true,
+      "last_close": 123.12,
+      "last_bar_time": "2026-04-08T19:00:00Z",
+      "scan_date": "2026-04-08",
+      "entry": 123.12,
+      "entry_time": "2026-04-08T19:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [
+    {
+      "symbol": "COP",
+      "type": "inverse_hns",
+      "neckline": 120.83,
+      "stop": 113.8561,
+      "target_2R": 136.1128,
+      "risk_per_share": 7.4189,
+      "shares": 3.0921,
+      "break_time": "2026-03-13T16:00:00Z",
+      "bars_since_break": 27,
+      "in_pullback": true,
+      "last_close": 126.005,
+      "last_bar_time": "2026-03-19T19:00:00Z",
+      "scan_date": "2026-03-19",
+      "entry": 126.005,
+      "entry_time": "2026-03-19T19:00:00Z",
+      "status": "closed",
+      "max_price": 134.873,
+      "touched_1r": true,
+      "touched_2r": false,
+      "outcome": "breakeven",
+      "exit_price": 126.005,
+      "exit_time": "2026-04-08T14:00:00Z",
+      "pnl_per_share": 0.0,
+      "pnl_dollars": 0.0,
+      "r_multiple": 0.0,
+      "exit_reason": "breakeven_stop",
+      "days_held": 19.79
+    }
+  ],
+  "watching_count": 3
+}

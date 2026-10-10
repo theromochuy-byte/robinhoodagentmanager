@@ -1,0 +1,28 @@
+{
+  "date": "2026-04-30",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 18,
+  "entries": [
+    {
+      "symbol": "QCOM",
+      "type": "inverse_hns",
+      "neckline": 155.915,
+      "stop": 148.0054,
+      "target_2R": 174.2391,
+      "risk_per_share": 8.7446,
+      "shares": 2.3923,
+      "break_time": "2026-04-29T18:00:00Z",
+      "bars_since_break": 7,
+      "in_pullback": true,
+      "last_close": 179.63,
+      "last_bar_time": "2026-04-30T19:00:00Z",
+      "scan_date": "2026-04-30",
+      "entry": 179.63,
+      "entry_time": "2026-04-30T19:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 4
+}

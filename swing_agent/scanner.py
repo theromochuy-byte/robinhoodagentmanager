@@ -6,8 +6,13 @@ paper trades to data/paper_trades_live.json. Run once per day after close.
 A setup is "live" when:
   1. A qualifying pattern broke its neckline within the last 12 4h bars.
   2. Daily bias is long at the time of the break.
-  3. Pattern depth >= 3%.
-  4. The retest has NOT yet triggered (still watching) OR just triggered today.
+  3. Pattern depth in [3%, 12%] — too shallow misses structure, too wide means a distant stop that bleeds slowly.
+  4. EMA20 > SMA50 > SMA200 on daily — confirms full multi-timeframe uptrend.
+  5. Stock 20-day return > SPY 20-day return — relative strength confirms leadership.
+  6. Break bar volume >= 1.2× 20-bar average — high-conviction neckline break.
+  7. Quality score >= MIN_QUALITY_SCORE — filters marginal setups.
+  8. The retest has NOT yet triggered (still watching) OR just triggered today.
+  9. At most MAX_ENTRIES_PER_DAY new positions opened per scan.
 
 Outputs:
   data/paper_trades_live.json  — all open paper positions + today's new entries
@@ -30,20 +35,27 @@ from .patterns import detect_double_bottom, detect_inverse_hns, detect_cup_and_h
 from .simulator import build_trade
 from .watchlist import (
     upsert_watching, mark_triggered, mark_missed, expire_stale, watchlist_summary,
+    purge_legacy_entries, batch_update,
 )
 
 ROOT        = Path(__file__).resolve().parent.parent
-DATA        = ROOT / "data"
-REPORTS     = ROOT / "reports"
-LIVE_LEDGER = DATA / "paper_trades_live.json"
-EQUITY_FILE = DATA / "equity.json"
+DATA             = ROOT / "data"
+REPORTS          = ROOT / "reports"
+LIVE_LEDGER      = DATA / "paper_trades_live.json"
+EQUITY_FILE      = DATA / "equity.json"
+SCAN_SUMMARY_FILE = DATA / "scan_summary.json"
 
 SESSION_UNIVERSE = DATA / "session_universe.txt"
 INDICATOR_CACHE  = DATA / "indicator_cache.json"
 CACHE_MAX_AGE    = 8 * 3600  # 8 hours
 
-VIX_HIGH_THRESHOLD = 25.0  # skip new entries when VIX is elevated
-VIX_CACHE_FILE     = DATA / "vix_cache.json"
+VIX_HIGH_THRESHOLD  = 25.0  # skip new entries when VIX is elevated
+VIX_CACHE_FILE      = DATA / "vix_cache.json"
+SPY_RS_CACHE_FILE   = DATA / "spy_rs_cache.json"
+SPY_RS_CACHE_AGE    = 8 * 3600
+SPY_REGIME_CACHE_FILE = DATA / "spy_regime_cache.json"
+SPY_REGIME_CACHE_AGE  = 8 * 3600
+SPY_EMA_PERIOD        = 20  # daily bars
 
 # Sector ETF map: symbol prefix/membership → SPDR sector ETF
 # Covers the 11 GICS sectors; unmapped symbols are allowed through (no false blocks)
@@ -93,49 +105,93 @@ SECTOR_ETF_MAP: dict[str, str] = {
 SECTOR_ETF_CACHE_FILE = DATA / "sector_etf_cache.json"
 SECTOR_ETF_CACHE_AGE  = 8 * 3600  # 8 hours
 
-
-def _fetch_etf_price(ticker: str) -> float | None:
-    """Fetch latest close for a sector ETF via Yahoo Finance."""
-    try:
-        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}?interval=1d&range=5d"
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req, timeout=5) as resp:
-            data = json.loads(resp.read())
-        meta = data["chart"]["result"][0]["meta"]
-        return float(meta["regularMarketPrice"])
-    except Exception:
-        return None
+# Sector momentum stack thresholds
+# Score 0–3: weekly EMA20 (1pt) + daily EMA20 (1pt) + daily EMA8 (1pt)
+SECTOR_SCORE_MIN      = 2   # score < 2 → skip entirely
+SECTOR_SCORE_FULL     = 3   # score == 3 → full scan; score == 2 → capped entries
 
 
-def _load_sector_etf_bias() -> dict[str, bool]:
-    """Return {etf: is_bullish} for all sector ETFs, using cache when fresh.
+def _ema(closes: list[float], period: int) -> float:
+    """Compute EMA of the last values in closes over the given period."""
+    k = 2 / (period + 1)
+    val = closes[0]
+    for c in closes[1:]:
+        val = c * k + val * (1 - k)
+    return val
 
-    Bullish = ETF price > its 20-bar SMA (approximated via Yahoo Finance 60-day daily bars).
-    Falls back to allowing all sectors when the fetch fails.
+
+def _load_sector_etf_bias() -> dict[str, int]:
+    """Return {etf: score} for all sector ETFs, using cache when fresh.
+
+    Score 0–3 based on three momentum checks (far-to-near):
+      +1  Weekly EMA(20): weekly closes above 20-week EMA  → long-term uptrend
+      +1  Daily  EMA(20): daily close above 20-day EMA     → medium-term uptrend
+      +1  Daily  EMA(8):  daily close above 8-day EMA      → near-term thrust
+
+    Falls back to score=3 (allow through) when data is unavailable.
     """
+    import datetime as _dt
     if SECTOR_ETF_CACHE_FILE.exists():
         age = time.time() - SECTOR_ETF_CACHE_FILE.stat().st_mtime
         if age < SECTOR_ETF_CACHE_AGE:
-            return json.loads(SECTOR_ETF_CACHE_FILE.read_text())
+            cached = json.loads(SECTOR_ETF_CACHE_FILE.read_text())
+            # Migrate old bool cache to int scores transparently
+            if cached and isinstance(next(iter(cached.values())), bool):
+                cached = {k: (3 if v else 0) for k, v in cached.items()}
+            return cached
 
     etfs = set(SECTOR_ETF_MAP.values())
-    result: dict[str, bool] = {}
+    result: dict[str, int] = {}
     for etf in sorted(etfs):
         try:
-            url = f"https://query1.finance.yahoo.com/v8/finance/chart/{etf}?interval=1d&range=60d"
+            # Fetch ~2 years of daily bars to derive weekly closes and all EMAs
+            url = (f"https://query1.finance.yahoo.com/v8/finance/chart/{etf}"
+                   f"?interval=1d&range=500d")
             req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, timeout=5) as resp:
+            with urllib.request.urlopen(req, timeout=8) as resp:
                 data = json.loads(resp.read())
-            closes = data["chart"]["result"][0]["indicators"]["quote"][0]["close"]
-            closes = [c for c in closes if c is not None]
-            if len(closes) < 20:
-                result[etf] = True  # not enough data — allow through
+            closes_raw = data["chart"]["result"][0]["indicators"]["quote"][0]["close"]
+            timestamps = data["chart"]["result"][0]["timestamps"]
+            closes_raw = [c for c in closes_raw if c is not None]
+            if len(closes_raw) < 40:
+                result[etf] = 3  # not enough data — allow through
                 continue
-            price = closes[-1]
-            sma20 = sum(closes[-20:]) / 20
-            result[etf] = price > sma20
+
+            price = closes_raw[-1]
+            score = 0
+
+            # Daily EMA(20) and EMA(8)
+            if len(closes_raw) >= 20:
+                d_ema20 = _ema(closes_raw[-60:], 20)
+                if price > d_ema20:
+                    score += 1
+            if len(closes_raw) >= 8:
+                d_ema8 = _ema(closes_raw[-30:], 8)
+                if price > d_ema8:
+                    score += 1
+
+            # Weekly EMA(20): resample daily closes to weekly (Friday close)
+            weekly_closes: list[float] = []
+            week_closes_tmp: list[float] = []
+            for ts, c in zip(timestamps, closes_raw):
+                if c is None:
+                    continue
+                dow = _dt.datetime.utcfromtimestamp(ts).weekday()  # 0=Mon, 4=Fri
+                week_closes_tmp.append(c)
+                if dow == 4:  # Friday — record week close
+                    weekly_closes.append(week_closes_tmp[-1])
+                    week_closes_tmp = []
+            if week_closes_tmp:  # partial current week
+                weekly_closes.append(week_closes_tmp[-1])
+            if len(weekly_closes) >= 20:
+                w_ema20 = _ema(weekly_closes[-40:], 20)
+                if weekly_closes[-1] > w_ema20:
+                    score += 1
+
+            result[etf] = score
         except Exception:
-            result[etf] = True  # fetch failed — allow through
+            result[etf] = 3  # fetch failed — allow through
+
     SECTOR_ETF_CACHE_FILE.write_text(json.dumps(result))
     return result
 
@@ -164,6 +220,64 @@ def _load_vix() -> float | None:
     return _fetch_vix()
 
 
+def _fetch_spy_20d_return() -> float | None:
+    """Return SPY's 20-day price return, cached for 8 hours. Returns None on failure."""
+    if SPY_RS_CACHE_FILE.exists():
+        age = time.time() - SPY_RS_CACHE_FILE.stat().st_mtime
+        if age < SPY_RS_CACHE_AGE:
+            return json.loads(SPY_RS_CACHE_FILE.read_text()).get("return_20d")
+    try:
+        url = "https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&range=35d"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            data = json.loads(resp.read())
+        closes = data["chart"]["result"][0]["indicators"]["quote"][0]["close"]
+        closes = [c for c in closes if c is not None]
+        if len(closes) < 21:
+            return None
+        ret = (closes[-1] - closes[-21]) / closes[-21]
+        SPY_RS_CACHE_FILE.write_text(json.dumps({"return_20d": ret, "fetched_at": time.time()}))
+        return ret
+    except Exception:
+        return None
+
+
+def _fetch_spy_ema_bias() -> bool | None:
+    """Return True if SPY close > 20-day EMA (bull regime), False if not, None on failure.
+    Result cached for 8 hours to avoid repeated Yahoo fetches.
+    """
+    if SPY_REGIME_CACHE_FILE.exists():
+        age = time.time() - SPY_REGIME_CACHE_FILE.stat().st_mtime
+        if age < SPY_REGIME_CACHE_AGE:
+            val = json.loads(SPY_REGIME_CACHE_FILE.read_text()).get("bull_regime")
+            if val is not None:
+                return bool(val)
+    try:
+        bars_needed = SPY_EMA_PERIOD + 5
+        url = (f"https://query1.finance.yahoo.com/v8/finance/chart/SPY"
+               f"?interval=1d&range={bars_needed}d")
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            data = json.loads(resp.read())
+        closes = data["chart"]["result"][0]["indicators"]["quote"][0]["close"]
+        closes = [c for c in closes if c is not None]
+        if len(closes) < SPY_EMA_PERIOD:
+            return None
+        # Compute EMA(20) using standard multiplier
+        k = 2 / (SPY_EMA_PERIOD + 1)
+        ema_val = sum(closes[:SPY_EMA_PERIOD]) / SPY_EMA_PERIOD
+        for c in closes[SPY_EMA_PERIOD:]:
+            ema_val = c * k + ema_val * (1 - k)
+        bull = closes[-1] > ema_val
+        SPY_REGIME_CACHE_FILE.write_text(
+            json.dumps({"bull_regime": bull, "spy_close": closes[-1],
+                        "spy_ema20": round(ema_val, 4), "fetched_at": time.time()})
+        )
+        return bull
+    except Exception:
+        return None
+
+
 def _load_session_cache() -> dict[str, dict]:
     """Load live indicator cache written by Robinhood MCP session fetch.
     Returns {symbol: {ema20_daily, atr14_4hour}} or {} if missing/stale.
@@ -186,7 +300,10 @@ def _load_session_universe() -> list[str] | None:
         return None
     return SESSION_UNIVERSE.read_text().split()
 
-STARTING_EQUITY = 2500.0
+from swing_agent.config import (
+    STARTING_EQUITY, ENTRY_TIMEFRAME, FRESHNESS_BARS,
+    MIN_QUALITY_SCORE, MAX_ENTRIES_PER_DAY,
+)
 
 
 def _load_equity() -> dict:
@@ -200,13 +317,24 @@ def _save_equity(state: dict) -> None:
     EQUITY_FILE.write_text(json.dumps(state, indent=2))
 
 
-def _recompute_equity() -> dict:
-    """Recompute capital_in_use from the live ledger and save."""
-    ledger = _load_live_ledger()
+def _recompute_equity(ledger: list[dict] | None = None) -> dict:
+    """Recompute capital_in_use from the live ledger and save.
+
+    Counts both entered positions (at actual fill price) and pending_fill
+    positions (at signal_price estimate) so available_equity stays accurate
+    between the evening scan and next morning's open resolution.
+    Pass an already-loaded ledger to avoid a redundant file read.
+    """
+    if ledger is None:
+        ledger = _load_live_ledger()
     in_use = sum(
         t["entry"] * t.get("shares", 0)
         for t in ledger
         if t.get("status") == "entered"
+    ) + sum(
+        t.get("signal_price", 0) * t.get("shares", 0)
+        for t in ledger
+        if t.get("status") == "pending_fill"
     )
     state = _load_equity()
     state["capital_in_use"] = round(in_use, 2)
@@ -236,7 +364,7 @@ def _quality_score(setup: dict) -> float:
                        and have less time to fail before the 12-bar window closes.
     """
     depth     = (setup["neckline"] - setup["stop"]) / setup["neckline"]
-    freshness = (12 - setup.get("bars_since_break", 0)) / 12
+    freshness = (FRESHNESS_BARS - setup.get("bars_since_break", 0)) / FRESHNESS_BARS
     return round(depth * 0.5 + freshness * 0.5, 4)
 
 
@@ -245,14 +373,16 @@ def scan_symbol(
     equity: float,
     risk_pct: float = 0.02,
     indicator_cache: dict | None = None,
+    spy_20d_return: float | None = None,
 ) -> dict:
     """Scan one symbol. Returns dict with 'watching' and 'triggered' lists.
 
     indicator_cache: optional {ema20_daily, atr14_4hour} for this symbol,
     fetched live from Robinhood API. When provided, replaces bar-computed values.
+    spy_20d_return: optional SPY 20-day return for relative-strength filter.
     """
     daily_path = DATA / f"{symbol}_day.json"
-    h4_path    = DATA / f"{symbol}_4hour.json"
+    h4_path    = DATA / f"{symbol}_{ENTRY_TIMEFRAME}.json"
     if not daily_path.exists() or not h4_path.exists():
         return {"watching": [], "triggered": []}
 
@@ -262,7 +392,7 @@ def scan_symbol(
         return {"watching": [], "triggered": []}
 
     live_ema = indicator_cache.get("ema20_daily") if indicator_cache else None
-    live_atr = indicator_cache.get("atr14_4hour") if indicator_cache else None
+    live_atr = indicator_cache.get(f"atr14_{ENTRY_TIMEFRAME}") if indicator_cache else None
 
     # Bias: prefer live EMA from Robinhood; fall back to bar-computed series
     # Both paths enforce: close > 20 EMA AND 20 EMA > 50 SMA (confirmed uptrend)
@@ -270,18 +400,33 @@ def scan_symbol(
         last_close_daily = float(daily.iloc[-1]["close"])
         last_low_daily   = float(daily.iloc[-1]["low"])
         sma50_daily      = float(daily["close"].rolling(50).mean().iloc[-1])
+        sma200_daily     = float(daily["close"].rolling(200).mean().iloc[-1]) if len(daily) >= 200 else 0.0
         current_bias     = (
             (last_close_daily > live_ema)
             and (last_low_daily > live_ema)
             and (live_ema > sma50_daily)
+            and (sma50_daily > sma200_daily)  # EMA stack: 20 > 50 > 200
         )
         bias = None  # will use current_bias for asof check
     else:
         bias = daily_bias_series(daily)
+        # EMA stack filter for fallback path: 20 EMA > SMA50 > SMA200
+        if len(daily) >= 200:
+            ema20_d  = float(ema(daily["close"], 20).iloc[-1])
+            sma50_d  = float(daily["close"].rolling(50).mean().iloc[-1])
+            sma200_d = float(daily["close"].rolling(200).mean().iloc[-1])
+            if not (ema20_d > sma50_d > sma200_d):
+                return {"watching": [], "triggered": []}
+
+    # Relative strength vs SPY: stock must have outperformed over last 20 days
+    if spy_20d_return is not None and len(daily) >= 21:
+        stock_20d = (float(daily.iloc[-1]["close"]) - float(daily.iloc[-21]["close"])) / float(daily.iloc[-21]["close"])
+        if stock_20d < spy_20d_return:
+            return {"watching": [], "triggered": []}
 
     atr_series = atr(h4, 14)
     ema9_series = ema(h4["close"], 9)
-    patterns   = detect_double_bottom(h4) + detect_inverse_hns(h4) + detect_cup_and_handle(h4)
+    patterns   = detect_inverse_hns(h4) + detect_cup_and_handle(h4)  # double_bottom suspended
     patterns.sort(key=lambda p: p["break_index"])
 
     last_bar   = len(h4) - 1
@@ -291,8 +436,8 @@ def scan_symbol(
 
     for p in patterns:
         bi = p["break_index"]
-        # only patterns whose break is within the last 12 bars
-        if bi < last_bar - 11:
+        # only patterns whose break is within the last FRESHNESS_BARS bars
+        if bi < last_bar - (FRESHNESS_BARS - 1):
             continue
         # Bias check: live EMA uses current daily bias; fallback uses series
         if bias is None:
@@ -301,12 +446,30 @@ def scan_symbol(
         elif not bias_asof(bias, p["break_time"]):
             continue
 
-        if (p["neckline"] - p["stop_basis"]) / p["neckline"] < 0.03:
+        # Pre-check: pattern structure depth (neckline to stop_basis, no ATR buffer).
+        # This rejects obviously shallow or obviously wide patterns before building
+        # the full trade. The effective stop (stop_basis - 1.5×ATR) is checked again
+        # below after build_trade, using the actual stop level.
+        struct_depth = (p["neckline"] - p["stop_basis"]) / p["neckline"]
+        if struct_depth < 0.03 or struct_depth > 0.15:  # wider pre-filter to not over-block
             continue
+
+        # Volume confirmation: break bar must have >= 1.2× its 20-bar average volume
+        if bi >= 20 and "volume" in h4.columns:
+            avg_vol = float(h4["volume"].rolling(20).mean().iloc[bi])
+            if avg_vol > 0 and not pd.isna(avg_vol):
+                if float(h4.loc[bi, "volume"]) < 1.2 * avg_vol:
+                    continue
 
         trade = build_trade(h4, p, atr_series, equity, risk_pct,
                             atr_override=live_atr)
         if trade is None:
+            continue
+
+        # Definitive depth gate: use the actual ATR-buffered stop, not stop_basis.
+        # This is the number that goes in the ledger and drives real risk.
+        depth = (p["neckline"] - trade["stop"]) / p["neckline"]
+        if depth < 0.03 or depth > 0.12:
             continue
 
         neckline   = p["neckline"]
@@ -350,13 +513,22 @@ def scan_symbol(
         }
 
         if triggered_today:
-            setup["entry"]       = round(last_close, 4)
-            setup["entry_time"]  = str(h4.loc[last_bar, "begins_at"])
-            setup["status"]      = "entered"
+            # Record the 4H close that confirmed the retest as signal_price.
+            # The actual entry price is NOT known yet — it will be the next
+            # morning's opening quote, resolved by resolve_pending_fills().
+            setup["signal_price"] = round(last_close, 4)
+            setup["signal_time"]  = str(h4.loc[last_bar, "begins_at"])
+            setup["status"]       = "pending_fill"
             setup["quality_score"] = _quality_score(setup)
-            triggered.append(setup)
+            if setup["quality_score"] < MIN_QUALITY_SCORE:
+                setup["status"]      = "watching"
+                setup["skip_reason"] = "low_quality"
+                watching.append(setup)
+            else:
+                triggered.append(setup)
         else:
             setup["status"] = "watching"
+            setup["quality_score"] = _quality_score(setup)
             watching.append(setup)
 
     return {"watching": watching, "triggered": triggered}
@@ -365,6 +537,9 @@ def scan_symbol(
 def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
     REPORTS.mkdir(exist_ok=True)
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    # Remove stale legacy watchlist entries (no scanner data) on first run of the day
+    purge_legacy_entries()
 
     # Session overrides: options-filtered universe and live indicator cache
     session_syms = _load_session_universe()
@@ -377,20 +552,35 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
     if indicator_cache:
         print(f"  [Session] Live indicator cache loaded for {len(indicator_cache)} symbols")
 
-    # Sector ETF pre-filter — only scan symbols in bullish sectors
+    # Sector ETF momentum stack — score 0-3 (weekly EMA20 + daily EMA20 + daily EMA8)
     sector_bias = _load_sector_etf_bias()
-    bearish_etfs = [e for e, bull in sector_bias.items() if not bull]
-    if bearish_etfs:
-        print(f"  [Sector] Bearish ETFs: {', '.join(sorted(bearish_etfs))}")
+    for score_label, threshold in [(3, "Strong (3/3)"), (2, "Moderate (2/3)"),
+                                    (1, "Weak (1/3)"), (0, "Bearish (0/3)")]:
+        etfs_at = sorted(e for e, s in sector_bias.items() if s == score_label)
+        if etfs_at:
+            print(f"  [Sector] {threshold}: {', '.join(etfs_at)}")
     original_count = len(symbols)
     symbols = [
         s for s in symbols
-        if sector_bias.get(SECTOR_ETF_MAP.get(s, ""), True)  # unmapped symbols pass through
+        if sector_bias.get(SECTOR_ETF_MAP.get(s, ""), SECTOR_SCORE_FULL) >= SECTOR_SCORE_MIN
     ]
     filtered_out = original_count - len(symbols)
     if filtered_out:
-        print(f"  [Sector] Filtered {filtered_out} symbol(s) in bearish sectors "
+        print(f"  [Sector] Filtered {filtered_out} symbol(s) with sector score < {SECTOR_SCORE_MIN} "
               f"({original_count} → {len(symbols)})")
+
+    # Tag each symbol with its sector score for downstream priority
+    symbol_sector_score: dict[str, int] = {
+        s: sector_bias.get(SECTOR_ETF_MAP.get(s, ""), SECTOR_SCORE_FULL)
+        for s in symbols
+    }
+
+    # Relative strength benchmark: SPY 20-day return
+    spy_return = _fetch_spy_20d_return()
+    if spy_return is not None:
+        print(f"  [RS] SPY 20d return: {spy_return*100:.1f}% — stocks must beat this to qualify")
+    else:
+        print("  [RS] SPY return unavailable — relative strength filter bypassed")
 
     # VIX market context gate — skip new entries when volatility is elevated
     vix = _load_vix()
@@ -401,6 +591,16 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
     else:
         print("  [VIX] unavailable — proceeding without gate")
         high_vix = False
+
+    # SPY regime gate — skip new entries when SPY is below its 20-day EMA
+    spy_bull = _fetch_spy_ema_bias()
+    bear_regime = spy_bull is False  # None (unavailable) passes through
+    if spy_bull is True:
+        print("  [Regime] SPY above 20-day EMA — bull regime confirmed")
+    elif spy_bull is False:
+        print("  [Regime] SPY below 20-day EMA ⚠ BEAR REGIME — new entries blocked")
+    else:
+        print("  [Regime] SPY EMA unavailable — regime gate bypassed")
 
     # Recompute equity state from ledger before scanning
     equity_state = _recompute_equity()
@@ -417,83 +617,123 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         # Use full starting equity for position sizing (risk % of starting capital)
         # but gate entry on available equity
         result = scan_symbol(sym, starting, risk_pct,
-                             indicator_cache=indicator_cache.get(sym))
+                             indicator_cache=indicator_cache.get(sym),
+                             spy_20d_return=spy_return)
+        sec_score = symbol_sector_score.get(sym, SECTOR_SCORE_FULL)
+        for s in result["watching"] + result["triggered"]:
+            s["sector_score"] = sec_score
         all_watching.extend(result["watching"])
         all_triggered.extend(result["triggered"])
 
-    # ── Watchlist ledger: upsert every watching setup ──────────────────────────
-    for s in all_watching:
-        upsert_watching(s)
-
-    # Expire setups that aged out of the 12-bar window this scan
     watching_ids  = {(s["symbol"], s["type"], s["break_time"]) for s in all_watching}
     triggered_ids = {(s["symbol"], s["type"], s["break_time"]) for s in all_triggered}
-    expired = expire_stale(watching_ids, triggered_ids)
-    if expired:
-        print(f"  [Watchlist] Expired {len(expired)} stale setup(s): {', '.join(expired)}")
 
     # ── Merge triggered entries — only add if we have enough capital ────────────────────────
-    # Sort by quality score descending so the best setups get capital first.
-    # Existing ledger entries (already opened) are processed first to avoid
-    # double-counting them against available equity.
+    # Load ledger once here; reuse it for equity check and final save.
     ledger = _load_live_ledger()
-    existing_keys = {(t["symbol"], t.get("entry_time")) for t in ledger}
+    existing_keys = {
+        (t["symbol"], t.get("signal_time", t.get("entry_time"))) for t in ledger
+    }
+    symbols_entered = {
+        t["symbol"] for t in ledger
+        if t.get("status") in ("entered", "pending_fill")
+    }
     new_entries   = []
     skipped       = []
+    wl_triggered: list[tuple[str, str, str, float, str]] = []
+    wl_missed:    list[tuple[str, str, str, str]]         = []
 
-    already_open  = [t for t in all_triggered if (t["symbol"], t.get("entry_time")) in existing_keys]
+    already_open = [
+        t for t in all_triggered
+        if (t["symbol"], t.get("signal_time")) in existing_keys
+    ]
     new_candidates = sorted(
-        [t for t in all_triggered if (t["symbol"], t.get("entry_time")) not in existing_keys],
-        key=lambda t: t.get("quality_score", 0),
+        [t for t in all_triggered
+         if (t["symbol"], t.get("signal_time")) not in existing_keys],
+        key=lambda t: (t.get("sector_score", SECTOR_SCORE_FULL), t.get("quality_score", 0)),
         reverse=True,
     )
     if new_candidates:
         top = new_candidates[0]
-        print(f"  [Rank] {len(new_candidates)} new trigger(s) ranked by quality score — "
-              f"top: {top['symbol']} {top['type']} score={top.get('quality_score', 0):.4f}")
+        print(f"  [Rank] {len(new_candidates)} new trigger(s) ranked by sector score then "
+              f"quality score — top: {top['symbol']} {top['type']} "
+              f"sector={top.get('sector_score', SECTOR_SCORE_FULL)}/3 "
+              f"score={top.get('quality_score', 0):.4f}")
 
+    entries_today = 0
     for t in already_open + new_candidates:
-        if (t["symbol"], t.get("entry_time")) in existing_keys:
-            # already in ledger — still update watchlist state if not yet done
-            mark_triggered(t["symbol"], t["type"], t["break_time"],
-                           t["entry"], t["entry_time"])
+        if (t["symbol"], t.get("signal_time")) in existing_keys:
+            wl_triggered.append((t["symbol"], t["type"], t["break_time"],
+                                  t["signal_price"], t["signal_time"]))
+            continue
+        if t["symbol"] in symbols_entered:
+            skipped.append({"symbol": t["symbol"], "type": t["type"],
+                            "quality_score": t.get("quality_score", 0),
+                            "skip_reason": "one_per_symbol"})
+            wl_missed.append((t["symbol"], t["type"], t["break_time"], "one_per_symbol"))
             continue
         if high_vix:
             skipped.append({"symbol": t["symbol"], "type": t["type"],
-                            "cost": round(t["entry"] * t.get("shares", 0), 2),
-                            "available": round(available, 2),
                             "quality_score": t.get("quality_score", 0),
                             "skip_reason": "high_vix"})
-            mark_missed(t["symbol"], t["type"], t["break_time"], reason="high_vix")
+            wl_missed.append((t["symbol"], t["type"], t["break_time"], "high_vix"))
             continue
-        cost = round(t["entry"] * t.get("shares", 0), 2)
-        if cost > available:
+        if bear_regime:
             skipped.append({"symbol": t["symbol"], "type": t["type"],
-                            "cost": cost, "available": round(available, 2),
+                            "quality_score": t.get("quality_score", 0),
+                            "skip_reason": "bear_regime"})
+            wl_missed.append((t["symbol"], t["type"], t["break_time"], "bear_regime"))
+            continue
+        est_cost = round(t["signal_price"] * t.get("shares", 0), 2)
+        if est_cost > available:
+            skipped.append({"symbol": t["symbol"], "type": t["type"],
+                            "est_cost": est_cost, "available": round(available, 2),
                             "quality_score": t.get("quality_score", 0),
                             "skip_reason": "no_capital"})
-            mark_missed(t["symbol"], t["type"], t["break_time"], reason="no_capital")
+            wl_missed.append((t["symbol"], t["type"], t["break_time"], "no_capital"))
+            continue
+        if entries_today >= MAX_ENTRIES_PER_DAY:
+            skipped.append({"symbol": t["symbol"], "type": t["type"],
+                            "quality_score": t.get("quality_score", 0),
+                            "skip_reason": "daily_cap"})
+            wl_missed.append((t["symbol"], t["type"], t["break_time"], "daily_cap"))
+            continue
+        if t.get("sector_score", SECTOR_SCORE_FULL) < SECTOR_SCORE_FULL and entries_today >= 1:
+            skipped.append({"symbol": t["symbol"], "type": t["type"],
+                            "quality_score": t.get("quality_score", 0),
+                            "sector_score": t.get("sector_score"),
+                            "skip_reason": "sector_cap"})
+            wl_missed.append((t["symbol"], t["type"], t["break_time"], "sector_cap"))
             continue
         new_entries.append(t)
-        available = round(available - cost, 2)
-        mark_triggered(t["symbol"], t["type"], t["break_time"],
-                       t["entry"], t["entry_time"])
+        entries_today += 1
+        available = round(available - est_cost, 2)
+        symbols_entered.add(t["symbol"])
+        wl_triggered.append((t["symbol"], t["type"], t["break_time"],
+                              t["signal_price"], t["signal_time"]))
 
     ledger.extend(new_entries)
     _save_live_ledger(ledger)
 
-    # Recompute and save final equity state
-    final_state = _recompute_equity()
+    # ── Single watchlist write for the entire scan run ─────────────────────────
+    expired = batch_update(all_watching, wl_triggered, wl_missed,
+                           watching_ids, triggered_ids)
+    if expired:
+        print(f"  [Watchlist] Expired {len(expired)} stale setup(s): {', '.join(expired)}")
+
+    # Recompute and save final equity state (reuse the ledger already in memory)
+    final_state = _recompute_equity(ledger)
 
     wl_summary = watchlist_summary()
     report = {
         "scan_date":       today,
         "vix":             vix,
         "high_vix":        high_vix,
-        "sector_bias":     sector_bias,
+        "sector_scores":   sector_bias,
         "watching":        sorted(all_watching, key=lambda x: x["bars_since_break"]),
         "triggered_today": sorted(all_triggered,
-                                   key=lambda x: x.get("quality_score", 0), reverse=True),
+                                   key=lambda x: (x.get("sector_score", SECTOR_SCORE_FULL),
+                                                  x.get("quality_score", 0)), reverse=True),
         "new_entries":     len(new_entries),
         "skipped":         skipped,
         "total_open":      len([t for t in ledger if t.get("status") == "entered"]),
@@ -506,19 +746,78 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
     }
     report_path = REPORTS / f"scan_{today}.json"
     report_path.write_text(json.dumps(report, indent=2))
+
+    # Write always-current scan summary — single file, overwritten every run
+    spy_regime_str = "bull" if spy_bull is True else ("bear" if spy_bull is False else "unknown")
+    watching_ranked = sorted(
+        all_watching,
+        key=lambda x: (x.get("sector_score", SECTOR_SCORE_FULL), x.get("quality_score", 0)),
+        reverse=True,
+    )
+    summary = {
+        "as_of":          datetime.now(timezone.utc).isoformat(),
+        "scan_date":      today,
+        "regime": {
+            "spy_ema20":  spy_regime_str,
+            "vix":        vix,
+            "high_vix":   high_vix,
+        },
+        "sector_scores":  sector_bias,
+        "watching": [
+            {
+                "symbol":        s["symbol"],
+                "type":          s["type"],
+                "sector_score":  s.get("sector_score", SECTOR_SCORE_FULL),
+                "quality_score": round(s.get("quality_score", 0), 4),
+                "bars_since_break": s.get("bars_since_break"),
+                "neckline":      s.get("neckline"),
+                "last_price":    s.get("last_close"),
+                "stop":          s.get("stop"),
+                "target_1R":     s.get("target_1R"),
+                "target_2R":     s.get("target_2R"),
+            }
+            for s in watching_ranked
+        ],
+        "triggered_today": [
+            {
+                "symbol":        t["symbol"],
+                "type":          t["type"],
+                "sector_score":  t.get("sector_score", SECTOR_SCORE_FULL),
+                "quality_score": round(t.get("quality_score", 0), 4),
+                "signal_price":  t.get("signal_price"),
+                "stop":          t.get("stop"),
+                "target_1R":     t.get("target_1R"),
+                "target_2R":     t.get("target_2R"),
+            }
+            for t in report["triggered_today"]
+        ],
+        "new_entries":    len(new_entries),
+        "skipped":        skipped,
+        "open_positions": report["total_open"],
+        "equity":         report["equity"],
+    }
+    SCAN_SUMMARY_FILE.write_text(json.dumps(summary, indent=2))
+    print(f"  [Summary] scan_summary.json updated ({len(all_watching)} watching, "
+          f"{len(report['triggered_today'])} triggered)")
+
     return report
 
 
 if __name__ == "__main__":
+    import sys as _sys
     from swing_agent.fetch_yf import _load_universe, fetch_daily, fetch_4hour, save as yf_save
 
     syms = _load_universe()
-    print("=== DATA REFRESH ===")
-    daily_data = fetch_daily(syms)
-    yf_save(daily_data, "_day")
-    h4_data = fetch_4hour(syms)
-    yf_save(h4_data, "_4hour")
-    print(f"  Refreshed {len(syms)} symbols\n")
+
+    # Skip data refresh when invoked via run_daily (avoids double-fetch).
+    # Pass --refresh to force a refresh when running scanner standalone.
+    if "--refresh" in _sys.argv:
+        print("=== DATA REFRESH ===")
+        daily_data = fetch_daily(syms)
+        yf_save(daily_data, "_day")
+        h4_data = fetch_4hour(syms)
+        yf_save(h4_data, "_4hour")
+        print(f"  Refreshed {len(syms)} symbols\n")
 
     result = run_scan(syms)
 
@@ -540,8 +839,9 @@ if __name__ == "__main__":
     if result["triggered_today"]:
         print(f"\n--- ENTRIES TODAY ---")
         for s in result["triggered_today"]:
+            entry = s.get('entry') or s.get('signal_price', 'pending')
             print(f"  {s['symbol']:<6} {s['type']:<14} "
-                  f"entry={s['entry']} stop={s['stop']} 2R={s['target_2R']} "
-                  f"shares={s['shares']} score={s.get('quality_score', 0):.4f}")
+                  f"entry={entry} stop={s['stop']} 2R={s.get('target_2R', 'n/a')} "
+                  f"shares={s.get('shares', 'n/a')} score={s.get('quality_score', 0):.4f}")
     else:
         print(f"\n  No entries triggered today.")

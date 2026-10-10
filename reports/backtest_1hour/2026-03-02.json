@@ -1,0 +1,28 @@
+{
+  "date": "2026-03-02",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 17,
+  "entries": [
+    {
+      "symbol": "COP",
+      "type": "inverse_hns",
+      "neckline": 111.91,
+      "stop": 106.9588,
+      "target_2R": 123.0124,
+      "risk_per_share": 5.3512,
+      "shares": 3.339,
+      "break_time": "2026-02-19T15:00:00Z",
+      "bars_since_break": 47,
+      "in_pullback": true,
+      "last_close": 118.21,
+      "last_bar_time": "2026-03-02T20:00:00Z",
+      "scan_date": "2026-03-02",
+      "entry": 118.21,
+      "entry_time": "2026-03-02T20:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 1
+}
