@@ -112,7 +112,7 @@ def check_stop_ladder(trades: list) -> None:
 # ── 5. Time stop proximity ────────────────────────────────────────────────────
 
 def check_time_stops(trades: list, now: datetime) -> None:
-    from swing_agent.config import TIME_STOP_TRADING_DAYS
+    from swing_agent.config import TIME_STOP_TRADING_DAYS, TIME_STOP_MIN_PROGRESS_FRAC
     for t in [t for t in trades if t.get("status") == "entered"]:
         sym = t["symbol"]
         entry_time = t.get("entry_time", "")
@@ -123,18 +123,31 @@ def check_time_stops(trades: list, now: datetime) -> None:
         trading_days = days_held * (5 / 7)
         days_left = TIME_STOP_TRADING_DAYS - trading_days
         touched = t.get("touched_1r", False)
-        if not touched and days_left < 0:
+
+        # Mirror run_daily.py exit logic: exempt if touched_1r OR made enough progress
+        entry = t.get("entry", 0)
+        stop = t.get("stop", 0)
+        target_1r = t.get("target_1R", 0)
+        current = t.get("current_price", entry)
+        risk = abs(entry - stop)
+        progress_frac = (current - entry) / risk if risk > 0 else 0
+        made_progress = progress_frac >= TIME_STOP_MIN_PROGRESS_FRAC
+        exempt = touched or made_progress
+
+        if not exempt and days_left < 0:
             check(FAIL, "TimeStop",
                   f"{sym}: {trading_days:.1f}/{TIME_STOP_TRADING_DAYS} trading days, "
-                  f"touched_1r=False — should have been time-stopped")
+                  f"touched_1r=False, progress={progress_frac:.0%} — should have been time-stopped")
         elif not touched and days_left < 3:
-            check(WARN, "TimeStop",
+            suffix = f"progress={progress_frac:.0%} (exempt)" if made_progress else f"progress={progress_frac:.0%}, {days_left:.1f} days left"
+            level = OK if made_progress else WARN
+            check(level, "TimeStop",
                   f"{sym}: {trading_days:.1f}/{TIME_STOP_TRADING_DAYS} trading days, "
-                  f"{days_left:.1f} left, touched_1r=False — fires soon")
+                  f"touched_1r=False — {suffix}")
         else:
             check(OK, "TimeStop",
                   f"{sym}: {trading_days:.1f}/{TIME_STOP_TRADING_DAYS} trading days  "
-                  f"({days_left:.1f} left)  touched_1r={touched}")
+                  f"({days_left:.1f} left)  touched_1r={touched}  progress={progress_frac:.0%}")
 
 
 # ── 6. Stuck pending fills ────────────────────────────────────────────────────
