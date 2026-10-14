@@ -520,5 +520,23 @@
     "touched_2r": false,
     "pct_to_1r": 65.8,
     "pct_to_2r": 32.9
+  },
+  {
+    "date": "2026-10-14",
+    "time": "2026-10-14T23:56:06.316204+00:00",
+    "mode": "evening",
+    "symbol": "A",
+    "price": 174.0,
+    "entry": 164.7,
+    "stop": 150.5559,
+    "target_1R": 178.8441,
+    "target_2R": 192.9882,
+    "unrealized_pnl": 32.88,
+    "pnl_r": 0.658,
+    "days_held": 21.2,
+    "touched_1r": false,
+    "touched_2r": false,
+    "pct_to_1r": 65.8,
+    "pct_to_2r": 32.9
   }
 ]

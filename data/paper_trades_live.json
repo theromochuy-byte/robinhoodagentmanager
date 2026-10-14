@@ -425,9 +425,30 @@
     "last_price": 174.0,
     "unrealized_pnl": 32.88,
     "touched_1r": false,
-    "checked_at": "2026-10-14T22:01:21.238791+00:00",
+    "checked_at": "2026-10-14T23:55:42.918695+00:00",
     "progress_pct": 32.9,
-    "est_days_to_2r": 30.8,
+    "est_days_to_2r": 31.0,
     "days_held": 21.2
+  },
+  {
+    "symbol": "COP",
+    "type": "inverse_hns",
+    "neckline": 141.62,
+    "stop": 127.3302,
+    "target_1R": 156.5298,
+    "target_2R": 171.1297,
+    "risk_per_share": 14.5998,
+    "shares": 3.4247,
+    "break_time": "2026-10-14T15:30:00Z",
+    "bars_since_break": 4,
+    "in_pullback": true,
+    "last_close": 142.37,
+    "last_bar_time": "2026-10-14T19:30:00Z",
+    "scanned_at": "2026-10-14T23:55:47.274729+00:00",
+    "signal_price": 142.37,
+    "signal_time": "2026-10-14T19:30:00Z",
+    "status": "pending_fill",
+    "quality_score": 0.4949,
+    "sector_score": 3
   }
 ]
