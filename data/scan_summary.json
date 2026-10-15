@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-15T21:55:52.518879+00:00",
+  "as_of": "2026-10-15T23:43:25.534102+00:00",
   "scan_date": "2026-10-15",
   "regime": {
     "spy_ema20": "bull",
@@ -259,15 +259,8 @@
       "target_2R": 285.2977
     }
   ],
-  "new_entries": 1,
-  "skipped": [
-    {
-      "symbol": "CRM",
-      "type": "inverse_hns",
-      "quality_score": 0.4541,
-      "skip_reason": "one_per_symbol"
-    }
-  ],
+  "new_entries": 0,
+  "skipped": [],
   "open_positions": 2,
   "equity": {
     "starting": 2500.0,
