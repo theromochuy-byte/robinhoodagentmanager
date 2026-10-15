@@ -422,13 +422,13 @@
     "fill_slip": -2.56,
     "fill_slip_pct": -1.53,
     "target_3R": 207.1323,
-    "last_price": 175.81,
-    "unrealized_pnl": 39.27,
+    "last_price": 175.55,
+    "unrealized_pnl": 38.35,
     "touched_1r": false,
-    "checked_at": "2026-10-15T18:14:49.306159+00:00",
-    "progress_pct": 39.3,
-    "est_days_to_2r": 24.3,
-    "days_held": 22.0
+    "checked_at": "2026-10-15T21:55:27.146539+00:00",
+    "progress_pct": 38.4,
+    "est_days_to_2r": 25.4,
+    "days_held": 22.1
   },
   {
     "symbol": "COP",
@@ -455,9 +455,30 @@
     "fill_slip": -0.1686,
     "fill_slip_pct": -0.12,
     "target_3R": 186.815,
-    "last_price": 142.2014,
-    "unrealized_pnl": 0.0,
+    "last_price": 141.73,
+    "unrealized_pnl": -1.58,
     "touched_1r": false,
-    "checked_at": "2026-10-15T18:14:49.306159+00:00"
+    "checked_at": "2026-10-15T21:55:27.146539+00:00"
+  },
+  {
+    "symbol": "CRM",
+    "type": "inverse_hns",
+    "neckline": 245.06,
+    "stop": 229.2203,
+    "target_1R": 262.8197,
+    "target_2R": 279.6194,
+    "risk_per_share": 16.7997,
+    "shares": 2.5404,
+    "break_time": "2026-10-15T14:30:00Z",
+    "bars_since_break": 5,
+    "in_pullback": true,
+    "last_close": 246.7,
+    "last_bar_time": "2026-10-15T19:30:00Z",
+    "scanned_at": "2026-10-15T21:55:34.053416+00:00",
+    "signal_price": 246.7,
+    "signal_time": "2026-10-15T19:30:00Z",
+    "status": "pending_fill",
+    "quality_score": 0.4629,
+    "sector_score": 3
   }
 ]
