@@ -1,0 +1,28 @@
+{
+  "date": "2026-01-16",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 1,
+  "entries": [
+    {
+      "symbol": "CAT",
+      "type": "inverse_hns",
+      "neckline": 644.59,
+      "stop": 614.5854,
+      "target_2R": 717.2592,
+      "risk_per_share": 34.2246,
+      "shares": 0.578,
+      "break_time": "2026-01-15T15:00:00Z",
+      "bars_since_break": 11,
+      "in_pullback": true,
+      "last_close": 646.81,
+      "last_bar_time": "2026-01-16T20:00:00Z",
+      "scan_date": "2026-01-16",
+      "entry": 646.81,
+      "entry_time": "2026-01-16T20:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 0
+}

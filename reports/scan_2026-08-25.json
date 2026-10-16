@@ -1,0 +1,1578 @@
+{
+  "scan_date": "2026-08-25",
+  "vix": 14.55,
+  "high_vix": false,
+  "sector_bias": {
+    "XLB": true,
+    "XLC": true,
+    "XLE": true,
+    "XLF": true,
+    "XLI": true,
+    "XLK": true,
+    "XLP": false,
+    "XLRE": false,
+    "XLU": false,
+    "XLV": true,
+    "XLY": true
+  },
+  "watching": [
+    {
+      "symbol": "DLTR",
+      "type": "inverse_hns",
+      "neckline": 134.88,
+      "stop": 122.6794,
+      "target_1R": 150.8406,
+      "target_2R": 164.9211,
+      "risk_per_share": 14.0806,
+      "shares": 3.551,
+      "break_time": "2026-08-24T17:30:00Z",
+      "bars_since_break": 2,
+      "in_pullback": true,
+      "last_close": 134.49,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:14.647112+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "HCA",
+      "type": "inverse_hns",
+      "neckline": 429.54,
+      "stop": 391.2401,
+      "target_1R": 471.4999,
+      "target_2R": 511.6299,
+      "risk_per_share": 40.1299,
+      "shares": 1.246,
+      "break_time": "2026-08-24T13:30:00Z",
+      "bars_since_break": 3,
+      "in_pullback": true,
+      "last_close": 428.69,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:13.056649+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "HCA",
+      "type": "cup_and_handle",
+      "neckline": 422.0,
+      "stop": 390.6986,
+      "target_1R": 466.7164,
+      "target_2R": 504.7254,
+      "risk_per_share": 38.0089,
+      "shares": 1.3155,
+      "break_time": "2026-08-21T13:30:00Z",
+      "bars_since_break": 5,
+      "in_pullback": false,
+      "last_close": 428.69,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:13.055496+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "FCX",
+      "type": "inverse_hns",
+      "neckline": 72.275,
+      "stop": 58.0223,
+      "target_1R": 94.0777,
+      "target_2R": 112.1053,
+      "risk_per_share": 18.0277,
+      "shares": 2.7735,
+      "break_time": "2026-08-21T13:30:00Z",
+      "bars_since_break": 5,
+      "in_pullback": false,
+      "last_close": 79.91,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:13.511411+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "FCX",
+      "type": "inverse_hns",
+      "neckline": 71.215,
+      "stop": 63.151,
+      "target_1R": 79.349,
+      "target_2R": 87.448,
+      "risk_per_share": 8.099,
+      "shares": 6.1736,
+      "break_time": "2026-08-20T17:30:00Z",
+      "bars_since_break": 6,
+      "in_pullback": false,
+      "last_close": 79.91,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:13.509083+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "FCX",
+      "type": "cup_and_handle",
+      "neckline": 70.56,
+      "stop": 63.011,
+      "target_1R": 79.489,
+      "target_2R": 87.728,
+      "risk_per_share": 8.239,
+      "shares": 6.0687,
+      "break_time": "2026-08-20T17:30:00Z",
+      "bars_since_break": 6,
+      "in_pullback": false,
+      "last_close": 79.91,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:13.510306+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "FANG",
+      "type": "inverse_hns",
+      "neckline": 210.55,
+      "stop": 191.0077,
+      "target_1R": 231.4623,
+      "target_2R": 251.6895,
+      "risk_per_share": 20.2273,
+      "shares": 2.4719,
+      "break_time": "2026-08-20T13:30:00Z",
+      "bars_since_break": 7,
+      "in_pullback": true,
+      "last_close": 199.87,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:13.228367+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "ILMN",
+      "type": "inverse_hns",
+      "neckline": 207.0,
+      "stop": 178.2162,
+      "target_1R": 250.1238,
+      "target_2R": 286.0776,
+      "risk_per_share": 35.9538,
+      "shares": 1.3907,
+      "break_time": "2026-08-20T13:30:00Z",
+      "bars_since_break": 7,
+      "in_pullback": false,
+      "last_close": 225.0,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:13.879195+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "BIIB",
+      "type": "inverse_hns",
+      "neckline": 219.72,
+      "stop": 196.3507,
+      "target_1R": 246.7693,
+      "target_2R": 271.9786,
+      "risk_per_share": 25.2093,
+      "shares": 1.9834,
+      "break_time": "2026-08-19T17:30:00Z",
+      "bars_since_break": 8,
+      "in_pullback": true,
+      "last_close": 220.68,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:13.817044+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "LLY",
+      "type": "inverse_hns",
+      "neckline": 1249.45,
+      "stop": 1149.0745,
+      "target_1R": 1393.1455,
+      "target_2R": 1515.1811,
+      "risk_per_share": 122.0355,
+      "shares": 0.4097,
+      "break_time": "2026-08-19T13:30:00Z",
+      "bars_since_break": 9,
+      "in_pullback": true,
+      "last_close": 1233.5699,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:10.840578+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "DHR",
+      "type": "cup_and_handle",
+      "neckline": 206.585,
+      "stop": 193.3691,
+      "target_1R": 227.2209,
+      "target_2R": 244.1467,
+      "risk_per_share": 16.9259,
+      "shares": 2.9541,
+      "break_time": "2026-08-19T13:30:00Z",
+      "bars_since_break": 9,
+      "in_pullback": false,
+      "last_close": 215.91,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:10.901174+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "VRTX",
+      "type": "cup_and_handle",
+      "neckline": 531.86,
+      "stop": 486.3958,
+      "target_1R": 605.7342,
+      "target_2R": 665.4035,
+      "risk_per_share": 59.6692,
+      "shares": 0.838,
+      "break_time": "2026-08-19T13:30:00Z",
+      "bars_since_break": 9,
+      "in_pullback": false,
+      "last_close": 552.88,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:13.723752+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "JNJ",
+      "type": "cup_and_handle",
+      "neckline": 264.15,
+      "stop": 249.5775,
+      "target_1R": 290.8025,
+      "target_2R": 311.415,
+      "risk_per_share": 20.6125,
+      "shares": 2.3132,
+      "break_time": "2026-08-18T13:30:00Z",
+      "bars_since_break": 11,
+      "in_pullback": false,
+      "last_close": 273.16,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:10.062263+00:00",
+      "status": "watching"
+    },
+    {
+      "symbol": "GILD",
+      "type": "inverse_hns",
+      "neckline": 140.61,
+      "stop": 125.3359,
+      "target_1R": 161.1841,
+      "target_2R": 179.1082,
+      "risk_per_share": 17.9241,
+      "shares": 2.7895,
+      "break_time": "2026-08-18T13:30:00Z",
+      "bars_since_break": 11,
+      "in_pullback": false,
+      "last_close": 148.71,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:13.777605+00:00",
+      "status": "watching"
+    }
+  ],
+  "triggered_today": [
+    {
+      "symbol": "NFLX",
+      "type": "inverse_hns",
+      "neckline": 81.93,
+      "stop": 73.2355,
+      "target_1R": 91.0843,
+      "target_2R": 100.0087,
+      "risk_per_share": 8.9244,
+      "shares": 5.6026,
+      "break_time": "2026-08-25T13:30:00Z",
+      "bars_since_break": 1,
+      "in_pullback": true,
+      "last_close": 82.255,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:09.850289+00:00",
+      "entry": 82.255,
+      "entry_time": "2026-08-25T17:30:00Z",
+      "status": "entered",
+      "quality_score": 0.5114
+    },
+    {
+      "symbol": "DLTR",
+      "type": "cup_and_handle",
+      "neckline": 131.74,
+      "stop": 122.6702,
+      "target_1R": 146.9798,
+      "target_2R": 159.1347,
+      "risk_per_share": 12.1548,
+      "shares": 4.1136,
+      "break_time": "2026-08-24T13:30:00Z",
+      "bars_since_break": 3,
+      "in_pullback": true,
+      "last_close": 134.49,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:14.645977+00:00",
+      "entry": 134.49,
+      "entry_time": "2026-08-25T17:30:00Z",
+      "status": "entered",
+      "quality_score": 0.4094
+    },
+    {
+      "symbol": "DLTR",
+      "type": "inverse_hns",
+      "neckline": 133.26,
+      "stop": 124.2902,
+      "target_1R": 145.3598,
+      "target_2R": 155.8947,
+      "risk_per_share": 10.5348,
+      "shares": 4.6356,
+      "break_time": "2026-08-24T13:30:00Z",
+      "bars_since_break": 3,
+      "in_pullback": true,
+      "last_close": 134.49,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:14.644789+00:00",
+      "entry": 134.49,
+      "entry_time": "2026-08-25T17:30:00Z",
+      "status": "entered",
+      "quality_score": 0.4087
+    },
+    {
+      "symbol": "ECL",
+      "type": "cup_and_handle",
+      "neckline": 283.95,
+      "stop": 267.7703,
+      "target_1R": 303.5097,
+      "target_2R": 321.3794,
+      "risk_per_share": 17.8697,
+      "shares": 2.1881,
+      "break_time": "2026-08-19T17:30:00Z",
+      "bars_since_break": 8,
+      "in_pullback": true,
+      "last_close": 289.545,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:13.441477+00:00",
+      "entry": 289.545,
+      "entry_time": "2026-08-25T17:30:00Z",
+      "status": "entered",
+      "quality_score": 0.1952
+    },
+    {
+      "symbol": "NFLX",
+      "type": "inverse_hns",
+      "neckline": 78.73,
+      "stop": 73.0241,
+      "target_1R": 88.0459,
+      "target_2R": 95.5567,
+      "risk_per_share": 7.5109,
+      "shares": 6.657,
+      "break_time": "2026-08-19T13:30:00Z",
+      "bars_since_break": 9,
+      "in_pullback": true,
+      "last_close": 82.255,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:09.849198+00:00",
+      "entry": 82.255,
+      "entry_time": "2026-08-25T17:30:00Z",
+      "status": "entered",
+      "quality_score": 0.1612
+    },
+    {
+      "symbol": "DHR",
+      "type": "inverse_hns",
+      "neckline": 209.9,
+      "stop": 195.8791,
+      "target_1R": 224.7109,
+      "target_2R": 239.1267,
+      "risk_per_share": 14.4159,
+      "shares": 2.972,
+      "break_time": "2026-08-19T13:30:00Z",
+      "bars_since_break": 9,
+      "in_pullback": true,
+      "last_close": 215.91,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:10.899830+00:00",
+      "entry": 215.91,
+      "entry_time": "2026-08-25T17:30:00Z",
+      "status": "entered",
+      "quality_score": 0.1584
+    },
+    {
+      "symbol": "DLTR",
+      "type": "cup_and_handle",
+      "neckline": 131.8,
+      "stop": 123.5891,
+      "target_1R": 141.1009,
+      "target_2R": 149.8567,
+      "risk_per_share": 8.7559,
+      "shares": 4.7225,
+      "break_time": "2026-08-19T13:30:00Z",
+      "bars_since_break": 9,
+      "in_pullback": true,
+      "last_close": 134.49,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:14.643046+00:00",
+      "entry": 134.49,
+      "entry_time": "2026-08-25T17:30:00Z",
+      "status": "entered",
+      "quality_score": 0.1561
+    },
+    {
+      "symbol": "NFLX",
+      "type": "inverse_hns",
+      "neckline": 78.43,
+      "stop": 71.2735,
+      "target_1R": 85.9565,
+      "target_2R": 93.2979,
+      "risk_per_share": 7.3415,
+      "shares": 6.8106,
+      "break_time": "2026-08-18T13:30:00Z",
+      "bars_since_break": 11,
+      "in_pullback": true,
+      "last_close": 82.255,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:09.846695+00:00",
+      "entry": 82.255,
+      "entry_time": "2026-08-25T17:30:00Z",
+      "status": "entered",
+      "quality_score": 0.0873
+    },
+    {
+      "symbol": "ACN",
+      "type": "cup_and_handle",
+      "neckline": 176.4,
+      "stop": 162.5289,
+      "target_1R": 190.7251,
+      "target_2R": 204.8232,
+      "risk_per_share": 14.0981,
+      "shares": 3.5385,
+      "break_time": "2026-08-18T13:30:00Z",
+      "bars_since_break": 11,
+      "in_pullback": true,
+      "last_close": 186.98,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:12.435783+00:00",
+      "entry": 186.98,
+      "entry_time": "2026-08-25T17:30:00Z",
+      "status": "entered",
+      "quality_score": 0.081
+    },
+    {
+      "symbol": "NFLX",
+      "type": "cup_and_handle",
+      "neckline": 78.43,
+      "stop": 73.1683,
+      "target_1R": 84.0617,
+      "target_2R": 89.5083,
+      "risk_per_share": 5.4467,
+      "shares": 7.9501,
+      "break_time": "2026-08-18T13:30:00Z",
+      "bars_since_break": 11,
+      "in_pullback": true,
+      "last_close": 82.255,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:09.847921+00:00",
+      "entry": 82.255,
+      "entry_time": "2026-08-25T17:30:00Z",
+      "status": "entered",
+      "quality_score": 0.0752
+    },
+    {
+      "symbol": "HCA",
+      "type": "cup_and_handle",
+      "neckline": 414.18,
+      "stop": 389.2228,
+      "target_1R": 443.1172,
+      "target_2R": 470.0644,
+      "risk_per_share": 26.9472,
+      "shares": 1.5018,
+      "break_time": "2026-08-18T13:30:00Z",
+      "bars_since_break": 11,
+      "in_pullback": true,
+      "last_close": 428.69,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:13.054210+00:00",
+      "entry": 428.69,
+      "entry_time": "2026-08-25T17:30:00Z",
+      "status": "entered",
+      "quality_score": 0.0718
+    },
+    {
+      "symbol": "PFE",
+      "type": "inverse_hns",
+      "neckline": 27.2,
+      "stop": 25.6373,
+      "target_1R": 28.7927,
+      "target_2R": 30.3704,
+      "risk_per_share": 1.5777,
+      "shares": 22.9653,
+      "break_time": "2026-08-18T13:30:00Z",
+      "bars_since_break": 11,
+      "in_pullback": true,
+      "last_close": 28.57,
+      "last_bar_time": "2026-08-25T17:30:00Z",
+      "scanned_at": "2026-08-25T20:45:10.152428+00:00",
+      "entry": 28.57,
+      "entry_time": "2026-08-25T17:30:00Z",
+      "status": "entered",
+      "quality_score": 0.0704
+    }
+  ],
+  "new_entries": 0,
+  "skipped": [
+    {
+      "symbol": "NFLX",
+      "type": "inverse_hns",
+      "cost": 460.84,
+      "available": 313.28,
+      "quality_score": 0.5114,
+      "skip_reason": "no_capital"
+    },
+    {
+      "symbol": "DLTR",
+      "type": "cup_and_handle",
+      "cost": 553.24,
+      "available": 313.28,
+      "quality_score": 0.4094,
+      "skip_reason": "no_capital"
+    },
+    {
+      "symbol": "DLTR",
+      "type": "inverse_hns",
+      "cost": 623.44,
+      "available": 313.28,
+      "quality_score": 0.4087,
+      "skip_reason": "no_capital"
+    },
+    {
+      "symbol": "ECL",
+      "type": "cup_and_handle",
+      "cost": 633.55,
+      "available": 313.28,
+      "quality_score": 0.1952,
+      "skip_reason": "no_capital"
+    },
+    {
+      "symbol": "NFLX",
+      "type": "inverse_hns",
+      "cost": 547.57,
+      "available": 313.28,
+      "quality_score": 0.1612,
+      "skip_reason": "no_capital"
+    },
+    {
+      "symbol": "DHR",
+      "type": "inverse_hns",
+      "cost": 641.68,
+      "available": 313.28,
+      "quality_score": 0.1584,
+      "skip_reason": "no_capital"
+    },
+    {
+      "symbol": "DLTR",
+      "type": "cup_and_handle",
+      "cost": 635.13,
+      "available": 313.28,
+      "quality_score": 0.1561,
+      "skip_reason": "no_capital"
+    },
+    {
+      "symbol": "NFLX",
+      "type": "inverse_hns",
+      "cost": 560.21,
+      "available": 313.28,
+      "quality_score": 0.0873,
+      "skip_reason": "no_capital"
+    },
+    {
+      "symbol": "ACN",
+      "type": "cup_and_handle",
+      "cost": 661.63,
+      "available": 313.28,
+      "quality_score": 0.081,
+      "skip_reason": "no_capital"
+    },
+    {
+      "symbol": "NFLX",
+      "type": "cup_and_handle",
+      "cost": 653.94,
+      "available": 313.28,
+      "quality_score": 0.0752,
+      "skip_reason": "no_capital"
+    },
+    {
+      "symbol": "HCA",
+      "type": "cup_and_handle",
+      "cost": 643.81,
+      "available": 313.28,
+      "quality_score": 0.0718,
+      "skip_reason": "no_capital"
+    },
+    {
+      "symbol": "PFE",
+      "type": "inverse_hns",
+      "cost": 656.12,
+      "available": 313.28,
+      "quality_score": 0.0704,
+      "skip_reason": "no_capital"
+    }
+  ],
+  "total_open": 5,
+  "equity": {
+    "starting": 2500.0,
+    "in_use": 2186.72,
+    "available": 313.28
+  },
+  "watchlist": {
+    "watching": 14,
+    "triggered": 46,
+    "closed": 0,
+    "expired": 175,
+    "missed": 11,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": 0.0,
+    "avg_elapsed_watching_hours": 1017.6,
+    "open_setups": [
+      {
+        "symbol": "VRTX",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 455.32,
+        "suggested_entry_zone": [
+          453.0434,
+          457.5966
+        ],
+        "stop": 422.6056,
+        "target_1R": 491.8644,
+        "target_2R": 532.2387,
+        "first_seen": "2026-06-19T13:34:41.565740+00:00",
+        "latest_price": 466.79,
+        "price_snapshots": 5
+      },
+      {
+        "symbol": "VRTX",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 455.32,
+        "suggested_entry_zone": [
+          453.0434,
+          457.5966
+        ],
+        "stop": 425.2556,
+        "target_1R": 489.2144,
+        "target_2R": 526.9387,
+        "first_seen": "2026-06-19T13:34:41.567427+00:00",
+        "latest_price": 466.79,
+        "price_snapshots": 5
+      },
+      {
+        "symbol": "SPGI",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 430.91,
+        "suggested_entry_zone": [
+          428.7554,
+          433.0645
+        ],
+        "stop": 401.2416,
+        "target_1R": 462.9084,
+        "target_2R": 497.2369,
+        "first_seen": "2026-06-19T13:34:41.762483+00:00",
+        "latest_price": 439.81,
+        "price_snapshots": 13
+      },
+      {
+        "symbol": "SPGI",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 431.1,
+        "suggested_entry_zone": [
+          428.9445,
+          433.2555
+        ],
+        "stop": 403.196,
+        "target_1R": 461.144,
+        "target_2R": 493.3281,
+        "first_seen": "2026-06-19T13:34:41.764168+00:00",
+        "latest_price": 439.81,
+        "price_snapshots": 13
+      },
+      {
+        "symbol": "MCO",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 468.12,
+        "suggested_entry_zone": [
+          465.7794,
+          470.4606
+        ],
+        "stop": 429.234,
+        "target_1R": 507.481,
+        "target_2R": 547.3171,
+        "first_seen": "2026-06-19T13:34:41.783728+00:00",
+        "latest_price": 490.36,
+        "price_snapshots": 13
+      },
+      {
+        "symbol": "JNJ",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 235.11,
+        "suggested_entry_zone": [
+          233.9345,
+          236.2856
+        ],
+        "stop": 216.8924,
+        "target_1R": 255.2326,
+        "target_2R": 277.2602,
+        "first_seen": "2026-06-19T13:34:29.079332+00:00",
+        "latest_price": 239.065,
+        "price_snapshots": 6
+      },
+      {
+        "symbol": "JNJ",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 235.11,
+        "suggested_entry_zone": [
+          233.9345,
+          236.2856
+        ],
+        "stop": 218.5223,
+        "target_1R": 253.6027,
+        "target_2R": 274.0004,
+        "first_seen": "2026-06-19T13:34:29.081264+00:00",
+        "latest_price": 239.065,
+        "price_snapshots": 6
+      },
+      {
+        "symbol": "SPG",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 208.69,
+        "suggested_entry_zone": [
+          207.6465,
+          209.7334
+        ],
+        "stop": 197.3146,
+        "target_1R": 221.7054,
+        "target_2R": 236.3609,
+        "first_seen": "2026-06-19T13:34:40.754345+00:00",
+        "latest_price": 214.55,
+        "price_snapshots": 5
+      },
+      {
+        "symbol": "SPG",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 208.69,
+        "suggested_entry_zone": [
+          207.6465,
+          209.7334
+        ],
+        "stop": 199.6396,
+        "target_1R": 219.3804,
+        "target_2R": 231.7109,
+        "first_seen": "2026-06-19T13:34:40.755850+00:00",
+        "latest_price": 214.55,
+        "price_snapshots": 5
+      },
+      {
+        "symbol": "PRU",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 104.5699,
+        "suggested_entry_zone": [
+          104.0471,
+          105.0927
+        ],
+        "stop": 98.6234,
+        "target_1R": 110.5915,
+        "target_2R": 116.6881,
+        "first_seen": "2026-06-19T13:34:41.415800+00:00",
+        "latest_price": 108.48,
+        "price_snapshots": 6
+      },
+      {
+        "symbol": "JPM",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 307.75,
+        "suggested_entry_zone": [
+          306.2113,
+          309.2887
+        ],
+        "stop": 290.295,
+        "target_1R": 328.375,
+        "target_2R": 352.1699,
+        "first_seen": "2026-06-19T13:34:28.503168+00:00",
+        "latest_price": 331.76,
+        "price_snapshots": 5
+      },
+      {
+        "symbol": "AMGN",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 340.97,
+        "suggested_entry_zone": [
+          339.2652,
+          342.6748
+        ],
+        "stop": 315.8352,
+        "target_1R": 370.7548,
+        "target_2R": 405.1896,
+        "first_seen": "2026-06-19T13:34:31.698999+00:00",
+        "latest_price": 344.7,
+        "price_snapshots": 5
+      },
+      {
+        "symbol": "RTX",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 180.7179,
+        "suggested_entry_zone": [
+          179.8143,
+          181.6215
+        ],
+        "stop": 168.8697,
+        "target_1R": 198.8803,
+        "target_2R": 208.4706,
+        "first_seen": "2026-06-19T13:34:30.389154+00:00",
+        "latest_price": 185.68,
+        "price_snapshots": 2
+      },
+      {
+        "symbol": "RTX",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 180.7179,
+        "suggested_entry_zone": [
+          179.8143,
+          181.6215
+        ],
+        "stop": 169.9697,
+        "target_1R": 197.7803,
+        "target_2R": 206.2706,
+        "first_seen": "2026-06-19T13:34:30.391008+00:00",
+        "latest_price": 185.68,
+        "price_snapshots": 2
+      },
+      {
+        "symbol": "USB",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 57.48,
+        "suggested_entry_zone": [
+          57.1926,
+          57.7674
+        ],
+        "stop": 53.9943,
+        "target_1R": 61.7257,
+        "target_2R": 64.8714,
+        "first_seen": "2026-06-19T13:34:32.998723+00:00",
+        "latest_price": 58.1,
+        "price_snapshots": 2
+      },
+      {
+        "symbol": "USB",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 57.48,
+        "suggested_entry_zone": [
+          57.1926,
+          57.7674
+        ],
+        "stop": 54.4293,
+        "target_1R": 61.2907,
+        "target_2R": 64.0014,
+        "first_seen": "2026-06-19T13:34:33.000352+00:00",
+        "latest_price": 58.1,
+        "price_snapshots": 2
+      },
+      {
+        "symbol": "DG",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 111.37,
+        "suggested_entry_zone": [
+          110.8132,
+          111.9268
+        ],
+        "stop": 98.9216,
+        "target_1R": 128.9194,
+        "target_2R": 145.1499,
+        "first_seen": "2026-06-19T13:34:42.025672+00:00",
+        "latest_price": 113.51,
+        "price_snapshots": 2
+      },
+      {
+        "symbol": "PNC",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 238.32,
+        "suggested_entry_zone": [
+          237.1284,
+          239.5116
+        ],
+        "stop": 225.7461,
+        "target_1R": 251.2239,
+        "target_2R": 264.4578,
+        "first_seen": "2026-06-24T22:25:51.734424+00:00",
+        "latest_price": 249.415,
+        "price_snapshots": 9
+      },
+      {
+        "symbol": "HD",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 350.96,
+        "suggested_entry_zone": [
+          349.2052,
+          352.7148
+        ],
+        "stop": 314.5826,
+        "target_1R": 388.7524,
+        "target_2R": 427.9599,
+        "first_seen": "2026-07-02T21:47:55.039825+00:00",
+        "latest_price": 357.76,
+        "price_snapshots": 3
+      },
+      {
+        "symbol": "HD",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 350.96,
+        "suggested_entry_zone": [
+          349.2052,
+          352.7148
+        ],
+        "stop": 318.1876,
+        "target_1R": 385.1474,
+        "target_2R": 420.7499,
+        "first_seen": "2026-07-02T21:47:55.040888+00:00",
+        "latest_price": 357.76,
+        "price_snapshots": 3
+      },
+      {
+        "symbol": "BRK.B",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 498.9075,
+        "suggested_entry_zone": [
+          496.413,
+          501.402
+        ],
+        "stop": 476.3883,
+        "target_1R": 522.6992,
+        "target_2R": 547.7634,
+        "first_seen": "2026-07-02T21:47:55.210990+00:00",
+        "latest_price": 507.33,
+        "price_snapshots": 3
+      },
+      {
+        "symbol": "AFL",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 119.515,
+        "suggested_entry_zone": [
+          118.9174,
+          120.1126
+        ],
+        "stop": 110.9703,
+        "target_1R": 128.6547,
+        "target_2R": 138.3895,
+        "first_seen": "2026-07-02T21:47:56.408286+00:00",
+        "latest_price": 120.87,
+        "price_snapshots": 3
+      },
+      {
+        "symbol": "AFL",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 119.515,
+        "suggested_entry_zone": [
+          118.9174,
+          120.1126
+        ],
+        "stop": 112.7253,
+        "target_1R": 126.8997,
+        "target_2R": 134.8795,
+        "first_seen": "2026-07-02T21:47:56.409276+00:00",
+        "latest_price": 120.87,
+        "price_snapshots": 3
+      },
+      {
+        "symbol": "O",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 62.735,
+        "suggested_entry_zone": [
+          62.4213,
+          63.0487
+        ],
+        "stop": 58.625,
+        "target_1R": 67.205,
+        "target_2R": 72.035,
+        "first_seen": "2026-07-02T21:47:56.774799+00:00",
+        "latest_price": 63.83,
+        "price_snapshots": 3
+      },
+      {
+        "symbol": "O",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 62.735,
+        "suggested_entry_zone": [
+          62.4213,
+          63.0487
+        ],
+        "stop": 59.326,
+        "target_1R": 66.504,
+        "target_2R": 70.633,
+        "first_seen": "2026-07-02T21:47:56.775872+00:00",
+        "latest_price": 63.83,
+        "price_snapshots": 3
+      },
+      {
+        "symbol": "BDX",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 154.45,
+        "suggested_entry_zone": [
+          153.6777,
+          155.2222
+        ],
+        "stop": 139.6916,
+        "target_1R": 170.6834,
+        "target_2R": 188.3918,
+        "first_seen": "2026-07-02T21:47:57.050626+00:00",
+        "latest_price": 158.04,
+        "price_snapshots": 3
+      },
+      {
+        "symbol": "DHR",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 189.18,
+        "suggested_entry_zone": [
+          188.2341,
+          190.1259
+        ],
+        "stop": 172.2862,
+        "target_1R": 210.1238,
+        "target_2R": 235.1175,
+        "first_seen": "2026-07-02T21:47:55.334675+00:00",
+        "latest_price": 197.79,
+        "price_snapshots": 3
+      },
+      {
+        "symbol": "DHR",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 189.18,
+        "suggested_entry_zone": [
+          188.2341,
+          190.1259
+        ],
+        "stop": 173.8762,
+        "target_1R": 208.5338,
+        "target_2R": 231.9375,
+        "first_seen": "2026-07-02T21:47:55.335792+00:00",
+        "latest_price": 197.79,
+        "price_snapshots": 3
+      },
+      {
+        "symbol": "DUK",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 126.94,
+        "suggested_entry_zone": [
+          126.3053,
+          127.5747
+        ],
+        "stop": 119.4649,
+        "target_1R": 134.5501,
+        "target_2R": 142.2952,
+        "first_seen": "2026-07-02T21:47:56.083640+00:00",
+        "latest_price": 129.545,
+        "price_snapshots": 3
+      },
+      {
+        "symbol": "DUK",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 126.94,
+        "suggested_entry_zone": [
+          126.3053,
+          127.5747
+        ],
+        "stop": 121.0949,
+        "target_1R": 132.9201,
+        "target_2R": 139.0352,
+        "first_seen": "2026-07-02T21:47:56.084691+00:00",
+        "latest_price": 129.545,
+        "price_snapshots": 3
+      },
+      {
+        "symbol": "RMD",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 197.37,
+        "suggested_entry_zone": [
+          196.3832,
+          198.3568
+        ],
+        "stop": 178.7753,
+        "target_1R": 217.1647,
+        "target_2R": 238.1594,
+        "first_seen": "2026-07-02T21:47:56.490054+00:00",
+        "latest_price": 209.63,
+        "price_snapshots": 3
+      },
+      {
+        "symbol": "ECL",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 278.265,
+        "suggested_entry_zone": [
+          276.8737,
+          279.6563
+        ],
+        "stop": 249.8653,
+        "target_1R": 309.6347,
+        "target_2R": 343.9743,
+        "first_seen": "2026-07-02T21:47:56.727198+00:00",
+        "latest_price": 283.315,
+        "price_snapshots": 3
+      },
+      {
+        "symbol": "ROK",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 464.125,
+        "suggested_entry_zone": [
+          461.8044,
+          466.4456
+        ],
+        "stop": 437.7722,
+        "target_1R": 505.7678,
+        "target_2R": 562.7006,
+        "first_seen": "2026-07-02T21:47:57.523432+00:00",
+        "latest_price": 471.52,
+        "price_snapshots": 3
+      },
+      {
+        "symbol": "SO",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 95.27,
+        "suggested_entry_zone": [
+          94.7936,
+          95.7463
+        ],
+        "stop": 90.3581,
+        "target_1R": 100.6885,
+        "target_2R": 106.6137,
+        "first_seen": "2026-07-02T21:47:56.102281+00:00",
+        "latest_price": 97.95,
+        "price_snapshots": 3
+      },
+      {
+        "symbol": "SO",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 95.27,
+        "suggested_entry_zone": [
+          94.7936,
+          95.7463
+        ],
+        "stop": 90.9231,
+        "target_1R": 100.1235,
+        "target_2R": 105.4837,
+        "first_seen": "2026-07-02T21:47:56.103364+00:00",
+        "latest_price": 97.95,
+        "price_snapshots": 3
+      },
+      {
+        "symbol": "HIG",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 132.3,
+        "suggested_entry_zone": [
+          131.6385,
+          132.9615
+        ],
+        "stop": 123.7386,
+        "target_1R": 140.8814,
+        "target_2R": 149.4827,
+        "first_seen": "2026-07-02T21:47:57.220321+00:00",
+        "latest_price": 137.78,
+        "price_snapshots": 3
+      },
+      {
+        "symbol": "AMGN",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 356.686,
+        "suggested_entry_zone": [
+          354.9026,
+          358.4694
+        ],
+        "stop": 330.6964,
+        "target_1R": 388.3836,
+        "target_2R": 412.0372,
+        "first_seen": "2026-07-02T21:47:55.372350+00:00",
+        "latest_price": 361.27,
+        "price_snapshots": 2
+      },
+      {
+        "symbol": "AMGN",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 359.445,
+        "suggested_entry_zone": [
+          357.6478,
+          361.2422
+        ],
+        "stop": 330.6295,
+        "target_1R": 391.1605,
+        "target_2R": 420.301,
+        "first_seen": "2026-07-02T21:47:55.373456+00:00",
+        "latest_price": 361.27,
+        "price_snapshots": 2
+      },
+      {
+        "symbol": "AMGN",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 359.445,
+        "suggested_entry_zone": [
+          357.6478,
+          361.2422
+        ],
+        "stop": 337.6695,
+        "target_1R": 384.1205,
+        "target_2R": 406.221,
+        "first_seen": "2026-07-02T21:47:55.374520+00:00",
+        "latest_price": 361.27,
+        "price_snapshots": 2
+      },
+      {
+        "symbol": "EW",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 89.58,
+        "suggested_entry_zone": [
+          89.1321,
+          90.0279
+        ],
+        "stop": 83.4821,
+        "target_1R": 98.1229,
+        "target_2R": 101.8358,
+        "first_seen": "2026-07-02T21:47:55.804769+00:00",
+        "latest_price": 92.005,
+        "price_snapshots": 2
+      },
+      {
+        "symbol": "VLO",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 265.23,
+        "suggested_entry_zone": [
+          263.9039,
+          266.5562
+        ],
+        "stop": 225.593,
+        "target_1R": 309.987,
+        "target_2R": 347.414,
+        "first_seen": "2026-07-02T21:47:55.931900+00:00",
+        "latest_price": 269.38,
+        "price_snapshots": 2
+      },
+      {
+        "symbol": "VLO",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 265.23,
+        "suggested_entry_zone": [
+          263.9039,
+          266.5562
+        ],
+        "stop": 238.938,
+        "target_1R": 296.642,
+        "target_2R": 320.724,
+        "first_seen": "2026-07-02T21:47:55.932910+00:00",
+        "latest_price": 269.38,
+        "price_snapshots": 2
+      },
+      {
+        "symbol": "CL",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 92.29,
+        "suggested_entry_zone": [
+          91.8286,
+          92.7514
+        ],
+        "stop": 81.919,
+        "target_1R": 103.211,
+        "target_2R": 113.2721,
+        "first_seen": "2026-07-02T21:47:56.567391+00:00",
+        "latest_price": 92.76,
+        "price_snapshots": 2
+      },
+      {
+        "symbol": "CL",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 92.29,
+        "suggested_entry_zone": [
+          91.8286,
+          92.7514
+        ],
+        "stop": 82.749,
+        "target_1R": 102.381,
+        "target_2R": 111.6121,
+        "first_seen": "2026-07-02T21:47:56.568475+00:00",
+        "latest_price": 92.76,
+        "price_snapshots": 2
+      },
+      {
+        "symbol": "SPG",
+        "type": "inverse_hns",
+        "status": "triggered",
+        "suggested_entry": 220.23,
+        "suggested_entry_zone": [
+          219.1288,
+          221.3311
+        ],
+        "stop": 205.2561,
+        "target_1R": 239.9039,
+        "target_2R": 255.6978,
+        "first_seen": "2026-07-02T21:47:56.811327+00:00",
+        "latest_price": 223.09,
+        "price_snapshots": 2
+      },
+      {
+        "symbol": "GILD",
+        "type": "double_bottom",
+        "status": "triggered",
+        "suggested_entry": 127.46,
+        "suggested_entry_zone": [
+          126.8227,
+          128.0973
+        ],
+        "stop": 118.3901,
+        "target_1R": 140.5199,
+        "target_2R": 146.1698,
+        "first_seen": "2026-07-18T20:26:45.535761+00:00",
+        "latest_price": 131.26,
+        "price_snapshots": 2
+      },
+      {
+        "symbol": "JNJ",
+        "type": "cup_and_handle",
+        "status": "watching",
+        "suggested_entry": 264.15,
+        "suggested_entry_zone": [
+          262.8293,
+          265.4707
+        ],
+        "stop": 249.5777,
+        "target_1R": 290.8023,
+        "target_2R": 311.4146,
+        "first_seen": "2026-08-21T20:40:26.720065+00:00",
+        "latest_price": 273.16,
+        "price_snapshots": 4
+      },
+      {
+        "symbol": "LLY",
+        "type": "inverse_hns",
+        "status": "watching",
+        "suggested_entry": 1249.45,
+        "suggested_entry_zone": [
+          1243.2028,
+          1255.6972
+        ],
+        "stop": 1149.068,
+        "target_1R": 1393.152,
+        "target_2R": 1515.194,
+        "first_seen": "2026-08-21T20:40:26.741207+00:00",
+        "latest_price": 1233.5699,
+        "price_snapshots": 4
+      },
+      {
+        "symbol": "DHR",
+        "type": "cup_and_handle",
+        "status": "watching",
+        "suggested_entry": 206.585,
+        "suggested_entry_zone": [
+          205.5521,
+          207.6179
+        ],
+        "stop": 193.3686,
+        "target_1R": 227.2214,
+        "target_2R": 244.1478,
+        "first_seen": "2026-08-21T20:40:26.762381+00:00",
+        "latest_price": 215.91,
+        "price_snapshots": 4
+      },
+      {
+        "symbol": "HCA",
+        "type": "cup_and_handle",
+        "status": "watching",
+        "suggested_entry": 422.0,
+        "suggested_entry_zone": [
+          419.89,
+          424.11
+        ],
+        "stop": 390.6986,
+        "target_1R": 466.7164,
+        "target_2R": 504.7253,
+        "first_seen": "2026-08-21T20:40:26.826105+00:00",
+        "latest_price": 428.69,
+        "price_snapshots": 4
+      },
+      {
+        "symbol": "FANG",
+        "type": "inverse_hns",
+        "status": "watching",
+        "suggested_entry": 210.55,
+        "suggested_entry_zone": [
+          209.4973,
+          211.6027
+        ],
+        "stop": 191.009,
+        "target_1R": 231.461,
+        "target_2R": 251.687,
+        "first_seen": "2026-08-21T20:40:26.933439+00:00",
+        "latest_price": 199.87,
+        "price_snapshots": 4
+      },
+      {
+        "symbol": "FCX",
+        "type": "inverse_hns",
+        "status": "watching",
+        "suggested_entry": 71.215,
+        "suggested_entry_zone": [
+          70.8589,
+          71.5711
+        ],
+        "stop": 63.151,
+        "target_1R": 79.349,
+        "target_2R": 87.4479,
+        "first_seen": "2026-08-21T20:40:26.975981+00:00",
+        "latest_price": 79.91,
+        "price_snapshots": 4
+      },
+      {
+        "symbol": "FCX",
+        "type": "cup_and_handle",
+        "status": "watching",
+        "suggested_entry": 70.56,
+        "suggested_entry_zone": [
+          70.2072,
+          70.9128
+        ],
+        "stop": 63.011,
+        "target_1R": 79.489,
+        "target_2R": 87.7279,
+        "first_seen": "2026-08-21T20:40:26.997292+00:00",
+        "latest_price": 79.91,
+        "price_snapshots": 4
+      },
+      {
+        "symbol": "FCX",
+        "type": "inverse_hns",
+        "status": "watching",
+        "suggested_entry": 72.275,
+        "suggested_entry_zone": [
+          71.9136,
+          72.6364
+        ],
+        "stop": 58.0224,
+        "target_1R": 94.0776,
+        "target_2R": 112.1052,
+        "first_seen": "2026-08-21T20:40:27.018706+00:00",
+        "latest_price": 79.91,
+        "price_snapshots": 4
+      },
+      {
+        "symbol": "VRTX",
+        "type": "cup_and_handle",
+        "status": "watching",
+        "suggested_entry": 531.86,
+        "suggested_entry_zone": [
+          529.2007,
+          534.5193
+        ],
+        "stop": 486.3953,
+        "target_1R": 605.7347,
+        "target_2R": 665.4044,
+        "first_seen": "2026-08-21T20:40:27.040132+00:00",
+        "latest_price": 552.88,
+        "price_snapshots": 4
+      },
+      {
+        "symbol": "GILD",
+        "type": "inverse_hns",
+        "status": "watching",
+        "suggested_entry": 140.61,
+        "suggested_entry_zone": [
+          139.907,
+          141.3131
+        ],
+        "stop": 125.3359,
+        "target_1R": 161.1841,
+        "target_2R": 179.1082,
+        "first_seen": "2026-08-21T20:40:27.082726+00:00",
+        "latest_price": 148.71,
+        "price_snapshots": 4
+      },
+      {
+        "symbol": "BIIB",
+        "type": "inverse_hns",
+        "status": "watching",
+        "suggested_entry": 219.72,
+        "suggested_entry_zone": [
+          218.6214,
+          220.8186
+        ],
+        "stop": 196.3508,
+        "target_1R": 246.7692,
+        "target_2R": 271.9784,
+        "first_seen": "2026-08-21T20:40:27.146797+00:00",
+        "latest_price": 220.68,
+        "price_snapshots": 4
+      },
+      {
+        "symbol": "ILMN",
+        "type": "inverse_hns",
+        "status": "watching",
+        "suggested_entry": 207.0,
+        "suggested_entry_zone": [
+          205.965,
+          208.035
+        ],
+        "stop": 186.6743,
+        "target_1R": 241.6657,
+        "target_2R": 269.1615,
+        "first_seen": "2026-08-21T20:40:27.211259+00:00",
+        "latest_price": 225.0,
+        "price_snapshots": 4
+      },
+      {
+        "symbol": "HCA",
+        "type": "inverse_hns",
+        "status": "watching",
+        "suggested_entry": 429.54,
+        "suggested_entry_zone": [
+          427.3923,
+          431.6877
+        ],
+        "stop": 391.2403,
+        "target_1R": 469.4597,
+        "target_2R": 508.5694,
+        "first_seen": "2026-08-24T16:50:14.933515+00:00",
+        "latest_price": 428.69,
+        "price_snapshots": 3
+      },
+      {
+        "symbol": "DLTR",
+        "type": "inverse_hns",
+        "status": "watching",
+        "suggested_entry": 134.88,
+        "suggested_entry_zone": [
+          134.2056,
+          135.5544
+        ],
+        "stop": 122.6792,
+        "target_1R": 150.8408,
+        "target_2R": 164.9217,
+        "first_seen": "2026-08-24T20:47:44.612727+00:00",
+        "latest_price": 134.49,
+        "price_snapshots": 2
+      }
+    ]
+  }
+}

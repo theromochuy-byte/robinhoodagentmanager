@@ -1,0 +1,28 @@
+{
+  "date": "2026-04-20",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 12,
+  "entries": [
+    {
+      "symbol": "JPM",
+      "type": "inverse_hns",
+      "neckline": 313.79,
+      "stop": 299.0089,
+      "target_2R": 347.7922,
+      "risk_per_share": 16.2611,
+      "shares": 1.1895,
+      "break_time": "2026-04-20T14:00:00Z",
+      "bars_since_break": 1,
+      "in_pullback": true,
+      "last_close": 317.085,
+      "last_bar_time": "2026-04-20T18:00:00Z",
+      "scan_date": "2026-04-20",
+      "entry": 317.085,
+      "entry_time": "2026-04-20T18:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 3
+}

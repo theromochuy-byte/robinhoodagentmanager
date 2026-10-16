@@ -1,0 +1,177 @@
+{
+  "as_of": "2026-10-16T23:35:18.656646+00:00",
+  "scan_date": "2026-10-16",
+  "regime": {
+    "spy_ema20": "bull",
+    "vix": 14.55,
+    "high_vix": false
+  },
+  "sector_scores": {
+    "XLB": 3,
+    "XLC": 3,
+    "XLE": 3,
+    "XLF": 3,
+    "XLI": 3,
+    "XLK": 3,
+    "XLP": 3,
+    "XLRE": 3,
+    "XLU": 3,
+    "XLV": 3,
+    "XLY": 3
+  },
+  "watching": [
+    {
+      "symbol": "AIG",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.4443,
+      "bars_since_break": 6,
+      "neckline": 79.99,
+      "last_price": 80.7,
+      "stop": 75.5622,
+      "target_1R": 84.7978,
+      "target_2R": 89.4156
+    },
+    {
+      "symbol": "NOW",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.3715,
+      "bars_since_break": 12,
+      "neckline": 146.98,
+      "last_price": 141.95,
+      "stop": 135.7524,
+      "target_1R": 159.4876,
+      "target_2R": 171.3551
+    },
+    {
+      "symbol": "CRM",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.3657,
+      "bars_since_break": 12,
+      "neckline": 245.06,
+      "last_price": 240.73,
+      "stop": 229.2203,
+      "target_1R": 262.8197,
+      "target_2R": 279.6194
+    },
+    {
+      "symbol": "CRM",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.3569,
+      "bars_since_break": 13,
+      "neckline": 242.09,
+      "last_price": 240.73,
+      "stop": 223.9736,
+      "target_1R": 264.8564,
+      "target_2R": 285.2977
+    },
+    {
+      "symbol": "BBY",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.3529,
+      "bars_since_break": 13,
+      "neckline": 91.95,
+      "last_price": 92.64,
+      "stop": 85.8035,
+      "target_1R": 100.8965,
+      "target_2R": 108.443
+    },
+    {
+      "symbol": "KO",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.3479,
+      "bars_since_break": 13,
+      "neckline": 92.21,
+      "last_price": 93.86,
+      "stop": 86.9538,
+      "target_1R": 100.2362,
+      "target_2R": 106.8774
+    },
+    {
+      "symbol": "GILD",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.3435,
+      "bars_since_break": 13,
+      "neckline": 154.1999,
+      "last_price": 156.19,
+      "stop": 146.7817,
+      "target_1R": 169.9783,
+      "target_2R": 181.5766
+    },
+    {
+      "symbol": "CAH",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.2454,
+      "bars_since_break": 20,
+      "neckline": 241.96,
+      "last_price": 254.0,
+      "stop": 230.7255,
+      "target_1R": 255.9245,
+      "target_2R": 268.5241
+    },
+    {
+      "symbol": "NOW",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.1582,
+      "bars_since_break": 27,
+      "neckline": 142.51,
+      "last_price": 141.95,
+      "stop": 133.049,
+      "target_1R": 153.291,
+      "target_2R": 163.4121
+    },
+    {
+      "symbol": "CRM",
+      "type": "cup_and_handle",
+      "sector_score": 3,
+      "quality_score": 0.1508,
+      "bars_since_break": 27,
+      "neckline": 239.45,
+      "last_price": 240.73,
+      "stop": 227.1049,
+      "target_1R": 254.4709,
+      "target_2R": 268.1538
+    },
+    {
+      "symbol": "EBAY",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.0593,
+      "bars_since_break": 34,
+      "neckline": 113.625,
+      "last_price": 120.25,
+      "stop": 106.4619,
+      "target_1R": 126.6181,
+      "target_2R": 136.6963
+    },
+    {
+      "symbol": "NOW",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.0532,
+      "bars_since_break": 34,
+      "neckline": 142.1,
+      "last_price": 141.95,
+      "stop": 134.8695,
+      "target_1R": 150.0705,
+      "target_2R": 157.6711
+    }
+  ],
+  "triggered_today": [],
+  "new_entries": 0,
+  "skipped": [],
+  "open_positions": 2,
+  "equity": {
+    "starting": 2500.0,
+    "in_use": 1060.32,
+    "available": 1439.68
+  }
+}
