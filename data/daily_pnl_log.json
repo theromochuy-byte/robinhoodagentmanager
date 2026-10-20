@@ -934,5 +934,41 @@
     "touched_2r": false,
     "pct_to_1r": 25.2,
     "pct_to_2r": 12.6
+  },
+  {
+    "date": "2026-10-20",
+    "time": "2026-10-20T23:52:56.401281+00:00",
+    "mode": "evening",
+    "symbol": "A",
+    "price": 173.01,
+    "entry": 164.7,
+    "stop": 150.5559,
+    "target_1R": 178.8441,
+    "target_2R": 192.9882,
+    "unrealized_pnl": 29.38,
+    "pnl_r": 0.588,
+    "days_held": 27.2,
+    "touched_1r": false,
+    "touched_2r": false,
+    "pct_to_1r": 58.8,
+    "pct_to_2r": 29.4
+  },
+  {
+    "date": "2026-10-20",
+    "time": "2026-10-20T23:52:56.401281+00:00",
+    "mode": "evening",
+    "symbol": "COP",
+    "price": 145.95,
+    "entry": 142.2014,
+    "stop": 127.3302,
+    "target_1R": 157.0726,
+    "target_2R": 171.9438,
+    "unrealized_pnl": 12.6,
+    "pnl_r": 0.252,
+    "days_held": 5.2,
+    "touched_1r": false,
+    "touched_2r": false,
+    "pct_to_1r": 25.2,
+    "pct_to_2r": 12.6
   }
 ]

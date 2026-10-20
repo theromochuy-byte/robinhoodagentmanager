@@ -459,9 +459,9 @@
     "last_price": 173.01,
     "unrealized_pnl": 29.38,
     "touched_1r": false,
-    "checked_at": "2026-10-20T22:01:13.871551+00:00",
+    "checked_at": "2026-10-20T23:52:45.161983+00:00",
     "progress_pct": 29.4,
-    "est_days_to_2r": 46.6,
+    "est_days_to_2r": 46.8,
     "days_held": 27.2
   },
   {
@@ -492,9 +492,30 @@
     "last_price": 145.95,
     "unrealized_pnl": 12.6,
     "touched_1r": false,
-    "checked_at": "2026-10-20T22:01:13.871551+00:00",
+    "checked_at": "2026-10-20T23:52:45.161983+00:00",
     "progress_pct": 12.6,
-    "est_days_to_2r": 25.5,
+    "est_days_to_2r": 25.9,
     "days_held": 5.2
+  },
+  {
+    "symbol": "BRK-B",
+    "type": "inverse_hns",
+    "neckline": 537.74,
+    "stop": 499.4982,
+    "target_1R": 576.5018,
+    "target_2R": 615.0036,
+    "risk_per_share": 38.5018,
+    "shares": 1.1617,
+    "break_time": "2026-10-20T15:30:00Z",
+    "bars_since_break": 4,
+    "in_pullback": true,
+    "last_close": 540.47,
+    "last_bar_time": "2026-10-20T19:30:00Z",
+    "scanned_at": "2026-10-20T23:52:46.905354+00:00",
+    "signal_price": 540.47,
+    "signal_time": "2026-10-20T19:30:00Z",
+    "status": "pending_fill",
+    "quality_score": 0.48,
+    "sector_score": 3
   }
 ]
