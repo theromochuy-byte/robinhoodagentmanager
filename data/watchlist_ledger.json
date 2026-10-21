@@ -4800,7 +4800,7 @@
     "neckline": 241.96,
     "break_time": "2026-10-14T13:30:00Z",
     "first_seen": "2026-10-14T22:01:38.706437+00:00",
-    "status": "watching",
+    "status": "expired",
     "suggested_entry": 241.96,
     "suggested_entry_zone": [
       240.7502,
@@ -4860,6 +4860,11 @@
         "time": "2026-10-20T23:52:56.291311+00:00",
         "price": 257.55,
         "note": "update"
+      },
+      {
+        "time": "2026-10-21T22:04:51.373788+00:00",
+        "price": 257.55,
+        "note": "expired"
       }
     ],
     "trigger_time": null,
@@ -4867,7 +4872,7 @@
     "close_time": null,
     "close_price": null,
     "outcome": null,
-    "elapsed_watching_hours": null,
+    "elapsed_watching_hours": 168.1,
     "elapsed_total_hours": null,
     "quality_score": 0.051,
     "bars_since_break": 34,
@@ -4999,6 +5004,11 @@
         "time": "2026-10-20T23:52:56.291311+00:00",
         "price": 149.57,
         "note": "update"
+      },
+      {
+        "time": "2026-10-21T22:04:51.373788+00:00",
+        "price": 153.12,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -5008,10 +5018,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.1771,
-    "bars_since_break": 26,
+    "quality_score": 0.0799,
+    "bars_since_break": 33,
     "sector_score": 3,
-    "last_seen": "2026-10-20T23:52:56.291311+00:00",
+    "last_seen": "2026-10-21T22:04:51.373788+00:00",
     "skip_reason": "low_quality"
   },
   {
@@ -5118,6 +5128,11 @@
         "time": "2026-10-20T23:52:56.291311+00:00",
         "price": 93.505,
         "note": "update"
+      },
+      {
+        "time": "2026-10-21T22:04:51.373788+00:00",
+        "price": 92.675,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -5127,11 +5142,11 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.1535,
-    "bars_since_break": 27,
+    "quality_score": 0.0563,
+    "bars_since_break": 34,
     "sector_score": 3,
-    "last_seen": "2026-10-20T23:52:56.291311+00:00",
-    "skip_reason": "low_quality"
+    "last_seen": "2026-10-21T22:04:51.373788+00:00",
+    "skip_reason": null
   },
   {
     "id": "GILD__inverse_hns__2026-10-15T13:30:00Z",
@@ -5190,6 +5205,11 @@
         "time": "2026-10-20T23:52:56.291311+00:00",
         "price": 156.54,
         "note": "update"
+      },
+      {
+        "time": "2026-10-21T22:04:51.373788+00:00",
+        "price": 153.57,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -5199,11 +5219,11 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.1491,
-    "bars_since_break": 27,
+    "quality_score": 0.0518,
+    "bars_since_break": 34,
     "sector_score": 3,
-    "last_seen": "2026-10-20T23:52:56.291311+00:00",
-    "skip_reason": "low_quality"
+    "last_seen": "2026-10-21T22:04:51.373788+00:00",
+    "skip_reason": null
   },
   {
     "id": "A__inverse_hns__2026-10-15T16:30:00Z",
@@ -5356,6 +5376,11 @@
         "time": "2026-10-20T23:52:56.291311+00:00",
         "price": 242.45,
         "note": "update"
+      },
+      {
+        "time": "2026-10-21T22:04:51.373788+00:00",
+        "price": 241.68,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -5365,11 +5390,11 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.1624,
-    "bars_since_break": 27,
+    "quality_score": 0.0652,
+    "bars_since_break": 34,
     "sector_score": 3,
-    "last_seen": "2026-10-20T23:52:56.291311+00:00",
-    "skip_reason": "low_quality"
+    "last_seen": "2026-10-21T22:04:51.373788+00:00",
+    "skip_reason": null
   },
   {
     "id": "CRM__inverse_hns__2026-10-15T14:30:00Z",
@@ -5418,6 +5443,11 @@
         "time": "2026-10-20T23:52:56.291311+00:00",
         "price": 242.45,
         "note": "update"
+      },
+      {
+        "time": "2026-10-21T22:04:51.373788+00:00",
+        "price": 241.68,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -5427,10 +5457,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.1712,
-    "bars_since_break": 26,
+    "quality_score": 0.074,
+    "bars_since_break": 33,
     "sector_score": 3,
-    "last_seen": "2026-10-20T23:52:56.291311+00:00",
+    "last_seen": "2026-10-21T22:04:51.373788+00:00",
     "skip_reason": null
   },
   {
@@ -5522,6 +5552,11 @@
         "time": "2026-10-20T23:52:56.291311+00:00",
         "price": 81.895,
         "note": "update"
+      },
+      {
+        "time": "2026-10-21T22:04:51.373788+00:00",
+        "price": 81.77,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -5531,10 +5566,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.2499,
-    "bars_since_break": 20,
+    "quality_score": 0.1527,
+    "bars_since_break": 27,
     "sector_score": 3,
-    "last_seen": "2026-10-20T23:52:56.291311+00:00",
+    "last_seen": "2026-10-21T22:04:51.373788+00:00",
     "skip_reason": "low_quality"
   },
   {
@@ -5569,6 +5604,11 @@
         "time": "2026-10-20T23:52:56.291311+00:00",
         "price": 50.38,
         "note": "update"
+      },
+      {
+        "time": "2026-10-21T22:04:51.373788+00:00",
+        "price": 49.87,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -5578,10 +5618,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.4253,
-    "bars_since_break": 7,
+    "quality_score": 0.3281,
+    "bars_since_break": 14,
     "sector_score": 3,
-    "last_seen": "2026-10-20T23:52:56.291311+00:00",
+    "last_seen": "2026-10-21T22:04:51.373788+00:00",
     "skip_reason": null
   },
   {
@@ -5611,6 +5651,11 @@
         "time": "2026-10-20T23:52:56.291311+00:00",
         "price": 419.34,
         "note": "update"
+      },
+      {
+        "time": "2026-10-21T22:04:51.373788+00:00",
+        "price": 416.97,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -5620,10 +5665,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.4473,
-    "bars_since_break": 6,
+    "quality_score": 0.35,
+    "bars_since_break": 13,
     "sector_score": 3,
-    "last_seen": "2026-10-20T23:52:56.291311+00:00",
+    "last_seen": "2026-10-21T22:04:51.373788+00:00",
     "skip_reason": null
   },
   {
@@ -5653,6 +5698,11 @@
         "time": "2026-10-20T23:52:56.291311+00:00",
         "price": 1286.79,
         "note": "update"
+      },
+      {
+        "time": "2026-10-21T22:04:51.373788+00:00",
+        "price": 1272.2,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -5662,10 +5712,84 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.4452,
+    "quality_score": 0.3479,
+    "bars_since_break": 13,
+    "sector_score": 3,
+    "last_seen": "2026-10-21T22:04:51.373788+00:00",
+    "skip_reason": null
+  },
+  {
+    "id": "A__cup_and_handle__2026-10-21T13:30:00Z",
+    "symbol": "A",
+    "type": "cup_and_handle",
+    "neckline": 175.0,
+    "break_time": "2026-10-21T13:30:00Z",
+    "first_seen": "2026-10-21T22:04:51.373788+00:00",
+    "status": "watching",
+    "suggested_entry": 175.0,
+    "suggested_entry_zone": [
+      174.125,
+      175.875
+    ],
+    "stop": 167.1005,
+    "target_1R": 184.4395,
+    "target_2R": 193.109,
+    "risk_per_share": 8.6695,
+    "price_history": [
+      {
+        "time": "2026-10-21T22:04:51.373788+00:00",
+        "price": 177.82,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null,
+    "quality_score": 0.4392,
     "bars_since_break": 6,
     "sector_score": 3,
-    "last_seen": "2026-10-20T23:52:56.291311+00:00",
+    "last_seen": "2026-10-21T22:04:51.373788+00:00",
+    "skip_reason": null
+  },
+  {
+    "id": "A__inverse_hns__2026-10-21T14:30:00Z",
+    "symbol": "A",
+    "type": "inverse_hns",
+    "neckline": 177.47,
+    "break_time": "2026-10-21T14:30:00Z",
+    "first_seen": "2026-10-21T22:04:51.373788+00:00",
+    "status": "watching",
+    "suggested_entry": 177.47,
+    "suggested_entry_zone": [
+      176.5827,
+      178.3573
+    ],
+    "stop": 169.4438,
+    "target_1R": 186.0562,
+    "target_2R": 194.3623,
+    "risk_per_share": 8.3062,
+    "price_history": [
+      {
+        "time": "2026-10-21T22:04:51.373788+00:00",
+        "price": 177.82,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null,
+    "quality_score": 0.4532,
+    "bars_since_break": 5,
+    "sector_score": 3,
+    "last_seen": "2026-10-21T22:04:51.373788+00:00",
     "skip_reason": null
   }
 ]

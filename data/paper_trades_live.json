@@ -456,13 +456,13 @@
     "fill_slip": -2.56,
     "fill_slip_pct": -1.53,
     "target_3R": 207.1323,
-    "last_price": 178.05,
-    "unrealized_pnl": 47.19,
+    "last_price": 177.75,
+    "unrealized_pnl": 46.13,
     "touched_1r": false,
-    "checked_at": "2026-10-21T18:35:00.890185+00:00",
-    "progress_pct": 47.2,
-    "est_days_to_2r": 22.4,
-    "days_held": 28.0
+    "checked_at": "2026-10-21T22:04:35.996077+00:00",
+    "progress_pct": 46.1,
+    "est_days_to_2r": 23.5,
+    "days_held": 28.2
   },
   {
     "symbol": "COP",
@@ -489,13 +489,13 @@
     "fill_slip": -0.1686,
     "fill_slip_pct": -0.12,
     "target_3R": 186.815,
-    "last_price": 146.02,
-    "unrealized_pnl": 12.84,
+    "last_price": 145.67,
+    "unrealized_pnl": 11.66,
     "touched_1r": false,
-    "checked_at": "2026-10-21T18:35:00.890185+00:00",
-    "progress_pct": 12.8,
-    "est_days_to_2r": 29.2,
-    "days_held": 6.0
+    "checked_at": "2026-10-21T22:04:35.996077+00:00",
+    "progress_pct": 11.7,
+    "est_days_to_2r": 33.3,
+    "days_held": 6.2
   },
   {
     "symbol": "BRK-B",
@@ -522,9 +522,30 @@
     "fill_slip": 1.405,
     "fill_slip_pct": 0.26,
     "target_3R": 669.0054,
-    "last_price": 541.875,
-    "unrealized_pnl": 0.0,
+    "last_price": 538.99,
+    "unrealized_pnl": -3.33,
     "touched_1r": false,
-    "checked_at": "2026-10-21T18:35:00.890185+00:00"
+    "checked_at": "2026-10-21T22:04:35.996077+00:00"
+  },
+  {
+    "symbol": "ZS",
+    "type": "inverse_hns",
+    "neckline": 225.99,
+    "stop": 201.9033,
+    "target_1R": 253.3067,
+    "target_2R": 279.0084,
+    "risk_per_share": 25.7017,
+    "shares": 1.9454,
+    "break_time": "2026-10-21T13:30:00Z",
+    "bars_since_break": 6,
+    "in_pullback": true,
+    "last_close": 231.32,
+    "last_bar_time": "2026-10-21T19:30:00Z",
+    "scanned_at": "2026-10-21T22:04:41.518248+00:00",
+    "signal_price": 231.32,
+    "signal_time": "2026-10-21T19:30:00Z",
+    "status": "pending_fill",
+    "quality_score": 0.47,
+    "sector_score": 3
   }
 ]
