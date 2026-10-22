@@ -459,7 +459,7 @@
     "last_price": 177.75,
     "unrealized_pnl": 46.13,
     "touched_1r": false,
-    "checked_at": "2026-10-21T22:04:35.996077+00:00",
+    "checked_at": "2026-10-22T00:00:56.368375+00:00",
     "progress_pct": 46.1,
     "est_days_to_2r": 23.5,
     "days_held": 28.2
@@ -492,9 +492,9 @@
     "last_price": 145.67,
     "unrealized_pnl": 11.66,
     "touched_1r": false,
-    "checked_at": "2026-10-21T22:04:35.996077+00:00",
+    "checked_at": "2026-10-22T00:00:56.368375+00:00",
     "progress_pct": 11.7,
-    "est_days_to_2r": 33.3,
+    "est_days_to_2r": 33.8,
     "days_held": 6.2
   },
   {
@@ -525,17 +525,17 @@
     "last_price": 538.99,
     "unrealized_pnl": -3.33,
     "touched_1r": false,
-    "checked_at": "2026-10-21T22:04:35.996077+00:00"
+    "checked_at": "2026-10-22T00:00:56.368375+00:00"
   },
   {
     "symbol": "ZS",
     "type": "inverse_hns",
     "neckline": 225.99,
     "stop": 201.9033,
-    "target_1R": 253.3067,
-    "target_2R": 279.0084,
-    "risk_per_share": 25.7017,
-    "shares": 1.9454,
+    "target_1R": 260.7567,
+    "target_2R": 290.1834,
+    "risk_per_share": 29.4267,
+    "shares": 1.6991,
     "break_time": "2026-10-21T13:30:00Z",
     "bars_since_break": 6,
     "in_pullback": true,
@@ -544,8 +544,17 @@
     "scanned_at": "2026-10-21T22:04:41.518248+00:00",
     "signal_price": 231.32,
     "signal_time": "2026-10-21T19:30:00Z",
-    "status": "pending_fill",
+    "status": "entered",
     "quality_score": 0.47,
-    "sector_score": 3
+    "sector_score": 3,
+    "entry": 231.33,
+    "entry_time": "2026-10-22T00:00:55.874230+00:00",
+    "fill_slip": 0.01,
+    "fill_slip_pct": 0.0,
+    "target_3R": 319.6101,
+    "last_price": 231.33,
+    "unrealized_pnl": 0.0,
+    "touched_1r": false,
+    "checked_at": "2026-10-22T00:00:56.368375+00:00"
   }
 ]
