@@ -456,13 +456,13 @@
     "fill_slip": -2.56,
     "fill_slip_pct": -1.53,
     "target_3R": 207.1323,
-    "last_price": 173.26,
-    "unrealized_pnl": 30.26,
+    "last_price": 173.89,
+    "unrealized_pnl": 32.49,
     "touched_1r": true,
-    "checked_at": "2026-10-22T18:29:58.613329+00:00",
-    "progress_pct": 30.3,
-    "est_days_to_2r": 47.7,
-    "days_held": 29.0,
+    "checked_at": "2026-10-22T22:03:38.881771+00:00",
+    "progress_pct": 32.5,
+    "est_days_to_2r": 43.3,
+    "days_held": 29.2,
     "stop_moved_to_be_at": "2026-10-22T18:29:58.613329+00:00"
   },
   {
@@ -490,13 +490,13 @@
     "fill_slip": -0.1686,
     "fill_slip_pct": -0.12,
     "target_3R": 186.815,
-    "last_price": 146.2,
-    "unrealized_pnl": 13.44,
+    "last_price": 145.63,
+    "unrealized_pnl": 11.53,
     "touched_1r": false,
-    "checked_at": "2026-10-22T18:29:58.613329+00:00",
-    "progress_pct": 13.4,
-    "est_days_to_2r": 32.2,
-    "days_held": 7.0
+    "checked_at": "2026-10-22T22:03:38.881771+00:00",
+    "progress_pct": 11.5,
+    "est_days_to_2r": 39.2,
+    "days_held": 7.2
   },
   {
     "symbol": "BRK-B",
@@ -523,13 +523,13 @@
     "fill_slip": 1.405,
     "fill_slip_pct": 0.26,
     "target_3R": 669.0054,
-    "last_price": 549.55,
-    "unrealized_pnl": 8.85,
+    "last_price": 546.97,
+    "unrealized_pnl": 5.88,
     "touched_1r": false,
-    "checked_at": "2026-10-22T18:29:58.613329+00:00",
-    "progress_pct": 9.1,
-    "est_days_to_2r": 7.1,
-    "days_held": 1.0
+    "checked_at": "2026-10-22T22:03:38.881771+00:00",
+    "progress_pct": 6.0,
+    "est_days_to_2r": 12.8,
+    "days_held": 1.1
   },
   {
     "symbol": "ZS",
@@ -556,12 +556,12 @@
     "fill_slip": 0.01,
     "fill_slip_pct": 0.0,
     "target_3R": 319.6101,
-    "last_price": 236.33,
-    "unrealized_pnl": 8.5,
+    "last_price": 237.76,
+    "unrealized_pnl": 10.93,
     "touched_1r": false,
-    "checked_at": "2026-10-22T18:29:58.613329+00:00",
-    "progress_pct": 8.5,
-    "est_days_to_2r": 5.9,
-    "days_held": 0.8
+    "checked_at": "2026-10-22T22:03:38.881771+00:00",
+    "progress_pct": 10.9,
+    "est_days_to_2r": 5.3,
+    "days_held": 0.9
   }
 ]
