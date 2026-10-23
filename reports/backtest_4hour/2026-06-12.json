@@ -1,0 +1,46 @@
+{
+  "date": "2026-06-12",
+  "new_entries": 2,
+  "closed_today": 0,
+  "open_count": 19,
+  "entries": [
+    {
+      "symbol": "TGT",
+      "type": "inverse_hns",
+      "neckline": 131.31,
+      "stop": 118.6323,
+      "target_2R": 157.4304,
+      "risk_per_share": 12.9327,
+      "shares": 2.3197,
+      "break_time": "2026-06-11T14:00:00Z",
+      "bars_since_break": 3,
+      "in_pullback": true,
+      "last_close": 135.215,
+      "last_bar_time": "2026-06-12T18:00:00Z",
+      "scan_date": "2026-06-12",
+      "entry": 135.215,
+      "entry_time": "2026-06-12T18:00:00Z",
+      "status": "open"
+    },
+    {
+      "symbol": "GE",
+      "type": "inverse_hns",
+      "neckline": 332.485,
+      "stop": 308.9063,
+      "target_2R": 380.6175,
+      "risk_per_share": 23.9037,
+      "shares": 1.1268,
+      "break_time": "2026-06-11T18:00:00Z",
+      "bars_since_break": 2,
+      "in_pullback": true,
+      "last_close": 335.25,
+      "last_bar_time": "2026-06-12T18:00:00Z",
+      "scan_date": "2026-06-12",
+      "entry": 335.25,
+      "entry_time": "2026-06-12T18:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 1
+}

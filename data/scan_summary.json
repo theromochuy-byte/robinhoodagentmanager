@@ -1,0 +1,117 @@
+{
+  "as_of": "2026-10-23T23:53:13.995153+00:00",
+  "scan_date": "2026-10-23",
+  "regime": {
+    "spy_ema20": "bull",
+    "vix": 14.55,
+    "high_vix": false
+  },
+  "sector_scores": {
+    "XLB": 3,
+    "XLC": 3,
+    "XLE": 3,
+    "XLF": 3,
+    "XLI": 3,
+    "XLK": 3,
+    "XLP": 3,
+    "XLRE": 3,
+    "XLU": 3,
+    "XLV": 3,
+    "XLY": 3
+  },
+  "watching": [
+    {
+      "symbol": "CRM",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.4267,
+      "bars_since_break": 8,
+      "neckline": 251.94,
+      "last_price": 248.56,
+      "stop": 232.9079,
+      "target_1R": 271.3321,
+      "target_2R": 290.5443
+    },
+    {
+      "symbol": "SPGI",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.3586,
+      "bars_since_break": 12,
+      "neckline": 454.92,
+      "last_price": 450.27,
+      "stop": 431.9436,
+      "target_1R": 481.1564,
+      "target_2R": 505.7629
+    },
+    {
+      "symbol": "ZS",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.2755,
+      "bars_since_break": 20,
+      "neckline": 225.99,
+      "last_price": 255.32,
+      "stop": 201.9033,
+      "target_1R": 253.3067,
+      "target_2R": 279.0084
+    },
+    {
+      "symbol": "A",
+      "type": "cup_and_handle",
+      "sector_score": 3,
+      "quality_score": 0.2452,
+      "bars_since_break": 20,
+      "neckline": 175.0,
+      "last_price": 173.05,
+      "stop": 166.9665,
+      "target_1R": 184.5735,
+      "target_2R": 193.3769
+    },
+    {
+      "symbol": "UNH",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.1556,
+      "bars_since_break": 27,
+      "neckline": 414.12,
+      "last_price": 418.01,
+      "stop": 388.7829,
+      "target_1R": 443.1171,
+      "target_2R": 470.2841
+    },
+    {
+      "symbol": "LLY",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.1535,
+      "bars_since_break": 27,
+      "neckline": 1292.65,
+      "last_price": 1273.5699,
+      "stop": 1218.9935,
+      "target_1R": 1388.7465,
+      "target_2R": 1473.6229
+    },
+    {
+      "symbol": "DVN",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.1337,
+      "bars_since_break": 28,
+      "neckline": 50.76,
+      "last_price": 51.39,
+      "stop": 48.4703,
+      "target_1R": 53.3597,
+      "target_2R": 55.8044
+    }
+  ],
+  "triggered_today": [],
+  "new_entries": 0,
+  "skipped": [],
+  "open_positions": 4,
+  "equity": {
+    "starting": 2500.0,
+    "in_use": 2078.38,
+    "available": 421.62
+  }
+}

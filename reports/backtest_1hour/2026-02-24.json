@@ -1,0 +1,58 @@
+{
+  "date": "2026-02-24",
+  "new_entries": 1,
+  "closed_today": 1,
+  "open_count": 15,
+  "entries": [
+    {
+      "symbol": "GE",
+      "type": "inverse_hns",
+      "neckline": 325.545,
+      "stop": 300.0231,
+      "target_2R": 389.6537,
+      "risk_per_share": 29.8769,
+      "shares": 1.0041,
+      "break_time": "2026-02-17T16:00:00Z",
+      "bars_since_break": 34,
+      "in_pullback": true,
+      "last_close": 345.725,
+      "last_bar_time": "2026-02-24T20:00:00Z",
+      "scan_date": "2026-02-24",
+      "entry": 345.725,
+      "entry_time": "2026-02-24T20:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [
+    {
+      "symbol": "MRK",
+      "type": "inverse_hns",
+      "neckline": 112.87,
+      "stop": 107.278,
+      "target_2R": 124.294,
+      "risk_per_share": 5.672,
+      "shares": 3.3201,
+      "break_time": "2026-02-02T19:00:00Z",
+      "bars_since_break": 1,
+      "in_pullback": true,
+      "last_close": 113.4,
+      "last_bar_time": "2026-02-02T20:00:00Z",
+      "scan_date": "2026-02-02",
+      "entry": 113.4,
+      "entry_time": "2026-02-02T20:00:00Z",
+      "status": "closed",
+      "max_price": 124.84,
+      "touched_1r": true,
+      "touched_2r": true,
+      "outcome": "win_2r",
+      "exit_price": 124.744,
+      "exit_time": "2026-02-24T17:00:00Z",
+      "pnl_per_share": 11.344,
+      "pnl_dollars": 37.66,
+      "r_multiple": 2.0,
+      "exit_reason": "2R_stop",
+      "days_held": 21.88
+    }
+  ],
+  "watching_count": 1
+}

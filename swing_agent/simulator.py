@@ -48,10 +48,15 @@ def build_trade(
 
     r1 = entry + risk_per_share
     r2 = entry + 2 * risk_per_share
+    r3 = entry + 3 * risk_per_share
     struct = _prior_structure_high(df, bi, pattern["neckline"])
-    primary_target = struct if (struct and struct > entry) else r2
+    primary_target = struct if (struct and struct > entry) else r3
 
     shares = (equity * risk_pct) / risk_per_share
+    # Cap notional position size at 25% of equity
+    max_notional = equity * 0.25
+    if shares * entry > max_notional:
+        shares = max_notional / entry
 
     trade = {
         "type": pattern["type"],
@@ -64,6 +69,7 @@ def build_trade(
         "target_primary": round(primary_target, 4),
         "target_1R": round(r1, 4),
         "target_2R": round(r2, 4),
+        "target_3R": round(r3, 4),
         "shares": round(shares, 4),
         "atr": round(a, 4),
     }
