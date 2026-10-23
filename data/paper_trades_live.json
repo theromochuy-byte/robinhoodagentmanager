@@ -456,13 +456,13 @@
     "fill_slip": -2.56,
     "fill_slip_pct": -1.53,
     "target_3R": 207.1323,
-    "last_price": 173.89,
-    "unrealized_pnl": 32.49,
+    "last_price": 171.24,
+    "unrealized_pnl": 23.12,
     "touched_1r": true,
-    "checked_at": "2026-10-23T00:00:01.659125+00:00",
-    "progress_pct": 32.5,
-    "est_days_to_2r": 43.4,
-    "days_held": 29.2,
+    "checked_at": "2026-10-23T18:16:35.723007+00:00",
+    "progress_pct": 23.1,
+    "est_days_to_2r": 71.2,
+    "days_held": 30.0,
     "stop_moved_to_be_at": "2026-10-22T18:29:58.613329+00:00"
   },
   {
@@ -490,13 +490,13 @@
     "fill_slip": -0.1686,
     "fill_slip_pct": -0.12,
     "target_3R": 186.815,
-    "last_price": 145.63,
-    "unrealized_pnl": 11.53,
+    "last_price": 151.34,
+    "unrealized_pnl": 30.73,
     "touched_1r": false,
-    "checked_at": "2026-10-23T00:00:01.659125+00:00",
-    "progress_pct": 11.5,
-    "est_days_to_2r": 39.7,
-    "days_held": 7.2
+    "checked_at": "2026-10-23T18:16:35.723007+00:00",
+    "progress_pct": 30.7,
+    "est_days_to_2r": 12.9,
+    "days_held": 8.0
   },
   {
     "symbol": "BRK-B",
@@ -523,10 +523,10 @@
     "fill_slip": 1.405,
     "fill_slip_pct": 0.26,
     "target_3R": 669.0054,
-    "last_price": 546.97,
-    "unrealized_pnl": 5.88,
+    "last_price": 541.34,
+    "unrealized_pnl": -0.62,
     "touched_1r": false,
-    "checked_at": "2026-10-23T00:00:01.659125+00:00",
+    "checked_at": "2026-10-23T18:16:35.723007+00:00",
     "progress_pct": 6.0,
     "est_days_to_2r": 13.7,
     "days_held": 1.2
@@ -556,12 +556,12 @@
     "fill_slip": 0.01,
     "fill_slip_pct": 0.0,
     "target_3R": 319.6101,
-    "last_price": 237.76,
-    "unrealized_pnl": 10.93,
+    "last_price": 254.42,
+    "unrealized_pnl": 39.23,
     "touched_1r": false,
-    "checked_at": "2026-10-23T00:00:01.659125+00:00",
-    "progress_pct": 10.9,
-    "est_days_to_2r": 5.8,
-    "days_held": 1.0
+    "checked_at": "2026-10-23T18:16:35.723007+00:00",
+    "progress_pct": 39.2,
+    "est_days_to_2r": 1.9,
+    "days_held": 1.8
   }
 ]
