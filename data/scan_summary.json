@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-26T19:55:25.526267+00:00",
+  "as_of": "2026-10-26T23:00:45.228256+00:00",
   "scan_date": "2026-10-26",
   "regime": {
     "spy_ema20": "bull",
@@ -27,7 +27,7 @@
       "quality_score": 0.4719,
       "bars_since_break": 6,
       "neckline": 277.26,
-      "last_price": 280.94,
+      "last_price": 280.38,
       "stop": 246.6439,
       "target_1R": 314.3773,
       "target_2R": 348.244
@@ -39,7 +39,7 @@
       "quality_score": 0.463,
       "bars_since_break": 5,
       "neckline": 277.26,
-      "last_price": 280.94,
+      "last_price": 280.38,
       "stop": 259.2429,
       "target_1R": 301.5571,
       "target_2R": 322.7141
@@ -48,10 +48,10 @@
       "symbol": "EOG",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.3434,
-      "bars_since_break": 13,
+      "quality_score": 0.3573,
+      "bars_since_break": 12,
       "neckline": 160.31,
-      "last_price": 163.44,
+      "last_price": 163.84,
       "stop": 152.6397,
       "target_1R": 172.4303,
       "target_2R": 182.3257
@@ -63,7 +63,7 @@
       "quality_score": 0.3294,
       "bars_since_break": 15,
       "neckline": 251.94,
-      "last_price": 246.83,
+      "last_price": 247.55,
       "stop": 232.9079,
       "target_1R": 271.3321,
       "target_2R": 290.5443
@@ -75,7 +75,7 @@
       "quality_score": 0.2614,
       "bars_since_break": 19,
       "neckline": 454.92,
-      "last_price": 450.33,
+      "last_price": 450.55,
       "stop": 431.9436,
       "target_1R": 481.1564,
       "target_2R": 505.7629
@@ -87,7 +87,7 @@
       "quality_score": 0.1783,
       "bars_since_break": 27,
       "neckline": 225.99,
-      "last_price": 260.82,
+      "last_price": 260.4,
       "stop": 201.9033,
       "target_1R": 253.3067,
       "target_2R": 279.0084
@@ -99,7 +99,7 @@
       "quality_score": 0.148,
       "bars_since_break": 27,
       "neckline": 175.0,
-      "last_price": 175.53,
+      "last_price": 175.95,
       "stop": 166.9665,
       "target_1R": 184.5735,
       "target_2R": 193.3769
@@ -111,7 +111,7 @@
       "quality_score": 0.0584,
       "bars_since_break": 34,
       "neckline": 414.12,
-      "last_price": 409.81,
+      "last_price": 410.7,
       "stop": 388.7829,
       "target_1R": 443.1171,
       "target_2R": 470.2841
@@ -123,7 +123,7 @@
       "quality_score": 0.0563,
       "bars_since_break": 34,
       "neckline": 1292.65,
-      "last_price": 1279.48,
+      "last_price": 1279.16,
       "stop": 1218.9935,
       "target_1R": 1388.7465,
       "target_2R": 1473.6229
@@ -135,7 +135,7 @@
       "quality_score": 0.0364,
       "bars_since_break": 35,
       "neckline": 50.76,
-      "last_price": 51.535,
+      "last_price": 51.63,
       "stop": 48.4703,
       "target_1R": 53.3597,
       "target_2R": 55.8044
