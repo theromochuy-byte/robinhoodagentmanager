@@ -5669,6 +5669,11 @@
         "time": "2026-10-23T23:53:13.987901+00:00",
         "price": 51.39,
         "note": "update"
+      },
+      {
+        "time": "2026-10-26T19:55:25.518631+00:00",
+        "price": 51.535,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -5678,10 +5683,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.1337,
-    "bars_since_break": 28,
+    "quality_score": 0.0364,
+    "bars_since_break": 35,
     "sector_score": 3,
-    "last_seen": "2026-10-23T23:53:13.987901+00:00",
+    "last_seen": "2026-10-26T19:55:25.518631+00:00",
     "skip_reason": null
   },
   {
@@ -5736,6 +5741,11 @@
         "time": "2026-10-23T23:53:13.987901+00:00",
         "price": 418.01,
         "note": "update"
+      },
+      {
+        "time": "2026-10-26T19:55:25.518631+00:00",
+        "price": 409.81,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -5745,10 +5755,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.1556,
-    "bars_since_break": 27,
+    "quality_score": 0.0584,
+    "bars_since_break": 34,
     "sector_score": 3,
-    "last_seen": "2026-10-23T23:53:13.987901+00:00",
+    "last_seen": "2026-10-26T19:55:25.518631+00:00",
     "skip_reason": null
   },
   {
@@ -5803,6 +5813,11 @@
         "time": "2026-10-23T23:53:13.987901+00:00",
         "price": 1273.5699,
         "note": "update"
+      },
+      {
+        "time": "2026-10-26T19:55:25.518631+00:00",
+        "price": 1279.48,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -5812,10 +5827,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.1535,
-    "bars_since_break": 27,
+    "quality_score": 0.0563,
+    "bars_since_break": 34,
     "sector_score": 3,
-    "last_seen": "2026-10-23T23:53:13.987901+00:00",
+    "last_seen": "2026-10-26T19:55:25.518631+00:00",
     "skip_reason": null
   },
   {
@@ -5860,6 +5875,11 @@
         "time": "2026-10-23T23:53:13.987901+00:00",
         "price": 173.05,
         "note": "update"
+      },
+      {
+        "time": "2026-10-26T19:55:25.518631+00:00",
+        "price": 175.53,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -5869,11 +5889,11 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.2452,
-    "bars_since_break": 20,
+    "quality_score": 0.148,
+    "bars_since_break": 27,
     "sector_score": 3,
-    "last_seen": "2026-10-23T23:53:13.987901+00:00",
-    "skip_reason": null
+    "last_seen": "2026-10-26T19:55:25.518631+00:00",
+    "skip_reason": "low_quality"
   },
   {
     "id": "A__inverse_hns__2026-10-21T14:30:00Z",
@@ -5954,6 +5974,11 @@
         "time": "2026-10-23T23:53:13.987901+00:00",
         "price": 255.32,
         "note": "update"
+      },
+      {
+        "time": "2026-10-26T19:55:25.518631+00:00",
+        "price": 260.82,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -5963,10 +5988,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.2755,
-    "bars_since_break": 20,
+    "quality_score": 0.1783,
+    "bars_since_break": 27,
     "sector_score": 3,
-    "last_seen": "2026-10-23T23:53:13.987901+00:00",
+    "last_seen": "2026-10-26T19:55:25.518631+00:00",
     "skip_reason": "low_quality"
   },
   {
@@ -6048,6 +6073,11 @@
         "time": "2026-10-23T23:53:13.987901+00:00",
         "price": 450.27,
         "note": "update"
+      },
+      {
+        "time": "2026-10-26T19:55:25.518631+00:00",
+        "price": 450.33,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -6057,10 +6087,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.3586,
-    "bars_since_break": 12,
+    "quality_score": 0.2614,
+    "bars_since_break": 19,
     "sector_score": 3,
-    "last_seen": "2026-10-23T23:53:13.987901+00:00",
+    "last_seen": "2026-10-26T19:55:25.518631+00:00",
     "skip_reason": null
   },
   {
@@ -6090,6 +6120,11 @@
         "time": "2026-10-23T23:53:13.987901+00:00",
         "price": 248.56,
         "note": "update"
+      },
+      {
+        "time": "2026-10-26T19:55:25.518631+00:00",
+        "price": 246.83,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -6099,10 +6134,121 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.4267,
-    "bars_since_break": 8,
+    "quality_score": 0.3294,
+    "bars_since_break": 15,
     "sector_score": 3,
-    "last_seen": "2026-10-23T23:53:13.987901+00:00",
+    "last_seen": "2026-10-26T19:55:25.518631+00:00",
+    "skip_reason": null
+  },
+  {
+    "id": "EOG__inverse_hns__2026-10-23T13:30:00Z",
+    "symbol": "EOG",
+    "type": "inverse_hns",
+    "neckline": 160.31,
+    "break_time": "2026-10-23T13:30:00Z",
+    "first_seen": "2026-10-26T19:55:25.518631+00:00",
+    "status": "watching",
+    "suggested_entry": 160.31,
+    "suggested_entry_zone": [
+      159.5085,
+      161.1115
+    ],
+    "stop": 152.6397,
+    "target_1R": 172.4303,
+    "target_2R": 182.3257,
+    "risk_per_share": 9.8953,
+    "price_history": [
+      {
+        "time": "2026-10-26T19:55:25.518631+00:00",
+        "price": 163.44,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null,
+    "quality_score": 0.3434,
+    "bars_since_break": 13,
+    "sector_score": 3,
+    "last_seen": "2026-10-26T19:55:25.518631+00:00",
+    "skip_reason": null
+  },
+  {
+    "id": "DDOG__inverse_hns__2026-10-26T13:30:00Z",
+    "symbol": "DDOG",
+    "type": "inverse_hns",
+    "neckline": 277.26,
+    "break_time": "2026-10-26T13:30:00Z",
+    "first_seen": "2026-10-26T19:55:25.518631+00:00",
+    "status": "watching",
+    "suggested_entry": 277.26,
+    "suggested_entry_zone": [
+      275.8737,
+      278.6463
+    ],
+    "stop": 246.6439,
+    "target_1R": 314.3773,
+    "target_2R": 348.244,
+    "risk_per_share": 33.8667,
+    "price_history": [
+      {
+        "time": "2026-10-26T19:55:25.518631+00:00",
+        "price": 280.94,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null,
+    "quality_score": 0.4719,
+    "bars_since_break": 6,
+    "sector_score": 3,
+    "last_seen": "2026-10-26T19:55:25.518631+00:00",
+    "skip_reason": null
+  },
+  {
+    "id": "DDOG__inverse_hns__2026-10-26T14:30:00Z",
+    "symbol": "DDOG",
+    "type": "inverse_hns",
+    "neckline": 277.26,
+    "break_time": "2026-10-26T14:30:00Z",
+    "first_seen": "2026-10-26T19:55:25.518631+00:00",
+    "status": "watching",
+    "suggested_entry": 277.26,
+    "suggested_entry_zone": [
+      275.8737,
+      278.6463
+    ],
+    "stop": 259.2429,
+    "target_1R": 301.5571,
+    "target_2R": 322.7141,
+    "risk_per_share": 21.1571,
+    "price_history": [
+      {
+        "time": "2026-10-26T19:55:25.518631+00:00",
+        "price": 280.94,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null,
+    "quality_score": 0.463,
+    "bars_since_break": 5,
+    "sector_score": 3,
+    "last_seen": "2026-10-26T19:55:25.518631+00:00",
     "skip_reason": null
   }
 ]

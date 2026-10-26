@@ -456,13 +456,13 @@
     "fill_slip": -2.56,
     "fill_slip_pct": -1.53,
     "target_3R": 207.1323,
-    "last_price": 173.07,
-    "unrealized_pnl": 29.59,
+    "last_price": 175.51,
+    "unrealized_pnl": 38.21,
     "touched_1r": true,
-    "checked_at": "2026-10-23T23:52:54.155428+00:00",
-    "progress_pct": 29.6,
-    "est_days_to_2r": 51.4,
-    "days_held": 30.2,
+    "checked_at": "2026-10-26T19:55:00.359602+00:00",
+    "progress_pct": 38.2,
+    "est_days_to_2r": 38.2,
+    "days_held": 33.1,
     "stop_moved_to_be_at": "2026-10-22T18:29:58.613329+00:00"
   },
   {
@@ -490,13 +490,13 @@
     "fill_slip": -0.1686,
     "fill_slip_pct": -0.12,
     "target_3R": 186.815,
-    "last_price": 150.8,
-    "unrealized_pnl": 28.91,
+    "last_price": 151.25,
+    "unrealized_pnl": 30.42,
     "touched_1r": false,
-    "checked_at": "2026-10-23T23:52:54.155428+00:00",
-    "progress_pct": 28.9,
-    "est_days_to_2r": 14.5,
-    "days_held": 8.2
+    "checked_at": "2026-10-26T19:55:00.359602+00:00",
+    "progress_pct": 30.4,
+    "est_days_to_2r": 18.1,
+    "days_held": 11.1
   },
   {
     "symbol": "BRK-B",
@@ -523,13 +523,13 @@
     "fill_slip": 1.405,
     "fill_slip_pct": 0.26,
     "target_3R": 669.0054,
-    "last_price": 542.19,
-    "unrealized_pnl": 0.36,
+    "last_price": 547.655,
+    "unrealized_pnl": 6.67,
     "touched_1r": false,
-    "checked_at": "2026-10-23T23:52:54.155428+00:00",
-    "progress_pct": 6.0,
-    "est_days_to_2r": 13.7,
-    "days_held": 1.2
+    "checked_at": "2026-10-26T19:55:00.359602+00:00",
+    "progress_pct": 6.8,
+    "est_days_to_2r": 49.3,
+    "days_held": 5.1
   },
   {
     "symbol": "ZS",
@@ -556,12 +556,13 @@
     "fill_slip": 0.01,
     "fill_slip_pct": 0.0,
     "target_3R": 319.6101,
-    "last_price": 255.15,
-    "unrealized_pnl": 40.47,
-    "touched_1r": false,
-    "checked_at": "2026-10-23T23:52:54.155428+00:00",
-    "progress_pct": 40.5,
-    "est_days_to_2r": 2.1,
-    "days_held": 2.0
+    "last_price": 260.83,
+    "unrealized_pnl": 50.12,
+    "touched_1r": true,
+    "checked_at": "2026-10-26T19:55:00.359602+00:00",
+    "progress_pct": 50.1,
+    "est_days_to_2r": 3.4,
+    "days_held": 4.8,
+    "stop_moved_to_be_at": "2026-10-26T19:55:00.359602+00:00"
   }
 ]
