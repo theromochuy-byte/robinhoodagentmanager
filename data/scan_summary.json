@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-27T19:26:38.074674+00:00",
+  "as_of": "2026-10-27T22:50:42.445467+00:00",
   "scan_date": "2026-10-27",
   "regime": {
     "spy_ema20": "bull",
@@ -21,25 +21,49 @@
   },
   "watching": [
     {
+      "symbol": "QCOM",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.5326,
+      "bars_since_break": 0,
+      "neckline": 183.09,
+      "last_price": 184.2,
+      "stop": 171.1703,
+      "target_1R": 197.2297,
+      "target_2R": 210.2594
+    },
+    {
       "symbol": "TXN",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.4635,
-      "bars_since_break": 5,
+      "quality_score": 0.4496,
+      "bars_since_break": 6,
       "neckline": 298.75,
-      "last_price": 307.805,
+      "last_price": 309.02,
       "stop": 279.0661,
       "target_1R": 327.4225,
       "target_2R": 351.6006
     },
     {
+      "symbol": "PSA",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.4396,
+      "bars_since_break": 6,
+      "neckline": 310.5,
+      "last_price": 312.56,
+      "stop": 296.2539,
+      "target_1R": 328.4461,
+      "target_2R": 344.5422
+    },
+    {
       "symbol": "DDOG",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.3885,
-      "bars_since_break": 12,
+      "quality_score": 0.3747,
+      "bars_since_break": 13,
       "neckline": 277.26,
-      "last_price": 280.0,
+      "last_price": 280.86,
       "stop": 246.6428,
       "target_1R": 314.3784,
       "target_2R": 348.2462
@@ -51,7 +75,7 @@
       "quality_score": 0.26,
       "bars_since_break": 19,
       "neckline": 160.31,
-      "last_price": 161.1425,
+      "last_price": 161.28,
       "stop": 152.6397,
       "target_1R": 172.4303,
       "target_2R": 182.3255
@@ -60,10 +84,10 @@
       "symbol": "CRM",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.2461,
-      "bars_since_break": 21,
+      "quality_score": 0.2322,
+      "bars_since_break": 22,
       "neckline": 251.94,
-      "last_price": 241.805,
+      "last_price": 240.87,
       "stop": 232.9079,
       "target_1R": 271.3321,
       "target_2R": 290.5443
@@ -72,10 +96,10 @@
       "symbol": "SPGI",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.178,
-      "bars_since_break": 25,
+      "quality_score": 0.1641,
+      "bars_since_break": 26,
       "neckline": 454.92,
-      "last_price": 450.44,
+      "last_price": 448.92,
       "stop": 431.9436,
       "target_1R": 481.1564,
       "target_2R": 505.7629
@@ -84,10 +108,10 @@
       "symbol": "ZS",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.095,
-      "bars_since_break": 33,
+      "quality_score": 0.0811,
+      "bars_since_break": 34,
       "neckline": 225.99,
-      "last_price": 260.405,
+      "last_price": 260.15,
       "stop": 201.9033,
       "target_1R": 253.3067,
       "target_2R": 279.0084
@@ -96,10 +120,10 @@
       "symbol": "A",
       "type": "cup_and_handle",
       "sector_score": 3,
-      "quality_score": 0.0642,
-      "bars_since_break": 33,
+      "quality_score": 0.0503,
+      "bars_since_break": 34,
       "neckline": 175.0,
-      "last_price": 178.5,
+      "last_price": 177.49,
       "stop": 167.1005,
       "target_1R": 184.4395,
       "target_2R": 193.109
@@ -110,21 +134,11 @@
       "symbol": "ADI",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.464,
-      "signal_price": 424.18,
+      "quality_score": 0.4501,
+      "signal_price": 425.45,
       "stop": 387.4353,
       "target_1R": 447.9047,
       "target_2R": 478.1393
-    },
-    {
-      "symbol": "PSA",
-      "type": "inverse_hns",
-      "sector_score": 3,
-      "quality_score": 0.4535,
-      "signal_price": 311.94,
-      "stop": 296.2539,
-      "target_1R": 328.4461,
-      "target_2R": 344.5422
     }
   ],
   "new_entries": 0,
@@ -132,17 +146,9 @@
     {
       "symbol": "ADI",
       "type": "inverse_hns",
-      "est_cost": 634.74,
+      "est_cost": 636.64,
       "available": 421.62,
-      "quality_score": 0.464,
-      "skip_reason": "no_capital"
-    },
-    {
-      "symbol": "PSA",
-      "type": "inverse_hns",
-      "est_cost": 624.19,
-      "available": 421.62,
-      "quality_score": 0.4535,
+      "quality_score": 0.4501,
       "skip_reason": "no_capital"
     }
   ],
