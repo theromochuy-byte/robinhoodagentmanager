@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-10-27T22:50:42.445467+00:00",
-  "scan_date": "2026-10-27",
+  "as_of": "2026-10-28T19:32:32.765083+00:00",
+  "scan_date": "2026-10-28",
   "regime": {
     "spy_ema20": "bull",
     "vix": 14.55,
@@ -24,70 +24,70 @@
       "symbol": "QCOM",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.5326,
-      "bars_since_break": 0,
+      "quality_score": 0.4353,
+      "bars_since_break": 7,
       "neckline": 183.09,
-      "last_price": 184.2,
-      "stop": 171.1703,
-      "target_1R": 197.2297,
-      "target_2R": 210.2594
+      "last_price": 181.19,
+      "stop": 171.1702,
+      "target_1R": 197.2898,
+      "target_2R": 210.3496
+    },
+    {
+      "symbol": "ADI",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.3529,
+      "bars_since_break": 13,
+      "neckline": 415.175,
+      "last_price": 426.38,
+      "stop": 387.4353,
+      "target_1R": 447.9047,
+      "target_2R": 478.1394
     },
     {
       "symbol": "TXN",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.4496,
-      "bars_since_break": 6,
+      "quality_score": 0.3524,
+      "bars_since_break": 13,
       "neckline": 298.75,
-      "last_price": 309.02,
-      "stop": 279.0661,
-      "target_1R": 327.4225,
-      "target_2R": 351.6006
-    },
-    {
-      "symbol": "PSA",
-      "type": "inverse_hns",
-      "sector_score": 3,
-      "quality_score": 0.4396,
-      "bars_since_break": 6,
-      "neckline": 310.5,
-      "last_price": 312.56,
-      "stop": 296.2539,
-      "target_1R": 328.4461,
-      "target_2R": 344.5422
+      "last_price": 306.59,
+      "stop": 279.0614,
+      "target_1R": 327.4272,
+      "target_2R": 351.6101
     },
     {
       "symbol": "DDOG",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.3747,
-      "bars_since_break": 13,
+      "quality_score": 0.2774,
+      "bars_since_break": 20,
       "neckline": 277.26,
-      "last_price": 280.86,
-      "stop": 246.6428,
-      "target_1R": 314.3784,
-      "target_2R": 348.2462
+      "last_price": 277.475,
+      "stop": 246.6439,
+      "target_1R": 314.3773,
+      "target_2R": 348.244
     },
     {
       "symbol": "EOG",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.26,
-      "bars_since_break": 19,
+      "quality_score": 0.1489,
+      "bars_since_break": 27,
       "neckline": 160.31,
-      "last_price": 161.28,
+      "last_price": 161.15,
       "stop": 152.6397,
       "target_1R": 172.4303,
-      "target_2R": 182.3255
+      "target_2R": 182.3257
     },
     {
       "symbol": "CRM",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.2322,
-      "bars_since_break": 22,
+      "quality_score": 0.135,
+      "bars_since_break": 29,
       "neckline": 251.94,
-      "last_price": 240.87,
+      "last_price": 241.24,
       "stop": 232.9079,
       "target_1R": 271.3321,
       "target_2R": 290.5443
@@ -96,59 +96,53 @@
       "symbol": "SPGI",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.1641,
-      "bars_since_break": 26,
+      "quality_score": 0.0669,
+      "bars_since_break": 33,
       "neckline": 454.92,
-      "last_price": 448.92,
+      "last_price": 447.3,
       "stop": 431.9436,
       "target_1R": 481.1564,
       "target_2R": 505.7629
-    },
-    {
-      "symbol": "ZS",
-      "type": "inverse_hns",
-      "sector_score": 3,
-      "quality_score": 0.0811,
-      "bars_since_break": 34,
-      "neckline": 225.99,
-      "last_price": 260.15,
-      "stop": 201.9033,
-      "target_1R": 253.3067,
-      "target_2R": 279.0084
-    },
-    {
-      "symbol": "A",
-      "type": "cup_and_handle",
-      "sector_score": 3,
-      "quality_score": 0.0503,
-      "bars_since_break": 34,
-      "neckline": 175.0,
-      "last_price": 177.49,
-      "stop": 167.1005,
-      "target_1R": 184.4395,
-      "target_2R": 193.109
     }
   ],
   "triggered_today": [
     {
-      "symbol": "ADI",
+      "symbol": "ILMN",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.4501,
-      "signal_price": 425.45,
-      "stop": 387.4353,
-      "target_1R": 447.9047,
-      "target_2R": 478.1393
+      "quality_score": 0.461,
+      "signal_price": 288.885,
+      "stop": 261.0254,
+      "target_1R": 312.8446,
+      "target_2R": 338.7543
+    },
+    {
+      "symbol": "ILMN",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.4587,
+      "signal_price": 288.885,
+      "stop": 270.2966,
+      "target_1R": 314.6734,
+      "target_2R": 336.8618
     }
   ],
   "new_entries": 0,
   "skipped": [
     {
-      "symbol": "ADI",
+      "symbol": "ILMN",
       "type": "inverse_hns",
-      "est_cost": 636.64,
+      "est_cost": 557.49,
       "available": 421.62,
-      "quality_score": 0.4501,
+      "quality_score": 0.461,
+      "skip_reason": "no_capital"
+    },
+    {
+      "symbol": "ILMN",
+      "type": "inverse_hns",
+      "est_cost": 617.32,
+      "available": 421.62,
+      "quality_score": 0.4587,
       "skip_reason": "no_capital"
     }
   ],
