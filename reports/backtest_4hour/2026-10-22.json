@@ -1,16 +1,16 @@
 {
   "date": "2026-10-22",
-  "new_entries": 7,
+  "new_entries": 6,
   "closed_today": 0,
-  "open_count": 60,
+  "open_count": 57,
   "entries": [
     {
       "symbol": "AAPL",
       "type": "inverse_hns",
       "neckline": 345.34,
-      "stop": 324.3349,
-      "target_2R": 389.7352,
-      "risk_per_share": 21.8001,
+      "stop": 324.3338,
+      "target_2R": 389.7374,
+      "risk_per_share": 21.8012,
       "shares": 1.0834,
       "break_time": "2026-10-22T13:30:00Z",
       "bars_since_break": 1,
@@ -44,10 +44,10 @@
       "symbol": "KO",
       "type": "inverse_hns",
       "neckline": 92.49,
-      "stop": 84.1716,
-      "target_2R": 111.0618,
-      "risk_per_share": 8.9634,
-      "shares": 3.3469,
+      "stop": 84.1759,
+      "target_2R": 111.0533,
+      "risk_per_share": 8.9591,
+      "shares": 3.3485,
       "break_time": "2026-10-16T13:30:00Z",
       "bars_since_break": 9,
       "in_pullback": true,
@@ -111,26 +111,8 @@
       "entry": 200.44,
       "entry_time": "2026-10-22T17:30:00Z",
       "status": "open"
-    },
-    {
-      "symbol": "BBY",
-      "type": "inverse_hns",
-      "neckline": 90.55,
-      "stop": 81.8228,
-      "target_2R": 117.2444,
-      "risk_per_share": 11.8072,
-      "shares": 2.5408,
-      "break_time": "2026-10-15T13:30:00Z",
-      "bars_since_break": 11,
-      "in_pullback": true,
-      "last_close": 99.83,
-      "last_bar_time": "2026-10-22T17:30:00Z",
-      "scan_date": "2026-10-22",
-      "entry": 99.83,
-      "entry_time": "2026-10-22T17:30:00Z",
-      "status": "open"
     }
   ],
   "closed": [],
-  "watching_count": 12
+  "watching_count": 13
 }

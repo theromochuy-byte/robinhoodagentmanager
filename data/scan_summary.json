@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-29T19:36:38.626006+00:00",
+  "as_of": "2026-10-29T23:05:06.282447+00:00",
   "scan_date": "2026-10-29",
   "regime": {
     "spy_ema20": "bull",
@@ -27,10 +27,10 @@
       "quality_score": 0.4567,
       "bars_since_break": 5,
       "neckline": 93.75,
-      "last_price": 94.825,
-      "stop": 88.8521,
-      "target_1R": 101.4677,
-      "target_2R": 107.7755
+      "last_price": 94.41,
+      "stop": 88.8525,
+      "target_1R": 101.4673,
+      "target_2R": 107.7747
     },
     {
       "symbol": "LLY",
@@ -39,10 +39,10 @@
       "quality_score": 0.4462,
       "bars_since_break": 6,
       "neckline": 1321.21,
-      "last_price": 1368.5631,
-      "stop": 1243.2349,
-      "target_1R": 1520.0051,
-      "target_2R": 1658.3902
+      "last_price": 1373.0,
+      "stop": 1243.2345,
+      "target_1R": 1520.0055,
+      "target_2R": 1658.3909
     },
     {
       "symbol": "EW",
@@ -51,10 +51,10 @@
       "quality_score": 0.4387,
       "bars_since_break": 6,
       "neckline": 93.25,
-      "last_price": 94.825,
-      "stop": 89.1396,
-      "target_1R": 98.0204,
-      "target_2R": 102.4609
+      "last_price": 94.41,
+      "stop": 89.14,
+      "target_1R": 98.02,
+      "target_2R": 102.46
     },
     {
       "symbol": "ILMN",
@@ -63,10 +63,10 @@
       "quality_score": 0.3637,
       "bars_since_break": 13,
       "neckline": 286.4,
-      "last_price": 287.7,
+      "last_price": 289.84,
       "stop": 261.0254,
       "target_1R": 312.8446,
-      "target_2R": 338.7543
+      "target_2R": 338.7542
     },
     {
       "symbol": "ILMN",
@@ -75,7 +75,7 @@
       "quality_score": 0.3614,
       "bars_since_break": 12,
       "neckline": 286.4,
-      "last_price": 287.7,
+      "last_price": 289.84,
       "stop": 270.2966,
       "target_1R": 314.6734,
       "target_2R": 336.8618
@@ -87,10 +87,10 @@
       "quality_score": 0.3381,
       "bars_since_break": 14,
       "neckline": 183.09,
-      "last_price": 184.81,
-      "stop": 171.1702,
-      "target_1R": 197.2898,
-      "target_2R": 210.3496
+      "last_price": 185.34,
+      "stop": 171.1703,
+      "target_1R": 197.2297,
+      "target_2R": 210.2594
     },
     {
       "symbol": "ADI",
@@ -99,10 +99,10 @@
       "quality_score": 0.2556,
       "bars_since_break": 20,
       "neckline": 415.175,
-      "last_price": 430.81,
+      "last_price": 433.01,
       "stop": 387.4353,
       "target_1R": 447.9047,
-      "target_2R": 478.1394
+      "target_2R": 478.1393
     },
     {
       "symbol": "TXN",
@@ -111,27 +111,47 @@
       "quality_score": 0.2552,
       "bars_since_break": 20,
       "neckline": 298.75,
-      "last_price": 311.64,
-      "stop": 279.0614,
-      "target_1R": 327.4272,
-      "target_2R": 351.6101
+      "last_price": 312.92,
+      "stop": 279.0661,
+      "target_1R": 327.4225,
+      "target_2R": 351.6006
     },
     {
       "symbol": "EOG",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.0517,
-      "bars_since_break": 34,
+      "quality_score": 0.0656,
+      "bars_since_break": 33,
       "neckline": 160.31,
-      "last_price": 160.815,
+      "last_price": 161.1,
       "stop": 152.6397,
       "target_1R": 172.4303,
-      "target_2R": 182.3257
+      "target_2R": 182.3255
     }
   ],
-  "triggered_today": [],
+  "triggered_today": [
+    {
+      "symbol": "DLTR",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.5117,
+      "signal_price": 132.04,
+      "stop": 120.7824,
+      "target_1R": 142.5976,
+      "target_2R": 153.5051
+    }
+  ],
   "new_entries": 0,
-  "skipped": [],
+  "skipped": [
+    {
+      "symbol": "DLTR",
+      "type": "inverse_hns",
+      "est_cost": 605.27,
+      "available": 421.62,
+      "quality_score": 0.5117,
+      "skip_reason": "no_capital"
+    }
+  ],
   "open_positions": 4,
   "equity": {
     "starting": 2500.0,

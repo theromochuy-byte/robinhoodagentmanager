@@ -6322,6 +6322,11 @@
         "time": "2026-10-29T19:36:38.620590+00:00",
         "price": 160.815,
         "note": "update"
+      },
+      {
+        "time": "2026-10-29T23:05:06.276778+00:00",
+        "price": 161.1,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -6331,10 +6336,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.0517,
-    "bars_since_break": 34,
+    "quality_score": 0.0656,
+    "bars_since_break": 33,
     "sector_score": 3,
-    "last_seen": "2026-10-29T19:36:38.620590+00:00",
+    "last_seen": "2026-10-29T23:05:06.276778+00:00",
     "skip_reason": null
   },
   {
@@ -6493,6 +6498,11 @@
         "time": "2026-10-29T19:36:38.620590+00:00",
         "price": 311.64,
         "note": "update"
+      },
+      {
+        "time": "2026-10-29T23:05:06.276778+00:00",
+        "price": 312.92,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -6505,7 +6515,7 @@
     "quality_score": 0.2552,
     "bars_since_break": 20,
     "sector_score": 3,
-    "last_seen": "2026-10-29T19:36:38.620590+00:00",
+    "last_seen": "2026-10-29T23:05:06.276778+00:00",
     "skip_reason": null
   },
   {
@@ -6545,6 +6555,11 @@
         "time": "2026-10-29T19:36:38.620590+00:00",
         "price": 184.81,
         "note": "update"
+      },
+      {
+        "time": "2026-10-29T23:05:06.276778+00:00",
+        "price": 185.34,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -6557,7 +6572,7 @@
     "quality_score": 0.3381,
     "bars_since_break": 14,
     "sector_score": 3,
-    "last_seen": "2026-10-29T19:36:38.620590+00:00",
+    "last_seen": "2026-10-29T23:05:06.276778+00:00",
     "skip_reason": "low_quality"
   },
   {
@@ -6634,6 +6649,11 @@
         "time": "2026-10-29T19:36:38.620590+00:00",
         "price": 430.81,
         "note": "update"
+      },
+      {
+        "time": "2026-10-29T23:05:06.276778+00:00",
+        "price": 433.01,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -6646,7 +6666,7 @@
     "quality_score": 0.2556,
     "bars_since_break": 20,
     "sector_score": 3,
-    "last_seen": "2026-10-29T19:36:38.620590+00:00",
+    "last_seen": "2026-10-29T23:05:06.276778+00:00",
     "skip_reason": "low_quality"
   },
   {
@@ -6671,6 +6691,11 @@
         "time": "2026-10-29T19:36:38.620590+00:00",
         "price": 1368.5631,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-10-29T23:05:06.276778+00:00",
+        "price": 1373.0,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -6683,7 +6708,7 @@
     "quality_score": 0.4462,
     "bars_since_break": 6,
     "sector_score": 3,
-    "last_seen": "2026-10-29T19:36:38.620590+00:00",
+    "last_seen": "2026-10-29T23:05:06.276778+00:00",
     "skip_reason": null
   },
   {
@@ -6708,6 +6733,11 @@
         "time": "2026-10-29T19:36:38.620590+00:00",
         "price": 94.825,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-10-29T23:05:06.276778+00:00",
+        "price": 94.41,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -6720,7 +6750,7 @@
     "quality_score": 0.4387,
     "bars_since_break": 6,
     "sector_score": 3,
-    "last_seen": "2026-10-29T19:36:38.620590+00:00",
+    "last_seen": "2026-10-29T23:05:06.276778+00:00",
     "skip_reason": null
   },
   {
@@ -6745,6 +6775,11 @@
         "time": "2026-10-29T19:36:38.620590+00:00",
         "price": 94.825,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-10-29T23:05:06.276778+00:00",
+        "price": 94.41,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -6757,7 +6792,7 @@
     "quality_score": 0.4567,
     "bars_since_break": 5,
     "sector_score": 3,
-    "last_seen": "2026-10-29T19:36:38.620590+00:00",
+    "last_seen": "2026-10-29T23:05:06.276778+00:00",
     "skip_reason": null
   },
   {
@@ -6782,6 +6817,11 @@
         "time": "2026-10-29T19:36:38.620590+00:00",
         "price": 287.7,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-10-29T23:05:06.276778+00:00",
+        "price": 289.84,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -6794,8 +6834,8 @@
     "quality_score": 0.3637,
     "bars_since_break": 13,
     "sector_score": 3,
-    "last_seen": "2026-10-29T19:36:38.620590+00:00",
-    "skip_reason": null
+    "last_seen": "2026-10-29T23:05:06.276778+00:00",
+    "skip_reason": "low_quality"
   },
   {
     "id": "ILMN__inverse_hns__2026-10-28T14:30:00Z",
@@ -6819,6 +6859,11 @@
         "time": "2026-10-29T19:36:38.620590+00:00",
         "price": 287.7,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-10-29T23:05:06.276778+00:00",
+        "price": 289.84,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -6831,7 +6876,7 @@
     "quality_score": 0.3614,
     "bars_since_break": 12,
     "sector_score": 3,
-    "last_seen": "2026-10-29T19:36:38.620590+00:00",
-    "skip_reason": null
+    "last_seen": "2026-10-29T23:05:06.276778+00:00",
+    "skip_reason": "low_quality"
   }
 ]
