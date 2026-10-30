@@ -6513,6 +6513,11 @@
         "time": "2026-10-30T19:19:19.999466+00:00",
         "price": 296.97,
         "note": "update"
+      },
+      {
+        "time": "2026-10-30T22:46:26.033274+00:00",
+        "price": 300.96,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -6522,10 +6527,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.1718,
-    "bars_since_break": 26,
+    "quality_score": 0.158,
+    "bars_since_break": 27,
     "sector_score": 3,
-    "last_seen": "2026-10-30T19:19:19.999466+00:00",
+    "last_seen": "2026-10-30T22:46:26.033274+00:00",
     "skip_reason": null
   },
   {
@@ -6674,6 +6679,11 @@
         "time": "2026-10-30T19:19:19.999466+00:00",
         "price": 411.7,
         "note": "update"
+      },
+      {
+        "time": "2026-10-30T22:46:26.033274+00:00",
+        "price": 417.38,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -6683,11 +6693,11 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.1723,
-    "bars_since_break": 26,
+    "quality_score": 0.1584,
+    "bars_since_break": 27,
     "sector_score": 3,
-    "last_seen": "2026-10-30T19:19:19.999466+00:00",
-    "skip_reason": null
+    "last_seen": "2026-10-30T22:46:26.033274+00:00",
+    "skip_reason": "low_quality"
   },
   {
     "id": "LLY__inverse_hns__2026-10-29T13:30:00Z",
@@ -6721,6 +6731,11 @@
         "time": "2026-10-30T19:19:19.999466+00:00",
         "price": 1415.02,
         "note": "update"
+      },
+      {
+        "time": "2026-10-30T22:46:26.033274+00:00",
+        "price": 1416.3,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -6730,10 +6745,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.3628,
-    "bars_since_break": 12,
+    "quality_score": 0.349,
+    "bars_since_break": 13,
     "sector_score": 3,
-    "last_seen": "2026-10-30T19:19:19.999466+00:00",
+    "last_seen": "2026-10-30T22:46:26.033274+00:00",
     "skip_reason": null
   },
   {
@@ -6768,6 +6783,11 @@
         "time": "2026-10-30T19:19:19.999466+00:00",
         "price": 92.31,
         "note": "update"
+      },
+      {
+        "time": "2026-10-30T22:46:26.033274+00:00",
+        "price": 91.95,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -6777,10 +6797,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.3554,
-    "bars_since_break": 12,
+    "quality_score": 0.3415,
+    "bars_since_break": 13,
     "sector_score": 3,
-    "last_seen": "2026-10-30T19:19:19.999466+00:00",
+    "last_seen": "2026-10-30T22:46:26.033274+00:00",
     "skip_reason": null
   },
   {
@@ -6815,6 +6835,11 @@
         "time": "2026-10-30T19:19:19.999466+00:00",
         "price": 92.31,
         "note": "update"
+      },
+      {
+        "time": "2026-10-30T22:46:26.033274+00:00",
+        "price": 91.95,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -6824,10 +6849,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.3733,
-    "bars_since_break": 11,
+    "quality_score": 0.3595,
+    "bars_since_break": 12,
     "sector_score": 3,
-    "last_seen": "2026-10-30T19:19:19.999466+00:00",
+    "last_seen": "2026-10-30T22:46:26.033274+00:00",
     "skip_reason": null
   },
   {
@@ -6946,6 +6971,11 @@
         "time": "2026-10-30T19:19:19.999466+00:00",
         "price": 493.27,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-10-30T22:46:26.033274+00:00",
+        "price": 494.31,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -6955,10 +6985,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.4809,
-    "bars_since_break": 3,
+    "quality_score": 0.467,
+    "bars_since_break": 4,
     "sector_score": 3,
-    "last_seen": "2026-10-30T19:19:19.999466+00:00",
+    "last_seen": "2026-10-30T22:46:26.033274+00:00",
     "skip_reason": null
   }
 ]
