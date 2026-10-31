@@ -1,0 +1,5685 @@
+{
+  "report_count": 81,
+  "skipped_malformed": 1,
+  "date_range": [
+    "scan_2026-06-19",
+    "scan_2026-10-08"
+  ],
+  "top_setups_by_frequency": [
+    {
+      "symbol": "DE",
+      "type": "inverse_hns",
+      "scan_appearances": 118,
+      "days_on_watchlist": 48
+    },
+    {
+      "symbol": "JNJ",
+      "type": "inverse_hns",
+      "scan_appearances": 115,
+      "days_on_watchlist": 43
+    },
+    {
+      "symbol": "DE",
+      "type": "double_bottom",
+      "scan_appearances": 98,
+      "days_on_watchlist": 42
+    },
+    {
+      "symbol": "YUM",
+      "type": "inverse_hns",
+      "scan_appearances": 69,
+      "days_on_watchlist": 35
+    },
+    {
+      "symbol": "MRNA",
+      "type": "inverse_hns",
+      "scan_appearances": 65,
+      "days_on_watchlist": 51
+    },
+    {
+      "symbol": "WELL",
+      "type": "inverse_hns",
+      "scan_appearances": 65,
+      "days_on_watchlist": 36
+    },
+    {
+      "symbol": "MA",
+      "type": "inverse_hns",
+      "scan_appearances": 64,
+      "days_on_watchlist": 36
+    },
+    {
+      "symbol": "JNJ",
+      "type": "double_bottom",
+      "scan_appearances": 62,
+      "days_on_watchlist": 33
+    },
+    {
+      "symbol": "CAH",
+      "type": "inverse_hns",
+      "scan_appearances": 58,
+      "days_on_watchlist": 48
+    },
+    {
+      "symbol": "TGT",
+      "type": "inverse_hns",
+      "scan_appearances": 55,
+      "days_on_watchlist": 45
+    },
+    {
+      "symbol": "YUM",
+      "type": "double_bottom",
+      "scan_appearances": 55,
+      "days_on_watchlist": 28
+    },
+    {
+      "symbol": "MCO",
+      "type": "inverse_hns",
+      "scan_appearances": 46,
+      "days_on_watchlist": 46
+    },
+    {
+      "symbol": "AON",
+      "type": "double_bottom",
+      "scan_appearances": 46,
+      "days_on_watchlist": 46
+    },
+    {
+      "symbol": "DLTR",
+      "type": "inverse_hns",
+      "scan_appearances": 46,
+      "days_on_watchlist": 41
+    },
+    {
+      "symbol": "EMR",
+      "type": "inverse_hns",
+      "scan_appearances": 45,
+      "days_on_watchlist": 45
+    },
+    {
+      "symbol": "MRNA",
+      "type": "double_bottom",
+      "scan_appearances": 45,
+      "days_on_watchlist": 45
+    },
+    {
+      "symbol": "GD",
+      "type": "inverse_hns",
+      "scan_appearances": 45,
+      "days_on_watchlist": 45
+    },
+    {
+      "symbol": "BIIB",
+      "type": "inverse_hns",
+      "scan_appearances": 45,
+      "days_on_watchlist": 44
+    },
+    {
+      "symbol": "LIN",
+      "type": "double_bottom",
+      "scan_appearances": 44,
+      "days_on_watchlist": 44
+    },
+    {
+      "symbol": "VLO",
+      "type": "inverse_hns",
+      "scan_appearances": 43,
+      "days_on_watchlist": 43
+    },
+    {
+      "symbol": "ADI",
+      "type": "double_bottom",
+      "scan_appearances": 42,
+      "days_on_watchlist": 42
+    },
+    {
+      "symbol": "ADI",
+      "type": "inverse_hns",
+      "scan_appearances": 42,
+      "days_on_watchlist": 42
+    },
+    {
+      "symbol": "ETN",
+      "type": "inverse_hns",
+      "scan_appearances": 42,
+      "days_on_watchlist": 42
+    },
+    {
+      "symbol": "TRV",
+      "type": "double_bottom",
+      "scan_appearances": 42,
+      "days_on_watchlist": 42
+    },
+    {
+      "symbol": "CAT",
+      "type": "double_bottom",
+      "scan_appearances": 41,
+      "days_on_watchlist": 38
+    },
+    {
+      "symbol": "MRK",
+      "type": "inverse_hns",
+      "scan_appearances": 41,
+      "days_on_watchlist": 41
+    },
+    {
+      "symbol": "PRU",
+      "type": "inverse_hns",
+      "scan_appearances": 40,
+      "days_on_watchlist": 39
+    },
+    {
+      "symbol": "KO",
+      "type": "inverse_hns",
+      "scan_appearances": 39,
+      "days_on_watchlist": 39
+    },
+    {
+      "symbol": "EMR",
+      "type": "double_bottom",
+      "scan_appearances": 38,
+      "days_on_watchlist": 38
+    },
+    {
+      "symbol": "TGT",
+      "type": "double_bottom",
+      "scan_appearances": 38,
+      "days_on_watchlist": 38
+    }
+  ],
+  "vix_history": {
+    "2026-08-12": 14.55,
+    "2026-08-13": 14.55,
+    "2026-08-14": 14.55,
+    "2026-08-17": 14.55,
+    "2026-08-18": 14.55,
+    "2026-08-19": 14.55,
+    "2026-08-20": 14.55,
+    "2026-08-21": 14.55,
+    "2026-08-24": 14.55,
+    "2026-08-25": 14.55,
+    "2026-08-26": 14.55,
+    "2026-08-27": 14.55,
+    "2026-08-28": 14.55,
+    "2026-08-31": 14.55,
+    "2026-09-01": 14.55,
+    "2026-09-02": 14.55,
+    "2026-09-03": 14.55,
+    "2026-09-04": 14.55,
+    "2026-09-08": 14.55,
+    "2026-09-09": 14.55,
+    "2026-09-10": 14.55,
+    "2026-09-11": 14.55,
+    "2026-09-14": 14.55,
+    "2026-09-15": 14.55,
+    "2026-09-16": 14.55,
+    "2026-09-17": 14.55,
+    "2026-09-18": 14.55,
+    "2026-09-21": 14.55,
+    "2026-09-22": 14.55,
+    "2026-09-23": 14.55,
+    "2026-09-24": 14.55,
+    "2026-09-25": 14.55,
+    "2026-09-28": 14.55,
+    "2026-09-29": 14.55,
+    "2026-09-30": 14.55,
+    "2026-10-01": 14.55,
+    "2026-10-02": 14.55,
+    "2026-10-05": 14.55,
+    "2026-10-06": 14.55,
+    "2026-10-07": 14.55,
+    "2026-10-08": 14.55
+  },
+  "trigger_history": [
+    {
+      "date": "2026-06-19",
+      "symbol": "RTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-19",
+      "symbol": "RTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-19",
+      "symbol": "USB",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-19",
+      "symbol": "USB",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-19",
+      "symbol": "DG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-20",
+      "symbol": "RTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-20",
+      "symbol": "RTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-20",
+      "symbol": "USB",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-20",
+      "symbol": "DG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-22",
+      "symbol": "RTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-22",
+      "symbol": "RTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-22",
+      "symbol": "USB",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-22",
+      "symbol": "DG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-23",
+      "symbol": "JPM",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-23",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-23",
+      "symbol": "SPG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-23",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-23",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-23",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-24",
+      "symbol": "JNJ",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-24",
+      "symbol": "JNJ",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-24",
+      "symbol": "RTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-24",
+      "symbol": "RTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-24",
+      "symbol": "USB",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-24",
+      "symbol": "SPG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-24",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-24",
+      "symbol": "PRU",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-24",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-24",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-24",
+      "symbol": "DG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-25",
+      "symbol": "JNJ",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-25",
+      "symbol": "JNJ",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-25",
+      "symbol": "RTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-25",
+      "symbol": "RTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-25",
+      "symbol": "USB",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-25",
+      "symbol": "SPG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-25",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-25",
+      "symbol": "PRU",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-25",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-25",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-25",
+      "symbol": "DG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-26",
+      "symbol": "JNJ",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-26",
+      "symbol": "JNJ",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-26",
+      "symbol": "RTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-26",
+      "symbol": "RTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-26",
+      "symbol": "USB",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-26",
+      "symbol": "SPG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-26",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-26",
+      "symbol": "PRU",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-26",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-26",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-26",
+      "symbol": "DG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-29",
+      "symbol": "JNJ",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-29",
+      "symbol": "JNJ",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-29",
+      "symbol": "RTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-29",
+      "symbol": "RTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-29",
+      "symbol": "USB",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-29",
+      "symbol": "SPG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-29",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-29",
+      "symbol": "PRU",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-29",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-29",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-29",
+      "symbol": "DG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-30",
+      "symbol": "JNJ",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-30",
+      "symbol": "JNJ",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-30",
+      "symbol": "RTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-30",
+      "symbol": "RTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-30",
+      "symbol": "USB",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-30",
+      "symbol": "SPG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-30",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-30",
+      "symbol": "PRU",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-30",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-06-30",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-06-30",
+      "symbol": "DG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-01",
+      "symbol": "JNJ",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-01",
+      "symbol": "JNJ",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-01",
+      "symbol": "RTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-01",
+      "symbol": "RTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-01",
+      "symbol": "USB",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-01",
+      "symbol": "SPG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-01",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-01",
+      "symbol": "PRU",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-01",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-01",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-01",
+      "symbol": "DG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-02",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-02",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-02",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-02",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-02",
+      "symbol": "VLO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-02",
+      "symbol": "VLO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-02",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-02",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-02",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-03",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-06",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-07",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-08",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-09",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-10",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-13",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-14",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-15",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-16",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-17",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-18",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-18",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-18",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-18",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-18",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-18",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-18",
+      "symbol": "GILD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-18",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-18",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-18",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-18",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-20",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-21",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-23",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-24",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-27",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-28",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-29",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-30",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-07-31",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-03",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-04",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-05",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-07",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "HD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "CL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "CL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "AMGN",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "BDX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "AFL",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "O",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "O",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "RMD",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "DUK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "ROK",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "DUK",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "HIG",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "SO",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "SO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-11",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-12",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-12",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-12",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-12",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-12",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-12",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-12",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-12",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-12",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-12",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-12",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-12",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-12",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-12",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-13",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-13",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-13",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-13",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-13",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-13",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-13",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-13",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-13",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-13",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-13",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-13",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-13",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-13",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-14",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-14",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-14",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-14",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-14",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-14",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-14",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-14",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-14",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-14",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-14",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-14",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-14",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-14",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-17",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-17",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-17",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-17",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-17",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-17",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-17",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-17",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-17",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-17",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-17",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-17",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-17",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-17",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-18",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-18",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-18",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-18",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-18",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-18",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-18",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-18",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-18",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-18",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-18",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-18",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-18",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-18",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-19",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-20",
+      "symbol": "HD",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-20",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-20",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-20",
+      "symbol": "AMGN",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-20",
+      "symbol": "AFL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-20",
+      "symbol": "ECL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-20",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-20",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-20",
+      "symbol": "EW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-20",
+      "symbol": "SPG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-20",
+      "symbol": "PNC",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-20",
+      "symbol": "VRTX",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-20",
+      "symbol": "VRTX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-20",
+      "symbol": "MCO",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-21",
+      "symbol": "CME",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-21",
+      "symbol": "BRK.B",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-21",
+      "symbol": "DIS",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-21",
+      "symbol": "DHR",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-21",
+      "symbol": "SPGI",
+      "type": "double_bottom"
+    },
+    {
+      "date": "2026-08-21",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-21",
+      "symbol": "SPGI",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-21",
+      "symbol": "EOG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-21",
+      "symbol": "ACN",
+      "type": "cup_and_handle"
+    },
+    {
+      "date": "2026-08-21",
+      "symbol": "HCA",
+      "type": "cup_and_handle"
+    },
+    {
+      "date": "2026-08-21",
+      "symbol": "PFE",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-21",
+      "symbol": "CME",
+      "type": "cup_and_handle"
+    },
+    {
+      "date": "2026-08-21",
+      "symbol": "CME",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-21",
+      "symbol": "DIS",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-24",
+      "symbol": "ECL",
+      "type": "cup_and_handle"
+    },
+    {
+      "date": "2026-08-24",
+      "symbol": "DLTR",
+      "type": "cup_and_handle"
+    },
+    {
+      "date": "2026-08-24",
+      "symbol": "ACN",
+      "type": "cup_and_handle"
+    },
+    {
+      "date": "2026-08-25",
+      "symbol": "NFLX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-25",
+      "symbol": "DLTR",
+      "type": "cup_and_handle"
+    },
+    {
+      "date": "2026-08-25",
+      "symbol": "DLTR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-25",
+      "symbol": "ECL",
+      "type": "cup_and_handle"
+    },
+    {
+      "date": "2026-08-25",
+      "symbol": "NFLX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-25",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-25",
+      "symbol": "DLTR",
+      "type": "cup_and_handle"
+    },
+    {
+      "date": "2026-08-25",
+      "symbol": "NFLX",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-25",
+      "symbol": "ACN",
+      "type": "cup_and_handle"
+    },
+    {
+      "date": "2026-08-25",
+      "symbol": "NFLX",
+      "type": "cup_and_handle"
+    },
+    {
+      "date": "2026-08-25",
+      "symbol": "HCA",
+      "type": "cup_and_handle"
+    },
+    {
+      "date": "2026-08-25",
+      "symbol": "PFE",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-26",
+      "symbol": "DELL",
+      "type": "cup_and_handle"
+    },
+    {
+      "date": "2026-08-26",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-08-27",
+      "symbol": "DELL",
+      "type": "cup_and_handle"
+    },
+    {
+      "date": "2026-08-31",
+      "symbol": "HAL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-09-02",
+      "symbol": "CAH",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-09-02",
+      "symbol": "JNJ",
+      "type": "cup_and_handle"
+    },
+    {
+      "date": "2026-09-02",
+      "symbol": "MCK",
+      "type": "cup_and_handle"
+    },
+    {
+      "date": "2026-09-02",
+      "symbol": "HAL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-09-02",
+      "symbol": "DELL",
+      "type": "cup_and_handle"
+    },
+    {
+      "date": "2026-09-03",
+      "symbol": "MET",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-09-03",
+      "symbol": "JNJ",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-09-03",
+      "symbol": "BIIB",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-09-03",
+      "symbol": "JNJ",
+      "type": "cup_and_handle"
+    },
+    {
+      "date": "2026-09-04",
+      "symbol": "CAH",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-09-04",
+      "symbol": "DG",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-09-04",
+      "symbol": "HAL",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-09-18",
+      "symbol": "INTC",
+      "type": "cup_and_handle"
+    },
+    {
+      "date": "2026-09-22",
+      "symbol": "A",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-09-22",
+      "symbol": "DHR",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-09-23",
+      "symbol": "PANW",
+      "type": "inverse_hns"
+    },
+    {
+      "date": "2026-10-01",
+      "symbol": "VLO",
+      "type": "inverse_hns"
+    }
+  ]
+}

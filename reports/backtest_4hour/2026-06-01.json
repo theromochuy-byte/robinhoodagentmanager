@@ -1,0 +1,28 @@
+{
+  "date": "2026-06-01",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 25,
+  "entries": [
+    {
+      "symbol": "GE",
+      "type": "inverse_hns",
+      "neckline": 319.115,
+      "stop": 289.6968,
+      "target_2R": 380.2914,
+      "risk_per_share": 30.1982,
+      "shares": 0.9934,
+      "break_time": "2026-05-28T14:00:00Z",
+      "bars_since_break": 5,
+      "in_pullback": true,
+      "last_close": 324.675,
+      "last_bar_time": "2026-06-01T18:00:00Z",
+      "scan_date": "2026-06-01",
+      "entry": 324.675,
+      "entry_time": "2026-06-01T18:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 6
+}

@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-12",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 15,
+  "entries": [
+    {
+      "symbol": "AAPL",
+      "type": "inverse_hns",
+      "neckline": 280.18,
+      "stop": 267.1536,
+      "target_2R": 313.5228,
+      "risk_per_share": 15.4564,
+      "shares": 1.3269,
+      "break_time": "2026-05-01T14:00:00Z",
+      "bars_since_break": 47,
+      "in_pullback": true,
+      "last_close": 294.88,
+      "last_bar_time": "2026-05-12T19:00:00Z",
+      "scan_date": "2026-05-12",
+      "entry": 294.88,
+      "entry_time": "2026-05-12T19:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 6
+}
