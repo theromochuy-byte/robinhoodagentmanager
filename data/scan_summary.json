@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-10-30T22:46:26.042093+00:00",
-  "scan_date": "2026-10-30",
+  "as_of": "2026-11-02T22:46:29.173838+00:00",
+  "scan_date": "2026-11-02",
   "regime": {
     "spy_ema20": "bull",
     "vix": 14.55,
@@ -21,13 +21,37 @@
   },
   "watching": [
     {
+      "symbol": "DLTR",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.4572,
+      "bars_since_break": 5,
+      "neckline": 134.99,
+      "last_price": 138.605,
+      "stop": 127.8021,
+      "target_1R": 144.4979,
+      "target_2R": 152.8458
+    },
+    {
+      "symbol": "DLTR",
+      "type": "cup_and_handle",
+      "sector_score": 3,
+      "quality_score": 0.4572,
+      "bars_since_break": 5,
+      "neckline": 134.99,
+      "last_price": 138.605,
+      "stop": 127.8021,
+      "target_1R": 144.4979,
+      "target_2R": 152.8458
+    },
+    {
       "symbol": "MCO",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.467,
-      "bars_since_break": 4,
+      "quality_score": 0.3698,
+      "bars_since_break": 11,
       "neckline": 494.355,
-      "last_price": 494.31,
+      "last_price": 506.08,
       "stop": 472.0514,
       "target_1R": 519.7786,
       "target_2R": 543.6422
@@ -36,10 +60,10 @@
       "symbol": "EW",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.3595,
-      "bars_since_break": 12,
+      "quality_score": 0.2622,
+      "bars_since_break": 19,
       "neckline": 93.75,
-      "last_price": 91.95,
+      "last_price": 93.25,
       "stop": 88.8521,
       "target_1R": 101.4677,
       "target_2R": 107.7755
@@ -48,10 +72,10 @@
       "symbol": "LLY",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.349,
-      "bars_since_break": 13,
+      "quality_score": 0.2517,
+      "bars_since_break": 20,
       "neckline": 1321.21,
-      "last_price": 1416.3,
+      "last_price": 1411.49,
       "stop": 1243.2349,
       "target_1R": 1520.0051,
       "target_2R": 1658.3902
@@ -60,10 +84,10 @@
       "symbol": "EW",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.3415,
-      "bars_since_break": 13,
+      "quality_score": 0.2443,
+      "bars_since_break": 20,
       "neckline": 93.25,
-      "last_price": 91.95,
+      "last_price": 93.25,
       "stop": 89.1396,
       "target_1R": 98.0204,
       "target_2R": 102.4609
@@ -72,10 +96,10 @@
       "symbol": "ADI",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.1584,
-      "bars_since_break": 27,
+      "quality_score": 0.0612,
+      "bars_since_break": 34,
       "neckline": 415.175,
-      "last_price": 417.38,
+      "last_price": 412.87,
       "stop": 387.4353,
       "target_1R": 447.9047,
       "target_2R": 478.1394
@@ -84,10 +108,10 @@
       "symbol": "TXN",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.158,
-      "bars_since_break": 27,
+      "quality_score": 0.0607,
+      "bars_since_break": 34,
       "neckline": 298.75,
-      "last_price": 300.96,
+      "last_price": 302.19,
       "stop": 279.0614,
       "target_1R": 327.4272,
       "target_2R": 351.6101
@@ -96,10 +120,10 @@
   "triggered_today": [],
   "new_entries": 0,
   "skipped": [],
-  "open_positions": 4,
+  "open_positions": 3,
   "equity": {
     "starting": 2500.0,
-    "in_use": 2078.38,
-    "available": 421.62
+    "in_use": 1685.32,
+    "available": 814.68
   }
 }
