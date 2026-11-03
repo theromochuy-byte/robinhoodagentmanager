@@ -2,16 +2,16 @@
   "date": "2026-10-05",
   "new_entries": 2,
   "closed_today": 0,
-  "open_count": 12,
+  "open_count": 11,
   "entries": [
     {
       "symbol": "ISRG",
       "type": "inverse_hns",
       "neckline": 405.22,
-      "stop": 380.8295,
-      "target_2R": 483.536,
-      "risk_per_share": 34.2355,
-      "shares": 0.8763,
+      "stop": 380.8647,
+      "target_2R": 483.4656,
+      "risk_per_share": 34.2003,
+      "shares": 0.8772,
       "break_time": "2026-09-28T13:30:00Z",
       "bars_since_break": 11,
       "in_pullback": true,
@@ -26,9 +26,9 @@
       "symbol": "ADI",
       "type": "inverse_hns",
       "neckline": 396.9519,
-      "stop": 366.7377,
-      "target_2R": 461.6345,
-      "risk_per_share": 31.6323,
+      "stop": 366.7435,
+      "target_2R": 461.623,
+      "risk_per_share": 31.6265,
       "shares": 0.9413,
       "break_time": "2026-09-29T13:30:00Z",
       "bars_since_break": 9,
@@ -42,5 +42,5 @@
     }
   ],
   "closed": [],
-  "watching_count": 3
+  "watching_count": 1
 }
