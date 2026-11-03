@@ -1,16 +1,16 @@
 {
   "date": "2026-10-21",
-  "new_entries": 6,
+  "new_entries": 5,
   "closed_today": 0,
-  "open_count": 51,
+  "open_count": 49,
   "entries": [
     {
       "symbol": "COST",
       "type": "inverse_hns",
       "neckline": 974.4947,
-      "stop": 889.1913,
-      "target_2R": 1150.0674,
-      "risk_per_share": 86.9587,
+      "stop": 889.1914,
+      "target_2R": 1150.0673,
+      "risk_per_share": 86.9586,
       "shares": 0.345,
       "break_time": "2026-10-14T13:30:00Z",
       "bars_since_break": 11,
@@ -44,9 +44,9 @@
       "symbol": "CME",
       "type": "inverse_hns",
       "neckline": 289.9,
-      "stop": 270.6168,
-      "target_2R": 333.6714,
-      "risk_per_share": 21.0182,
+      "stop": 270.6171,
+      "target_2R": 333.6708,
+      "risk_per_share": 21.0179,
       "shares": 1.2859,
       "break_time": "2026-10-16T13:30:00Z",
       "bars_since_break": 7,
@@ -77,30 +77,12 @@
       "status": "open"
     },
     {
-      "symbol": "A",
-      "type": "inverse_hns",
-      "neckline": 177.47,
-      "stop": 164.8781,
-      "target_2R": 203.2388,
-      "risk_per_share": 12.7869,
-      "shares": 2.1107,
-      "break_time": "2026-10-21T13:30:00Z",
-      "bars_since_break": 1,
-      "in_pullback": true,
-      "last_close": 177.82,
-      "last_bar_time": "2026-10-21T17:30:00Z",
-      "scan_date": "2026-10-21",
-      "entry": 177.82,
-      "entry_time": "2026-10-21T17:30:00Z",
-      "status": "open"
-    },
-    {
       "symbol": "CAH",
       "type": "inverse_hns",
       "neckline": 249.29,
-      "stop": 227.5135,
-      "target_2R": 298.4831,
-      "risk_per_share": 23.6565,
+      "stop": 227.5125,
+      "target_2R": 298.4849,
+      "risk_per_share": 23.6575,
       "shares": 1.2681,
       "break_time": "2026-10-15T13:30:00Z",
       "bars_since_break": 9,
@@ -114,5 +96,5 @@
     }
   ],
   "closed": [],
-  "watching_count": 10
+  "watching_count": 11
 }

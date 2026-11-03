@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-03T20:30:49.519976+00:00",
+  "as_of": "2026-11-03T23:52:07.893814+00:00",
   "scan_date": "2026-11-03",
   "regime": {
     "spy_ema20": "bull",
@@ -27,7 +27,7 @@
       "quality_score": 0.4632,
       "bars_since_break": 6,
       "neckline": 230.5199,
-      "last_price": 226.05,
+      "last_price": 228.45,
       "stop": 209.0478,
       "target_1R": 254.6722,
       "target_2R": 277.4845
@@ -39,10 +39,10 @@
       "quality_score": 0.36,
       "bars_since_break": 12,
       "neckline": 134.99,
-      "last_price": 133.975,
-      "stop": 127.8021,
-      "target_1R": 144.4979,
-      "target_2R": 152.8458
+      "last_price": 134.015,
+      "stop": 127.8029,
+      "target_1R": 144.4971,
+      "target_2R": 152.8442
     },
     {
       "symbol": "DLTR",
@@ -51,10 +51,10 @@
       "quality_score": 0.36,
       "bars_since_break": 12,
       "neckline": 134.99,
-      "last_price": 133.975,
-      "stop": 127.8021,
-      "target_1R": 144.4979,
-      "target_2R": 152.8458
+      "last_price": 134.015,
+      "stop": 127.8029,
+      "target_1R": 144.4971,
+      "target_2R": 152.8442
     },
     {
       "symbol": "MCO",
@@ -63,10 +63,10 @@
       "quality_score": 0.2726,
       "bars_since_break": 18,
       "neckline": 494.355,
-      "last_price": 502.31,
-      "stop": 472.0514,
-      "target_1R": 519.7786,
-      "target_2R": 543.6422
+      "last_price": 503.75,
+      "stop": 472.0524,
+      "target_1R": 519.7776,
+      "target_2R": 543.6401
     },
     {
       "symbol": "EW",
@@ -75,10 +75,10 @@
       "quality_score": 0.165,
       "bars_since_break": 26,
       "neckline": 93.75,
-      "last_price": 95.67,
-      "stop": 88.8521,
-      "target_1R": 101.4677,
-      "target_2R": 107.7755
+      "last_price": 95.19,
+      "stop": 88.8525,
+      "target_1R": 101.4673,
+      "target_2R": 107.7747
     },
     {
       "symbol": "LLY",
@@ -87,10 +87,10 @@
       "quality_score": 0.1545,
       "bars_since_break": 27,
       "neckline": 1321.21,
-      "last_price": 1410.095,
-      "stop": 1243.2349,
-      "target_1R": 1520.0051,
-      "target_2R": 1658.3902
+      "last_price": 1409.39,
+      "stop": 1243.2345,
+      "target_1R": 1520.0055,
+      "target_2R": 1658.3909
     },
     {
       "symbol": "EW",
@@ -99,10 +99,10 @@
       "quality_score": 0.147,
       "bars_since_break": 27,
       "neckline": 93.25,
-      "last_price": 95.67,
-      "stop": 89.1396,
-      "target_1R": 98.0204,
-      "target_2R": 102.4609
+      "last_price": 95.19,
+      "stop": 89.14,
+      "target_1R": 98.02,
+      "target_2R": 102.46
     }
   ],
   "triggered_today": [],
