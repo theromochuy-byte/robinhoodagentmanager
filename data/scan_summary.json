@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-11-03T23:52:07.893814+00:00",
-  "scan_date": "2026-11-03",
+  "as_of": "2026-11-04T20:49:51.595636+00:00",
+  "scan_date": "2026-11-04",
   "regime": {
     "spy_ema20": "bull",
     "vix": 14.55,
@@ -21,13 +21,85 @@
   },
   "watching": [
     {
+      "symbol": "DG",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.4818,
+      "bars_since_break": 4,
+      "neckline": 139.12,
+      "last_price": 141.03,
+      "stop": 128.7269,
+      "target_1R": 149.6731,
+      "target_2R": 160.1462
+    },
+    {
       "symbol": "MRNA",
       "type": "cup_and_handle",
       "sector_score": 3,
-      "quality_score": 0.4632,
+      "quality_score": 0.4581,
       "bars_since_break": 6,
+      "neckline": 235.46,
+      "last_price": 251.15,
+      "stop": 215.95,
+      "target_1R": 271.49,
+      "target_2R": 299.2601
+    },
+    {
+      "symbol": "EBAY",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.4537,
+      "bars_since_break": 6,
+      "neckline": 124.49,
+      "last_price": 125.71,
+      "stop": 115.2815,
+      "target_1R": 134.5185,
+      "target_2R": 144.137
+    },
+    {
+      "symbol": "ACN",
+      "type": "cup_and_handle",
+      "sector_score": 3,
+      "quality_score": 0.4513,
+      "bars_since_break": 6,
+      "neckline": 259.39,
+      "last_price": 265.91,
+      "stop": 241.4296,
+      "target_1R": 286.2104,
+      "target_2R": 308.6008
+    },
+    {
+      "symbol": "DG",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.4495,
+      "bars_since_break": 6,
+      "neckline": 136.58,
+      "last_price": 141.03,
+      "stop": 127.6098,
+      "target_1R": 147.0302,
+      "target_2R": 156.7404
+    },
+    {
+      "symbol": "MSFT",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.4464,
+      "bars_since_break": 6,
+      "neckline": 551.15,
+      "last_price": 557.41,
+      "stop": 518.3332,
+      "target_1R": 586.8668,
+      "target_2R": 621.1337
+    },
+    {
+      "symbol": "MRNA",
+      "type": "cup_and_handle",
+      "sector_score": 3,
+      "quality_score": 0.366,
+      "bars_since_break": 13,
       "neckline": 230.5199,
-      "last_price": 228.45,
+      "last_price": 251.15,
       "stop": 209.0478,
       "target_1R": 254.6722,
       "target_2R": 277.4845
@@ -36,10 +108,10 @@
       "symbol": "DLTR",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.36,
-      "bars_since_break": 12,
+      "quality_score": 0.2627,
+      "bars_since_break": 19,
       "neckline": 134.99,
-      "last_price": 134.015,
+      "last_price": 146.41,
       "stop": 127.8029,
       "target_1R": 144.4971,
       "target_2R": 152.8442
@@ -48,10 +120,10 @@
       "symbol": "DLTR",
       "type": "cup_and_handle",
       "sector_score": 3,
-      "quality_score": 0.36,
-      "bars_since_break": 12,
+      "quality_score": 0.2627,
+      "bars_since_break": 19,
       "neckline": 134.99,
-      "last_price": 134.015,
+      "last_price": 146.41,
       "stop": 127.8029,
       "target_1R": 144.4971,
       "target_2R": 152.8442
@@ -60,10 +132,10 @@
       "symbol": "MCO",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.2726,
-      "bars_since_break": 18,
+      "quality_score": 0.1753,
+      "bars_since_break": 25,
       "neckline": 494.355,
-      "last_price": 503.75,
+      "last_price": 527.69,
       "stop": 472.0524,
       "target_1R": 519.7776,
       "target_2R": 543.6401
@@ -72,10 +144,10 @@
       "symbol": "EW",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.165,
-      "bars_since_break": 26,
+      "quality_score": 0.0678,
+      "bars_since_break": 33,
       "neckline": 93.75,
-      "last_price": 95.19,
+      "last_price": 99.37,
       "stop": 88.8525,
       "target_1R": 101.4673,
       "target_2R": 107.7747
@@ -84,10 +156,10 @@
       "symbol": "LLY",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.1545,
-      "bars_since_break": 27,
+      "quality_score": 0.0573,
+      "bars_since_break": 34,
       "neckline": 1321.21,
-      "last_price": 1409.39,
+      "last_price": 1420.3199,
       "stop": 1243.2345,
       "target_1R": 1520.0055,
       "target_2R": 1658.3909
@@ -96,22 +168,96 @@
       "symbol": "EW",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.147,
-      "bars_since_break": 27,
+      "quality_score": 0.0498,
+      "bars_since_break": 34,
       "neckline": 93.25,
-      "last_price": 95.19,
+      "last_price": 99.37,
       "stop": 89.14,
       "target_1R": 98.02,
       "target_2R": 102.46
     }
   ],
-  "triggered_today": [],
-  "new_entries": 0,
-  "skipped": [],
+  "triggered_today": [
+    {
+      "symbol": "BBY",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.5291,
+      "signal_price": 101.12,
+      "stop": 91.9341,
+      "target_1R": 110.1959,
+      "target_2R": 119.3268
+    },
+    {
+      "symbol": "TRV",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.5074,
+      "signal_price": 408.075,
+      "stop": 390.4842,
+      "target_1R": 425.6158,
+      "target_2R": 443.1817
+    },
+    {
+      "symbol": "BBY",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.4879,
+      "signal_price": 101.12,
+      "stop": 91.7511,
+      "target_1R": 109.3889,
+      "target_2R": 118.2078
+    },
+    {
+      "symbol": "DAL",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.4665,
+      "signal_price": 89.15,
+      "stop": 80.4883,
+      "target_1R": 92.9717,
+      "target_2R": 99.2134
+    },
+    {
+      "symbol": "WELL",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.4505,
+      "signal_price": 248.12,
+      "stop": 226.1424,
+      "target_1R": 259.0676,
+      "target_2R": 275.5303
+    }
+  ],
+  "new_entries": 2,
+  "skipped": [
+    {
+      "symbol": "BBY",
+      "type": "inverse_hns",
+      "quality_score": 0.4879,
+      "skip_reason": "one_per_symbol"
+    },
+    {
+      "symbol": "DAL",
+      "type": "inverse_hns",
+      "est_cost": 642.44,
+      "available": 114.02,
+      "quality_score": 0.4665,
+      "skip_reason": "no_capital"
+    },
+    {
+      "symbol": "WELL",
+      "type": "inverse_hns",
+      "est_cost": 639.21,
+      "available": 114.02,
+      "quality_score": 0.4505,
+      "skip_reason": "no_capital"
+    }
+  ],
   "open_positions": 2,
   "equity": {
     "starting": 2500.0,
-    "in_use": 1207.21,
-    "available": 1292.79
+    "in_use": 2385.98,
+    "available": 114.02
   }
 }
