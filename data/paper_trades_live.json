@@ -521,7 +521,7 @@
     "target_1R": 178.8441,
     "target_2R": 192.9882,
     "risk_per_share": 14.1441,
-    "shares": 3.535,
+    "shares": 1.7675,
     "break_time": "2026-09-22T13:30:00Z",
     "bars_since_break": 6,
     "in_pullback": true,
@@ -537,14 +537,19 @@
     "fill_slip": -2.56,
     "fill_slip_pct": -1.53,
     "target_3R": 207.1323,
-    "last_price": 177.17,
-    "unrealized_pnl": 44.08,
+    "last_price": 171.78,
+    "unrealized_pnl": 12.51,
     "touched_1r": true,
-    "checked_at": "2026-11-05T01:28:33.801619+00:00",
-    "progress_pct": 44.1,
+    "checked_at": "2026-11-05T21:05:19.183356+00:00",
+    "progress_pct": 33.4,
     "est_days_to_2r": 38.3,
-    "days_held": 42.3,
-    "stop_moved_to_be_at": "2026-10-22T18:29:58.613329+00:00"
+    "days_held": 43.1,
+    "stop_moved_to_be_at": "2026-11-05T21:05:19.183356+00:00",
+    "partial_exit_done": true,
+    "partial_exit_price": 178.8441,
+    "partial_exit_shares": 1.7675,
+    "partial_exit_pnl": 25.0,
+    "est_days_to_target": 61.5
   },
   {
     "symbol": "BRK-B",
@@ -554,7 +559,7 @@
     "target_1R": 584.2518,
     "target_2R": 626.6286,
     "risk_per_share": 42.3768,
-    "shares": 1.1534,
+    "shares": 0.5767,
     "break_time": "2026-10-20T15:30:00Z",
     "bars_since_break": 4,
     "in_pullback": true,
@@ -571,13 +576,19 @@
     "fill_slip": 1.405,
     "fill_slip_pct": 0.26,
     "target_3R": 669.0054,
-    "last_price": 579.09,
-    "unrealized_pnl": 42.92,
-    "touched_1r": false,
-    "checked_at": "2026-11-05T01:28:33.801619+00:00",
-    "progress_pct": 43.9,
+    "last_price": 571.74,
+    "unrealized_pnl": 17.22,
+    "touched_1r": true,
+    "checked_at": "2026-11-05T21:05:19.183356+00:00",
+    "progress_pct": 47.0,
     "est_days_to_2r": 13.0,
-    "days_held": 14.3
+    "days_held": 15.1,
+    "partial_exit_done": true,
+    "partial_exit_price": 584.2518,
+    "partial_exit_shares": 0.5767,
+    "partial_exit_pnl": 24.44,
+    "stop_moved_to_be_at": "2026-11-05T21:05:19.183356+00:00",
+    "est_days_to_target": 12.2
   },
   {
     "symbol": "BBY",
@@ -604,10 +615,10 @@
     "fill_slip": 0.24,
     "fill_slip_pct": 0.24,
     "target_3R": 129.6377,
-    "last_price": 101.36,
-    "unrealized_pnl": 0.0,
+    "last_price": 99.39,
+    "unrealized_pnl": -10.45,
     "touched_1r": false,
-    "checked_at": "2026-11-05T01:28:33.801619+00:00"
+    "checked_at": "2026-11-05T21:05:19.183356+00:00"
   },
   {
     "symbol": "TRV",
@@ -634,9 +645,9 @@
     "fill_slip": 1.175,
     "fill_slip_pct": 0.29,
     "target_3R": 465.5474,
-    "last_price": 409.25,
-    "unrealized_pnl": 0.0,
+    "last_price": 402.76,
+    "unrealized_pnl": -9.91,
     "touched_1r": false,
-    "checked_at": "2026-11-05T01:28:33.801619+00:00"
+    "checked_at": "2026-11-05T21:05:19.183356+00:00"
   }
 ]
