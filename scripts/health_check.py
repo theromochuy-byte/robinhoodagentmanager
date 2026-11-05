@@ -89,13 +89,20 @@ def check_position_freshness(trades: list, now: datetime) -> None:
 # ── 4. Stop ladder sanity ─────────────────────────────────────────────────────
 
 def check_stop_ladder(trades: list) -> None:
+    from swing_agent.config import BREAKEVEN_BUFFER_R
     for t in [t for t in trades if t.get("status") == "entered"]:
-        sym = t["symbol"]
+        sym   = t["symbol"]
         entry = t.get("entry", 0)
         stop  = t.get("stop", 0)
         t1r   = t.get("target_1R", 0)
+        risk  = t.get("risk_per_share", abs(entry - stop))
         price = t.get("last_price", entry)
-        eff_stop = t.get("breakeven_stop", stop)
+
+        # After partial exit, effective stop is entry + buffer (not entry itself)
+        if t.get("partial_exit_done"):
+            eff_stop = entry + BREAKEVEN_BUFFER_R * risk
+        else:
+            eff_stop = stop
 
         if stop >= entry:
             check(FAIL, "StopLadder", f"{sym}: stop {stop} >= entry {entry}")
@@ -178,7 +185,7 @@ def check_field_integrity(trades: list) -> None:
                        "target_1R", "shares", "entry_time", "checked_at"]
     required_closed = ["symbol", "status", "entry", "exit_price",
                        "exit_reason", "realized_pnl"]
-    closed_statuses = {"time_stop", "stopped", "breakeven", "target_hit"}
+    closed_statuses = {"time_stop", "stopped", "breakeven", "target_hit", "partial_win"}
 
     for t in [t for t in trades if t.get("status") == "entered"]:
         missing = [k for k in required_open if k not in t]
@@ -237,7 +244,7 @@ def check_imports() -> None:
 # ── 9. Performance summary ────────────────────────────────────────────────────
 
 def print_performance(trades: list) -> None:
-    closed_statuses = {"time_stop", "stopped", "breakeven", "target_hit"}
+    closed_statuses = {"time_stop", "stopped", "breakeven", "target_hit", "partial_win"}
     closed = [t for t in trades if t.get("status") in closed_statuses]
     open_t = [t for t in trades if t.get("status") == "entered"]
     if not closed:

@@ -84,6 +84,7 @@ def _fetch_intraday_highs(symbols: list[str]) -> dict[str, float]:
 from swing_agent.config import (
     TIME_STOP_TRADING_DAYS, TIME_STOP_MIN_PROGRESS_FRAC,
     RISK_PCT, STARTING_EQUITY,
+    TARGET_FULL_R, PARTIAL_EXIT_FRAC, BREAKEVEN_BUFFER_R,
 )
 
 
@@ -144,9 +145,10 @@ def resolve_pending_fills(quotes: dict[str, float]) -> list[dict]:
         t["fill_slip"] = fill_slip
         t["fill_slip_pct"] = slip_pct
         t["risk_per_share"] = round(risk, 4)
-        t["target_1R"] = round(price + risk, 4)
-        t["target_2R"] = round(price + 2 * risk, 4)
-        t["target_3R"] = round(price + 3 * risk, 4)
+        t["target_1R"]   = round(price + risk, 4)
+        t["target_1_5R"] = round(price + TARGET_FULL_R * risk, 4)
+        t["target_2R"]   = round(price + 2 * risk, 4)   # kept for log compat
+        t["target_3R"]   = round(price + 3 * risk, 4)   # kept for log compat
         t["shares"] = round(shares, 4)
 
         direction = "gap-up" if fill_slip > 0 else "gap-down" if fill_slip < 0 else "flat"
@@ -185,21 +187,23 @@ def check_exits(
     quotes: dict[str, float],
     intraday_highs: dict[str, float] | None = None,
 ) -> tuple[list[dict], list[dict], list[dict]]:
-    """Check open positions against quotes. Returns (closes, still_open, newly_at_be).
+    """Check open positions against quotes. Returns (closes, still_open, newly_partial).
 
-    Exit rules (stop takes priority if triggered):
-      - quote <= effective_stop              → stopped out
-      - quote >= 3R                          → target hit
-      - held > TIME_STOP_TRADING_DAYS,
-        no 1R touch yet                     → time stop (stale trade)
+    Exit rules (evaluated in order):
+      1. If 1R touched and partial exit not yet done → execute 50% exit at 1R,
+         move stop to entry + BREAKEVEN_BUFFER_R (0.15R buffer above entry).
+      2. quote <= effective_stop                     → stopped out (or partial_win if
+                                                       partial exit already booked)
+      3. quote >= target_1_5R (TARGET_FULL_R = 1.5R) → full exit of remaining shares
+      4. held > TIME_STOP_TRADING_DAYS with no 1R touch → time stop
 
-    Breakeven stop: once price has ever touched 1R gain (tracked via
-    'touched_1r' on the ledger record), effective_stop moves to entry.
-    This lets the trade run to 2R with no downside risk after 1R is achieved.
+    Stop ladder:
+      Before 1R: original stop
+      After partial exit: entry + BREAKEVEN_BUFFER_R * risk  (not entry — small buffer)
 
     intraday_highs: optional {symbol: today_high} used solely for milestone
-    detection (touched_1r / touched_2r). Exit decisions always use the
-    closing quote so stops are not triggered by intraday wicks.
+    detection (touched_1r). Exit decisions always use the closing quote so stops
+    are not triggered by intraday wicks.
     """
     if intraday_highs is None:
         intraday_highs = {}
@@ -220,74 +224,84 @@ def check_exits(
             updated.append(t)
             continue
 
-        entry     = t["entry"]
-        risk      = t.get("risk_per_share", 0)
-        stop      = t["stop"]
-        target_1r = entry + risk
-        target_2r = entry + 2 * risk
-        target_3r = t.get("target_3R", entry + 3 * risk)
+        entry      = t["entry"]
+        risk       = t.get("risk_per_share", 0)
+        stop       = t["stop"]
+        target_1r  = entry + risk
+        target_full = t.get("target_1_5R", entry + TARGET_FULL_R * risk)
+        be_stop    = round(entry + BREAKEVEN_BUFFER_R * risk, 4)
 
-        # Use the intraday high (if available) for milestone detection only —
-        # stops and targets are still evaluated against the closing quote.
+        # Use intraday high for milestone detection only; stops/targets use close.
         high_price = max(price, intraday_highs.get(sym, price))
 
-        # Carry forward or advance milestone flags
-        touched_1r = t.get("touched_1r", False)
-        touched_2r = t.get("touched_2r", False)
-        newly_touched_1r = False
-        if not touched_1r and high_price >= target_1r:
-            touched_1r = True
-            newly_touched_1r = True
-            t["touched_1r"] = True
-        if not touched_2r and high_price >= target_2r:
-            touched_2r = True
-            t["touched_2r"] = True
+        touched_1r        = t.get("touched_1r", False)
+        partial_exit_done = t.get("partial_exit_done", False)
+        newly_touched_1r  = False
 
-        # Stop ladder: original → breakeven at 1R → 2R floor at 2R
-        if touched_2r:
-            effective_stop = target_2r
-        elif touched_1r:
-            effective_stop = entry
-        else:
-            effective_stop = stop
+        if not touched_1r and high_price >= target_1r:
+            touched_1r       = True
+            newly_touched_1r = True
+            t["touched_1r"]  = True
+
+        # Execute partial exit if 1R has been touched and not yet done.
+        # This handles both the first time 1R is crossed THIS run and the
+        # migration case where touched_1r was already True from a prior run.
+        if touched_1r and not partial_exit_done:
+            orig_shares    = t.get("shares", 0)
+            partial_shares = round(orig_shares * PARTIAL_EXIT_FRAC, 4)
+            remaining      = round(orig_shares - partial_shares, 4)
+            partial_pnl    = round((target_1r - entry) * partial_shares, 2)
+
+            t["partial_exit_done"]   = True
+            t["partial_exit_price"]  = round(target_1r, 4)
+            t["partial_exit_shares"] = partial_shares
+            t["partial_exit_pnl"]    = partial_pnl
+            t["shares"]              = remaining
+            t["stop_moved_to_be_at"] = now
+            partial_exit_done = True
+
+            print(f"  [Partial] {sym}: {partial_shares} sh @ {target_1r:.2f} (+1R, "
+                  f"+${partial_pnl:.2f}), stop → {be_stop:.2f} "
+                  f"(+{BREAKEVEN_BUFFER_R}R buffer), {remaining} sh → {TARGET_FULL_R}R")
+
+        # Effective stop: buffer level after partial exit, original stop before.
+        effective_stop = be_stop if partial_exit_done else stop
 
         if price <= effective_stop:
-            if touched_2r:
-                outcome    = "win_2r"
-                exit_reason = "2R_stop"
-            elif touched_1r:
-                outcome    = "breakeven"
-                exit_reason = "breakeven_stop"
+            if partial_exit_done:
+                outcome     = "partial_win"
+                exit_reason = "be_stop"
             else:
-                outcome    = "stopped"
+                outcome     = "stopped"
                 exit_reason = "stop"
+            remaining_pnl     = round((price - entry) * t.get("shares", 0), 2)
             t["status"]       = outcome
             t["exit_price"]   = price
             t["exit_reason"]  = exit_reason
             t["exit_time"]    = now
-            t["realized_pnl"] = round((price - entry) * t.get("shares", 0), 2)
+            t["realized_pnl"] = round(t.get("partial_exit_pnl", 0.0) + remaining_pnl, 2)
             t["touched_1r"]   = touched_1r
-            t["touched_2r"]   = touched_2r
             _stamp_bars_since_break(t, now)
             closes.append(t)
-        elif price >= target_3r:
+
+        elif price >= target_full:
+            remaining_pnl     = round((price - entry) * t.get("shares", 0), 2)
             t["status"]       = "target_hit"
             t["exit_price"]   = price
-            t["exit_reason"]  = "3R"
+            t["exit_reason"]  = f"{TARGET_FULL_R}R"
             t["exit_time"]    = now
-            t["realized_pnl"] = round((price - entry) * t.get("shares", 0), 2)
+            t["realized_pnl"] = round(t.get("partial_exit_pnl", 0.0) + remaining_pnl, 2)
             t["touched_1r"]   = True
-            t["touched_2r"]   = True
             _stamp_bars_since_break(t, now)
             closes.append(t)
+
         else:
             # Time stop: exit if held long enough without showing a sign of working.
-            # "Sign of working" = touched 1R at any point, OR price has made at
-            # least TIME_STOP_MIN_PROGRESS_FRAC of the way from entry toward 1R.
+            # Exempt if 1R has ever been touched (partial exit already executed).
             if not touched_1r:
                 entry_time_str = t.get("entry_time", "")
                 try:
-                    entry_dt = datetime.fromisoformat(entry_time_str.replace("Z", "+00:00"))
+                    entry_dt  = datetime.fromisoformat(entry_time_str.replace("Z", "+00:00"))
                     days_held = (datetime.now(timezone.utc) - entry_dt).total_seconds() / 86400
                     if days_held * (5 / 7) >= TIME_STOP_TRADING_DAYS:
                         progress = (price - entry) / risk if risk > 0 else 0.0
@@ -296,12 +310,12 @@ def check_exits(
                             and progress >= TIME_STOP_MIN_PROGRESS_FRAC
                         )
                         if not sign_of_working:
-                            t["status"]       = "time_stop"
-                            t["exit_price"]   = price
-                            t["exit_reason"]  = "time_stop"
-                            t["exit_time"]    = now
-                            t["realized_pnl"] = round((price - entry) * t.get("shares", 0), 2)
-                            t["days_held"]    = round(days_held, 1)
+                            t["status"]           = "time_stop"
+                            t["exit_price"]       = price
+                            t["exit_reason"]      = "time_stop"
+                            t["exit_time"]        = now
+                            t["realized_pnl"]     = round((price - entry) * t.get("shares", 0), 2)
+                            t["days_held"]        = round(days_held, 1)
                             t["progress_at_exit"] = round(progress * 100, 1)
                             _stamp_bars_since_break(t, now)
                             closes.append(t)
@@ -313,24 +327,23 @@ def check_exits(
             t["unrealized_pnl"] = round((price - entry) * t.get("shares", 0), 2)
             t["touched_1r"]     = touched_1r
             t["checked_at"]     = now
-            if newly_touched_1r:
-                t["stop_moved_to_be_at"] = now  # timestamp when BE stop was activated
 
-            # Progress tracking toward 2R
-            if risk and price > entry and target_2r > entry:
-                progress_pct = (price - entry) / (target_2r - entry)
+            # Progress tracking toward full target (1.5R)
+            target_span = target_full - entry
+            if risk and price > entry and target_span > 0:
+                progress_pct = (price - entry) / target_span
                 entry_time   = t.get("entry_time", "")
                 if progress_pct > 0.01 and entry_time:
                     try:
-                        entry_dt  = datetime.fromisoformat(entry_time.replace("Z", "+00:00"))
-                        now_dt    = datetime.now(timezone.utc)
-                        days_held = (now_dt - entry_dt).total_seconds() / 86400
+                        entry_dt          = datetime.fromisoformat(entry_time.replace("Z", "+00:00"))
+                        now_dt            = datetime.now(timezone.utc)
+                        days_held         = (now_dt - entry_dt).total_seconds() / 86400
                         trading_days_held = days_held * (5 / 7)
-                        est_total = trading_days_held / progress_pct
-                        est_remaining = max(0.0, est_total - trading_days_held)
-                        t["progress_pct"]   = round(progress_pct * 100, 1)
-                        t["est_days_to_2r"] = round(est_remaining, 1)
-                        t["days_held"]      = round(days_held, 1)
+                        est_total         = trading_days_held / progress_pct
+                        est_remaining     = max(0.0, est_total - trading_days_held)
+                        t["progress_pct"]      = round(progress_pct * 100, 1)
+                        t["est_days_to_target"] = round(est_remaining, 1)
+                        t["days_held"]         = round(days_held, 1)
                     except Exception:
                         pass
 
@@ -338,7 +351,7 @@ def check_exits(
 
     # Persist closes + open remainder
     _save_ledger(closes + updated)
-    # Surface positions that newly crossed 1R this run (stop just moved to BE)
+    # Surface positions where partial exit fired this run
     newly_at_be = [t for t in updated if t.get("stop_moved_to_be_at") == now]
     return closes, updated, newly_at_be
 
@@ -403,8 +416,9 @@ def snapshot_daily_pnl(quotes: dict[str, float], mode: str) -> None:
         entry = t["entry"]
         risk  = t.get("risk_per_share", 0)
         shares = t.get("shares", 0)
-        t1r   = t.get("target_1R", entry + risk)
-        t2r   = t.get("target_2R", entry + 2 * risk)
+        t1r    = t.get("target_1R",   entry + risk)
+        t2r    = t.get("target_2R",   entry + 2 * risk)
+        t_full = t.get("target_1_5R", entry + TARGET_FULL_R * risk)
         upnl  = round((price - entry) * shares, 2)
         pnl_r = round((price - entry) / risk, 3) if risk else None
 
@@ -417,26 +431,29 @@ def snapshot_daily_pnl(quotes: dict[str, float], mode: str) -> None:
             except Exception:
                 pass
 
-        pct_to_1r = round((price - entry) / (t1r - entry) * 100, 1) if (t1r - entry) else None
-        pct_to_2r = round((price - entry) / (t2r - entry) * 100, 1) if (t2r - entry) else None
+        pct_to_1r     = round((price - entry) / (t1r - entry) * 100, 1) if (t1r - entry) else None
+        pct_to_2r     = round((price - entry) / (t2r - entry) * 100, 1) if (t2r - entry) else None
+        pct_to_target = round((price - entry) / (t_full - entry) * 100, 1) if (t_full - entry) else None
 
         rows.append({
-            "date":       today,
-            "time":       now_iso,
-            "mode":       mode,
-            "symbol":     sym,
-            "price":      round(price, 4),
-            "entry":      round(entry, 4),
-            "stop":       t.get("stop", 0),
-            "target_1R":  round(t1r, 4),
-            "target_2R":  round(t2r, 4),
+            "date":           today,
+            "time":           now_iso,
+            "mode":           mode,
+            "symbol":         sym,
+            "price":          round(price, 4),
+            "entry":          round(entry, 4),
+            "stop":           t.get("stop", 0),
+            "target_1R":      round(t1r, 4),
+            "target_1_5R":    round(t_full, 4),
+            "target_2R":      round(t2r, 4),
             "unrealized_pnl": upnl,
-            "pnl_r":      pnl_r,
-            "days_held":  days_held,
-            "touched_1r": t.get("touched_1r", False),
-            "touched_2r": t.get("touched_2r", False),
-            "pct_to_1r":  pct_to_1r,
-            "pct_to_2r":  pct_to_2r,
+            "pnl_r":          pnl_r,
+            "days_held":      days_held,
+            "touched_1r":     t.get("touched_1r", False),
+            "partial_exit_done": t.get("partial_exit_done", False),
+            "pct_to_1r":      pct_to_1r,
+            "pct_to_target":  pct_to_target,
+            "pct_to_2r":      pct_to_2r,
         })
 
     if not rows:

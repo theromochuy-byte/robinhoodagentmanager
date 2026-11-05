@@ -28,7 +28,9 @@ ROOT        = Path(__file__).resolve().parent.parent
 DATA        = ROOT / "data"
 EQUITY_FILE = DATA / "equity.json"
 
-NEAR_PCT = 0.05   # alert when price is within 5% of stop or 2R
+NEAR_PCT = 0.05   # alert when price is within 5% of stop or 1.5R target
+
+from swing_agent.config import BREAKEVEN_BUFFER_R, TARGET_FULL_R  # noqa: E402
 
 
 def _pct_gap(price: float, level: float) -> float:
@@ -95,19 +97,19 @@ def build_digest(
         unrealized += upnl
 
         # Effective stop label for display
-        if t.get("touched_2r"):
-            eff_stop_label = f"${entry + 2*risk:.2f} (2R floor)"
-        elif t.get("touched_1r"):
-            eff_stop_label = f"${entry:.2f} (BE)"
+        if t.get("partial_exit_done"):
+            be_level = entry + BREAKEVEN_BUFFER_R * risk
+            eff_stop_label = f"${be_level:.2f} (+{BREAKEVEN_BUFFER_R}R buffer)"
         else:
             eff_stop_label = f"${stop:.2f}"
 
         pct_to_stop = (price - stop) / risk * 100 if risk else None
 
-        target_1r = t.get("target_1R", entry + risk) if risk else None
-        r_size    = risk  # dollar distance entry→stop = 1R
+        target_1r   = t.get("target_1R", entry + risk) if risk else None
+        target_full = t.get("target_1_5R", entry + TARGET_FULL_R * risk) if risk else None
+        r_size      = risk  # dollar distance entry→stop = 1R
 
-        # Distance to each milestone (positive = still above, negative = already past)
+        # Distance to each milestone (positive = still ahead, negative = already past)
         def _dist(level):
             if level is None or r_size == 0:
                 return None, None
@@ -115,9 +117,10 @@ def build_digest(
             r_dist  = dollar / r_size  # in R units
             return round(dollar, 2), round(r_dist, 2)
 
-        d1r_dollar, d1r_r   = _dist(target_1r)
-        d2r_dollar, d2r_r   = _dist(target)
-        dbe_dollar, dbe_r   = _dist(entry)   # distance to breakeven (entry price)
+        d1r_dollar, d1r_r       = _dist(target_1r)
+        d_full_dollar, d_full_r = _dist(target_full)
+        d2r_dollar, d2r_r       = _dist(target)      # kept for compat
+        dbe_dollar, dbe_r       = _dist(entry)
 
         # Days held
         entry_time_str = t.get("entry_time", "")
@@ -130,24 +133,27 @@ def build_digest(
                 pass
 
         open_positions.append({
-            "symbol":        sym,
-            "type":          t["type"],
-            "variant":       variant,
-            "entry":         entry,
-            "price":         price,
-            "stop":          stop,
-            "eff_stop_label": eff_stop_label,
-            "target_1R":     target_1r,
-            "target_2R":     target,
-            "unrealized_pnl": round(upnl, 2),
-            "pct_to_stop":   round(pct_to_stop, 1) if pct_to_stop is not None else None,
-            "touched_1r":    t.get("touched_1r", False),
-            "touched_2r":    t.get("touched_2r", False),
-            "dist_to_1r":    {"dollar": d1r_dollar, "r": d1r_r},
-            "dist_to_2r":    {"dollar": d2r_dollar, "r": d2r_r},
-            "dist_to_be":    {"dollar": dbe_dollar, "r": dbe_r},
-            "above_be":      price >= entry,
-            "days_held":     days_held,
+            "symbol":           sym,
+            "type":             t["type"],
+            "variant":          variant,
+            "entry":            entry,
+            "price":            price,
+            "stop":             stop,
+            "eff_stop_label":   eff_stop_label,
+            "target_1R":        target_1r,
+            "target_1_5R":      target_full,
+            "target_2R":        target,
+            "unrealized_pnl":   round(upnl, 2),
+            "pct_to_stop":      round(pct_to_stop, 1) if pct_to_stop is not None else None,
+            "touched_1r":       t.get("touched_1r", False),
+            "partial_exit_done": t.get("partial_exit_done", False),
+            "partial_exit_pnl": t.get("partial_exit_pnl"),
+            "dist_to_1r":       {"dollar": d1r_dollar, "r": d1r_r},
+            "dist_to_target":   {"dollar": d_full_dollar, "r": d_full_r},
+            "dist_to_2r":       {"dollar": d2r_dollar, "r": d2r_r},
+            "dist_to_be":       {"dollar": dbe_dollar, "r": dbe_r},
+            "above_be":         price >= entry,
+            "days_held":        days_held,
         })
 
         if _pct_gap(price, stop) <= NEAR_PCT:
@@ -157,11 +163,12 @@ def build_digest(
                 "gap_pct": round(_pct_gap(price, stop) * 100, 1),
             })
 
-        if target > entry and _pct_gap(price, target) <= NEAR_PCT:
+        full_target = t.get("target_1_5R", target)
+        if full_target > entry and _pct_gap(price, full_target) <= NEAR_PCT:
             near_2r.append({
                 "symbol": sym, "type": t["type"], "variant": variant,
-                "price": price, "target_2R": target,
-                "gap_pct": round(_pct_gap(price, target) * 100, 1),
+                "price": price, "target_2R": full_target,
+                "gap_pct": round(_pct_gap(price, full_target) * 100, 1),
             })
 
     # All closed statuses that have realized P&L
@@ -251,8 +258,13 @@ def render_html(digest: dict, scan_date: str) -> str:
     # 1R milestone — stop just moved to breakeven
     newly_at_be = digest.get("newly_at_be", [])
     if newly_at_be:
-        rows = [[_fmt_trade(t), f"${t['entry']:.2f}", f"Stop → BE"] for t in newly_at_be]
-        parts.append("<h3 style='font-family:sans-serif;color:#06a'>🔵 Stop moved to breakeven (crossed 1R today)</h3>")
+        rows = []
+        for t in newly_at_be:
+            be_level = t["entry"] + t.get("risk_per_share", 0) * BREAKEVEN_BUFFER_R
+            partial_pnl = t.get("partial_exit_pnl", 0) or 0
+            rows.append([_fmt_trade(t), f"${t['entry']:.2f}",
+                         f"50% exited @ 1R (+${partial_pnl:.2f}), stop → ${be_level:.2f}"])
+        parts.append("<h3 style='font-family:sans-serif;color:#06a'>🔵 Partial exit executed (1R crossed today)</h3>")
         parts.append(_html_table(rows, ["Position", "Entry", "Action"]))
 
     # Closes
@@ -283,7 +295,7 @@ def render_html(digest: dict, scan_date: str) -> str:
         for p in sorted(open_pos, key=lambda x: x["unrealized_pnl"]):
             upnl = p["unrealized_pnl"]
             upnl_str = f"<span style='color:{'#080' if upnl >= 0 else '#c00'}'>${upnl:+.2f}</span>"
-            be_flag  = " ✓2R" if p.get("touched_2r") else (" ✓BE" if p.get("touched_1r") else "")
+            be_flag  = " ✓1R" if p.get("partial_exit_done") else ""
             pct      = p.get("pct_to_stop")
             pct_str  = f"{pct:.0f}%" if pct is not None else "—"
             pct_color = "#c00" if pct is not None and pct < 25 else "#333"
@@ -299,9 +311,9 @@ def render_html(digest: dict, scan_date: str) -> str:
                     return f"<span style='color:#080'>✓ {label} hit</span>"
                 return f"<span style='color:#555'>${d:.2f} away ({r:.2f}R)</span>"
 
-            be_cell = _milestone_cell(p.get("dist_to_be"),  "BE",  p.get("above_be", False))
-            r1_cell = _milestone_cell(p.get("dist_to_1r"),  "1R",  p.get("touched_1r", False))
-            r2_cell = _milestone_cell(p.get("dist_to_2r"),  "2R",  p.get("touched_2r", False))
+            be_cell   = _milestone_cell(p.get("dist_to_be"),     "BE",   p.get("above_be", False))
+            r1_cell   = _milestone_cell(p.get("dist_to_1r"),     "1R",   p.get("touched_1r", False))
+            full_cell = _milestone_cell(p.get("dist_to_target"), "1.5R", False)
 
             dh = p.get("days_held")
             dh_str = f"{dh:.1f}d" if dh is not None else "—"
@@ -312,6 +324,13 @@ def render_html(digest: dict, scan_date: str) -> str:
             dh_cell = f"<span style='color:{dh_color}'>{dh_str} (~{days_left}td left)</span>" \
                       if days_left is not None else dh_str
 
+            partial_cell = ""
+            if p.get("partial_exit_done"):
+                pp = p.get("partial_exit_pnl", 0) or 0
+                partial_cell = f"<span style='color:#080'>✓ locked ${pp:+.2f}</span>"
+            else:
+                partial_cell = "—"
+
             rows.append([
                 f"{p['symbol']} {p['type']}{be_flag}",
                 f"${p['price']:.2f}",
@@ -319,14 +338,14 @@ def render_html(digest: dict, scan_date: str) -> str:
                 p["eff_stop_label"],
                 f"<span style='color:{pct_color}'>{pct_str} above stop</span>",
                 dh_cell,
-                be_cell,
                 r1_cell,
-                r2_cell,
+                partial_cell,
+                full_cell,
                 upnl_str,
             ])
         parts.append("<h3 style='font-family:sans-serif'>📋 Open positions</h3>")
         parts.append(_html_table(rows, ["Position", "Price", "Entry", "Eff. Stop",
-                                        "Buffer", "Held", "→ BE", "→ 1R", "→ 2R", "Unreal. P&L"]))
+                                        "Buffer", "Held", "→ 1R", "50% locked", "→ 1.5R", "Unreal. P&L"]))
 
     # Near 2R
     near_2r = digest["near_2r"]
@@ -339,8 +358,8 @@ def render_html(digest: dict, scan_date: str) -> str:
             prog_str = f"{prog:.0f}%" if prog is not None else "—"
             rows.append([_fmt_trade(t), f"${t['price']:.2f}", f"${t['target_2R']:.2f}",
                          f"{t['gap_pct']}%", prog_str, eta_str])
-        parts.append("<h3 style='font-family:sans-serif;color:#e80'>🎯 Near 2R target (within 5%)</h3>")
-        parts.append(_html_table(rows, ["Position", "Price", "2R Target", "Gap", "Progress", "Est. Days"]))
+        parts.append("<h3 style='font-family:sans-serif;color:#e80'>🎯 Near 1.5R target (within 5%)</h3>")
+        parts.append(_html_table(rows, ["Position", "Price", "1.5R Target", "Gap", "Progress", "Est. Days"]))
 
     # Near stop — color urgency by gap size
     near_stop = digest["near_stop"]

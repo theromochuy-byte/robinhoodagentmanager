@@ -33,3 +33,12 @@ MAX_ENTRIES_PER_DAY: int  = 2    # cap new paper positions opened per scan run
 # ── Risk / sizing ──────────────────────────────────────────────────────────────
 RISK_PCT: float = 0.02          # fraction of starting equity risked per trade
 STARTING_EQUITY: float = 2500.0
+
+# ── Partial exit / target structure ───────────────────────────────────────────
+# Full target is 1.5R. At 1R, 50% of shares are exited and the stop moves to
+# entry + BREAKEVEN_BUFFER_R (a small buffer above entry). The remaining 50%
+# runs to 1.5R or gets stopped at the buffer.
+TARGET_FULL_R: float     = 1.5   # full exit target (replaces 2R)
+PARTIAL_EXIT_R: float    = 1.0   # first exit at this R level
+PARTIAL_EXIT_FRAC: float = 0.5   # fraction of shares to exit at PARTIAL_EXIT_R
+BREAKEVEN_BUFFER_R: float = 0.15 # stop moves to entry + this fraction of risk
