@@ -540,16 +540,16 @@
     "last_price": 171.78,
     "unrealized_pnl": 12.51,
     "touched_1r": true,
-    "checked_at": "2026-11-05T21:05:19.183356+00:00",
+    "checked_at": "2026-11-05T23:56:31.625617+00:00",
     "progress_pct": 33.4,
     "est_days_to_2r": 38.3,
-    "days_held": 43.1,
+    "days_held": 43.2,
     "stop_moved_to_be_at": "2026-11-05T21:05:19.183356+00:00",
     "partial_exit_done": true,
     "partial_exit_price": 178.8441,
     "partial_exit_shares": 1.7675,
     "partial_exit_pnl": 25.0,
-    "est_days_to_target": 61.5
+    "est_days_to_target": 61.7
   },
   {
     "symbol": "BRK-B",
@@ -576,19 +576,19 @@
     "fill_slip": 1.405,
     "fill_slip_pct": 0.26,
     "target_3R": 669.0054,
-    "last_price": 571.74,
-    "unrealized_pnl": 17.22,
+    "last_price": 572.33,
+    "unrealized_pnl": 17.56,
     "touched_1r": true,
-    "checked_at": "2026-11-05T21:05:19.183356+00:00",
-    "progress_pct": 47.0,
+    "checked_at": "2026-11-05T23:56:31.625617+00:00",
+    "progress_pct": 47.9,
     "est_days_to_2r": 13.0,
-    "days_held": 15.1,
+    "days_held": 15.2,
     "partial_exit_done": true,
     "partial_exit_price": 584.2518,
     "partial_exit_shares": 0.5767,
     "partial_exit_pnl": 24.44,
     "stop_moved_to_be_at": "2026-11-05T21:05:19.183356+00:00",
-    "est_days_to_target": 12.2
+    "est_days_to_target": 11.8
   },
   {
     "symbol": "BBY",
@@ -615,10 +615,10 @@
     "fill_slip": 0.24,
     "fill_slip_pct": 0.24,
     "target_3R": 129.6377,
-    "last_price": 99.39,
-    "unrealized_pnl": -10.45,
+    "last_price": 99.4,
+    "unrealized_pnl": -10.4,
     "touched_1r": false,
-    "checked_at": "2026-11-05T21:05:19.183356+00:00"
+    "checked_at": "2026-11-05T23:56:31.625617+00:00"
   },
   {
     "symbol": "TRV",
@@ -645,9 +645,9 @@
     "fill_slip": 1.175,
     "fill_slip_pct": 0.29,
     "target_3R": 465.5474,
-    "last_price": 402.76,
-    "unrealized_pnl": -9.91,
+    "last_price": 402.89,
+    "unrealized_pnl": -9.71,
     "touched_1r": false,
-    "checked_at": "2026-11-05T21:05:19.183356+00:00"
+    "checked_at": "2026-11-05T23:56:31.625617+00:00"
   }
 ]
