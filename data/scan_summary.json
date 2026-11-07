@@ -1,0 +1,177 @@
+{
+  "as_of": "2026-11-06T23:37:46.780632+00:00",
+  "scan_date": "2026-11-06",
+  "regime": {
+    "spy_ema20": "bull",
+    "vix": 14.55,
+    "high_vix": false
+  },
+  "sector_scores": {
+    "XLB": 3,
+    "XLC": 3,
+    "XLE": 3,
+    "XLF": 3,
+    "XLI": 3,
+    "XLK": 3,
+    "XLP": 3,
+    "XLRE": 3,
+    "XLU": 3,
+    "XLV": 3,
+    "XLY": 3
+  },
+  "watching": [
+    {
+      "symbol": "MRNA",
+      "type": "cup_and_handle",
+      "sector_score": 3,
+      "quality_score": 0.4728,
+      "bars_since_break": 6,
+      "neckline": 253.72,
+      "last_price": 254.14,
+      "stop": 225.2411,
+      "target_1R": 295.0789,
+      "target_2R": 329.9977
+    },
+    {
+      "symbol": "CAH",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.3138,
+      "bars_since_break": 15,
+      "neckline": 259.84,
+      "last_price": 271.95,
+      "stop": 248.3327,
+      "target_1R": 271.6723,
+      "target_2R": 283.3422
+    },
+    {
+      "symbol": "DG",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.2873,
+      "bars_since_break": 18,
+      "neckline": 139.12,
+      "last_price": 133.73,
+      "stop": 128.7285,
+      "target_1R": 149.6715,
+      "target_2R": 160.1431
+    },
+    {
+      "symbol": "DAL",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.272,
+      "bars_since_break": 19,
+      "neckline": 86.72,
+      "last_price": 87.2,
+      "stop": 80.4883,
+      "target_1R": 92.9717,
+      "target_2R": 99.2134
+    },
+    {
+      "symbol": "MRNA",
+      "type": "cup_and_handle",
+      "sector_score": 3,
+      "quality_score": 0.2637,
+      "bars_since_break": 20,
+      "neckline": 235.46,
+      "last_price": 254.14,
+      "stop": 215.95,
+      "target_1R": 271.49,
+      "target_2R": 299.2601
+    },
+    {
+      "symbol": "ACN",
+      "type": "cup_and_handle",
+      "sector_score": 3,
+      "quality_score": 0.2568,
+      "bars_since_break": 20,
+      "neckline": 259.39,
+      "last_price": 260.51,
+      "stop": 241.4296,
+      "target_1R": 286.2104,
+      "target_2R": 308.6008
+    },
+    {
+      "symbol": "WELL",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.2561,
+      "bars_since_break": 20,
+      "neckline": 242.57,
+      "last_price": 245.07,
+      "stop": 226.1413,
+      "target_1R": 259.0687,
+      "target_2R": 275.5325
+    },
+    {
+      "symbol": "DG",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.2551,
+      "bars_since_break": 20,
+      "neckline": 136.58,
+      "last_price": 133.73,
+      "stop": 127.6116,
+      "target_1R": 147.0284,
+      "target_2R": 156.7367
+    },
+    {
+      "symbol": "MSFT",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.252,
+      "bars_since_break": 20,
+      "neckline": 551.15,
+      "last_price": 530.55,
+      "stop": 518.3331,
+      "target_1R": 586.8669,
+      "target_2R": 621.1339
+    },
+    {
+      "symbol": "MRNA",
+      "type": "cup_and_handle",
+      "sector_score": 3,
+      "quality_score": 0.1716,
+      "bars_since_break": 27,
+      "neckline": 230.5199,
+      "last_price": 254.14,
+      "stop": 209.0478,
+      "target_1R": 254.6722,
+      "target_2R": 277.4845
+    },
+    {
+      "symbol": "DLTR",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.0683,
+      "bars_since_break": 33,
+      "neckline": 134.99,
+      "last_price": 131.16,
+      "stop": 127.8021,
+      "target_1R": 144.4979,
+      "target_2R": 152.8458
+    },
+    {
+      "symbol": "DLTR",
+      "type": "cup_and_handle",
+      "sector_score": 3,
+      "quality_score": 0.0683,
+      "bars_since_break": 33,
+      "neckline": 134.99,
+      "last_price": 131.16,
+      "stop": 127.8021,
+      "target_1R": 144.4979,
+      "target_2R": 152.8458
+    }
+  ],
+  "triggered_today": [],
+  "new_entries": 0,
+  "skipped": [],
+  "open_positions": 4,
+  "equity": {
+    "starting": 2500.0,
+    "in_use": 1766.28,
+    "available": 733.72
+  }
+}

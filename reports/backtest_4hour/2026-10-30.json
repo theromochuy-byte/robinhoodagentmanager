@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-30",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 60,
+  "entries": [
+    {
+      "symbol": "OXY",
+      "type": "inverse_hns",
+      "neckline": 63.77,
+      "stop": 59.7981,
+      "target_2R": 73.7237,
+      "risk_per_share": 4.6419,
+      "shares": 5.8194,
+      "break_time": "2026-10-23T13:30:00Z",
+      "bars_since_break": 11,
+      "in_pullback": true,
+      "last_close": 64.0,
+      "last_bar_time": "2026-10-30T17:30:00Z",
+      "scan_date": "2026-10-30",
+      "entry": 64.0,
+      "entry_time": "2026-10-30T17:30:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 13
+}
