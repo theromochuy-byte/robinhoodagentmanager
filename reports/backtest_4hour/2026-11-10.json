@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-10",
+  "new_entries": 2,
+  "closed_today": 0,
+  "open_count": 69,
+  "entries": [
+    {
+      "symbol": "TMO",
+      "type": "inverse_hns",
+      "neckline": 711.8545,
+      "stop": 649.6944,
+      "target_2R": 865.5312,
+      "risk_per_share": 71.9456,
+      "shares": 0.417,
+      "break_time": "2026-11-09T18:30:00Z",
+      "bars_since_break": 2,
+      "in_pullback": true,
+      "last_close": 719.5,
+      "last_bar_time": "2026-11-10T18:30:00Z",
+      "scan_date": "2026-11-10",
+      "entry": 719.5,
+      "entry_time": "2026-11-10T18:30:00Z",
+      "status": "open"
+    },
+    {
+      "symbol": "BLK",
+      "type": "inverse_hns",
+      "neckline": 1182.61,
+      "stop": 1105.2091,
+      "target_2R": 1470.012,
+      "risk_per_share": 121.601,
+      "shares": 0.2467,
+      "break_time": "2026-11-04T14:30:00Z",
+      "bars_since_break": 9,
+      "in_pullback": true,
+      "last_close": 1217.34,
+      "last_bar_time": "2026-11-10T18:30:00Z",
+      "scan_date": "2026-11-10",
+      "entry": 1217.34,
+      "entry_time": "2026-11-10T18:30:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 21
+}
