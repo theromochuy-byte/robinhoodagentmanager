@@ -8002,7 +8002,7 @@
     "neckline": 253.72,
     "break_time": "2026-11-06T14:30:00Z",
     "first_seen": "2026-11-06T20:27:26.100159+00:00",
-    "status": "watching",
+    "status": "expired",
     "suggested_entry": 253.72,
     "suggested_entry_zone": [
       252.4514,
@@ -8042,6 +8042,11 @@
         "time": "2026-11-11T21:22:31.178374+00:00",
         "price": 248.8,
         "note": "update"
+      },
+      {
+        "time": "2026-11-12T21:28:36.292429+00:00",
+        "price": 248.8,
+        "note": "expired"
       }
     ],
     "trigger_time": null,
@@ -8049,7 +8054,7 @@
     "close_time": null,
     "close_price": null,
     "outcome": null,
-    "elapsed_watching_hours": null,
+    "elapsed_watching_hours": 145.0,
     "elapsed_total_hours": null,
     "quality_score": 0.1811,
     "bars_since_break": 27,
@@ -8094,6 +8099,11 @@
         "time": "2026-11-11T21:22:31.178374+00:00",
         "price": 266.22,
         "note": "update"
+      },
+      {
+        "time": "2026-11-12T21:28:36.292429+00:00",
+        "price": 267.46,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8103,10 +8113,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.259,
-    "bars_since_break": 20,
+    "quality_score": 0.1618,
+    "bars_since_break": 27,
     "sector_score": 3,
-    "last_seen": "2026-11-11T21:22:31.178374+00:00",
+    "last_seen": "2026-11-12T21:28:36.292429+00:00",
     "skip_reason": null
   },
   {
@@ -8198,6 +8208,11 @@
         "time": "2026-11-11T21:22:31.178374+00:00",
         "price": 253.49,
         "note": "update"
+      },
+      {
+        "time": "2026-11-12T21:28:36.292429+00:00",
+        "price": 250.58,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8207,10 +8222,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.2899,
-    "bars_since_break": 17,
+    "quality_score": 0.1927,
+    "bars_since_break": 24,
     "sector_score": 3,
-    "last_seen": "2026-11-11T21:22:31.178374+00:00",
+    "last_seen": "2026-11-12T21:28:36.292429+00:00",
     "skip_reason": null
   },
   {
@@ -8250,6 +8265,11 @@
         "time": "2026-11-11T21:22:31.178374+00:00",
         "price": 105.16,
         "note": "update"
+      },
+      {
+        "time": "2026-11-12T21:28:36.292429+00:00",
+        "price": 103.41,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8259,10 +8279,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.2533,
-    "bars_since_break": 20,
+    "quality_score": 0.1561,
+    "bars_since_break": 27,
     "sector_score": 3,
-    "last_seen": "2026-11-11T21:22:31.178374+00:00",
+    "last_seen": "2026-11-12T21:28:36.292429+00:00",
     "skip_reason": null
   },
   {
@@ -8297,6 +8317,11 @@
         "time": "2026-11-11T21:22:31.178374+00:00",
         "price": 446.58,
         "note": "update"
+      },
+      {
+        "time": "2026-11-12T21:28:36.292429+00:00",
+        "price": 443.74,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8306,10 +8331,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.2697,
-    "bars_since_break": 20,
+    "quality_score": 0.1724,
+    "bars_since_break": 27,
     "sector_score": 3,
-    "last_seen": "2026-11-11T21:22:31.178374+00:00",
+    "last_seen": "2026-11-12T21:28:36.292429+00:00",
     "skip_reason": "low_quality"
   },
   {
@@ -8334,6 +8359,11 @@
         "time": "2026-11-11T21:22:31.178374+00:00",
         "price": 446.58,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-11-12T21:28:36.292429+00:00",
+        "price": 443.74,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8343,10 +8373,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.5116,
-    "bars_since_break": 2,
+    "quality_score": 0.4144,
+    "bars_since_break": 9,
     "sector_score": 3,
-    "last_seen": "2026-11-11T21:22:31.178374+00:00",
+    "last_seen": "2026-11-12T21:28:36.292429+00:00",
     "skip_reason": null
   },
   {
@@ -8371,6 +8401,11 @@
         "time": "2026-11-11T21:22:31.178374+00:00",
         "price": 475.125,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-11-12T21:28:36.292429+00:00",
+        "price": 468.48,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8380,10 +8415,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.519,
-    "bars_since_break": 0,
+    "quality_score": 0.4218,
+    "bars_since_break": 7,
     "sector_score": 3,
-    "last_seen": "2026-11-11T21:22:31.178374+00:00",
+    "last_seen": "2026-11-12T21:28:36.292429+00:00",
     "skip_reason": null
   }
 ]
