@@ -540,16 +540,16 @@
     "last_price": 176.95,
     "unrealized_pnl": 21.65,
     "touched_1r": true,
-    "checked_at": "2026-11-11T21:22:05.506666+00:00",
+    "checked_at": "2026-11-12T01:15:01.801789+00:00",
     "progress_pct": 57.7,
     "est_days_to_2r": 38.3,
-    "days_held": 49.1,
+    "days_held": 49.3,
     "stop_moved_to_be_at": "2026-11-05T21:05:19.183356+00:00",
     "partial_exit_done": true,
     "partial_exit_price": 178.8441,
     "partial_exit_shares": 1.7675,
     "partial_exit_pnl": 25.0,
-    "est_days_to_target": 25.7
+    "est_days_to_target": 25.8
   },
   {
     "symbol": "BRK-B",
@@ -579,10 +579,10 @@
     "last_price": 588.24,
     "unrealized_pnl": 26.74,
     "touched_1r": true,
-    "checked_at": "2026-11-11T21:22:05.506666+00:00",
+    "checked_at": "2026-11-12T01:15:01.801789+00:00",
     "progress_pct": 72.9,
     "est_days_to_2r": 13.0,
-    "days_held": 21.1,
+    "days_held": 21.3,
     "partial_exit_done": true,
     "partial_exit_price": 584.2518,
     "partial_exit_shares": 0.5767,
@@ -618,10 +618,10 @@
     "last_price": 105.16,
     "unrealized_pnl": 20.16,
     "touched_1r": false,
-    "checked_at": "2026-11-11T21:22:05.506666+00:00",
+    "checked_at": "2026-11-12T01:15:01.801789+00:00",
     "progress_pct": 26.9,
-    "est_days_to_target": 13.4,
-    "days_held": 6.9
+    "est_days_to_target": 13.7,
+    "days_held": 7.0
   },
   {
     "symbol": "TRV",
@@ -651,17 +651,17 @@
     "last_price": 399.46,
     "unrealized_pnl": -14.95,
     "touched_1r": false,
-    "checked_at": "2026-11-11T21:22:05.506666+00:00"
+    "checked_at": "2026-11-12T01:15:01.801789+00:00"
   },
   {
     "symbol": "HUM",
     "type": "inverse_hns",
     "neckline": 442.99,
     "stop": 407.194,
-    "target_1R": 479.426,
-    "target_2R": 515.542,
-    "risk_per_share": 36.116,
-    "shares": 1.3844,
+    "target_1R": 485.426,
+    "target_2R": 524.542,
+    "risk_per_share": 39.116,
+    "shares": 1.2782,
     "break_time": "2026-11-11T15:30:00Z",
     "bars_since_break": 5,
     "in_pullback": true,
@@ -670,8 +670,18 @@
     "scanned_at": "2026-11-11T21:22:13.385960+00:00",
     "signal_price": 446.58,
     "signal_time": "2026-11-11T20:30:00Z",
-    "status": "pending_fill",
+    "status": "entered",
     "quality_score": 0.471,
-    "sector_score": 3
+    "sector_score": 3,
+    "entry": 446.31,
+    "entry_time": "2026-11-12T01:15:00.402762+00:00",
+    "fill_slip": -0.27,
+    "fill_slip_pct": -0.06,
+    "target_1_5R": 504.984,
+    "target_3R": 563.658,
+    "last_price": 446.31,
+    "unrealized_pnl": 0.0,
+    "touched_1r": false,
+    "checked_at": "2026-11-12T01:15:01.801789+00:00"
   }
 ]
