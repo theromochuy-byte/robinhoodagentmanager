@@ -2,7 +2,7 @@
   "date": "2026-11-06",
   "new_entries": 0,
   "closed_today": 5,
-  "open_count": 53,
+  "open_count": 56,
   "entries": [],
   "closed": [
     {
@@ -125,9 +125,9 @@
       "symbol": "PM",
       "type": "inverse_hns",
       "neckline": 210.45,
-      "stop": 195.5889,
-      "target_2R": 242.0623,
-      "risk_per_share": 15.4911,
+      "stop": 195.5892,
+      "target_2R": 242.0615,
+      "risk_per_share": 15.4908,
       "shares": 1.7766,
       "break_time": "2026-11-04T14:30:00Z",
       "bars_since_break": 1,
@@ -142,14 +142,14 @@
       "touched_1r": false,
       "touched_2r": false,
       "outcome": "loss",
-      "exit_price": 195.5889,
+      "exit_price": 195.5892,
       "exit_time": "2026-11-06T14:30:00Z",
-      "pnl_per_share": -15.7511,
+      "pnl_per_share": -15.7508,
       "pnl_dollars": -27.98,
       "r_multiple": -1.017,
       "exit_reason": "stop",
       "days_held": 1.83
     }
   ],
-  "watching_count": 30
+  "watching_count": 29
 }

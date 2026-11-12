@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-12T21:28:36.302355+00:00",
+  "as_of": "2026-11-12T23:57:59.514469+00:00",
   "scan_date": "2026-11-12",
   "regime": {
     "spy_ema20": "bull",
@@ -28,9 +28,9 @@
       "bars_since_break": 7,
       "neckline": 474.61,
       "last_price": 468.48,
-      "stop": 456.556,
-      "target_1R": 493.694,
-      "target_2R": 512.263
+      "stop": 456.555,
+      "target_1R": 493.695,
+      "target_2R": 512.265
     },
     {
       "symbol": "HUM",
@@ -40,9 +40,9 @@
       "bars_since_break": 9,
       "neckline": 448.44,
       "last_price": 443.74,
-      "stop": 413.0901,
-      "target_1R": 487.8999,
-      "target_2R": 525.3048
+      "stop": 413.0897,
+      "target_1R": 487.9003,
+      "target_2R": 525.3056
     },
     {
       "symbol": "BIIB",
@@ -52,9 +52,9 @@
       "bars_since_break": 24,
       "neckline": 258.63,
       "last_price": 250.58,
-      "stop": 245.1703,
-      "target_1R": 275.7497,
-      "target_2R": 291.0395
+      "stop": 245.1692,
+      "target_1R": 275.7508,
+      "target_2R": 291.0416
     },
     {
       "symbol": "HUM",
@@ -64,9 +64,9 @@
       "bars_since_break": 27,
       "neckline": 434.125,
       "last_price": 443.74,
-      "stop": 392.937,
-      "target_1R": 485.603,
-      "target_2R": 531.9359
+      "stop": 392.9355,
+      "target_1R": 485.6045,
+      "target_2R": 531.939
     },
     {
       "symbol": "AMZN",
@@ -76,9 +76,9 @@
       "bars_since_break": 27,
       "neckline": 265.3397,
       "last_price": 267.46,
-      "stop": 245.8135,
-      "target_1R": 292.0365,
-      "target_2R": 315.148
+      "stop": 245.813,
+      "target_1R": 292.037,
+      "target_2R": 315.1489
     },
     {
       "symbol": "BBY",
@@ -88,9 +88,9 @@
       "bars_since_break": 27,
       "neckline": 103.54,
       "last_price": 103.41,
-      "stop": 97.1096,
-      "target_1R": 113.8604,
-      "target_2R": 122.2357
+      "stop": 97.0984,
+      "target_1R": 113.8716,
+      "target_2R": 122.2582
     }
   ],
   "triggered_today": [],

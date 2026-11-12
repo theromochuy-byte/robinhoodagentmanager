@@ -540,16 +540,16 @@
     "last_price": 173.01,
     "unrealized_pnl": 14.69,
     "touched_1r": true,
-    "checked_at": "2026-11-12T21:28:14.455740+00:00",
+    "checked_at": "2026-11-12T23:57:46.877353+00:00",
     "progress_pct": 39.2,
     "est_days_to_2r": 38.3,
-    "days_held": 50.1,
+    "days_held": 50.2,
     "stop_moved_to_be_at": "2026-11-05T21:05:19.183356+00:00",
     "partial_exit_done": true,
     "partial_exit_price": 178.8441,
     "partial_exit_shares": 1.7675,
     "partial_exit_pnl": 25.0,
-    "est_days_to_target": 55.6
+    "est_days_to_target": 55.7
   },
   {
     "symbol": "BRK-B",
@@ -579,16 +579,16 @@
     "last_price": 589.83,
     "unrealized_pnl": 27.66,
     "touched_1r": true,
-    "checked_at": "2026-11-12T21:28:14.455740+00:00",
+    "checked_at": "2026-11-12T23:57:46.877353+00:00",
     "progress_pct": 75.4,
     "est_days_to_2r": 13.0,
-    "days_held": 22.1,
+    "days_held": 22.2,
     "partial_exit_done": true,
     "partial_exit_price": 584.2518,
     "partial_exit_shares": 0.5767,
     "partial_exit_pnl": 24.44,
     "stop_moved_to_be_at": "2026-11-05T21:05:19.183356+00:00",
-    "est_days_to_target": 5.1
+    "est_days_to_target": 5.2
   },
   {
     "symbol": "BBY",
@@ -618,10 +618,10 @@
     "last_price": 103.41,
     "unrealized_pnl": 10.87,
     "touched_1r": false,
-    "checked_at": "2026-11-12T21:28:14.455740+00:00",
+    "checked_at": "2026-11-12T23:57:46.877353+00:00",
     "progress_pct": 14.5,
-    "est_days_to_target": 33.2,
-    "days_held": 7.9
+    "est_days_to_target": 33.7,
+    "days_held": 8.0
   },
   {
     "symbol": "TRV",
@@ -651,7 +651,7 @@
     "last_price": 403.18,
     "unrealized_pnl": -9.27,
     "touched_1r": false,
-    "checked_at": "2026-11-12T21:28:14.455740+00:00"
+    "checked_at": "2026-11-12T23:57:46.877353+00:00"
   },
   {
     "symbol": "HUM",
@@ -682,6 +682,6 @@
     "last_price": 443.68,
     "unrealized_pnl": -3.36,
     "touched_1r": false,
-    "checked_at": "2026-11-12T21:28:14.455740+00:00"
+    "checked_at": "2026-11-12T23:57:46.877353+00:00"
   }
 ]
