@@ -1,0 +1,58 @@
+{
+  "date": "2026-04-23",
+  "new_entries": 1,
+  "closed_today": 1,
+  "open_count": 19,
+  "entries": [
+    {
+      "symbol": "AMZN",
+      "type": "inverse_hns",
+      "neckline": 247.775,
+      "stop": 234.2783,
+      "target_2R": 276.0132,
+      "risk_per_share": 13.9116,
+      "shares": 1.5109,
+      "break_time": "2026-04-14T15:00:00Z",
+      "bars_since_break": 46,
+      "in_pullback": true,
+      "last_close": 255.12,
+      "last_bar_time": "2026-04-23T19:00:00Z",
+      "scan_date": "2026-04-23",
+      "entry": 255.12,
+      "entry_time": "2026-04-23T19:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [
+    {
+      "symbol": "PFE",
+      "type": "inverse_hns",
+      "neckline": 26.31,
+      "stop": 25.2577,
+      "target_2R": 29.2096,
+      "risk_per_share": 1.3173,
+      "shares": 14.111,
+      "break_time": "2026-01-27T15:00:00Z",
+      "bars_since_break": 29,
+      "in_pullback": true,
+      "last_close": 26.65,
+      "last_bar_time": "2026-02-02T20:00:00Z",
+      "scan_date": "2026-02-02",
+      "entry": 26.65,
+      "entry_time": "2026-02-02T20:00:00Z",
+      "status": "closed",
+      "max_price": 28.74,
+      "touched_1r": true,
+      "touched_2r": false,
+      "outcome": "breakeven",
+      "exit_price": 26.65,
+      "exit_time": "2026-04-23T14:00:00Z",
+      "pnl_per_share": 0.0,
+      "pnl_dollars": 0.0,
+      "r_multiple": 0.0,
+      "exit_reason": "breakeven_stop",
+      "days_held": 79.75
+    }
+  ],
+  "watching_count": 1
+}
