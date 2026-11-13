@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-13",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 65,
+  "entries": [
+    {
+      "symbol": "BBY",
+      "type": "inverse_hns",
+      "neckline": 103.54,
+      "stop": 92.9192,
+      "target_2R": 133.2417,
+      "risk_per_share": 13.4408,
+      "shares": 2.232,
+      "break_time": "2026-11-09T14:30:00Z",
+      "bars_since_break": 9,
+      "in_pullback": true,
+      "last_close": 104.105,
+      "last_bar_time": "2026-11-13T18:30:00Z",
+      "scan_date": "2026-11-13",
+      "entry": 104.105,
+      "entry_time": "2026-11-13T18:30:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 2
+}

@@ -8109,6 +8109,11 @@
         "time": "2026-11-12T23:57:59.508199+00:00",
         "price": 267.46,
         "note": "update"
+      },
+      {
+        "time": "2026-11-13T20:54:19.722083+00:00",
+        "price": 266.76,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8118,11 +8123,11 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.1618,
-    "bars_since_break": 27,
+    "quality_score": 0.0646,
+    "bars_since_break": 34,
     "sector_score": 3,
-    "last_seen": "2026-11-12T23:57:59.508199+00:00",
-    "skip_reason": null
+    "last_seen": "2026-11-13T20:54:19.722083+00:00",
+    "skip_reason": "low_quality"
   },
   {
     "id": "HCA__inverse_hns__2026-11-04T14:30:00Z",
@@ -8223,6 +8228,11 @@
         "time": "2026-11-12T23:57:59.508199+00:00",
         "price": 250.58,
         "note": "update"
+      },
+      {
+        "time": "2026-11-13T20:54:19.722083+00:00",
+        "price": 254.35,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8232,10 +8242,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.1927,
-    "bars_since_break": 24,
+    "quality_score": 0.0955,
+    "bars_since_break": 31,
     "sector_score": 3,
-    "last_seen": "2026-11-12T23:57:59.508199+00:00",
+    "last_seen": "2026-11-13T20:54:19.722083+00:00",
     "skip_reason": null
   },
   {
@@ -8285,6 +8295,11 @@
         "time": "2026-11-12T23:57:59.508199+00:00",
         "price": 103.41,
         "note": "update"
+      },
+      {
+        "time": "2026-11-13T20:54:19.722083+00:00",
+        "price": 104.105,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8294,10 +8309,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.1561,
-    "bars_since_break": 27,
+    "quality_score": 0.0589,
+    "bars_since_break": 34,
     "sector_score": 3,
-    "last_seen": "2026-11-12T23:57:59.508199+00:00",
+    "last_seen": "2026-11-13T20:54:19.722083+00:00",
     "skip_reason": null
   },
   {
@@ -8342,6 +8357,11 @@
         "time": "2026-11-12T23:57:59.508199+00:00",
         "price": 443.74,
         "note": "update"
+      },
+      {
+        "time": "2026-11-13T20:54:19.722083+00:00",
+        "price": 449.09,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8351,11 +8371,11 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.1724,
-    "bars_since_break": 27,
+    "quality_score": 0.0752,
+    "bars_since_break": 34,
     "sector_score": 3,
-    "last_seen": "2026-11-12T23:57:59.508199+00:00",
-    "skip_reason": "low_quality"
+    "last_seen": "2026-11-13T20:54:19.722083+00:00",
+    "skip_reason": null
   },
   {
     "id": "HUM__inverse_hns__2026-11-11T18:30:00Z",
@@ -8389,6 +8409,11 @@
         "time": "2026-11-12T23:57:59.508199+00:00",
         "price": 443.74,
         "note": "update"
+      },
+      {
+        "time": "2026-11-13T20:54:19.722083+00:00",
+        "price": 449.09,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8398,10 +8423,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.4144,
-    "bars_since_break": 9,
+    "quality_score": 0.3172,
+    "bars_since_break": 16,
     "sector_score": 3,
-    "last_seen": "2026-11-12T23:57:59.508199+00:00",
+    "last_seen": "2026-11-13T20:54:19.722083+00:00",
     "skip_reason": null
   },
   {
@@ -8436,6 +8461,11 @@
         "time": "2026-11-12T23:57:59.508199+00:00",
         "price": 468.48,
         "note": "update"
+      },
+      {
+        "time": "2026-11-13T20:54:19.722083+00:00",
+        "price": 472.5,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8445,10 +8475,47 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.4218,
-    "bars_since_break": 7,
+    "quality_score": 0.3246,
+    "bars_since_break": 14,
     "sector_score": 3,
-    "last_seen": "2026-11-12T23:57:59.508199+00:00",
+    "last_seen": "2026-11-13T20:54:19.722083+00:00",
+    "skip_reason": null
+  },
+  {
+    "id": "RMD__cup_and_handle__2026-11-12T16:30:00Z",
+    "symbol": "RMD",
+    "type": "cup_and_handle",
+    "neckline": 242.215,
+    "break_time": "2026-11-12T16:30:00Z",
+    "first_seen": "2026-11-13T20:54:19.722083+00:00",
+    "status": "watching",
+    "suggested_entry": 242.215,
+    "suggested_entry_zone": [
+      241.0039,
+      243.4261
+    ],
+    "stop": 228.5038,
+    "target_1R": 257.8362,
+    "target_2R": 272.5024,
+    "risk_per_share": 14.6662,
+    "price_history": [
+      {
+        "time": "2026-11-13T20:54:19.722083+00:00",
+        "price": 239.31,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null,
+    "quality_score": 0.3755,
+    "bars_since_break": 11,
+    "sector_score": 3,
+    "last_seen": "2026-11-13T20:54:19.722083+00:00",
     "skip_reason": null
   }
 ]
