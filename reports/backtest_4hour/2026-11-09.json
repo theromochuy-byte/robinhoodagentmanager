@@ -2,15 +2,15 @@
   "date": "2026-11-09",
   "new_entries": 3,
   "closed_today": 0,
-  "open_count": 59,
+  "open_count": 55,
   "entries": [
     {
       "symbol": "COST",
       "type": "inverse_hns",
       "neckline": 1021.45,
-      "stop": 962.4434,
-      "target_2R": 1194.5132,
-      "risk_per_share": 77.3566,
+      "stop": 962.4395,
+      "target_2R": 1194.521,
+      "risk_per_share": 77.3605,
       "shares": 0.3606,
       "break_time": "2026-11-02T14:30:00Z",
       "bars_since_break": 11,
@@ -26,9 +26,9 @@
       "symbol": "DIS",
       "type": "inverse_hns",
       "neckline": 113.375,
-      "stop": 106.746,
-      "target_2R": 126.768,
-      "risk_per_share": 6.674,
+      "stop": 106.7437,
+      "target_2R": 126.7727,
+      "risk_per_share": 6.6763,
       "shares": 3.3063,
       "break_time": "2026-11-02T14:30:00Z",
       "bars_since_break": 11,
@@ -44,9 +44,9 @@
       "symbol": "WELL",
       "type": "inverse_hns",
       "neckline": 242.9699,
-      "stop": 227.5787,
-      "target_2R": 284.8977,
-      "risk_per_share": 19.1063,
+      "stop": 227.579,
+      "target_2R": 284.897,
+      "risk_per_share": 19.106,
       "shares": 1.5202,
       "break_time": "2026-11-04T14:30:00Z",
       "bars_since_break": 7,
@@ -60,5 +60,5 @@
     }
   ],
   "closed": [],
-  "watching_count": 24
+  "watching_count": 23
 }
