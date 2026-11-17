@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-11-16T23:23:09.370441+00:00",
-  "scan_date": "2026-11-16",
+  "as_of": "2026-11-17T22:17:22.360642+00:00",
+  "scan_date": "2026-11-17",
   "regime": {
     "spy_ema20": "bull",
     "vix": 14.55,
@@ -21,52 +21,52 @@
   },
   "watching": [
     {
+      "symbol": "DIS",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.4406,
+      "bars_since_break": 6,
+      "neckline": 120.8,
+      "last_price": 116.94,
+      "stop": 115.0164,
+      "target_1R": 128.2836,
+      "target_2R": 134.9173
+    },
+    {
       "symbol": "CL",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.4386,
-      "bars_since_break": 6,
+      "quality_score": 0.3414,
+      "bars_since_break": 13,
       "neckline": 101.18,
-      "last_price": 100.99,
-      "stop": 96.7411,
-      "target_1R": 106.0589,
-      "target_2R": 110.7179
-    },
-    {
-      "symbol": "RMD",
-      "type": "cup_and_handle",
-      "sector_score": 3,
-      "quality_score": 0.2783,
-      "bars_since_break": 18,
-      "neckline": 242.215,
-      "last_price": 238.24,
-      "stop": 228.5038,
-      "target_1R": 257.8362,
-      "target_2R": 272.5024
+      "last_price": 99.63,
+      "stop": 96.7359,
+      "target_1R": 106.0641,
+      "target_2R": 110.7282
     },
     {
       "symbol": "SPGI",
       "type": "cup_and_handle",
       "sector_score": 3,
-      "quality_score": 0.2274,
-      "bars_since_break": 21,
+      "quality_score": 0.1301,
+      "bars_since_break": 28,
       "neckline": 474.61,
-      "last_price": 471.64,
-      "stop": 456.555,
-      "target_1R": 493.695,
-      "target_2R": 512.265
+      "last_price": 452.47,
+      "stop": 456.556,
+      "target_1R": 493.694,
+      "target_2R": 512.263
     },
     {
       "symbol": "HUM",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.22,
-      "bars_since_break": 23,
+      "quality_score": 0.1227,
+      "bars_since_break": 30,
       "neckline": 448.44,
-      "last_price": 461.12,
-      "stop": 413.0897,
-      "target_1R": 487.9003,
-      "target_2R": 525.3056
+      "last_price": 443.33,
+      "stop": 413.0901,
+      "target_1R": 487.8999,
+      "target_2R": 525.3048
     }
   ],
   "triggered_today": [],

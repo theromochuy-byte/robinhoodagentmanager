@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-17",
+  "new_entries": 0,
+  "closed_today": 1,
+  "open_count": 58,
+  "entries": [],
+  "closed": [
+    {
+      "symbol": "NKE",
+      "type": "inverse_hns",
+      "neckline": 38.4999,
+      "stop": 35.7885,
+      "target_2R": 45.198,
+      "risk_per_share": 3.1365,
+      "shares": 9.5649,
+      "break_time": "2026-10-30T13:30:00Z",
+      "bars_since_break": 9,
+      "in_pullback": true,
+      "last_close": 39.56,
+      "last_bar_time": "2026-11-05T18:30:00Z",
+      "scan_date": "2026-11-05",
+      "entry": 39.56,
+      "entry_time": "2026-11-05T18:30:00Z",
+      "status": "closed",
+      "max_price": 40.68,
+      "touched_1r": false,
+      "touched_2r": false,
+      "outcome": "loss",
+      "exit_price": 35.7885,
+      "exit_time": "2026-11-17T18:30:00Z",
+      "pnl_per_share": -3.7715,
+      "pnl_dollars": -36.07,
+      "r_multiple": -1.202,
+      "exit_reason": "stop",
+      "days_held": 12.0
+    }
+  ],
+  "watching_count": 1
+}
