@@ -540,10 +540,10 @@
     "last_price": 172.92,
     "unrealized_pnl": 14.53,
     "touched_1r": true,
-    "checked_at": "2026-11-17T02:15:55.126567+00:00",
+    "checked_at": "2026-11-17T03:50:32.987451+00:00",
     "progress_pct": 38.7,
     "est_days_to_2r": 38.3,
-    "days_held": 54.3,
+    "days_held": 54.4,
     "stop_moved_to_be_at": "2026-11-05T21:05:19.183356+00:00",
     "partial_exit_done": true,
     "partial_exit_price": 178.8441,
@@ -579,16 +579,16 @@
     "last_price": 592.85,
     "unrealized_pnl": 29.4,
     "touched_1r": true,
-    "checked_at": "2026-11-17T02:15:55.126567+00:00",
+    "checked_at": "2026-11-17T03:50:32.987451+00:00",
     "progress_pct": 80.2,
     "est_days_to_2r": 13.0,
-    "days_held": 26.3,
+    "days_held": 26.4,
     "partial_exit_done": true,
     "partial_exit_price": 584.2518,
     "partial_exit_shares": 0.5767,
     "partial_exit_pnl": 24.44,
     "stop_moved_to_be_at": "2026-11-05T21:05:19.183356+00:00",
-    "est_days_to_target": 4.6
+    "est_days_to_target": 4.7
   },
   {
     "symbol": "BBY",
@@ -618,10 +618,10 @@
     "last_price": 103.35,
     "unrealized_pnl": 10.56,
     "touched_1r": false,
-    "checked_at": "2026-11-17T02:15:55.126567+00:00",
+    "checked_at": "2026-11-17T03:50:32.987451+00:00",
     "progress_pct": 14.1,
-    "est_days_to_target": 52.7,
-    "days_held": 12.1
+    "est_days_to_target": 53.0,
+    "days_held": 12.2
   },
   {
     "symbol": "TRV",
@@ -651,7 +651,7 @@
     "last_price": 403.06,
     "unrealized_pnl": -9.45,
     "touched_1r": false,
-    "checked_at": "2026-11-17T02:15:55.126567+00:00"
+    "checked_at": "2026-11-17T03:50:32.987451+00:00"
   },
   {
     "symbol": "HUM",
@@ -682,9 +682,9 @@
     "last_price": 461.25,
     "unrealized_pnl": 19.1,
     "touched_1r": false,
-    "checked_at": "2026-11-17T02:15:55.126567+00:00",
+    "checked_at": "2026-11-17T03:50:32.987451+00:00",
     "progress_pct": 25.5,
-    "est_days_to_target": 10.5,
-    "days_held": 5.0
+    "est_days_to_target": 10.7,
+    "days_held": 5.1
   }
 ]
