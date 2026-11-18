@@ -161,6 +161,26 @@ def resolve_pending_fills(quotes: dict[str, float]) -> list[dict]:
     return filled
 
 
+def _stamp_shadow_retest_on_close(t: dict, exit_price: float, final_status: str) -> None:
+    """Resolve the shadow retest outcome when the actual trade closes."""
+    if not t.get("retest_detected") or t.get("retest_outcome") != "pending":
+        return
+    r_entry = t.get("retest_entry_price", 0)
+    r_risk  = t.get("retest_risk_per_share", 0)
+    if not r_risk:
+        return
+    r_1_5r = t.get("retest_1_5r", r_entry + 1.5 * r_risk)
+    if exit_price >= r_1_5r:
+        t["retest_outcome"] = "target_hit"
+    elif final_status in ("stopped", "partial_win") and exit_price <= t.get("retest_stop", 0):
+        t["retest_outcome"] = "stopped"
+    elif final_status in ("time_stop", "partial_time_stop"):
+        t["retest_outcome"] = "time_stop"
+    else:
+        t["retest_outcome"] = final_status
+    t["retest_exit_r"] = round((exit_price - r_entry) / r_risk, 3)
+
+
 def _stamp_bars_since_break(t: dict, now_iso: str) -> None:
     """Add bars_since_break_at_exit to a closing trade record.
 
@@ -282,6 +302,7 @@ def check_exits(
             t["exit_time"]    = now
             t["realized_pnl"] = round(t.get("partial_exit_pnl", 0.0) + remaining_pnl, 2)
             t["touched_1r"]   = touched_1r
+            _stamp_shadow_retest_on_close(t, price, outcome)
             _stamp_bars_since_break(t, now)
             closes.append(t)
 
@@ -293,6 +314,7 @@ def check_exits(
             t["exit_time"]    = now
             t["realized_pnl"] = round(t.get("partial_exit_pnl", 0.0) + remaining_pnl, 2)
             t["touched_1r"]   = True
+            _stamp_shadow_retest_on_close(t, price, "target_hit")
             _stamp_bars_since_break(t, now)
             closes.append(t)
 
@@ -313,6 +335,7 @@ def check_exits(
                         t["realized_pnl"] = round(t.get("partial_exit_pnl", 0.0) + remaining_pnl, 2)
                         t["touched_1r"]   = True
                         t["days_held"]    = round(days_since_partial, 1)
+                        _stamp_shadow_retest_on_close(t, price, "partial_time_stop")
                         _stamp_bars_since_break(t, now)
                         closes.append(t)
                         print(f"  [PartialTimeStop] {sym}: remaining half closed at ${price:.2f} "
@@ -343,6 +366,7 @@ def check_exits(
                             t["realized_pnl"]     = round((price - entry) * t.get("shares", 0), 2)
                             t["days_held"]        = round(days_held, 1)
                             t["progress_at_exit"] = round(progress * 100, 1)
+                            _stamp_shadow_retest_on_close(t, price, "time_stop")
                             _stamp_bars_since_break(t, now)
                             closes.append(t)
                             continue
@@ -353,6 +377,47 @@ def check_exits(
             t["unrealized_pnl"] = round((price - entry) * t.get("shares", 0), 2)
             t["touched_1r"]     = touched_1r
             t["checked_at"]     = now
+
+            # ── Shadow retest tracker (Entry B comparison) ───────────────────
+            # Detect whether a retest of the neckline has occurred since entry.
+            # A retest bar is one where: low <= neckline * 1.005 AND close > open
+            # AND close >= neckline (bullish reaction at the neckline).
+            # We only record the FIRST qualifying retest; subsequent ones are ignored.
+            # The shadow outcome is updated each run until the trade closes.
+            neckline = t.get("neckline", entry)
+            if not t.get("retest_detected") and intraday_lows.get(sym) is not None:
+                low_today = intraday_lows[sym]
+                # Check if today's bar touched the neckline zone and closed bullishly above it
+                if low_today <= neckline * 1.005 and price >= neckline and price > t.get("open_price", price * 0.999):
+                    retest_entry  = neckline
+                    retest_risk   = round(retest_entry - stop, 4)
+                    if retest_risk > 0:
+                        t["retest_detected"]       = True
+                        t["retest_date"]           = now
+                        t["retest_entry_price"]    = round(retest_entry, 4)
+                        t["retest_stop"]           = round(stop, 4)
+                        t["retest_risk_per_share"] = round(retest_risk, 4)
+                        t["retest_1r"]             = round(retest_entry + retest_risk, 4)
+                        t["retest_1_5r"]           = round(retest_entry + 1.5 * retest_risk, 4)
+                        t["retest_outcome"]        = "pending"
+                        print(f"  [ShadowRetest] {sym}: retest detected at ${retest_entry:.2f}  "
+                              f"shadow_risk=${retest_risk:.2f}  shadow_1R=${t['retest_1r']:.2f}")
+
+            # Update shadow retest outcome if retest has been detected and not yet resolved
+            if t.get("retest_detected") and t.get("retest_outcome") == "pending":
+                r_entry = t.get("retest_entry_price", entry)
+                r_risk  = t.get("retest_risk_per_share", risk)
+                r_1r    = t.get("retest_1r", r_entry + r_risk)
+                r_1_5r  = t.get("retest_1_5r", r_entry + 1.5 * r_risk)
+                if r_risk > 0:
+                    if price >= r_1_5r:
+                        t["retest_outcome"] = "target_hit"
+                        t["retest_exit_r"]  = round((price - r_entry) / r_risk, 3)
+                    elif price <= stop:
+                        t["retest_outcome"] = "stopped"
+                        t["retest_exit_r"]  = round((price - r_entry) / r_risk, 3)
+                    else:
+                        t["retest_exit_r"]  = round((price - r_entry) / r_risk, 3)
 
             # Progress tracking toward full target (1.5R)
             target_span = target_full - entry

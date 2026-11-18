@@ -454,11 +454,16 @@ def scan_symbol(
         if struct_depth < 0.03 or struct_depth > 0.15:  # wider pre-filter to not over-block
             continue
 
-        # Volume confirmation: break bar must have >= 1.2× its 20-bar average volume
-        if bi >= 20 and "volume" in h4.columns:
+        # Volume confirmation: break bar must have >= 1.2× its 20-bar average volume.
+        # If volume data is unavailable we log volume_ratio=None and skip the check
+        # (silent pass-through); this is tracked on the setup so we can audit it.
+        volume_ratio: float | None = None
+        volume_data_present = bi >= 20 and "volume" in h4.columns
+        if volume_data_present:
             avg_vol = float(h4["volume"].rolling(20).mean().iloc[bi])
             if avg_vol > 0 and not pd.isna(avg_vol):
-                if float(h4.loc[bi, "volume"]) < 1.2 * avg_vol:
+                volume_ratio = round(float(h4.loc[bi, "volume"]) / avg_vol, 3)
+                if volume_ratio < 1.2:
                     continue
 
         trade = build_trade(h4, p, atr_series, equity, risk_pct,
@@ -510,6 +515,20 @@ def scan_symbol(
             "last_close":    round(last_close, 4),
             "last_bar_time": str(h4.loc[last_bar, "begins_at"]),
             "scanned_at":    datetime.now(timezone.utc).isoformat(),
+            # ── Audit fields ──────────────────────────────────────────────────
+            "volume_ratio":        volume_ratio,       # None = data unavailable
+            "volume_data_present": volume_data_present,
+            # ── Shadow retest tracker (Entry B comparison) ────────────────────
+            # Filled in by run_daily.py as the trade progresses:
+            #   retest_detected        bool   — did price ever pull back to neckline?
+            #   retest_date            str    — first bar that qualified as retest
+            #   retest_entry_price     float  — neckline level at retest
+            #   retest_stop            float  — stop that retest entry would use (same as breakout stop)
+            #   retest_1r              float  — 1R target from retest entry
+            #   retest_1_5r            float  — 1.5R target from retest entry
+            #   retest_risk_per_share  float  — tighter risk (retest_entry - stop)
+            #   retest_outcome         str    — 'target_hit'|'stopped'|'time_stop'|'pending'
+            #   retest_exit_r          float  — R multiple from retest entry perspective
         }
 
         if triggered_today:
@@ -698,12 +717,17 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
                             "skip_reason": "daily_cap"})
             wl_missed.append((t["symbol"], t["type"], t["break_time"], "daily_cap"))
             continue
-        if t.get("sector_score", SECTOR_SCORE_FULL) < SECTOR_SCORE_FULL and entries_today >= 1:
+        # Hard sector gate: require sector_score >= 2 (enforced again at entry
+        # time, not just universe pre-filter, to catch edge cases where the score
+        # drops between scan and entry resolution).
+        # Previously this was a soft cap (only blocked if entries_today >= 1);
+        # now it always blocks score-1 setups regardless of daily entry count.
+        if t.get("sector_score", SECTOR_SCORE_FULL) < SECTOR_SCORE_MIN:
             skipped.append({"symbol": t["symbol"], "type": t["type"],
                             "quality_score": t.get("quality_score", 0),
                             "sector_score": t.get("sector_score"),
-                            "skip_reason": "sector_cap"})
-            wl_missed.append((t["symbol"], t["type"], t["break_time"], "sector_cap"))
+                            "skip_reason": "sector_weak"})
+            wl_missed.append((t["symbol"], t["type"], t["break_time"], "sector_weak"))
             continue
         new_entries.append(t)
         entries_today += 1
