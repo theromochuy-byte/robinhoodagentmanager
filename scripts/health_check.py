@@ -119,7 +119,8 @@ def check_stop_ladder(trades: list) -> None:
 # ── 5. Time stop proximity ────────────────────────────────────────────────────
 
 def check_time_stops(trades: list, now: datetime) -> None:
-    from swing_agent.config import TIME_STOP_TRADING_DAYS, TIME_STOP_MIN_PROGRESS_FRAC
+    from swing_agent.config import (TIME_STOP_TRADING_DAYS, TIME_STOP_MIN_PROGRESS_FRAC,
+                                    PARTIAL_EXIT_TIME_STOP_DAYS)
     for t in [t for t in trades if t.get("status") == "entered"]:
         sym = t["symbol"]
         entry_time = t.get("entry_time", "")
@@ -130,6 +131,7 @@ def check_time_stops(trades: list, now: datetime) -> None:
         trading_days = days_held * (5 / 7)
         days_left = TIME_STOP_TRADING_DAYS - trading_days
         touched = t.get("touched_1r", False)
+        partial_done = t.get("partial_exit_done", False)
 
         # Mirror run_daily.py exit logic: exempt if touched_1r OR made enough progress
         entry = t.get("entry", 0)
@@ -140,6 +142,31 @@ def check_time_stops(trades: list, now: datetime) -> None:
         progress_frac = (current - entry) / risk if risk > 0 else 0
         made_progress = progress_frac >= TIME_STOP_MIN_PROGRESS_FRAC
         exempt = touched or made_progress
+
+        # Post-partial-exit time stop check
+        if partial_done and PARTIAL_EXIT_TIME_STOP_DAYS > 0:
+            be_at_str = t.get("stop_moved_to_be_at", "")
+            if be_at_str:
+                try:
+                    be_dt = datetime.fromisoformat(be_at_str.replace("Z", "+00:00"))
+                    days_since_partial = (now - be_dt).total_seconds() / 86400
+                    tdays_since_partial = days_since_partial * (5 / 7)
+                    partial_days_left = PARTIAL_EXIT_TIME_STOP_DAYS - tdays_since_partial
+                    if partial_days_left < 0:
+                        check(FAIL, "TimeStop",
+                              f"{sym}: post-partial time stop overdue — {tdays_since_partial:.1f}/"
+                              f"{PARTIAL_EXIT_TIME_STOP_DAYS} trading days since partial exit")
+                    elif partial_days_left < 3:
+                        check(WARN, "TimeStop",
+                              f"{sym}: post-partial time stop in {partial_days_left:.1f} trading days "
+                              f"({tdays_since_partial:.1f}/{PARTIAL_EXIT_TIME_STOP_DAYS}d since partial exit)")
+                    else:
+                        check(OK, "TimeStop",
+                              f"{sym}: {tdays_since_partial:.1f}/{PARTIAL_EXIT_TIME_STOP_DAYS} trading days "
+                              f"since partial exit  ({partial_days_left:.1f} left)  partial_exit_done=True")
+                except Exception:
+                    pass
+            continue
 
         if not exempt and days_left < 0:
             check(FAIL, "TimeStop",

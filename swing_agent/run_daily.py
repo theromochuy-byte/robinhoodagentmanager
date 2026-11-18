@@ -85,6 +85,7 @@ from swing_agent.config import (
     TIME_STOP_TRADING_DAYS, TIME_STOP_MIN_PROGRESS_FRAC,
     RISK_PCT, STARTING_EQUITY,
     TARGET_FULL_R, PARTIAL_EXIT_FRAC, BREAKEVEN_BUFFER_R,
+    PARTIAL_EXIT_TIME_STOP_DAYS,
 )
 
 
@@ -296,6 +297,31 @@ def check_exits(
             closes.append(t)
 
         else:
+            # Post-partial-exit time stop: remaining half hasn't reached 1.5R within
+            # PARTIAL_EXIT_TIME_STOP_DAYS trading days after the partial exit fired.
+            if partial_exit_done and PARTIAL_EXIT_TIME_STOP_DAYS > 0:
+                be_at_str = t.get("stop_moved_to_be_at", "")
+                try:
+                    be_dt = datetime.fromisoformat(be_at_str.replace("Z", "+00:00"))
+                    days_since_partial = (datetime.now(timezone.utc) - be_dt).total_seconds() / 86400
+                    if days_since_partial * (5 / 7) >= PARTIAL_EXIT_TIME_STOP_DAYS:
+                        remaining_pnl     = round((price - entry) * t.get("shares", 0), 2)
+                        t["status"]       = "partial_win"
+                        t["exit_price"]   = price
+                        t["exit_reason"]  = "partial_time_stop"
+                        t["exit_time"]    = now
+                        t["realized_pnl"] = round(t.get("partial_exit_pnl", 0.0) + remaining_pnl, 2)
+                        t["touched_1r"]   = True
+                        t["days_held"]    = round(days_since_partial, 1)
+                        _stamp_bars_since_break(t, now)
+                        closes.append(t)
+                        print(f"  [PartialTimeStop] {sym}: remaining half closed at ${price:.2f} "
+                              f"after {days_since_partial * (5/7):.1f} trading days post-partial "
+                              f"(limit: {PARTIAL_EXIT_TIME_STOP_DAYS}d)")
+                        continue
+                except Exception:
+                    pass
+
             # Time stop: exit if held long enough without showing a sign of working.
             # Exempt if 1R has ever been touched (partial exit already executed).
             if not touched_1r:

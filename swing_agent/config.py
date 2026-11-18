@@ -42,3 +42,11 @@ TARGET_FULL_R: float     = 1.5   # full exit target (replaces 2R)
 PARTIAL_EXIT_R: float    = 1.0   # first exit at this R level
 PARTIAL_EXIT_FRAC: float = 0.5   # fraction of shares to exit at PARTIAL_EXIT_R
 BREAKEVEN_BUFFER_R: float = 0.15 # stop moves to entry + this fraction of risk
+
+# ── Post-partial-exit time stop ────────────────────────────────────────────────
+# After the 50% partial exit fires, the remaining half is exempt from the normal
+# TIME_STOP_TRADING_DAYS clock. But if it stalls and never reaches 1.5R, it ties
+# up capital indefinitely. This secondary clock starts from the partial exit date
+# and fires if the remaining half hasn't closed within N trading days.
+# Set to 0 to disable (let it run until stop or target).
+PARTIAL_EXIT_TIME_STOP_DAYS: int = 10  # trading days after partial exit before remaining half is closed
