@@ -1,31 +1,31 @@
 {
-  "from_date": "2026-08-25",
-  "to_date": "2026-11-17",
+  "from_date": "2026-08-26",
+  "to_date": "2026-11-18",
   "symbols_scanned": 188,
-  "total_entries": 70,
-  "closed_trades": 12,
+  "total_entries": 68,
+  "closed_trades": 13,
   "wins_3r": 0,
   "wins_2r": 2,
   "losses": 7,
-  "breakevens": 3,
-  "win_rate": 0.167,
+  "breakevens": 4,
+  "win_rate": 0.154,
   "full_win_rate": 0.0,
-  "avg_R": -0.366,
+  "avg_R": -0.338,
   "total_R": -4.4,
-  "closed_pnl": -147.11,
-  "open_unrealized": 352.05,
-  "total_pnl": 204.94,
-  "open_positions": 58,
+  "closed_pnl": -147.3,
+  "open_unrealized": 372.63,
+  "total_pnl": 225.33,
+  "open_positions": 55,
   "equity_start": 1500.0,
-  "equity_end": 1352.89,
+  "equity_end": 1352.7,
   "by_pattern": {
     "inverse_hns": {
       "wins_3r": 0,
       "wins_2r": 2,
       "losses": 7,
-      "breakevens": 3,
-      "avg_R": -0.366,
-      "avg_days_held": 18.6
+      "breakevens": 4,
+      "avg_R": -0.338,
+      "avg_days_held": 19.7
     },
     "double_bottom": {
       "wins_3r": 0,
@@ -40,6 +40,6 @@
     "wins_3r": 0.0,
     "wins_2r": 25.4,
     "losses": 7.8,
-    "breakevens": 39.5
+    "breakevens": 37.9
   }
 }

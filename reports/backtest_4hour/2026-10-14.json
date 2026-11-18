@@ -1,16 +1,16 @@
 {
   "date": "2026-10-14",
-  "new_entries": 2,
+  "new_entries": 1,
   "closed_today": 0,
-  "open_count": 10,
+  "open_count": 8,
   "entries": [
     {
       "symbol": "AAPL",
       "type": "inverse_hns",
       "neckline": 342.988,
-      "stop": 323.8923,
-      "target_2R": 383.7654,
-      "risk_per_share": 19.9577,
+      "stop": 323.8886,
+      "target_2R": 383.7728,
+      "risk_per_share": 19.9614,
       "shares": 1.0906,
       "break_time": "2026-10-13T13:30:00Z",
       "bars_since_break": 3,
@@ -19,24 +19,6 @@
       "last_bar_time": "2026-10-14T17:30:00Z",
       "scan_date": "2026-10-14",
       "entry": 343.04,
-      "entry_time": "2026-10-14T17:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "MO",
-      "type": "inverse_hns",
-      "neckline": 71.05,
-      "stop": 66.8032,
-      "target_2R": 80.9986,
-      "risk_per_share": 4.7318,
-      "shares": 5.2422,
-      "break_time": "2026-10-08T13:30:00Z",
-      "bars_since_break": 9,
-      "in_pullback": true,
-      "last_close": 73.155,
-      "last_bar_time": "2026-10-14T17:30:00Z",
-      "scan_date": "2026-10-14",
-      "entry": 73.155,
       "entry_time": "2026-10-14T17:30:00Z",
       "status": "open"
     }
