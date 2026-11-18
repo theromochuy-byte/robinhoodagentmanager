@@ -466,6 +466,29 @@ def scan_symbol(
                 if volume_ratio < 1.2:
                     continue
 
+        # ── Shadow tracker inputs (computed once per pattern, logged on setup) ─
+        # 1. Daily EMA20 distance: how stretched price is above daily 20 EMA
+        _d_ema20 = live_ema if live_ema is not None else float(ema(daily["close"], 20).iloc[-1])
+        _d_close = float(daily.iloc[-1]["close"])
+        daily_ema20_dist_pct: float | None = round((_d_close - _d_ema20) / _d_ema20 * 100, 3) if _d_ema20 else None
+
+        # 2. Break bar ATR ratio: break bar range vs 20-bar avg range (conviction proxy)
+        _break_range = float(h4.loc[bi, "high"]) - float(h4.loc[bi, "low"])
+        _avg_range_s = (h4["high"] - h4["low"]).rolling(20).mean()
+        _avg_range   = float(_avg_range_s.iloc[bi]) if bi >= 20 and not pd.isna(_avg_range_s.iloc[bi]) else None
+        break_bar_atr_ratio: float | None = round(_break_range / _avg_range, 3) if _avg_range else None
+
+        # 3. RS vs SPY magnitude (stock 20d return minus SPY, in percentage points)
+        _st_20d = ((float(daily.iloc[-1]["close"]) - float(daily.iloc[-21]["close"]))
+                   / float(daily.iloc[-21]["close"])) if len(daily) >= 21 else None
+        rs_vs_spy: float | None = round((_st_20d - spy_20d_return) * 100, 3) if (_st_20d is not None and spy_20d_return is not None) else None
+
+        # 4. Day of week at break bar (0=Mon … 4=Fri)
+        try:
+            entry_day_of_week: int | None = int(pd.Timestamp(str(p["break_time"])).dayofweek)
+        except Exception:
+            entry_day_of_week = None
+
         trade = build_trade(h4, p, atr_series, equity, risk_pct,
                             atr_override=live_atr)
         if trade is None:
@@ -518,6 +541,11 @@ def scan_symbol(
             # ── Audit fields ──────────────────────────────────────────────────
             "volume_ratio":        volume_ratio,       # None = data unavailable
             "volume_data_present": volume_data_present,
+            # ── Shadow tracker: entry-condition diagnostics ───────────────────
+            "daily_ema20_dist_pct":  daily_ema20_dist_pct,  # % above daily 20 EMA; stretched = risk of stall
+            "break_bar_atr_ratio":   break_bar_atr_ratio,   # break bar range / 20-bar avg; >1 = expanded range
+            "rs_vs_spy":             rs_vs_spy,              # stock 20d return - SPY 20d return (pp); higher = stronger
+            "entry_day_of_week":     entry_day_of_week,      # 0=Mon … 4=Fri
             # ── Shadow retest tracker (Entry B comparison) ────────────────────
             # Filled in by run_daily.py as the trade progresses:
             #   retest_detected        bool   — did price ever pull back to neckline?
