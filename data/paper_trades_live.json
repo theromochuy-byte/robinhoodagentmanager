@@ -540,16 +540,16 @@
     "last_price": 172.22,
     "unrealized_pnl": 13.29,
     "touched_1r": true,
-    "checked_at": "2026-11-17T22:17:09.503868+00:00",
+    "checked_at": "2026-11-18T01:28:47.230206+00:00",
     "progress_pct": 35.4,
     "est_days_to_2r": 38.3,
-    "days_held": 55.2,
+    "days_held": 55.3,
     "stop_moved_to_be_at": "2026-11-05T21:05:19.183356+00:00",
     "partial_exit_done": true,
     "partial_exit_price": 178.8441,
     "partial_exit_shares": 1.7675,
     "partial_exit_pnl": 25.0,
-    "est_days_to_target": 71.8
+    "est_days_to_target": 71.9
   },
   {
     "symbol": "BRK-B",
@@ -579,10 +579,10 @@
     "last_price": 586.76,
     "unrealized_pnl": 25.89,
     "touched_1r": true,
-    "checked_at": "2026-11-17T22:17:09.503868+00:00",
+    "checked_at": "2026-11-18T01:28:47.230206+00:00",
     "progress_pct": 70.6,
     "est_days_to_2r": 13.0,
-    "days_held": 27.2,
+    "days_held": 27.3,
     "partial_exit_done": true,
     "partial_exit_price": 584.2518,
     "partial_exit_shares": 0.5767,
@@ -618,7 +618,7 @@
     "last_price": 98.4,
     "unrealized_pnl": -15.7,
     "touched_1r": false,
-    "checked_at": "2026-11-17T22:17:09.503868+00:00",
+    "checked_at": "2026-11-18T01:28:47.230206+00:00",
     "progress_pct": 14.1,
     "est_days_to_target": 53.0,
     "days_held": 12.2
@@ -651,7 +651,7 @@
     "last_price": 397.58,
     "unrealized_pnl": -17.82,
     "touched_1r": false,
-    "checked_at": "2026-11-17T22:17:09.503868+00:00"
+    "checked_at": "2026-11-18T01:28:47.230206+00:00"
   },
   {
     "symbol": "HUM",
@@ -682,7 +682,7 @@
     "last_price": 443.34,
     "unrealized_pnl": -3.8,
     "touched_1r": false,
-    "checked_at": "2026-11-17T22:17:09.503868+00:00",
+    "checked_at": "2026-11-18T01:28:47.230206+00:00",
     "progress_pct": 25.5,
     "est_days_to_target": 10.7,
     "days_held": 5.1
