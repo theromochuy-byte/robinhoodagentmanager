@@ -278,11 +278,14 @@ def print_performance(trades: list) -> None:
         print("\n  No closed trades yet.")
         return
 
-    wins = sum(1 for t in closed if t.get("realized_pnl", 0) > 0)
-    total_rpnl = sum(t.get("realized_pnl", 0) for t in closed)
+    def _true_pnl(t: dict) -> float:
+        return t.get("realized_pnl", 0) + t.get("partial_exit_pnl", 0)
+
+    wins = sum(1 for t in closed if _true_pnl(t) > 0)
+    total_rpnl = sum(_true_pnl(t) for t in closed)
     r_mults = []
     for t in closed:
-        rpnl = t.get("realized_pnl", 0)
+        rpnl = _true_pnl(t)
         risk = t.get("risk_per_share", 0) * t.get("shares", 0)
         if risk:
             r_mults.append(rpnl / risk)

@@ -171,11 +171,14 @@ def build_digest(
                 "gap_pct": round(_pct_gap(price, full_target) * 100, 1),
             })
 
-    # All closed statuses that have realized P&L
+    # All closed statuses that have realized P&L.
+    # partial_win trades carry two fields: partial_exit_pnl (first 50% at 1R)
+    # + realized_pnl (remaining 50% at close). Both must be summed.
+    _closed_statuses = {"stopped", "target_hit", "breakeven", "win_2r", "time_stop", "partial_win"}
     realized = sum(
-        t.get("realized_pnl", 0.0)
+        t.get("realized_pnl", 0.0) + t.get("partial_exit_pnl", 0.0)
         for t in trades
-        if t.get("status") in ("stopped", "target_hit", "breakeven", "win_2r", "time_stop")
+        if t.get("status") in _closed_statuses
     )
 
     # Load equity state
