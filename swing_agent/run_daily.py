@@ -81,6 +81,22 @@ def _fetch_intraday_highs(symbols: list[str]) -> dict[str, float]:
         return {}
 
 
+def _fetch_intraday_lows(symbols: list[str]) -> dict[str, float]:
+    """Fetch today's session low for each symbol via yfinance 30-minute bars.
+
+    Used for shadow retest detection (did price touch the neckline intraday?).
+    Falls back to an empty dict per symbol on any error.
+    """
+    if not symbols:
+        return {}
+    try:
+        from swing_agent.fetch_yf import fetch_intraday_lows
+        return fetch_intraday_lows(symbols)
+    except Exception as e:
+        print(f"  WARNING: intraday lows fetch failed: {e}", file=sys.stderr)
+        return {}
+
+
 from swing_agent.config import (
     TIME_STOP_TRADING_DAYS, TIME_STOP_MIN_PROGRESS_FRAC,
     RISK_PCT, STARTING_EQUITY,
@@ -207,6 +223,7 @@ def _stamp_bars_since_break(t: dict, now_iso: str) -> None:
 def check_exits(
     quotes: dict[str, float],
     intraday_highs: dict[str, float] | None = None,
+    intraday_lows: dict[str, float] | None = None,
 ) -> tuple[list[dict], list[dict], list[dict]]:
     """Check open positions against quotes. Returns (closes, still_open, newly_partial).
 
@@ -225,9 +242,12 @@ def check_exits(
     intraday_highs: optional {symbol: today_high} used solely for milestone
     detection (touched_1r). Exit decisions always use the closing quote so stops
     are not triggered by intraday wicks.
+    intraday_lows: optional {symbol: today_low} used for shadow retest detection.
     """
     if intraday_highs is None:
         intraday_highs = {}
+    if intraday_lows is None:
+        intraday_lows = {}
 
     trades  = _load_ledger()
     closes  = []
@@ -701,9 +721,11 @@ if __name__ == "__main__":
 
     if open_syms:
         # Fetch intraday highs for milestone detection (1R/2R touch via wick)
+        # and intraday lows for shadow retest detection (neckline touch)
         intraday_highs = _fetch_intraday_highs(open_syms)
+        intraday_lows  = _fetch_intraday_lows(open_syms)
 
-        closes, _, newly_at_be = check_exits(quotes, intraday_highs)
+        closes, _, newly_at_be = check_exits(quotes, intraday_highs, intraday_lows)
         if closes:
             print(f"  {len(closes)} positions closed.")
         if newly_at_be:
