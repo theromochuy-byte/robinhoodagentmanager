@@ -8471,7 +8471,7 @@
     "neckline": 474.61,
     "break_time": "2026-11-11T20:30:00Z",
     "first_seen": "2026-11-11T21:22:31.178374+00:00",
-    "status": "watching",
+    "status": "expired",
     "suggested_entry": 474.61,
     "suggested_entry_zone": [
       472.237,
@@ -8516,6 +8516,11 @@
         "time": "2026-11-18T21:54:37.447670+00:00",
         "price": 446.16,
         "note": "update"
+      },
+      {
+        "time": "2026-11-19T22:08:17.594426+00:00",
+        "price": 446.16,
+        "note": "expired"
       }
     ],
     "trigger_time": null,
@@ -8523,7 +8528,7 @@
     "close_time": null,
     "close_price": null,
     "outcome": null,
-    "elapsed_watching_hours": null,
+    "elapsed_watching_hours": 192.8,
     "elapsed_total_hours": null,
     "quality_score": 0.0329,
     "bars_since_break": 35,
@@ -8610,6 +8615,11 @@
         "time": "2026-11-18T21:54:37.447670+00:00",
         "price": 98.805,
         "note": "update"
+      },
+      {
+        "time": "2026-11-19T22:08:17.594426+00:00",
+        "price": 96.9,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8619,10 +8629,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.2442,
-    "bars_since_break": 20,
+    "quality_score": 0.147,
+    "bars_since_break": 27,
     "sector_score": 3,
-    "last_seen": "2026-11-18T21:54:37.447670+00:00",
+    "last_seen": "2026-11-19T22:08:17.594426+00:00",
     "skip_reason": null
   },
   {
@@ -8652,6 +8662,11 @@
         "time": "2026-11-18T21:54:37.447670+00:00",
         "price": 122.35,
         "note": "update"
+      },
+      {
+        "time": "2026-11-19T22:08:17.594426+00:00",
+        "price": 120.27,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8661,10 +8676,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.3434,
-    "bars_since_break": 13,
+    "quality_score": 0.2462,
+    "bars_since_break": 20,
     "sector_score": 3,
-    "last_seen": "2026-11-18T21:54:37.447670+00:00",
+    "last_seen": "2026-11-19T22:08:17.594426+00:00",
     "skip_reason": null
   }
 ]
