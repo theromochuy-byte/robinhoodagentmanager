@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-19",
+  "new_entries": 1,
+  "closed_today": 1,
+  "open_count": 51,
+  "entries": [
+    {
+      "symbol": "TGT",
+      "type": "inverse_hns",
+      "neckline": 166.49,
+      "stop": 148.9035,
+      "target_2R": 214.1131,
+      "risk_per_share": 21.7365,
+      "shares": 1.3802,
+      "break_time": "2026-11-18T14:30:00Z",
+      "bars_since_break": 3,
+      "in_pullback": true,
+      "last_close": 167.53,
+      "last_bar_time": "2026-11-19T18:30:00Z",
+      "scan_date": "2026-11-19",
+      "entry": 167.53,
+      "entry_time": "2026-11-19T18:30:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [
+    {
+      "symbol": "AXP",
+      "type": "inverse_hns",
+      "neckline": 328.31,
+      "stop": 309.6791,
+      "target_2R": 367.0569,
+      "risk_per_share": 19.1259,
+      "shares": 1.1405,
+      "break_time": "2026-11-02T14:30:00Z",
+      "bars_since_break": 5,
+      "in_pullback": true,
+      "last_close": 332.68,
+      "last_bar_time": "2026-11-04T18:30:00Z",
+      "scan_date": "2026-11-04",
+      "entry": 332.68,
+      "entry_time": "2026-11-04T18:30:00Z",
+      "status": "closed",
+      "max_price": 343.885,
+      "touched_1r": false,
+      "touched_2r": false,
+      "outcome": "loss",
+      "exit_price": 309.6791,
+      "exit_time": "2026-11-19T14:30:00Z",
+      "pnl_per_share": -23.0009,
+      "pnl_dollars": -26.23,
+      "r_multiple": -1.203,
+      "exit_reason": "stop",
+      "days_held": 14.83
+    }
+  ],
+  "watching_count": 1
+}

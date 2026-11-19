@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-11-18T21:54:37.457442+00:00",
-  "scan_date": "2026-11-18",
+  "as_of": "2026-11-19T22:08:17.602220+00:00",
+  "scan_date": "2026-11-19",
   "regime": {
     "spy_ema20": "bull",
     "vix": 14.55,
@@ -24,10 +24,10 @@
       "symbol": "DIS",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.3434,
-      "bars_since_break": 13,
+      "quality_score": 0.2462,
+      "bars_since_break": 20,
       "neckline": 120.8,
-      "last_price": 122.35,
+      "last_price": 120.27,
       "stop": 115.0164,
       "target_1R": 128.2836,
       "target_2R": 134.9173
@@ -36,46 +36,22 @@
       "symbol": "CL",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.2442,
-      "bars_since_break": 20,
+      "quality_score": 0.147,
+      "bars_since_break": 27,
       "neckline": 101.18,
-      "last_price": 98.805,
-      "stop": 96.7411,
-      "target_1R": 106.0589,
-      "target_2R": 110.7179
-    },
-    {
-      "symbol": "RMD",
-      "type": "cup_and_handle",
-      "sector_score": 3,
-      "quality_score": 0.0839,
-      "bars_since_break": 32,
-      "neckline": 242.215,
-      "last_price": 242.56,
-      "stop": 228.5038,
-      "target_1R": 257.8362,
-      "target_2R": 272.5024
-    },
-    {
-      "symbol": "SPGI",
-      "type": "cup_and_handle",
-      "sector_score": 3,
-      "quality_score": 0.0329,
-      "bars_since_break": 35,
-      "neckline": 474.61,
-      "last_price": 446.16,
-      "stop": 456.555,
-      "target_1R": 493.695,
-      "target_2R": 512.265
+      "last_price": 96.9,
+      "stop": 96.7359,
+      "target_1R": 106.0641,
+      "target_2R": 110.7282
     }
   ],
   "triggered_today": [],
   "new_entries": 0,
   "skipped": [],
-  "open_positions": 4,
+  "open_positions": 2,
   "equity": {
     "starting": 2500.0,
-    "in_use": 1766.28,
-    "available": 733.72
+    "in_use": 1162.67,
+    "available": 1337.33
   }
 }

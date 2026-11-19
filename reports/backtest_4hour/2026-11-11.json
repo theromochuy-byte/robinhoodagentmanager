@@ -2,16 +2,16 @@
   "date": "2026-11-11",
   "new_entries": 2,
   "closed_today": 0,
-  "open_count": 57,
+  "open_count": 53,
   "entries": [
     {
       "symbol": "SBUX",
       "type": "inverse_hns",
       "neckline": 107.9,
-      "stop": 99.2867,
-      "target_2R": 126.6267,
-      "risk_per_share": 9.1133,
-      "shares": 3.2919,
+      "stop": 99.287,
+      "target_2R": 126.6261,
+      "risk_per_share": 9.113,
+      "shares": 3.292,
       "break_time": "2026-11-04T14:30:00Z",
       "bars_since_break": 11,
       "in_pullback": true,
@@ -26,10 +26,10 @@
       "symbol": "CL",
       "type": "inverse_hns",
       "neckline": 97.5,
-      "stop": 88.012,
-      "target_2R": 120.181,
-      "risk_per_share": 10.723,
-      "shares": 2.7977,
+      "stop": 88.0099,
+      "target_2R": 120.1851,
+      "risk_per_share": 10.7251,
+      "shares": 2.7972,
       "break_time": "2026-11-04T14:30:00Z",
       "bars_since_break": 11,
       "in_pullback": true,
@@ -42,5 +42,5 @@
     }
   ],
   "closed": [],
-  "watching_count": 19
+  "watching_count": 18
 }
