@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-11-19T22:08:17.602220+00:00",
-  "scan_date": "2026-11-19",
+  "as_of": "2026-11-20T21:48:02.125380+00:00",
+  "scan_date": "2026-11-20",
   "regime": {
     "spy_ema20": "bull",
     "vix": 14.55,
@@ -24,10 +24,10 @@
       "symbol": "DIS",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.2462,
-      "bars_since_break": 20,
+      "quality_score": 0.1489,
+      "bars_since_break": 27,
       "neckline": 120.8,
-      "last_price": 120.27,
+      "last_price": 117.96,
       "stop": 115.0164,
       "target_1R": 128.2836,
       "target_2R": 134.9173
@@ -36,13 +36,13 @@
       "symbol": "CL",
       "type": "inverse_hns",
       "sector_score": 3,
-      "quality_score": 0.147,
-      "bars_since_break": 27,
+      "quality_score": 0.0497,
+      "bars_since_break": 34,
       "neckline": 101.18,
-      "last_price": 96.9,
-      "stop": 96.7359,
-      "target_1R": 106.0641,
-      "target_2R": 110.7282
+      "last_price": 98.71,
+      "stop": 96.7411,
+      "target_1R": 106.0589,
+      "target_2R": 110.7179
     }
   ],
   "triggered_today": [],
