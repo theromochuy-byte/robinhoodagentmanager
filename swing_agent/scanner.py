@@ -581,12 +581,27 @@ def scan_symbol(
     return {"watching": watching, "triggered": triggered}
 
 
-def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
+def run_scan(symbols: list[str], risk_pct: float = 0.02,
+             ledger_path: "Path | None" = None) -> dict:
+    """Scan symbols for setups and record entries.
+
+    ledger_path: when set, reads/writes THIS path instead of LIVE_LEDGER.
+    All shadow-universe calls pass DATA / "paper_trades_shadow.json" here.
+    """
     REPORTS.mkdir(exist_ok=True)
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
-    # Remove stale legacy watchlist entries (no scanner data) on first run of the day
-    purge_legacy_entries()
+    # Determine effective ledger path and summary file
+    _shadow = ledger_path is not None
+    _effective_ledger = ledger_path if _shadow else LIVE_LEDGER
+    _summary_file = (ledger_path.parent / "scan_summary_shadow.json"
+                     if _shadow else SCAN_SUMMARY_FILE)
+
+    if _shadow:
+        print(f"  [Shadow] ledger={_effective_ledger.name}  summary={_summary_file.name}")
+    else:
+        # Remove stale legacy watchlist entries (no scanner data) on first run of the day
+        purge_legacy_entries()
 
     # Session overrides: options-filtered universe and live indicator cache
     session_syms = _load_session_universe()
@@ -650,7 +665,9 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         print("  [Regime] SPY EMA unavailable — regime gate bypassed")
 
     # Recompute equity state from ledger before scanning
-    equity_state = _recompute_equity()
+    _pre_ledger = (json.loads(_effective_ledger.read_text())
+                   if _shadow and _effective_ledger.exists() else None)
+    equity_state = _recompute_equity(_pre_ledger)
     available    = equity_state["available_equity"]
     starting     = equity_state["starting_equity"]
     print(f"  Equity: ${starting:.2f} starting  |  "
@@ -677,7 +694,10 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
 
     # ── Merge triggered entries — only add if we have enough capital ────────────────────────
     # Load ledger once here; reuse it for equity check and final save.
-    ledger = _load_live_ledger()
+    if _shadow:
+        ledger = json.loads(_effective_ledger.read_text()) if _effective_ledger.exists() else []
+    else:
+        ledger = _load_live_ledger()
     existing_keys = {
         (t["symbol"], t.get("signal_time", t.get("entry_time"))) for t in ledger
     }
@@ -764,19 +784,27 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         wl_triggered.append((t["symbol"], t["type"], t["break_time"],
                               t["signal_price"], t["signal_time"]))
 
+    # Tag shadow entries before appending
+    if _shadow:
+        for e in new_entries:
+            e["universe"] = "shadow"
     ledger.extend(new_entries)
-    _save_live_ledger(ledger)
+    if _shadow:
+        _effective_ledger.write_text(json.dumps(ledger, indent=2))
+    else:
+        _save_live_ledger(ledger)
 
     # ── Single watchlist write for the entire scan run ─────────────────────────
-    expired = batch_update(all_watching, wl_triggered, wl_missed,
-                           watching_ids, triggered_ids)
-    if expired:
-        print(f"  [Watchlist] Expired {len(expired)} stale setup(s): {', '.join(expired)}")
+    if not _shadow:
+        expired = batch_update(all_watching, wl_triggered, wl_missed,
+                               watching_ids, triggered_ids)
+        if expired:
+            print(f"  [Watchlist] Expired {len(expired)} stale setup(s): {', '.join(expired)}")
 
     # Recompute and save final equity state (reuse the ledger already in memory)
     final_state = _recompute_equity(ledger)
 
-    wl_summary = watchlist_summary()
+    wl_summary = {} if _shadow else watchlist_summary()
     report = {
         "scan_date":       today,
         "vix":             vix,
@@ -796,8 +824,9 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         },
         "watchlist": wl_summary,
     }
-    report_path = REPORTS / f"scan_{today}.json"
-    report_path.write_text(json.dumps(report, indent=2))
+    if not _shadow:
+        report_path = REPORTS / f"scan_{today}.json"
+        report_path.write_text(json.dumps(report, indent=2))
 
     # Write always-current scan summary — single file, overwritten every run
     spy_regime_str = "bull" if spy_bull is True else ("bear" if spy_bull is False else "unknown")
@@ -848,7 +877,7 @@ def run_scan(symbols: list[str], risk_pct: float = 0.02) -> dict:
         "open_positions": report["total_open"],
         "equity":         report["equity"],
     }
-    SCAN_SUMMARY_FILE.write_text(json.dumps(summary, indent=2))
+    _summary_file.write_text(json.dumps(summary, indent=2))
     print(f"  [Summary] scan_summary.json updated ({len(all_watching)} watching, "
           f"{len(report['triggered_today'])} triggered)")
 

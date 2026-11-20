@@ -21,11 +21,13 @@ import sys
 from datetime import date, datetime, timezone
 from pathlib import Path
 
-ROOT        = Path(__file__).resolve().parent.parent
-DATA        = ROOT / "data"
-REPORTS     = ROOT / "reports"
-LIVE_LEDGER = DATA / "paper_trades_live.json"
-PNL_LOG     = DATA / "daily_pnl_log.json"
+ROOT           = Path(__file__).resolve().parent.parent
+DATA           = ROOT / "data"
+REPORTS        = ROOT / "reports"
+LIVE_LEDGER    = DATA / "paper_trades_live.json"
+PNL_LOG        = DATA / "daily_pnl_log.json"
+SHADOW_LEDGER  = DATA / "paper_trades_shadow.json"
+SHADOW_UNIVERSE = DATA / "universe_shadow.txt"
 
 
 def _load_ledger() -> list[dict]:
@@ -499,6 +501,44 @@ def run_scan() -> list[dict]:
     return new_entries
 
 
+def run_shadow_scan() -> list[dict]:
+    """Scan shadow universe (sector ETFs + momentum names) in complete isolation.
+
+    Reads data/universe_shadow.txt and writes exclusively to
+    data/paper_trades_shadow.json — the live ledger is never touched.
+    """
+    print("=== SHADOW SCAN ===")
+    if not SHADOW_UNIVERSE.exists():
+        print("  universe_shadow.txt not found — skipping shadow scan.")
+        return []
+
+    syms = [
+        line.strip() for line in SHADOW_UNIVERSE.read_text().splitlines()
+        if line.strip() and not line.strip().startswith("#")
+    ]
+    if not syms:
+        print("  No symbols in universe_shadow.txt — skipping.")
+        return []
+
+    if not SHADOW_LEDGER.exists():
+        SHADOW_LEDGER.write_text("[]")
+
+    from swing_agent.scanner import run_scan as scanner_run_scan
+    scanner_run_scan(syms, ledger_path=SHADOW_LEDGER)
+
+    today = str(date.today())
+    shadow_trades = json.loads(SHADOW_LEDGER.read_text())
+    new_entries = [
+        t for t in shadow_trades
+        if t.get("status") in ("entered", "pending_fill")
+        and (t.get("entry_date", "") == today
+             or (t.get("entry_time", "") or "").startswith(today)
+             or (t.get("signal_time", "") or "").startswith(today))
+    ]
+    print(f"  {len(new_entries)} shadow entries/signals today.")
+    return new_entries
+
+
 # ---------------------------------------------------------------------------
 # Daily P&L snapshot — appended once per run for each open position
 # ---------------------------------------------------------------------------
@@ -733,6 +773,12 @@ if __name__ == "__main__":
 
     if mode in ("morning", "evening"):
         new_entries = run_scan()
+
+    if mode in ("morning", "evening"):
+        try:
+            run_shadow_scan()
+        except Exception as _e:
+            print(f"  WARNING: shadow scan failed: {_e}", file=sys.stderr)
 
     # Daily P&L snapshot — append one row per open position
     print("=== P&L SNAPSHOT ===")
