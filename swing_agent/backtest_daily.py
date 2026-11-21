@@ -1,12 +1,14 @@
 """Day-by-day paper backtest: replays the forward scanner over historical data.
 
-For each trading day in the 4-hour data, slices all bars to that date,
-runs the scanner logic, checks open positions for stop/target hits, and
-accumulates a full P&L ledger.
+For each trading day in the entry-timeframe data, slices all bars to that
+date, runs the scanner logic, checks open positions for stop/target hits,
+and accumulates a full P&L ledger.
 
 Usage:
   python3 -m swing_agent.backtest_daily
   python3 -m swing_agent.backtest_daily --from 2026-04-01
+  python3 -m swing_agent.backtest_daily --timeframe 1hour
+  python3 -m swing_agent.backtest_daily --timeframe 4hour --from 2026-04-01
 """
 from __future__ import annotations
 
@@ -19,7 +21,7 @@ import pandas as pd
 
 from .backtest import bias_asof, daily_bias_series
 from .dataio import load
-from .indicators import atr
+from .indicators import atr, ema
 from .patterns import detect_double_bottom, detect_inverse_hns
 from .simulator import build_trade
 
@@ -28,14 +30,21 @@ DATA    = ROOT / "data"
 REPORTS = ROOT / "reports"
 BACKTEST_LEDGER = DATA / "paper_backtest.json"
 
+# Freshness window: how many entry-timeframe bars back a pattern break can be
+# and still qualify. Scales with bar size so the real-time lookback is ~the same.
+FRESHNESS_BARS = {
+    "4hour": 12,   # 12 × 4h ≈ 2 trading days
+    "1hour": 48,   # 48 × 1h ≈ 6 trading days (matches 4h window in calendar time)
+}
+
 
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
 
-def _trading_dates(symbol: str = "AAPL") -> list[str]:
-    h4 = load(DATA / f"{symbol}_4hour.json", symbol)
-    dates = sorted(set(str(ts)[:10] for ts in h4["begins_at"]))
+def _trading_dates(timeframe: str = "4hour", symbol: str = "AAPL") -> list[str]:
+    df = load(DATA / f"{symbol}_{timeframe}.json", symbol)
+    dates = sorted(set(str(ts)[:10] for ts in df["begins_at"]))
     return dates
 
 
@@ -48,44 +57,56 @@ def _slice_to_date(df: pd.DataFrame, date_str: str) -> pd.DataFrame:
 def _scan_symbol_asof(
     symbol: str,
     daily_full: pd.DataFrame,
-    h4_full: pd.DataFrame,
+    entry_full: pd.DataFrame,
     date_str: str,
     equity: float,
     risk_pct: float,
+    timeframe: str = "4hour",
 ) -> dict:
     """Same logic as scanner.scan_symbol but operates on data sliced to date_str."""
-    daily = _slice_to_date(daily_full, date_str)
-    h4    = _slice_to_date(h4_full, date_str)
+    daily  = _slice_to_date(daily_full, date_str)
+    h4     = _slice_to_date(entry_full, date_str)
     if len(daily) < 30 or len(h4) < 30:
         return {"watching": [], "triggered": []}
 
-    bias       = daily_bias_series(daily)
-    atr_series = atr(h4, 14)
-    patterns   = detect_double_bottom(h4) + detect_inverse_hns(h4)
+    freshness_bars = FRESHNESS_BARS.get(timeframe, 12)
+
+    bias        = daily_bias_series(daily)
+    atr_series  = atr(h4, 14)
+    ema9_series = ema(h4["close"], 9)
+    patterns    = detect_inverse_hns(h4)  # double_bottom suspended pending investigation
     patterns.sort(key=lambda p: p["break_index"])
 
-    last_bar = len(h4) - 1
+    last_bar  = len(h4) - 1
     watching  = []
     triggered = []
 
     for p in patterns:
         bi = p["break_index"]
-        if bi < last_bar - 11:
+        # Freshness: break must be within the last N bars (scaled to timeframe)
+        if bi < last_bar - (freshness_bars - 1):
             continue
         if not bias_asof(bias, p["break_time"]):
             continue
-        if (p["neckline"] - p["stop_basis"]) / p["neckline"] < 0.03:
+        # Structural depth pre-check (same as scanner)
+        struct_depth = (p["neckline"] - p["stop_basis"]) / p["neckline"]
+        if struct_depth < 0.03 or struct_depth > 0.15:
             continue
 
         trade = build_trade(h4, p, atr_series, equity, risk_pct)
         if trade is None:
             continue
 
+        # Definitive depth gate on ATR-buffered stop
+        depth = (p["neckline"] - trade["stop"]) / p["neckline"]
+        if depth < 0.03 or depth > 0.12:
+            continue
+
         neckline   = p["neckline"]
         bars_since = last_bar - bi
         last_close = float(h4.loc[last_bar, "close"])
-        last_low   = float(h4.loc[last_bar, "low"])
         last_open  = float(h4.loc[last_bar, "open"])
+        ema9_now   = float(ema9_series.iloc[last_bar])
 
         in_pullback = any(
             float(h4.loc[i, "low"]) <= neckline * 1.005
@@ -96,6 +117,7 @@ def _scan_symbol_asof(
             in_pullback
             and last_close >= neckline
             and last_close > last_open
+            and last_close >= ema9_now  # momentum: price above 9 EMA (bull area)
         )
 
         setup = {
@@ -126,17 +148,43 @@ def _scan_symbol_asof(
     return {"watching": watching, "triggered": triggered}
 
 
+def _days_between(start_ts: str, end_ts: str) -> float | None:
+    """Calendar days between two ISO timestamp strings. Returns None on parse error."""
+    try:
+        a = datetime.fromisoformat(start_ts.replace("Z", "+00:00"))
+        b = datetime.fromisoformat(end_ts.replace("Z", "+00:00"))
+        return round((b - a).total_seconds() / 86400, 2)
+    except Exception:
+        return None
+
+
 def _check_exits(open_positions: list[dict], h4_bars_today: pd.DataFrame) -> tuple[list[dict], list[dict]]:
     """Check open positions against today's 4-hour bars.
     Returns (still_open, closed_today).
-    Conservative: stop takes priority if same bar touches both.
+    Conservative: stop takes priority if same bar touches both targets.
+
+    Trailing stop ladder:
+      - Default stop: original hard stop below pattern low
+      - Touch 1R → stop moves to entry (breakeven)
+      - Touch 2R → stop moves to 1R (lock in 1R), target becomes 3R (full win)
+      - Touch 3R → full win
     """
     still_open   = []
     closed_today = []
 
     for pos in open_positions:
+        pos    = dict(pos)
+        entry  = pos["entry"]
+        risk   = pos.get("risk_per_share", 0)
         stop   = pos["stop"]
-        target = pos["target_2R"]
+        target_1r = entry + risk
+        target_2r = entry + 2 * risk
+        target_3r = pos.get("target_3R", entry + 3 * risk)
+
+        # Carry forward milestone flags across days
+        max_price  = pos.get("max_price", entry)
+        touched_1r = pos.get("touched_1r", False)
+        touched_2r = pos.get("touched_2r", False)
         closed = False
 
         for _, row in h4_bars_today.iterrows():
@@ -144,26 +192,77 @@ def _check_exits(open_positions: list[dict], h4_bars_today: pd.DataFrame) -> tup
             hi = float(row["high"])
             ts = str(row["begins_at"])
 
-            if lo <= stop:
-                pos = dict(pos)
-                pos.update(outcome="loss", exit_price=round(stop, 4), exit_time=ts,
-                           pnl_per_share=round(stop - pos["entry"], 4),
-                           pnl_dollars=round((stop - pos["entry"]) * pos["shares"], 2),
-                           r_multiple=-1.0, status="closed")
+            if hi > max_price:
+                max_price = hi
+
+            # Advance milestone flags in order
+            if not touched_1r and hi >= target_1r:
+                touched_1r = True
+            if not touched_2r and hi >= target_2r:
+                touched_2r = True
+
+            # Effective stop rises with each milestone
+            if touched_2r:
+                effective_stop = target_2r   # stop at 2R, running to 3R
+            elif touched_1r:
+                effective_stop = entry        # stop at breakeven, running to 2R→3R
+            else:
+                effective_stop = stop         # original hard stop
+
+            if lo <= effective_stop:
+                exit_p = round(effective_stop, 4)
+                r_mult = round((exit_p - entry) / risk, 3) if risk else 0.0
+                if touched_2r:
+                    outcome    = "win_2r"       # locked in 2R, didn't reach 3R
+                    exit_reason = "2R_stop"
+                elif touched_1r:
+                    outcome    = "breakeven"
+                    exit_reason = "breakeven_stop"
+                else:
+                    outcome    = "loss"
+                    exit_reason = "stop"
+                days_held = _days_between(pos.get("entry_time", ""), ts)
+                pos.update(
+                    outcome=outcome,
+                    exit_price=exit_p,
+                    exit_time=ts,
+                    pnl_per_share=round(exit_p - entry, 4),
+                    pnl_dollars=round((exit_p - entry) * pos["shares"], 2),
+                    r_multiple=r_mult,
+                    max_price=round(max_price, 4),
+                    touched_1r=touched_1r,
+                    touched_2r=touched_2r,
+                    status="closed",
+                    exit_reason=exit_reason,
+                    days_held=days_held,
+                )
                 closed_today.append(pos)
                 closed = True
                 break
-            if hi >= target:
-                pos = dict(pos)
-                pos.update(outcome="win", exit_price=round(target, 4), exit_time=ts,
-                           pnl_per_share=round(target - pos["entry"], 4),
-                           pnl_dollars=round((target - pos["entry"]) * pos["shares"], 2),
-                           r_multiple=2.0, status="closed")
+            if hi >= target_3r:
+                days_held = _days_between(pos.get("entry_time", ""), ts)
+                pos.update(
+                    outcome="win",
+                    exit_price=round(target_3r, 4),
+                    exit_time=ts,
+                    pnl_per_share=round(target_3r - entry, 4),
+                    pnl_dollars=round((target_3r - entry) * pos["shares"], 2),
+                    r_multiple=3.0,
+                    max_price=round(max_price, 4),
+                    touched_1r=True,
+                    touched_2r=True,
+                    status="closed",
+                    exit_reason="3R_target",
+                    days_held=days_held,
+                )
                 closed_today.append(pos)
                 closed = True
                 break
 
         if not closed:
+            pos["max_price"]  = round(max_price, 4)
+            pos["touched_1r"] = touched_1r
+            pos["touched_2r"] = touched_2r
             still_open.append(pos)
 
     return still_open, closed_today
@@ -178,23 +277,26 @@ def run_backtest(
     equity: float = 1500.0,
     risk_pct: float = 0.02,
     from_date: str | None = None,
+    timeframe: str = "4hour",
 ) -> dict:
     REPORTS.mkdir(exist_ok=True)
-    backtest_dir = REPORTS / "backtest"
+    backtest_dir = REPORTS / f"backtest_{timeframe}"
     backtest_dir.mkdir(exist_ok=True)
+
+    print(f"Timeframe: {timeframe}  (freshness window: {FRESHNESS_BARS.get(timeframe, 12)} bars)", flush=True)
 
     # Load all symbol data once
     print("Loading data...", flush=True)
-    all_daily: dict[str, pd.DataFrame] = {}
-    all_h4:    dict[str, pd.DataFrame] = {}
+    all_daily:  dict[str, pd.DataFrame] = {}
+    all_entry:  dict[str, pd.DataFrame] = {}
     for sym in symbols:
-        dp = DATA / f"{sym}_day.json"
-        h4p = DATA / f"{sym}_4hour.json"
-        if dp.exists() and h4p.exists():
+        dp  = DATA / f"{sym}_day.json"
+        ep  = DATA / f"{sym}_{timeframe}.json"
+        if dp.exists() and ep.exists():
             all_daily[sym] = load(dp, sym)
-            all_h4[sym]    = load(h4p, sym)
+            all_entry[sym] = load(ep, sym)
 
-    trading_dates = _trading_dates()
+    trading_dates = _trading_dates(timeframe)
     if from_date:
         trading_dates = [d for d in trading_dates if d >= from_date]
 
@@ -210,8 +312,8 @@ def run_backtest(
         # 1. Check exits for all open positions on today's bars
         todays_bars: dict[str, pd.DataFrame] = {}
         for sym in {p["symbol"] for p in open_positions}:
-            if sym in all_h4:
-                df = all_h4[sym]
+            if sym in all_entry:
+                df = all_entry[sym]
                 mask = pd.to_datetime(df["begins_at"]).dt.strftime("%Y-%m-%d") == date_str
                 todays_bars[sym] = df[mask].reset_index(drop=True)
 
@@ -235,9 +337,10 @@ def run_backtest(
         new_entries   = []
         new_watching  = []
         for sym in symbols:
-            if sym not in all_daily or sym not in all_h4:
+            if sym not in all_daily or sym not in all_entry:
                 continue
-            result = _scan_symbol_asof(sym, all_daily[sym], all_h4[sym], date_str, equity, risk_pct)
+            result = _scan_symbol_asof(sym, all_daily[sym], all_entry[sym], date_str, equity, risk_pct,
+                                       timeframe=timeframe)
             for t in result["triggered"]:
                 key = (t["symbol"], t["type"], t.get("entry_time"))
                 if key not in seen_entries:
@@ -266,11 +369,14 @@ def run_backtest(
               f"{len(open_positions):3d} open", flush=True)
 
     # Mark remaining open positions as open (MTM at last close)
+    last_date_ts = trading_dates[-1] + "T23:59:00Z"
     for pos in open_positions:
         sym = pos["symbol"]
-        if sym in all_h4:
-            df = all_h4[sym]
-            last_close = float(df.iloc[-1]["close"])
+        if sym in all_entry:
+            df = all_entry[sym]
+            last_bar_ts  = str(df.iloc[-1]["begins_at"])
+            last_close   = float(df.iloc[-1]["close"])
+            days_open    = _days_between(pos.get("entry_time", ""), last_bar_ts)
             pos = dict(pos)
             pos.update(
                 outcome="open",
@@ -279,13 +385,17 @@ def run_backtest(
                 pnl_dollars=round((last_close - pos["entry"]) * pos["shares"], 2),
                 r_multiple=round((last_close - pos["entry"]) / pos["risk_per_share"], 3)
                     if pos["risk_per_share"] else 0.0,
+                days_open=days_open,
             )
         all_closed.append(pos)
 
-    # Summary stats
-    closed_only = [t for t in all_closed if t.get("outcome") in ("win", "loss")]
-    wins   = [t for t in closed_only if t["outcome"] == "win"]
-    losses = [t for t in closed_only if t["outcome"] == "loss"]
+    # Summary stats — outcomes: win (3R), win_1r (stopped at 1R floor), breakeven (0R), loss (-1R)
+    # outcomes: win (3R), win_2r (stopped at 2R floor), breakeven (0R), loss (-1R)
+    closed_only = [t for t in all_closed if t.get("outcome") in ("win", "win_2r", "loss", "breakeven")]
+    wins       = [t for t in closed_only if t["outcome"] == "win"]
+    wins_2r    = [t for t in closed_only if t["outcome"] == "win_2r"]
+    losses     = [t for t in closed_only if t["outcome"] == "loss"]
+    breakevens = [t for t in closed_only if t["outcome"] == "breakeven"]
     n = len(closed_only)
     total_pnl    = sum(t["pnl_dollars"] for t in all_closed)
     closed_pnl   = sum(t["pnl_dollars"] for t in closed_only)
@@ -297,9 +407,12 @@ def run_backtest(
         "symbols_scanned":  len(symbols),
         "total_entries":    len(all_closed),
         "closed_trades":    n,
-        "wins":             len(wins),
+        "wins_3r":          len(wins),
+        "wins_2r":          len(wins_2r),
         "losses":           len(losses),
-        "win_rate":         round(len(wins) / n, 3) if n else 0.0,
+        "breakevens":       len(breakevens),
+        "win_rate":         round((len(wins) + len(wins_2r)) / n, 3) if n else 0.0,
+        "full_win_rate":    round(len(wins) / n, 3) if n else 0.0,
         "avg_R":            round(sum(t["r_multiple"] for t in closed_only) / n, 3) if n else 0.0,
         "total_R":          round(sum(t["r_multiple"] for t in closed_only), 2),
         "closed_pnl":       round(closed_pnl, 2),
@@ -308,10 +421,40 @@ def run_backtest(
         "open_positions":   len([t for t in all_closed if t.get("outcome") == "open"]),
         "equity_start":     equity,
         "equity_end":       round(equity + closed_pnl, 2),
+        # By pattern
+        "by_pattern": {
+            ptype: {
+                "wins_3r":   sum(1 for t in wins if t.get("type") == ptype),
+                "wins_2r":   sum(1 for t in wins_2r if t.get("type") == ptype),
+                "losses":    sum(1 for t in losses if t.get("type") == ptype),
+                "breakevens":sum(1 for t in breakevens if t.get("type") == ptype),
+                "avg_R":     round(
+                    sum(t["r_multiple"] for t in closed_only if t.get("type") == ptype) /
+                    max(1, sum(1 for t in closed_only if t.get("type") == ptype)), 3),
+                "avg_days_held": round(
+                    sum(t["days_held"] for t in closed_only
+                        if t.get("type") == ptype and t.get("days_held") is not None) /
+                    max(1, sum(1 for t in closed_only
+                        if t.get("type") == ptype and t.get("days_held") is not None)), 1),
+            }
+            for ptype in ["inverse_hns", "double_bottom"]
+        },
+        "avg_days_held": {
+            "wins_3r":   round(sum(t["days_held"] for t in wins if t.get("days_held") is not None) /
+                               max(1, sum(1 for t in wins if t.get("days_held") is not None)), 1),
+            "wins_2r":   round(sum(t["days_held"] for t in wins_2r if t.get("days_held") is not None) /
+                               max(1, sum(1 for t in wins_2r if t.get("days_held") is not None)), 1),
+            "losses":    round(sum(t["days_held"] for t in losses if t.get("days_held") is not None) /
+                               max(1, sum(1 for t in losses if t.get("days_held") is not None)), 1),
+            "breakevens":round(sum(t["days_held"] for t in breakevens if t.get("days_held") is not None) /
+                               max(1, sum(1 for t in breakevens if t.get("days_held") is not None)), 1),
+        },
     }
 
-    BACKTEST_LEDGER.write_text(json.dumps(all_closed, indent=2))
-    (REPORTS / "backtest_summary.json").write_text(json.dumps(summary, indent=2))
+    ledger_path  = DATA / f"paper_backtest_{timeframe}.json"
+    summary_path = REPORTS / f"backtest_summary_{timeframe}.json"
+    ledger_path.write_text(json.dumps(all_closed, indent=2))
+    summary_path.write_text(json.dumps(summary, indent=2))
 
     return summary
 
@@ -319,19 +462,34 @@ def run_backtest(
 if __name__ == "__main__":
     args = sys.argv[1:]
     from_date = None
+    timeframe = "4hour"
     if "--from" in args:
         from_date = args[args.index("--from") + 1]
+    if "--timeframe" in args:
+        timeframe = args[args.index("--timeframe") + 1]
+    if timeframe not in FRESHNESS_BARS:
+        print(f"Unknown timeframe '{timeframe}'. Choose from: {list(FRESHNESS_BARS)}", file=sys.stderr)
+        sys.exit(1)
 
     symbols = (ROOT / "data" / "universe.txt").read_text().split()
-    summary = run_backtest(symbols, from_date=from_date)
+    summary = run_backtest(symbols, from_date=from_date, timeframe=timeframe)
 
     print(f"\n{'='*60}")
-    print(f"BACKTEST SUMMARY  {summary['from_date']} → {summary['to_date']}")
+    print(f"BACKTEST SUMMARY [{timeframe}]  {summary['from_date']} → {summary['to_date']}")
     print(f"{'='*60}")
     print(f"Symbols scanned:   {summary['symbols_scanned']}")
     print(f"Total entries:     {summary['total_entries']}")
-    print(f"Closed trades:     {summary['closed_trades']}  ({summary['wins']}W / {summary['losses']}L)")
-    print(f"Win rate:          {summary['win_rate']:.1%}")
+    print(f"Closed trades:     {summary['closed_trades']}  "
+          f"({summary['wins_3r']}W3R / {summary['wins_2r']}W2R / {summary['losses']}L / {summary['breakevens']}BE)")
+    print(f"Win rate (any):    {summary['win_rate']:.1%}   Full 3R rate: {summary['full_win_rate']:.1%}")
+    for ptype, stats in summary.get("by_pattern", {}).items():
+        tot = stats["wins_3r"] + stats["wins_2r"] + stats["losses"] + stats["breakevens"]
+        wr = (stats["wins_3r"] + stats["wins_2r"]) / tot if tot else 0
+        print(f"  {ptype:<18} {stats['wins_3r']}W3R/{stats['wins_2r']}W2R/{stats['losses']}L/{stats['breakevens']}BE  "
+              f"wr={wr:.1%}  avgR={stats['avg_R']:+.3f}  avg_days={stats['avg_days_held']:.1f}")
+    adh = summary.get("avg_days_held", {})
+    print(f"Avg days held:     W3R={adh.get('wins_3r','?')}d  W2R={adh.get('wins_2r','?')}d  "
+          f"L={adh.get('losses','?')}d  BE={adh.get('breakevens','?')}d")
     print(f"Avg R:             {summary['avg_R']:.2f}R")
     print(f"Total R:           {summary['total_R']:.2f}R")
     print(f"Closed P&L:        ${summary['closed_pnl']:+.2f}")

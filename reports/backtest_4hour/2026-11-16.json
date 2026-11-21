@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-16",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 49,
+  "entries": [
+    {
+      "symbol": "CMCSA",
+      "type": "inverse_hns",
+      "neckline": 25.45,
+      "stop": 23.383,
+      "target_2R": 30.0339,
+      "risk_per_share": 2.217,
+      "shares": 13.532,
+      "break_time": "2026-11-16T14:30:00Z",
+      "bars_since_break": 1,
+      "in_pullback": true,
+      "last_close": 25.605,
+      "last_bar_time": "2026-11-16T18:30:00Z",
+      "scan_date": "2026-11-16",
+      "entry": 25.605,
+      "entry_time": "2026-11-16T18:30:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 3
+}

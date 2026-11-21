@@ -1,0 +1,28 @@
+{
+  "date": "2026-06-16",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 20,
+  "entries": [
+    {
+      "symbol": "V",
+      "type": "inverse_hns",
+      "neckline": 331.67,
+      "stop": 312.219,
+      "target_2R": 372.7619,
+      "risk_per_share": 20.181,
+      "shares": 1.1282,
+      "break_time": "2026-06-16T14:00:00Z",
+      "bars_since_break": 1,
+      "in_pullback": true,
+      "last_close": 333.19,
+      "last_bar_time": "2026-06-16T18:00:00Z",
+      "scan_date": "2026-06-16",
+      "entry": 333.19,
+      "entry_time": "2026-06-16T18:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 6
+}

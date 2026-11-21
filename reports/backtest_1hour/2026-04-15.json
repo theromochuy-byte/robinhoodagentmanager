@@ -1,0 +1,46 @@
+{
+  "date": "2026-04-15",
+  "new_entries": 2,
+  "closed_today": 0,
+  "open_count": 18,
+  "entries": [
+    {
+      "symbol": "AMZN",
+      "type": "inverse_hns",
+      "neckline": 247.775,
+      "stop": 234.2783,
+      "target_2R": 276.0132,
+      "risk_per_share": 13.9116,
+      "shares": 1.5109,
+      "break_time": "2026-04-14T15:00:00Z",
+      "bars_since_break": 10,
+      "in_pullback": true,
+      "last_close": 248.755,
+      "last_bar_time": "2026-04-15T19:00:00Z",
+      "scan_date": "2026-04-15",
+      "entry": 248.755,
+      "entry_time": "2026-04-15T19:00:00Z",
+      "status": "open"
+    },
+    {
+      "symbol": "NFLX",
+      "type": "inverse_hns",
+      "neckline": 99.49,
+      "stop": 91.3854,
+      "target_2R": 116.6592,
+      "risk_per_share": 8.4246,
+      "shares": 3.561,
+      "break_time": "2026-04-09T14:00:00Z",
+      "bars_since_break": 29,
+      "in_pullback": true,
+      "last_close": 107.355,
+      "last_bar_time": "2026-04-15T19:00:00Z",
+      "scan_date": "2026-04-15",
+      "entry": 107.355,
+      "entry_time": "2026-04-15T19:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 5
+}

@@ -1,0 +1,43 @@
+# Shadow universe: sector ETFs + high-RS momentum names
+# Scanned identically to the main universe but results go to
+# data/paper_trades_shadow.json — never touches paper_trades_live.json.
+#
+# ── Sector ETFs ───────────────────────────────────────────────────────────────
+XLK
+XLF
+XLE
+XLV
+XLI
+XLY
+XLP
+XLU
+XLB
+XLRE
+XLC
+#
+# ── High-RS momentum ──────────────────────────────────────────────────────────
+PLTR
+CRWD
+APP
+TTD
+SNOW
+UBER
+DASH
+COIN
+MELI
+NU
+IOT
+AXON
+CELH
+DECK
+LULU
+TMUS
+VST
+NRG
+CEG
+GEV
+PWR
+MTDR
+OVV
+FANG
+MPC

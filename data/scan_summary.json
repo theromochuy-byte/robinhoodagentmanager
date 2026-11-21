@@ -1,0 +1,57 @@
+{
+  "as_of": "2026-11-20T21:48:02.125380+00:00",
+  "scan_date": "2026-11-20",
+  "regime": {
+    "spy_ema20": "bull",
+    "vix": 14.55,
+    "high_vix": false
+  },
+  "sector_scores": {
+    "XLB": 3,
+    "XLC": 3,
+    "XLE": 3,
+    "XLF": 3,
+    "XLI": 3,
+    "XLK": 3,
+    "XLP": 3,
+    "XLRE": 3,
+    "XLU": 3,
+    "XLV": 3,
+    "XLY": 3
+  },
+  "watching": [
+    {
+      "symbol": "DIS",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.1489,
+      "bars_since_break": 27,
+      "neckline": 120.8,
+      "last_price": 117.96,
+      "stop": 115.0164,
+      "target_1R": 128.2836,
+      "target_2R": 134.9173
+    },
+    {
+      "symbol": "CL",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.0497,
+      "bars_since_break": 34,
+      "neckline": 101.18,
+      "last_price": 98.71,
+      "stop": 96.7411,
+      "target_1R": 106.0589,
+      "target_2R": 110.7179
+    }
+  ],
+  "triggered_today": [],
+  "new_entries": 0,
+  "skipped": [],
+  "open_positions": 2,
+  "equity": {
+    "starting": 2500.0,
+    "in_use": 1162.67,
+    "available": 1337.33
+  }
+}
