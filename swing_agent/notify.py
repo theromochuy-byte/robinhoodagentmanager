@@ -181,10 +181,17 @@ def build_digest(
         if t.get("status") in _closed_statuses
     )
 
-    # Load equity state
+    # Load equity state and compute capital in use from open positions
     equity = {"starting_equity": 2500.0, "capital_in_use": 0.0, "available_equity": 2500.0}
     if EQUITY_FILE.exists():
         equity = json.loads(EQUITY_FILE.read_text())
+    starting_eq = equity.get("starting_equity", 2500.0)
+    capital_in_use = sum(
+        t.get("entry", 0) * t.get("shares", 0)
+        for t in open_trades
+    )
+    equity["capital_in_use"] = round(capital_in_use, 2)
+    equity["available_equity"] = round(starting_eq - capital_in_use, 2)
 
     # Attach time-to-2R estimates from the ledger to near_2r items
     near_2r_with_eta = []
