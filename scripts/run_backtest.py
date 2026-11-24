@@ -265,29 +265,37 @@ def scan_symbol(symbol: str, equity: float) -> list[dict]:
         if qs < MIN_QUALITY_SCORE or qs > QUALITY_SCORE_CAP:
             continue
 
-        # Build entry-A trade (needed for retest entry construction)
+        # Build Entry A (breakout: close of neckline break bar)
         trade_a = build_trade(h1, p, atr_series, equity, RISK_PCT)
         if trade_a is None:
             continue
+        trade_a["symbol"]        = symbol
+        trade_a["timeframe"]     = "1h"
+        trade_a["quality_score"] = qs
+        trade_a["pattern_depth"] = round(depth, 4)
+        trade_a["entry_style"]   = "breakout"
 
-        # Entry B — retest only (matches live sample: 100% retest entries)
+        # Build Entry B (retest: pullback to neckline + bullish close)
         trade_b = build_retest_trade(h1, trade_a, atr_series)
-        if trade_b is None:
-            # Fall back to entry A if no retest materialises
-            trade_b = dict(trade_a)
-            trade_b["entry_style"] = "breakout"
+        if trade_b is not None:
+            trade_b["symbol"]        = symbol
+            trade_b["timeframe"]     = "1h"
+            trade_b["quality_score"] = qs
+            trade_b["pattern_depth"] = round(depth, 4)
+            trade_b["entry_style"]   = "retest"
 
-        trade_b["symbol"]        = symbol
-        trade_b["timeframe"]     = "1h"
-        trade_b["quality_score"] = qs
-        trade_b["pattern_depth"] = round(depth, 4)
+        # Resolve both; track seen_until from Entry A (earlier exit = safe baseline)
+        resolved_a = resolve_current(h1, trade_a)
+        trades.append(resolved_a)
 
-        resolved = resolve_current(h1, trade_b)
-        trades.append(resolved)
+        if trade_b is not None:
+            resolved_b = resolve_current(h1, trade_b)
+            trades.append(resolved_b)
 
-        # Block same pattern type until this setup closes
-        if resolved["outcome"] != "open":
-            idx_list = h1.index[h1["begins_at"] == resolved["exit_time"]].tolist()
+        # Advance the overlap cursor based on Entry A exit (the earlier one)
+        ref = resolved_a
+        if ref["outcome"] != "open":
+            idx_list = h1.index[h1["begins_at"] == ref["exit_time"]].tolist()
             seen_until[ptype] = idx_list[0] if idx_list else bi + 1
         else:
             seen_until[ptype] = len(h1)
@@ -358,39 +366,35 @@ def run(symbols: list[str]) -> dict:
 
     all_trades.sort(key=lambda t: t.get("entry_time", ""))
 
-    # Overall
-    overall = _summarize(all_trades, "Overall")
+    # Separate by entry style
+    entry_a = [t for t in all_trades if t.get("entry_style") == "breakout"]
+    entry_b = [t for t in all_trades if t.get("entry_style") == "retest"]
+    # Paired: same pattern, both entries present
+    paired_patterns = len(entry_a)  # one entry_a per pattern
 
-    # By pattern
-    by_pattern = {
-        pt: _summarize([t for t in all_trades if t.get("type") == pt], pt)
-        for pt in ("inverse_hns", "double_bottom", "cup_and_handle")
-    }
+    overall_a = _summarize(entry_a, "Entry A (breakout)")
+    overall_b = _summarize(entry_b, "Entry B (retest)")
+    overall   = _summarize(all_trades, "Overall (all)")
 
-    # By quality bucket
-    buckets = [
-        ("QS 0.45-0.48", 0.45, 0.48),
-        ("QS 0.48-0.50", 0.48, 0.50),
-        ("QS 0.50-0.52", 0.50, 0.52),
-    ]
-    by_qs = {
-        label: _summarize(
-            [t for t in all_trades if lo <= t.get("quality_score", 0) < hi],
-            label
-        )
-        for label, lo, hi in buckets
-    }
+    # By pattern × entry style
+    by_pattern_entry: dict = {}
+    for pt in ("inverse_hns", "double_bottom", "cup_and_handle"):
+        by_pattern_entry[pt] = {
+            "A": _summarize([t for t in entry_a if t.get("type") == pt], f"{pt}/A"),
+            "B": _summarize([t for t in entry_b if t.get("type") == pt], f"{pt}/B"),
+        }
 
-    # Fast-loss impact: what would trades have been without it
-    without_fl = [t for t in all_trades if t.get("exit_reason") != "fast_loss"]
-    with_fl    = [t for t in all_trades if t.get("exit_reason") == "fast_loss"]
+    # Fast-loss
+    with_fl = [t for t in all_trades if t.get("exit_reason") == "fast_loss"]
 
     report = {
-        "run_time":   datetime.now(timezone.utc).isoformat(),
-        "symbols":    symbols,
-        "overall":    overall,
-        "by_pattern": by_pattern,
-        "by_qs_bucket": by_qs,
+        "run_time":        datetime.now(timezone.utc).isoformat(),
+        "symbols":         symbols,
+        "paired_patterns": paired_patterns,
+        "entry_a":         overall_a,
+        "entry_b":         overall_b,
+        "overall":         overall,
+        "by_pattern_entry": by_pattern_entry,
         "fast_loss_trades": len(with_fl),
         "fast_loss_avg_r": round(
             sum(t["r_multiple"] for t in with_fl) / len(with_fl), 3
@@ -406,18 +410,19 @@ def run(symbols: list[str]) -> dict:
     (REPORTS / "backtest_latest.json").symlink_to(out.name)
 
     # Print
-    print("\n=== RESULTS ===")
+    print(f"\n=== RESULTS ({paired_patterns} patterns, each tested A + B) ===")
+    _print_summary(overall_a)
+    _print_summary(overall_b)
+    print()
     _print_summary(overall)
     print("\nBy pattern:")
-    for s in by_pattern.values():
-        _print_summary(s)
-    print("\nBy quality score bucket:")
-    for s in by_qs.values():
-        _print_summary(s)
+    for pt, d in by_pattern_entry.items():
+        for s in d.values():
+            if s["n"] > 0:
+                _print_summary(s)
     if with_fl:
         avg = report["fast_loss_avg_r"]
-        print(f"\nFast-loss exits: {len(with_fl)} trades @ avg {avg:+.3f}R "
-              f"(would have held longer without the rule)")
+        print(f"\nFast-loss exits: {len(with_fl)} trades @ avg {avg:+.3f}R")
     print(f"\nFull results: {out}")
 
     return report
