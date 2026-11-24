@@ -43,6 +43,14 @@ PARTIAL_EXIT_R: float    = 1.0   # first exit at this R level
 PARTIAL_EXIT_FRAC: float = 0.5   # fraction of shares to exit at PARTIAL_EXIT_R
 BREAKEVEN_BUFFER_R: float = 0.15 # stop moves to entry + this fraction of risk
 
+# ── Fast-loss quick exit ───────────────────────────────────────────────────────
+# If a trade is down >= FAST_LOSS_R (expressed as a negative R multiple) within
+# FAST_LOSS_DAYS trading days of entry and has NOT yet reached 1R (no partial exit),
+# close it immediately rather than waiting for the stop or time stop.
+# Set FAST_LOSS_R = 0.0 to disable.
+FAST_LOSS_R: float    = -0.75  # R threshold to trigger quick exit (negative = loss)
+FAST_LOSS_DAYS: int   = 3      # only fires within this many trading days of entry
+
 # ── Post-partial-exit time stop ────────────────────────────────────────────────
 # After the 50% partial exit fires, the remaining half is exempt from the normal
 # TIME_STOP_TRADING_DAYS clock. But if it stalls and never reaches 1.5R, it ties

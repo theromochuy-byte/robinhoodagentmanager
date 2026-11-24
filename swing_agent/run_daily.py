@@ -104,6 +104,7 @@ from swing_agent.config import (
     RISK_PCT, STARTING_EQUITY,
     TARGET_FULL_R, PARTIAL_EXIT_FRAC, BREAKEVEN_BUFFER_R,
     PARTIAL_EXIT_TIME_STOP_DAYS,
+    FAST_LOSS_R, FAST_LOSS_DAYS,
 )
 
 
@@ -285,6 +286,32 @@ def check_exits(
             touched_1r       = True
             newly_touched_1r = True
             t["touched_1r"]  = True
+
+        # Fast-loss quick exit: close early if down >= FAST_LOSS_R within
+        # FAST_LOSS_DAYS trading days and 1R has never been touched.
+        if FAST_LOSS_R < 0 and not touched_1r and not partial_exit_done:
+            entry_time_str = t.get("entry_time", "")
+            try:
+                entry_dt   = datetime.fromisoformat(entry_time_str.replace("Z", "+00:00"))
+                days_held  = (datetime.now(timezone.utc) - entry_dt).total_seconds() / 86400
+                current_r  = (price - entry) / risk if risk > 0 else 0.0
+                if days_held * (5 / 7) <= FAST_LOSS_DAYS and current_r <= FAST_LOSS_R:
+                    pnl = round((price - entry) * t.get("shares", 0), 2)
+                    t["status"]       = "stopped"
+                    t["exit_price"]   = price
+                    t["exit_reason"]  = "fast_loss"
+                    t["exit_time"]    = now
+                    t["realized_pnl"] = pnl
+                    t["days_held"]    = round(days_held, 1)
+                    _stamp_shadow_retest_on_close(t, price, "fast_loss")
+                    _stamp_bars_since_break(t, now)
+                    closes.append(t)
+                    print(f"  [FastLoss] {sym}: closed at ${price:.2f} ({current_r:.2f}R) "
+                          f"after {days_held * (5/7):.1f} trading days "
+                          f"(threshold {FAST_LOSS_R}R within {FAST_LOSS_DAYS}d)")
+                    continue
+            except Exception:
+                pass
 
         # Execute partial exit if 1R has been touched and not yet done.
         # This handles both the first time 1R is crossed THIS run and the
