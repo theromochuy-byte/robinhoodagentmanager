@@ -485,7 +485,7 @@ def scan_symbol(
 
         # 4. Day of week at break bar (0=Mon … 4=Fri)
         try:
-            entry_day_of_week: int | None = int(pd.Timestamp(str(p["break_time"])).dayofweek)
+            entry_day_of_week: int | None = int(pd.Timestamp(str(p["break_time"])).day_of_week)
         except Exception:
             entry_day_of_week = None
 
