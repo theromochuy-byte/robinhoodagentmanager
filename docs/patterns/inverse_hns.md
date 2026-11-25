@@ -156,6 +156,25 @@ This is arguably the best-possible context because the larger trend is already c
 
 ---
 
+## Ascending Triangle Backtest Summary (2026-11-25)
+
+After fixing type-specific depth bounds (0.5%–4% for ascending triangles vs 3%–12% for inverse HnS):
+
+| Entry | n | Win% | Avg R | Fast-loss rate |
+|-------|---|------|-------|----------------|
+| A (breakout) | 109 | 45% | -0.129R | 27% |
+| B (retest)   | 87  | 40% | -0.209R | 33% |
+
+Win rates are acceptable but **avg R is negative on both entries**. Fast-loss exits (29 each) are the primary drag — 33% fast-loss rate vs only 9% for inverse HnS/B.
+
+**Root cause:** The -0.75R fast-loss rule was calibrated for inverse HnS retest entries where the neckline is proven support. Ascending triangles have tighter stops (0.5-2% depth), so a small adverse move hits -0.75R quickly. The fast-loss threshold that filters noise for loose-stop patterns is too aggressive for tight-stop patterns.
+
+**Decision:** Do not add ascending triangles to the live scanner yet. Need to either:
+1. Exempt ascending triangles from the fast-loss rule, or use a looser threshold (e.g., -1.5R / 5 days)
+2. Or validate that the tight-stop structure genuinely provides edge without fast-loss interference
+
+---
+
 ## Next Backtest Experiments (priority order)
 
 1. **Raise depth floor to 4%** — StockDataAnalytics shows < 4% wins only 32.8%
