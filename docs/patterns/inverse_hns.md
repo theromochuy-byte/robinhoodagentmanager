@@ -152,7 +152,7 @@ This is arguably the best-possible context because the larger trend is already c
 | Depth floor > 3% (current) → raise to 4% | ❌ Not yet | StockDataAnalytics data |
 | Peak2 ≥ peak1 (upward-sloping neckline) | ❌ Tested, **rejected** — eliminated all winners | Moderate in literature; inverse in our data |
 | Right shoulder span ≤ 1.5× left-to-head span | ❌ Tested, **rejected** — eliminated all winners | Moderate in literature; inverse in our data |
-| Retest candle volume drying up | ❌ Not yet | Weak — mentioned, not quantified |
+| Retest candle volume drying up (< 20-bar avg AND < breakout bar) | ❌ Next to implement | Moderate — two independent sources confirm the concept |
 
 ---
 
@@ -161,8 +161,9 @@ This is arguably the best-possible context because the larger trend is already c
 1. **Raise depth floor to 4%** — StockDataAnalytics shows < 4% wins only 32.8%
 2. ~~**Add peak2 ≥ peak1 neckline slope check**~~ — **TESTED 2026-11-25: rejected.** Eliminated all 5 winners. Hypothesis: in uptrend pullback context, daily bias already provides the slope — the 1H neckline doesn't need to slope up. The slope filter is a full-reversal concept.
 3. ~~**Add right shoulder time symmetry check**~~ — **TESTED 2026-11-25: rejected.** Same result — Bulkowski's data is daily charts; 1H pullbacks have different timing dynamics.
-4. **Volume at retest candle** — require retest bar volume < 20-bar avg (drying up = healthy)
+4. **Volume at retest candle** — require retest bar volume < 20-bar avg AND < breakout bar volume; implement in `simulator.py build_retest_trade()`
 5. **Get to n ≥ 30 inverse HnS + retest** before trusting any win-rate figures
+6. **Fibonacci retracement depth** (lower priority) — 1H correction should be 38–61.8% of prior daily up-leg
 
 ---
 
