@@ -40,6 +40,9 @@ jobs:
       - name: Run ETF rotation backtest (results go to the job log)
         run: python scripts/etf_rotation_test.py
 
+      - name: Run ETF rotation live-realism audit (results go to the job log)
+        run: python scripts/etf_audit.py
+
       - run: tar -czf hist_long.tar.gz -C data hist_long
 
       - uses: actions/upload-artifact@v4
