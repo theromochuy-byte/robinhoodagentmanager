@@ -93,6 +93,7 @@ def rows_for(symbol: str, idx: pd.Series) -> list[dict]:
         out.append({
             "symbol": symbol, "type": p["type"], "break_time": str(p["break_time"]),
             "entry_time": tb["entry_time"], "exit_time": res["exit_time"],
+            "entry": tb["entry"], "risk_per_share": tb["risk_per_share"], "r": res["r_multiple"],
             "net_r": round(net_r, 3), "exit": res["exit_reason"], "depth": round(depth, 4), "qs": qs,
             "pattern": p["type"] in ("inverse_hns", "cup_and_handle"),
             "bias": bool(bias_asof(bias, p["break_time"])),

@@ -95,6 +95,28 @@ def hns_short_trades() -> list[dict]:
             for t in raw if t["type"] == "hns" and t.get("entry_style") == "retest"]
 
 
+def funnel_trades(keep) -> list[dict]:
+    """Pattern retest trades from reports/filter_funnel.json that pass `keep`, one open per stock."""
+    from filter_funnel import ok, one_at_a_time
+    rows = json.load(open(REPORTS / "filter_funnel.json"))
+    picked = one_at_a_time([r for r in rows if keep(r, ok)])
+    return [{**r, "side": "long", "rank": 0} for r in picked]
+
+
+RELAXED = {
+    "patterns_live_filters": lambda r, ok: all(ok(r, g) for g in ("pattern", "bias", "stack", "rs", "depth", "qs")),
+    "patterns_relaxed": lambda r, ok: ok(r, "pattern") and ok(r, "depth"),
+    "patterns_relaxed_uptrend": lambda r, ok: ok(r, "pattern") and ok(r, "depth") and ok(r, "bias"),
+    "patterns_relaxed_no_uptrend": lambda r, ok: ok(r, "pattern") and ok(r, "depth") and not ok(r, "bias"),
+}
+
+
+def at_close(trades: list[dict]) -> list[dict]:
+    """Daily-bar trades fill at the close; stamp them 20:00Z so they sort after same-day 1H bars."""
+    return [{**t, "entry_time": t["entry_time"][:10] + "T20:00:00Z",
+             "exit_time": t["exit_time"][:10] + "T20:00:00Z"} for t in trades]
+
+
 def pullback_trades(side: str, since: str | None) -> list[dict]:
     syms = sorted(p.stem.split("_")[0] for p in CACHE.glob("*_day.json"))
     out = []
@@ -202,6 +224,10 @@ def main() -> None:
         "pullback_long_2y": simulate(pb_long_all, regime, full_start),
         "pullback_long_short_2y": simulate(pb_long_all + pb_short_all, regime, full_start),
     }
+    for name, keep in RELAXED.items():
+        runs[name] = simulate(funnel_trades(keep), regime, WINDOW_START)
+    runs["pullback_plus_patterns_relaxed"] = simulate(
+        at_close(pb_long_all) + funnel_trades(RELAXED["patterns_relaxed"]), regime, WINDOW_START)
     regime_days = regime[regime.index >= full_start].value_counts().to_dict()
     regime_days_window = regime[regime.index >= WINDOW_START].value_counts().to_dict()
     out = {"settings": {"start_equity": STARTING_EQUITY, "risk_pct": RISK_PCT, "max_open": MAX_OPEN,
