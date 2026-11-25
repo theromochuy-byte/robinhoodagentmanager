@@ -354,6 +354,97 @@ def detect_cup_and_handle(
     return _dedupe(patterns)
 
 
+def detect_ascending_triangle(
+    df: pd.DataFrame,
+    left: int = 3,
+    right: int = 3,
+    flat_tol: float = 0.015,
+    min_highs: int = 2,
+    min_lows: int = 2,
+    min_span: int = 10,
+    max_span: int = 100,
+) -> list[dict]:
+    """Flat upper resistance touched 2+ times with a series of ascending lows.
+
+    flat_tol: max relative spread between resistance highs (1.5% = "flat").
+    min_highs: minimum touches at the resistance level (default 2).
+    min_lows: minimum higher-low pivots in the pattern span (default 2).
+    min_span / max_span: bar range from first resistance touch to break.
+    Volume: breakout bar must exceed rolling average when data available.
+
+    stop_basis = the last higher low before the break.
+    neckline   = midpoint of the two resistance highs.
+    """
+    marked = swing_points(df, left, right)
+    highs  = pivots(marked, "high")
+    lows   = pivots(marked, "low")
+    vol_avg = _vol_avg(df)
+    patterns = []
+
+    for i in range(len(highs)):
+        for j in range(i + 1, len(highs)):
+            h1, h2 = highs[i], highs[j]
+            span = h2["index"] - h1["index"]
+            if span < min_span or span > max_span:
+                continue
+
+            resistance = (h1["price"] + h2["price"]) / 2
+            if abs(h2["price"] - h1["price"]) / resistance > flat_tol:
+                continue
+
+            # At least one low must sit between the two resistance touches
+            between_lows = [
+                l for l in lows
+                if h1["index"] < l["index"] < h2["index"] and l["price"] < resistance
+            ]
+            if not between_lows:
+                continue
+
+            # Confirm breakout above resistance after the second high
+            brk = _confirm_break(df, resistance, h2["index"])
+            if not brk:
+                continue
+
+            # Collect all lows in the full span, below resistance
+            span_lows = [
+                l for l in lows
+                if h1["index"] <= l["index"] < brk["break_index"]
+                and l["price"] < resistance
+            ]
+            if len(span_lows) < min_lows:
+                continue
+
+            # Lows must be ascending: last low strictly higher than first
+            if span_lows[-1]["price"] <= span_lows[0]["price"]:
+                continue
+
+            # Volume: breakout bar above rolling average
+            if vol_avg is not None:
+                bi = brk["break_index"]
+                avg_at_brk = vol_avg.iloc[bi] if bi < len(vol_avg) else None
+                vb = float(df["volume"].iloc[bi])
+                if avg_at_brk and vb < avg_at_brk:
+                    continue
+
+            patterns.append(
+                {
+                    "type": "ascending_triangle",
+                    "neckline": resistance,
+                    "stop_basis": span_lows[-1]["price"],
+                    "break_index": brk["break_index"],
+                    "break_time": brk["break_time"],
+                    "pivots": {
+                        "resistance_high1": h1,
+                        "resistance_high2": h2,
+                        "last_higher_low": span_lows[-1],
+                        "neckline_price": resistance,
+                    },
+                }
+            )
+
+    return _dedupe(patterns)
+
+
 def _dedupe(patterns: list[dict]) -> list[dict]:
     """Keep one pattern per break bar (the tightest stop), avoid duplicate signals."""
     by_break: dict[int, dict] = {}

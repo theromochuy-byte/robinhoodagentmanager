@@ -1,6 +1,6 @@
 {
   "report": {
-    "run_time": "2026-11-25T00:26:30.518556+00:00",
+    "run_time": "2026-11-25T01:32:03.376505+00:00",
     "symbols": [
       "AON",
       "APA",
@@ -27,51 +27,51 @@
       "VRTX",
       "ZS"
     ],
-    "paired_patterns": 28,
+    "paired_patterns": 29,
     "entry_a": {
       "label": "Entry A (breakout)",
-      "n": 28,
+      "n": 29,
       "wins": 12,
-      "losses": 16,
-      "win_rate": 0.429,
-      "avg_R": -0.103,
+      "losses": 17,
+      "win_rate": 0.414,
+      "avg_R": -0.156,
       "exit_breakdown": {
         "time_stop": 16,
         "1.5R": 2,
         "stop": 4,
-        "fast_loss": 2,
+        "fast_loss": 3,
         "be_stop": 4
       },
       "open": 0
     },
     "entry_b": {
       "label": "Entry B (retest)",
-      "n": 18,
+      "n": 19,
       "wins": 7,
-      "losses": 11,
-      "win_rate": 0.389,
-      "avg_R": -0.052,
+      "losses": 12,
+      "win_rate": 0.368,
+      "avg_R": -0.131,
       "exit_breakdown": {
         "1.5R": 3,
         "time_stop": 9,
         "stop": 2,
-        "fast_loss": 3,
+        "fast_loss": 4,
         "be_stop": 1
       },
       "open": 0
     },
     "overall": {
       "label": "Overall (all)",
-      "n": 46,
+      "n": 48,
       "wins": 19,
-      "losses": 27,
-      "win_rate": 0.413,
-      "avg_R": -0.083,
+      "losses": 29,
+      "win_rate": 0.396,
+      "avg_R": -0.146,
       "exit_breakdown": {
         "time_stop": 25,
         "1.5R": 5,
         "stop": 6,
-        "fast_loss": 5,
+        "fast_loss": 7,
         "be_stop": 5
       },
       "open": 0
@@ -151,10 +151,36 @@
           "label": "cup_and_handle/B",
           "n": 0
         }
+      },
+      "ascending_triangle": {
+        "A": {
+          "label": "ascending_triangle/A",
+          "n": 1,
+          "wins": 0,
+          "losses": 1,
+          "win_rate": 0.0,
+          "avg_R": -1.628,
+          "exit_breakdown": {
+            "fast_loss": 1
+          },
+          "open": 0
+        },
+        "B": {
+          "label": "ascending_triangle/B",
+          "n": 1,
+          "wins": 0,
+          "losses": 1,
+          "win_rate": 0.0,
+          "avg_R": -1.55,
+          "exit_breakdown": {
+            "fast_loss": 1
+          },
+          "open": 0
+        }
       }
     },
-    "fast_loss_trades": 5,
-    "fast_loss_avg_r": -1.223
+    "fast_loss_trades": 7,
+    "fast_loss_avg_r": -1.328
   },
   "trades": [
     {
@@ -1361,6 +1387,65 @@
       "partial_exit": false,
       "bars_held": 78,
       "trading_days": 12.0
+    },
+    {
+      "type": "ascending_triangle",
+      "entry_time": "2026-10-20T14:00:00Z",
+      "entry_index": 1239,
+      "entry": 229.5799,
+      "stop": 200.392,
+      "neckline": 228.8474,
+      "risk_per_share": 29.1879,
+      "target_primary": 240.95,
+      "target_1R": 258.7678,
+      "target_1_5R": 273.3618,
+      "target_2R": 287.9557,
+      "target_3R": 317.1437,
+      "shares": 1.713,
+      "atr": 6.4053,
+      "symbol": "MRNA",
+      "timeframe": "1h",
+      "quality_score": 0.46,
+      "pattern_depth": 0.0824,
+      "entry_style": "breakout",
+      "outcome": "fast_loss",
+      "exit_time": "2026-10-22T17:00:00Z",
+      "exit_price": 182.0721,
+      "exit_reason": "fast_loss",
+      "r_multiple": -1.628,
+      "partial_exit": false,
+      "bars_held": 14,
+      "trading_days": 2.2
+    },
+    {
+      "type": "ascending_triangle",
+      "entry_time": "2026-10-20T15:00:00Z",
+      "entry_index": 1240,
+      "entry": 233.68,
+      "stop": 200.392,
+      "neckline": 228.8474,
+      "risk_per_share": 33.288,
+      "target_primary": 300.256,
+      "target_1R": 266.968,
+      "target_1_5R": 273.3618,
+      "target_2R": 300.256,
+      "target_3R": 317.1437,
+      "shares": 1.502,
+      "atr": 6.3778,
+      "symbol": "MRNA",
+      "timeframe": "1h",
+      "quality_score": 0.46,
+      "pattern_depth": 0.0824,
+      "entry_style": "retest",
+      "entry_gap": 0.02112,
+      "outcome": "fast_loss",
+      "exit_time": "2026-10-22T17:00:00Z",
+      "exit_price": 182.0721,
+      "exit_reason": "fast_loss",
+      "r_multiple": -1.55,
+      "partial_exit": false,
+      "bars_held": 13,
+      "trading_days": 2.0
     },
     {
       "type": "inverse_hns",

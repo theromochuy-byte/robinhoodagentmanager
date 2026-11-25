@@ -50,7 +50,10 @@ from swing_agent.config import (
 )
 from swing_agent.dataio import bars_to_df
 from swing_agent.indicators import atr, ema
-from swing_agent.patterns import detect_double_bottom, detect_inverse_hns, detect_cup_and_handle
+from swing_agent.patterns import (
+    detect_double_bottom, detect_inverse_hns, detect_cup_and_handle,
+    detect_ascending_triangle,
+)
 from swing_agent.simulator import build_trade, build_retest_trade
 
 CACHE   = ROOT / "data" / "hist_cache"
@@ -276,7 +279,8 @@ def scan_symbol(symbol: str, equity: float,
     atr_series = atr(h1, 14)
     patterns   = (detect_double_bottom(h1) +
                   detect_inverse_hns(h1) +
-                  detect_cup_and_handle(h1))
+                  detect_cup_and_handle(h1) +
+                  detect_ascending_triangle(h1))
     patterns.sort(key=lambda p: p["break_index"])
 
     trades: list[dict] = []
@@ -441,7 +445,7 @@ def run(symbols: list[str], use_filters: bool = False) -> dict:
 
     # By pattern × entry style
     by_pattern_entry: dict = {}
-    for pt in ("inverse_hns", "double_bottom", "cup_and_handle"):
+    for pt in ("inverse_hns", "double_bottom", "cup_and_handle", "ascending_triangle"):
         by_pattern_entry[pt] = {
             "A": _summarize([t for t in entry_a if t.get("type") == pt], f"{pt}/A"),
             "B": _summarize([t for t in entry_b if t.get("type") == pt], f"{pt}/B"),
