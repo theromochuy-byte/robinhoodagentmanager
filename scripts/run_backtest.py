@@ -288,7 +288,8 @@ def resolve_current(df: pd.DataFrame, trade: dict,
 # ---------------------------------------------------------------------------
 
 def resolve_short(df: pd.DataFrame, trade: dict,
-                  early_exit: bool = False) -> dict:
+                  early_exit: bool = False,
+                  skip_fast_loss: bool = False) -> dict:
     """Walk forward from entry applying current exit rules to a short trade.
 
     For shorts, R is positive when price moves DOWN (entry > exit).
@@ -336,7 +337,7 @@ def resolve_short(df: pd.DataFrame, trade: dict,
         eff_stop = be_stop if partial_exit_done else stop
 
         # Fast-loss: short price rising quickly means trade is going wrong
-        if (FAST_LOSS_R < 0 and not touched_1r and
+        if (not skip_fast_loss and FAST_LOSS_R < 0 and not touched_1r and
                 trading_days <= FAST_LOSS_DAYS):
             current_r = (entry - cl) / risk if risk > 0 else 0
             if current_r <= FAST_LOSS_R:
@@ -507,7 +508,7 @@ def scan_symbol(symbol: str, equity: float,
                 trade_b = None
 
         # Ascending triangles skip the fast-loss rule (tight stops fire it on noise)
-        no_fast_loss = (ptype == "ascending_triangle")
+        no_fast_loss = ptype in ("ascending_triangle",)
 
         # Resolve both; track seen_until from Entry A (earlier exit = safe baseline)
         resolved_a = resolve_current(h1, trade_a, early_exit=use_filters,
