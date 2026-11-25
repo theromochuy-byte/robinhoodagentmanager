@@ -1,6 +1,7 @@
 name: Fetch Long History (research)
 
-# Downloads ~12 years of adjusted daily bars for the backtest universe and SPY,
+# Downloads ~12 years of adjusted daily bars for the backtest universe and SPY, runs the
+# long-history pullback backtest (results in the job log),
 # and uploads them as a workflow artifact. Research data only; nothing is committed.
 on:
   workflow_dispatch:
@@ -24,6 +25,12 @@ jobs:
       - run: pip install -r requirements.txt
 
       - run: python scripts/fetch_long_history.py --start 2014-01-01
+
+      - name: Run long-history backtest (results go to the job log)
+        run: |
+          python scripts/long_history_test.py
+          echo "----- reports/long_history_test.json -----"
+          cat reports/long_history_test.json
 
       - run: tar -czf hist_long.tar.gz -C data hist_long
 
