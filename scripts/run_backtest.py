@@ -42,7 +42,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from swing_agent.backtest import daily_bias_series, bias_asof
+from swing_agent.backtest import daily_bias_series, daily_bias_short_series, bias_asof
 from swing_agent.config import (
     MIN_QUALITY_SCORE, TARGET_FULL_R, PARTIAL_EXIT_R, PARTIAL_EXIT_FRAC,
     BREAKEVEN_BUFFER_R, TIME_STOP_TRADING_DAYS, FAST_LOSS_R, FAST_LOSS_DAYS,
@@ -52,9 +52,12 @@ from swing_agent.dataio import bars_to_df
 from swing_agent.indicators import atr, ema
 from swing_agent.patterns import (
     detect_double_bottom, detect_inverse_hns, detect_cup_and_handle,
-    detect_ascending_triangle,
+    detect_ascending_triangle, detect_hns,
 )
-from swing_agent.simulator import build_trade, build_retest_trade
+from swing_agent.simulator import (
+    build_trade, build_retest_trade,
+    build_short_trade, build_retest_short_trade,
+)
 
 CACHE   = ROOT / "data" / "hist_cache"
 REPORTS = ROOT / "reports"
@@ -86,13 +89,17 @@ TIME_SYMMETRY_RATIO: float  = 1.5
 # Quality score (simplified version matching scanner._quality_score)
 # ---------------------------------------------------------------------------
 
-# Type-specific depth ranges (ascending triangles have tighter natural stops)
+# Type-specific depth ranges
+# - inverse_hns / double_bottom: validated 3-12% (stop far below neckline)
+# - hns (bearish): stop_basis is RS HIGH above neckline; depth = (RS_high - neckline)/RS_high
+#   validated range mirrors inverse_hns: 3-12%
+# - ascending_triangle: tight stop (last higher low close to resistance) → 0.5-4%
 _DEPTH_FLOOR = {
-    "ascending_triangle": 0.005,   # 0.5% — tight stop is structurally normal
+    "ascending_triangle": 0.005,
     "default":            0.030,
 }
 _DEPTH_CAP = {
-    "ascending_triangle": 0.040,   # 4% — wider than this loses the tight-stop edge
+    "ascending_triangle": 0.040,
     "default":            0.120,
 }
 
@@ -277,6 +284,124 @@ def resolve_current(df: pd.DataFrame, trade: dict,
 
 
 # ---------------------------------------------------------------------------
+# Short-trade resolver (mirror of resolve_current for bearish patterns)
+# ---------------------------------------------------------------------------
+
+def resolve_short(df: pd.DataFrame, trade: dict,
+                  early_exit: bool = False) -> dict:
+    """Walk forward from entry applying current exit rules to a short trade.
+
+    For shorts, R is positive when price moves DOWN (entry > exit).
+    stop is ABOVE entry; targets are BELOW entry.
+    """
+    entry      = trade["entry"]
+    stop       = trade["stop"]          # above entry
+    risk       = trade["risk_per_share"]  # stop - entry, positive
+    start      = trade["entry_index"] + 1
+    target_1r  = entry - PARTIAL_EXIT_R * risk    # 1R below entry
+    target_full = entry - TARGET_FULL_R * risk    # 1.5R below entry
+    be_stop    = entry - BREAKEVEN_BUFFER_R * risk  # breakeven stop below entry
+    target_progress = entry - EARLY_EXIT_R * risk   # 0.5R threshold
+
+    touched_1r         = False
+    touched_progress   = False
+    partial_exit_done  = False
+    partial_exit_price = None
+
+    outcome    = "open"
+    exit_price = float(df.loc[len(df) - 1, "close"])
+    exit_time  = str(df.loc[len(df) - 1, "begins_at"])
+    exit_reason = "open"
+    bars_held  = 0
+
+    for i in range(start, len(df)):
+        bars_held = i - start
+        trading_days = bars_held / BARS_PER_TRADING_DAY
+
+        hi = float(df.loc[i, "high"])
+        lo = float(df.loc[i, "low"])
+        cl = float(df.loc[i, "close"])
+
+        # Mark 1R touch using intraday low (price going down = profit for short)
+        if not touched_1r and lo <= target_1r:
+            touched_1r = True
+        if not touched_progress and lo <= target_progress:
+            touched_progress = True
+
+        if touched_1r and not partial_exit_done:
+            partial_exit_done  = True
+            partial_exit_price = target_1r
+
+        # For shorts, effective stop moves down to breakeven after partial exit
+        eff_stop = be_stop if partial_exit_done else stop
+
+        # Fast-loss: short price rising quickly means trade is going wrong
+        if (FAST_LOSS_R < 0 and not touched_1r and
+                trading_days <= FAST_LOSS_DAYS):
+            current_r = (entry - cl) / risk if risk > 0 else 0
+            if current_r <= FAST_LOSS_R:
+                outcome    = "fast_loss"
+                exit_price = cl
+                exit_time  = str(df.loc[i, "begins_at"])
+                exit_reason = "fast_loss"
+                break
+
+        # Stop hit: price moved up to or above eff_stop
+        if hi >= eff_stop:
+            outcome    = "stopped"
+            exit_price = eff_stop
+            exit_time  = str(df.loc[i, "begins_at"])
+            exit_reason = "be_stop" if partial_exit_done else "stop"
+            break
+
+        # Full target: price moved down to target_full
+        if lo <= target_full:
+            outcome    = "target_hit"
+            exit_price = target_full
+            exit_time  = str(df.loc[i, "begins_at"])
+            exit_reason = "1.5R"
+            break
+
+        # Early-exit: 6 trading days with no meaningful downward progress
+        if early_exit and not touched_1r and not touched_progress:
+            if trading_days >= EARLY_EXIT_DAYS:
+                outcome    = "early_exit"
+                exit_price = cl
+                exit_time  = str(df.loc[i, "begins_at"])
+                exit_reason = "early_exit"
+                break
+
+        # Time stop
+        if not touched_1r and trading_days >= TIME_STOP_TRADING_DAYS:
+            outcome    = "time_stop"
+            exit_price = cl
+            exit_time  = str(df.loc[i, "begins_at"])
+            exit_reason = "time_stop"
+            break
+
+    # R multiple: positive = profitable for short (price went down)
+    if partial_exit_done and outcome not in ("fast_loss", "open"):
+        partial_r   = (entry - target_1r) / risk * PARTIAL_EXIT_FRAC
+        remaining_r = ((entry - exit_price) / risk) * (1 - PARTIAL_EXIT_FRAC)
+        r_multiple  = round(partial_r + remaining_r, 3)
+    else:
+        r_multiple = round((entry - exit_price) / risk, 3) if risk > 0 else 0
+
+    resolved = dict(trade)
+    resolved.update({
+        "outcome":      outcome,
+        "exit_time":    exit_time,
+        "exit_price":   round(exit_price, 4),
+        "exit_reason":  exit_reason,
+        "r_multiple":   r_multiple,
+        "partial_exit": partial_exit_done,
+        "bars_held":    bars_held,
+        "trading_days": round(bars_held / BARS_PER_TRADING_DAY, 1),
+    })
+    return resolved
+
+
+# ---------------------------------------------------------------------------
 # Per-symbol scan
 # ---------------------------------------------------------------------------
 
@@ -300,13 +425,17 @@ def scan_symbol(symbol: str, equity: float,
         print(f"  [skip] {symbol}: thin data ({len(daily)}d / {len(h1)}h bars)")
         return []
 
-    daily_bias = daily_bias_series(daily)
+    daily_bias       = daily_bias_series(daily)
+    daily_bias_short = daily_bias_short_series(daily)
     atr_series = atr(h1, 14)
     patterns   = (detect_double_bottom(h1) +
                   detect_inverse_hns(h1) +
                   detect_cup_and_handle(h1) +
                   detect_ascending_triangle(h1))
     patterns.sort(key=lambda p: p["break_index"])
+
+    bearish_patterns = detect_hns(h1)
+    bearish_patterns.sort(key=lambda p: p["break_index"])
 
     trades: list[dict] = []
     seen_until: dict[str, int] = {}
@@ -398,6 +527,68 @@ def scan_symbol(symbol: str, equity: float,
         else:
             seen_until[ptype] = len(h1)
 
+    # -------------------------------------------------------------------------
+    # Bearish patterns (H&S short)
+    # -------------------------------------------------------------------------
+    seen_until_short: dict[str, int] = {}
+
+    for p in bearish_patterns:
+        ptype = p["type"]
+        bi    = p["break_index"]
+
+        if bi <= seen_until_short.get(ptype, -1):
+            continue
+
+        # Bearish daily bias required
+        if not bias_asof(daily_bias_short, p["break_time"]):
+            continue
+
+        # Depth for shorts: (stop_basis - neckline) / stop_basis
+        depth = (p["stop_basis"] - p["neckline"]) / p["stop_basis"]
+        d_floor = _DEPTH_FLOOR.get(ptype, _DEPTH_FLOOR["default"])
+        d_cap   = _DEPTH_CAP.get(ptype,   _DEPTH_CAP["default"])
+        if depth < d_floor or depth > d_cap:
+            continue
+
+        # Quality score (reuse long QS — depth scoring is depth-symmetric)
+        atr_val = float(atr_series.iloc[bi]) if bi < len(atr_series) else 0
+        qs = _quality_score(p, h1, atr_val)
+        if qs < MIN_QUALITY_SCORE or qs > QUALITY_SCORE_CAP:
+            continue
+
+        # Build Entry A (breakdown: close of neckline break bar)
+        trade_a = build_short_trade(h1, p, atr_series, equity, RISK_PCT)
+        if trade_a is None:
+            continue
+        trade_a["symbol"]        = symbol
+        trade_a["timeframe"]     = "1h"
+        trade_a["quality_score"] = qs
+        trade_a["pattern_depth"] = round(depth, 4)
+        trade_a["entry_style"]   = "breakdown"
+
+        # Build Entry B (retest: bounce back to neckline + bearish close)
+        trade_b = build_retest_short_trade(h1, trade_a, atr_series)
+        if trade_b is not None:
+            trade_b["symbol"]        = symbol
+            trade_b["timeframe"]     = "1h"
+            trade_b["quality_score"] = qs
+            trade_b["pattern_depth"] = round(depth, 4)
+            trade_b["entry_style"]   = "retest"
+
+        resolved_a = resolve_short(h1, trade_a, early_exit=use_filters)
+        trades.append(resolved_a)
+
+        if trade_b is not None:
+            resolved_b = resolve_short(h1, trade_b, early_exit=use_filters)
+            trades.append(resolved_b)
+
+        ref = resolved_a
+        if ref["outcome"] != "open":
+            idx_list = h1.index[h1["begins_at"] == ref["exit_time"]].tolist()
+            seen_until_short[ptype] = idx_list[0] if idx_list else bi + 1
+        else:
+            seen_until_short[ptype] = len(h1)
+
     n = len(trades)
     if n:
         wins = sum(1 for t in trades if t["r_multiple"] > 0)
@@ -465,22 +656,28 @@ def run(symbols: list[str], use_filters: bool = False) -> dict:
 
     all_trades.sort(key=lambda t: t.get("entry_time", ""))
 
-    # Separate by entry style
-    entry_a = [t for t in all_trades if t.get("entry_style") == "breakout"]
+    # Separate by entry style (hns uses "breakdown" for Entry A)
+    entry_a = [t for t in all_trades if t.get("entry_style") in ("breakout", "breakdown")]
     entry_b = [t for t in all_trades if t.get("entry_style") == "retest"]
-    # Paired: same pattern, both entries present
-    paired_patterns = len(entry_a)  # one entry_a per pattern
+    paired_patterns = len(entry_a)
 
-    overall_a = _summarize(entry_a, "Entry A (breakout)")
+    overall_a = _summarize(entry_a, "Entry A (breakout/breakdown)")
     overall_b = _summarize(entry_b, "Entry B (retest)")
     overall   = _summarize(all_trades, "Overall (all)")
 
     # By pattern × entry style
     by_pattern_entry: dict = {}
-    for pt in ("inverse_hns", "double_bottom", "cup_and_handle", "ascending_triangle"):
+    # Normalize entry_style → A/B for consistent display across pattern types
+    for t in all_trades:
+        s = t.get("entry_style", "")
+        t["_display_style"] = "A" if s in ("breakout", "breakdown") else ("B" if s == "retest" else s)
+
+    for pt in ("inverse_hns", "double_bottom", "cup_and_handle", "ascending_triangle", "hns"):
         by_pattern_entry[pt] = {
-            "A": _summarize([t for t in entry_a if t.get("type") == pt], f"{pt}/A"),
-            "B": _summarize([t for t in entry_b if t.get("type") == pt], f"{pt}/B"),
+            "A": _summarize([t for t in all_trades
+                             if t.get("type") == pt and t.get("_display_style") == "A"], f"{pt}/A"),
+            "B": _summarize([t for t in all_trades
+                             if t.get("type") == pt and t.get("_display_style") == "B"], f"{pt}/B"),
         }
 
     # Fast-loss

@@ -35,6 +35,16 @@ def daily_bias_series(daily: pd.DataFrame, ema_period: int = 20) -> pd.Series:
     return pd.Series(bias.values, index=pd.to_datetime(daily["begins_at"]))
 
 
+def daily_bias_short_series(daily: pd.DataFrame, ema_period: int = 20) -> pd.Series:
+    """Bearish daily bias: price fully below 20 EMA AND 20 EMA below 50 SMA.
+    Mirror of daily_bias_series for short setups.
+    """
+    e20 = ema(daily["close"], ema_period)
+    sma50 = daily["close"].rolling(50).mean()
+    bias = (daily["close"] < e20) & (daily["high"] < e20) & (e20 < sma50)
+    return pd.Series(bias.values, index=pd.to_datetime(daily["begins_at"]))
+
+
 def bias_asof(bias: pd.Series, when) -> bool:
     when = pd.to_datetime(when)
     prior = bias[bias.index <= when]
