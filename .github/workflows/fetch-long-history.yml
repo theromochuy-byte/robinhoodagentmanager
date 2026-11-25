@@ -32,6 +32,14 @@ jobs:
       - name: Run momentum vs SPY backtest (results go to the job log)
         run: python scripts/momentum_test.py
 
+      - name: Fetch ETF history
+        run: >
+          python scripts/fetch_long_history.py --start 2003-01-01 --out data/hist_etf
+          --symbols XLK XLF XLE XLV XLI XLY XLP XLU XLB TLT IEF GLD SPY EFA SHY
+
+      - name: Run ETF rotation backtest (results go to the job log)
+        run: python scripts/etf_rotation_test.py
+
       - run: tar -czf hist_long.tar.gz -C data hist_long
 
       - uses: actions/upload-artifact@v4

@@ -8,3 +8,4 @@ reports/backtest_latest*.json
 
 # Long daily history for research backtests (fetched, not committed)
 data/hist_long/
+data/hist_etf/

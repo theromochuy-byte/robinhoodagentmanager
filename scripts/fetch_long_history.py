@@ -27,11 +27,14 @@ BATCH = 20
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--start", default="2014-01-01")
+    ap.add_argument("--symbols", nargs="*", help="override the universe file")
+    ap.add_argument("--out", default=str(OUT))
     args = ap.parse_args()
-    OUT.mkdir(parents=True, exist_ok=True)
+    out = Path(args.out)
+    out.mkdir(parents=True, exist_ok=True)
     universe = ROOT / "data" / "universe.txt"
-    symbols = sorted({l.strip() for l in universe.read_text().splitlines()
-                      if l.strip() and not l.startswith("#")}) + ["SPY"]
+    symbols = args.symbols or (sorted({l.strip() for l in universe.read_text().splitlines()
+                                       if l.strip() and not l.startswith("#")}) + ["SPY"])
     missing = []
     for i in range(0, len(symbols), BATCH):
         batch = symbols[i:i + BATCH]
@@ -46,9 +49,9 @@ def main() -> None:
             if sub.empty:
                 missing.append(sym)
                 continue
-            (OUT / f"{sym}_day.json").write_text(json.dumps(_df_to_bars(sub)))
+            (out / f"{sym}_day.json").write_text(json.dumps(_df_to_bars(sub)))
         print(f"  {min(i + BATCH, len(symbols))}/{len(symbols)}")
-    print(f"Saved {len(symbols) - len(missing)} symbols to {OUT}; missing: {missing}")
+    print(f"Saved {len(symbols) - len(missing)} symbols to {out}; missing: {missing}")
 
 
 if __name__ == "__main__":
