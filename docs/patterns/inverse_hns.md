@@ -150,8 +150,8 @@ This is arguably the best-possible context because the larger trend is already c
 | Head vol ≥ left shoulder | ✅ Live scanner | Consensus |
 | Right shoulder vol < head | ✅ Live scanner | Consensus |
 | Depth floor > 3% (current) → raise to 4% | ❌ Not yet | StockDataAnalytics data |
-| Peak2 ≥ peak1 (upward-sloping neckline) | ❌ Not yet | Moderate — logical + Seeking Alpha |
-| Right shoulder span ≤ 1.5× left-to-head span | ❌ Not yet | Moderate — Bulkowski |
+| Peak2 ≥ peak1 (upward-sloping neckline) | ❌ Tested, **rejected** — eliminated all winners | Moderate in literature; inverse in our data |
+| Right shoulder span ≤ 1.5× left-to-head span | ❌ Tested, **rejected** — eliminated all winners | Moderate in literature; inverse in our data |
 | Retest candle volume drying up | ❌ Not yet | Weak — mentioned, not quantified |
 
 ---
@@ -159,8 +159,8 @@ This is arguably the best-possible context because the larger trend is already c
 ## Next Backtest Experiments (priority order)
 
 1. **Raise depth floor to 4%** — StockDataAnalytics shows < 4% wins only 32.8%
-2. **Add peak2 ≥ peak1 neckline slope check** — requires pattern dict change in `patterns.py`
-3. **Add right-shoulder time symmetry check** — right shoulder span ≤ 1.5× left-to-head span
+2. ~~**Add peak2 ≥ peak1 neckline slope check**~~ — **TESTED 2026-11-25: rejected.** Eliminated all 5 winners. Hypothesis: in uptrend pullback context, daily bias already provides the slope — the 1H neckline doesn't need to slope up. The slope filter is a full-reversal concept.
+3. ~~**Add right shoulder time symmetry check**~~ — **TESTED 2026-11-25: rejected.** Same result — Bulkowski's data is daily charts; 1H pullbacks have different timing dynamics.
 4. **Volume at retest candle** — require retest bar volume < 20-bar avg (drying up = healthy)
 5. **Get to n ≥ 30 inverse HnS + retest** before trusting any win-rate figures
 
