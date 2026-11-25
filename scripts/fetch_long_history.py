@@ -29,7 +29,9 @@ def main() -> None:
     ap.add_argument("--start", default="2014-01-01")
     args = ap.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
-    symbols = sorted(p.stem.split("_")[0] for p in (ROOT / "data" / "hist_cache").glob("*_day.json")) + ["SPY"]
+    universe = ROOT / "data" / "universe.txt"
+    symbols = sorted({l.strip() for l in universe.read_text().splitlines()
+                      if l.strip() and not l.startswith("#")}) + ["SPY"]
     missing = []
     for i in range(0, len(symbols), BATCH):
         batch = symbols[i:i + BATCH]
