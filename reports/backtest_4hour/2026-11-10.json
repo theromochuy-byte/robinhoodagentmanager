@@ -1,17 +1,17 @@
 {
   "date": "2026-11-10",
-  "new_entries": 3,
+  "new_entries": 2,
   "closed_today": 0,
-  "open_count": 33,
+  "open_count": 29,
   "entries": [
     {
       "symbol": "TMO",
       "type": "inverse_hns",
       "neckline": 711.8545,
-      "stop": 649.6837,
-      "target_2R": 865.5526,
-      "risk_per_share": 71.9563,
-      "shares": 0.4169,
+      "stop": 649.6894,
+      "target_2R": 865.5412,
+      "risk_per_share": 71.9506,
+      "shares": 0.417,
       "break_time": "2026-11-09T18:30:00Z",
       "bars_since_break": 2,
       "in_pullback": true,
@@ -23,31 +23,13 @@
       "status": "open"
     },
     {
-      "symbol": "BLK",
-      "type": "inverse_hns",
-      "neckline": 1182.61,
-      "stop": 1105.1913,
-      "target_2R": 1470.0477,
-      "risk_per_share": 121.6188,
-      "shares": 0.2467,
-      "break_time": "2026-11-04T14:30:00Z",
-      "bars_since_break": 9,
-      "in_pullback": true,
-      "last_close": 1222.3101,
-      "last_bar_time": "2026-11-10T18:30:00Z",
-      "scan_date": "2026-11-10",
-      "entry": 1222.3101,
-      "entry_time": "2026-11-10T18:30:00Z",
-      "status": "open"
-    },
-    {
       "symbol": "BBY",
       "type": "inverse_hns",
       "neckline": 100.58,
-      "stop": 89.9683,
-      "target_2R": 124.1734,
-      "risk_per_share": 11.4017,
-      "shares": 2.6312,
+      "stop": 89.9646,
+      "target_2R": 124.1809,
+      "risk_per_share": 11.4054,
+      "shares": 2.6303,
       "break_time": "2026-11-04T18:30:00Z",
       "bars_since_break": 8,
       "in_pullback": true,
@@ -60,5 +42,5 @@
     }
   ],
   "closed": [],
-  "watching_count": 12
+  "watching_count": 11
 }

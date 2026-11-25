@@ -2,16 +2,16 @@
   "date": "2026-11-11",
   "new_entries": 2,
   "closed_today": 0,
-  "open_count": 35,
+  "open_count": 31,
   "entries": [
     {
       "symbol": "CL",
       "type": "inverse_hns",
       "neckline": 97.5,
-      "stop": 88.0109,
-      "target_2R": 120.1832,
-      "risk_per_share": 10.7241,
-      "shares": 2.7974,
+      "stop": 88.011,
+      "target_2R": 120.183,
+      "risk_per_share": 10.724,
+      "shares": 2.7975,
       "break_time": "2026-11-04T14:30:00Z",
       "bars_since_break": 11,
       "in_pullback": true,
@@ -26,10 +26,10 @@
       "symbol": "PRU",
       "type": "inverse_hns",
       "neckline": 120.27,
-      "stop": 109.8492,
-      "target_2R": 161.0616,
-      "risk_per_share": 17.0708,
-      "shares": 1.7574,
+      "stop": 109.8475,
+      "target_2R": 161.065,
+      "risk_per_share": 17.0725,
+      "shares": 1.7572,
       "break_time": "2026-11-04T14:30:00Z",
       "bars_since_break": 11,
       "in_pullback": true,
@@ -42,5 +42,5 @@
     }
   ],
   "closed": [],
-  "watching_count": 14
+  "watching_count": 12
 }

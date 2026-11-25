@@ -2,15 +2,15 @@
   "date": "2026-11-02",
   "new_entries": 2,
   "closed_today": 0,
-  "open_count": 27,
+  "open_count": 24,
   "entries": [
     {
       "symbol": "CB",
       "type": "inverse_hns",
       "neckline": 364.86,
-      "stop": 345.9105,
-      "target_2R": 404.109,
-      "risk_per_share": 19.3995,
+      "stop": 345.9126,
+      "target_2R": 404.1047,
+      "risk_per_share": 19.3974,
       "shares": 1.0265,
       "break_time": "2026-10-30T13:30:00Z",
       "bars_since_break": 3,
@@ -26,9 +26,9 @@
       "symbol": "YUM",
       "type": "inverse_hns",
       "neckline": 154.64,
-      "stop": 144.3168,
-      "target_2R": 180.8964,
-      "risk_per_share": 12.1932,
+      "stop": 144.3186,
+      "target_2R": 180.8927,
+      "risk_per_share": 12.1914,
       "shares": 2.396,
       "break_time": "2026-10-30T13:30:00Z",
       "bars_since_break": 3,
@@ -42,5 +42,5 @@
     }
   ],
   "closed": [],
-  "watching_count": 9
+  "watching_count": 8
 }

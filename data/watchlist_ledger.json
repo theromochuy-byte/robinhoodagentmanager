@@ -8724,6 +8724,11 @@
         "time": "2026-11-24T23:28:46.757317+00:00",
         "price": 176.01,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-11-25T23:04:47.703066+00:00",
+        "price": 172.16,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8733,10 +8738,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.4428,
-    "bars_since_break": 6,
+    "quality_score": 0.3456,
+    "bars_since_break": 13,
     "sector_score": 3,
-    "last_seen": "2026-11-24T23:28:46.757317+00:00",
+    "last_seen": "2026-11-25T23:04:47.703066+00:00",
     "skip_reason": null
   },
   {
@@ -8761,6 +8766,11 @@
         "time": "2026-11-24T23:28:46.757317+00:00",
         "price": 178.29,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-11-25T23:04:47.703066+00:00",
+        "price": 176.75,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8770,10 +8780,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.4594,
-    "bars_since_break": 5,
+    "quality_score": 0.3621,
+    "bars_since_break": 12,
     "sector_score": 3,
-    "last_seen": "2026-11-24T23:28:46.757317+00:00",
+    "last_seen": "2026-11-25T23:04:47.703066+00:00",
     "skip_reason": null
   },
   {
@@ -8798,6 +8808,11 @@
         "time": "2026-11-24T23:28:46.757317+00:00",
         "price": 269.27,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-11-25T23:04:47.703066+00:00",
+        "price": 261.33,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8807,10 +8822,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.4454,
-    "bars_since_break": 6,
+    "quality_score": 0.3482,
+    "bars_since_break": 13,
     "sector_score": 3,
-    "last_seen": "2026-11-24T23:28:46.757317+00:00",
+    "last_seen": "2026-11-25T23:04:47.703066+00:00",
     "skip_reason": null
   },
   {
@@ -8835,6 +8850,11 @@
         "time": "2026-11-24T23:28:46.757317+00:00",
         "price": 270.42,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-11-25T23:04:47.703066+00:00",
+        "price": 271.37,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8844,10 +8864,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.2476,
-    "bars_since_break": 20,
+    "quality_score": 0.1504,
+    "bars_since_break": 27,
     "sector_score": 3,
-    "last_seen": "2026-11-24T23:28:46.757317+00:00",
+    "last_seen": "2026-11-25T23:04:47.703066+00:00",
     "skip_reason": null
   },
   {
@@ -8872,6 +8892,11 @@
         "time": "2026-11-24T23:28:46.757317+00:00",
         "price": 138.69,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-11-25T23:04:47.703066+00:00",
+        "price": 139.29,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8881,10 +8906,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.447,
-    "bars_since_break": 6,
+    "quality_score": 0.3497,
+    "bars_since_break": 13,
     "sector_score": 3,
-    "last_seen": "2026-11-24T23:28:46.757317+00:00",
+    "last_seen": "2026-11-25T23:04:47.703066+00:00",
     "skip_reason": "low_quality"
   },
   {
@@ -8909,6 +8934,11 @@
         "time": "2026-11-24T23:28:46.757317+00:00",
         "price": 138.69,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-11-25T23:04:47.703066+00:00",
+        "price": 139.29,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8918,11 +8948,11 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.4477,
-    "bars_since_break": 6,
+    "quality_score": 0.3505,
+    "bars_since_break": 13,
     "sector_score": 3,
-    "last_seen": "2026-11-24T23:28:46.757317+00:00",
-    "skip_reason": null
+    "last_seen": "2026-11-25T23:04:47.703066+00:00",
+    "skip_reason": "low_quality"
   },
   {
     "id": "DLTR__inverse_hns__2026-11-24T14:30:00Z",
@@ -8946,6 +8976,11 @@
         "time": "2026-11-24T23:28:46.757317+00:00",
         "price": 154.66,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-11-25T23:04:47.703066+00:00",
+        "price": 152.161,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8955,10 +8990,47 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.4618,
-    "bars_since_break": 6,
+    "quality_score": 0.3645,
+    "bars_since_break": 13,
     "sector_score": 3,
-    "last_seen": "2026-11-24T23:28:46.757317+00:00",
+    "last_seen": "2026-11-25T23:04:47.703066+00:00",
     "skip_reason": null
+  },
+  {
+    "id": "ZBH__inverse_hns__2026-11-24T15:30:00Z",
+    "symbol": "ZBH",
+    "type": "inverse_hns",
+    "neckline": 109.32,
+    "break_time": "2026-11-24T15:30:00Z",
+    "first_seen": "2026-11-25T23:04:47.703066+00:00",
+    "status": "watching",
+    "suggested_entry": 109.32,
+    "suggested_entry_zone": [
+      108.7734,
+      109.8666
+    ],
+    "stop": 100.4454,
+    "target_1R": 118.5946,
+    "target_2R": 127.6693,
+    "risk_per_share": 9.0746,
+    "price_history": [
+      {
+        "time": "2026-11-25T23:04:47.703066+00:00",
+        "price": 110.11,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null,
+    "quality_score": 0.3739,
+    "bars_since_break": 12,
+    "sector_score": 3,
+    "last_seen": "2026-11-25T23:04:47.703066+00:00",
+    "skip_reason": "low_quality"
   }
 ]
