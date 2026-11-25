@@ -44,8 +44,11 @@ def month_ends(idx: pd.DatetimeIndex) -> list[pd.Timestamp]:
     return list(s.groupby([idx.year, idx.month]).max())
 
 
-def run(closes, spy, lookback, skip, top_n, trend_filter=False, spy_weight=0.0):
-    """Return daily equity curve (start 1.0) for a monthly rotation strategy."""
+def run(closes, spy, lookback, skip, top_n, trend_filter=False, spy_weight=0.0, pick="momentum", seed=0):
+    """Return daily equity curve (start 1.0) for a monthly rotation strategy.
+    pick: 'momentum' (top_n by past return), 'random' (top_n at random), 'all' (every stock)."""
+    import random as _r
+    rng = _r.Random(seed)
     stocks = closes.drop(columns=["SPY"])
     sma200 = spy.rolling(200).mean()
     rebal = [d for d in month_ends(closes.index) if closes.index.get_loc(d) >= lookback + skip]
@@ -57,7 +60,12 @@ def run(closes, spy, lookback, skip, top_n, trend_filter=False, spy_weight=0.0):
         past, recent = stocks.iloc[i - lookback - skip], stocks.iloc[i - skip]
         mom = (recent / past - 1).dropna()
         mom = mom[stocks.iloc[i].notna()]
-        picks = list(mom.nlargest(top_n).index)
+        if pick == "momentum":
+            picks = list(mom.nlargest(top_n).index)
+        elif pick == "random":
+            picks = rng.sample(sorted(mom.index), min(top_n, len(mom)))
+        else:
+            picks = list(mom.index)
         risk_on = not trend_filter or spy.iloc[i] > sma200.iloc[i]
         target = {}
         if spy_weight:
@@ -110,6 +118,7 @@ def main():
         "Top 20, 12-month momentum": dict(lookback=231, skip=21, top_n=20),
         "Top 10, 12-month, cash when SPY < 200-day": dict(lookback=231, skip=21, top_n=10, trend_filter=True),
         "50% SPY + 50% top 10, 12-month": dict(lookback=231, skip=21, top_n=10, spy_weight=0.5),
+        "CONTROL: equal weight, all stocks in list": dict(lookback=231, skip=21, top_n=0, pick="all"),
     }
     curves = {name: run(closes, spy, **kw) for name, kw in runs.items()}
     start = max(c.index[0] for c in curves.values())
@@ -123,6 +132,11 @@ def main():
               f"maxDD {s['max_dd']:4.1f}%  worst year {s['worst_year']:+.1f}%")
         print("    by year: " + "  ".join(f"{y}:{v:+.1f}%" for y, v in s["yearly"].items()))
         print("    sell-offs: " + "  ".join(f"{k}: {v:+.1f}%" for k, v in s["selloffs"].items()))
+    rand = sorted(stats(run(closes, spy, 231, 21, 10, pick="random", seed=s).loc[start:])["cagr"] for s in range(30))
+    out["CONTROL: random 10 stocks"] = {"cagr_median": rand[15], "cagr_10th": rand[3], "cagr_90th": rand[26],
+                                       "cagr_best": rand[-1]}
+    print(f"{'CONTROL: random 10 stocks (30 tries)':44s} CAGR median {rand[15]:+5.1f}%/yr  "
+          f"[10th {rand[3]:+.1f} .. 90th {rand[26]:+.1f}, best {rand[-1]:+.1f}]")
     REPORTS.mkdir(exist_ok=True)
     (REPORTS / "momentum_test.json").write_text(json.dumps(out, indent=1))
 
