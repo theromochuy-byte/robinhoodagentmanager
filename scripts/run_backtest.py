@@ -73,6 +73,10 @@ RETEST_GAP_MAX: float = 0.012
 # 3. Early exit if no progress by EARLY_EXIT_DAYS trading days (< 0.5R touched)
 EARLY_EXIT_DAYS: int  = 6
 EARLY_EXIT_R: float   = 0.5    # progress threshold (must touch this many R to stay on)
+# 4. Neckline slope: peak2 (head→RS) must be >= peak1 (LS→head) — upward slope
+NECKLINE_SLOPE_FILTER: bool = True
+# 5. Right shoulder time symmetry: head-to-RS span <= ratio × LS-to-head span
+TIME_SYMMETRY_RATIO: float  = 1.5
 
 
 # ---------------------------------------------------------------------------
@@ -301,9 +305,20 @@ def scan_symbol(symbol: str, equity: float,
         if qs < MIN_QUALITY_SCORE or qs > QUALITY_SCORE_CAP:
             continue
 
-        # Filter 1 (inverse HnS only): depth cap
-        if use_filters and ptype == "inverse_hns" and depth > DEPTH_CAP_IHNS:
-            continue
+        # Filters 1, 4, 5 apply to inverse HnS only
+        if use_filters and ptype == "inverse_hns":
+            # Filter 1: depth cap
+            if depth > DEPTH_CAP_IHNS:
+                continue
+            # Filter 4: neckline must slope upward (peak2 >= peak1)
+            if NECKLINE_SLOPE_FILTER:
+                if p.get("peak2_max", 0) < p.get("peak1_max", float("inf")):
+                    continue
+            # Filter 5: right shoulder not too extended in time
+            ls_span = p.get("ls_to_head_span", 0)
+            rs_span = p.get("head_to_rs_span", 0)
+            if ls_span > 0 and rs_span > TIME_SYMMETRY_RATIO * ls_span:
+                continue
 
         # Build Entry A (breakout: close of neckline break bar)
         trade_a = build_trade(h1, p, atr_series, equity, RISK_PCT)
@@ -401,7 +416,7 @@ def run(symbols: list[str], use_filters: bool = False) -> dict:
     equity = STARTING_EQUITY
     all_trades: list[dict] = []
 
-    filter_tag = " +FILTERS(depth≤8.7%/gap≤1.2%/early-exit@6d)" if use_filters else ""
+    filter_tag = " +FILTERS(depth≤8.7%/gap≤1.2%/early-exit@6d/neckline-slope/sym≤1.5×)" if use_filters else ""
     print(f"\nBacktest — {len(symbols)} symbols, equity=${equity:,.0f}, "
           f"risk={RISK_PCT*100:.0f}%/trade{filter_tag}")
     print(f"Rules: fast_loss={FAST_LOSS_R}R/{FAST_LOSS_DAYS}d  "

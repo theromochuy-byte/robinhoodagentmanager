@@ -216,6 +216,10 @@ def detect_inverse_hns(
                         brk["break_index"], vol_avg,
                     ):
                         continue
+                peak1_max = max(p["price"] for p in peak1)
+                peak2_max = max(p["price"] for p in peak2)
+                ls_to_head_span = head["index"] - ls["index"]
+                head_to_rs_span = rs["index"] - head["index"]
                 patterns.append(
                     {
                         "type": "inverse_hns",
@@ -223,6 +227,12 @@ def detect_inverse_hns(
                         "stop_basis": rs["price"],
                         "break_index": brk["break_index"],
                         "break_time": brk["break_time"],
+                        # Neckline slope: peak2_max >= peak1_max = upward slope (bullish)
+                        "peak1_max": peak1_max,
+                        "peak2_max": peak2_max,
+                        # Time symmetry: head_to_rs_span / ls_to_head_span ideally ~1.0
+                        "ls_to_head_span": ls_to_head_span,
+                        "head_to_rs_span": head_to_rs_span,
                         "pivots": {
                             "left_shoulder": ls,
                             "head": head,
