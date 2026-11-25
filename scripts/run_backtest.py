@@ -158,7 +158,8 @@ def _quality_score(pattern: dict, df: pd.DataFrame, atr_val: float) -> float:
 # ---------------------------------------------------------------------------
 
 def resolve_current(df: pd.DataFrame, trade: dict,
-                    early_exit: bool = False) -> dict:
+                    early_exit: bool = False,
+                    skip_fast_loss: bool = False) -> dict:
     """Walk forward from entry applying current exit rules.
 
     early_exit: if True, also apply the EARLY_EXIT_DAYS / EARLY_EXIT_R filter
@@ -207,7 +208,7 @@ def resolve_current(df: pd.DataFrame, trade: dict,
         eff_stop = be_stop if partial_exit_done else stop
 
         # Fast-loss: only before 1R, within FAST_LOSS_DAYS trading days
-        if (FAST_LOSS_R < 0 and not touched_1r and
+        if (not skip_fast_loss and FAST_LOSS_R < 0 and not touched_1r and
                 trading_days <= FAST_LOSS_DAYS):
             current_r = (cl - entry) / risk if risk > 0 else 0
             if current_r <= FAST_LOSS_R:
@@ -376,12 +377,17 @@ def scan_symbol(symbol: str, equity: float,
             if use_filters and entry_gap > RETEST_GAP_MAX:
                 trade_b = None
 
+        # Ascending triangles skip the fast-loss rule (tight stops fire it on noise)
+        no_fast_loss = (ptype == "ascending_triangle")
+
         # Resolve both; track seen_until from Entry A (earlier exit = safe baseline)
-        resolved_a = resolve_current(h1, trade_a, early_exit=use_filters)
+        resolved_a = resolve_current(h1, trade_a, early_exit=use_filters,
+                                     skip_fast_loss=no_fast_loss)
         trades.append(resolved_a)
 
         if trade_b is not None:
-            resolved_b = resolve_current(h1, trade_b, early_exit=use_filters)
+            resolved_b = resolve_current(h1, trade_b, early_exit=use_filters,
+                                         skip_fast_loss=no_fast_loss)
             trades.append(resolved_b)
 
         # Advance the overlap cursor based on Entry A exit (the earlier one)
