@@ -86,22 +86,46 @@ TIME_SYMMETRY_RATIO: float  = 1.5
 # Quality score (simplified version matching scanner._quality_score)
 # ---------------------------------------------------------------------------
 
+# Type-specific depth ranges (ascending triangles have tighter natural stops)
+_DEPTH_FLOOR = {
+    "ascending_triangle": 0.005,   # 0.5% — tight stop is structurally normal
+    "default":            0.030,
+}
+_DEPTH_CAP = {
+    "ascending_triangle": 0.040,   # 4% — wider than this loses the tight-stop edge
+    "default":            0.120,
+}
+
+
 def _quality_score(pattern: dict, df: pd.DataFrame, atr_val: float) -> float:
     """Simplified quality score for backtest — same dimensions as scanner."""
     bi = pattern["break_index"]
     neckline = pattern["neckline"]
     stop_basis = pattern["stop_basis"]
+    ptype = pattern.get("type", "default")
 
-    # Pattern depth (3-12% is ideal)
     depth = (neckline - stop_basis) / neckline if neckline > 0 else 0
-    if depth < 0.03:
-        depth_score = 0.0
-    elif depth <= 0.07:
-        depth_score = 1.0
-    elif depth <= 0.12:
-        depth_score = 0.7
+
+    # Depth scoring: ascending triangles have tighter ideal range (0.5-2%)
+    if ptype == "ascending_triangle":
+        if depth < 0.005:
+            depth_score = 0.0
+        elif depth <= 0.020:
+            depth_score = 1.0
+        elif depth <= 0.040:
+            depth_score = 0.7
+        else:
+            depth_score = 0.3
     else:
-        depth_score = 0.3
+        # Pattern depth (3-12% is ideal for inverse HnS / double bottom)
+        if depth < 0.03:
+            depth_score = 0.0
+        elif depth <= 0.07:
+            depth_score = 1.0
+        elif depth <= 0.12:
+            depth_score = 0.7
+        else:
+            depth_score = 0.3
 
     # Volume on break bar vs 20-bar avg
     if "volume" in df.columns and bi >= 20:
@@ -298,9 +322,11 @@ def scan_symbol(symbol: str, equity: float,
         if not bias_asof(daily_bias, p["break_time"]):
             continue
 
-        # Pattern depth filter
+        # Pattern depth filter — type-specific bounds
         depth = (p["neckline"] - p["stop_basis"]) / p["neckline"]
-        if depth < 0.03 or depth > 0.12:
+        d_floor = _DEPTH_FLOOR.get(ptype, _DEPTH_FLOOR["default"])
+        d_cap   = _DEPTH_CAP.get(ptype,   _DEPTH_CAP["default"])
+        if depth < d_floor or depth > d_cap:
             continue
 
         # Quality score filter
