@@ -1,46 +1,9 @@
 {
   "date": "2026-10-19",
-  "new_entries": 2,
+  "new_entries": 0,
   "closed_today": 0,
-  "open_count": 11,
-  "entries": [
-    {
-      "symbol": "BRK-B",
-      "type": "inverse_hns",
-      "neckline": 523.74,
-      "stop": 496.7364,
-      "target_2R": 586.7921,
-      "risk_per_share": 30.0186,
-      "shares": 0.7119,
-      "break_time": "2026-10-14T17:30:00Z",
-      "bars_since_break": 6,
-      "in_pullback": true,
-      "last_close": 532.44,
-      "last_bar_time": "2026-10-19T17:30:00Z",
-      "scan_date": "2026-10-19",
-      "entry": 532.44,
-      "entry_time": "2026-10-19T17:30:00Z",
-      "status": "open"
-    },
-    {
-      "symbol": "EBAY",
-      "type": "inverse_hns",
-      "neckline": 113.625,
-      "stop": 103.0314,
-      "target_2R": 142.2672,
-      "risk_per_share": 13.0786,
-      "shares": 2.2938,
-      "break_time": "2026-10-12T13:30:00Z",
-      "bars_since_break": 11,
-      "in_pullback": true,
-      "last_close": 120.46,
-      "last_bar_time": "2026-10-19T17:30:00Z",
-      "scan_date": "2026-10-19",
-      "entry": 120.46,
-      "entry_time": "2026-10-19T17:30:00Z",
-      "status": "open"
-    }
-  ],
+  "open_count": 4,
+  "entries": [],
   "closed": [],
-  "watching_count": 10
+  "watching_count": 8
 }
