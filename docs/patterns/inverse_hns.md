@@ -169,9 +169,21 @@ Win rates are acceptable but **avg R is negative on both entries**. Fast-loss ex
 
 **Root cause:** The -0.75R fast-loss rule was calibrated for inverse HnS retest entries where the neckline is proven support. Ascending triangles have tighter stops (0.5-2% depth), so a small adverse move hits -0.75R quickly. The fast-loss threshold that filters noise for loose-stop patterns is too aggressive for tight-stop patterns.
 
-**Decision:** Do not add ascending triangles to the live scanner yet. Need to either:
-1. Exempt ascending triangles from the fast-loss rule, or use a looser threshold (e.g., -1.5R / 5 days)
-2. Or validate that the tight-stop structure genuinely provides edge without fast-loss interference
+**Follow-up: removed fast-loss rule for ascending triangles (2026-11-25):**
+
+| Entry | Before (w/ fast-loss) | After (no fast-loss) |
+|-------|----------------------|----------------------|
+| A (breakout) | n=109, 45% win, -0.129R | n=109, 48% win, -0.064R |
+| B (retest)   | n=87,  40% win, -0.209R | n=87,  45% win, -0.129R |
+
+Removing fast-loss improved results (+3-5pp win rate, +0.07-0.08R) but avg R is still negative on both. Stop exits now dominate — ~49% of trades reach the full stop. Root cause: the ATR-buffered stop below the last higher low is getting hit on normal consolidation before the move materializes.
+
+**Remaining hypotheses to test before live scanner:**
+1. Wider stop: use 1.5× ATR buffer instead of 1× (last higher low gets clipped by tight consolidation)
+2. Measured-move exit: pattern height added to resistance (~2-4R) instead of fixed 1.5R — AT measured move is structurally larger than inverse HnS
+3. Daily timeframe AT only: 1H may be too noisy for a continuation pattern that needs room
+
+**Decision:** Do not add ascending triangles to the live scanner yet.
 
 ---
 
