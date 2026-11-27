@@ -8729,6 +8729,11 @@
         "time": "2026-11-25T23:04:47.703066+00:00",
         "price": 172.16,
         "note": "update"
+      },
+      {
+        "time": "2026-11-27T22:40:53.350199+00:00",
+        "price": 172.31,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8738,10 +8743,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.3456,
-    "bars_since_break": 13,
+    "quality_score": 0.2901,
+    "bars_since_break": 17,
     "sector_score": 3,
-    "last_seen": "2026-11-25T23:04:47.703066+00:00",
+    "last_seen": "2026-11-27T22:40:53.350199+00:00",
     "skip_reason": null
   },
   {
@@ -8771,6 +8776,11 @@
         "time": "2026-11-25T23:04:47.703066+00:00",
         "price": 176.75,
         "note": "update"
+      },
+      {
+        "time": "2026-11-27T22:40:53.350199+00:00",
+        "price": 177.16,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8780,10 +8790,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.3621,
-    "bars_since_break": 12,
+    "quality_score": 0.3066,
+    "bars_since_break": 16,
     "sector_score": 3,
-    "last_seen": "2026-11-25T23:04:47.703066+00:00",
+    "last_seen": "2026-11-27T22:40:53.350199+00:00",
     "skip_reason": null
   },
   {
@@ -8813,6 +8823,11 @@
         "time": "2026-11-25T23:04:47.703066+00:00",
         "price": 261.33,
         "note": "update"
+      },
+      {
+        "time": "2026-11-27T22:40:53.350199+00:00",
+        "price": 264.2,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8822,11 +8837,11 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.3482,
-    "bars_since_break": 13,
+    "quality_score": 0.2926,
+    "bars_since_break": 17,
     "sector_score": 3,
-    "last_seen": "2026-11-25T23:04:47.703066+00:00",
-    "skip_reason": null
+    "last_seen": "2026-11-27T22:40:53.350199+00:00",
+    "skip_reason": "low_quality"
   },
   {
     "id": "ALL__cup_and_handle__2026-11-20T14:30:00Z",
@@ -8855,6 +8870,11 @@
         "time": "2026-11-25T23:04:47.703066+00:00",
         "price": 271.37,
         "note": "update"
+      },
+      {
+        "time": "2026-11-27T22:40:53.350199+00:00",
+        "price": 272.855,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8864,10 +8884,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.1504,
-    "bars_since_break": 27,
+    "quality_score": 0.1087,
+    "bars_since_break": 30,
     "sector_score": 3,
-    "last_seen": "2026-11-25T23:04:47.703066+00:00",
+    "last_seen": "2026-11-27T22:40:53.350199+00:00",
     "skip_reason": null
   },
   {
@@ -8897,6 +8917,11 @@
         "time": "2026-11-25T23:04:47.703066+00:00",
         "price": 139.29,
         "note": "update"
+      },
+      {
+        "time": "2026-11-27T22:40:53.350199+00:00",
+        "price": 139.56,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8906,10 +8931,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.3497,
-    "bars_since_break": 13,
+    "quality_score": 0.2942,
+    "bars_since_break": 17,
     "sector_score": 3,
-    "last_seen": "2026-11-25T23:04:47.703066+00:00",
+    "last_seen": "2026-11-27T22:40:53.350199+00:00",
     "skip_reason": "low_quality"
   },
   {
@@ -8939,6 +8964,11 @@
         "time": "2026-11-25T23:04:47.703066+00:00",
         "price": 139.29,
         "note": "update"
+      },
+      {
+        "time": "2026-11-27T22:40:53.350199+00:00",
+        "price": 139.56,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8948,10 +8978,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.3505,
-    "bars_since_break": 13,
+    "quality_score": 0.295,
+    "bars_since_break": 17,
     "sector_score": 3,
-    "last_seen": "2026-11-25T23:04:47.703066+00:00",
+    "last_seen": "2026-11-27T22:40:53.350199+00:00",
     "skip_reason": "low_quality"
   },
   {
@@ -8981,6 +9011,11 @@
         "time": "2026-11-25T23:04:47.703066+00:00",
         "price": 152.161,
         "note": "update"
+      },
+      {
+        "time": "2026-11-27T22:40:53.350199+00:00",
+        "price": 148.63,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -8990,10 +9025,10 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.3645,
-    "bars_since_break": 13,
+    "quality_score": 0.309,
+    "bars_since_break": 17,
     "sector_score": 3,
-    "last_seen": "2026-11-25T23:04:47.703066+00:00",
+    "last_seen": "2026-11-27T22:40:53.350199+00:00",
     "skip_reason": null
   },
   {
@@ -9018,6 +9053,11 @@
         "time": "2026-11-25T23:04:47.703066+00:00",
         "price": 110.11,
         "note": "first_seen"
+      },
+      {
+        "time": "2026-11-27T22:40:53.350199+00:00",
+        "price": 109.93,
+        "note": "update"
       }
     ],
     "trigger_time": null,
@@ -9027,10 +9067,121 @@
     "outcome": null,
     "elapsed_watching_hours": null,
     "elapsed_total_hours": null,
-    "quality_score": 0.3739,
-    "bars_since_break": 12,
+    "quality_score": 0.3184,
+    "bars_since_break": 16,
     "sector_score": 3,
-    "last_seen": "2026-11-25T23:04:47.703066+00:00",
-    "skip_reason": "low_quality"
+    "last_seen": "2026-11-27T22:40:53.350199+00:00",
+    "skip_reason": null
+  },
+  {
+    "id": "V__inverse_hns__2026-11-27T14:30:00Z",
+    "symbol": "V",
+    "type": "inverse_hns",
+    "neckline": 430.99,
+    "break_time": "2026-11-27T14:30:00Z",
+    "first_seen": "2026-11-27T22:40:53.350199+00:00",
+    "status": "watching",
+    "suggested_entry": 430.99,
+    "suggested_entry_zone": [
+      428.8351,
+      433.1449
+    ],
+    "stop": 408.655,
+    "target_1R": 454.025,
+    "target_2R": 476.7099,
+    "risk_per_share": 22.685,
+    "price_history": [
+      {
+        "time": "2026-11-27T22:40:53.350199+00:00",
+        "price": 430.345,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null,
+    "quality_score": 0.4842,
+    "bars_since_break": 3,
+    "sector_score": 3,
+    "last_seen": "2026-11-27T22:40:53.350199+00:00",
+    "skip_reason": null
+  },
+  {
+    "id": "MA__inverse_hns__2026-11-27T16:30:00Z",
+    "symbol": "MA",
+    "type": "inverse_hns",
+    "neckline": 668.31,
+    "break_time": "2026-11-27T16:30:00Z",
+    "first_seen": "2026-11-27T22:40:53.350199+00:00",
+    "status": "watching",
+    "suggested_entry": 668.31,
+    "suggested_entry_zone": [
+      664.9684,
+      671.6515
+    ],
+    "stop": 632.358,
+    "target_1R": 704.542,
+    "target_2R": 740.6341,
+    "risk_per_share": 36.092,
+    "price_history": [
+      {
+        "time": "2026-11-27T22:40:53.350199+00:00",
+        "price": 667.04,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null,
+    "quality_score": 0.513,
+    "bars_since_break": 1,
+    "sector_score": 3,
+    "last_seen": "2026-11-27T22:40:53.350199+00:00",
+    "skip_reason": null
+  },
+  {
+    "id": "PYPL__inverse_hns__2026-11-27T14:30:00Z",
+    "symbol": "PYPL",
+    "type": "inverse_hns",
+    "neckline": 59.19,
+    "break_time": "2026-11-27T14:30:00Z",
+    "first_seen": "2026-11-27T22:40:53.350199+00:00",
+    "status": "watching",
+    "suggested_entry": 59.19,
+    "suggested_entry_zone": [
+      58.8941,
+      59.4859
+    ],
+    "stop": 54.2869,
+    "target_1R": 64.2333,
+    "target_2R": 69.2065,
+    "risk_per_share": 4.9732,
+    "price_history": [
+      {
+        "time": "2026-11-27T22:40:53.350199+00:00",
+        "price": 59.25,
+        "note": "first_seen"
+      }
+    ],
+    "trigger_time": null,
+    "trigger_price": null,
+    "close_time": null,
+    "close_price": null,
+    "outcome": null,
+    "elapsed_watching_hours": null,
+    "elapsed_total_hours": null,
+    "quality_score": 0.4998,
+    "bars_since_break": 3,
+    "sector_score": 3,
+    "last_seen": "2026-11-27T22:40:53.350199+00:00",
+    "skip_reason": null
   }
 ]
