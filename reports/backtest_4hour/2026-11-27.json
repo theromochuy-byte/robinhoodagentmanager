@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-27",
+  "new_entries": 2,
+  "closed_today": 0,
+  "open_count": 34,
+  "entries": [
+    {
+      "symbol": "O",
+      "type": "inverse_hns",
+      "neckline": 60.45,
+      "stop": 57.2724,
+      "target_2R": 66.9252,
+      "risk_per_share": 3.2176,
+      "shares": 6.1994,
+      "break_time": "2026-11-25T14:30:00Z",
+      "bars_since_break": 2,
+      "in_pullback": true,
+      "last_close": 60.62,
+      "last_bar_time": "2026-11-27T14:30:00Z",
+      "scan_date": "2026-11-27",
+      "entry": 60.62,
+      "entry_time": "2026-11-27T14:30:00Z",
+      "status": "open"
+    },
+    {
+      "symbol": "VZ",
+      "type": "inverse_hns",
+      "neckline": 47.15,
+      "stop": 44.0406,
+      "target_2R": 53.5038,
+      "risk_per_share": 3.1544,
+      "shares": 7.9458,
+      "break_time": "2026-11-24T14:30:00Z",
+      "bars_since_break": 4,
+      "in_pullback": true,
+      "last_close": 47.675,
+      "last_bar_time": "2026-11-27T14:30:00Z",
+      "scan_date": "2026-11-27",
+      "entry": 47.675,
+      "entry_time": "2026-11-27T14:30:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 3
+}

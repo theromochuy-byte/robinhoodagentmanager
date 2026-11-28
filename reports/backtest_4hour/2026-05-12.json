@@ -1,0 +1,46 @@
+{
+  "date": "2026-05-12",
+  "new_entries": 2,
+  "closed_today": 0,
+  "open_count": 14,
+  "entries": [
+    {
+      "symbol": "TSLA",
+      "type": "inverse_hns",
+      "neckline": 417.64,
+      "stop": 377.4006,
+      "target_2R": 524.8188,
+      "risk_per_share": 49.1394,
+      "shares": 0.6105,
+      "break_time": "2026-05-08T14:00:00Z",
+      "bars_since_break": 5,
+      "in_pullback": true,
+      "last_close": 432.1947,
+      "last_bar_time": "2026-05-12T18:00:00Z",
+      "scan_date": "2026-05-12",
+      "entry": 432.1947,
+      "entry_time": "2026-05-12T18:00:00Z",
+      "status": "open"
+    },
+    {
+      "symbol": "BA",
+      "type": "inverse_hns",
+      "neckline": 236.45,
+      "stop": 214.9255,
+      "target_2R": 281.4791,
+      "risk_per_share": 22.1845,
+      "shares": 1.3523,
+      "break_time": "2026-05-08T14:00:00Z",
+      "bars_since_break": 5,
+      "in_pullback": true,
+      "last_close": 236.87,
+      "last_bar_time": "2026-05-12T18:00:00Z",
+      "scan_date": "2026-05-12",
+      "entry": 236.87,
+      "entry_time": "2026-05-12T18:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 0
+}

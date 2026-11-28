@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-20",
+  "new_entries": 2,
+  "closed_today": 0,
+  "open_count": 6,
+  "entries": [
+    {
+      "symbol": "DIS",
+      "type": "inverse_hns",
+      "neckline": 109.42,
+      "stop": 100.5896,
+      "target_2R": 133.0208,
+      "risk_per_share": 10.8104,
+      "shares": 2.7751,
+      "break_time": "2026-10-15T13:30:00Z",
+      "bars_since_break": 7,
+      "in_pullback": true,
+      "last_close": 111.665,
+      "last_bar_time": "2026-10-20T17:30:00Z",
+      "scan_date": "2026-10-20",
+      "entry": 111.665,
+      "entry_time": "2026-10-20T17:30:00Z",
+      "status": "open"
+    },
+    {
+      "symbol": "BBY",
+      "type": "inverse_hns",
+      "neckline": 90.55,
+      "stop": 81.8451,
+      "target_2R": 117.1997,
+      "risk_per_share": 11.7849,
+      "shares": 2.5456,
+      "break_time": "2026-10-15T13:30:00Z",
+      "bars_since_break": 7,
+      "in_pullback": true,
+      "last_close": 93.9,
+      "last_bar_time": "2026-10-20T17:30:00Z",
+      "scan_date": "2026-10-20",
+      "entry": 93.9,
+      "entry_time": "2026-10-20T17:30:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 4
+}

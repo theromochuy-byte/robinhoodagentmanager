@@ -1,0 +1,759 @@
+{
+ "results": {
+  "baseline: hold Mon-Fri": {
+   "n": 490,
+   "win_pct": 49.6,
+   "avg_r": 0.007,
+   "avg_ret_pct": -0.114,
+   "pf": 1.01,
+   "exits": {
+    "friday": 490
+   }
+  },
+  "rsi2<10 -> back_to_sma20": {
+   "n": 771,
+   "win_pct": 55.8,
+   "avg_r": -0.002,
+   "avg_ret_pct": -0.009,
+   "pf": 0.99,
+   "exits": {
+    "stop": 128,
+    "target": 444,
+    "friday": 188,
+    "time": 11
+   }
+  },
+  "rsi2<10 -> rsi2>70": {
+   "n": 803,
+   "win_pct": 59.5,
+   "avg_r": 0.001,
+   "avg_ret_pct": -0.043,
+   "pf": 1.01,
+   "exits": {
+    "target": 580,
+    "friday": 139,
+    "stop": 83,
+    "time": 1
+   }
+  },
+  "rsi2<10 -> plus_1R": {
+   "n": 655,
+   "win_pct": 49.3,
+   "avg_r": -0.004,
+   "avg_ret_pct": 0.012,
+   "pf": 0.99,
+   "exits": {
+    "stop": 147,
+    "friday": 251,
+    "time": 92,
+    "target": 165
+   }
+  },
+  "rsi14<30 -> back_to_sma20": {
+   "n": 261,
+   "win_pct": 52.1,
+   "avg_r": 0.01,
+   "avg_ret_pct": 0.124,
+   "pf": 1.04,
+   "exits": {
+    "friday": 94,
+    "target": 112,
+    "stop": 52,
+    "time": 3
+   }
+  },
+  "rsi14<30 -> rsi2>70": {
+   "n": 325,
+   "win_pct": 58.5,
+   "avg_r": 0.021,
+   "avg_ret_pct": 0.173,
+   "pf": 1.12,
+   "exits": {
+    "target": 238,
+    "friday": 57,
+    "stop": 29,
+    "time": 1
+   }
+  },
+  "rsi14<30 -> plus_1R": {
+   "n": 259,
+   "win_pct": 50.6,
+   "avg_r": 0.021,
+   "avg_ret_pct": 0.189,
+   "pf": 1.07,
+   "exits": {
+    "friday": 106,
+    "time": 37,
+    "stop": 53,
+    "target": 63
+   }
+  },
+  "below_bband -> back_to_sma20": {
+   "n": 282,
+   "win_pct": 48.2,
+   "avg_r": -0.027,
+   "avg_ret_pct": -0.161,
+   "pf": 0.9,
+   "exits": {
+    "friday": 110,
+    "target": 115,
+    "stop": 51,
+    "time": 6
+   }
+  },
+  "below_bband -> rsi2>70": {
+   "n": 298,
+   "win_pct": 54.4,
+   "avg_r": -0.027,
+   "avg_ret_pct": -0.212,
+   "pf": 0.86,
+   "exits": {
+    "friday": 63,
+    "target": 206,
+    "stop": 29
+   }
+  },
+  "below_bband -> plus_1R": {
+   "n": 276,
+   "win_pct": 45.3,
+   "avg_r": -0.025,
+   "avg_ret_pct": -0.116,
+   "pf": 0.92,
+   "exits": {
+    "friday": 129,
+    "stop": 51,
+    "target": 58,
+    "time": 38
+   }
+  },
+  "stretch_1atr -> back_to_sma20": {
+   "n": 289,
+   "win_pct": 53.3,
+   "avg_r": -0.023,
+   "avg_ret_pct": -0.086,
+   "pf": 0.92,
+   "exits": {
+    "stop": 63,
+    "friday": 86,
+    "target": 136,
+    "time": 4
+   }
+  },
+  "stretch_1atr -> rsi2>70": {
+   "n": 423,
+   "win_pct": 58.2,
+   "avg_r": 0.001,
+   "avg_ret_pct": 0.08,
+   "pf": 1.01,
+   "exits": {
+    "stop": 45,
+    "friday": 56,
+    "target": 321,
+    "time": 1
+   }
+  },
+  "stretch_1atr -> plus_1R": {
+   "n": 280,
+   "win_pct": 49.3,
+   "avg_r": -0.001,
+   "avg_ret_pct": 0.029,
+   "pf": 1.0,
+   "exits": {
+    "stop": 65,
+    "friday": 100,
+    "time": 43,
+    "target": 72
+   }
+  }
+ },
+ "batches": {
+  "2025-52": [
+   "AMD",
+   "APP",
+   "AVGO",
+   "COIN",
+   "DELL",
+   "INTC",
+   "LRCX",
+   "MRVL",
+   "MU",
+   "ORCL"
+  ],
+  "2026-01": [
+   "AMD",
+   "APP",
+   "AVGO",
+   "COIN",
+   "DELL",
+   "INTC",
+   "MRVL",
+   "MU",
+   "ORCL",
+   "PLTR"
+  ],
+  "2026-02": [
+   "AMD",
+   "APP",
+   "AVGO",
+   "COIN",
+   "INTC",
+   "MRVL",
+   "MU",
+   "ORCL",
+   "PLTR",
+   "TSLA"
+  ],
+  "2026-03": [
+   "AMD",
+   "APP",
+   "AVGO",
+   "COIN",
+   "DELL",
+   "INTC",
+   "MRVL",
+   "MU",
+   "ORCL",
+   "PLTR"
+  ],
+  "2026-04": [
+   "AMD",
+   "ANET",
+   "APP",
+   "COIN",
+   "INTC",
+   "LRCX",
+   "MRVL",
+   "MU",
+   "ORCL",
+   "PLTR"
+  ],
+  "2026-05": [
+   "ANET",
+   "APP",
+   "ARM",
+   "COIN",
+   "INTC",
+   "LRCX",
+   "MRVL",
+   "MU",
+   "ORCL",
+   "PLTR"
+  ],
+  "2026-06": [
+   "AMD",
+   "APP",
+   "COIN",
+   "INTC",
+   "KLAC",
+   "MU",
+   "NEM",
+   "NET",
+   "ORCL",
+   "PLTR"
+  ],
+  "2026-07": [
+   "AMD",
+   "APP",
+   "COIN",
+   "INTC",
+   "MU",
+   "NET",
+   "NOW",
+   "ORCL",
+   "PLTR",
+   "SNOW"
+  ],
+  "2026-08": [
+   "AMD",
+   "APP",
+   "COIN",
+   "DDOG",
+   "INTC",
+   "INTU",
+   "MU",
+   "NET",
+   "PLTR",
+   "SNOW"
+  ],
+  "2026-09": [
+   "AMD",
+   "APP",
+   "COIN",
+   "DDOG",
+   "INTC",
+   "INTU",
+   "MU",
+   "NET",
+   "PLTR",
+   "SNOW"
+  ],
+  "2026-10": [
+   "AMD",
+   "APP",
+   "COIN",
+   "DDOG",
+   "INTC",
+   "INTU",
+   "MU",
+   "NET",
+   "ORCL",
+   "SNOW"
+  ],
+  "2026-11": [
+   "AMD",
+   "APP",
+   "COIN",
+   "DDOG",
+   "FCX",
+   "INTC",
+   "LRCX",
+   "MU",
+   "NET",
+   "SNOW"
+  ],
+  "2026-12": [
+   "APP",
+   "COIN",
+   "DAL",
+   "FCX",
+   "INTC",
+   "LRCX",
+   "MRVL",
+   "MU",
+   "ORCL",
+   "SNOW"
+  ],
+  "2026-13": [
+   "APP",
+   "COIN",
+   "FCX",
+   "INTC",
+   "LRCX",
+   "MRVL",
+   "MU",
+   "NEM",
+   "ORCL",
+   "SNOW"
+  ],
+  "2026-14": [
+   "ANET",
+   "APP",
+   "ARM",
+   "COIN",
+   "INTC",
+   "INTU",
+   "LRCX",
+   "MU",
+   "NEM",
+   "NOW"
+  ],
+  "2026-15": [
+   "AMAT",
+   "ANET",
+   "APP",
+   "ARM",
+   "COIN",
+   "FCX",
+   "INTC",
+   "LRCX",
+   "MRVL",
+   "MU"
+  ],
+  "2026-16": [
+   "APP",
+   "ARM",
+   "COIN",
+   "INTU",
+   "MU",
+   "NET",
+   "NOW",
+   "PANW",
+   "PLTR",
+   "SNOW"
+  ],
+  "2026-17": [
+   "APP",
+   "ARM",
+   "COIN",
+   "INTU",
+   "MU",
+   "NET",
+   "NOW",
+   "ORCL",
+   "PLTR",
+   "SNOW"
+  ],
+  "2026-18": [
+   "APP",
+   "COIN",
+   "FCX",
+   "INTC",
+   "MU",
+   "NET",
+   "NOW",
+   "ORCL",
+   "PLTR",
+   "SNOW"
+  ],
+  "2026-19": [
+   "APP",
+   "ARM",
+   "COIN",
+   "FCX",
+   "INTC",
+   "MU",
+   "NET",
+   "NOW",
+   "ORCL",
+   "SNOW"
+  ],
+  "2026-20": [
+   "ANET",
+   "APP",
+   "ARM",
+   "COIN",
+   "DDOG",
+   "INTC",
+   "NET",
+   "NOW",
+   "QCOM",
+   "SNOW"
+  ],
+  "2026-21": [
+   "AMD",
+   "ANET",
+   "APP",
+   "ARM",
+   "COIN",
+   "INTC",
+   "MRVL",
+   "MU",
+   "NET",
+   "QCOM"
+  ],
+  "2026-22": [
+   "APP",
+   "ARM",
+   "COIN",
+   "INTC",
+   "INTU",
+   "MRVL",
+   "MU",
+   "NET",
+   "NOW",
+   "QCOM"
+  ],
+  "2026-23": [
+   "APP",
+   "ARM",
+   "COIN",
+   "DELL",
+   "INTC",
+   "INTU",
+   "MRVL",
+   "MU",
+   "QCOM",
+   "ZS"
+  ],
+  "2026-24": [
+   "ARM",
+   "COIN",
+   "DELL",
+   "INTC",
+   "INTU",
+   "MRVL",
+   "MU",
+   "NOW",
+   "QCOM",
+   "ZS"
+  ],
+  "2026-25": [
+   "ARM",
+   "COIN",
+   "DELL",
+   "INTC",
+   "MRVL",
+   "MU",
+   "NOW",
+   "ORCL",
+   "QCOM",
+   "ZS"
+  ],
+  "2026-26": [
+   "ACN",
+   "APP",
+   "ARM",
+   "COIN",
+   "INTC",
+   "MRVL",
+   "MU",
+   "NOW",
+   "QCOM",
+   "ZS"
+  ],
+  "2026-27": [
+   "APP",
+   "ARM",
+   "COIN",
+   "DELL",
+   "INTC",
+   "MRVL",
+   "MU",
+   "ON",
+   "ORCL",
+   "QCOM"
+  ],
+  "2026-28": [
+   "AMAT",
+   "ARM",
+   "DELL",
+   "INTC",
+   "KLAC",
+   "LRCX",
+   "MRVL",
+   "MU",
+   "ON",
+   "QCOM"
+  ],
+  "2026-29": [
+   "AMAT",
+   "ARM",
+   "DELL",
+   "INTC",
+   "KLAC",
+   "LRCX",
+   "MRVL",
+   "MU",
+   "ON",
+   "QCOM"
+  ],
+  "2026-30": [
+   "AMAT",
+   "APP",
+   "ARM",
+   "DELL",
+   "INTC",
+   "KLAC",
+   "LRCX",
+   "MRVL",
+   "MU",
+   "ON"
+  ],
+  "2026-31": [
+   "AMAT",
+   "APP",
+   "ARM",
+   "DELL",
+   "INTC",
+   "KLAC",
+   "LRCX",
+   "MRVL",
+   "MU",
+   "ON"
+  ],
+  "2026-32": [
+   "AMAT",
+   "AMD",
+   "ARM",
+   "DELL",
+   "INTC",
+   "KLAC",
+   "LRCX",
+   "MRVL",
+   "MU",
+   "ON"
+  ],
+  "2026-33": [
+   "AMAT",
+   "AMD",
+   "APP",
+   "ARM",
+   "DELL",
+   "INTC",
+   "KLAC",
+   "LRCX",
+   "MRVL",
+   "MU"
+  ],
+  "2026-34": [
+   "AMAT",
+   "APP",
+   "ARM",
+   "DDOG",
+   "DELL",
+   "INTC",
+   "KLAC",
+   "LRCX",
+   "MRVL",
+   "MU"
+  ],
+  "2026-35": [
+   "AMAT",
+   "APP",
+   "ARM",
+   "DELL",
+   "INTC",
+   "KLAC",
+   "LRCX",
+   "MRNA",
+   "MRVL",
+   "MU"
+  ],
+  "2026-36": [
+   "AMAT",
+   "ARM",
+   "COIN",
+   "DDOG",
+   "DELL",
+   "INTC",
+   "LRCX",
+   "MRNA",
+   "MRVL",
+   "MU"
+  ],
+  "2026-37": [
+   "APP",
+   "ARM",
+   "COIN",
+   "DDOG",
+   "DELL",
+   "MRNA",
+   "MRVL",
+   "MU",
+   "NET",
+   "PANW"
+  ],
+  "2026-38": [
+   "ARM",
+   "COIN",
+   "DDOG",
+   "DELL",
+   "INTC",
+   "LULU",
+   "MRNA",
+   "MRVL",
+   "MU",
+   "NET"
+  ],
+  "2026-39": [
+   "APP",
+   "ARM",
+   "COIN",
+   "DELL",
+   "INTC",
+   "LRCX",
+   "MRNA",
+   "MRVL",
+   "NET",
+   "PANW"
+  ],
+  "2026-40": [
+   "APP",
+   "ARM",
+   "COIN",
+   "DELL",
+   "INTC",
+   "INTU",
+   "MRNA",
+   "MRVL",
+   "NET",
+   "ORCL"
+  ],
+  "2026-41": [
+   "ACN",
+   "APP",
+   "ARM",
+   "COIN",
+   "DELL",
+   "INTC",
+   "MRNA",
+   "MRVL",
+   "NET",
+   "ORCL"
+  ],
+  "2026-42": [
+   "APP",
+   "ARM",
+   "COIN",
+   "DELL",
+   "ILMN",
+   "INTC",
+   "MRNA",
+   "MRVL",
+   "ON",
+   "ORCL"
+  ],
+  "2026-43": [
+   "ARM",
+   "COIN",
+   "DELL",
+   "INTC",
+   "MRNA",
+   "MRVL",
+   "MU",
+   "NET",
+   "ORCL",
+   "SNOW"
+  ],
+  "2026-44": [
+   "ARM",
+   "COIN",
+   "DELL",
+   "INTC",
+   "KLAC",
+   "LRCX",
+   "MRNA",
+   "MRVL",
+   "MU",
+   "NET"
+  ],
+  "2026-45": [
+   "ARM",
+   "COIN",
+   "DDOG",
+   "DELL",
+   "FTNT",
+   "INTC",
+   "MRNA",
+   "MRVL",
+   "NET",
+   "NOW"
+  ],
+  "2026-46": [
+   "AMD",
+   "ARM",
+   "COIN",
+   "DDOG",
+   "DELL",
+   "INTC",
+   "LRCX",
+   "MRNA",
+   "MRVL",
+   "MU"
+  ],
+  "2026-47": [
+   "AMD",
+   "ARM",
+   "COIN",
+   "DDOG",
+   "DELL",
+   "INTC",
+   "LRCX",
+   "MRNA",
+   "MRVL",
+   "MU"
+  ],
+  "2026-48": [
+   "AMD",
+   "ARM",
+   "COIN",
+   "DDOG",
+   "DELL",
+   "INTC",
+   "LRCX",
+   "MRNA",
+   "MRVL",
+   "MU"
+  ]
+ }
+}

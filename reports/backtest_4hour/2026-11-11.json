@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-11",
+  "new_entries": 2,
+  "closed_today": 0,
+  "open_count": 31,
+  "entries": [
+    {
+      "symbol": "CL",
+      "type": "inverse_hns",
+      "neckline": 97.5,
+      "stop": 88.0108,
+      "target_2R": 120.1834,
+      "risk_per_share": 10.7242,
+      "shares": 2.7974,
+      "break_time": "2026-11-04T14:30:00Z",
+      "bars_since_break": 11,
+      "in_pullback": true,
+      "last_close": 98.03,
+      "last_bar_time": "2026-11-11T18:30:00Z",
+      "scan_date": "2026-11-11",
+      "entry": 98.03,
+      "entry_time": "2026-11-11T18:30:00Z",
+      "status": "open"
+    },
+    {
+      "symbol": "PRU",
+      "type": "inverse_hns",
+      "neckline": 120.27,
+      "stop": 109.8497,
+      "target_2R": 161.0606,
+      "risk_per_share": 17.0703,
+      "shares": 1.7574,
+      "break_time": "2026-11-04T14:30:00Z",
+      "bars_since_break": 11,
+      "in_pullback": true,
+      "last_close": 123.04,
+      "last_bar_time": "2026-11-11T18:30:00Z",
+      "scan_date": "2026-11-11",
+      "entry": 123.04,
+      "entry_time": "2026-11-11T18:30:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 12
+}

@@ -1,0 +1,28 @@
+{
+  "date": "2026-04-29",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 15,
+  "entries": [
+    {
+      "symbol": "EOG",
+      "type": "inverse_hns",
+      "neckline": 137.595,
+      "stop": 128.8747,
+      "target_2R": 156.1006,
+      "risk_per_share": 9.0753,
+      "shares": 2.7184,
+      "break_time": "2026-04-29T14:00:00Z",
+      "bars_since_break": 1,
+      "in_pullback": true,
+      "last_close": 139.09,
+      "last_bar_time": "2026-04-29T18:00:00Z",
+      "scan_date": "2026-04-29",
+      "entry": 139.09,
+      "entry_time": "2026-04-29T18:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 2
+}

@@ -1,0 +1,58 @@
+{
+  "date": "2026-05-11",
+  "new_entries": 1,
+  "closed_today": 1,
+  "open_count": 12,
+  "entries": [
+    {
+      "symbol": "TSLA",
+      "type": "inverse_hns",
+      "neckline": 417.64,
+      "stop": 377.4006,
+      "target_2R": 524.8188,
+      "risk_per_share": 49.1394,
+      "shares": 0.6105,
+      "break_time": "2026-05-08T14:00:00Z",
+      "bars_since_break": 3,
+      "in_pullback": true,
+      "last_close": 447.5491,
+      "last_bar_time": "2026-05-11T18:00:00Z",
+      "scan_date": "2026-05-11",
+      "entry": 447.5491,
+      "entry_time": "2026-05-11T18:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [
+    {
+      "symbol": "JPM",
+      "type": "inverse_hns",
+      "neckline": 313.79,
+      "stop": 299.0089,
+      "target_2R": 347.7922,
+      "risk_per_share": 16.2611,
+      "shares": 1.1895,
+      "break_time": "2026-04-20T14:00:00Z",
+      "bars_since_break": 1,
+      "in_pullback": true,
+      "last_close": 317.085,
+      "last_bar_time": "2026-04-20T18:00:00Z",
+      "scan_date": "2026-04-20",
+      "entry": 317.085,
+      "entry_time": "2026-04-20T18:00:00Z",
+      "status": "closed",
+      "max_price": 318.21,
+      "touched_1r": false,
+      "touched_2r": false,
+      "outcome": "loss",
+      "exit_price": 299.0089,
+      "exit_time": "2026-05-11T14:00:00Z",
+      "pnl_per_share": -18.0761,
+      "pnl_dollars": -21.5,
+      "r_multiple": -1.112,
+      "exit_reason": "stop",
+      "days_held": 20.83
+    }
+  ],
+  "watching_count": 2
+}

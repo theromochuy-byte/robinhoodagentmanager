@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-26",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 17,
+  "entries": [
+    {
+      "symbol": "GS",
+      "type": "inverse_hns",
+      "neckline": 981.2599,
+      "stop": 916.5679,
+      "target_2R": 1127.9872,
+      "risk_per_share": 70.4731,
+      "shares": 0.3799,
+      "break_time": "2026-05-21T14:00:00Z",
+      "bars_since_break": 5,
+      "in_pullback": true,
+      "last_close": 993.78,
+      "last_bar_time": "2026-05-26T18:00:00Z",
+      "scan_date": "2026-05-26",
+      "entry": 993.78,
+      "entry_time": "2026-05-26T18:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 4
+}

@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-09",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 27,
+  "entries": [
+    {
+      "symbol": "DIS",
+      "type": "inverse_hns",
+      "neckline": 113.375,
+      "stop": 106.7444,
+      "target_2R": 126.7711,
+      "risk_per_share": 6.6756,
+      "shares": 3.3063,
+      "break_time": "2026-11-02T14:30:00Z",
+      "bars_since_break": 11,
+      "in_pullback": true,
+      "last_close": 119.13,
+      "last_bar_time": "2026-11-09T18:30:00Z",
+      "scan_date": "2026-11-09",
+      "entry": 119.13,
+      "entry_time": "2026-11-09T18:30:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 15
+}

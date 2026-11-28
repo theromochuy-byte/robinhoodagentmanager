@@ -1,0 +1,28 @@
+{
+  "date": "2026-04-09",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 10,
+  "entries": [
+    {
+      "symbol": "PYPL",
+      "type": "inverse_hns",
+      "neckline": 45.93,
+      "stop": 42.9064,
+      "target_2R": 52.3371,
+      "risk_per_share": 3.1436,
+      "shares": 8.1433,
+      "break_time": "2026-04-08T14:00:00Z",
+      "bars_since_break": 3,
+      "in_pullback": true,
+      "last_close": 45.97,
+      "last_bar_time": "2026-04-09T18:00:00Z",
+      "scan_date": "2026-04-09",
+      "entry": 45.97,
+      "entry_time": "2026-04-09T18:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 1
+}

@@ -3,3 +3,9 @@ reports/archive/
 data/archive/
 data/session_universe.txt
 data/indicator_cache.json
+data/hist_cache/
+reports/backtest_latest*.json
+
+# Long daily history for research backtests (fetched, not committed)
+data/hist_long/
+data/hist_etf/

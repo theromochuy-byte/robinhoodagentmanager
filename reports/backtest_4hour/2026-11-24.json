@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-24",
+  "new_entries": 1,
+  "closed_today": 0,
+  "open_count": 32,
+  "entries": [
+    {
+      "symbol": "TGT",
+      "type": "inverse_hns",
+      "neckline": 166.49,
+      "stop": 148.9039,
+      "target_2R": 214.1122,
+      "risk_per_share": 21.7361,
+      "shares": 1.3802,
+      "break_time": "2026-11-18T14:30:00Z",
+      "bars_since_break": 9,
+      "in_pullback": true,
+      "last_close": 176.01,
+      "last_bar_time": "2026-11-24T18:30:00Z",
+      "scan_date": "2026-11-24",
+      "entry": 176.01,
+      "entry_time": "2026-11-24T18:30:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 3
+}

@@ -1,0 +1,32 @@
+{
+  "as_of": "2026-11-27T22:40:53.443857+00:00",
+  "scan_date": "2026-11-27",
+  "regime": {
+    "spy_ema20": "bull",
+    "vix": 14.55,
+    "high_vix": false
+  },
+  "sector_scores": {
+    "XLB": 3,
+    "XLC": 3,
+    "XLE": 3,
+    "XLF": 3,
+    "XLI": 3,
+    "XLK": 3,
+    "XLP": 3,
+    "XLRE": 3,
+    "XLU": 3,
+    "XLV": 3,
+    "XLY": 3
+  },
+  "watching": [],
+  "triggered_today": [],
+  "new_entries": 0,
+  "skipped": [],
+  "open_positions": 0,
+  "equity": {
+    "starting": 2500.0,
+    "in_use": 0,
+    "available": 2500.0
+  }
+}

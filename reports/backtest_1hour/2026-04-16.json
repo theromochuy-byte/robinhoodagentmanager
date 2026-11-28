@@ -1,0 +1,46 @@
+{
+  "date": "2026-04-16",
+  "new_entries": 2,
+  "closed_today": 0,
+  "open_count": 20,
+  "entries": [
+    {
+      "symbol": "AMZN",
+      "type": "inverse_hns",
+      "neckline": 247.775,
+      "stop": 234.2783,
+      "target_2R": 276.0132,
+      "risk_per_share": 13.9116,
+      "shares": 1.5109,
+      "break_time": "2026-04-14T15:00:00Z",
+      "bars_since_break": 16,
+      "in_pullback": true,
+      "last_close": 249.71,
+      "last_bar_time": "2026-04-16T19:00:00Z",
+      "scan_date": "2026-04-16",
+      "entry": 249.71,
+      "entry_time": "2026-04-16T19:00:00Z",
+      "status": "open"
+    },
+    {
+      "symbol": "TGT",
+      "type": "inverse_hns",
+      "neckline": 122.45,
+      "stop": 117.32,
+      "target_2R": 134.72,
+      "risk_per_share": 5.8,
+      "shares": 3.0458,
+      "break_time": "2026-04-08T19:00:00Z",
+      "bars_since_break": 36,
+      "in_pullback": true,
+      "last_close": 123.91,
+      "last_bar_time": "2026-04-16T19:00:00Z",
+      "scan_date": "2026-04-16",
+      "entry": 123.91,
+      "entry_time": "2026-04-16T19:00:00Z",
+      "status": "open"
+    }
+  ],
+  "closed": [],
+  "watching_count": 4
+}

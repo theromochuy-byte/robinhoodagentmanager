@@ -1,0 +1,165 @@
+{
+  "as_of": "2026-11-27T22:40:53.358794+00:00",
+  "scan_date": "2026-11-27",
+  "regime": {
+    "spy_ema20": "bull",
+    "vix": 14.55,
+    "high_vix": false
+  },
+  "sector_scores": {
+    "XLB": 3,
+    "XLC": 3,
+    "XLE": 3,
+    "XLF": 3,
+    "XLI": 3,
+    "XLK": 3,
+    "XLP": 3,
+    "XLRE": 3,
+    "XLU": 3,
+    "XLV": 3,
+    "XLY": 3
+  },
+  "watching": [
+    {
+      "symbol": "MA",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.513,
+      "bars_since_break": 1,
+      "neckline": 668.31,
+      "last_price": 667.04,
+      "stop": 632.358,
+      "target_1R": 704.542,
+      "target_2R": 740.6341
+    },
+    {
+      "symbol": "PYPL",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.4998,
+      "bars_since_break": 3,
+      "neckline": 59.19,
+      "last_price": 59.25,
+      "stop": 54.2869,
+      "target_1R": 64.2333,
+      "target_2R": 69.2065
+    },
+    {
+      "symbol": "V",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.4842,
+      "bars_since_break": 3,
+      "neckline": 430.99,
+      "last_price": 430.345,
+      "stop": 408.655,
+      "target_1R": 454.025,
+      "target_2R": 476.7099
+    },
+    {
+      "symbol": "ZBH",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.3184,
+      "bars_since_break": 16,
+      "neckline": 109.32,
+      "last_price": 109.93,
+      "stop": 100.4454,
+      "target_1R": 118.5946,
+      "target_2R": 127.6693
+    },
+    {
+      "symbol": "DLTR",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.309,
+      "bars_since_break": 17,
+      "neckline": 148.535,
+      "last_price": 148.63,
+      "stop": 135.1411,
+      "target_1R": 172.8289,
+      "target_2R": 191.6728
+    },
+    {
+      "symbol": "GILD",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.3066,
+      "bars_since_break": 16,
+      "neckline": 176.58,
+      "last_price": 177.16,
+      "stop": 166.4104,
+      "target_1R": 188.3696,
+      "target_2R": 199.3493
+    },
+    {
+      "symbol": "DG",
+      "type": "cup_and_handle",
+      "sector_score": 3,
+      "quality_score": 0.295,
+      "bars_since_break": 17,
+      "neckline": 139.12,
+      "last_price": 139.56,
+      "stop": 130.4742,
+      "target_1R": 147.9358,
+      "target_2R": 156.6666
+    },
+    {
+      "symbol": "DG",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.2942,
+      "bars_since_break": 17,
+      "neckline": 137.77,
+      "last_price": 139.56,
+      "stop": 129.4242,
+      "target_1R": 148.9858,
+      "target_2R": 158.7666
+    },
+    {
+      "symbol": "BIIB",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.2926,
+      "bars_since_break": 17,
+      "neckline": 261.0,
+      "last_price": 264.2,
+      "stop": 245.9973,
+      "target_1R": 282.0227,
+      "target_2R": 300.0353
+    },
+    {
+      "symbol": "TGT",
+      "type": "inverse_hns",
+      "sector_score": 3,
+      "quality_score": 0.2901,
+      "bars_since_break": 17,
+      "neckline": 171.91,
+      "last_price": 172.31,
+      "stop": 162.9136,
+      "target_1R": 186.1664,
+      "target_2R": 197.7928
+    },
+    {
+      "symbol": "ALL",
+      "type": "cup_and_handle",
+      "sector_score": 3,
+      "quality_score": 0.1087,
+      "bars_since_break": 30,
+      "neckline": 273.055,
+      "last_price": 272.855,
+      "stop": 259.2088,
+      "target_1R": 288.6112,
+      "target_2R": 303.3125
+    }
+  ],
+  "triggered_today": [],
+  "new_entries": 0,
+  "skipped": [],
+  "open_positions": 0,
+  "equity": {
+    "starting": 2500.0,
+    "in_use": 0,
+    "available": 2500.0
+  }
+}

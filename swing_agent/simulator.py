@@ -46,12 +46,18 @@ def build_trade(
     if risk_per_share <= 0:
         return None
 
-    r1 = entry + risk_per_share
-    r2 = entry + 2 * risk_per_share
+    r1   = entry + risk_per_share
+    r1_5 = entry + 1.5 * risk_per_share
+    r2   = entry + 2 * risk_per_share
+    r3   = entry + 3 * risk_per_share
     struct = _prior_structure_high(df, bi, pattern["neckline"])
-    primary_target = struct if (struct and struct > entry) else r2
+    primary_target = struct if (struct and struct > entry) else r3
 
     shares = (equity * risk_pct) / risk_per_share
+    # Cap notional position size at 25% of equity
+    max_notional = equity * 0.25
+    if shares * entry > max_notional:
+        shares = max_notional / entry
 
     trade = {
         "type": pattern["type"],
@@ -62,8 +68,10 @@ def build_trade(
         "neckline": round(pattern["neckline"], 4),
         "risk_per_share": round(risk_per_share, 4),
         "target_primary": round(primary_target, 4),
-        "target_1R": round(r1, 4),
-        "target_2R": round(r2, 4),
+        "target_1R":   round(r1, 4),
+        "target_1_5R": round(r1_5, 4),
+        "target_2R":   round(r2, 4),
+        "target_3R":   round(r3, 4),
         "shares": round(shares, 4),
         "atr": round(a, 4),
     }
@@ -189,6 +197,124 @@ def compound_ledger(trades: list[dict], starting_equity: float, risk_pct: float 
             exit_events = [(et2, i2, p2) for et2, i2, p2 in exit_events if i2 != i]
 
     return result
+
+
+def _prior_structure_low(df: pd.DataFrame, before_index: int, neckline: float) -> float | None:
+    """Lowest low to the left of the breakdown that sits below the neckline.
+    Used as the primary (structure) target for short trades.
+    """
+    window = df.loc[: before_index - 1]
+    below = window[window["low"] < neckline]
+    if len(below) == 0:
+        return None
+    return float(below["low"].min())
+
+
+def build_short_trade(
+    df: pd.DataFrame,
+    pattern: dict,
+    atr_series: pd.Series,
+    equity: float,
+    risk_pct: float = 0.01,
+    atr_mult: float = 1.5,
+) -> dict | None:
+    """Construct a proposed short trade from a confirmed bearish pattern.
+
+    Entry = close of the breakdown bar (Entry A / breakout-short style).
+    Stop  = stop_basis high + atr_mult * ATR (stop sits ABOVE the right shoulder).
+    Risk  = stop - entry (positive: stop is above entry for a short).
+    Targets: prior structure low; plus 1R, 1.5R, 2R reference levels downward.
+    """
+    bi = pattern["break_index"]
+    entry = float(df.loc[bi, "close"])
+    a = float(atr_series.iloc[bi])
+    stop = pattern["stop_basis"] + atr_mult * a
+    risk_per_share = stop - entry
+    if risk_per_share <= 0:
+        return None
+
+    r1   = entry - risk_per_share
+    r1_5 = entry - 1.5 * risk_per_share
+    r2   = entry - 2 * risk_per_share
+    r3   = entry - 3 * risk_per_share
+    struct = _prior_structure_low(df, bi, pattern["neckline"])
+    primary_target = struct if (struct and struct < entry) else r3
+
+    shares = (equity * risk_pct) / risk_per_share
+    max_notional = equity * 0.25
+    if shares * entry > max_notional:
+        shares = max_notional / entry
+
+    return {
+        "type":           pattern["type"],
+        "direction":      "short",
+        "entry_time":     str(df.loc[bi, "begins_at"]),
+        "entry_index":    bi,
+        "entry":          round(entry, 4),
+        "stop":           round(stop, 4),
+        "neckline":       round(pattern["neckline"], 4),
+        "risk_per_share": round(risk_per_share, 4),
+        "target_primary": round(primary_target, 4),
+        "target_1R":      round(r1, 4),
+        "target_1_5R":    round(r1_5, 4),
+        "target_2R":      round(r2, 4),
+        "target_3R":      round(r3, 4),
+        "shares":         round(shares, 4),
+        "atr":            round(a, 4),
+    }
+
+
+def build_retest_short_trade(df: pd.DataFrame, trade: dict, atr_series: pd.Series) -> dict | None:
+    """Entry B for shorts: wait for a pullback UP to the neckline after the breakdown,
+    then enter on the first bearish close at or below the neckline (close < open and close <= neckline).
+
+    Mirror of build_retest_trade() for the long side.
+    """
+    neckline = trade["neckline"]
+    start = trade["entry_index"] + 1
+    shares_equity_risk = trade["risk_per_share"] * trade["shares"]
+
+    in_pullback = False
+    for i in range(start, min(start + 12, len(df))):
+        lo = float(df.loc[i, "low"])
+        hi = float(df.loc[i, "high"])
+        c = float(df.loc[i, "close"])
+        o = float(df.loc[i, "open"])
+
+        # Price must pull back up to within 0.5% of the neckline
+        if hi >= neckline * 0.995:
+            in_pullback = True
+
+        if in_pullback and c <= neckline and c < o:
+            entry_b = c
+            a = float(atr_series.iloc[i])
+            stop_b = trade["stop"]
+            risk_b = stop_b - entry_b
+            if risk_b <= 0:
+                return None
+            shares_b = shares_equity_risk / risk_b
+            r1_b = entry_b - risk_b
+            r2_b = entry_b - 2 * risk_b
+            t = dict(trade)
+            t.update({
+                "entry_style":    "retest",
+                "entry_time":     str(df.loc[i, "begins_at"]),
+                "entry_index":    i,
+                "entry":          round(entry_b, 4),
+                "risk_per_share": round(risk_b, 4),
+                "target_primary": round(r2_b, 4),
+                "target_1R":      round(r1_b, 4),
+                "target_2R":      round(r2_b, 4),
+                "shares":         round(shares_b, 4),
+                "atr":            round(a, 4),
+            })
+            return t
+
+        # If price rips more than 3% above neckline before pulling back — abort
+        if lo > neckline * 1.03 and not in_pullback:
+            return None
+
+    return None
 
 
 def summarize(trades: list[dict]) -> dict:

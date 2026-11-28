@@ -1,17 +1,26 @@
-"""Bullish reversal pattern detection: double bottom, inverse head & shoulders, cup and handle.
+"""Pattern detection: bullish reversals (double bottom, inverse HnS, cup & handle, ascending
+triangle) and bearish reversals (head & shoulders).
 
 Each detector scans a DataFrame of OHLC bars (entry timeframe) and returns a list
-of pattern dicts. A pattern is only emitted once its neckline has been broken to
-the upside, which is the confirmation the source strategies require.
+of pattern dicts. A pattern is only emitted once its neckline has been broken in the
+pattern's direction (upside for bullish, downside for bearish).
 
-Pattern dict fields:
-    type            'double_bottom' | 'inverse_hns' | 'cup_and_handle'
-    neckline        float, the breakout level
-    stop_basis      float, the swing low the stop sits under (2nd bottom / right shoulder / handle low)
-    break_index     int, bar index where close first cleared the neckline
+Pattern dict fields (all patterns):
+    type            str — pattern identifier
+    neckline        float — the breakout/breakdown level
+    stop_basis      float — the pivot the stop sits beyond
+                      bullish: swing low to place stop below
+                      bearish: swing high to place stop above
+    break_index     int — bar index where close first cleared the neckline
     break_time      timestamp of that bar
-    pivots          the raw pivot prices/indices that formed the shape
-    target_measured float (cup_and_handle only) — neckline + cup height, measured move target
+    pivots          dict of raw pivot prices/indices
+
+Additional fields (bearish patterns):
+    direction       'short' — signals short entry
+    peak1_max       float — highest point in the LS→Head trough (neckline slope reference)
+    peak2_max       float — highest point in the Head→RS trough
+    ls_to_head_span int — bar distance LS→Head (time symmetry reference)
+    head_to_rs_span int — bar distance Head→RS
 """
 from __future__ import annotations
 
@@ -134,6 +143,39 @@ def detect_double_bottom(
     return _dedupe(patterns)
 
 
+def _volume_confirms_inverse_hns(
+    df: pd.DataFrame,
+    ls_idx: int,
+    head_idx: int,
+    rs_idx: int,
+    break_idx: int,
+    vol_avg: pd.Series,
+) -> bool:
+    """Volume signature for inverse head and shoulders.
+
+    Passes when ALL of the following hold (any check skipped if volume unavailable):
+      1. Head volume >= left-shoulder volume (capitulation / selling climax at head).
+      2. Right-shoulder volume < head volume (sellers exhausted, contraction).
+      3. Breakout volume > rolling average (buyers confirm the break).
+    """
+    v_ls  = _vol_around(df, ls_idx)
+    v_head = _vol_around(df, head_idx)
+    v_rs  = _vol_around(df, rs_idx)
+    v_brk = float(df["volume"].iloc[break_idx])
+    avg_at_brk = vol_avg.iloc[break_idx] if break_idx < len(vol_avg) else None
+
+    # Head must show at least as much selling pressure as the left shoulder
+    if v_head < v_ls:
+        return False
+    # Right shoulder must be quieter than the head (exhaustion)
+    if v_rs >= v_head:
+        return False
+    # Breakout bar must exceed the rolling average volume
+    if avg_at_brk and v_brk < avg_at_brk:
+        return False
+    return True
+
+
 def detect_inverse_hns(
     df: pd.DataFrame,
     left: int = 3,
@@ -144,10 +186,13 @@ def detect_inverse_hns(
 ) -> list[dict]:
     """Left shoulder, lower head, higher-low right shoulder; neckline across the
     two intervening highs. Imperfect shoulders allowed within shoulder_tol.
+    Volume confirm: head >= LS (capitulation), RS < head (exhaustion),
+    breakout > avg (confirmation). Skipped when volume data unavailable.
     """
     marked = swing_points(df, left, right)
     lows = pivots(marked, "low")
     highs = pivots(marked, "high")
+    vol_avg = _vol_avg(df)
     patterns = []
 
     for i in range(len(lows)):
@@ -164,7 +209,6 @@ def detect_inverse_hns(
                 # shoulders roughly comparable
                 if abs(rs["price"] - ls["price"]) / ls["price"] > shoulder_tol:
                     continue
-                # right shoulder is a higher low than the head (already true) -> ok
                 # neckline = the two highs between LS-head and head-RS
                 peak1 = [h for h in highs if ls["index"] < h["index"] < head["index"]]
                 peak2 = [h for h in highs if head["index"] < h["index"] < rs["index"]]
@@ -174,6 +218,17 @@ def detect_inverse_hns(
                 brk = _confirm_break(df, neckline, rs["index"])
                 if not brk:
                     continue
+                # Volume: capitulation at head, exhaustion at RS, expansion at break
+                if vol_avg is not None:
+                    if not _volume_confirms_inverse_hns(
+                        df, ls["index"], head["index"], rs["index"],
+                        brk["break_index"], vol_avg,
+                    ):
+                        continue
+                peak1_max = max(p["price"] for p in peak1)
+                peak2_max = max(p["price"] for p in peak2)
+                ls_to_head_span = head["index"] - ls["index"]
+                head_to_rs_span = rs["index"] - head["index"]
                 patterns.append(
                     {
                         "type": "inverse_hns",
@@ -181,6 +236,12 @@ def detect_inverse_hns(
                         "stop_basis": rs["price"],
                         "break_index": brk["break_index"],
                         "break_time": brk["break_time"],
+                        # Neckline slope: peak2_max >= peak1_max = upward slope (bullish)
+                        "peak1_max": peak1_max,
+                        "peak2_max": peak2_max,
+                        # Time symmetry: head_to_rs_span / ls_to_head_span ideally ~1.0
+                        "ls_to_head_span": ls_to_head_span,
+                        "head_to_rs_span": head_to_rs_span,
                         "pivots": {
                             "left_shoulder": ls,
                             "head": head,
@@ -302,6 +363,97 @@ def detect_cup_and_handle(
     return _dedupe(patterns)
 
 
+def detect_ascending_triangle(
+    df: pd.DataFrame,
+    left: int = 3,
+    right: int = 3,
+    flat_tol: float = 0.015,
+    min_highs: int = 2,
+    min_lows: int = 2,
+    min_span: int = 10,
+    max_span: int = 100,
+) -> list[dict]:
+    """Flat upper resistance touched 2+ times with a series of ascending lows.
+
+    flat_tol: max relative spread between resistance highs (1.5% = "flat").
+    min_highs: minimum touches at the resistance level (default 2).
+    min_lows: minimum higher-low pivots in the pattern span (default 2).
+    min_span / max_span: bar range from first resistance touch to break.
+    Volume: breakout bar must exceed rolling average when data available.
+
+    stop_basis = the last higher low before the break.
+    neckline   = midpoint of the two resistance highs.
+    """
+    marked = swing_points(df, left, right)
+    highs  = pivots(marked, "high")
+    lows   = pivots(marked, "low")
+    vol_avg = _vol_avg(df)
+    patterns = []
+
+    for i in range(len(highs)):
+        for j in range(i + 1, len(highs)):
+            h1, h2 = highs[i], highs[j]
+            span = h2["index"] - h1["index"]
+            if span < min_span or span > max_span:
+                continue
+
+            resistance = (h1["price"] + h2["price"]) / 2
+            if abs(h2["price"] - h1["price"]) / resistance > flat_tol:
+                continue
+
+            # At least one low must sit between the two resistance touches
+            between_lows = [
+                l for l in lows
+                if h1["index"] < l["index"] < h2["index"] and l["price"] < resistance
+            ]
+            if not between_lows:
+                continue
+
+            # Confirm breakout above resistance after the second high
+            brk = _confirm_break(df, resistance, h2["index"])
+            if not brk:
+                continue
+
+            # Collect all lows in the full span, below resistance
+            span_lows = [
+                l for l in lows
+                if h1["index"] <= l["index"] < brk["break_index"]
+                and l["price"] < resistance
+            ]
+            if len(span_lows) < min_lows:
+                continue
+
+            # Lows must be ascending: last low strictly higher than first
+            if span_lows[-1]["price"] <= span_lows[0]["price"]:
+                continue
+
+            # Volume: breakout bar above rolling average
+            if vol_avg is not None:
+                bi = brk["break_index"]
+                avg_at_brk = vol_avg.iloc[bi] if bi < len(vol_avg) else None
+                vb = float(df["volume"].iloc[bi])
+                if avg_at_brk and vb < avg_at_brk:
+                    continue
+
+            patterns.append(
+                {
+                    "type": "ascending_triangle",
+                    "neckline": resistance,
+                    "stop_basis": span_lows[-1]["price"],
+                    "break_index": brk["break_index"],
+                    "break_time": brk["break_time"],
+                    "pivots": {
+                        "resistance_high1": h1,
+                        "resistance_high2": h2,
+                        "last_higher_low": span_lows[-1],
+                        "neckline_price": resistance,
+                    },
+                }
+            )
+
+    return _dedupe(patterns)
+
+
 def _dedupe(patterns: list[dict]) -> list[dict]:
     """Keep one pattern per break bar (the tightest stop), avoid duplicate signals."""
     by_break: dict[int, dict] = {}
@@ -310,6 +462,180 @@ def _dedupe(patterns: list[dict]) -> list[dict]:
         if bi not in by_break or p["stop_basis"] > by_break[bi]["stop_basis"]:
             by_break[bi] = p
     return [by_break[k] for k in sorted(by_break)]
+
+
+def _dedupe_short(patterns: list[dict]) -> list[dict]:
+    """Like _dedupe but for short patterns: keep the lowest stop_basis (tightest stop above)."""
+    by_break: dict[int, dict] = {}
+    for p in patterns:
+        bi = p["break_index"]
+        if bi not in by_break or p["stop_basis"] < by_break[bi]["stop_basis"]:
+            by_break[bi] = p
+    return [by_break[k] for k in sorted(by_break)]
+
+
+def _confirm_breakdown(df: pd.DataFrame, neckline: float, after_index: int) -> dict | None:
+    """Find the first bar after `after_index` whose close falls below the neckline."""
+    for i in range(after_index + 1, len(df)):
+        if df.loc[i, "close"] < neckline:
+            return {"break_index": int(i), "break_time": df.loc[i, "begins_at"]}
+    return None
+
+
+def _volume_confirms_hns(
+    df: pd.DataFrame,
+    ls_idx: int,
+    head_idx: int,
+    rs_idx: int,
+    break_idx: int,
+    vol_avg: pd.Series,
+) -> bool:
+    """Volume signature for bearish head & shoulders.
+
+    Passes when ALL of the following hold (any check skipped if volume unavailable):
+      1. Head volume >= left-shoulder volume (buying climax / exhaustion at head).
+      2. Right-shoulder volume < head volume (buyers diminishing, distribution).
+      3. Breakdown volume > rolling average (sellers confirm the break).
+    """
+    v_ls   = _vol_around(df, ls_idx)
+    v_head = _vol_around(df, head_idx)
+    v_rs   = _vol_around(df, rs_idx)
+    v_brk  = float(df["volume"].iloc[break_idx])
+    avg_at_brk = vol_avg.iloc[break_idx] if break_idx < len(vol_avg) else None
+
+    if v_head < v_ls:
+        return False
+    if v_rs >= v_head:
+        return False
+    if avg_at_brk and v_brk < avg_at_brk:
+        return False
+    return True
+
+
+def detect_hns(
+    df: pd.DataFrame,
+    left: int = 3,
+    right: int = 3,
+    shoulder_tol: float = 0.06,
+    min_sep: int = 3,
+    max_span: int = 90,
+) -> list[dict]:
+    """Bearish head & shoulders: left shoulder, higher head, lower right shoulder.
+
+    Neckline connects the two troughs between the shoulders (trough1: LS→Head,
+    trough2: Head→RS). Confirmation is a close below the neckline.
+
+    shoulder_tol: max relative difference between the two shoulder highs.
+    min_sep: minimum bars between each pivot pair.
+    max_span: max bars from left shoulder to right shoulder.
+
+    stop_basis = right shoulder high (stop placed above it + 1×ATR buffer).
+    neckline   = minimum of the two intervening trough lows.
+    direction  = 'short'
+
+    Volume signature: head volume >= LS (buying climax), RS volume < head
+    (distribution), breakdown volume > rolling average (confirmation).
+    """
+    marked  = swing_points(df, left, right)
+    highs   = pivots(marked, "high")
+    lows    = pivots(marked, "low")
+    vol_avg = _vol_avg(df)
+    patterns = []
+
+    for i in range(len(highs)):
+        for j in range(i + 1, len(highs)):
+            for k in range(j + 1, len(highs)):
+                ls, head, rs = highs[i], highs[j], highs[k]
+
+                if rs["index"] - ls["index"] > max_span:
+                    continue
+                if (head["index"] - ls["index"]) < min_sep:
+                    continue
+                if (rs["index"] - head["index"]) < min_sep:
+                    continue
+
+                # Head must be the highest peak
+                if not (head["price"] > ls["price"] and head["price"] > rs["price"]):
+                    continue
+
+                # Shoulders roughly comparable in height
+                if abs(rs["price"] - ls["price"]) / ls["price"] > shoulder_tol:
+                    continue
+
+                # Neckline = the two troughs: trough1 between LS and Head, trough2 between Head and RS
+                trough1 = [l for l in lows if ls["index"] < l["index"] < head["index"]]
+                trough2 = [l for l in lows if head["index"] < l["index"] < rs["index"]]
+                if not trough1 or not trough2:
+                    continue
+
+                # Neckline at the higher of the two troughs (conservative — requires a real break)
+                neckline = max(
+                    min(t["price"] for t in trough1),
+                    min(t["price"] for t in trough2),
+                )
+
+                # Right shoulder must be strictly above the neckline (stop has to be above entry)
+                if rs["price"] <= neckline:
+                    continue
+
+                # Confirm breakdown: first close below neckline after right shoulder
+                brk = _confirm_breakdown(df, neckline, rs["index"])
+                if not brk:
+                    continue
+
+                # Volume: climax at head, exhaustion at RS, expansion on breakdown
+                if vol_avg is not None:
+                    if not _volume_confirms_hns(
+                        df, ls["index"], head["index"], rs["index"],
+                        brk["break_index"], vol_avg,
+                    ):
+                        continue
+
+                trough1_min = min(t["price"] for t in trough1)
+                trough2_min = min(t["price"] for t in trough2)
+                ls_to_head_span = head["index"] - ls["index"]
+                head_to_rs_span = rs["index"] - head["index"]
+
+                patterns.append({
+                    "type":            "hns",
+                    "direction":       "short",
+                    "neckline":        neckline,
+                    "stop_basis":      rs["price"],   # stop goes ABOVE this
+                    "break_index":     brk["break_index"],
+                    "break_time":      brk["break_time"],
+                    "trough1_min":     trough1_min,
+                    "trough2_min":     trough2_min,
+                    "ls_to_head_span": ls_to_head_span,
+                    "head_to_rs_span": head_to_rs_span,
+                    "pivots": {
+                        "left_shoulder":  ls,
+                        "head":           head,
+                        "right_shoulder": rs,
+                        "neckline_price": neckline,
+                    },
+                })
+
+    return _dedupe_short(patterns)
+
+
+def daily_bias_short(df: pd.DataFrame, ema_period: int = 20) -> bool:
+    """Short bias when the most recent daily bar sits fully below the 20 EMA
+    (no touch) and the recent swing-high structure has broken (lower highs confirmed).
+    Mirror of daily_bias_long for bearish setups.
+    """
+    from .indicators import ema
+
+    e = ema(df["close"], ema_period)
+    last = len(df) - 1
+    if df.loc[last, "high"] >= e.iloc[last]:
+        return False
+    # structure: last confirmed swing high should be lower than the one before it
+    marked = swing_points(df)
+    highs = pivots(marked, "high")
+    if len(highs) >= 2:
+        if highs[-1]["price"] >= highs[-2]["price"]:
+            return False
+    return True
 
 
 def daily_bias_long(df: pd.DataFrame, ema_period: int = 20) -> bool:

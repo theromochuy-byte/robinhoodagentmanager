@@ -1,0 +1,55 @@
+name: Fetch Long History (research)
+
+# Downloads ~12 years of adjusted daily bars for the backtest universe and SPY, runs the
+# long-history backtests (results in the job log), and uploads the bars as an artifact.
+# Research data only; nothing is committed.
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/wonderful-cerf-sa7c0d]
+    paths: [.github/workflows/fetch-long-history.yml]
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - run: python scripts/fetch_long_history.py --start 2014-01-01
+
+      - name: Run long-history pullback backtest (results go to the job log)
+        run: python scripts/long_history_test.py
+
+      - name: Run momentum vs SPY backtest (results go to the job log)
+        run: python scripts/momentum_test.py
+
+      - name: Fetch ETF history
+        run: >
+          python scripts/fetch_long_history.py --start 2003-01-01 --out data/hist_etf
+          --symbols XLK XLF XLE XLV XLI XLY XLP XLU XLB TLT IEF GLD SPY EFA SHY
+
+      - name: Run ETF rotation backtest (results go to the job log)
+        run: python scripts/etf_rotation_test.py
+
+      - name: Run ETF rotation live-realism audit (results go to the job log)
+        run: python scripts/etf_audit.py
+
+      - name: Run tax-aware ETF rotation backtest (results go to the job log)
+        run: python scripts/etf_tax_aware.py
+
+      - run: tar -czf hist_long.tar.gz -C data hist_long
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hist_long
+          path: hist_long.tar.gz
+          retention-days: 7
