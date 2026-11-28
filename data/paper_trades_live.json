@@ -719,5 +719,32 @@
     "checked_at": "2026-09-10T16:59:32.918389+00:00",
     "void_reason": "neckline_failure",
     "void_note": "Price broke back below neckline ($130.61) within 4 bars of entry. Daily bias also failed (close $124.57 < EMA20 $126.12) by 2026-09-09. Pattern stop 16% wide (depth 15.9%) \u2014 well above 12% max-depth gate added retroactively on 2026-09-10. Voided manually 2026-09-10."
+  },
+  {
+    "symbol": "V",
+    "type": "inverse_hns",
+    "neckline": 430.99,
+    "stop": 408.655,
+    "target_1R": 454.025,
+    "target_2R": 476.7099,
+    "risk_per_share": 22.685,
+    "shares": 1.449,
+    "break_time": "2026-11-27T14:30:00Z",
+    "bars_since_break": 2,
+    "in_pullback": true,
+    "last_close": 431.36,
+    "last_bar_time": "2026-11-27T16:30:00Z",
+    "scanned_at": "2026-11-28T03:18:23.809501+00:00",
+    "volume_ratio": 1.651,
+    "volume_data_present": true,
+    "daily_ema20_dist_pct": 3.388,
+    "break_bar_atr_ratio": 2.862,
+    "rs_vs_spy": 6.724,
+    "entry_day_of_week": 4,
+    "signal_price": 431.36,
+    "signal_time": "2026-11-27T16:30:00Z",
+    "status": "pending_fill",
+    "quality_score": 0.4981,
+    "sector_score": 3
   }
 ]
